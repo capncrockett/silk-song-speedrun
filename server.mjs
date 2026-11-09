@@ -29,6 +29,7 @@ const files = new Map([
   ["/maps/high-halls.jpg", ["Recovered Garmond Maps/High Halls.jpg", "image/jpeg"]],
   ["/docs/handoff.md", ["HANDOFF.md", "text/plain; charset=utf-8"]],
   ["/docs/run-2.md", ["Silksong - Current Run Tracker.md", "text/plain; charset=utf-8"]],
+  ["/docs/map-credits.md", ["Recovered Garmond Maps/README.md", "text/plain; charset=utf-8"]],
   ["/docs/spools.md", ["Silksong - Spool Fragment Candidates.md", "text/plain; charset=utf-8"]]
 ]);
 

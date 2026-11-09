@@ -6,35 +6,195 @@
       "id": "run-2",
       "name": "Run #2",
       "mode": "timed",
-      "prep": ["spool-greymoor", "pouch-loddie", "kit-forge"],
+      "prep": [
+        "spool-greymoor",
+        "pouch-loddie",
+        "kit-forge"
+      ],
       "notes": "Run #2 on Switch 2. Official clock includes roughly ten minutes idle at a bench before the 3:34 split.\n\nForum was 3 attempts with G&Z, Dice, Cogfly, Straight Pin, Mirror, and Injector Band. Scout took about 8 attempts.\n\nAfter the 4:20 checkpoint, collected Greymoor spool 478263 with the Craw Lake arena uncleared and acquired Weighted Belt. Lace 2 fell at 4:57. Patient punishes and Silk saved for healing worked. Belt made a noticeable difference. Injector Band, Claw Mirror, Belt, and Dice were equipped. Some Straight Pin openings were found. Cogfly wasn't used for the Lace clear. The interval includes detours, so it isn't a measure of boss time alone.\n\nGrand Mother Silk and the final time are pending. The user intends to play through for practice.",
       "splits": [
-        { "checkpoint": "silk-spear", "seconds": 840, "precision": "minute", "note": "Acquired." },
-        { "checkpoint": "swift-step", "seconds": 1740, "precision": "minute", "note": "Acquired. Straight Pin was also acquired on this run." },
-        { "checkpoint": "lace-1", "seconds": 1920, "precision": "minute", "note": "Defeated." },
-        { "checkpoint": "drifters-cloak", "seconds": 2940, "precision": "minute", "note": "Missed the Far Fields mask shard on this pass." },
-        { "checkpoint": "halfway-home", "seconds": 3240, "precision": "minute", "note": "Reached the inn." },
-        { "checkpoint": "moorwing", "seconds": 3780, "precision": "minute", "note": "Defeated." },
-        { "checkpoint": "cling-grip", "seconds": 4860, "precision": "minute", "note": "Took the Sister Splinter route. Two deaths on that leg." },
-        { "checkpoint": "widow-bench", "seconds": 5100, "precision": "minute", "note": "Dropped down-left from upper Bellhart and opened the breakable wall shortcut." },
-        { "checkpoint": "widow", "seconds": 5760, "precision": "minute", "note": "Widow defeated and Needolin acquired." },
-        { "checkpoint": "forge-daughter", "seconds": 7260, "precision": "minute", "note": "Magma Bell bought. Initially short 50 rosaries for the kit, then bought it after finding the nearby rosaries." },
-        { "checkpoint": "bellhart-return", "seconds": 7440, "precision": "minute", "note": "Returned from Forge Daughter." },
-        { "checkpoint": "legacy-far-fields-return", "label": "Bellhart after Far Fields backtrack", "seconds": 7800, "precision": "minute", "note": "Recovered the missed Far Fields mask shard. Far Fields Bellway stayed closed." },
-        { "checkpoint": "blasted-steps", "seconds": 8460, "precision": "minute", "note": "Reached the bench and picked up the nearby locket. The dice minigame timing was unreliable. Got free Craftmetal before Judge." },
-        { "checkpoint": "act-2", "seconds": 8940, "precision": "minute", "note": "Last Judge first try, without Magma Bell equipped. Scout took four attempts." },
-        { "checkpoint": "grand-bellway", "seconds": 9180, "precision": "minute", "note": "Opened Bell Beast and Ventrica. Accidentally bought the map. Last reported balance at that stop was 45 rosaries." },
-        { "checkpoint": "songclave-bell", "seconds": 9300, "precision": "minute", "note": "First Shrine bell rung." },
-        { "checkpoint": "dancers", "seconds": 9660, "precision": "minute", "note": "Cogwork Dancers defeated." },
-        { "checkpoint": "lower-core", "seconds": 10140, "precision": "minute", "note": "Arena cleared and top-right shortcut opened. Mask shard pickup unreported." },
-        { "checkpoint": "vaults-arena", "seconds": 11040, "precision": "minute", "note": "Returned to Songclave after five Vaults arena attempts. Scout cleared first try." },
-        { "checkpoint": "trobbio", "seconds": 11880, "precision": "minute", "note": "Trobbio defeated. Opened the wall left of the bottom of the lift, rode back up, and reached Grand Bellway bench." },
-        { "checkpoint": "vaultkeeper", "seconds": 12840, "precision": "minute", "note": "Vaultkeeper's Melody acquired. Official split includes roughly ten minutes idle at a bench." },
-        { "checkpoint": "roof-duel", "seconds": 13500, "precision": "minute", "note": "Won G&Z's roof duel, then saved at Cogwork Core bench 478428." },
-        { "checkpoint": "high-halls-bench", "seconds": 13920, "precision": "minute", "note": "Cogfly acquired and equipped." },
-        { "checkpoint": "forum", "seconds": 15060, "precision": "minute", "note": "Returned to Blasted Steps for free Dice. Won the Forum in three attempts with G&Z and both red tools. Scout took about eight." },
-        { "checkpoint": "checkpoint-1", "seconds": 15600, "precision": "minute", "note": "Reported Checkpoint 1 before scouting Lace 2. Exact bench and separate melody splits unreported." },
-        { "checkpoint": "lace-2", "seconds": 17820, "precision": "minute", "note": "Lace 2 won after the late Greymoor spool and Belt detours. Belt, Dice, Mirror, and Injector Band equipped. Wait for Lace to approach and save Silk for Bind." }
+        {
+          "checkpoint": "silk-spear",
+          "seconds": 840,
+          "precision": "minute",
+          "note": "Acquired.",
+          "label": "Silk Spear"
+        },
+        {
+          "checkpoint": "swift-step",
+          "seconds": 1740,
+          "precision": "minute",
+          "note": "Acquired. Straight Pin was also acquired on this run.",
+          "label": "Swift Step"
+        },
+        {
+          "checkpoint": "lace-1",
+          "seconds": 1920,
+          "precision": "minute",
+          "note": "Defeated.",
+          "label": "Lace 1 defeated"
+        },
+        {
+          "checkpoint": "drifters-cloak",
+          "seconds": 2940,
+          "precision": "minute",
+          "note": "Missed the Far Fields mask shard on this pass.",
+          "label": "Drifter's Cloak"
+        },
+        {
+          "checkpoint": "halfway-home",
+          "seconds": 3240,
+          "precision": "minute",
+          "note": "Reached the inn.",
+          "label": "Halfway Home"
+        },
+        {
+          "checkpoint": "moorwing",
+          "seconds": 3780,
+          "precision": "minute",
+          "note": "Defeated.",
+          "label": "Moorwing defeated"
+        },
+        {
+          "checkpoint": "cling-grip",
+          "seconds": 4860,
+          "precision": "minute",
+          "note": "Took the Sister Splinter route. Two deaths on that leg.",
+          "label": "Cling Grip"
+        },
+        {
+          "checkpoint": "widow-bench",
+          "seconds": 5100,
+          "precision": "minute",
+          "note": "Dropped down-left from upper Bellhart and opened the breakable wall shortcut.",
+          "label": "Widow bench"
+        },
+        {
+          "checkpoint": "widow",
+          "seconds": 5760,
+          "precision": "minute",
+          "note": "Widow defeated and Needolin acquired.",
+          "label": "Widow / Needolin"
+        },
+        {
+          "checkpoint": "forge-daughter",
+          "seconds": 7260,
+          "precision": "minute",
+          "note": "Magma Bell bought. Initially short 50 rosaries for the kit, then bought it after finding the nearby rosaries.",
+          "label": "Forge Daughter bench"
+        },
+        {
+          "checkpoint": "bellhart-return",
+          "seconds": 7440,
+          "precision": "minute",
+          "note": "Returned from Forge Daughter.",
+          "label": "Bellhart after Forge Daughter"
+        },
+        {
+          "checkpoint": "legacy-far-fields-return",
+          "label": "Bellhart after the missed Far Fields shard backtrack",
+          "seconds": 7800,
+          "precision": "minute",
+          "note": "Recovered the missed Far Fields mask shard. Far Fields Bellway stayed closed."
+        },
+        {
+          "checkpoint": "blasted-steps",
+          "seconds": 8460,
+          "precision": "minute",
+          "note": "Reached the bench and picked up the nearby locket. The dice minigame timing was unreliable. Got free Craftmetal before Judge.",
+          "label": "Blasted Steps bench"
+        },
+        {
+          "checkpoint": "act-2",
+          "seconds": 8940,
+          "precision": "minute",
+          "note": "Last Judge first try, without Magma Bell equipped. Scout took four attempts.",
+          "label": "Last Judge / Choral Chambers bench"
+        },
+        {
+          "checkpoint": "grand-bellway",
+          "seconds": 9180,
+          "precision": "minute",
+          "note": "Opened Bell Beast and Ventrica. Accidentally bought the map. Last reported balance at that stop was 45 rosaries.",
+          "label": "Grand Bellway bench"
+        },
+        {
+          "checkpoint": "songclave-bell",
+          "seconds": 9300,
+          "precision": "minute",
+          "note": "First Shrine bell rung.",
+          "label": "Songclave bell"
+        },
+        {
+          "checkpoint": "dancers",
+          "seconds": 9660,
+          "precision": "minute",
+          "note": "Cogwork Dancers defeated.",
+          "label": "Cogwork Dancers defeated"
+        },
+        {
+          "checkpoint": "lower-core",
+          "seconds": 10140,
+          "precision": "minute",
+          "note": "Arena cleared and top-right shortcut opened. Mask shard pickup unreported.",
+          "label": "Lower Cogwork Core complete / back at bench"
+        },
+        {
+          "checkpoint": "vaults-arena",
+          "seconds": 11040,
+          "precision": "minute",
+          "note": "Returned to Songclave after five Vaults arena attempts. Scout cleared first try.",
+          "label": "Songclave bench after Whispering Vaults arena"
+        },
+        {
+          "checkpoint": "trobbio",
+          "seconds": 11880,
+          "precision": "minute",
+          "note": "Trobbio defeated. Opened the wall left of the bottom of the lift, rode back up, and reached Grand Bellway bench.",
+          "label": "Grand Bellway bench after Trobbio"
+        },
+        {
+          "checkpoint": "vaultkeeper",
+          "seconds": 12840,
+          "precision": "minute",
+          "note": "Vaultkeeper's Melody acquired. Official split includes roughly ten minutes idle at a bench.",
+          "label": "Vaultkeeper's Melody, including about 10 minutes idle"
+        },
+        {
+          "checkpoint": "roof-duel",
+          "seconds": 13500,
+          "precision": "minute",
+          "note": "Won G&Z's roof duel, then saved at Cogwork Core bench 478428.",
+          "label": "Cogwork Core bench 478428 after winning the G&Z duel"
+        },
+        {
+          "checkpoint": "high-halls-bench",
+          "seconds": 13920,
+          "precision": "minute",
+          "note": "Cogfly acquired and equipped.",
+          "label": "High Halls bench 478415 with Cogfly equipped"
+        },
+        {
+          "checkpoint": "forum",
+          "seconds": 15060,
+          "precision": "minute",
+          "note": "Returned to Blasted Steps for free Dice. Won the Forum in three attempts with G&Z and both red tools. Scout took about eight.",
+          "label": "High Halls Forum clear"
+        },
+        {
+          "checkpoint": "checkpoint-1",
+          "seconds": 15600,
+          "precision": "minute",
+          "note": "Reported Checkpoint 1 before scouting Lace 2. Exact bench and separate melody splits unreported.",
+          "label": "Checkpoint 1, as reported before scouting Lace 2"
+        },
+        {
+          "checkpoint": "lace-2",
+          "seconds": 17820,
+          "precision": "minute",
+          "note": "Lace 2 won after the late Greymoor spool and Belt detours. Belt, Dice, Mirror, and Injector Band equipped. Wait for Lace to approach and save Silk for Bind.",
+          "label": "Lace 2 defeated"
+        }
       ]
     }
   ]

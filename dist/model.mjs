@@ -40,6 +40,7 @@ export function runSummary(route, run) {
   return {
     latest: history.at(-1) ?? null,
     finish: finish ?? null,
+    underTarget: run.mode === "scout" || !finish ? null : finish.seconds < route.targetSeconds,
     next: finish ? null : stops[furthest + 1] ?? null,
     count: stops.filter((stop) => recorded.has(stop.id)).length,
     total: stops.length,

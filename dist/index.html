@@ -14,37 +14,43 @@
     <div class="shell bar-inner">
       <a class="brand" href="#tracker">
         <img src="/favicon.svg" alt="" width="34" height="34">
-        <span>Pharloom <strong>Runbook</strong></span>
+        <span>Pharloom <strong>Runbook</strong><small>A SILKSONG FIELD GUIDE</small></span>
       </a>
       <nav class="nav" aria-label="Runbook views">
-        <a href="#tracker" data-nav="tracker">Tracker</a>
-        <a href="#route" data-nav="route">My route</a>
-        <a href="#handoff" data-nav="handoff">Handoff</a>
+        <a href="#tracker" data-nav="tracker">Run tracker</a>
+        <a href="#route" data-nav="route">The route</a>
+        <a href="#prep" data-nav="prep">Preparation</a>
+        <a href="#handoff" data-nav="handoff">Scout queue</a>
       </nav>
-      <span class="local-label"><span></span> Local runbook</span>
+      <span class="local-label" role="status"><span></span><span id="save-indicator">Local runbook</span></span>
     </div>
   </header>
 
-  <main class="shell">
+  <a class="skip-link" href="#main-content">Skip to runbook</a>
+  <div class="session-bar shell" id="session-bar" hidden>
+    <div class="session-picker">
+      <label for="run-select">SESSION</label>
+      <select id="run-select" aria-label="Active session"></select>
+      <span class="session-badge" id="session-badge">In progress</span>
+    </div>
+    <button class="button secondary" type="button" id="new-run"><span aria-hidden="true">＋</span> New session</button>
+  </div>
+  <main class="shell" id="main-content" tabindex="-1">
     <p id="startup" role="status" class="startup">Opening the local runbook…</p>
 
     <section id="tracker" data-view hidden aria-labelledby="tracker-title">
       <div class="page-head tracker-head">
         <div>
-          <p class="eyebrow">Hollow Knight · Silksong</p>
-          <h1 id="tracker-title">Speedrun tracker</h1>
+          <p class="eyebrow">Your path through Pharloom</p>
+          <h1 id="tracker-title">The final stretch.</h1>
           <p class="subtitle" id="route-label"></p>
         </div>
-        <div class="run-controls">
-          <label class="visually-hidden" for="run-select">Active run</label>
-          <select id="run-select"></select>
-          <button class="button secondary" type="button" id="new-run">New run</button>
-        </div>
+        <div class="target-mark"><span class="target-icon" aria-hidden="true">◷</span><div><span class="eyebrow">The goal</span><strong>Under five hours.</strong><span>One route. Your in-game clock.</span></div></div>
       </div>
 
       <section class="metrics" aria-label="Current run summary">
         <div class="metric">
-          <span class="eyebrow">Latest split</span>
+          <span class="eyebrow"><span class="metric-index">01</span> Latest split</span>
           <span class="metric-value" id="latest-value">—</span>
           <span class="metric-description" id="latest-label"></span>
         </div>
@@ -54,7 +60,7 @@
           <span class="metric-description" id="budget-label"></span>
         </div>
         <div class="metric">
-          <span class="eyebrow">Route splits</span>
+          <span class="eyebrow"><span class="metric-index">03</span> Route progress</span>
           <span class="metric-value" id="progress-value">—</span>
           <progress id="progress-bar" value="0" max="1" aria-label="Recorded route splits"></progress>
           <span class="metric-description" id="progress-label"></span>
@@ -63,33 +69,36 @@
 
       <div class="track-layout">
         <section id="split-editor" class="panel editor" aria-labelledby="entry-title">
-          <p class="eyebrow" id="entry-kicker">Checkpoint</p>
+          <div class="editor-heading"><p class="eyebrow" id="entry-kicker">Checkpoint</p><span class="live-dot" aria-hidden="true"></span></div>
           <h2 id="entry-title">Record a split</h2>
           <p class="step-tip" id="entry-tip"></p>
           <div class="links" id="entry-links"></div>
+          <div class="comparison" id="split-comparison" hidden></div>
           <form id="split-form">
             <label for="checkpoint-select">Checkpoint</label>
             <select id="checkpoint-select" required></select>
             <label for="split-time">In-game time</label>
-            <input type="text" id="split-time" placeholder="4:57 or 4:57:32"
+            <input type="text" id="split-time" placeholder="0:00"
               maxlength="20" autocomplete="off" spellcheck="false" aria-describedby="time-help" required>
-            <p class="field-help" id="time-help">Use hours and minutes. Add seconds if the game shows them.</p>
+            <p class="field-help" id="time-help">Hours : minutes, or hours : minutes : seconds. Your clock, exactly as reported.</p>
             <label for="split-note">Split note <span class="optional">optional</span></label>
             <textarea id="split-note" rows="2" maxlength="4000" placeholder="Attempts, pickups, or what worked"></textarea>
             <button class="button primary" type="submit" id="save-split" data-write>Save split</button>
             <p class="form-status" id="split-status" role="status"></p>
           </form>
+          <p class="editor-footnote"><span aria-hidden="true">↳</span> Manual splits. No timer running in the background.</p>
         </section>
 
         <div class="checkpoint-column">
           <section class="panel checkpoint-panel" aria-labelledby="checkpoint-title">
             <div class="panel-heading">
               <div>
-                <p class="eyebrow">One route</p>
-                <h2 id="checkpoint-title">Checkpoints</h2>
+                <p class="eyebrow">The itinerary</p>
+                <h2 id="checkpoint-title">Along the way</h2>
               </div>
               <a class="subtle-link" href="#route">Route &amp; maps</a>
             </div>
+            <div class="checkpoint-legend"><span><i class="legend-dot complete"></i> Recorded</span><span><i class="legend-dot"></i> Next stop</span><button type="button" class="subtle-link" id="toggle-phases">Expand all</button></div>
             <div id="checkpoint-list" class="phases"></div>
           </section>
           <details class="panel collapsible" id="history-panel">
@@ -97,7 +106,7 @@
             <ol id="split-history" class="history"></ol>
           </details>
           <details class="panel collapsible" id="run-notes-panel">
-            <summary><span>Run notes</span><span class="count" id="notes-label"></span></summary>
+            <summary><span id="run-notes-title">Run notes</span><span class="count" id="notes-label"></span></summary>
             <form id="notes-form">
               <label class="visually-hidden" for="run-notes">Notes for this run</label>
               <textarea id="run-notes" rows="6" maxlength="20000" placeholder="Save observations for the next run."></textarea>
@@ -113,9 +122,33 @@
 
     <section id="route" data-view hidden aria-labelledby="route-title">
       <div class="page-head">
-        <p class="eyebrow">Hunter · Last Judge · G&amp;Z</p>
-        <h1 id="route-title">My route</h1>
-        <p class="subtitle">The route for the rerun, with map pins where they help.</p>
+        <p class="eyebrow">Hunter · Five bells · Last Judge · G&amp;Z</p>
+        <h1 id="route-title">Know the way.</h1>
+        <p class="subtitle">Seven legs through Pharloom. The pickups, turns, and reminders for your next run.</p>
+      </div>
+      <div class="atlas-grid" aria-label="Recovered reference maps">
+        <a class="atlas-card" href="/maps/overview.png" target="_blank" rel="noopener"><img src="/maps/overview.png" alt="" loading="lazy"><span><small>THE COMPLETE PICTURE</small><strong>Pharloom overview <b aria-hidden="true">↗</b></strong></span></a>
+        <a class="atlas-card" href="/maps/cauldron.jpg" target="_blank" rel="noopener"><img src="/maps/cauldron.jpg" alt="" loading="lazy"><span><small>LEG 05 · REFERENCE MAP</small><strong>Cauldron to the roof <b aria-hidden="true">↗</b></strong></span></a>
+        <a class="atlas-card" href="/maps/high-halls.jpg" target="_blank" rel="noopener"><img src="/maps/high-halls.jpg" alt="" loading="lazy"><span><small>LEG 06 · REFERENCE MAP</small><strong>High Halls &amp; the Forum <b aria-hidden="true">↗</b></strong></span></a>
+      </div>
+      <p class="map-credit">Annotated reference maps from the Garmond Route guide. <a href="/docs/map-credits.md" target="_blank" rel="noopener">Original sources &amp; credits ↗</a></p>
+      <section class="route-steps" aria-labelledby="route-steps-title">
+        <div class="panel-heading route-section-head">
+          <div>
+            <p class="eyebrow">Start to finish</p>
+            <h2 id="route-steps-title">Route notes</h2>
+          </div>
+          <a class="subtle-link" href="/maps/overview.png" target="_blank" rel="noopener">Recovered overview</a>
+        </div>
+        <div id="route-sections" class="phases"></div>
+      </section>
+    </section>
+
+    <section id="prep" data-view hidden aria-labelledby="preparation-title">
+      <div class="page-head">
+        <p class="eyebrow">A little preparation goes a long way</p>
+        <h1 id="preparation-title">Pack for the climb.</h1>
+        <p class="subtitle">Your pickups for the selected session. Two fragments make one strand; each upgrade counts once.</p>
       </div>
       <section aria-labelledby="prep-title" class="prep-section">
         <div class="panel-heading route-section-head">
@@ -129,24 +162,15 @@
         <div id="prep-grid" class="prep-grid"></div>
         <p class="form-status" id="prep-status" role="status"></p>
       </section>
-      <section class="route-steps" aria-labelledby="route-steps-title">
-        <div class="panel-heading route-section-head">
-          <div>
-            <p class="eyebrow">Start to finish</p>
-            <h2 id="route-steps-title">Route notes</h2>
-          </div>
-          <a class="subtle-link" href="/maps/overview.png" target="_blank" rel="noopener">Recovered overview</a>
-        </div>
-        <div id="route-sections" class="phases"></div>
-      </section>
+      <aside class="prep-reminder"><span aria-hidden="true">✦</span><div><h3>Before the Forum</h3><p>Two pouch upgrades. Two damage upgrades. Straight Pin + Cogfly, with Garmond &amp; Zaza at the door. Keep Craftmetal for Magma Bell and Cogfly.</p></div><a href="#route">Check the route →</a></aside>
     </section>
 
     <section id="handoff" data-view hidden aria-labelledby="handoff-title">
       <div class="page-head handoff-head">
         <div>
-          <p class="eyebrow">Codex handoff</p>
-          <h1 id="handoff-title">Scout queue</h1>
-          <p class="subtitle">What to settle before the next timed run.</p>
+          <p class="eyebrow">Off the clock</p>
+          <h1 id="handoff-title">Room to experiment.</h1>
+          <p class="subtitle">The questions worth answering before the next timed run. Keep findings in a separate scout session.</p>
         </div>
         <div class="form-actions">
           <a class="button secondary" href="/docs/handoff.md" target="_blank" rel="noopener">Read full handoff</a>
@@ -154,6 +178,7 @@
         </div>
       </div>
       <p class="form-status" id="copy-status" role="status"></p>
+      <div class="scout-banner"><span>Practice has its own clock.</span><button class="button secondary" type="button" data-new-scout>Start scout session <span aria-hidden="true">↗</span></button></div>
       <div class="research-grid" id="research-grid"></div>
       <section class="panel references" aria-labelledby="references-title">
         <h2 id="references-title">Source notes</h2>
@@ -167,14 +192,15 @@
   </main>
 
   <footer class="shell footer" id="footer" hidden>
-    <span>Manual in-game splits · Saved to your local runbook</span>
-    <button type="button" id="download-runs" class="subtle-link">Download run data</button>
+    <span>PHARLOOM RUNBOOK <span class="footer-separator">/</span> A personal route, one split at a time.</span>
+    <button type="button" id="download-runs" class="subtle-link">Export run data ↗</button>
   </footer>
 
   <dialog id="new-run-dialog" aria-labelledby="new-run-title">
     <form id="new-run-form">
       <p class="eyebrow">New session</p>
-      <h2 id="new-run-title">Start a run</h2>
+      <h2 id="new-run-title">A fresh thread.</h2>
+      <p class="subtitle">Start from zero. Your previous sessions stay here.</p>
       <label for="new-run-name">Name</label>
       <input id="new-run-name" maxlength="60" autocomplete="off" required autofocus>
       <label for="new-run-mode">Session type</label>
@@ -185,7 +211,7 @@
       <p class="form-status" id="new-run-status" role="status"></p>
       <div class="form-actions">
         <button class="button secondary" id="cancel-run" type="button">Cancel</button>
-        <button class="button primary" type="submit" data-write>Create run</button>
+        <button class="button primary" type="submit" data-write>Create session →</button>
       </div>
     </form>
   </dialog>

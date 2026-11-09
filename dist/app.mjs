@@ -46,7 +46,7 @@ function stopById(id) {
 }
 
 function splitLabel(split) {
-  return stopById(split.checkpoint)?.title ?? split.label ?? split.checkpoint;
+  return split.label ?? stopById(split.checkpoint)?.title ?? split.checkpoint;
 }
 
 function status(id, message, isError = false) {
@@ -66,7 +66,8 @@ function setSaving(value) {
   state.saving = value;
   byId("run-select").disabled = value;
   byId("new-run").disabled = value;
-  for (const control of document.querySelectorAll("[data-write], [data-prep]")) {
+  byId("save-indicator").textContent = value ? "Saving…" : "Local runbook";
+  for (const control of document.querySelectorAll("[data-write], [data-prep], [data-new-scout], #split-form input, #split-form select, #split-form textarea, #run-notes, #new-run-name, #new-run-mode")) {
     control.disabled = value;
   }
 }
@@ -94,7 +95,7 @@ async function save(next, statusId, success) {
 function renderView() {
   if (!state.data) return;
   const requested = window.location.hash.slice(1);
-  const view = ["tracker", "route", "handoff"].includes(requested) ? requested : "tracker";
+  const view = ["tracker", "route", "prep", "handoff"].includes(requested) ? requested : "tracker";
   for (const section of document.querySelectorAll("[data-view]")) section.hidden = section.id !== view;
   for (const anchor of document.querySelectorAll("[data-nav]")) {
     if (anchor.dataset.nav === view) anchor.setAttribute("aria-current", "page");
@@ -117,15 +118,22 @@ function renderMetrics() {
   const latest = summary.latest;
   const goal = state.route.targetSeconds;
   const targetTime = formatTime(goal);
+  byId("tracker-title").textContent = run.mode === "scout" ? "Off the clock." : summary.finish ? "A journey recorded." : latest ? "The final stretch." : "A fresh thread.";
+  if (latest && !summary.finish && summary.next && state.stops.indexOf(stopById(summary.next.id)) < state.stops.length * .65 && run.mode !== "scout") {
+    byId("tracker-title").textContent = "One split at a time.";
+  }
+  const badge = byId("session-badge");
+  badge.dataset.mode = run.mode;
+  badge.textContent = run.mode === "scout" ? "Scout practice" : summary.finish ? summary.underTarget ? "Finished · under 5h" : "Finished · goal missed" : "In progress";
   byId("latest-value").textContent = latest ? formatTime(latest.seconds, latest.precision) : "—";
   byId("latest-label").textContent = latest ? splitLabel(latest) : "Ready for the first split";
   byId("progress-value").textContent = `${summary.count} / ${summary.total}`;
   byId("progress-bar").max = summary.total;
   byId("progress-bar").value = summary.count;
-  byId("progress-label").textContent = summary.finish ? "Finish recorded" : "Checkpoints logged";
+  byId("progress-label").textContent = summary.finish ? "Finish recorded" : `${run.splits.length} splits saved · ${summary.next ? "finish pending" : "route complete"}`;
 
   const card = byId("budget-card");
-  let title = "Time to target";
+  let title = "02 · Time to five hours";
   let value = targetTime;
   let description = "Before the first split";
   let tone = "normal";
@@ -137,7 +145,7 @@ function renderMetrics() {
     const comparison = summary.finish ?? latest;
     const difference = goal - comparison.seconds;
     value = formatTime(Math.abs(difference), comparison.precision);
-    description = `Against ${targetTime} at the last split`;
+    description = `At the recorded split · ${targetTime} cutoff`;
     if (summary.finish) {
       title = difference > 0 ? "Under target by" : difference < 0 ? "Over target by" : "At the cutoff";
       description = "Based on the recorded finish";
@@ -193,7 +201,21 @@ function renderEditor() {
   byId("entry-links").replaceChildren(...links(stop?.links));
   byId("split-time").value = saved ? formatTime(saved.seconds, saved.precision) : "";
   byId("split-note").value = saved?.note ?? "";
-  byId("save-split").textContent = saved ? "Update split" : "Save split";
+  byId("save-split").textContent = saved ? "Update split →" : "Save split →";
+  const comparison = byId("split-comparison");
+  const reference = state.data.runs.find((item) => item.id === "run-2");
+  const benchmark = reference?.splits.find((split) => split.checkpoint === state.checkpoint);
+  comparison.replaceChildren();
+  comparison.hidden = run.mode === "scout" || run.id === reference?.id || !benchmark;
+  if (!comparison.hidden) {
+    comparison.append(node("span", "", `${reference.name} at this stop · ${formatTime(benchmark.seconds, benchmark.precision)}`));
+    if (saved) {
+      const delta = saved.seconds - benchmark.seconds;
+      const precision = [saved.precision, benchmark.precision].includes("second") ? "second" : "minute";
+      const text = delta === 0 ? "Same recorded time" : `${formatTime(Math.abs(delta), precision)} ${delta < 0 ? "ahead" : "behind"}`;
+      comparison.append(node("span", delta < 0 ? "ahead" : delta > 0 ? "behind" : "", text));
+    }
+  }
 }
 
 function phaseSummary(section, count) {
@@ -215,6 +237,9 @@ function renderCheckpointList(reset = false) {
     phase.dataset.phase = section.id;
     phase.open = expanded.includes(section.id) || section.stops.some((stop) => stop.id === state.checkpoint);
     const count = section.stops.filter((stop) => saved.has(stop.id)).length;
+    phase.dataset.complete = String(count === section.stops.length);
+    phase.dataset.current = String(section.stops.some((stop) => stop.id === next?.id));
+    phase.addEventListener("toggle", updatePhaseToggle);
     phase.append(phaseSummary(section, `${count}/${section.stops.length}`));
     const list = node("ol", "checkpoint-list");
     for (const stop of section.stops) {
@@ -236,6 +261,12 @@ function renderCheckpointList(reset = false) {
     phase.append(list);
     container.append(phase);
   }
+  updatePhaseToggle();
+}
+
+function updatePhaseToggle() {
+  const phases = [...byId("checkpoint-list").querySelectorAll("details")];
+  byId("toggle-phases").textContent = phases.every((phase) => phase.open) ? "Collapse all" : "Expand all";
 }
 
 function chooseCheckpoint(id, focus = false) {
@@ -276,6 +307,7 @@ function renderPrep() {
     const header = node("div", "panel-heading");
     const count = group.items.filter((item) => run.prep.includes(item.id)).length;
     const isComplete = count === group.items.length;
+    card.dataset.complete = String(isComplete);
     header.append(
       node("h3", "", group.title),
       node("span", isComplete ? "count done" : "count", isComplete ? group.complete : `${count} / ${group.items.length}`)
@@ -367,6 +399,9 @@ function selectRun(id) {
   try { localStorage.setItem("pharloom-run", id); } catch { /* Selection is optional browser state. */ }
   for (const id of ["split-status", "notes-status", "prep-status"]) status(id, "");
   byId("run-notes").value = run.notes;
+  byId("run-notes-title").textContent = run.mode === "scout" ? "Scout observations" : "Run notes";
+  byId("run-notes-panel").open = run.mode === "scout";
+  byId("run-notes").placeholder = run.mode === "scout" ? "Record attempts, runbacks, loadout, and what to try next." : "Save observations for the next run.";
   byId("notes-label").textContent = run.name;
   renderRunPicker();
   renderMetrics();
@@ -384,6 +419,10 @@ function nextRunName(mode) {
 }
 
 function bindEvents() {
+  document.querySelector(".skip-link").addEventListener("click", (event) => {
+    event.preventDefault();
+    byId("main-content").focus();
+  });
   byId("run-select").addEventListener("change", (event) => selectRun(event.target.value));
   byId("checkpoint-select").addEventListener("change", (event) => chooseCheckpoint(event.target.value));
   byId("split-form").addEventListener("submit", async (event) => {
@@ -409,7 +448,7 @@ function bindEvents() {
     }
 
     const wasNext = runSummary(state.route, run).next?.id === id;
-    const label = stopById(id)?.title ?? previous.label;
+    const label = previous?.label ?? stopById(id)?.title ?? id;
     run.splits = [...others, { checkpoint: id, label, ...time, note: byId("split-note").value.trim() }];
     if (await save(data, "split-status", `Saved ${formatTime(time.seconds, time.precision)} · ${label}`)) {
       const next = runSummary(state.route, selectedRun()).next;
@@ -431,12 +470,30 @@ function bindEvents() {
   const dialog = byId("new-run-dialog");
   const nameField = byId("new-run-name");
   const modeField = byId("new-run-mode");
-  byId("new-run").addEventListener("click", () => {
-    modeField.value = "timed";
-    nameField.value = nextRunName("timed");
+  function openSession(mode) {
+    if (state.saving) return;
+    modeField.value = mode;
+    nameField.value = nextRunName(mode);
     status("new-run-status", "");
     dialog.showModal();
     nameField.select();
+  }
+  byId("new-run").addEventListener("click", () => openSession("timed"));
+  for (const button of document.querySelectorAll("[data-new-scout]")) {
+    button.addEventListener("click", () => openSession("scout"));
+  }
+  dialog.addEventListener("cancel", (event) => { if (state.saving) event.preventDefault(); });
+  byId("toggle-phases").addEventListener("click", () => {
+    const phases = [...byId("checkpoint-list").querySelectorAll("details")];
+    const open = !phases.every((phase) => phase.open);
+    for (const phase of phases) phase.open = open;
+    updatePhaseToggle();
+  });
+  byId("split-form").addEventListener("keydown", (event) => {
+    if (event.key === "Enter" && (event.metaKey || event.ctrlKey)) {
+      event.preventDefault();
+      if (!state.saving) byId("split-form").requestSubmit();
+    }
   });
   modeField.addEventListener("change", () => {
     if (["timed", "scout"].some((mode) => nameField.value === nextRunName(mode))) {
@@ -457,7 +514,9 @@ function bindEvents() {
     if (await save(data, "new-run-status", "Run created.")) {
       dialog.close();
       selectRun(run.id);
-      byId("split-time").focus();
+      window.location.hash = "tracker";
+      renderView();
+      byId(run.mode === "scout" ? "run-notes" : "split-time").focus();
     }
   });
 
@@ -489,6 +548,10 @@ async function start() {
   try {
     [state.route, state.data] = await Promise.all([getJson("/api/route"), getJson("/api/runs")]);
     state.stops = listStops(state.route);
+    // Freeze the recorded label on the next save, before future route edits.
+    for (const run of state.data.runs) {
+      for (const split of run.splits) split.label ??= stopById(split.checkpoint)?.title ?? split.checkpoint;
+    }
     let remembered;
     try { remembered = localStorage.getItem("pharloom-run"); } catch { /* Use the latest run. */ }
     const id = state.data.runs.find((run) => run.id === remembered)?.id ?? state.data.runs.at(-1).id;
@@ -500,6 +563,7 @@ async function start() {
     renderView();
     byId("startup").hidden = true;
     byId("footer").hidden = false;
+    byId("session-bar").hidden = false;
   } catch (error) {
     byId("startup").textContent = `Could not load the runbook. Open it from the local server address in the README. ${error.message}`;
   }

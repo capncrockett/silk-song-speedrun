@@ -43,6 +43,18 @@ assert.equal(runSummary(route, emptyRun).next.id, stops[0].id);
 const finishedRun = { ...emptyRun, splits: [{ checkpoint: route.finishCheckpoint, seconds: 18005, precision: "second" }] };
 assert.equal(runSummary(route, finishedRun).next, null);
 assert.equal(runSummary(route, finishedRun).finish.seconds, 18005);
+assert.equal(runSummary(route, emptyRun).underTarget, null, "An unfinished run cannot meet the goal yet.");
+for (const [seconds, expected] of [[17999, true], [18000, false], [18001, false]]) {
+  const run = { ...emptyRun, mode: "timed", splits: [{ checkpoint: route.finishCheckpoint, seconds, precision: "second" }] };
+  assert.equal(runSummary(route, run).underTarget, expected, "Sub-five must be strictly below five hours.");
+  assert.equal(runSummary(route, { ...run, mode: "scout" }).underTarget, null, "Practice stays separate from timed results.");
+}
+const imported = runSummary(route, seed.runs[0]);
+assert.equal(imported.latest.seconds, 17820, "Keep the reported 4:57 split.");
+assert.equal(imported.latest.precision, "minute");
+assert.equal(imported.finish, null, "Run #2 is still in progress.");
+assert.equal(imported.next.id, "gms");
+assert.ok(seed.runs[0].splits.every((split) => split.label), "Snapshot historical labels before route edits.");
 
 await Promise.all([
   "dist/index.html", "dist/styles.css", "dist/favicon.svg", "HANDOFF.md",
