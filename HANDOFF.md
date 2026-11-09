@@ -2,7 +2,13 @@
 
 Updated November 9, 2026. This brief is for the Codex agent building Joseph's personal Hollow Knight: Silksong route and run tracker. Joseph will create the new repository. Start implementation in the project he opens for that work. Repository setup belongs to Joseph.
 
-## What to build in the new project
+## Current scope · November 9
+
+Joseph plans **one more timed run**. The app is now one run screen: checkpoint selection also shows route reminders and map pins; prep, recovered maps, history, and notes expand inline. Keep open research and alternative builds in this handoff. Existing historical timed and scout records remain intact. Commit coherent changes as work proceeds.
+
+Run #2's Grand Mother Silk fight is still unfinished, confirmed by Joseph. No final time has been supplied. Joseph wants to **discuss Claw Mirror alternatives before choosing**; keep the current loadout selected until a decision is made. The spool pair and second-kit questions below are also still open.
+
+## Original implementation brief
 
 A small local browser app for one player. It should replace the need to cross-reference the branching Steam guide during a run. Show Joseph's chosen route in order and make it quick to record what actually happened.
 

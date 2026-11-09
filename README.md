@@ -12,15 +12,18 @@ npm start
 
 Open [the local tracker](http://127.0.0.1:4173). The server prints the address as well. No packages need to be installed.
 
-- **Run tracker** logs the in-game clock at each checkpoint. Use `4:57` or `4:57:32`, with an optional note. Select a recorded checkpoint to correct it; Command+Enter (Control+Enter on Windows/Linux) saves the split. The five-hour budget is measured at the latest recorded split. There is no running timer.
-- **New session** starts a blank timed run or separate scout session. The session picker works from every view. Run #2 stays available, and new timed runs show its recorded time at matching checkpoints for comparison.
-- **The route** contains the one timed path, exact map pins, and the three recovered reference maps with credits.
-- **Preparation** keeps pickups for the selected session. A completed spool pair adds one Silk capacity; one half adds none. Pouch and damage upgrades are counted independently, and the second Crafting Kit counts once regardless of source.
-- **Scout queue** lists the open tests, links to the research, and lets you copy the full Codex brief or start a practice session. Scout observations open automatically in that session's notes and remain separate from timed runs.
+The app is one screen for the final timed attempt:
+
+- Pick a checkpoint in **Along the way** to see its route reminders, exact map pins, and split entry together. Use `4:57` or `4:57:32`; Command+Enter (Control+Enter on Windows/Linux) saves. Select a recorded checkpoint to correct it.
+- **Prepare final run** creates a blank timed run. Run #2 stays in the picker and provides checkpoint comparisons. Existing scout records remain separate and accessible.
+- **Pickups & upgrades**, **Reference maps**, **Split history**, and **Run notes** expand inline when needed. Each complete spool pair adds one Silk capacity; the pouch and damage targets remain independent.
+- **Route decisions & research** opens the handoff. Open questions and alternative loadouts live there while the chosen route stays in the tracker.
+
+The five-hour budget is measured at the latest recorded split. There is no running timer.
 
 A run stays in progress until a Grand Mother Silk finish split is saved. The goal is strictly below `5:00:00`; exactly five hours does not meet it. Run #2's 26 reported splits and their precision are preserved, including its historical backtrack. The finish remains blank.
 
-Splits, notes, and checked pickups save to `.runbook/runs.json`. The **Download run data** button makes a backup. Git ignores this save directory. Copy it as well if you move the tracker to another folder or Mac.
+Splits, notes, and checked pickups save to `.runbook/runs.json`. The **Export run data** button makes a backup. Git ignores this save directory. Copy it as well if you move the tracker to another folder or Mac.
 
 ## Update with Codex
 

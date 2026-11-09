@@ -67,7 +67,7 @@ function setSaving(value) {
   byId("run-select").disabled = value;
   byId("new-run").disabled = value;
   byId("save-indicator").textContent = value ? "Saving…" : "Local runbook";
-  for (const control of document.querySelectorAll("[data-write], [data-prep], [data-new-scout], #split-form input, #split-form select, #split-form textarea, #run-notes, #new-run-name, #new-run-mode")) {
+  for (const control of document.querySelectorAll("[data-write], [data-prep], #split-form input, #split-form select, #split-form textarea, #run-notes, #new-run-name")) {
     control.disabled = value;
   }
 }
@@ -89,17 +89,6 @@ async function save(next, statusId, success) {
     return false;
   } finally {
     setSaving(false);
-  }
-}
-
-function renderView() {
-  if (!state.data) return;
-  const requested = window.location.hash.slice(1);
-  const view = ["tracker", "route", "prep", "handoff"].includes(requested) ? requested : "tracker";
-  for (const section of document.querySelectorAll("[data-view]")) section.hidden = section.id !== view;
-  for (const anchor of document.querySelectorAll("[data-nav]")) {
-    if (anchor.dataset.nav === view) anchor.setAttribute("aria-current", "page");
-    else anchor.removeAttribute("aria-current");
   }
 }
 
@@ -198,7 +187,9 @@ function renderEditor() {
   byId("entry-kicker").textContent = saved ? "Recorded checkpoint" : next?.id === state.checkpoint ? "Next checkpoint" : "Checkpoint";
   byId("entry-title").textContent = stop?.title ?? splitLabel(saved);
   byId("entry-tip").textContent = stop?.tip ?? "This split was part of the original run.";
-  byId("entry-links").replaceChildren(...links(stop?.links));
+  const section = state.route.sections.find((section) => section.id === stop?.sectionId);
+  const map = mapAssets[section?.map];
+  byId("entry-links").replaceChildren(...links(stop?.links), ...(map ? [link("Reference map", map.src)] : []));
   byId("split-time").value = saved ? formatTime(saved.seconds, saved.precision) : "";
   byId("split-note").value = saved?.note ?? "";
   byId("save-split").textContent = saved ? "Update split →" : "Save split →";
@@ -241,6 +232,7 @@ function renderCheckpointList(reset = false) {
     phase.dataset.current = String(section.stops.some((stop) => stop.id === next?.id));
     phase.addEventListener("toggle", updatePhaseToggle);
     phase.append(phaseSummary(section, `${count}/${section.stops.length}`));
+    phase.append(node("p", "phase-context", section.summary));
     const list = node("ol", "checkpoint-list");
     for (const stop of section.stops) {
       const split = saved.get(stop.id);
@@ -299,11 +291,14 @@ function renderHistory() {
 
 function renderPrep() {
   const run = selectedRun();
-  byId("prep-run").textContent = run.name;
+  byId("prep-run").textContent = `Pickups recorded for ${run.name}.`;
+  const items = state.route.preparations.flatMap((group) => group.items);
+  const pickedUp = items.filter((item) => run.prep.includes(item.id)).length;
+  byId("prep-count").textContent = `${pickedUp} / ${items.length} pickups`;
   const grid = byId("prep-grid");
   grid.replaceChildren();
   for (const group of state.route.preparations) {
-    const card = node("article", "panel prep-card");
+    const card = node("article", "prep-card");
     const header = node("div", "panel-heading");
     const count = group.items.filter((item) => run.prep.includes(item.id)).length;
     const isComplete = count === group.items.length;
@@ -348,48 +343,6 @@ function renderPrep() {
   }
 }
 
-function renderRoute() {
-  const container = byId("route-sections");
-  for (const section of state.route.sections) {
-    const phase = node("details", "phase route-phase");
-    phase.append(phaseSummary(section));
-    const body = node("div", "route-body");
-    body.append(node("p", "section-description", section.summary));
-    const list = node("ol", "route-list");
-    for (const stop of section.stops) {
-      const item = node("li");
-      const pins = node("div", "links");
-      pins.append(...links(stop.links));
-      item.append(node("h3", "", stop.title), node("p", "step-tip", stop.tip), pins);
-      list.append(item);
-    }
-    body.append(list);
-    const map = mapAssets[section.map];
-    if (map) {
-      const figure = node("figure", "route-map");
-      const anchor = link("", map.src);
-      const image = node("img");
-      Object.assign(image, map, { loading: "lazy" });
-      anchor.append(image);
-      figure.append(anchor, node("figcaption", "", "Recovered Garmond Route map. Open the image for full size."));
-      body.append(figure);
-    }
-    phase.append(body);
-    container.append(phase);
-  }
-}
-
-function renderResearch() {
-  for (const item of state.route.research) {
-    const card = node("article", "panel research-card");
-    const sources = node("div", "links");
-    sources.append(...links(item.links));
-    card.append(node("p", "eyebrow", item.status), node("h2", "", item.title),
-      node("p", "section-description", item.detail), sources);
-    byId("research-grid").append(card);
-  }
-}
-
 function selectRun(id) {
   if (state.saving) return;
   state.runId = id;
@@ -401,7 +354,7 @@ function selectRun(id) {
   byId("run-notes").value = run.notes;
   byId("run-notes-title").textContent = run.mode === "scout" ? "Scout observations" : "Run notes";
   byId("run-notes-panel").open = run.mode === "scout";
-  byId("run-notes").placeholder = run.mode === "scout" ? "Record attempts, runbacks, loadout, and what to try next." : "Save observations for the next run.";
+  byId("run-notes").placeholder = run.mode === "scout" ? "Record attempts, runbacks, loadout, and what to try next." : "Anything to remember for the final run.";
   byId("notes-label").textContent = run.name;
   renderRunPicker();
   renderMetrics();
@@ -412,8 +365,7 @@ function selectRun(id) {
   renderPrep();
 }
 
-function nextRunName(mode) {
-  if (mode === "scout") return `Scout ${state.data.runs.filter((run) => run.mode === "scout").length + 1}`;
+function nextRunName() {
   const numbers = state.data.runs.map((run) => Number(run.name.match(/^Run #(\d+)$/)?.[1] ?? 0));
   return `Run #${Math.max(2, ...numbers) + 1}`;
 }
@@ -469,19 +421,15 @@ function bindEvents() {
 
   const dialog = byId("new-run-dialog");
   const nameField = byId("new-run-name");
-  const modeField = byId("new-run-mode");
-  function openSession(mode) {
+  function openSession() {
     if (state.saving) return;
-    modeField.value = mode;
-    nameField.value = nextRunName(mode);
+    nameField.value = nextRunName();
     status("new-run-status", "");
     dialog.showModal();
     nameField.select();
   }
-  byId("new-run").addEventListener("click", () => openSession("timed"));
-  for (const button of document.querySelectorAll("[data-new-scout]")) {
-    button.addEventListener("click", () => openSession("scout"));
-  }
+  byId("new-run").addEventListener("click", openSession);
+  byId("open-maps").addEventListener("click", () => { byId("maps").open = true; });
   dialog.addEventListener("cancel", (event) => { if (state.saving) event.preventDefault(); });
   byId("toggle-phases").addEventListener("click", () => {
     const phases = [...byId("checkpoint-list").querySelectorAll("details")];
@@ -495,11 +443,6 @@ function bindEvents() {
       if (!state.saving) byId("split-form").requestSubmit();
     }
   });
-  modeField.addEventListener("change", () => {
-    if (["timed", "scout"].some((mode) => nameField.value === nextRunName(mode))) {
-      nameField.value = nextRunName(modeField.value);
-    }
-  });
   byId("cancel-run").addEventListener("click", () => dialog.close());
   byId("new-run-form").addEventListener("submit", async (event) => {
     event.preventDefault();
@@ -508,26 +451,14 @@ function bindEvents() {
       status("new-run-status", "Use a distinct name for this session.", true);
       return;
     }
-    const run = { id: crypto.randomUUID(), name, mode: modeField.value, notes: "", splits: [], prep: [] };
+    const run = { id: crypto.randomUUID(), name, mode: "timed", notes: "", splits: [], prep: [] };
     const data = structuredClone(state.data);
     data.runs.push(run);
     if (await save(data, "new-run-status", "Run created.")) {
       dialog.close();
       selectRun(run.id);
       window.location.hash = "tracker";
-      renderView();
-      byId(run.mode === "scout" ? "run-notes" : "split-time").focus();
-    }
-  });
-
-  byId("copy-handoff").addEventListener("click", async () => {
-    try {
-      const response = await fetch("/docs/handoff.md");
-      if (!response.ok) throw new Error("Could not open the handoff.");
-      await navigator.clipboard.writeText(await response.text());
-      status("copy-status", "Handoff copied.");
-    } catch {
-      status("copy-status", "Open the full handoff to copy its text.", true);
+      byId("split-time").focus();
     }
   });
 
@@ -541,7 +472,6 @@ function bindEvents() {
     anchor.remove();
     window.setTimeout(() => URL.revokeObjectURL(url), 1000);
   });
-  window.addEventListener("hashchange", renderView);
 }
 
 async function start() {
@@ -556,11 +486,9 @@ async function start() {
     try { remembered = localStorage.getItem("pharloom-run"); } catch { /* Use the latest run. */ }
     const id = state.data.runs.find((run) => run.id === remembered)?.id ?? state.data.runs.at(-1).id;
     byId("route-label").textContent = state.route.routeLabel;
-    renderRoute();
-    renderResearch();
     selectRun(id);
     bindEvents();
-    renderView();
+    byId("tracker").hidden = false;
     byId("startup").hidden = true;
     byId("footer").hidden = false;
     byId("session-bar").hidden = false;
