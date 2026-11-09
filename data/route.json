@@ -1,0 +1,148 @@
+{
+  "version": 1,
+  "title": "Pharloom Runbook",
+  "routeLabel": "Hunter · Last Judge · Garmond & Zaza",
+  "targetSeconds": 18000,
+  "finishCheckpoint": "gms",
+  "sections": [
+    {
+      "id": "marrow",
+      "number": "01",
+      "title": "Bone Bottom to Deep Docks",
+      "summary": "Keep Hunter, pick up Straight Pin, and clear Lace 1 before the Far Fields loop.",
+      "stops": [
+        { "id": "silk-spear", "title": "Silkspear", "tip": "Take the Moss Grotto and Mosshome path to Silkspear. Keep the starting Hunter Crest.", "links": [{ "title": "Silkspear", "pin": 477871 }] },
+        { "id": "swift-step", "title": "Swift Step", "tip": "Defeat Bell Beast and ring the Marrow bell. Take Straight Pin above Grindle's cell on the way to Deep Docks. Return for Loddie's challenge after Widow.", "links": [{ "title": "Straight Pin", "pin": 477899 }] },
+        { "id": "lace-1", "title": "Lace 1 defeated", "tip": "Ring the Deep Docks bell and open its Bellway. On the Bone Bottom loop, take the free Wormways mask shard and Pebb's shard for 300. Return to Deep Docks for Far Fields.", "links": [{ "title": "Lace 1", "pin": 476915 }, { "title": "Wormways shard", "pin": 478091 }, { "title": "Pebb's shard", "pin": 477840 }] }
+      ]
+    },
+    {
+      "id": "greymoor",
+      "number": "02",
+      "title": "Far Fields & first Greymoor pass",
+      "summary": "Get the Far Fields mask shard on the first pass. Buy Weighted Belt and the pouch from Mort.",
+      "stops": [
+        { "id": "drifters-cloak", "title": "Drifter's Cloak", "tip": "Gather spines for the Seamstress. Take the mask shard above her with the cloak before leaving the area. Continue past Fourth Chorus.", "links": [{ "title": "Drifter's Cloak", "pin": 477971 }, { "title": "Far Fields shard", "pin": 477975 }] },
+        { "id": "halfway-home", "title": "Halfway Home", "tip": "Budget 380 rosaries for Mort's Weighted Belt (160) and Tool Pouch (220), plus 30 for entry if the door gear is intact. Break the gear from inside. Open Greymoor Bellway for 60 and exhaust the first Garmond conversation before Moorwing.", "links": [{ "title": "Mort", "pin": 477946 }, { "title": "Greymoor Bellway", "pin": 478037 }, { "title": "First G&Z encounter", "pin": 478152 }] },
+        { "id": "moorwing", "title": "Moorwing defeated", "tip": "Take the Halfway Home route west to Moorwing, then continue toward Shellwood. Take the Halfway Home locket during one of these visits.", "links": [{ "title": "Moorwing", "pin": 478453 }, { "title": "Halfway Home locket", "pin": 478039 }] }
+      ]
+    },
+    {
+      "id": "act-one-end",
+      "number": "03",
+      "title": "Cling Grip to Last Judge",
+      "summary": "Upgrade Hunter and Needle, finish the first spool pair, and enter Act 2 through Blasted Steps.",
+      "stops": [
+        { "id": "cling-grip", "title": "Cling Grip", "tip": "Take the Shellwood mask-shard branch and fight Sister Splinter on the way to Cling Grip. Open the Shellwood shortcut toward Blasted Steps.", "links": [{ "title": "Shellwood shard", "pin": 478177 }, { "title": "Cling Grip", "pin": 478189 }] },
+        { "id": "widow-bench", "title": "Widow bench", "tip": "Enter upper Bellhart, drop down-left, and break the wall for the shorter Widow runback. Rest at the bench." },
+        { "id": "widow", "title": "Widow / Needolin", "tip": "Defeat Widow, obtain Needolin, ring the Bellhart bell, and get Needle Upgrade #1. Pick up Crawbug Clearing from the Wishwall for the planned second damage upgrade.", "links": [{ "title": "Widow", "pin": 478138 }, { "title": "Crawbug Clearing", "pin": 478208 }] },
+        { "id": "atla", "title": "Weavenest Atla / Eva", "tip": "Use Needolin at Atla, visit Eva for Hunter's first evolution, and take the mask shard. Collect the Atla spool as the first half of the planned Atla + Greymoor pair.", "links": [{ "title": "Eva", "pin": 478228 }, { "title": "Atla mask shard", "pin": 478233 }, { "title": "Atla spool", "pin": 478230 }] },
+        { "id": "forge-daughter", "title": "Forge Daughter bench", "tip": "On the post-Widow loop, complete both Loddie rounds in the Marrow for the pouch and necklace. Collect the Cling Grip mask shard in Deep Docks. Buy Magma Bell (110 + 1 Craftmetal) and the first Crafting Kit (180). The nearby rosary pickup covered the Run #2 shortfall.", "links": [{ "title": "Loddie", "pin": 478251 }, { "title": "Deep Docks shard", "pin": 477901 }, { "title": "Forge Daughter", "pin": 476912 }, { "title": "Nearby rosaries", "pin": 477921 }] },
+        { "id": "bellhart-return", "title": "Bellhart bench after shopping", "tip": "Return to Bellhart. Use Greymoor Bellway for the Cling Grip return toward Halfway Home and Bell #3." },
+        { "id": "greymoor-bell", "title": "Greymoor Bell #3", "tip": "Climb above and right of Halfway Home, use the top-right transition, then go northeast to the bell. Take the Greymoor spool to complete Pair A. For the second Crafting Kit, cycle the two rooftop Craws until you have 25 Ragpelts and hand them to Creige. Time this on scout first.", "links": [{ "title": "Greymoor spool", "pin": 478263 }, { "title": "Ragpelt farm", "pin": 478208 }] },
+        { "id": "blasted-steps", "title": "Blasted Steps bench", "tip": "Ring the fifth bell through Shellwood and Blasted Steps. Open Blasted Steps Bellway for 60 to make the later Dice pickup practical. Grab the nearby Memory Locket and free Craftmetal before Judge. Equip Magma Bell and check six masks plus Needle Upgrade #1.", "links": [{ "title": "Blasted Steps Bellway", "pin": 478308 }, { "title": "Nearby locket", "pin": 478502 }] },
+        { "id": "act-2", "title": "Last Judge / Choral Chambers bench", "tip": "Play Needolin at the Grand Gate after all five bells, beat Last Judge, and rest in Choral Chambers.", "links": [{ "title": "Last Judge", "pin": 478545 }] }
+      ]
+    },
+    {
+      "id": "vaults",
+      "number": "04",
+      "title": "Songclave, lower Core & Vaults",
+      "summary": "Open the travel hub, clear lower Cogwork, then prepare Needle Upgrade #2.",
+      "stops": [
+        { "id": "grand-bellway", "title": "Grand Bellway bench", "tip": "Open the Grand Bellway Bell Beast and Ventrica for 80 each. Keep the map purchase out of the travel budget." },
+        { "id": "songclave-bell", "title": "Songclave bell", "tip": "Ring the First Shrine bell, open the Songclave Ventrica, and take the White Key for Whiteward.", "links": [{ "title": "White Key", "pin": 478599 }] },
+        { "id": "dancers", "title": "Cogwork Dancers defeated", "tip": "Beat the Dancers, then head into lower Cogwork. The free Dice pickup is available after the Dancers.", "links": [{ "title": "Cogwork Dancers", "pin": 478606 }] },
+        { "id": "lower-core", "title": "Lower Cogwork Core / bench", "tip": "Clear the arena, grab its mask shard, and open the top-right shortcut to upper Core. Only take the lower Core spool if Pair B is confirmed for this run.", "links": [{ "title": "Lower Core mask shard", "pin": 478615 }, { "title": "Pair B lower Core spool", "pin": 478618 }] },
+        { "id": "vaults-arena", "title": "Whispering Vaults arena / Songclave bench", "tip": "Clear the Vaults arena and open the shortcut up to Songclave. Pick up the hidden mask shard and Pale Oil on the Vaults leg. Upgrade the Needle in Bellhart, then collect the free Dice from Lumble while using the Bellway before returning to Grand Bellway for Trobbio.", "links": [{ "title": "Vaults mask shard", "pin": 478671 }, { "title": "Pale Oil", "pin": 478668 }, { "title": "Lumble's location", "pin": 478519 }] }
+      ]
+    },
+    {
+      "id": "roof",
+      "number": "05",
+      "title": "Clawline, melody & roof duel",
+      "summary": "Take the Whiteward Injector Band detour and set up the Garmond & Zaza return through the roof gate.",
+      "map": "cauldron",
+      "stops": [
+        { "id": "trobbio", "title": "Grand Bellway bench after Trobbio", "tip": "Defeat Trobbio for Claw Mirror. Take his lift down, open the left shortcut, and send the lift back up. Detour through Whiteward for Injector Band on the way to the Cauldron.", "links": [{ "title": "Trobbio", "pin": 478690 }, { "title": "Whiteward elevator", "pin": 478590 }, { "title": "Injector Band", "pin": 479182 }] },
+        { "id": "clawline", "title": "Clawline / Cauldron clear", "tip": "Keep Magma Bell for the Cauldron. Get Clawline, clear the arena, and use the bench by Twelfth Architect. Take the eastern Underworks spool only to finish a planned Pair B.", "links": [{ "title": "Clawline", "pin": 478714 }, { "title": "Pair B Cauldron spool", "pin": 478704 }, { "title": "Twelfth Architect", "pin": 478723 }] },
+        { "id": "vaultkeeper", "title": "Vaultkeeper's Melody", "tip": "Return below Trobbio's lift, then go right and up for the melody. Solve the box and wind-current rooms to outer Songclave. Take the wind-route locket and hit the far-left roof gate lever. Leave via the shortcut and rest before returning.", "links": [{ "title": "Vaultkeeper's Melody", "pin": 478611 }, { "title": "Wind-route locket", "pin": 478676 }, { "title": "Roof gate", "pin": 480502 }] },
+        { "id": "roof-duel", "title": "G&Z duel / Cogwork Core bench", "tip": "Use the open roof shortcut to return for the duel. Exhaust Garmond's dialogue after winning. Head toward High Halls. The Run #2 split was the Cogwork Core bench after the win.", "links": [{ "title": "Roof duel", "pin": 479361 }, { "title": "Cogwork Core bench", "pin": 478428 }] }
+      ]
+    },
+    {
+      "id": "forum",
+      "number": "06",
+      "title": "High Halls & three melodies",
+      "summary": "Use both red tools and G&Z for the Forum. Finish the melodies and prepare for Lace.",
+      "map": "high-halls",
+      "stops": [
+        { "id": "high-halls-bench", "title": "High Halls bench with Cogfly", "tip": "Take the left side room on the Clawline descent for Cogfly (1 Craftmetal). At the bench equip Straight Pin and Cogfly. Check the 2/4 pouch and damage targets before the Forum.", "links": [{ "title": "Cogfly", "pin": 478903 }, { "title": "High Halls bench", "pin": 478415 }] },
+        { "id": "forum", "title": "High Halls Forum cleared", "tip": "Accept G&Z's help at the Forum door inside High Halls. Use Cogflies and pins on the dangerous waves and let the duo share the pressure. Run #2 needed three attempts with their help, compared with about eight on scout.", "links": [{ "title": "G&Z aid offer", "pin": 481022 }, { "title": "Forum", "pin": 479420 }] },
+        { "id": "conductor", "title": "Conductor's Melody", "tip": "Collect the melody after the Forum. Return through the Citadel to upper Cogwork.", "links": [{ "title": "Conductor's Melody", "pin": 478609 }] },
+        { "id": "architect", "title": "Architect's Melody", "tip": "Use the upper Core shortcut and solve the four lever rows. From the initial state, hit left-to-right in each row: 1–3–3–3, 2–0–0–3, 0–1–1–1, then 1–1–0–2. Check the white-line alignment if any lever has moved.", "links": [{ "title": "Architect's Melody", "pin": 478610 }] },
+        { "id": "checkpoint-1", "title": "Checkpoint 1 before Lace 2", "tip": "Rest before the final approach. Play the Threefold Melody at the elevator and ascend to Lace. Check Injector Band, Weighted Belt, and your available Silk." }
+      ]
+    },
+    {
+      "id": "endgame",
+      "number": "07",
+      "title": "Lace 2 & Grand Mother Silk",
+      "summary": "Wait for Lace's openings and reserve Silk for Bind. Log the actual finish time.",
+      "stops": [
+        { "id": "lace-2", "title": "Lace 2 defeated", "tip": "Let her approach and punish the recovery. Keep Silk for healing and throw a pin only when the opening is safe. The Run #2 win used Injector Band, Claw Mirror, Weighted Belt, and Dice. Belt was the noticeable help.", "links": [{ "title": "Lace 2", "pin": 479088 }] },
+        { "id": "gms", "title": "Grand Mother Silk / finish", "tip": "Rest at the Terminus bench and open the final shortcut. Use Cogflies to maintain pressure when she is out of Needle range. Record the final in-game time after finishing Act 2.", "links": [{ "title": "Grand Mother Silk", "pin": 479099 }] }
+      ]
+    }
+  ],
+  "preparations": [
+    {
+      "id": "silk-a",
+      "title": "Silk pair A",
+      "detail": "The first planned pair. Verify the Greymoor climb with the pre-Citadel kit before taking either fragment on the clock.",
+      "complete": "+1 Silk capacity",
+      "items": [
+        { "id": "spool-atla", "title": "Weavenest Atla", "detail": "Upper branch during the Eva visit", "pin": 478230 },
+        { "id": "spool-greymoor", "title": "Upper Greymoor", "detail": "Bell #3 return with Cling Grip", "pin": 478263 }
+      ]
+    },
+    {
+      "id": "silk-b",
+      "title": "Silk pair B · scout first",
+      "detail": "An Act 2 pair. Commit both pickups together once the extra rooms are timed.",
+      "complete": "+1 Silk capacity",
+      "items": [
+        { "id": "spool-core", "title": "Lower Cogwork Core", "detail": "Southeast branch and wheel gate", "pin": 478618 },
+        { "id": "spool-cauldron", "title": "Eastern Underworks", "detail": "Cauldron shaft and breakable wall", "pin": 478704 }
+      ]
+    },
+    {
+      "id": "pouches",
+      "title": "Tool Pouch · target 2/4",
+      "detail": "The pair raises capacity to 6 Cogflies and 18 Straight Pins.",
+      "complete": "2/4 capacity",
+      "items": [
+        { "id": "pouch-mort", "title": "Mort's Tool Pouch", "detail": "220 rosaries on the first Pilgrim's Rest pass", "pin": 477946 },
+        { "id": "pouch-loddie", "title": "Loddie's pouch", "detail": "Marrow target practice after Widow", "pin": 478251 }
+      ]
+    },
+    {
+      "id": "damage",
+      "title": "Crafting Kit · target 2/4",
+      "detail": "Two damage upgrades take Cogflies to 7 damage per hit. Record the second kit once from the chosen source.",
+      "complete": "2/4 damage",
+      "items": [
+        { "id": "kit-forge", "title": "Forge Daughter's kit", "detail": "180 rosaries at the Deep Docks visit", "pin": 477919 },
+        { "id": "kit-second", "title": "Second Crafting Kit", "detail": "Creige's 25 Ragpelts first. 450-rosary backup at Twelfth Architect", "pin": 478208 }
+      ]
+    }
+  ],
+  "research": [
+    { "id": "lace", "status": "Practice", "title": "Lace 2 consistency", "detail": "Practice the patient approach and log retries separately from the travel detour. Test Belt plus Injector Band, reserve Silk for Bind, and record safe Straight Pin openings.", "links": [{ "title": "Lace 2 map pin", "pin": 479088 }] },
+    { "id": "silk", "status": "Scout", "title": "Lock in complete spool pairs", "detail": "Test upper Greymoor with the early Cling Grip kit and an uncleared Craw Lake arena. Run #2 reached it later. Time both members of Pair B before routing either.", "links": [{ "title": "Greymoor spool", "pin": 478263 }, { "title": "Lower Core spool", "pin": 478618 }, { "title": "Cauldron spool", "pin": 478704 }] },
+    { "id": "kit", "status": "Scout", "title": "Time the second Crafting Kit", "detail": "Compare the full 25-Ragpelt farm and Creige turn-in on the Bell #3 trip against the time to cover any 450-rosary shortfall for Twelfth Architect.", "links": [{ "title": "Crawbug Clearing", "pin": 478208 }, { "title": "Architect kit", "pin": 478728 }] },
+    { "id": "mirror", "status": "Scout", "title": "Try a Claw Mirror replacement", "detail": "Start with Warding Bell from lower Far Fields. It can block damage during Bind while the heal can still be interrupted. Keep Injector Band and Belt fixed for the comparison. Weavelight costs the Moss Mothers fight, and Multibinder is a bigger quest and rosary detour.", "links": [{ "title": "Warding Bell pickup", "pin": 477935 }, { "title": "Warding Bell mechanics", "url": "https://hollowknight.wiki/w/Warding_Bell" }, { "title": "Weavelight", "url": "https://hollowknight.wiki/w/Weavelight" }] },
+    { "id": "thread", "status": "Deferred", "title": "Thread Storm and Craw Lake", "detail": "A documented route takes Thread Storm after Clawline and Faydown Cloak without clearing the arena. The earlier Halfway Home route is verified for Bell #3, and the late spool pickup is separate evidence. Keep Thread Storm skipped for this route.", "links": [{ "title": "Late bypass", "url": "https://speedpastes.org/kXQvcbMl" }, { "title": "Thread Storm pin", "pin": 478061 }] },
+    { "id": "budget", "status": "Before rerun", "title": "Reconcile the early rosary budget", "detail": "Pebb, Mort's two buys, travel, and Forge Daughter are major expenses. Loddie's necklace comes after Widow. Time the planned shop and Bellway visits on scout and decide where any shortfall is covered.", "links": [{ "title": "Mort", "pin": 477946 }, { "title": "Loddie", "pin": 478251 }] }
+  ]
+}

@@ -1,0 +1,193 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="A personal Silksong route and split tracker for the sub-five-hour run.">
+  <title>Pharloom Runbook</title>
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/styles.css">
+  <script type="module" src="/app.mjs"></script>
+</head>
+<body>
+  <header class="topbar">
+    <div class="shell bar-inner">
+      <a class="brand" href="#tracker">
+        <img src="/favicon.svg" alt="" width="34" height="34">
+        <span>Pharloom <strong>Runbook</strong></span>
+      </a>
+      <nav class="nav" aria-label="Runbook views">
+        <a href="#tracker" data-nav="tracker">Tracker</a>
+        <a href="#route" data-nav="route">My route</a>
+        <a href="#handoff" data-nav="handoff">Handoff</a>
+      </nav>
+      <span class="local-label"><span></span> Local runbook</span>
+    </div>
+  </header>
+
+  <main class="shell">
+    <p id="startup" role="status" class="startup">Opening the local runbook…</p>
+
+    <section id="tracker" data-view hidden aria-labelledby="tracker-title">
+      <div class="page-head tracker-head">
+        <div>
+          <p class="eyebrow">Hollow Knight · Silksong</p>
+          <h1 id="tracker-title">Speedrun tracker</h1>
+          <p class="subtitle" id="route-label"></p>
+        </div>
+        <div class="run-controls">
+          <label class="visually-hidden" for="run-select">Active run</label>
+          <select id="run-select"></select>
+          <button class="button secondary" type="button" id="new-run">New run</button>
+        </div>
+      </div>
+
+      <section class="metrics" aria-label="Current run summary">
+        <div class="metric">
+          <span class="eyebrow">Latest split</span>
+          <span class="metric-value" id="latest-value">—</span>
+          <span class="metric-description" id="latest-label"></span>
+        </div>
+        <div class="metric time-budget" id="budget-card">
+          <span class="eyebrow" id="budget-title">Time to target</span>
+          <span class="metric-value" id="budget-value">—</span>
+          <span class="metric-description" id="budget-label"></span>
+        </div>
+        <div class="metric">
+          <span class="eyebrow">Route splits</span>
+          <span class="metric-value" id="progress-value">—</span>
+          <progress id="progress-bar" value="0" max="1" aria-label="Recorded route splits"></progress>
+          <span class="metric-description" id="progress-label"></span>
+        </div>
+      </section>
+
+      <div class="track-layout">
+        <section id="split-editor" class="panel editor" aria-labelledby="entry-title">
+          <p class="eyebrow" id="entry-kicker">Checkpoint</p>
+          <h2 id="entry-title">Record a split</h2>
+          <p class="step-tip" id="entry-tip"></p>
+          <div class="links" id="entry-links"></div>
+          <form id="split-form">
+            <label for="checkpoint-select">Checkpoint</label>
+            <select id="checkpoint-select" required></select>
+            <label for="split-time">In-game time</label>
+            <input type="text" id="split-time" placeholder="4:57 or 4:57:32"
+              maxlength="20" autocomplete="off" spellcheck="false" aria-describedby="time-help" required>
+            <p class="field-help" id="time-help">Use hours and minutes. Add seconds if the game shows them.</p>
+            <label for="split-note">Split note <span class="optional">optional</span></label>
+            <textarea id="split-note" rows="2" maxlength="4000" placeholder="Attempts, pickups, or what worked"></textarea>
+            <button class="button primary" type="submit" id="save-split" data-write>Save split</button>
+            <p class="form-status" id="split-status" role="status"></p>
+          </form>
+        </section>
+
+        <div class="checkpoint-column">
+          <section class="panel checkpoint-panel" aria-labelledby="checkpoint-title">
+            <div class="panel-heading">
+              <div>
+                <p class="eyebrow">One route</p>
+                <h2 id="checkpoint-title">Checkpoints</h2>
+              </div>
+              <a class="subtle-link" href="#route">Route &amp; maps</a>
+            </div>
+            <div id="checkpoint-list" class="phases"></div>
+          </section>
+          <details class="panel collapsible" id="history-panel">
+            <summary><span>Split history</span><span class="count" id="history-count"></span></summary>
+            <ol id="split-history" class="history"></ol>
+          </details>
+          <details class="panel collapsible" id="run-notes-panel">
+            <summary><span>Run notes</span><span class="count" id="notes-label"></span></summary>
+            <form id="notes-form">
+              <label class="visually-hidden" for="run-notes">Notes for this run</label>
+              <textarea id="run-notes" rows="6" maxlength="20000" placeholder="Save observations for the next run."></textarea>
+              <div class="form-actions">
+                <button class="button secondary" type="submit" data-write>Save notes</button>
+                <span class="form-status" id="notes-status" role="status"></span>
+              </div>
+            </form>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <section id="route" data-view hidden aria-labelledby="route-title">
+      <div class="page-head">
+        <p class="eyebrow">Hunter · Last Judge · G&amp;Z</p>
+        <h1 id="route-title">My route</h1>
+        <p class="subtitle">The route for the rerun, with map pins where they help.</p>
+      </div>
+      <section aria-labelledby="prep-title" class="prep-section">
+        <div class="panel-heading route-section-head">
+          <div>
+            <p class="eyebrow">Preparation</p>
+            <h2 id="prep-title">Spool pairs &amp; upgrades</h2>
+          </div>
+          <span id="prep-run" class="count"></span>
+        </div>
+        <p class="section-description">Check off pickups as you collect them. Each completed spool pair adds one Silk capacity.</p>
+        <div id="prep-grid" class="prep-grid"></div>
+        <p class="form-status" id="prep-status" role="status"></p>
+      </section>
+      <section class="route-steps" aria-labelledby="route-steps-title">
+        <div class="panel-heading route-section-head">
+          <div>
+            <p class="eyebrow">Start to finish</p>
+            <h2 id="route-steps-title">Route notes</h2>
+          </div>
+          <a class="subtle-link" href="/maps/overview.png" target="_blank" rel="noopener">Recovered overview</a>
+        </div>
+        <div id="route-sections" class="phases"></div>
+      </section>
+    </section>
+
+    <section id="handoff" data-view hidden aria-labelledby="handoff-title">
+      <div class="page-head handoff-head">
+        <div>
+          <p class="eyebrow">Codex handoff</p>
+          <h1 id="handoff-title">Scout queue</h1>
+          <p class="subtitle">What to settle before the next timed run.</p>
+        </div>
+        <div class="form-actions">
+          <a class="button secondary" href="/docs/handoff.md" target="_blank" rel="noopener">Read full handoff</a>
+          <button class="button primary" type="button" id="copy-handoff">Copy handoff</button>
+        </div>
+      </div>
+      <p class="form-status" id="copy-status" role="status"></p>
+      <div class="research-grid" id="research-grid"></div>
+      <section class="panel references" aria-labelledby="references-title">
+        <h2 id="references-title">Source notes</h2>
+        <div class="links">
+          <a href="/docs/run-2.md" target="_blank" rel="noopener">Original Run #2 log</a>
+          <a href="/docs/spools.md" target="_blank" rel="noopener">All eight spool candidates</a>
+          <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3577460696" target="_blank" rel="noopener">Garmond Route guide</a>
+        </div>
+      </section>
+    </section>
+  </main>
+
+  <footer class="shell footer" id="footer" hidden>
+    <span>Manual in-game splits · Saved to your local runbook</span>
+    <button type="button" id="download-runs" class="subtle-link">Download run data</button>
+  </footer>
+
+  <dialog id="new-run-dialog" aria-labelledby="new-run-title">
+    <form id="new-run-form">
+      <p class="eyebrow">New session</p>
+      <h2 id="new-run-title">Start a run</h2>
+      <label for="new-run-name">Name</label>
+      <input id="new-run-name" maxlength="60" autocomplete="off" required autofocus>
+      <label for="new-run-mode">Session type</label>
+      <select id="new-run-mode">
+        <option value="timed">Timed run</option>
+        <option value="scout">Scout practice</option>
+      </select>
+      <p class="form-status" id="new-run-status" role="status"></p>
+      <div class="form-actions">
+        <button class="button secondary" id="cancel-run" type="button">Cancel</button>
+        <button class="button primary" type="submit" data-write>Create run</button>
+      </div>
+    </form>
+  </dialog>
+</body>
+</html>
