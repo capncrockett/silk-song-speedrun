@@ -6,7 +6,7 @@ Updated November 9, 2026. This brief is for the Codex agent building Joseph's pe
 
 Joseph plans **one more timed run**. The app is now one run screen: checkpoint selection also shows route reminders and map pins; prep, recovered maps, history, and notes expand inline. Keep open research and alternative builds in this handoff. Existing historical timed and scout records remain intact. Commit coherent changes as work proceeds.
 
-Run #2's Grand Mother Silk fight is still unfinished, confirmed by Joseph. No final time has been supplied. Joseph wants to **discuss Claw Mirror alternatives before choosing**; keep the current loadout selected until a decision is made. The spool pair and second-kit questions below are also still open.
+Run #2's Grand Mother Silk fight is still unfinished, confirmed by Joseph. No final time has been supplied. Joseph wants to **discuss Claw Mirror alternatives before choosing**. Warding Bell is rejected; Druid's Eye and Weavelight remain on the shortlist. Multibinder is disfavoured because of its 880-rosary cost. Keep the current loadout selected until a decision is made. The spool pair and second-kit questions below are also still open.
 
 ## Original implementation brief
 
@@ -129,20 +129,20 @@ Keep the separate Underworks arena 478931 and double-jump High Halls spool 47890
 
 [Documented later bypass](https://speedpastes.org/kXQvcbMl) · [Standard Craw Lake pickup](https://hollowknight.wiki/w/Enemy_Gauntlets_%28Silksong%29/Greymoor_3) · [Thread Storm pin](https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=478061)
 
-### Replace Claw Mirror?
+### Replace Claw Mirror? · narrowed November 9
 
-Test this against the Lace 2 approach that actually worked. Mirror's damage is close to Hornet after Bind, so a safe heal can put Lace outside its burst. Keep Injector Band and Weighted Belt fixed in the comparison. Record acquisition time, interrupted heals, and actual usefulness.
+**Player report:** Joseph can find safe healing openings and was not usually interrupted. Patient one- or two-hit punishes limit Silk income. A Lace hit commonly costs two masks, disrupts his rhythm, and can lead to a second hit for four masks lost in total. The comparison should therefore measure access to the next Bind after a mistake. Keep Injector Band and Weighted Belt fixed.
 
-| Tool | Why test it | Pickup tradeoff |
+| Tool | Current decision | Relevant mechanics and route cost |
 |---|---|---|
-| **Warding Bell** | Blocks damage during Bind. The hit can still interrupt the heal. First comparison because it fits a defensive playstyle. | Free pickup in lower Far Fields beside the lower Deep Docks connection. Verify the short pipe branch on the first Far Fields pass. |
-| **Druid's Eye** | Adds one Silk per two hits taken, useful if the run is losing Silk uptime to mistakes. | Moss Druid reward for three Mossberries. Route berries only if the extra loop pays off. |
-| **Weavelight** | Faster passive Silk regeneration and an extra Silk Heart's worth of regeneration. | Same Atla visit, but requires the Moss Mothers fight and ceiling pickup. |
-| **Multibinder** | Extra healing per completed Bind with a longer exposure window. Injector Band is relevant to the test. | Frey charges 880 after My Missing Courier. A larger detour than the first candidates. |
+| **Druid's Eye** | Shortlisted; Joseph thinks it may be the best fit because he expects to take hits. Not selected yet. | Base Eye produces one strand per two damage triggers while Silk is below capacity. Some attacks produce two triggers; do not assume every two-mask attack does. Three Mossberries unlock the base version. The seven-berry upgraded Eyes are a separate acquisition and are not routed. |
+| **Weavelight** | Still worth considering for patient play. Not selected yet. | Raises the passive regeneration ceiling by one strand and speeds refill below that ceiling. It does not keep adding Silk above the ceiling. This route skips the Unravelled, so before Lace 2 Bell Beast supplies one Silk Heart: Weavelight would raise passive refill from one strand to two. Requires the Moss Mothers fight and ceiling pickup at Atla. |
+| **Warding Bell** | **Rejected by Joseph.** | Protecting a Bind from damage does not address the reported Silk shortage; interrupted Binds were not the usual problem. Do not add its pickup to the timed route. |
+| **Multibinder** | **Disfavoured for this run's budget.** Joseph would only reconsider if acquisition is quick enough to justify it. | Correction to the earlier framing: My Missing Courier is a rescue of Tipp in northern Bone Bottom after Widow, including two Caranids, followed by shopping in Bellhart. It does not require the later brother/delivery quest chain. The detour has not been timed, and the 880-rosary purchase remains an obstacle. |
 
-The main route still uses the known Mirror + Injector setup until a swap is chosen.
+The main route still uses the known Mirror + Injector setup until a swap is chosen. Do not record these preferences as completed pickups or scout results. The next useful comparison is base Druid's Eye versus Weavelight for their real acquisition cost and contribution toward the next heal during Joseph's Lace rhythm.
 
-[Mirror](https://hollowknight.wiki/w/Claw_Mirror) · [Warding Bell mechanics](https://hollowknight.wiki/w/Warding_Bell) · [Warding Bell pin](https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=477935) · [Druid's Eye](https://hollowknight.wiki/w/Druid%27s_Eyes) · [Weavelight](https://hollowknight.wiki/w/Weavelight) · [Multibinder](https://hollowknight.wiki/w/Multibinder)
+[Mirror](https://hollowknight.wiki/w/Claw_Mirror) · [Base Druid's Eye and upgraded Eyes](https://hollowknight.wiki/w/Druid%27s_Eye) · [Weavelight](https://hollowknight.wiki/w/Weavelight) · [Silk Heart regeneration and sources](https://hollowknight.wiki/w/Silk_Heart) · [My Missing Courier](https://hollowknight.wiki/w/My_Missing_Courier) · [Multibinder](https://hollowknight.wiki/w/Multibinder)
 
 ### Lace consistency and money
 
