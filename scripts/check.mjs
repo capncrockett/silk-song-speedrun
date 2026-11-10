@@ -1,7 +1,7 @@
 import assert from "node:assert/strict";
 import { access, readFile } from "node:fs/promises";
 import { createHash } from "node:crypto";
-import { formatTime, listStops, parseTime, runSummary, shoppingSummary, validateRunData } from "../dist/model.mjs";
+import { changePickups, formatTime, listStops, parseTime, pickupCategories, runSummary, shoppingSummary, validateRunData } from "../dist/model.mjs";
 
 const root = new URL("../", import.meta.url);
 const readJson = async (path) => JSON.parse(await readFile(new URL(path, root), "utf8"));
@@ -25,6 +25,32 @@ assert.deepEqual(activeSpools.flatMap((group) => group.items.map((item) => item.
   [478080, 478230, 477926, 478263, 478586, 478704], "Keep the selected six fragments in route order.");
 assert.ok(route.preparations.some((group) => group.archived && group.items.some((item) => item.id === "spool-core")),
   "Keep the old lower Core pickup ID available to historical records.");
+
+const categoryIds = new Set((route.pickupCategories ?? []).map((category) => category.id));
+assert.equal(categoryIds.size, (route.pickupCategories ?? []).length, "Pickup category IDs must be unique.");
+for (const group of route.preparations) {
+  if (group.category) assert.ok(categoryIds.has(group.category), "A grouped pickup needs category metadata.");
+  for (const item of group.items) {
+    assert.ok(item.title && item.detail && Number.isSafeInteger(item.pin), "Every drawer pickup needs a label, directions, and map pin.");
+  }
+}
+assert.equal(route.preparations.find((group) => group.id === "masks").items.length, 8, "The route collects eight mask shards.");
+const emptyCategories = pickupCategories(route);
+const spoolCategory = emptyCategories.find((category) => category.id === "spools");
+assert.equal(spoolCategory.items.length, 6, "All selected fragments share one category.");
+assert.equal(spoolCategory.groups.length, 3, "Keep the three Silk pairs inside the category.");
+assert.equal(emptyCategories.some((category) => category.archived), false);
+const priorPickups = ["spool-greymoor", "spool-core", "unrelated-historical"];
+const allSpools = changePickups(priorPickups, spoolCategory.items.map((item) => item.id), true);
+assert.deepEqual(priorPickups, ["spool-greymoor", "spool-core", "unrelated-historical"], "Bulk checks must not mutate existing data.");
+assert.equal(new Set(allSpools).size, allSpools.length);
+assert.ok(pickupCategories(route, allSpools).find((category) => category.id === "spools").isComplete);
+assert.ok(pickupCategories(route, allSpools).some((category) => category.archived), "Keep checked historical pickups visible.");
+assert.deepEqual(changePickups(allSpools, spoolCategory.items.map((item) => item.id), false), ["spool-core", "unrelated-historical"], "Unchecking a category must preserve other categories and old records.");
+const requiredPickups = emptyCategories.filter((category) => !category.optional && !category.archived).flatMap((category) => category.items.map((item) => item.id));
+const completed = pickupCategories(route, requiredPickups);
+assert.ok(completed.filter((category) => !category.optional && !category.archived).every((category) => category.isComplete));
+assert.ok(completed.some((category) => category.optional && !category.isComplete), "Optional pickups do not block required completion.");
 
 for (const stop of stops) {
   assert.ok(Array.isArray(stop.guide) && stop.guide.length >= 2, `Missing walkthrough directions: ${stop.id}`);

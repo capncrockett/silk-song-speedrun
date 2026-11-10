@@ -31,6 +31,31 @@ export function listStops(route) {
   );
 }
 
+export function pickupCategories(route, picked = []) {
+  const collected = new Set(picked);
+  const categories = new Map();
+  for (const group of route.preparations) {
+    if (group.archived && !group.items.some((item) => collected.has(item.id))) continue;
+    const id = group.category ?? group.id;
+    if (!categories.has(id)) {
+      const metadata = route.pickupCategories?.find((category) => category.id === id) ?? group;
+      categories.set(id, { ...metadata, id, groups: [], items: [] });
+    }
+    const category = categories.get(id);
+    category.groups.push(group);
+    category.items.push(...group.items);
+  }
+  return [...categories.values()].map((category) => {
+    const count = category.items.filter((item) => collected.has(item.id)).length;
+    return { ...category, count, isComplete: count === category.items.length };
+  });
+}
+
+export function changePickups(picked, ids, checked) {
+  const changed = new Set(ids);
+  return checked ? [...new Set([...picked, ...ids])] : picked.filter((id) => !changed.has(id));
+}
+
 export function shoppingSummary(route, checkpoint) {
   const stops = listStops(route);
   const index = stops.findIndex((stop) => stop.id === checkpoint);

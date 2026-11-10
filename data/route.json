@@ -100,6 +100,14 @@
       ]
     }
   ],
+  "pickupCategories": [
+    {
+      "id": "spools",
+      "title": "Spool fragments",
+      "detail": "The six selected fragments form three pairs. Each completed pair adds one Silk capacity.",
+      "complete": "+3 Silk capacity"
+    }
+  ],
   "preparations": [
     {
       "id": "silk-a",
@@ -119,7 +127,8 @@
           "detail": "Upper branch during the Eva visit",
           "pin": 478230
         }
-      ]
+      ],
+      "category": "spools"
     },
     {
       "id": "silk-b",
@@ -139,7 +148,8 @@
           "detail": "Bell #3 return with Cling Grip",
           "pin": 478263
         }
-      ]
+      ],
+      "category": "spools"
     },
     {
       "id": "silk-c",
@@ -158,6 +168,63 @@
           "title": "Eastern Underworks",
           "detail": "Cauldron shaft and breakable wall",
           "pin": 478704
+        }
+      ],
+      "category": "spools"
+    },
+    {
+      "id": "masks",
+      "title": "Mask shards",
+      "detail": "Eight planned shards add two masks, for seven total. The first four come before Widow.",
+      "complete": "7 masks",
+      "items": [
+        {
+          "id": "mask-wormways",
+          "title": "Wormways shard",
+          "detail": "Free shard on the first Bone Bottom loop",
+          "pin": 478091
+        },
+        {
+          "id": "mask-pebb",
+          "title": "Pebb’s shard",
+          "detail": "300 rosaries on the Bone Bottom loop",
+          "pin": 477840
+        },
+        {
+          "id": "mask-far-fields",
+          "title": "Far Fields shard",
+          "detail": "Above the Seamstress after Drifter’s Cloak",
+          "pin": 477975
+        },
+        {
+          "id": "mask-shellwood",
+          "title": "Shellwood shard",
+          "detail": "Platforming branch before Cling Grip",
+          "pin": 478177
+        },
+        {
+          "id": "mask-atla",
+          "title": "Atla shard",
+          "detail": "During the post-Widow Eva visit",
+          "pin": 478233
+        },
+        {
+          "id": "mask-deep-docks",
+          "title": "Deep Docks shard",
+          "detail": "Cling Grip return through the upper Marrow",
+          "pin": 477901
+        },
+        {
+          "id": "mask-lower-core",
+          "title": "Lower Core shard",
+          "detail": "Reward along the lower Cogwork arena route",
+          "pin": 478615
+        },
+        {
+          "id": "mask-vaults",
+          "title": "Whispering Vaults shard",
+          "detail": "Hidden branch before the Pale Oil upgrade trip",
+          "pin": 478671
         }
       ]
     },
@@ -200,6 +267,229 @@
           "pin": 478728
         }
       ]
+    },
+    {
+      "id": "abilities",
+      "title": "Abilities & Silk skills",
+      "detail": "Movement and Silk skills collected along the chosen route.",
+      "complete": "All route abilities",
+      "items": [
+        {
+          "id": "ability-silkspear",
+          "title": "Silkspear",
+          "detail": "Moss Grotto / Mosshome opening",
+          "pin": 477871
+        },
+        {
+          "id": "ability-swift-step",
+          "title": "Swift Step",
+          "detail": "Deep Docks before Lace 1",
+          "pin": 477915
+        },
+        {
+          "id": "ability-drifters-cloak",
+          "title": "Drifter’s Cloak",
+          "detail": "Seamstress spine quest",
+          "pin": 477971
+        },
+        {
+          "id": "ability-cling-grip",
+          "title": "Cling Grip",
+          "detail": "Shellwood after Sister Splinter",
+          "pin": 478189
+        },
+        {
+          "id": "ability-needolin",
+          "title": "Needolin",
+          "detail": "Defeat Widow",
+          "pin": 478138
+        },
+        {
+          "id": "ability-clawline",
+          "title": "Clawline",
+          "detail": "Cauldron route",
+          "pin": 478714
+        }
+      ]
+    },
+    {
+      "id": "needle-hunter",
+      "title": "Needle & Hunter upgrades",
+      "detail": "The planned upgrades before the final fights; the second Needle upgrade uses Pale Oil.",
+      "complete": "Needle +2 · Hunter evolved",
+      "items": [
+        {
+          "id": "needle-first",
+          "title": "Needle Upgrade #1",
+          "detail": "Free in Bellhart after Widow",
+          "pin": 478210
+        },
+        {
+          "id": "hunter-evolution",
+          "title": "Hunter’s first evolution",
+          "detail": "Visit Eva at Atla after Widow",
+          "pin": 478228
+        },
+        {
+          "id": "needle-second",
+          "title": "Needle Upgrade #2",
+          "detail": "Return to Bellhart with one Pale Oil",
+          "pin": 478210
+        }
+      ]
+    },
+    {
+      "id": "tools",
+      "title": "Tools",
+      "detail": "The selected red, blue, and yellow tools. Fractured Mask is in the optional category below.",
+      "complete": "Route tools collected",
+      "items": [
+        {
+          "id": "tool-straight-pin",
+          "title": "Straight Pin",
+          "detail": "Above Grindle’s cell on the first Deep Docks trip",
+          "pin": 477899
+        },
+        {
+          "id": "tool-weighted-belt",
+          "title": "Weighted Belt",
+          "detail": "160 rosaries at Mort on the first Pilgrim’s Rest visit",
+          "pin": 477946
+        },
+        {
+          "id": "tool-magma-bell",
+          "title": "Magma Bell",
+          "detail": "Forge Daughter: 110 rosaries and 1 Craftmetal",
+          "pin": 476912
+        },
+        {
+          "id": "tool-dice",
+          "title": "Magnetite Dice",
+          "detail": "Free Lumble pickup after Dancers on the upgrade return",
+          "pin": 478519
+        },
+        {
+          "id": "tool-claw-mirror",
+          "title": "Claw Mirror",
+          "detail": "Defeat Trobbio",
+          "pin": 478690
+        },
+        {
+          "id": "tool-injector-band",
+          "title": "Injector Band",
+          "detail": "Whiteward detour with the White Key",
+          "pin": 479182
+        },
+        {
+          "id": "tool-cogfly",
+          "title": "Cogfly",
+          "detail": "High Halls descent; spend 1 Craftmetal",
+          "pin": 478903
+        }
+      ]
+    },
+    {
+      "id": "keys-melodies",
+      "title": "Key & melodies",
+      "detail": "The White Key and all three melodies used for the ending.",
+      "complete": "Key & three melodies",
+      "items": [
+        {
+          "id": "key-white",
+          "title": "White Key",
+          "detail": "Songclave, before the Whiteward detour",
+          "pin": 478599
+        },
+        {
+          "id": "melody-vaultkeeper",
+          "title": "Vaultkeeper’s Melody",
+          "detail": "Return below Trobbio’s lift after Clawline",
+          "pin": 478611
+        },
+        {
+          "id": "melody-conductor",
+          "title": "Conductor’s Melody",
+          "detail": "After the High Halls Forum",
+          "pin": 478609
+        },
+        {
+          "id": "melody-architect",
+          "title": "Architect’s Melody",
+          "detail": "Upper Core lever puzzle",
+          "pin": 478610
+        }
+      ]
+    },
+    {
+      "id": "materials-lockets",
+      "title": "Materials & lockets",
+      "detail": "Named on-route pickups. Spend lockets to fill Hunter and keep Craftmetal for Magma Bell and Cogfly.",
+      "complete": "Listed resources collected",
+      "items": [
+        {
+          "id": "metal-marrow",
+          "title": "Marrow Craftmetal",
+          "detail": "Booby-trapped secret tunnel on the Deep Docks approach",
+          "pin": 477894
+        },
+        {
+          "id": "locket-greymoor",
+          "title": "Greymoor locket",
+          "detail": "Bellway branch above the Mitemother; not the Faydown ledge",
+          "pin": 478035
+        },
+        {
+          "id": "necklace-loddie",
+          "title": "Loddie’s Heavy Rosary Necklace",
+          "detail": "Second target-practice reward after Widow",
+          "pin": 479326
+        },
+        {
+          "id": "locket-blasted",
+          "title": "Blasted Steps locket",
+          "detail": "Narrow platform above the sand before Judge",
+          "pin": 478502
+        },
+        {
+          "id": "metal-blasted",
+          "title": "Blasted Steps Craftmetal",
+          "detail": "Worm and falling-rock passage before Judge",
+          "pin": 478541
+        },
+        {
+          "id": "oil-vaults",
+          "title": "Pale Oil",
+          "detail": "Whispering Vaults, for Needle Upgrade #2",
+          "pin": 478668
+        },
+        {
+          "id": "locket-wind",
+          "title": "Wind-route locket",
+          "detail": "Top of the wind-current tunnel toward the roof",
+          "pin": 478676
+        }
+      ]
+    },
+    {
+      "id": "optional-pickups",
+      "title": "Optional pickups",
+      "detail": "Take these only if useful and the clock allows. They do not hold up the main pickup total.",
+      "complete": "Optional pickups collected",
+      "items": [
+        {
+          "id": "tool-fractured-mask",
+          "title": "Fractured Mask",
+          "detail": "Optional late Hunter’s March trip with Core quit-return",
+          "pin": 478607
+        },
+        {
+          "id": "stock-shard-bundles",
+          "title": "Shard-bundle restock",
+          "detail": "Forge Daughter if supplies are needed; trial bought 10 bundles",
+          "pin": 476912
+        }
+      ],
+      "optional": true
     },
     {
       "id": "earlier-pickups",
