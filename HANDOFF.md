@@ -9,6 +9,7 @@ Updated November 10, 2026. The local app is implemented. Joseph plans **one more
 - Keep timed and scout results separate. Use the manual in-game clock, retain idle time and detours, and finish only when a `gms` split is reported. Sub-five is strictly below `5:00:00`.
 - Keep the app local and dependency-free. The 31 checkpoints are guide steps: inline maps, numbered directions, and Previous/Next are the main experience. Guide position starts at Silkspear and persists independently of run selection and split entry.
 - Keep the Run log closed by default. The persistent Pickups drawer shares the selected run's checks across all steps; category checkboxes support partial/all states, the last check closes its accordion, and optional items do not block the main total. Retain the three spool pairs, eight-shard mask category, historical checked items, Escape/backdrop closing, reduced-motion support, and inline reference gallery.
+- Keep the Garmond guide’s section names, numbered checkpoints, and detours visible with the relevant map screenshot. These guide references do not add timed splits. Clearly label missing original maps and distinguish guide options from the selected path.
 - Discuss unresolved route choices **one question or pickup at a time**. Keep alternatives here; update the route only when a choice changes. Run `npm run check` after changes and commit coherent work.
 
 ## Current run

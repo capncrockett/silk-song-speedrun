@@ -4,6 +4,324 @@
   "routeLabel": "Hunter · Last Judge · Garmond & Zaza",
   "targetSeconds": 18000,
   "finishCheckpoint": "gms",
+  "guideSections": [
+    {
+      "id": "garmond-marrow",
+      "title": "Moss Grotto, Marrow & Bell Beast",
+      "maps": [
+        "marrow"
+      ],
+      "steps": [
+        "silk-spear",
+        "swift-step"
+      ],
+      "checkpoints": [
+        "1 · Silkspear",
+        "2 · Bell Beast"
+      ],
+      "detours": [
+        "1 · Beastfly pogo past the arena — guide option.",
+        "2 · Shard Pendant — guide option.",
+        "3 · Mosshome rosaries, commandment and lift — guide option."
+      ]
+    },
+    {
+      "id": "garmond-deep-docks",
+      "title": "Deep Docks, Swift Step & Lace 1",
+      "maps": [
+        "deep-docks"
+      ],
+      "steps": [
+        "swift-step",
+        "lace-1"
+      ],
+      "checkpoints": [
+        "1 · Ant arena",
+        "2 · Swift Step",
+        "3 · Lace 1"
+      ],
+      "detours": [
+        "1 · Free Craftmetal near the jail — guide option.",
+        "2 · Toll bench — guide option.",
+        "3 · Deep Docks Bellway — planned, 40 rosaries."
+      ]
+    },
+    {
+      "id": "garmond-bone-bottom",
+      "title": "Bone Bottom & Wormways backtrack",
+      "maps": [
+        "bone-bottom"
+      ],
+      "steps": [
+        "lace-1"
+      ],
+      "checkpoints": [
+        "1 · Wormways mask shard",
+        "2 · Pebb’s mask shard"
+      ],
+      "detours": [
+        "1 · Farm rosaries near Shakra if needed."
+      ],
+      "note": "Your route also collects the Bone Bottom spool; the original map does not mark spools."
+    },
+    {
+      "id": "garmond-far-fields",
+      "title": "Far Fields, Drifter’s Cloak & Fourth Chorus",
+      "maps": [
+        "far-fields"
+      ],
+      "steps": [
+        "drifters-cloak",
+        "halfway-home"
+      ],
+      "checkpoints": [
+        "1 · Seamstress bench",
+        "2 · Cloak quest",
+        "3 · Far Fields mask shard",
+        "4 · Fourth Chorus"
+      ],
+      "detours": [
+        "1 · Warding Bell — not selected.",
+        "2 · Craftmetal beyond Warding Bell — guide option."
+      ],
+      "note": "On your first Pilgrim’s Rest visit, buy Belt and Mort’s pouch as described below."
+    },
+    {
+      "id": "garmond-greymoor",
+      "title": "Greymoor, Garmond & Zaza, and Moorwing",
+      "maps": [
+        "greymoor",
+        "moorwing-aid"
+      ],
+      "steps": [
+        "halfway-home",
+        "moorwing",
+        "bellhart-return",
+        "greymoor-bell"
+      ],
+      "checkpoints": [
+        "1 · Halfway Home",
+        "2 · Moorwing",
+        "3 · Craw Lake arena — skipped",
+        "4 · Thread Storm and Three-fold Pin — skipped",
+        "5 · Bell #3"
+      ],
+      "detours": [
+        "1 · Bellway locket — requires Faydown Cloak; skip.",
+        "2 · First G&Z conversation — exhaust dialogue.",
+        "3 · Reaper Crest — skipped.",
+        "4 · Craw Lake branch — skipped."
+      ],
+      "note": "Your Bell #3 route uses the upper Halfway Home passage and the Greymoor spool; the late Run #2 pickup does not verify the earlier movement kit."
+    },
+    {
+      "id": "garmond-shellwood",
+      "title": "Shellwood, Cling Grip & Widow",
+      "maps": [
+        "cling-grip-exit",
+        "overview"
+      ],
+      "steps": [
+        "cling-grip",
+        "widow-bench",
+        "widow"
+      ],
+      "checkpoints": [
+        "1 · Shellwood mask shard",
+        "2 · Sister Splinter skip — not selected",
+        "3 · Cling Grip",
+        "4 · Widow",
+        "5 · Needle upgrade #1"
+      ],
+      "detours": [
+        "1 · Shellwood shortcut toward Blasted Steps — planned.",
+        "2 · Open the Widow bench shortcut — planned."
+      ],
+      "note": "The original detailed area map is missing. The Cling Grip image illustrates the guide’s skip; your route fights Sister Splinter."
+    },
+    {
+      "id": "garmond-atla",
+      "title": "Weavenest Atla & Eva",
+      "maps": [
+        "atla"
+      ],
+      "steps": [
+        "atla"
+      ],
+      "checkpoints": [
+        "1 · Wanderer Crest — skipped",
+        "2 · Atla mask shard"
+      ],
+      "detours": [
+        "1 · Eva’s Hunter evolution — planned."
+      ],
+      "note": "Your route also collects the Atla spool in the upper passage."
+    },
+    {
+      "id": "garmond-docks-return",
+      "title": "Marrow & Deep Docks return",
+      "maps": [
+        "deep-docks"
+      ],
+      "steps": [
+        "forge-daughter"
+      ],
+      "checkpoints": [
+        "1 · Deep Docks mask shard"
+      ],
+      "detours": [
+        "1 · Loddie’s target practice — planned after Widow.",
+        "2 · Forge Daughter — planned for the kit and Magma Bell."
+      ],
+      "note": "The guide’s return map is missing; the displayed Deep Docks screenshot is from the first pass."
+    },
+    {
+      "id": "garmond-judge",
+      "title": "Blasted Steps, Last Judge & Choral Chambers",
+      "maps": [
+        "overview"
+      ],
+      "steps": [
+        "blasted-steps",
+        "act-2"
+      ],
+      "checkpoints": [
+        "1 · Blasted Steps bench",
+        "2 · Last Judge",
+        "3 · Choral Chambers bench"
+      ],
+      "detours": [
+        "1 · Early Dice minigame — skip; collect Dice free later.",
+        "2 · Free Craftmetal before Judge — planned.",
+        "3 · Underworks / Delver’s Drill — not selected."
+      ],
+      "note": "The detailed Judge map is missing. The overview is a broad reference; use the written steps and pins."
+    },
+    {
+      "id": "garmond-songclave",
+      "title": "Songclave, lower Core & Vaults arena",
+      "maps": [
+        "overview"
+      ],
+      "steps": [
+        "grand-bellway",
+        "songclave-bell",
+        "dancers",
+        "lower-core",
+        "vaults-arena"
+      ],
+      "checkpoints": [
+        "1 · Possible G&Z sighting",
+        "2 · Grand Bellway",
+        "3 · Songclave and White Key",
+        "4 · Cogwork Dancers",
+        "5 · Lower Core mask shard",
+        "6 · Vaults arena"
+      ],
+      "detours": [],
+      "note": "The detailed map is missing. The guide mentions a Choral Chambers conversation, but Joseph’s scout qualified through Greymoor without a separately reported Chambers encounter."
+    },
+    {
+      "id": "garmond-vaults",
+      "title": "Whispering Vaults, Pale Oil & Trobbio",
+      "maps": [
+        "vaults"
+      ],
+      "steps": [
+        "vaults-arena",
+        "trobbio"
+      ],
+      "checkpoints": [
+        "1 · Vaults mask shard",
+        "2 · Pale Oil",
+        "3 · Trobbio",
+        "4 · Needle upgrade #2"
+      ],
+      "detours": [
+        "Bellhart upgrade and Blasted Steps Dice return — planned before the Forum."
+      ],
+      "note": "The Vaults screenshot covers the shard and Pale Oil; the preceding arena’s detailed map is unavailable."
+    },
+    {
+      "id": "garmond-cauldron",
+      "title": "Cauldron, Clawline & Outer Songclave",
+      "maps": [
+        "cauldron"
+      ],
+      "steps": [
+        "trobbio",
+        "clawline",
+        "vaultkeeper",
+        "roof-duel"
+      ],
+      "checkpoints": [
+        "1 · Underworks elevator",
+        "2 · Clawline",
+        "3 · Vaultkeeper’s Melody",
+        "4 · Wind puzzle",
+        "5 · Outer Songclave"
+      ],
+      "detours": [
+        "Whiteward · Injector Band — planned.",
+        "1 · Craftmetal puzzle — guide option.",
+        "2 · Locket below Trobbio’s lift — guide option.",
+        "3 · Wind-route locket — planned.",
+        "4 · Vaultkeeper turn-in — guide option."
+      ],
+      "note": "Open the roof gate, leave, then return through it for the G&Z duel. Your selected eastern Underworks spool is not marked."
+    },
+    {
+      "id": "garmond-high-halls",
+      "title": "High Halls, Garmond & Zaza, and Conductor’s Melody",
+      "maps": [
+        "high-halls",
+        "roof-duel"
+      ],
+      "steps": [
+        "roof-duel",
+        "high-halls-bench",
+        "forum",
+        "conductor"
+      ],
+      "checkpoints": [
+        "1 · High Halls bench",
+        "2 · Cogfly",
+        "3 · High Halls Ventrica",
+        "4 · G&Z and the Forum",
+        "5 · Conductor’s Melody"
+      ],
+      "detours": [
+        "1 · G&Z encounters / Dice return — Dice is planned on the earlier upgrade trip.",
+        "2 · G&Z roof duel and post-duel dialogue — planned."
+      ],
+      "note": "Exhaust their dialogue after the roof duel and accept their help at the Forum door. The separately reported scout did not need a Choral Chambers encounter."
+    },
+    {
+      "id": "garmond-ending",
+      "title": "Upper Core, Lace 2 & Grand Mother Silk",
+      "maps": [
+        "upper-core",
+        "cradle"
+      ],
+      "steps": [
+        "architect",
+        "checkpoint-1",
+        "lace-2",
+        "gms"
+      ],
+      "checkpoints": [
+        "Upper Core 1 · Architect’s Melody",
+        "Upper Core 2 · Elevator to Lace",
+        "Cradle 1 · Lace 2",
+        "Cradle 2 · Grand Mother Silk"
+      ],
+      "detours": [
+        "Cradle 1 · Open the final bench shortcut — planned.",
+        "Cradle 2 · Shell Shard rock — guide option."
+      ],
+      "note": "Your optional Fractured Mask trip is described below the directions at Prepare for Lace 2."
+    }
+  ],
   "sections": [
     {
       "id": "marrow",
@@ -58,7 +376,7 @@
         {"id": "songclave-bell", "guideTitle": "Songclave & the White Key", "guide": ["Ring the First Shrine bell in Songclave.", "Open the Songclave Ventrica for 80 rosaries.", "Take the White Key for the later Whiteward detour."], "title": "Songclave bell", "tip": "Ring the First Shrine bell, open the Songclave Ventrica, and take the White Key for Whiteward.", "links": [{"title": "White Key", "pin": 478599}], "purchases": [{"item": "Songclave Ventrica", "rosaries": 80}]},
         {"id": "dancers", "guide": ["Defeat the Cogwork Dancers.", "Continue into lower Cogwork Core.", "The free Magnetite Dice pickup becomes available after this fight; collect it on the planned Bellhart upgrade trip."], "title": "Cogwork Dancers defeated", "tip": "Beat the Dancers, then head into lower Cogwork. The free Dice pickup is available after the Dancers.", "links": [{"title": "Cogwork Dancers", "pin": 478606}]},
         {"id": "lower-core", "guideTitle": "Lower Cogwork Core", "guide": ["Clear the lower Core route arena and collect its mask shard.", "Open the top-right shortcut to upper Cogwork Core.", "Continue to Whispering Vaults. Leave the optional lower Core spool branch."], "title": "Lower Cogwork Core / bench", "tip": "Clear the route arena, grab its mask shard, and open the top-right shortcut to upper Core. Skip the optional lower Core spool branch; the final six-fragment plan uses Grand Gate instead.", "links": [{"title": "Lower Core mask shard", "pin": 478615}]},
-        {"id": "vaults-arena", "guideTitle": "Vaults, Pale Oil & Needle #2", "guide": ["Clear the Whispering Vaults arena and open the shortcut up to Songclave.", "Collect the hidden Vaults mask shard and Pale Oil. This is the planned seven-mask point.", "Return to Bellhart for Needle Upgrade #2: one Pale Oil, no rosary charge.", "Use the Blasted Steps Bellway stop to collect the free Magnetite Dice from Lumble.", "Return to Grand Bellway and continue toward Trobbio."], "maps": ["vaults"], "title": "Whispering Vaults arena / Songclave bench", "tip": "Clear the Vaults arena and open the shortcut up to Songclave. Pick up the hidden mask shard and Pale Oil on the Vaults leg. Upgrade the Needle in Bellhart, then collect the free Dice from Lumble while using the Bellway before returning to Grand Bellway for Trobbio.", "links": [{"title": "Vaults mask shard", "pin": 478671}, {"title": "Pale Oil", "pin": 478668}, {"title": "Lumble's location", "pin": 478519}], "purchases": [{"item": "Needle Upgrade #2 in Bellhart", "rosaries": 0, "materials": "1 Pale Oil"}]}
+        {"id": "vaults-arena", "guideTitle": "Vaults, Pale Oil & Needle #2", "guide": ["Clear the Whispering Vaults arena and open the shortcut up to Songclave.", "Collect the hidden Vaults mask shard and Pale Oil. This is the planned seven-mask point.", "Return to Bellhart for Needle Upgrade #2: one Pale Oil, no rosary charge.", "Use the Blasted Steps Bellway stop to collect the free Magnetite Dice from Lumble.", "Return to Grand Bellway and continue toward Trobbio."], "maps": ["overview", "vaults"], "title": "Whispering Vaults arena / Songclave bench", "tip": "Clear the Vaults arena and open the shortcut up to Songclave. Pick up the hidden mask shard and Pale Oil on the Vaults leg. Upgrade the Needle in Bellhart, then collect the free Dice from Lumble while using the Bellway before returning to Grand Bellway for Trobbio.", "links": [{"title": "Vaults mask shard", "pin": 478671}, {"title": "Pale Oil", "pin": 478668}, {"title": "Lumble's location", "pin": 478519}], "purchases": [{"item": "Needle Upgrade #2 in Bellhart", "rosaries": 0, "materials": "1 Pale Oil"}]}
       ]
     },
     {

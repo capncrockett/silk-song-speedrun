@@ -200,12 +200,38 @@ function stepTitle(stop) {
   return stop.guideTitle ?? stop.title;
 }
 
+function renderGuideMapKeys(image) {
+  const container = byId("guide-map-keys");
+  const sections = (state.route.guideSections ?? []).filter((section) =>
+    section.steps.includes(state.checkpoint) && section.maps.includes(image?.id)
+  );
+  container.hidden = sections.length === 0;
+  container.replaceChildren(...sections.map((section) => {
+    const block = node("section", "guide-map-key");
+    block.append(node("p", "eyebrow", "Garmond guide · map key"), node("h3", "", section.title));
+    block.append(node("p", "map-key-intro", "These are the original guide’s checkpoint and detour numbers. Yellow paths on its route maps mark detours; follow your directions below for the selected route."));
+    if (section.note) block.append(node("p", "map-key-note", section.note));
+    const columns = node("div", "map-key-columns");
+    for (const [title, items] of [["Guide checkpoints", section.checkpoints], ["Guide detours", section.detours]]) {
+      if (!items.length) continue;
+      const group = node("div", "map-key-group");
+      const list = node("ul", "map-key-list");
+      list.replaceChildren(...items.map((item) => node("li", "", item)));
+      group.append(node("h4", "", title), list);
+      columns.append(group);
+    }
+    block.append(columns, link("Open Tay Bravo’s original guide", state.maps.guide, "subtle-link map-key-source"));
+    return block;
+  }));
+}
+
 function renderGuideMap() {
   const image = state.maps.images.find((image) => image.id === state.activeMap);
   byId("guide-map-panel").hidden = !image;
   const gap = stopById(state.checkpoint)?.mapNote ?? (image?.id === "overview" ? "The detailed area map is still missing. Use the written directions and map pins here; the overview shows the broader route." : "");
   byId("guide-map-gap").hidden = !gap;
   byId("guide-map-gap").textContent = gap;
+  renderGuideMapKeys(image);
   if (!image) return;
   for (const tab of byId("guide-map-tabs").children) {
     const selected = tab.dataset.map === image.id;

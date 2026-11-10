@@ -146,6 +146,27 @@ for (const section of route.sections) {
   }
 }
 
+const guideSections = route.guideSections ?? [];
+assert.ok(guideSections.length > 0, "Retain the original guide sections and map keys.");
+assert.equal(new Set(guideSections.map(({ id }) => id)).size, guideSections.length, "Guide section IDs must be unique.");
+for (const section of guideSections) {
+  assert.ok(section.title && Array.isArray(section.checkpoints) && section.checkpoints.length > 0 && Array.isArray(section.detours));
+  assert.ok([...section.checkpoints, ...section.detours].every((item) => typeof item === "string" && item.trim()));
+  assert.ok(Array.isArray(section.maps) && section.maps.length > 0 && Array.isArray(section.steps) && section.steps.length > 0);
+  for (const id of section.maps) assert.ok(mapIds.has(id), "Guide sections need known reference images.");
+  for (const id of section.steps) assert.ok(stops.some((stop) => stop.id === id), "Guide sections need known route checkpoints.");
+}
+for (const section of route.sections) {
+  for (const stop of section.stops) {
+    const images = stop.maps ?? section.maps ?? [];
+    assert.ok(images.length, "Each route step needs a reference image.");
+    for (const image of images) {
+      assert.ok(guideSections.some((reference) => reference.steps.includes(stop.id) && reference.maps.includes(image)),
+        "Every image needs a guide section key for " + stop.id + ": " + image);
+    }
+  }
+}
+
 await Promise.all([
   "public/index.html", "public/styles.css", "assets/artwork/hornet-mask-icon.png", "assets/artwork/hornet.png", "assets/artwork/hornet.webp", "HANDOFF.md"
 ].map((file) => access(new URL(file, root))));
@@ -162,4 +183,4 @@ for (const file of documents) {
   }
 }
 
-console.log(`Verified ${stops.length} route checkpoints, ${catalog.images.length} original guide images, map references, documentation links, run data, split timing, and purchase reminders.`);
+console.log(`Verified ${stops.length} route checkpoints, ${catalog.images.length} original guide images, map references and guide keys, documentation links, run data, split timing, and purchase reminders.`);
