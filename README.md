@@ -17,7 +17,7 @@ The app is one screen for the final timed attempt:
 - Pick a checkpoint in **Along the way** to see its route reminders, exact map pins, and split entry together. Use `4:57` or `4:57:32`; Command+Enter (Control+Enter on Windows/Linux) saves. Select a recorded checkpoint to correct it.
 - **Upcoming purchases** shows the next planned spending stop at or after the selected checkpoint. Expand it for item costs, materials, and conditional fees. It is a shopping reminder, not a wallet tracker; it makes no claims about historical purchases.
 - **Prepare final run** creates a blank timed run. Run #2 stays in the picker and provides checkpoint comparisons. Existing scout records remain separate and accessible.
-- **Pickups & upgrades**, **Reference maps**, **Split history**, and **Run notes** expand inline when needed. The six selected fragments form three pairs for +3 Silk capacity; the pouch and damage targets remain independent. Previously recorded pickups from older route versions remain visible when checked.
+- **Expand all** and **Collapse all** control the seven checkpoint groups. **Pickups & upgrades**, **Reference maps**, **Split history**, and **Run notes** expand inline when needed. The six selected fragments form three pairs for +3 Silk capacity; the pouch and damage targets remain independent. Previously recorded pickups from older route versions remain visible when checked.
 - **Route decisions & research** opens the handoff. Open questions and alternative loadouts live there while the chosen route stays in the tracker.
 
 The five-hour budget is measured at the latest recorded split. There is no running timer.
@@ -32,7 +32,7 @@ Open this folder as a project and ask Codex to read [HANDOFF.md](./HANDOFF.md). 
 
 - [Starting Run #2 data](./data/seed-runs.json) is used until the first local save.
 - [Original run log](./Silksong%20-%20Current%20Run%20Tracker.md) and [project notes](./Silksong%20-%20Project%20Handoff.md) are the history behind the tracker.
-- [Recovered maps](./Recovered%20Garmond%20Maps/README.md) preserve the three original images and their credits.
+- [Recovered maps](./Recovered%20Garmond%20Maps/README.md) preserve 19 original guide images and their credits. Checkpoints link to the relevant maps; guide-only alternatives stay archived. See the catalog instructions there to add your own screenshots.
 
 The server listens only on your Mac. To use another port, run `RUNBOOK_PORT=4174 npm start`. For an isolated test save, set `RUNBOOK_DATA_DIR` to a different directory before starting. Neither setting requires installing anything.
 

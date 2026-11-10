@@ -10,6 +10,7 @@ const store = resolve(process.env.RUNBOOK_DATA_DIR || join(root, ".runbook"));
 const runsFile = join(store, "runs.json");
 const routeFile = join(root, "data", "route.json");
 const seedFile = join(root, "data", "seed-runs.json");
+const mapCatalogFile = join(root, "Recovered Garmond Maps", "catalog.json");
 const port = Number(process.env.RUNBOOK_PORT ?? 4173);
 const maxBody = 1_000_000;
 
@@ -25,14 +26,15 @@ const files = new Map([
   ["/model.mjs", ["dist/model.mjs", "text/javascript; charset=utf-8"]],
   ["/assets/hornet-mask.png", ["hornet-mask-icon.png", "image/png"]],
   ["/assets/hornet.png", ["hornet.png", "image/png"]],
-  ["/maps/overview.png", ["Recovered Garmond Maps/Complete Route Overview.png", "image/png"]],
-  ["/maps/cauldron.jpg", ["Recovered Garmond Maps/Cauldron and Whispering Vaults.jpg", "image/jpeg"]],
-  ["/maps/high-halls.jpg", ["Recovered Garmond Maps/High Halls.jpg", "image/jpeg"]],
   ["/docs/handoff.md", ["HANDOFF.md", "text/plain; charset=utf-8"]],
   ["/docs/run-2.md", ["Silksong - Current Run Tracker.md", "text/plain; charset=utf-8"]],
   ["/docs/map-credits.md", ["Recovered Garmond Maps/README.md", "text/plain; charset=utf-8"]],
   ["/docs/spools.md", ["Silksong - Spool Fragment Candidates.md", "text/plain; charset=utf-8"]]
 ]);
+
+for (const image of (await readJson(mapCatalogFile)).images) {
+  files.set(image.src, [image.file, image.mime]);
+}
 
 function respond(res, status, type, body) {
   res.writeHead(status, {
@@ -125,6 +127,7 @@ const server = createServer(async (req, res) => {
     }
 
     const path = new URL(req.url, `http://${host}`).pathname;
+    if (req.method === "GET" && path === "/api/maps") return json(res, 200, await readJson(mapCatalogFile));
     if (req.method === "GET" && path === "/api/route") return json(res, 200, await readJson(routeFile));
     if (req.method === "GET" && path === "/api/runs") return json(res, 200, await readRuns());
     if (req.method === "PUT" && path === "/api/runs") {

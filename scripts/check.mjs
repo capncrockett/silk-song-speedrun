@@ -1,10 +1,11 @@
 import assert from "node:assert/strict";
 import { access, readFile } from "node:fs/promises";
+import { createHash } from "node:crypto";
 import { formatTime, listStops, parseTime, runSummary, shoppingSummary, validateRunData } from "../dist/model.mjs";
 
 const root = new URL("../", import.meta.url);
 const readJson = async (path) => JSON.parse(await readFile(new URL(path, root), "utf8"));
-const [route, seed] = await Promise.all([readJson("data/route.json"), readJson("data/seed-runs.json")]);
+const [route, seed, catalog] = await Promise.all([readJson("data/route.json"), readJson("data/seed-runs.json"), readJson("Recovered Garmond Maps/catalog.json")]);
 
 assert.equal(route.version, 1);
 assert.ok(Number.isSafeInteger(route.targetSeconds) && route.targetSeconds > 0, "Route needs a time target.");
@@ -83,11 +84,35 @@ assert.equal(imported.finish, null, "Run #2 is still in progress.");
 assert.equal(imported.next.id, "gms");
 assert.ok(seed.runs[0].splits.every((split) => split.label), "Snapshot historical labels before route edits.");
 
+const mapIds = new Set(catalog.images.map((image) => image.id));
+assert.equal(mapIds.size, catalog.images.length, "Guide image IDs must be unique.");
+assert.equal(new Set(catalog.images.map((image) => image.src)).size, catalog.images.length, "Local image URLs must be unique.");
+for (const image of catalog.images) {
+  assert.match(image.src, /^\/maps\/[a-z0-9-]+\.(jpg|png)$/, "Guide images need a local image URL.");
+  assert.ok(image.file.startsWith("Recovered Garmond Maps/") && !image.file.includes(".."), "Keep guide assets inside their folder.");
+  assert.ok(["image/jpeg", "image/png"].includes(image.mime));
+  assert.ok(["map", "screenshot"].includes(image.kind) && typeof image.timedRoute === "boolean");
+  assert.ok(image.title && image.note && (image.sourceUrl || image.creator), "Keep image labels and credits.");
+  assert.ok(Number.isSafeInteger(image.width) && image.width > 0 && Number.isSafeInteger(image.height) && image.height > 0);
+  const bytes = await readFile(new URL(image.file, root));
+  assert.equal(bytes.length, image.bytes, `${image.file}: byte count changed.`);
+  assert.equal(createHash("sha256").update(bytes).digest("hex"), image.sha256, `${image.file}: original image changed.`);
+  assert.equal(bytes.subarray(0, image.mime === "image/png" ? 8 : 3).toString("hex"),
+    image.mime === "image/png" ? "89504e470d0a1a0a" : "ffd8ff", "Image format must match its MIME type.");
+}
+for (const section of route.sections) {
+  for (const item of [section, ...section.stops]) {
+    if (item.maps === undefined) continue;
+    assert.ok(Array.isArray(item.maps));
+    for (const id of item.maps) {
+      assert.ok(mapIds.has(id), `Unknown guide image: ${id}`);
+      assert.ok(catalog.images.find((image) => image.id === id).timedRoute, "Keep alternate-route screenshots out of timed checkpoints.");
+    }
+  }
+}
+
 await Promise.all([
-  "dist/index.html", "dist/styles.css", "hornet-mask-icon.png", "hornet.png", "HANDOFF.md",
-  "Recovered Garmond Maps/Complete Route Overview.png",
-  "Recovered Garmond Maps/Cauldron and Whispering Vaults.jpg",
-  "Recovered Garmond Maps/High Halls.jpg"
+  "dist/index.html", "dist/styles.css", "hornet-mask-icon.png", "hornet.png", "HANDOFF.md"
 ].map((file) => access(new URL(file, root))));
 
-console.log(`Verified ${stops.length} route checkpoints, local assets, run data, split timing, and purchase reminders.`);
+console.log(`Verified ${stops.length} route checkpoints, ${catalog.images.length} original guide images, map references, run data, split timing, and purchase reminders.`);

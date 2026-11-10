@@ -115,7 +115,9 @@ progress::-moz-progress-bar { background: var(--green); border-radius: 5px; }
 .subtle-link:hover { text-decoration: underline; }
 .checkpoint-legend { display: flex; align-items: center; gap: .8rem; margin: 1rem 0; color: var(--soft); font-size: .64rem; }
 .checkpoint-legend > span { display: flex; gap: .4rem; align-items: center; }
-.checkpoint-legend .subtle-link { margin-left: auto; font-size: .65rem; }
+.checkpoint-legend .phase-actions { margin-left: auto; gap: .75rem; }
+.checkpoint-legend .subtle-link { font-size: .65rem; }
+.phase-actions button:disabled { opacity: .4; cursor: default; text-decoration: none; }
 .legend-dot { display: inline-block; width: 5px; height: 5px; border-radius: 50%; background: var(--accent); }
 .legend-dot.complete { background: var(--green); }
 .phases { display: grid; gap: .35rem; margin-top: .75rem; }
@@ -167,14 +169,15 @@ details[open] > summary::after { transform: rotate(180deg); }
 .prep-item input { width: 17px; height: 17px; min-height: 0; margin: .1rem 0 0; accent-color: var(--green); }
 .prep-item small { display: block; color: var(--soft); margin-top: .3rem; font-size: .69rem; line-height: 1.6; }
 .prep-item .subtle-link { flex-shrink: 0; }
-.atlas-grid { display: grid; grid-template-columns: 1fr; gap: 1rem; }
+.atlas-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .65rem; margin-top: 1rem; }
 .atlas-card { min-height: 115px; position: relative; overflow: hidden; display: flex; align-items: end; border: 1px solid var(--line); border-radius: var(--radius); text-decoration: none; background: #1b1f20; }
 .atlas-card::after { content: ""; position: absolute; inset: 0; background: linear-gradient(0deg, #131719 0%, #13171955 100%); }
 .atlas-card img { width: 100%; height: 100%; position: absolute; object-fit: cover; opacity: .65; filter: saturate(.5); transition: transform .3s, opacity .3s; }
 .atlas-card:hover img { transform: scale(1.03); opacity: 1; }
-.atlas-card > span { position: relative; z-index: 1; padding: 1.3rem; width: 100%; }
+.atlas-card > span { position: relative; z-index: 1; padding: 1rem; width: 100%; }
 .atlas-card small { display: block; color: var(--accent); font-size: .54rem; letter-spacing: .13em; margin-bottom: .6rem; }
-.atlas-card strong { display: flex; justify-content: space-between; color: var(--ink); font: 1.3rem Georgia, serif; gap: .4rem; }
+.atlas-card strong { display: flex; justify-content: space-between; color: var(--ink); font: 1.1rem Georgia, serif; gap: .4rem; }
+.atlas-note { color: var(--soft); font-size: .65rem; line-height: 1.6; margin: .55rem 0 0; }
 .atlas-card b { color: var(--accent); font: 1rem sans-serif; }
 .map-credit { color: var(--soft); font-size: .67rem; margin-top: .7rem; line-height: 1.7; }
 .map-credit a { margin-left: .35rem; text-decoration: none; }
@@ -224,6 +227,8 @@ dialog .form-actions { justify-content: end; margin-top: 1.5rem; }
   .footer { line-height: 1.8; }
 }
 @media (max-width: 380px) {
+  .checkpoint-legend { flex-wrap: wrap; }
+  .checkpoint-legend .phase-actions { width: 100%; justify-content: flex-end; }
   .shell { width: calc(100% - 1.25rem); }
   .session-badge { display: none; }
   .metric { padding-inline: .6rem; }
@@ -248,4 +253,6 @@ dialog .form-actions { justify-content: end; margin-top: 1.5rem; }
 .shopping li small { display: block; color: var(--soft); font-size: .66rem; }
 .shopping-cost { color: var(--green); text-align: right; flex-shrink: 0; font-variant-numeric: tabular-nums; }
 .shopping > p { color: var(--soft); font-size: .68rem; line-height: 1.7; padding-block: .65rem .9rem; }
-@media (max-width: 380px) { .shopping li { flex-wrap: wrap; gap: .25rem; } }
+@media (max-width: 380px) {
+  .checkpoint-legend { flex-wrap: wrap; }
+  .checkpoint-legend .phase-actions { width: 100%; justify-content: flex-end; } .checkpoint-legend { flex-wrap: wrap; } .shopping li { flex-wrap: wrap; gap: .25rem; } }

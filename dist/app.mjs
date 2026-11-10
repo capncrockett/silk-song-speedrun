@@ -4,16 +4,12 @@ const byId = (id) => document.getElementById(id);
 const state = {
   route: null,
   data: null,
+  maps: null,
   runId: null,
   checkpoint: null,
   stops: [],
   saving: false
 };
-const mapAssets = {
-  cauldron: { src: "/maps/cauldron.jpg", alt: "Recovered map of the Cauldron, Vaults, and roof approach", width: 1012, height: 787 },
-  "high-halls": { src: "/maps/high-halls.jpg", alt: "Recovered map of the High Halls path to Cogfly and the Forum", width: 706, height: 608 }
-};
-
 function node(tag, className, text) {
   const element = document.createElement(tag);
   if (className) element.className = className;
@@ -178,6 +174,31 @@ function renderCheckpointOptions() {
   }
 }
 
+function renderMaps() {
+  const images = state.maps.images.filter((image) => image.timedRoute);
+  const mapCount = images.filter((image) => image.kind === "map").length;
+  byId("map-count").textContent = `${mapCount} maps · ${images.length - mapCount} screenshots`;
+  byId("map-gallery").replaceChildren(...images.map((image) => {
+    const card = link("", image.src, "atlas-card");
+    const preview = node("img");
+    preview.src = image.src;
+    preview.alt = "";
+    preview.loading = "lazy";
+    preview.width = image.width;
+    preview.height = image.height;
+    const caption = node("span");
+    caption.append(node("small", "", image.kind === "map" ? "GUIDE REFERENCE MAP" : "GUIDE SCREENSHOT"));
+    const title = node("strong", "", image.title);
+    const arrow = node("b", "", "↗");
+    arrow.setAttribute("aria-hidden", "true");
+    title.append(arrow);
+    caption.append(title, node("p", "atlas-note", image.note));
+    card.append(preview, caption);
+    return card;
+  }));
+  byId("map-gaps").textContent = `Missing guide maps: ${state.maps.missing.map((image) => image.title).join("; ")}. Checkpoint notes and map pins cover these stops. The guide does not mark spool fragments.`;
+}
+
 function renderEditor() {
   const run = selectedRun();
   const stop = stopById(state.checkpoint);
@@ -188,8 +209,8 @@ function renderEditor() {
   byId("entry-title").textContent = stop?.title ?? splitLabel(saved);
   byId("entry-tip").textContent = stop?.tip ?? "This split was part of the original run.";
   const section = state.route.sections.find((section) => section.id === stop?.sectionId);
-  const map = mapAssets[section?.map];
-  byId("entry-links").replaceChildren(...links(stop?.links), ...(map ? [link("Reference map", map.src)] : []));
+  const maps = (stop?.maps ?? section?.maps ?? []).map((id) => state.maps.images.find((image) => image.id === id));
+  byId("entry-links").replaceChildren(...links(stop?.links), ...maps.map((image) => link(`${image.title} ↗`, image.src)));
   byId("split-time").value = saved ? formatTime(saved.seconds, saved.precision) : "";
   byId("split-note").value = saved?.note ?? "";
   byId("save-split").textContent = saved ? "Update split →" : "Save split →";
@@ -253,7 +274,7 @@ function renderCheckpointList(reset = false) {
     const count = section.stops.filter((stop) => saved.has(stop.id)).length;
     phase.dataset.complete = String(count === section.stops.length);
     phase.dataset.current = String(section.stops.some((stop) => stop.id === next?.id));
-    phase.addEventListener("toggle", updatePhaseToggle);
+    phase.addEventListener("toggle", updatePhaseControls);
     phase.append(phaseSummary(section, `${count}/${section.stops.length}`));
     phase.append(node("p", "phase-context", section.summary));
     const list = node("ol", "checkpoint-list");
@@ -276,12 +297,13 @@ function renderCheckpointList(reset = false) {
     phase.append(list);
     container.append(phase);
   }
-  updatePhaseToggle();
+  updatePhaseControls();
 }
 
-function updatePhaseToggle() {
+function updatePhaseControls() {
   const phases = [...byId("checkpoint-list").querySelectorAll("details")];
-  byId("toggle-phases").textContent = phases.every((phase) => phase.open) ? "Collapse all" : "Expand all";
+  byId("expand-phases").disabled = phases.length === 0 || phases.every((phase) => phase.open);
+  byId("collapse-phases").disabled = !phases.some((phase) => phase.open);
 }
 
 function chooseCheckpoint(id, focus = false) {
@@ -455,12 +477,12 @@ function bindEvents() {
   byId("new-run").addEventListener("click", openSession);
   byId("open-maps").addEventListener("click", () => { byId("maps").open = true; });
   dialog.addEventListener("cancel", (event) => { if (state.saving) event.preventDefault(); });
-  byId("toggle-phases").addEventListener("click", () => {
-    const phases = [...byId("checkpoint-list").querySelectorAll("details")];
-    const open = !phases.every((phase) => phase.open);
-    for (const phase of phases) phase.open = open;
-    updatePhaseToggle();
-  });
+  for (const [id, open] of [["expand-phases", true], ["collapse-phases", false]]) {
+    byId(id).addEventListener("click", () => {
+      for (const phase of byId("checkpoint-list").querySelectorAll("details")) phase.open = open;
+      updatePhaseControls();
+    });
+  }
   byId("split-form").addEventListener("keydown", (event) => {
     if (event.key === "Enter" && (event.metaKey || event.ctrlKey)) {
       event.preventDefault();
@@ -500,7 +522,7 @@ function bindEvents() {
 
 async function start() {
   try {
-    [state.route, state.data] = await Promise.all([getJson("/api/route"), getJson("/api/runs")]);
+    [state.route, state.data, state.maps] = await Promise.all([getJson("/api/route"), getJson("/api/runs"), getJson("/api/maps")]);
     state.stops = listStops(state.route);
     // Freeze the recorded label on the next save, before future route edits.
     for (const run of state.data.runs) {
@@ -511,6 +533,7 @@ async function start() {
     const id = state.data.runs.find((run) => run.id === remembered)?.id ?? state.data.runs.at(-1).id;
     byId("route-label").textContent = state.route.routeLabel;
     selectRun(id);
+    renderMaps();
     bindEvents();
     byId("tracker").hidden = false;
     byId("startup").hidden = true;

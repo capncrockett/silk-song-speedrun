@@ -83,7 +83,7 @@ Build the main view around this itinerary. The route is Hunter, all five bells, 
 6. **Trobbio, Cauldron, and roof.** Defeat Trobbio and open his lift shortcut. Get Injector Band in Whiteward, then Clawline. Use Magma Bell through Cauldron and buy Twelfth Architect's 450-rosary Crafting Kit after Clawline. Collect eastern Underworks spool 478704 behind the small lava room's wall to complete the third pair with Grand Gate. Collect Vaultkeeper's Melody, run the box and wind puzzle, and open the far-left roof gate 480502. Leave and return through that gate for the duel. The earlier Greymoor conversation qualified on scout. The timed run got G&Z aid without a separately reported Choral Chambers encounter. Exhaust post-duel dialogue and accept their help at the Forum door inside High Halls.
 7. **Forum and endgame.** Get Cogfly for one Craftmetal on the High Halls descent. The Forum target is two pouch upgrades, two damage upgrades, Straight Pin + Cogfly, and G&Z. Collect Conductor's Melody and Architect's Melody, ascend to Lace, and keep the patient, heal-first approach. Rest at Terminus, open the final shortcut, and record the actual finish after Grand Mother Silk.
 
-[Original Garmond Route](https://steamcommunity.com/sharedfiles/filedetails/?id=3577460696) · [Recovered maps and credits](</Users/josephdavey/Documents/ChatGPT/Silk Song/Recovered Garmond Maps/README.md>) · [Roof gate](https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=480502) · [Forum aid](https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=481022)
+[Original Garmond Route](https://steamcommunity.com/sharedfiles/filedetails/?id=3577460696) · [Recovered maps and credits](./Recovered%20Garmond%20Maps/README.md) · [Roof gate](https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=480502) · [Forum aid](https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=481022)
 
 ### Wayfinding for the route view
 
@@ -190,18 +190,13 @@ The final timed route keeps Claw Mirror + Injector Band. This decision does not 
 - Scout Lace 2 as a dedicated fight. Time actual attempts and runbacks separately from optional detours. Practice waiting for committed attacks and healing in recovery. Try safe Straight Pin windows while preserving Silk.
 - Rehearse Grand Mother Silk and record the Run #2 finish, even if the five-hour goal is missed. Use the observed fight time to plan a realistic Lace split.
 - Check early rosaries for Pebb, Mort, and the first Bellways. Greymoor and Blasted Steps Bellway openings are useful for later returns. Keep the G&Z aid route and protected Needle/Forge Daughter budget. The paid second kit is settled; keep its 450-rosary target visible before Clawline.
-- Recover missing screenshots only if they help a route step. The three saved maps are present and linked. The original combined Songclave/lower Core/Vaults arena image and the separate Vaults shard/Pale Oil image remain missing. Use the exact pins in the interim.
+- Map recovery on 2026-11-09 preserved the three existing maps and added 16 original guide images. The gallery shows 12 maps and 3 relevant screenshots; Mist and Sister Splinter skip alternatives remain archived. The separate Vaults shard/Pale Oil map is recovered. Shellwood/Widow, Last Judge/Choral Chambers, and combined Songclave/lower Core/Vaults arena maps have empty image URLs in the current guide. Use checkpoint pins until Joseph supplies replacements. The guide does not mark spool fragments; custom screenshots can supplement the six locked pins.
 
-## Assets available in the old workspace
+## Local artwork and guide references
 
-The new project can reuse these source files. Keep the original credits and label the annotated images as reference maps. The simplified route itself should follow the itinerary above.
+The supplied `hornet.png` and `hornet-mask-icon.png` provide the app artwork. The guide images live in [Recovered Garmond Maps](./Recovered%20Garmond%20Maps/README.md), with source URLs and hashes in its `catalog.json`. Preserve original credits and label annotated images as reference maps. The selected route follows the itinerary above, including its own spool pickups and tool choices.
 
-- [Complete route overview](</Users/josephdavey/Documents/ChatGPT/Silk Song/Recovered Garmond Maps/Complete Route Overview.png>)
-- [Cauldron, Clawline, Vaults, and roof approach](</Users/josephdavey/Documents/ChatGPT/Silk Song/Recovered Garmond Maps/Cauldron and Whispering Vaults.jpg>)
-- [High Halls, Cogfly, and Forum](</Users/josephdavey/Documents/ChatGPT/Silk Song/Recovered Garmond Maps/High Halls.jpg>)
-- [Original URLs and credits](</Users/josephdavey/Documents/ChatGPT/Silk Song/Recovered Garmond Maps/README.md>)
-
-The original Steam guide is a reference for gaps. The combined Songclave/lower Core/Vaults arena map and separate Vaults mask shard/Pale Oil map are missing. The waypoint pins above cover key stops. If an exact pin needs checking, MapGenie's public Pharloom data was previously available at `https://mapgenie.io/api/v1/maps/812/data`. The cached copy at `/tmp/silksong-mapgenie-data.json` is temporary.
+Map selection belongs in section/checkpoint `maps` arrays in `data/route.json`. Missing originals are listed in the catalog and the gallery. A local screenshot can be added there without changing checkpoint IDs or run data. Exact waypoint pins continue to cover the gaps. MapGenie’s public Pharloom data was previously available at `https://mapgenie.io/api/v1/maps/812/data`; the cached `/tmp/silksong-mapgenie-data.json` is temporary.
 
 ## Ongoing use with Codex
 
