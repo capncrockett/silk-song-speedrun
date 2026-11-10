@@ -4,7 +4,8 @@ Based on [Garmond's route and maps](https://steamcommunity.com/sharedfiles/filed
 
 Detailed continuity notes: [Silksong - Project Handoff.md](./Silksong%20-%20Project%20Handoff.md)
 
-**Latest timed checkpoint:** Lace 2 defeated at **4:57**, with **3 displayed minutes** to the five-hour mark  
+**Latest timed checkpoint:** Marrow bench at **5:06**, after Forge Daughter’s 10 shard bundles and Fractured Mask. Lace 2 remains recorded at **4:57**.
+
 **Current route:** Grand Mother Silk remains. User intends to finish Run #2 for practice.  
 **Scout status:** Grand Mother Silk defeated with **Fractured Mask equipped and no Claw Mirror**. No finish clock or activation count reported. The optional pickup is now deferred until Lace 2, with **Cogwork Core bench 478428** as the quit-return anchor and no rests along the trip. This replaces the earlier Marrow-anchor proposal; the original Marrow-to-Mask scout was 12:56–13:06. Run #2’s finish remains pending.
 
@@ -54,6 +55,7 @@ Detailed continuity notes: [Silksong - Project Handoff.md](./Silksong%20-%20Proj
 | 4:20 | Checkpoint 1 before Lace 2 | User reported this split and switched focus to scouting Lace 2. | **0:40 remaining.** Timed fight and scout result pending. No separate melody pickups reported. |
 | — | Greymoor spool fragment and Weighted Belt detour | Acquired spool fragment 478263 on the timed run. Balloons were present at Craw Lake without clearing the arena. User wants to buy the Weighted Belt next. | Latest reported split is 4:20. Belt purchase pending. [Spool pin](https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=478263) |
 | 4:57 | Lace 2 defeated | Weighted Belt helped. Used Injector Band, Claw Mirror, Weighted Belt, and Magnetite Dice. Waited for Lace to approach and saved Silk for healing. Red tools were secondary. User found openings for Straight Pins and reported no Cogfly use. | Lace 2 was the bigger bottleneck by the user's assessment. The interval since 4:20 also includes detours. User will finish the run for practice. |
+| 5:06 | Marrow bench after Forge Daughter restock and Fractured Mask | Bought **10 shard bundles**, rested at Marrow, went through Hunter’s March and acquired the Mask using Cogfly, Straight Pin, and Mirror. Returned to Marrow bench. | Player estimates **about ten minutes including restock**; manageable if time allows. Exact departure clock and return method unreported. This trial used Marrow as a rested bench; the planned Core-anchor variant must avoid that rest. GMS remains unfinished. |
 
 ## Scout log
 
@@ -71,6 +73,10 @@ Detailed continuity notes: [Silksong - Project Handoff.md](./Silksong%20-%20Proj
 
 - **2026-11-10, scout GMS clear / optional final-fight Mask:** Scout defeated Grand Mother Silk with **Fractured Mask on, Claw Mirror off**. No finish clock, attempts, Mask activation count, or complete supporting loadout reported. Joseph wants the Mask pickup to be optional once at Lace 2. With late-game upgrades, rush Hunter’s March and skip the rosary side trips. Set [Cogwork Core bench 478428](https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=478428) as the last rested bench before leaving, do not rest at Marrow or Hunter’s March (or elsewhere), collect the free Mask, then Quit to Menu and Continue back at Core to equip it. This supersedes the earlier Marrow return anchor. Full Core departure-to-return time unreported; preserve the prior 12:56–13:06 scout timestamps. This win belongs to the scout, not Run #2.
 
+## Latest timed-file detour note · November 10
+
+The 5:06 restock/Mask report belongs to **Run #2**, not the scout. Fractured Mask is now acquired on the timed file. Mirror, Cogfly, and Straight Pin were used during the trip; no new ending equipment choice or GMS finish time was reported. The ~10-minute estimate includes the ten shard bundles. Keep the future detour optional at Lace 2 if time allows; the proposed Core quit-return requires skipping the Forge Daughter and Marrow bench rests used in this trial.
+
 ## Current inventory / build
 
 - Silk Spear
@@ -87,6 +93,8 @@ Detailed continuity notes: [Silksong - Project Handoff.md](./Silksong%20-%20Proj
 - Heavy Rosary Necklace earned and consumed
 - Magma Bell
 - Claw Mirror
+- Fractured Mask — acquired on the later timed-file Hunter’s March trip, back at Marrow at 5:06
+- Ten shard bundles bought at Forge Daughter during that trip; remaining shard stock unreported
 - Injector Band — confirmed equipped for the Forum clear
 - Vaultkeeper's Melody
 - Lace 2 loadout used Claw Mirror + Injector Band and Weighted Belt + Magnetite Dice. Magma Bell was equipped with Claw Mirror earlier at Twelfth Architect's bench.
