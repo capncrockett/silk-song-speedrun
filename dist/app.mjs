@@ -315,12 +315,13 @@ function renderHistory() {
 function renderPrep() {
   const run = selectedRun();
   byId("prep-run").textContent = `Pickups recorded for ${run.name}.`;
-  const items = state.route.preparations.flatMap((group) => group.items);
+  const groups = state.route.preparations.filter((group) => !group.archived || group.items.some((item) => run.prep.includes(item.id)));
+  const items = groups.flatMap((group) => group.items);
   const pickedUp = items.filter((item) => run.prep.includes(item.id)).length;
   byId("prep-count").textContent = `${pickedUp} / ${items.length} pickups`;
   const grid = byId("prep-grid");
   grid.replaceChildren();
-  for (const group of state.route.preparations) {
+  for (const group of groups) {
     const card = node("article", "prep-card");
     const header = node("div", "panel-heading");
     const count = group.items.filter((item) => run.prep.includes(item.id)).length;

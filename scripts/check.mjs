@@ -18,6 +18,13 @@ for (const pair of route.preparations.filter(({ id }) => id.startsWith("silk-"))
   assert.equal(pair.items.length, 2, "A Silk capacity pair needs two fragments.");
 }
 
+const activeSpools = route.preparations.filter((group) => group.id.startsWith("silk-"));
+assert.equal(activeSpools.length, 3, "The selected route completes three spools.");
+assert.deepEqual(activeSpools.flatMap((group) => group.items.map((item) => item.pin)),
+  [478080, 478230, 477926, 478263, 478586, 478704], "Keep the selected six fragments in route order.");
+assert.ok(route.preparations.some((group) => group.archived && group.items.some((item) => item.id === "spool-core")),
+  "Keep the old lower Core pickup ID available to historical records.");
+
 for (const stop of stops) {
   if (!stop.purchases) continue;
   assert.ok(Array.isArray(stop.purchases) && stop.purchases.length > 0);
