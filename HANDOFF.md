@@ -6,7 +6,7 @@ Updated November 9, 2026. This brief is for the Codex agent building Joseph's pe
 
 Joseph plans **one more timed run**. The app is now one run screen: checkpoint selection also shows route reminders and map pins; prep, recovered maps, history, and notes expand inline. Keep open research and alternative builds in this handoff. Existing historical timed and scout records remain intact. Commit coherent changes as work proceeds.
 
-Run #2's Grand Mother Silk fight is still unfinished, confirmed by Joseph. No final time has been supplied. Joseph wants to **discuss Claw Mirror alternatives before choosing**. Warding Bell and the seven-berry Druid's Eyes upgrade are rejected; base Druid's Eye and Weavelight remain on the shortlist. Fractured Mask is also rejected: Joseph considers the Hunter's March approach, entrance arena, and deep backtrack unsuitable for this run. Multibinder is disfavoured because of its 880-rosary cost. Keep the current loadout selected until a decision is made. The spool pair and second-kit questions below are also still open.
+Run #2's Grand Mother Silk fight is still unfinished, confirmed by Joseph. No final time has been supplied. **Claw Mirror is settled:** Joseph chose to keep it alongside Injector Band for the final run, retaining Weighted Belt and Magnetite Dice. Alternative blue-tool pickups are off the timed route; the discussion and rejection reasons are archived below. The spool pair and second-kit questions remain open.
 
 ## Original implementation brief
 
@@ -121,7 +121,7 @@ Keep the separate Underworks arena 478931 and double-jump High Halls spool 47890
 
 [Tool Pouch and Crafting Kit](https://hollowknight.wiki/w/Crafting_Kit) · [Loddie](https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=478251) · [Ragpelt farm](https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=478208) · [Twelfth Architect](https://hollowknight.wiki/w/Twelfth_Architect) · [Cogfly damage](https://hollowknight.wiki/w/Cogflies)
 
-## Open scout questions
+## Scout questions and settled decisions
 
 ### Thread Storm without Craw Lake Arena
 
@@ -129,21 +129,23 @@ Keep the separate Underworks arena 478931 and double-jump High Halls spool 47890
 
 [Documented later bypass](https://speedpastes.org/kXQvcbMl) · [Standard Craw Lake pickup](https://hollowknight.wiki/w/Enemy_Gauntlets_%28Silksong%29/Greymoor_3) · [Thread Storm pin](https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=478061)
 
-### Replace Claw Mirror? · narrowed November 9
+### Claw Mirror · settled November 9
 
-**Player report:** Joseph can find safe healing openings and was not usually interrupted. Patient one- or two-hit punishes limit Silk income. A Lace hit commonly costs two masks, disrupts his rhythm, and can lead to a second hit for four masks lost in total. The comparison should therefore measure access to the next Bind after a mistake. Keep Injector Band and Weighted Belt fixed.
+**Decision:** Joseph chose to stick with Claw Mirror. Keep Mirror + Injector Band, with Weighted Belt and Magnetite Dice. Close the replacement question and add no alternative-tool acquisition detours. The table below preserves the reasoning behind the options considered.
+
+**Player report:** Joseph can find safe healing openings and was not usually interrupted. Patient one- or two-hit punishes limit Silk income. A Lace hit commonly costs two masks, disrupts his rhythm, and can lead to a second hit for four masks lost in total. These observations motivated the comparison; Joseph ultimately chose to retain the winning loadout.
 
 | Tool | Current decision | Relevant mechanics and route cost |
 |---|---|---|
-| **Druid's Eye** | Shortlisted; Joseph thinks it may be the best fit because he expects to take hits. Not selected yet. | Base Eye produces one strand per two damage triggers while Silk is below capacity. Some attacks produce two triggers; do not assume every two-mask attack does. Three Mossberries unlock the base version. Four more Mossberries upgrade and replace the base Eye (seven berries total); Joseph rejected the upgraded Eyes after learning that the final berry normally requires the Mount Fay detour. Keep this upgrade off the timed route; the base Eye remains under discussion. |
-| **Weavelight** | Still worth considering for patient play. Not selected yet. | Raises the passive regeneration ceiling by one strand and speeds refill below that ceiling. It does not keep adding Silk above the ceiling. This route skips the Unravelled, so before Lace 2 Bell Beast supplies one Silk Heart: Weavelight would raise passive refill from one strand to two. Requires the Moss Mothers fight and ceiling pickup at Atla. |
+| **Druid's Eye** | Considered for expected hits; not selected after the final Mirror decision. | Base Eye produces one strand per two damage triggers while Silk is below capacity. Some attacks produce two triggers; do not assume every two-mask attack does. Three Mossberries unlock the base version. Four more Mossberries upgrade and replace the base Eye (seven berries total); Joseph rejected the upgraded Eyes after learning that the final berry normally requires the Mount Fay detour. Keep this upgrade off the timed route; the base Eye was also left out when Joseph chose Mirror. |
+| **Weavelight** | Considered for patient play; not selected after the final Mirror decision. | Raises the passive regeneration ceiling by one strand and speeds refill below that ceiling. It does not keep adding Silk above the ceiling. This route skips the Unravelled, so before Lace 2 Bell Beast supplies one Silk Heart: Weavelight would raise passive refill from one strand to two. Requires the Moss Mothers fight and ceiling pickup at Atla. |
 | **Fractured Mask** | **Rejected by Joseph.** The Hunter's March approach, entrance arena, and deep backtrack outweigh the benefit. Do not add an early purchase or late corpse pickup. | Prevents one lethal injury and leaves one mask; a separate follow-up can still kill. Repairs for free at a bench. Buy from Mottled Skarr in Hunter's March for 260, or collect free near his corpse after any of Dancers, First Shrine bell, or Clawline, followed by resting at a bench outside Hunter's March. The merchant is beyond a trapped tunnel requiring Swift Step. Late pickup adds travel and trap risk; it has not been timed. This is one-fight death insurance; recovery still needs Silk for Bind. |
 | **Warding Bell** | **Rejected by Joseph.** | Protecting a Bind from damage does not address the reported Silk shortage; interrupted Binds were not the usual problem. Do not add its pickup to the timed route. |
-| **Multibinder** | **Disfavoured for this run's budget.** Joseph would only reconsider if acquisition is quick enough to justify it. | Correction to the earlier framing: My Missing Courier is a rescue of Tipp in northern Bone Bottom after Widow, including two Caranids, followed by shopping in Bellhart. It does not require the later brother/delivery quest chain. The detour has not been timed, and the 880-rosary purchase remains an obstacle. |
+| **Multibinder** | **Not selected.** Its 880-rosary cost was a concern during the comparison. | Correction to the earlier framing: My Missing Courier is a rescue of Tipp in northern Bone Bottom after Widow, including two Caranids, followed by shopping in Bellhart. It does not require the later brother/delivery quest chain. The detour has not been timed, and the 880-rosary purchase remains an obstacle. |
 
 **Druid's Eyes upgrade rejected November 9:** The seven berries are two in Moss Grotto, three around Bone Bottom, one at Atla, and one in the Memorium. Using the two Grotto berries plus the berry below Moss Druid for the base Eye leaves two Bone Bottom berries, the Atla berry, and the Memorium berry for the upgrade. Normal Memorium access requires Faydown Cloak from Mount Fay, which this timed route skips. Joseph said to scrap the upgrade after this requirement was explained; do not add Mount Fay or the seven-berry collection to this run. No bypass has been validated for this run. Upgrading doubles the return from one to two strands per two damage triggers. [Berry locations](https://hollowknight.wiki/w/Mossberries) · [Memorium access](https://hollowknight.wiki/w/Memorium)
 
-The main route still uses the known Mirror + Injector setup until a swap is chosen. Do not record these preferences as completed pickups or scout results. Compare the real acquisition cost and healing contribution of base Druid's Eye and Weavelight. Fractured Mask is no longer a candidate. No pickup or loadout swap is selected.
+The final timed route keeps Claw Mirror + Injector Band. This decision does not add pickups to any recorded run or change historical loadouts and times.
 
 [Mirror](https://hollowknight.wiki/w/Claw_Mirror) · [Fractured Mask](https://hollowknight.wiki/w/Fractured_Mask) · [Mottled Skarr location and death conditions](https://hollowknight.wiki/w/Mottled_Skarr) · [Base Druid's Eye and upgraded Eyes](https://hollowknight.wiki/w/Druid%27s_Eye) · [Weavelight](https://hollowknight.wiki/w/Weavelight) · [Silk Heart regeneration and sources](https://hollowknight.wiki/w/Silk_Heart) · [My Missing Courier](https://hollowknight.wiki/w/My_Missing_Courier) · [Multibinder](https://hollowknight.wiki/w/Multibinder)
 
