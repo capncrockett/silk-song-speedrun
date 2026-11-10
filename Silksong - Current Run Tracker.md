@@ -4,11 +4,11 @@ Based on [Garmond's route and maps](https://steamcommunity.com/sharedfiles/filed
 
 Detailed continuity notes: [Silksong - Project Handoff.md](./Silksong%20-%20Project%20Handoff.md)
 
-**Latest timed checkpoint:** Marrow bench at **5:06**, after Forge Daughter’s 10 shard bundles and Fractured Mask. Lace 2 remains recorded at **4:57**.
+**Final result:** Run #2 completed at **5:26:16**, Grand Mother Silk defeated on **attempt six**. Lace 2 remains recorded at **4:57**, and the restock/Mask detour ended at Marrow at **5:06**.
 
-**Current route:** Grand Mother Silk is ongoing: **5 attempts so far**. Fractured Mask has saved the player during the reported three-mask silk/thread attack, allowing recovery afterward. No new clock or finish time supplied.
+**Current route:** Run #2 is finished. One final timed rerun is planned. GMS felt easier than Lace: patience, watching the knives, one-side positioning in phases 2/3, and Silk saved for healing.
 
-**Scout status:** Grand Mother Silk defeated with **Fractured Mask equipped and no Claw Mirror**. No finish clock or activation count reported. The optional pickup is now deferred until Lace 2, with **Cogwork Core bench 478428** as the quit-return anchor and no rests along the trip. This replaces the earlier Marrow-anchor proposal; the original Marrow-to-Mask scout was 12:56–13:06. Run #2’s finish remains pending.
+**Scout status:** Grand Mother Silk defeated with **Fractured Mask equipped and no Claw Mirror**. No finish clock or activation count reported. The optional pickup is now deferred until Lace 2, with **Cogwork Core bench 478428** as the quit-return anchor and no rests along the trip. This replaces the earlier Marrow-anchor proposal; the original Marrow-to-Mask scout was 12:56–13:06. Run #2 subsequently finished separately at 5:26:16 on attempt six.
 
 ## Run log
 
@@ -56,8 +56,9 @@ Detailed continuity notes: [Silksong - Project Handoff.md](./Silksong%20-%20Proj
 | 4:20 | Checkpoint 1 before Lace 2 | User reported this split and switched focus to scouting Lace 2. | **0:40 remaining.** Timed fight and scout result pending. No separate melody pickups reported. |
 | — | Greymoor spool fragment and Weighted Belt detour | Acquired spool fragment 478263 on the timed run. Balloons were present at Craw Lake without clearing the arena. User wants to buy the Weighted Belt next. | Latest reported split is 4:20. Belt purchase pending. [Spool pin](https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=478263) |
 | 4:57 | Lace 2 defeated | Weighted Belt helped. Used Injector Band, Claw Mirror, Weighted Belt, and Magnetite Dice. Waited for Lace to approach and saved Silk for healing. Red tools were secondary. User found openings for Straight Pins and reported no Cogfly use. | Lace 2 was the bigger bottleneck by the user's assessment. The interval since 4:20 also includes detours. User will finish the run for practice. |
-| 5:06 | Marrow bench after Forge Daughter restock and Fractured Mask | Bought **10 shard bundles**, rested at Marrow, went through Hunter’s March and acquired the Mask using Cogfly, Straight Pin, and Mirror. Returned to Marrow bench. | Player estimates **about ten minutes including restock**; manageable if time allows. Exact departure clock and return method unreported. This trial used Marrow as a rested bench; the planned Core-anchor variant must avoid that rest. GMS remains unfinished. |
-| — | Grand Mother Silk ongoing | **5 attempts so far.** Player reports three-mask hits from the silk/thread attack; Fractured Mask has saved him and allowed him to rebuild health. | No victory, new clock, death count, or activation count reported. Earlier standalone “4” is superseded by five attempts. Latest supplied clock stays 5:06. |
+| 5:06 | Marrow bench after Forge Daughter restock and Fractured Mask | Bought **10 shard bundles**, rested at Marrow, went through Hunter’s March and acquired the Mask using Cogfly, Straight Pin, and Mirror. Returned to Marrow bench. | Player estimates **about ten minutes including restock**; manageable if time allows. Exact departure clock and return method unreported. This trial used Marrow as a rested bench; the planned Core-anchor variant must avoid that rest. GMS was still unfinished at this checkpoint. |
+| — | Grand Mother Silk interim report | **5 attempts so far.** Player reports three-mask hits from the silk/thread attack; Fractured Mask has saved him and allowed him to rebuild health. | At this interim update, no victory or new clock was reported. Five attempts superseded the standalone “4”; the sixth-attempt win follows below. |
+| 5:26:16 | Grand Mother Silk defeated / Run #2 finish | Won on the **sixth attempt**. Easier than Lace by player assessment. Phase 1 straightforward; sticking to one side in phases 2/3 helped. Wait, watch and avoid the knives, and save Silk for healing. | Final time recorded to the second. Fractured Mask had saved the player during the attempts. The interval since 5:06 includes travel/preparation and attempts, not isolated boss time. |
 
 ## Scout log
 
@@ -77,7 +78,7 @@ Detailed continuity notes: [Silksong - Project Handoff.md](./Silksong%20-%20Proj
 
 ## Latest timed-file detour note · November 10
 
-The 5:06 restock/Mask report belongs to **Run #2**, not the scout. Fractured Mask is now acquired on the timed file. Mirror, Cogfly, and Straight Pin were used during the trip. The subsequent GMS report confirms Fractured Mask in use, five attempts so far, and saves from the reported three-mask silk/thread attack; no full current loadout or finish time was supplied. The ~10-minute estimate includes the ten shard bundles. Keep the future detour optional at Lace 2 if time allows; the proposed Core quit-return requires skipping the Forge Daughter and Marrow bench rests used in this trial.
+The 5:06 restock/Mask report belongs to **Run #2**, not the scout. Fractured Mask is now acquired on the timed file. Mirror, Cogfly, and Straight Pin were used during the trip. The subsequent GMS reports confirm Fractured Mask in use and saves from the reported three-mask silk/thread attack, followed by a sixth-attempt clear at 5:26:16. The full supporting loadout was not newly specified. The ~10-minute estimate includes the ten shard bundles. Keep the future detour optional at Lace 2 if time allows; the proposed Core quit-return requires skipping the Forge Daughter and Marrow bench rests used in this trial.
 
 ## Current inventory / build
 
@@ -95,7 +96,7 @@ The 5:06 restock/Mask report belongs to **Run #2**, not the scout. Fractured Mas
 - Heavy Rosary Necklace earned and consumed
 - Magma Bell
 - Claw Mirror
-- Fractured Mask — acquired on the later timed-file Hunter’s March trip, back at Marrow at 5:06; confirmed equipped and saving the player during the ongoing GMS attempts
+- Fractured Mask — acquired on the later timed-file Hunter’s March trip, back at Marrow at 5:06; confirmed equipped and saving the player during the GMS attempts, which ended in a sixth-attempt clear at 5:26:16
 - Ten shard bundles bought at Forge Daughter during that trip; remaining shard stock unreported
 - Injector Band — confirmed equipped for the Forum clear
 - Vaultkeeper's Melody
@@ -130,7 +131,7 @@ The 5:06 restock/Mask report belongs to **Run #2**, not the scout. Fractured Mas
 - Eastern Underworks / Cauldron Spool Fragment (478704) missed on this pass; retain for the future route.
 - The timed run won the roof duel before the 3:45 Cogwork Core bench save and used G&Z's help to clear the Forum at 4:11. Exact dialogue steps are unreported.
 - The timed Forum clear took 3 attempts and left 0:49. The 3:52 to 4:11 interval includes the Blasted Steps Dice detour and the arena attempts.
-- Lace 2 fell at 4:57. User rated it harder on the run than the Forum. Patient punishes, healing Silk, and Weighted Belt helped. Grand Mother Silk time and the achievement result are pending.
+- Lace 2 fell at 4:57. User rated it harder on the run than the Forum. Patient punishes, healing Silk, and Weighted Belt helped. Grand Mother Silk was subsequently defeated on attempt six at 5:26:16; this finish is over the five-hour target.
 
 ## Planned next steps — not yet completed
 
@@ -161,7 +162,7 @@ The 5:06 restock/Mask report belongs to **Run #2**, not the scout. Fractured Mas
 - [x] Greymoor spool fragment 478263 collected on the timed run without the Craw Lake arena
 - [x] Weighted Belt acquired and equipped by Lace 2
 - [x] Lace 2 defeated at 4:57
-- [ ] Grand Mother Silk and final time
+- [x] Grand Mother Silk defeated on attempt six; final time **5:26:16**
 
 ## Future-run changes
 

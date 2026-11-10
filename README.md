@@ -1,6 +1,6 @@
 # Pharloom Runbook
 
-A local Silksong walkthrough for one chosen route: Hunter Crest, all five bells, Last Judge, Garmond & Zaza for High Halls, then the Act 2 ending. The optional run log preserves Run #2 through the **4:57 Lace 2 clear**.
+A local Silksong walkthrough for one chosen route: Hunter Crest, all five bells, Last Judge, Garmond & Zaza for High Halls, then the Act 2 ending. The active local run log now records **Run #2 finished at 5:26:16**, with GMS defeated on attempt six. The starting import retains the original **4:57 Lace 2** snapshot.
 
 ## Open the guide
 
@@ -24,7 +24,7 @@ The main screen is a guide for the final run:
 
 The five-hour budget is measured at the latest recorded split. There is no running timer.
 
-A run stays in progress until a Grand Mother Silk finish split is saved. The goal is strictly below `5:00:00`; exactly five hours does not meet it. Run #2's 26 reported splits and their precision are preserved, including its historical backtrack. The finish remains blank.
+A run stays in progress until a Grand Mother Silk finish split is saved. The goal is strictly below `5:00:00`; exactly five hours does not meet it. The starting import preserves Run #2’s original 26 splits through Lace 2 at 4:57. The active save adds the later 5:06 Mask/restock endpoint and the **5:26:16 finish**, preserving all original splits and their precision.
 
 Splits, notes, and checked pickups save to `.runbook/runs.json`. The **Export run data** button makes a backup. Git ignores this save directory. Copy it as well if you move the runbook to another folder or Mac.
 
