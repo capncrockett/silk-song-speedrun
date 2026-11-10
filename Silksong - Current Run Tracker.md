@@ -6,7 +6,7 @@ Detailed continuity notes: [Silksong - Project Handoff.md](./Silksong%20-%20Proj
 
 **Latest timed checkpoint:** Lace 2 defeated at **4:57**, with **3 displayed minutes** to the five-hour mark  
 **Current route:** Grand Mother Silk remains. User intends to finish Run #2 for practice.  
-**Scout status:** Lace 2 practice planned. The scout previously cleared the Forum in about eight attempts.
+**Scout status:** Fractured Mask reconsidered November 10. Hunter’s March approach measured from Marrow bench at 12:56 to the de-trapped Hunter’s March bench at 13:06 (10 displayed minutes; player estimated roughly 12). Mask pickup is confirmed within that interval; return-to-route timing remains pending. The scout previously cleared the Forum in about eight attempts.
 
 ## Run log
 
@@ -64,6 +64,8 @@ Detailed continuity notes: [Silksong - Project Handoff.md](./Silksong%20-%20Proj
 - **2026-11-08:** User saw G&Z in Choral Chambers just before the High Halls entrance on the scout after completing the roof duel. The user plans to attempt the Forum on the scout. Whether they spoke in the hallway, accepted the Forum aid offer, or received help during combat is unconfirmed. MapGenie places the Forum aid offer at pin 481022. [Forum aid pin](https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=481022)
 - **2026-11-08, Forum clear:** Scout took about **8 attempts**, compared with **3 attempts** on the timed run. Scout loadout and G&Z participation were not specified. The user found the arena harder than most bosses, with Skarrsinger Karmelita as an exception.
 - **2026-11-08, Lace 2:** User plans to scout the fight after reaching Checkpoint 1 on the timed run at 4:20. Scout attempts and outcome are pending.
+
+- **2026-11-10, Hunter’s March / Fractured Mask reconsidered:** On the scout file, started at [Marrow bench 477887](https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=477887) at **12:56**, then reached [Hunter’s March bench 476886](https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=476886) at **13:06**, after disabling the trap. This is **10 displayed minutes**; retain the player’s separate **~12-minute estimate**. Rosary sightseeing included 477994 behind wall 477995, pickup 477997, and secret room 478009; no rosary total reported. Encountered entrance Skarrgard 477962 and arena 479337. Drifter’s Cloak made platforming easier. Player considers an early push too risky compared with the scout’s two Needle upgrades, seven masks, and extra Silk, and wants the Atla upgrade. Mottled Skarr was dead, and the player confirmed Fractured Mask was collected for free before the 13:06 bench timestamp. No return-to-route time or new equipped loadout reported. This reopens the previously rejected Mask for a later backtrack, without changing Run #2 or locking a final route change. Full context and pins: [HANDOFF.md](./HANDOFF.md#hunters-march--fractured-mask-scout--november-10).
 
 ## Current inventory / build
 
