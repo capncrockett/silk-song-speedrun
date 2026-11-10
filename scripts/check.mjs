@@ -27,6 +27,9 @@ assert.ok(route.preparations.some((group) => group.archived && group.items.some(
   "Keep the old lower Core pickup ID available to historical records.");
 
 for (const stop of stops) {
+  assert.ok(Array.isArray(stop.guide) && stop.guide.length >= 2, `Missing walkthrough directions: ${stop.id}`);
+  assert.ok(stop.guide.every((text) => typeof text === "string" && text.trim()), "Guide directions must be readable text.");
+  if (stop.guideTitle !== undefined) assert.ok(typeof stop.guideTitle === "string" && stop.guideTitle.trim());
   if (!stop.purchases) continue;
   assert.ok(Array.isArray(stop.purchases) && stop.purchases.length > 0);
   for (const item of stop.purchases) {

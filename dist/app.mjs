@@ -7,6 +7,7 @@ const state = {
   maps: null,
   runId: null,
   checkpoint: null,
+  activeMap: null,
   stops: [],
   saving: false
 };
@@ -103,10 +104,6 @@ function renderMetrics() {
   const latest = summary.latest;
   const goal = state.route.targetSeconds;
   const targetTime = formatTime(goal);
-  byId("tracker-title").textContent = run.mode === "scout" ? "Off the clock." : summary.finish ? "A journey recorded." : latest ? "The final stretch." : "A fresh thread.";
-  if (latest && !summary.finish && summary.next && state.stops.indexOf(stopById(summary.next.id)) < state.stops.length * .65 && run.mode !== "scout") {
-    byId("tracker-title").textContent = "One split at a time.";
-  }
   const badge = byId("session-badge");
   badge.dataset.mode = run.mode;
   badge.textContent = run.mode === "scout" ? "Scout practice" : summary.finish ? summary.underTarget ? "Finished · under 5h" : "Finished · goal missed" : "In progress";
@@ -118,7 +115,7 @@ function renderMetrics() {
   byId("progress-label").textContent = summary.finish ? "Finish recorded" : `${run.splits.length} splits saved · ${summary.next ? "finish pending" : "route complete"}`;
 
   const card = byId("budget-card");
-  let title = "02 · Time to five hours";
+  let title = "Time to five hours";
   let value = targetTime;
   let description = "Before the first split";
   let tone = "normal";
@@ -199,18 +196,61 @@ function renderMaps() {
   byId("map-gaps").textContent = `Missing guide maps: ${state.maps.missing.map((image) => image.title).join("; ")}. Checkpoint notes and map pins cover these stops. The guide does not mark spool fragments.`;
 }
 
+function stepTitle(stop) {
+  return stop.guideTitle ?? stop.title;
+}
+
+function renderGuideMap() {
+  const image = state.maps.images.find((image) => image.id === state.activeMap);
+  byId("guide-map-panel").hidden = !image;
+  const gap = stopById(state.checkpoint)?.mapNote ?? (image?.id === "overview" ? "The detailed area map is still missing. Use the written directions and map pins here; the overview shows the broader route." : "");
+  byId("guide-map-gap").hidden = !gap;
+  byId("guide-map-gap").textContent = gap;
+  if (!image) return;
+  for (const tab of byId("guide-map-tabs").children) {
+    const selected = tab.dataset.map === image.id;
+    tab.setAttribute("aria-selected", String(selected));
+    tab.tabIndex = selected ? 0 : -1;
+  }
+  byId("guide-map-panel").setAttribute("aria-labelledby", `map-tab-${image.id}`);
+  byId("guide-map-image").src = image.src;
+  byId("guide-map-image").alt = image.title;
+  byId("guide-map-image").width = image.width;
+  byId("guide-map-image").height = image.height;
+  byId("guide-map-title").textContent = image.title;
+  byId("guide-map-note").textContent = image.note;
+  byId("open-current-map").setAttribute("aria-label", `Enlarge ${image.title}`);
+}
+
 function renderEditor() {
   const run = selectedRun();
   const stop = stopById(state.checkpoint);
   const saved = run.splits.find((split) => split.checkpoint === state.checkpoint);
-  const next = runSummary(state.route, run).next;
-  byId("checkpoint-select").value = state.checkpoint;
-  byId("entry-kicker").textContent = saved ? "Recorded checkpoint" : next?.id === state.checkpoint ? "Next checkpoint" : "Checkpoint";
-  byId("entry-title").textContent = stop?.title ?? splitLabel(saved);
-  byId("entry-tip").textContent = stop?.tip ?? "This split was part of the original run.";
   const section = state.route.sections.find((section) => section.id === stop?.sectionId);
+  const index = state.stops.findIndex((stop) => stop.id === state.checkpoint);
+  byId("checkpoint-select").value = state.checkpoint;
+  byId("entry-kicker").textContent = section ? `Section ${section.number} · ${section.title}` : "Historical step";
+  byId("entry-title").textContent = stop ? stepTitle(stop) : saved ? splitLabel(saved) : "Choose a route step";
+  byId("guide-position").textContent = stop ? `Step ${index + 1} of ${state.stops.length}` : "Earlier route";
+  byId("previous-step").disabled = index <= 0;
+  byId("next-step").disabled = index < 0 || index === state.stops.length - 1;
+  const nextStop = state.stops[index + 1];
+  byId("guide-next-label").textContent = stop && nextStop ? `Up next · ${stepTitle(nextStop)}` : stop ? "The end of your route." : "This step belongs to an earlier route version.";
+  byId("guide-directions").replaceChildren(...(stop?.guide ?? ["This historical split is preserved in the run log."]).map((text) => node("li", "", text)));
+  byId("entry-links").replaceChildren(...links(stop?.links));
   const maps = (stop?.maps ?? section?.maps ?? []).map((id) => state.maps.images.find((image) => image.id === id));
-  byId("entry-links").replaceChildren(...links(stop?.links), ...maps.map((image) => link(`${image.title} ↗`, image.src)));
+  if (!maps.some((image) => image.id === state.activeMap)) state.activeMap = maps[0]?.id ?? null;
+  byId("guide-map-tabs").replaceChildren(...maps.map((image) => {
+    const tab = node("button", "map-tab", image.title);
+    tab.type = "button";
+    tab.id = `map-tab-${image.id}`;
+    tab.dataset.map = image.id;
+    tab.setAttribute("role", "tab");
+    tab.setAttribute("aria-controls", "guide-map-panel");
+    tab.addEventListener("click", () => { state.activeMap = image.id; renderGuideMap(); });
+    return tab;
+  }));
+  renderGuideMap();
   byId("split-time").value = saved ? formatTime(saved.seconds, saved.precision) : "";
   byId("split-note").value = saved?.note ?? "";
   byId("save-split").textContent = saved ? "Update split →" : "Save split →";
@@ -253,42 +293,32 @@ function renderShopping() {
   byId("shopping-note").textContent = stop.shoppingNote ?? "Planned spending at this stop; this reminder does not assume your current balance.";
 }
 
-function phaseSummary(section, count) {
+function phaseSummary(section) {
   const summary = node("summary");
   summary.append(node("span", "phase-number", section.number), node("span", "phase-title", section.title));
-  if (count) summary.append(node("span", "count", count));
   return summary;
 }
 
 function renderCheckpointList(reset = false) {
   const container = byId("checkpoint-list");
   const expanded = reset ? [] : [...container.querySelectorAll("details[open]")].map((item) => item.dataset.phase);
-  const run = selectedRun();
-  const saved = new Map(run.splits.map((split) => [split.checkpoint, split]));
-  const next = runSummary(state.route, run).next;
   container.replaceChildren();
   for (const section of state.route.sections) {
     const phase = node("details", "phase");
     phase.dataset.phase = section.id;
     phase.open = expanded.includes(section.id) || section.stops.some((stop) => stop.id === state.checkpoint);
-    const count = section.stops.filter((stop) => saved.has(stop.id)).length;
-    phase.dataset.complete = String(count === section.stops.length);
-    phase.dataset.current = String(section.stops.some((stop) => stop.id === next?.id));
+    phase.dataset.current = String(section.stops.some((stop) => stop.id === state.checkpoint));
     phase.addEventListener("toggle", updatePhaseControls);
-    phase.append(phaseSummary(section, `${count}/${section.stops.length}`));
+    phase.append(phaseSummary(section));
     phase.append(node("p", "phase-context", section.summary));
     const list = node("ol", "checkpoint-list");
     for (const stop of section.stops) {
-      const split = saved.get(stop.id);
       const row = node("button", "checkpoint-row");
       row.type = "button";
-      row.classList.toggle("logged", Boolean(split));
-      row.classList.toggle("next", stop.id === next?.id);
       row.setAttribute("aria-pressed", String(stop.id === state.checkpoint));
       const dot = node("span", "checkpoint-dot");
       dot.setAttribute("aria-hidden", "true");
-      const time = split ? formatTime(split.seconds, split.precision) : stop.id === next?.id ? "Next" : "—";
-      row.append(dot, node("span", "", stop.title), node("span", split ? "checkpoint-time" : "checkpoint-time empty", time));
+      row.append(dot, node("span", "", stepTitle(stop)));
       row.addEventListener("click", () => chooseCheckpoint(stop.id, true));
       const item = node("li");
       item.append(row);
@@ -309,10 +339,17 @@ function updatePhaseControls() {
 function chooseCheckpoint(id, focus = false) {
   if (state.saving) return;
   state.checkpoint = id;
+  if (stopById(id)) {
+    try { localStorage.setItem("pharloom-guide-step", id); } catch { /* Reading position is optional. */ }
+  }
   status("split-status", "");
   renderEditor();
   renderCheckpointList();
-  if (focus) byId("split-time").focus();
+  if (focus) {
+    byId("entry-title").focus({ preventScroll: true });
+    byId("guide-step").scrollIntoView({ block: "start" });
+    if (window.matchMedia("(max-width: 900px)").matches) byId("route-navigation").open = false;
+  }
 }
 
 function renderHistory() {
@@ -325,7 +362,10 @@ function renderHistory() {
     const details = node("div");
     const title = node("button", "subtle-link", splitLabel(split));
     title.type = "button";
-    title.addEventListener("click", () => chooseCheckpoint(split.checkpoint, true));
+    title.addEventListener("click", () => {
+      chooseCheckpoint(split.checkpoint);
+      byId("split-time").focus();
+    });
     details.append(title);
     if (split.note) details.append(node("p", "note", split.note));
     item.append(node("time", "", formatTime(split.seconds, split.precision)), details);
@@ -393,8 +433,11 @@ function selectRun(id) {
   if (state.saving) return;
   state.runId = id;
   const run = selectedRun();
-  const summary = runSummary(state.route, run);
-  state.checkpoint = summary.next?.id ?? summary.finish?.checkpoint ?? state.stops[0].id;
+  if (!stopById(state.checkpoint) && !run.splits.some((split) => split.checkpoint === state.checkpoint)) {
+    let remembered;
+    try { remembered = localStorage.getItem("pharloom-guide-step"); } catch { /* Start at the beginning. */ }
+    state.checkpoint = stopById(remembered)?.id ?? state.stops[0].id;
+  }
   try { localStorage.setItem("pharloom-run", id); } catch { /* Selection is optional browser state. */ }
   for (const id of ["split-status", "notes-status", "prep-status"]) status(id, "");
   byId("run-notes").value = run.notes;
@@ -445,12 +488,9 @@ function bindEvents() {
       return;
     }
 
-    const wasNext = runSummary(state.route, run).next?.id === id;
     const label = previous?.label ?? stopById(id)?.title ?? id;
     run.splits = [...others, { checkpoint: id, label, ...time, note: byId("split-note").value.trim() }];
     if (await save(data, "split-status", `Saved ${formatTime(time.seconds, time.precision)} · ${label}`)) {
-      const next = runSummary(state.route, selectedRun()).next;
-      if (wasNext && next) state.checkpoint = next.id;
       renderMetrics();
       renderEditor();
       renderCheckpointList();
@@ -476,6 +516,46 @@ function bindEvents() {
   }
   byId("new-run").addEventListener("click", openSession);
   byId("open-maps").addEventListener("click", () => { byId("maps").open = true; });
+  for (const [id, delta] of [["previous-step", -1], ["next-step", 1]]) {
+    byId(id).addEventListener("click", () => {
+      const index = state.stops.findIndex((stop) => stop.id === state.checkpoint);
+      const next = state.stops[index + delta];
+      if (index >= 0 && next) chooseCheckpoint(next.id, true);
+    });
+  }
+  byId("log-this-step").addEventListener("click", () => {
+    byId("run-tools").open = true;
+    byId("split-time").focus();
+  });
+  byId("guide-map-tabs").addEventListener("keydown", (event) => {
+    const tabs = [...byId("guide-map-tabs").children];
+    const index = tabs.indexOf(document.activeElement);
+    if (index < 0) return;
+    const target = { ArrowLeft: (index - 1 + tabs.length) % tabs.length, ArrowRight: (index + 1) % tabs.length, Home: 0, End: tabs.length - 1 }[event.key];
+    if (target === undefined) return;
+    event.preventDefault();
+    tabs[target].click();
+    tabs[target].focus();
+  });
+  byId("open-current-map").addEventListener("click", () => {
+    const image = state.maps.images.find((image) => image.id === state.activeMap);
+    if (!image) return;
+    byId("map-viewer-title").textContent = image.title;
+    byId("map-viewer-image").src = image.src;
+    byId("map-viewer-image").alt = image.title;
+    byId("map-viewport").dataset.zoom = "fit";
+    byId("map-zoom").textContent = "Actual size";
+    byId("map-zoom").setAttribute("aria-pressed", "false");
+    byId("map-viewer").showModal();
+    byId("map-viewport").scrollTo(0, 0);
+  });
+  byId("map-zoom").addEventListener("click", () => {
+    const actual = byId("map-viewport").dataset.zoom !== "actual";
+    byId("map-viewport").dataset.zoom = actual ? "actual" : "fit";
+    byId("map-zoom").textContent = actual ? "Fit map" : "Actual size";
+    byId("map-zoom").setAttribute("aria-pressed", String(actual));
+  });
+  byId("close-map").addEventListener("click", () => byId("map-viewer").close());
   dialog.addEventListener("cancel", (event) => { if (state.saving) event.preventDefault(); });
   for (const [id, open] of [["expand-phases", true], ["collapse-phases", false]]) {
     byId(id).addEventListener("click", () => {
@@ -503,8 +583,7 @@ function bindEvents() {
     if (await save(data, "new-run-status", "Run created.")) {
       dialog.close();
       selectRun(run.id);
-      window.location.hash = "tracker";
-      byId("split-time").focus();
+      chooseCheckpoint(state.stops[0].id, true);
     }
   });
 
@@ -538,7 +617,7 @@ async function start() {
     byId("tracker").hidden = false;
     byId("startup").hidden = true;
     byId("footer").hidden = false;
-    byId("session-bar").hidden = false;
+    byId("route-navigation").open = !window.matchMedia("(max-width: 900px)").matches;
   } catch (error) {
     byId("startup").textContent = `Could not load the runbook. Open it from the local server address in the README. ${error.message}`;
   }

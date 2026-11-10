@@ -30,9 +30,10 @@ The app shows 12 reference maps and 3 relevant screenshots. Guide-only Mist and 
 
 ## Missing guide maps
 
-The current guide HTML has empty image URLs for these three maps:
+The current guide HTML has empty image URLs for these four maps:
 
 - Shellwood and Widow
+- Deep Docks return: mask shard and Forge Daughter
 - Last Judge and Choral Chambers
 - Songclave, lower Cogwork and Vaults arena
 
