@@ -8,6 +8,10 @@ Joseph plans **one more timed run**. The app is now one run screen: checkpoint s
 
 Run #2's Grand Mother Silk fight is still unfinished, confirmed by Joseph. No final time has been supplied. **Claw Mirror is settled:** Joseph chose to keep it alongside Injector Band for the final run, retaining Weighted Belt and Magnetite Dice. Alternative blue-tool pickups are off the timed route; the discussion and rejection reasons are archived below. The second kit is settled on Twelfth Architect for 450 rosaries after Clawline; Joseph reports that earning rosaries in the Citadel is straightforward. The six-fragment plan is **locked by Joseph**: Bone Bottom 478080 + Atla 478230, Deep Docks 477926 + Greymoor 478263, and Grand Gate 478586 + eastern Underworks 478704. These complete three spools for +3 Silk capacity. Joseph is comfortable with the platforming; none adds a dedicated spool arena. Checkpoints now show upcoming spending amounts. Hunter slot capacity is not an open concern: Joseph recalls a spare locket on each file and reports an extra Craftmetal on each.
 
+## Local artwork · November 9
+
+Joseph supplied `hornet-mask-icon.png`, `hornet.png`, and `hornet.webp` in the repository root. Use these provided images for the app identity and artwork. The mask PNG is used in the header, favicon, and touch icon; the clean transparent `hornet.png` is used beside the desktop tracker title. Keep the originals intact. `hornet.webp` is retained as the supplied alternate. The earlier hand-drawn SVG placeholder has been removed.
+
 ## Original implementation brief
 
 A small local browser app for one player. It should replace the need to cross-reference the branching Steam guide during a run. Show Joseph's chosen route in order and make it quick to record what actually happened.

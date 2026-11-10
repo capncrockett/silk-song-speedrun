@@ -37,3 +37,7 @@ Open this folder as a project and ask Codex to read [HANDOFF.md](./HANDOFF.md). 
 The server listens only on your Mac. To use another port, run `RUNBOOK_PORT=4174 npm start`. For an isolated test save, set `RUNBOOK_DATA_DIR` to a different directory before starting. Neither setting requires installing anything.
 
 Run `npm run check` to check the route data, historical splits, five-hour boundary, saved-time format, local assets, and app syntax.
+
+## Artwork
+
+The header icon and browser icon use the supplied [Hornet mask](./hornet-mask-icon.png). The tracker header uses the supplied [Hornet PNG](./hornet.png); [the WebP alternate](./hornet.webp) is retained with the original assets. These local files are served directly, with no external image service.

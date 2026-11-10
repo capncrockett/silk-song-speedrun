@@ -84,7 +84,7 @@ assert.equal(imported.next.id, "gms");
 assert.ok(seed.runs[0].splits.every((split) => split.label), "Snapshot historical labels before route edits.");
 
 await Promise.all([
-  "dist/index.html", "dist/styles.css", "dist/favicon.svg", "HANDOFF.md",
+  "dist/index.html", "dist/styles.css", "hornet-mask-icon.png", "hornet.png", "HANDOFF.md",
   "Recovered Garmond Maps/Complete Route Overview.png",
   "Recovered Garmond Maps/Cauldron and Whispering Vaults.jpg",
   "Recovered Garmond Maps/High Halls.jpg"

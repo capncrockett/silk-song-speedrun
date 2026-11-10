@@ -35,7 +35,7 @@ h3 { font-size: .96rem; font-weight: 550; line-height: 1.5; }
 .topbar { border-bottom: 1px solid var(--line); background: #17191be8; }
 .bar-inner { display: flex; align-items: center; justify-content: space-between; gap: 1.5rem; min-height: 92px; }
 .brand { display: flex; align-items: center; gap: .75rem; color: var(--ink); font: 1.27rem Georgia, serif; letter-spacing: -.025em; text-decoration: none; white-space: nowrap; }
-.brand img { width: 39px; height: 43px; }
+.brand img { width: 39px; height: 43px; object-fit: contain; }
 .brand strong { font-weight: 400; }
 .brand small { display: block; margin-top: .4rem; color: var(--soft); font: .53rem -apple-system, sans-serif; letter-spacing: .19em; }
 .local-label { display: flex; align-items: center; gap: .5rem; color: var(--muted); font-size: .72rem; white-space: nowrap; }
@@ -52,11 +52,11 @@ h3 { font-size: .96rem; font-weight: 550; line-height: 1.5; }
 .eyebrow { color: var(--accent); font-size: .61rem; font-weight: 550; letter-spacing: .16em; line-height: 1.5; text-transform: uppercase; }
 .page-head .eyebrow { margin-bottom: .8rem; }
 .subtitle { color: var(--muted); margin-top: .8rem; font-size: .87rem; line-height: 1.65; }
-.target-mark { display: flex; gap: 1rem; align-items: center; padding-right: .75rem; }
-.target-icon { color: var(--accent); font-size: 3.7rem; line-height: 1; font-weight: 200; }
-.target-mark div { display: grid; gap: .35rem; }
-.target-mark strong { font: 1.2rem Georgia, serif; }
-.target-mark div > span:last-child { color: var(--soft); font-size: .72rem; }
+.hero-aside { display: flex; align-items: center; gap: 1rem; flex-shrink: 0; }
+.hero-hornet { display: block; width: clamp(11rem, 18vw, 14rem); height: auto; filter: drop-shadow(0 12px 14px #0005); }
+.target-mark { display: grid; gap: .4rem; padding-right: .5rem; }
+.target-mark strong { font: 1.15rem Georgia, serif; }
+.target-mark > span:last-child { color: var(--soft); font-size: .7rem; }
 .form-actions { display: flex; flex-wrap: wrap; align-items: center; gap: .65rem; }
 .button, input, select, textarea { border: 1px solid var(--line); border-radius: 6px; min-height: 43px; }
 .button { display: inline-flex; align-items: center; justify-content: center; gap: .5rem; padding: .65rem 1rem; font-size: .81rem; font-weight: 550; color: var(--ink); text-decoration: none; white-space: nowrap; transition: background .15s, border-color .15s; }
@@ -208,6 +208,7 @@ dialog .form-actions { justify-content: end; margin-top: 1.5rem; }
   .session-bar .button { padding-inline: .65rem; font-size: .7rem; }
   .session-badge { font-size: .54rem; }
   .page-head { margin-block: 2rem 1.5rem; }
+  .hero-aside { display: none; }
   .tracker-head { flex-direction: column; align-items: start; gap: 1.1rem; }
   .track-layout { grid-template-columns: 1fr; grid-template-areas: "editor" "checkpoints"; gap: 1rem; }
   .editor { position: static; }
