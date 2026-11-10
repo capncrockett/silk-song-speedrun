@@ -380,7 +380,9 @@ function renderPrep() {
   const groups = state.route.preparations.filter((group) => !group.archived || group.items.some((item) => run.prep.includes(item.id)));
   const items = groups.flatMap((group) => group.items);
   const pickedUp = items.filter((item) => run.prep.includes(item.id)).length;
-  byId("prep-count").textContent = `${pickedUp} / ${items.length} pickups`;
+  byId("prep-count").textContent = `${pickedUp} of ${items.length} pickups collected`;
+  byId("prep-toggle-count").textContent = `${pickedUp}/${items.length}`;
+  byId("open-prep").setAttribute("aria-label", `Open pickup checklist: ${pickedUp} of ${items.length} collected for ${run.name}`);
   const grid = byId("prep-grid");
   grid.replaceChildren();
   for (const group of groups) {
@@ -417,7 +419,9 @@ function renderPrep() {
         edited.prep = checkbox.checked ? [...edited.prep, item.id] : edited.prep.filter((id) => id !== item.id);
         if (await save(data, "prep-status", "Pickup checklist saved.")) {
           renderPrep();
-          grid.querySelector(`[data-prep="${item.id}"]`)?.focus();
+          if (byId("prep-drawer").open && !byId("prep-drawer").dataset.closing) {
+            grid.querySelector(`[data-prep="${item.id}"]`)?.focus({ preventScroll: true });
+          }
         } else {
           checkbox.checked = selectedRun().prep.includes(item.id);
         }
@@ -515,6 +519,39 @@ function bindEvents() {
     nameField.select();
   }
   byId("new-run").addEventListener("click", openSession);
+  const prepDrawer = byId("prep-drawer");
+  let prepCloseTimer;
+  function closePrep() {
+    if (!prepDrawer.open || prepDrawer.dataset.closing) return;
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      prepDrawer.close();
+      return;
+    }
+    prepDrawer.dataset.closing = "true";
+    prepCloseTimer = window.setTimeout(() => prepDrawer.close(), 220);
+  }
+  byId("open-prep").addEventListener("click", () => {
+    status("prep-status", "");
+    prepDrawer.showModal();
+    byId("open-prep").setAttribute("aria-expanded", "true");
+    document.documentElement.classList.add("prep-open");
+  });
+  byId("close-prep").addEventListener("click", closePrep);
+  prepDrawer.addEventListener("cancel", (event) => { event.preventDefault(); closePrep(); });
+  prepDrawer.addEventListener("click", (event) => {
+    if (event.target !== prepDrawer) return;
+    const bounds = prepDrawer.getBoundingClientRect();
+    if (event.clientX < bounds.left || event.clientX > bounds.right || event.clientY < bounds.top || event.clientY > bounds.bottom) closePrep();
+  });
+  prepDrawer.addEventListener("animationend", (event) => {
+    if (event.target === prepDrawer && prepDrawer.dataset.closing) prepDrawer.close();
+  });
+  prepDrawer.addEventListener("close", () => {
+    window.clearTimeout(prepCloseTimer);
+    delete prepDrawer.dataset.closing;
+    byId("open-prep").setAttribute("aria-expanded", "false");
+    document.documentElement.classList.remove("prep-open");
+  });
   byId("open-maps").addEventListener("click", () => { byId("maps").open = true; });
   for (const [id, delta] of [["previous-step", -1], ["next-step", 1]]) {
     byId(id).addEventListener("click", () => {
@@ -617,6 +654,7 @@ async function start() {
     byId("tracker").hidden = false;
     byId("startup").hidden = true;
     byId("footer").hidden = false;
+    byId("open-prep").hidden = false;
     byId("route-navigation").open = !window.matchMedia("(max-width: 900px)").matches;
   } catch (error) {
     byId("startup").textContent = `Could not load the runbook. Open it from the local server address in the README. ${error.message}`;

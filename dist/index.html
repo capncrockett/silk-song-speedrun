@@ -81,15 +81,6 @@
             </details>
             <div class="step-footer"><span id="guide-next-label"></span><button type="button" class="subtle-link" id="log-this-step">Record a split for this step ↓</button></div>
           </article>
-          <details class="panel collapsible" id="prep">
-            <summary><span>Pickups &amp; upgrades</span><span class="count" id="prep-count"></span></summary>
-            <section aria-label="Spool pairs and upgrades" class="inline-prep">
-              <p class="section-description" id="prep-run"></p>
-              <p class="section-description">Check off pickups as you collect them. Each completed spool pair adds one Silk capacity.</p>
-              <div id="prep-grid" class="prep-grid"></div>
-              <p class="form-status" id="prep-status" role="status"></p>
-            </section>
-          </details>
           <details class="panel collapsible" id="maps">
             <summary><span>All reference maps</span><span class="count" id="map-count"></span></summary>
             <div class="inline-maps">
@@ -135,6 +126,19 @@
     </section>
   </main>
   <footer class="shell footer" id="footer" hidden><span>PHARLOOM RUNBOOK <span class="footer-separator">/</span> The route you chose. A guide for the journey.</span><a class="subtle-link" href="#tracker">Back to the guide ↑</a></footer>
+  <button type="button" class="prep-launcher" id="open-prep" aria-controls="prep-drawer" aria-expanded="false" aria-haspopup="dialog" hidden><span>Pickups</span><span id="prep-toggle-count" class="count"></span><span aria-hidden="true">←</span></button>
+  <dialog id="prep-drawer" aria-labelledby="prep-title" aria-describedby="prep-run">
+    <header class="prep-drawer-header">
+      <div><p class="eyebrow">The whole route</p><h2 id="prep-title">Pickups &amp; upgrades</h2><p id="prep-run" class="section-description"></p></div>
+      <button type="button" class="button secondary" id="close-prep" aria-label="Close pickup checklist" autofocus>Close ×</button>
+    </header>
+    <section class="prep-drawer-body" aria-label="Spool pairs and upgrades">
+      <p id="prep-count" class="count"></p>
+      <p class="section-description">Check off pickups as you collect them. Each completed spool pair adds one Silk capacity.</p>
+      <div id="prep-grid" class="prep-grid"></div>
+    </section>
+    <p class="form-status prep-drawer-status" id="prep-status" role="status"></p>
+  </dialog>
   <dialog id="map-viewer" aria-labelledby="map-viewer-title">
     <div class="map-viewer-bar"><h2 id="map-viewer-title"></h2><button type="button" class="button secondary" id="map-zoom" aria-pressed="false">Actual size</button><button type="button" class="button secondary" id="close-map">Close ×</button></div>
     <div class="map-viewport" id="map-viewport" tabindex="0" aria-label="Scrollable map"><img id="map-viewer-image" alt=""></div>
