@@ -18,7 +18,7 @@ The MapGenie IDs below were resolved from the public Pharloom map data. Area nam
 
 ## User choices
 
-- **Final selection:** Bone Bottom 478080, Atla 478230, Deep Docks 477926, Greymoor 478263, Grand Gate 478586, and eastern Underworks 478704. None adds a dedicated spool arena; the usual post-Clawline exit fight remains.
+- **Final selection:** Bone Bottom 478080, Atla 478230, Deep Docks 477926, Greymoor 478263, Grand Gate 478586, and eastern Underworks 478704. Locked by Joseph. None adds a spool arena.
 - **Greymoor pickup confirmed on Run #2.** On a late timed visit, the user found the balloons present at Craw Lake and collected 478263 with the arena uncleared. The documented Cling Grip requirement was rechecked November 9 and fits the earlier Bell #3 pass; the actual Run #2 record still confirms only the late pickup. [Greymoor spool](https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=478263)
 - **Lower Cogwork Core (478618):** archived alternative, omitted from the final six.
 - **Eastern Underworks / Cauldron (478704):** Joseph explicitly selected it for the final run on November 9. Arena 479347 rewards the separate central spool 478931; the eastern pickup is behind wall 480018 approached from the east.

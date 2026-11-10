@@ -139,7 +139,7 @@
     {
       "id": "silk-c",
       "title": "Silk pair C · Grand Gate + Underworks",
-      "detail": "Third completed spool: the Grand Gate scale-platform climb in Act 2, then the eastern Underworks breakable-wall room. The usual Cauldron exit arena remains on the main route.",
+      "detail": "Third completed spool: the Grand Gate scale-platform climb in Act 2, then the eastern Underworks breakable-wall room.",
       "complete": "+1 Silk capacity",
       "items": [
         {
@@ -214,7 +214,7 @@
   ],
   "research": [
     {"id": "lace", "status": "Practice", "title": "Lace 2 consistency", "detail": "Practice the patient approach and log retries separately from the travel detour. Test Belt plus Injector Band, reserve Silk for Bind, and record safe Straight Pin openings.", "links": [{"title": "Lace 2 map pin", "pin": 479088}]},
-    {"id": "silk", "status": "Settled", "title": "Six fragments, three complete spools", "detail": "Collect Bone Bottom + Atla, Deep Docks + Greymoor, and Grand Gate + eastern Underworks for +3 Silk capacity. These pickups add no dedicated spool arena. Keep the normal Cauldron exit fight; skip the central Underworks spool arena and the lower Core alternative.", "links": [{"title": "Bone Bottom spool", "pin": 478080}, {"title": "Atla spool", "pin": 478230}, {"title": "Deep Docks spool", "pin": 477926}, {"title": "Greymoor spool", "pin": 478263}, {"title": "Grand Gate spool", "pin": 478586}, {"title": "Eastern Underworks spool", "pin": 478704}]},
+    {"id": "silk", "status": "Locked", "title": "Six fragments, three complete spools", "detail": "Locked by Joseph: Bone Bottom + Atla, Deep Docks + Greymoor, and Grand Gate + eastern Underworks for +3 Silk capacity. No added spool arenas. Skip the central Underworks and lower Core alternatives; the spool decision is closed.", "links": [{"title": "Bone Bottom spool", "pin": 478080}, {"title": "Atla spool", "pin": 478230}, {"title": "Deep Docks spool", "pin": 477926}, {"title": "Greymoor spool", "pin": 478263}, {"title": "Grand Gate spool", "pin": 478586}, {"title": "Eastern Underworks spool", "pin": 478704}]},
     {"id": "kit", "status": "Settled", "title": "Buy the second Crafting Kit", "detail": "Joseph reports that earning rosaries in the Citadel is straightforward. Buy Twelfth Architect's kit for 450 after Clawline and skip Crawbug Clearing and the 25-Ragpelt farm.", "links": [{"title": "Twelfth Architect kit", "pin": 478728}]},
     {"id": "mirror", "status": "Settled", "title": "Keep Claw Mirror", "detail": "Joseph chose Claw Mirror + Injector Band for the final run, retaining Weighted Belt and Magnetite Dice. Keep the patient approach and Silk for Bind. The alternative-tool comparison is closed; acquisition tradeoffs and rejected detours remain in HANDOFF.md.", "links": [{"title": "Claw Mirror", "url": "https://hollowknight.wiki/w/Claw_Mirror"}]},
     {"id": "thread", "status": "Deferred", "title": "Thread Storm and Craw Lake", "detail": "A documented route takes Thread Storm after Clawline and Faydown Cloak without clearing the arena. The earlier Halfway Home route is verified for Bell #3, and the late spool pickup is separate evidence. Keep Thread Storm skipped for this route.", "links": [{"title": "Late bypass", "url": "https://speedpastes.org/kXQvcbMl"}, {"title": "Thread Storm pin", "pin": 478061}]},

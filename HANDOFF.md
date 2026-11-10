@@ -6,7 +6,7 @@ Updated November 9, 2026. This brief is for the Codex agent building Joseph's pe
 
 Joseph plans **one more timed run**. The app is now one run screen: checkpoint selection also shows route reminders and map pins; prep, recovered maps, history, and notes expand inline. Keep open research and alternative builds in this handoff. Existing historical timed and scout records remain intact. Commit coherent changes as work proceeds. Discuss unresolved route choices one question or pickup at a time; Joseph asked to avoid bundled planning questions.
 
-Run #2's Grand Mother Silk fight is still unfinished, confirmed by Joseph. No final time has been supplied. **Claw Mirror is settled:** Joseph chose to keep it alongside Injector Band for the final run, retaining Weighted Belt and Magnetite Dice. Alternative blue-tool pickups are off the timed route; the discussion and rejection reasons are archived below. The second kit is settled on Twelfth Architect for 450 rosaries after Clawline; Joseph reports that earning rosaries in the Citadel is straightforward. The six-fragment plan is settled: Bone Bottom 478080 + Atla 478230, Deep Docks 477926 + Greymoor 478263, and Grand Gate 478586 + eastern Underworks 478704. These complete three spools for +3 Silk capacity. Joseph is comfortable with the platforming; none adds a dedicated spool arena. The normal Cauldron exit arena remains on the route. Checkpoints now show upcoming spending amounts. Hunter slot capacity is not an open concern: Joseph recalls a spare locket on each file and reports an extra Craftmetal on each.
+Run #2's Grand Mother Silk fight is still unfinished, confirmed by Joseph. No final time has been supplied. **Claw Mirror is settled:** Joseph chose to keep it alongside Injector Band for the final run, retaining Weighted Belt and Magnetite Dice. Alternative blue-tool pickups are off the timed route; the discussion and rejection reasons are archived below. The second kit is settled on Twelfth Architect for 450 rosaries after Clawline; Joseph reports that earning rosaries in the Citadel is straightforward. The six-fragment plan is **locked by Joseph**: Bone Bottom 478080 + Atla 478230, Deep Docks 477926 + Greymoor 478263, and Grand Gate 478586 + eastern Underworks 478704. These complete three spools for +3 Silk capacity. Joseph is comfortable with the platforming; none adds a dedicated spool arena. Checkpoints now show upcoming spending amounts. Hunter slot capacity is not an open concern: Joseph recalls a spare locket on each file and reports an extra Craftmetal on each.
 
 ## Original implementation brief
 
@@ -99,9 +99,9 @@ For Architect's Melody, use the guide's hit counts from the initial state. Left 
 
 ## Decisions to carry forward
 
-### Spools in pairs · settled November 9
+### Spools in pairs · locked November 9
 
-**Six selected fragments, three completed spools, +3 Silk capacity.** No additional dedicated spool arena is required. Ordinary enemies, lava, traps, and platforming remain. The existing post-Clawline Cauldron exit arena remains part of normal progression.
+**Locked: six selected fragments, three completed spools, +3 Silk capacity.** None of these pickups adds an arena. Joseph explicitly closed this choice and wants to move on; do not reopen the alternatives unless he asks.
 
 Pairs are displayed in the planned collection order:
 
@@ -120,7 +120,7 @@ These are planning/checklist pairs, not unique item matches. Existing pickup IDs
 | Bone Bottom **478080** | No ability or rosary cost, but it is a trapped side passage after trapdoor 477865 and lift lever 478344. | **Selected** on the early Bone Bottom loop; pair with Atla. No rosary cost. |
 | Atla **478230** | Needolin opens Atla; Cling Grip reaches the upper passage above breakable wall 479063. Includes Marrowmaws. No double-jump or Moss Mothers fight is required for this spool. | **Selected** during the Eva visit; completes the first pair with Bone Bottom. |
 
-**Arena distinction:** **479347** is the separate central Underworks gauntlet rewarding **478931**, the spool we already skip. Its waves include the Undercrank that smashes through the floor. The normal post-Clawline Cauldron exit arena is **480025**. Do not conflate either with the small room for **478704**.
+**Arena distinction:** **479347** is the separate central Underworks gauntlet rewarding **478931**, the spool we already skip. Its waves include the Undercrank that smashes through the floor. Do not conflate that central arena with the small room for **478704**.
 
 Lower Core **478618** is now skipped in favour of the selected six. Keep the double-jump High Halls spool **478909** skipped. Do not rename existing preparation IDs if the final pair changes: add a distinct ID for any newly tracked pickup and retain old IDs for historical records.
 
