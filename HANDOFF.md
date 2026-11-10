@@ -1,32 +1,17 @@
-# Pharloom Runbook — Codex handoff
+# Pharloom Runbook — current handoff
 
-Updated November 10, 2026. This brief is for the Codex agent building Joseph's personal Hollow Knight: Silksong route and run tracker. Joseph will create the new repository. Start implementation in the project he opens for that work. Repository setup belongs to Joseph.
+Updated November 10, 2026. The local app is implemented. Joseph plans **one more timed run**. This file holds current route decisions, research alternatives, and open scout questions; [README.md](./README.md) covers use and maintenance. The [source archive](./docs/history.md) preserves older notes without serving as a second live handoff.
 
-## Current scope · November 10
+## Working contract
 
-Joseph plans **one more timed run**. **The app is predominantly a guide**, per his latest correction: large inline map screenshots, numbered written directions, and Previous/Next navigation are the main experience. The 31 stable checkpoints also serve as guide steps. Guide position starts at Silkspear and is remembered separately from the selected run; switching sessions or saving a split must not move it. Split entry, metrics, history, session creation, and notes live in a closed-by-default Run log. The persistent Pickups button opens a right-side checklist drawer from any guide step; its saved checks belong to the selected run and are shared across the route. All planned pickups live there in category accordions. A large category checkbox supports partial/all states and marks or clears every item in that category. Completing the final item automatically closes that accordion, leaving its completion visible. Spools form one top-level category with the three original pairs inside; masks form an eight-shard category. Pouches, kits, abilities, Needle/Hunter upgrades, tools, key/melodies, and on-route materials/lockets are also listed. Optional Mask/restock items have their own category and do not block the main total. Preserve existing preparation IDs and saved checks; newly introduced items start unrecorded rather than being inferred from historical progress. It closes with Close, Escape, or the backdrop and respects reduced motion. The full reference gallery expands inline. This guide-first direction supersedes the earlier tracker-led layout. Keep open research and alternative builds in this handoff. Existing historical timed and scout records remain intact. Commit coherent changes as work proceeds. Discuss unresolved route choices one question or pickup at a time; Joseph asked to avoid bundled planning questions.
+- Keep one timed route in [data/route.json](./data/route.json), with stable checkpoint and preparation IDs. Historical labels and reported precision survive route edits.
+- Treat `.runbook/runs.json` as the active save. [data/seed-runs.json](./data/seed-runs.json) remains the original 26-split import ending at **4:57**, with three recorded pickups and no finish. Never replace an existing save with the seed or infer pickups from route progress.
+- Keep timed and scout results separate. Use the manual in-game clock, retain idle time and detours, and finish only when a `gms` split is reported. Sub-five is strictly below `5:00:00`.
+- Keep the app local and dependency-free. The 31 checkpoints are guide steps: inline maps, numbered directions, and Previous/Next are the main experience. Guide position starts at Silkspear and persists independently of run selection and split entry.
+- Keep the Run log closed by default. The persistent Pickups drawer shares the selected run's checks across all steps; category checkboxes support partial/all states, the last check closes its accordion, and optional items do not block the main total. Retain the three spool pairs, eight-shard mask category, historical checked items, Escape/backdrop closing, reduced-motion support, and inline reference gallery.
+- Discuss unresolved route choices **one question or pickup at a time**. Keep alternatives here; update the route only when a choice changes. Run `npm run check` after changes and commit coherent work.
 
-**Run #2 is complete: Grand Mother Silk defeated on attempt six, final in-game time 5:26:16 (second precision).** Joseph found GMS easier than Lace, with patience as the main lesson: phase 1 is straightforward; stay on one side in phases 2 and 3, watch and avoid the knives, and save Silk for healing. Fractured Mask had already saved him during the attempts. Keep the earlier 4:57 Lace 2 clear and 5:06 Marrow restock/Mask endpoint intact. **Optional Fractured Mask at Lace 2 · November 10:** The scout has now beaten Grand Mother Silk with Fractured Mask equipped and no Claw Mirror. Joseph wants the pickup as an optional late backtrack once at Lace 2, using the fully upgraded kit to rush Hunter’s March. Set **Cogwork Core bench 478428** as the last rested bench, rest nowhere on the trip, collect the free Mask, and quit-return to Core to equip it. This supersedes the earlier Marrow return anchor. If the option is skipped, keep Mirror + Injector Band; if taken, Mask replaces Mirror while the other planned tools remain. No scout finish time was supplied. On the timed file Joseph then tested the restock-and-Mask trip, reporting about ten minutes and a Marrow bench endpoint at 5:06; the Core-anchor version is the future plan. Other rejected blue-tool alternatives remain archived. The second kit is settled on Twelfth Architect for 450 rosaries after Clawline; Joseph reports that earning rosaries in the Citadel is straightforward. The six-fragment plan is **locked by Joseph**: Bone Bottom 478080 + Atla 478230, Deep Docks 477926 + Greymoor 478263, and Grand Gate 478586 + eastern Underworks 478704. These complete three spools for +3 Silk capacity. Joseph is comfortable with the platforming; none adds a dedicated spool arena. Checkpoints now show upcoming spending amounts. Hunter slot capacity is not an open concern: Joseph recalls a spare locket on each file and reports an extra Craftmetal on each.
-
-## Local artwork · November 9
-
-Joseph supplied `hornet-mask-icon.png`, `hornet.png`, and `hornet.webp` in the repository root. Use these provided images for the app identity and artwork. The mask PNG is used in the header, favicon, and touch icon; the clean transparent `hornet.png` is used beside the desktop guide title. Keep the originals intact. `hornet.webp` is retained as the supplied alternate. The earlier hand-drawn SVG placeholder has been removed.
-
-## Original implementation brief
-
-A small local browser app for one player. It should replace the need to cross-reference the branching Steam guide during a run. Show Joseph's chosen route in order and make it quick to record what actually happened.
-
-- **Tracker.** Start a named timed run or scout session. Pick a checkpoint, enter the displayed in-game time, optionally add a note, and save. Support editing a mistaken split and returning to any past run. Keep scout observations separate. Show the last split, progress, the next checkpoint, and time to the five-hour mark **at the recorded split**. Use the manual in-game clock. Accept hours and minutes and optionally seconds. Preserve the reported precision. Only mark a run finished once a final time is recorded. The sub-five condition is strictly under 5:00.
-- **My route.** Present one main path using the itinerary below. Keep route steps, map pins, prep, and boss reminders easy to find during play. Use the recovered local maps when helpful. Put alternative builds and unsettled options in the scout queue.
-- **Prep.** Track spool halves by pair and show the Silk gain only when both are checked. Track the Tool Pouch and Crafting Kit independently. The rerun goal is 2/4 of each. The second damage upgrade has two candidate sources and counts once for that target.
-- **Scout queue.** Carry forward the questions and tests in this handoff. Let Joseph update the route and questions with Codex without rewriting the tracker. Keep the exact route and stable checkpoint IDs in one editable data file or similarly simple source.
-- **Local saves.** Persist runs across browser reloads and restarts, and provide a simple way to back them up or export them. Prefer a format Codex can read, such as JSON. Keep historical splits intact when the future route is edited. Document how to start it locally and where saves live.
-
-Use a minimal stack appropriate for the new project. A small HTML/CSS/JS app and a local Node server are sufficient if saving to disk. Keep setup, navigation, and configuration light. There is one user and one route. The target is a local browser workflow with no hosted service or account setup.
-
-The first usable version should open Run #2 at **4:57**, allow a new blank rerun, save and reload an edited split, retain separate scout notes, show a complete spool pair correctly, and link to the available maps and the research brief.
-
-## Current run and what changed
+## Current run
 
 - **Run #2 finished at 5:26:16**, with Grand Mother Silk defeated on the **sixth attempt**. Preserve second precision. The official finish is 26:16 beyond the five-hour cutoff and retains all idle time and detours. The earlier 5:06 Marrow restock/Mask endpoint and 4:57 Lace 2 clear are unchanged. This is the completed timed file; the scout’s earlier GMS clear remains a separate result.
 - **Lace 2 was the bigger bottleneck for this player.** The winning blue tools were Injector Band and Claw Mirror. The yellow tools were Weighted Belt and Magnetite Dice. Belt felt useful. The approach was to wait for Lace, punish her recovery, and preserve Silk for Bind. The user found Straight Pin openings but did not rely on the red tools and reported no Cogfly use for the win. Treat the exact attempt count and which attempts used pins as unreported.
@@ -34,44 +19,9 @@ The first usable version should open Run #2 at **4:57**, allow a new blank rerun
 - **High Halls was also hard.** The timed Forum clear at **4:11** took three attempts, with G&Z, Straight Pin, Cogfly, Claw Mirror, Injector Band, and Dice. The scout took about eight attempts. Scout aid and loadout were not specified. The 3:52–4:11 interval also includes the Dice detour.
 - **Keep the official clock.** The **3:34** Vaultkeeper's Melody split already includes about ten minutes idle at a bench. The **3:45** split is the Cogwork Core bench after the G&Z duel. The **3:52** split is High Halls bench with Cogfly equipped. The user called the **4:20** split Checkpoint 1 before scouting Lace. Preserve the reported labels and times. Individual late melody pickups, bench locations, and scout Lace outcomes should only be recorded when supplied.
 
-[Original Run #2 log](</Users/josephdavey/Documents/ChatGPT/Silk Song/Silksong - Current Run Tracker.md>) · [Detailed project history](</Users/josephdavey/Documents/ChatGPT/Silk Song/Silksong - Project Handoff.md>)
+The 5:06-to-finish interval is **20:16**, including return travel/preparation and attempts. Six attempts does not mean six deaths. Fractured Mask saved Joseph during the attempts; its exact activation count and the complete ending loadout were not reported. For GMS, phase 1 was straightforward; stay on one side in phases 2/3, watch and avoid knives, and save Silk for healing.
 
-### Original Run #2 splits in the starting import
-
-These are cumulative times as reported. Seed them as historical data. Bellhart after the Far Fields backtrack is a Run #2-only stop. Leave unreported checkpoints blank, including the finish.
-
-| Time | Checkpoint |
-|---:|---|
-| 0:14 | Silk Spear |
-| 0:29 | Swift Step |
-| 0:32 | Lace 1 defeated |
-| 0:49 | Drifter's Cloak |
-| 0:54 | Halfway Home |
-| 1:03 | Moorwing defeated |
-| 1:21 | Cling Grip |
-| 1:25 | Widow bench |
-| 1:36 | Widow / Needolin |
-| 2:01 | Forge Daughter bench |
-| 2:04 | Bellhart after Forge Daughter |
-| 2:10 | Bellhart after the missed Far Fields shard backtrack |
-| 2:21 | Blasted Steps bench |
-| 2:29 | Last Judge / Choral Chambers bench |
-| 2:33 | Grand Bellway bench |
-| 2:35 | Songclave bell |
-| 2:41 | Cogwork Dancers defeated |
-| 2:49 | Lower Cogwork Core complete / back at bench |
-| 3:04 | Songclave bench after Whispering Vaults arena |
-| 3:18 | Grand Bellway bench after Trobbio |
-| 3:34 | Vaultkeeper's Melody, including about 10 minutes idle |
-| 3:45 | Cogwork Core bench 478428 after winning the G&Z duel |
-| 3:52 | High Halls bench 478415 with Cogfly equipped |
-| 4:11 | High Halls Forum clear |
-| 4:20 | Checkpoint 1, as reported before scouting Lace 2 |
-| 4:57 | Lace 2 defeated |
-
-Run #2's confirmed prep checkmarks are the Greymoor fragment, Loddie's pouch, and Forge Daughter's kit. The other prep items are planned or unreported. Preserve the user-supplied record of the late Belt purchase and Greymoor spool pickup as notes within the Lace segment.
-
-## Rerun route
+## Selected rerun route
 
 Build the main view around this itinerary. The route is Hunter, all five bells, Last Judge through Blasted Steps, then G&Z at the Forum and the Act 2 ending. Retain established skips for the Mist/Phantom branch, Mount Fay, Wanderer/Reaper, Craw Lake Arena, Thread Storm, Threefold Pin, and Cogwork Wheel. Turn uncertain choices into scout questions while the timed path stays direct.
 
@@ -83,25 +33,9 @@ Build the main view around this itinerary. The route is Hunter, all five bells, 
 6. **Trobbio, Cauldron, and roof.** Defeat Trobbio and open his lift shortcut. Get Injector Band in Whiteward, then Clawline. Use Magma Bell through Cauldron and buy Twelfth Architect's 450-rosary Crafting Kit after Clawline. Collect eastern Underworks spool 478704 behind the small lava room's wall to complete the third pair with Grand Gate. Collect Vaultkeeper's Melody, run the box and wind puzzle, and open the far-left roof gate 480502. Leave and return through that gate for the duel. The earlier Greymoor conversation qualified on scout. The timed run got G&Z aid without a separately reported Choral Chambers encounter. Exhaust post-duel dialogue and accept their help at the Forum door inside High Halls.
 7. **Forum and endgame.** Get Cogfly for one Craftmetal on the High Halls descent. The Forum target is two pouch upgrades, two damage upgrades, Straight Pin + Cogfly, and G&Z. Collect Conductor's Melody and Architect's Melody. At Lace 2, optionally rush Hunter’s March for Fractured Mask using Cogwork Core bench 478428 as the quit-return anchor, with no rests en route; equip it instead of Mirror on returning. Otherwise continue with Mirror. Ascend to Lace and keep the patient, heal-first approach. Rest at Terminus, open the final shortcut, and record the actual finish after Grand Mother Silk.
 
-[Original Garmond Route](https://steamcommunity.com/sharedfiles/filedetails/?id=3577460696) · [Recovered maps and credits](./Recovered%20Garmond%20Maps/README.md) · [Roof gate](https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=480502) · [Forum aid](https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=481022)
+[Original Garmond Route](https://steamcommunity.com/sharedfiles/filedetails/?id=3577460696) · [Recovered maps and credits](./docs/map-credits.md) · [Roof gate](https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=480502) · [Forum aid](https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=481022)
 
-### Wayfinding for the route view
-
-MapGenie links take the form `https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=PIN`. Use these resolved pins as links where they make a checkpoint easier to navigate.
-
-| Leg | Pins |
-|---|---|
-| Marrow / Deep Docks | Silkspear 477871, Straight Pin 477899, Lace 1 476915, Wormways mask shard 478091, Pebb's mask shard 477840 |
-| Far Fields / Greymoor | Drifter's Cloak 477971, Seamstress mask shard 477975, Mort 477946, Greymoor Bellway 478037, first G&Z conversation 478152, Halfway Home locket 478039, Moorwing 478453 |
-| Shellwood / Bellhart / Atla | Shellwood shard 478177, Cling Grip 478189, Widow 478138, Crawbug Clearing 478208, Eva 478228, Atla mask shard 478233, Loddie 478251 |
-| Forge / Judge | Deep Docks mask shard 477901, Forge Daughter 476912, nearby rosaries 477921, Blasted Steps Bellway 478308, locket 478502, Lumble 478519, Last Judge 478545 |
-| Songclave / Vaults | White Key 478599, Cogwork Dancers 478606, lower Core mask shard 478615, Vaults mask shard 478671, Pale Oil 478668, Trobbio 478690 |
-| Whiteward / Cauldron / roof | Whiteward elevator 478590, Injector Band 479182, Clawline 478714, Twelfth Architect 478723, Vaultkeeper's Melody 478611, wind-route locket 478676, roof gate 480502, roof duel 479361, Cogwork Core bench 478428 |
-| High Halls / ending | Cogfly 478903, High Halls bench 478415, G&Z aid 481022, Forum 479420, Conductor's Melody 478609, Architect's Melody 478610, Lace 2 479088, Grand Mother Silk 479099 |
-
-For Architect's Melody, use the guide's hit counts from the initial state. Left to right, rows from top to bottom are **1–3–3–3 / 2–0–0–3 / 0–1–1–1 / 1–1–0–2**. If a lever has already been moved, use the pillar alignment. [Puzzle reference](https://steamcommunity.com/sharedfiles/filedetails/?id=3577460696)
-
-## Decisions to carry forward
+## Decisions and research
 
 ### Spools in pairs · locked November 9
 
@@ -128,7 +62,7 @@ These are planning/checklist pairs, not unique item matches. Existing pickup IDs
 
 Lower Core **478618** is now skipped in favour of the selected six. Keep the double-jump High Halls spool **478909** skipped. Do not rename existing preparation IDs if the final pair changes: add a distinct ID for any newly tracked pickup and retain old IDs for historical records.
 
-[Local spool comparison](./Silksong%20-%20Spool%20Fragment%20Candidates.md) · [Spool location requirements](https://hollowknight.wiki/w/Spool_Fragment) · [Underworks and Cauldron arenas](https://hollowknight.wiki/w/Underworks) · [MapGenie public map data](https://mapgenie.io/api/v1/maps/812/data)
+[Archived spool comparison](./docs/history.md#spool-candidate-comparison) · [Spool location requirements](https://hollowknight.wiki/w/Spool_Fragment) · [Underworks and Cauldron arenas](https://hollowknight.wiki/w/Underworks) · [MapGenie public map data](https://mapgenie.io/api/v1/maps/812/data)
 
 ### Forum prep
 
@@ -210,25 +144,10 @@ Pin descriptions were checked against [MapGenie’s public map data](https://map
 
 Joseph then used the **speedrun file (Run #2)** for the trip: Forge Daughter → buy **10 shard bundles** → the Marrow → rest at Marrow bench → Hunter’s March → Fractured Mask → **Marrow bench at 5:06**. He used **Cogfly, Straight Pin, and Mirror** along the approach and considers the **about ten-minute detour manageable if time allows**. The restock is part of that reported estimate, not an extra ten-minute charge.
 
-- Record the 5:06 endpoint at minute precision, with a historical-only checkpoint ID. Preserve the 4:57 Lace 2 split. That detour report did not yet supply a GMS finish; use the later 5:26:16 clear below for completion. Do not move the timed-file trial onto the scout file.
+- The active save records the 5:06 endpoint at minute precision, with a historical-only checkpoint ID. Preserve the 4:57 Lace 2 split. That detour report preceded the later 5:26:16 finish. Do not move the timed-file trial onto the scout file.
 - The exact departure time, bundle rosary cost, and return method were not separately supplied; do not invent them. Mask is acquired on the timed file now, but no new equipped ending loadout was reported.
 - This trial **rested at Marrow**, so it does not demonstrate the no-intermediate-rest Core return. For the future optional trip, rest at Core first and avoid all later bench rests, including Forge Daughter and Marrow. Add the shop stop if supplies are useful; the trial bought ten bundles. The full Core-based trip is not a separately measured benchmark.
 - Keep the pickup optional at Lace 2, conditioned on time left for the detour and the final fights. Use the reported ~10 minutes as a practical reference, not an invented exact duration.
-
-### Run #2 GMS clear · November 10
-
-**Grand Mother Silk defeated on attempt six. Final in-game time: 5:26:16.** The five-attempt report was an interim update; the sixth attempt was the win. Record the finish at second precision under `gms` in the active Run #2 save. The starting import stays the original 4:57 snapshot; do not move this result onto the scout file.
-
-Joseph found GMS easier than Lace, but demanding patience in a different way. His winning reminders are:
-
-- Phase 1 is straightforward; wait for safe opportunities.
-- In **phases 2 and 3, stick to one side**.
-- **Wait and watch the knives**, prioritizing avoidance over rushed damage.
-- **Save Silk for healing**.
-
-During the earlier attempts Joseph reported three-mask hits when caught in the silk/thread attack, with Fractured Mask saving him and allowing recovery. Keep this as player-observed benefit; no exact attack name, Mask activation count, individual attempt durations, or full supporting loadout was supplied. Do not call six attempts six deaths. The 5:06-to-finish interval is 20:16 and includes return travel/preparation as well as attempts; it is not an isolated GMS fight duration.
-
-The active record now has a real finish. Scout and timed outcomes remain separate. GMS is practiced; carry the patience, positioning, healing, and Mask reminders into the one final rerun.
 
 ### Lace consistency and money
 
@@ -237,12 +156,9 @@ The active record now has a real finish. Scout and timed outcomes remain separat
 - Check early rosaries for Pebb, Mort, and the first Bellways. Greymoor and Blasted Steps Bellway openings are useful for later returns. Keep the G&Z aid route and protected Needle/Forge Daughter budget. The paid second kit is settled; keep its 450-rosary target visible before Clawline.
 - Map recovery on 2026-11-09 preserved the three existing maps and added 16 original guide images. The gallery shows 12 maps and 3 relevant screenshots; Mist and Sister Splinter skip alternatives remain archived. The separate Vaults shard/Pale Oil map is recovered. Shellwood/Widow, the Deep Docks return (shard/Forge Daughter), Last Judge/Choral Chambers, and combined Songclave/lower Core/Vaults arena maps have empty image URLs in the current guide. Use checkpoint pins until Joseph supplies replacements. The guide does not mark spool fragments; custom screenshots can supplement the six locked pins.
 
-## Local artwork and guide references
+## Local references
 
-The supplied `hornet.png` and `hornet-mask-icon.png` provide the app artwork. The guide images live in [Recovered Garmond Maps](./Recovered%20Garmond%20Maps/README.md), with source URLs and hashes in its `catalog.json`. Preserve original credits and label annotated images as reference maps. The selected route follows the itinerary above, including its own spool pickups and tool choices. Each checkpoint’s `guide` array holds the numbered instructions and optional `guideTitle` holds a reading title; retain historical split labels and IDs.
-
-Map selection belongs in section/checkpoint `maps` arrays in `data/route.json`. Missing originals are listed in the catalog and the gallery. A local screenshot can be added there without changing checkpoint IDs or run data. Exact waypoint pins continue to cover the gaps. MapGenie’s public Pharloom data was previously available at `https://mapgenie.io/api/v1/maps/812/data`; the cached `/tmp/silksong-mapgenie-data.json` is temporary.
-
-## Ongoing use with Codex
-
-After the new project is open, read this brief and the older source notes, then build the local tracker there. Put short launch and data-editing instructions in that project's README. When Joseph provides a new split or scout result, record it in the correct run at the precision he reports. Keep decisions in one editable route source. If a scout result changes the selected path, update the main itinerary and retain the decision in the notes. Preserve historical labels and times even when a stop is removed from the future route.
+- The supplied original artwork is in [assets/artwork](./assets/artwork/): the mask PNG serves the header/favicon/touch icon, the transparent Hornet PNG serves the desktop guide title, and the WebP remains an alternate. Preserve their bytes.
+- Original guide images and their source URLs, dimensions, byte counts, and hashes live in [assets/maps/catalog.json](./assets/maps/catalog.json). Preserve credits in [docs/map-credits.md](./docs/map-credits.md). The selected route has its own spool pickups and tool choices.
+- Edit checkpoint `guide` arrays and optional `guideTitle` in `data/route.json` for written directions. Section/checkpoint `maps` arrays select catalog IDs. Add replacement screenshots using the [map instructions](./docs/map-credits.md#adding-a-local-screenshot); keep exact waypoint pins where maps are missing.
+- MapGenie's public Pharloom data was previously available at `https://mapgenie.io/api/v1/maps/812/data`. Old `/tmp/` caches are temporary; do not treat them as repository assets.

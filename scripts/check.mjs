@@ -1,11 +1,11 @@
 import assert from "node:assert/strict";
 import { access, readFile } from "node:fs/promises";
 import { createHash } from "node:crypto";
-import { changePickups, formatTime, listStops, parseTime, pickupCategories, runSummary, shoppingSummary, validateRunData } from "../dist/model.mjs";
+import { changePickups, formatTime, listStops, parseTime, pickupCategories, runSummary, shoppingSummary, validateRunData } from "../public/model.mjs";
 
 const root = new URL("../", import.meta.url);
 const readJson = async (path) => JSON.parse(await readFile(new URL(path, root), "utf8"));
-const [route, seed, catalog] = await Promise.all([readJson("data/route.json"), readJson("data/seed-runs.json"), readJson("Recovered Garmond Maps/catalog.json")]);
+const [route, seed, catalog] = await Promise.all([readJson("data/route.json"), readJson("data/seed-runs.json"), readJson("assets/maps/catalog.json")]);
 
 assert.equal(route.version, 1);
 assert.ok(Number.isSafeInteger(route.targetSeconds) && route.targetSeconds > 0, "Route needs a time target.");
@@ -115,7 +115,7 @@ for (const [seconds, expected] of [[17999, true], [18000, false], [18001, false]
 const imported = runSummary(route, seed.runs[0]);
 assert.equal(imported.latest.seconds, 17820, "Keep the reported 4:57 split.");
 assert.equal(imported.latest.precision, "minute");
-assert.equal(imported.finish, null, "Run #2 is still in progress.");
+assert.equal(imported.finish, null, "The starting import must retain its unfinished 4:57 snapshot.");
 assert.equal(imported.next.id, "gms");
 assert.ok(seed.runs[0].splits.every((split) => split.label), "Snapshot historical labels before route edits.");
 
@@ -124,7 +124,7 @@ assert.equal(mapIds.size, catalog.images.length, "Guide image IDs must be unique
 assert.equal(new Set(catalog.images.map((image) => image.src)).size, catalog.images.length, "Local image URLs must be unique.");
 for (const image of catalog.images) {
   assert.match(image.src, /^\/maps\/[a-z0-9-]+\.(jpg|png)$/, "Guide images need a local image URL.");
-  assert.ok(image.file.startsWith("Recovered Garmond Maps/") && !image.file.includes(".."), "Keep guide assets inside their folder.");
+  assert.ok(image.file.startsWith("assets/maps/") && !image.file.includes(".."), "Keep guide assets inside their folder.");
   assert.ok(["image/jpeg", "image/png"].includes(image.mime));
   assert.ok(["map", "screenshot"].includes(image.kind) && typeof image.timedRoute === "boolean");
   assert.ok(image.title && image.note && (image.sourceUrl || image.creator), "Keep image labels and credits.");
@@ -147,7 +147,19 @@ for (const section of route.sections) {
 }
 
 await Promise.all([
-  "dist/index.html", "dist/styles.css", "hornet-mask-icon.png", "hornet.png", "HANDOFF.md"
+  "public/index.html", "public/styles.css", "assets/artwork/hornet-mask-icon.png", "assets/artwork/hornet.png", "assets/artwork/hornet.webp", "HANDOFF.md"
 ].map((file) => access(new URL(file, root))));
 
-console.log(`Verified ${stops.length} route checkpoints, ${catalog.images.length} original guide images, map references, run data, split timing, and purchase reminders.`);
+const documents = ["README.md", "AGENTS.md", "HANDOFF.md", "docs/history.md", "docs/map-credits.md"];
+for (const file of documents) {
+  const source = new URL(file, root);
+  const markdown = await readFile(source, "utf8");
+  for (const match of markdown.matchAll(/!?\[[^\]]*\]\((?:<([^>]+)>|([^\s)]+))(?:\s+"[^"]*")?\)/g)) {
+    const target = match[1] ?? match[2];
+    if (/^(?:[a-z][a-z0-9+.-]*:|#|\/\/)/i.test(target)) continue;
+    const path = decodeURIComponent(target.split("#")[0]);
+    await access(new URL(path, source)).catch(() => assert.fail(file + ": broken local link " + target));
+  }
+}
+
+console.log(`Verified ${stops.length} route checkpoints, ${catalog.images.length} original guide images, map references, documentation links, run data, split timing, and purchase reminders.`);

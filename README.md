@@ -10,7 +10,7 @@ With Node.js 20 or newer, run this from the repository:
 npm start
 ```
 
-Open [the local guide](http://127.0.0.1:4173). The server prints the address as well. No packages need to be installed.
+Open [the local guide](http://127.0.0.1:4173). The server prints the address as well. No packages need to be installed and there is no build step.
 
 The main screen is a guide for the final run:
 
@@ -33,13 +33,28 @@ Splits, notes, and checked pickups save to `.runbook/runs.json`. The **Export ru
 Open this folder as a project and ask Codex to read [HANDOFF.md](./HANDOFF.md). The running route lives in [data/route.json](./data/route.json). Each step’s `guide` array supplies the numbered directions; `guideTitle` optionally supplies its reading title while historical split labels stay intact. Changes to its directions, maps, and checklist items appear after a refresh. Keep existing checkpoint IDs when rewriting a label or moving a checkpoint.
 
 - [Starting Run #2 data](./data/seed-runs.json) is used until the first local save.
-- [Original run log](./Silksong%20-%20Current%20Run%20Tracker.md) and [project notes](./Silksong%20-%20Project%20Handoff.md) are the history behind the tracker.
-- [Recovered maps](./Recovered%20Garmond%20Maps/README.md) preserve 19 original guide images and their credits. Checkpoints link to the relevant maps; guide-only alternatives stay archived. See the catalog instructions there to add your own screenshots.
+- [Historical source notes](./docs/history.md) consolidate the original tracker, project handoff, spool comparison, and initial brief. Older pending states and instructions are archival; use the current handoff and active save for new work.
+- [Map references and credits](./docs/map-credits.md) preserve 19 original guide images and their credits. Checkpoints link to the relevant maps; guide-only alternatives stay archived. See the catalog instructions there to add your own screenshots.
 
 The server listens only on your Mac. To use another port, run `RUNBOOK_PORT=4174 npm start`. For an isolated test save, set `RUNBOOK_DATA_DIR` to a different directory before starting. Neither setting requires installing anything.
 
-Run `npm run check` to check the route data, historical splits, five-hour boundary, saved-time format, local assets, and app syntax.
+Run `npm run check` to check the route data, historical splits, five-hour boundary, saved-time format, original image hashes, local documentation links, and app syntax.
 
 ## Artwork
 
-The header icon and browser icon use the supplied [Hornet mask](./hornet-mask-icon.png). The guide header uses the supplied [Hornet PNG](./hornet.png); [the WebP alternate](./hornet.webp) is retained with the original assets. These local files are served directly, with no external image service.
+The header icon and browser icon use the supplied [Hornet mask](./assets/artwork/hornet-mask-icon.png). The guide header uses the supplied [Hornet PNG](./assets/artwork/hornet.png); [the WebP alternate](./assets/artwork/hornet.webp) is retained with the original assets. These local files are served directly, with no external image service.
+
+## Repository layout
+
+| Path | Purpose |
+|---|---|
+| [public/](./public/) | Editable browser HTML, CSS, and JavaScript; served directly with no build |
+| [server.mjs](./server.mjs) | Local HTTP server and JSON save handling |
+| [data/](./data/) | The single timed route and original seed import |
+| [assets/artwork/](./assets/artwork/) | Supplied Hornet originals, including the alternate WebP |
+| [assets/maps/](./assets/maps/) | Original guide images and their source/hash catalog |
+| [docs/](./docs/) | Map credits and the consolidated historical archive |
+| [scripts/check.mjs](./scripts/check.mjs) | Route, model, save, asset, and documentation checks |
+| `.runbook/` | Ignored active save directory |
+
+[HANDOFF.md](./HANDOFF.md) holds current route decisions and research; [AGENTS.md](./AGENTS.md) holds the short repository rules. Edit `data/route.json` for route changes and `assets/maps/catalog.json` for image metadata. Restart the server after adding catalog entries. Browser URLs remain independent of the on-disk folders.

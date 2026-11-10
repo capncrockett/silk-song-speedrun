@@ -3,14 +3,14 @@ import { mkdir, readFile, rename, unlink, writeFile } from "node:fs/promises";
 import { randomUUID } from "node:crypto";
 import { join, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
-import { validateRunData } from "./dist/model.mjs";
+import { validateRunData } from "./public/model.mjs";
 
 const root = fileURLToPath(new URL(".", import.meta.url));
 const store = resolve(process.env.RUNBOOK_DATA_DIR || join(root, ".runbook"));
 const runsFile = join(store, "runs.json");
 const routeFile = join(root, "data", "route.json");
 const seedFile = join(root, "data", "seed-runs.json");
-const mapCatalogFile = join(root, "Recovered Garmond Maps", "catalog.json");
+const mapCatalogFile = join(root, "assets", "maps", "catalog.json");
 const port = Number(process.env.RUNBOOK_PORT ?? 4173);
 const maxBody = 1_000_000;
 
@@ -19,17 +19,19 @@ if (!Number.isInteger(port) || port < 0 || port > 65535) {
 }
 
 const files = new Map([
-  ["/", ["dist/index.html", "text/html; charset=utf-8"]],
-  ["/index.html", ["dist/index.html", "text/html; charset=utf-8"]],
-  ["/styles.css", ["dist/styles.css", "text/css; charset=utf-8"]],
-  ["/app.mjs", ["dist/app.mjs", "text/javascript; charset=utf-8"]],
-  ["/model.mjs", ["dist/model.mjs", "text/javascript; charset=utf-8"]],
-  ["/assets/hornet-mask.png", ["hornet-mask-icon.png", "image/png"]],
-  ["/assets/hornet.png", ["hornet.png", "image/png"]],
+  ["/", ["public/index.html", "text/html; charset=utf-8"]],
+  ["/index.html", ["public/index.html", "text/html; charset=utf-8"]],
+  ["/styles.css", ["public/styles.css", "text/css; charset=utf-8"]],
+  ["/app.mjs", ["public/app.mjs", "text/javascript; charset=utf-8"]],
+  ["/model.mjs", ["public/model.mjs", "text/javascript; charset=utf-8"]],
+  ["/assets/hornet-mask.png", ["assets/artwork/hornet-mask-icon.png", "image/png"]],
+  ["/assets/hornet.png", ["assets/artwork/hornet.png", "image/png"]],
   ["/docs/handoff.md", ["HANDOFF.md", "text/plain; charset=utf-8"]],
-  ["/docs/run-2.md", ["Silksong - Current Run Tracker.md", "text/plain; charset=utf-8"]],
-  ["/docs/map-credits.md", ["Recovered Garmond Maps/README.md", "text/plain; charset=utf-8"]],
-  ["/docs/spools.md", ["Silksong - Spool Fragment Candidates.md", "text/plain; charset=utf-8"]]
+  ["/docs/history.md", ["docs/history.md", "text/plain; charset=utf-8"]],
+  ["/docs/map-credits.md", ["docs/map-credits.md", "text/plain; charset=utf-8"]],
+  // Preserve document URLs used before the source notes were consolidated.
+  ["/docs/run-2.md", ["docs/history.md", "text/plain; charset=utf-8"]],
+  ["/docs/spools.md", ["docs/history.md", "text/plain; charset=utf-8"]]
 ]);
 
 for (const image of (await readJson(mapCatalogFile)).images) {
