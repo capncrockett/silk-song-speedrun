@@ -1,6 +1,6 @@
 import assert from "node:assert/strict";
 import { access, readFile } from "node:fs/promises";
-import { formatTime, listStops, parseTime, runSummary, validateRunData } from "../dist/model.mjs";
+import { formatTime, listStops, parseTime, runSummary, shoppingSummary, validateRunData } from "../dist/model.mjs";
 
 const root = new URL("../", import.meta.url);
 const readJson = async (path) => JSON.parse(await readFile(new URL(path, root), "utf8"));
@@ -17,6 +17,26 @@ assert.equal(new Set(prep).size, prep.length, "Preparation IDs must be unique.")
 for (const pair of route.preparations.filter(({ id }) => id.startsWith("silk-"))) {
   assert.equal(pair.items.length, 2, "A Silk capacity pair needs two fragments.");
 }
+
+for (const stop of stops) {
+  if (!stop.purchases) continue;
+  assert.ok(Array.isArray(stop.purchases) && stop.purchases.length > 0);
+  for (const item of stop.purchases) {
+    assert.ok(typeof item.item === "string" && item.item.trim());
+    assert.ok(Number.isSafeInteger(item.rosaries) && item.rosaries >= 0, "Shopping costs must be explicit nonnegative rosary amounts.");
+    if (item.conditional !== undefined) assert.ok(typeof item.conditional === "string" && item.conditional.trim());
+    if (item.materials !== undefined) assert.ok(typeof item.materials === "string" && item.materials.trim());
+  }
+}
+const mortShopping = shoppingSummary(route, "drifters-cloak");
+assert.equal(mortShopping.stop.id, "halfway-home");
+assert.equal(mortShopping.minimum, 440, "Mort's purchases plus Greymoor Bellway need 440.");
+assert.equal(mortShopping.maximum, 470, "The intact door adds 30.");
+assert.equal(shoppingSummary(route, "forge-daughter").minimum, 290);
+assert.equal(shoppingSummary(route, "clawline").minimum, 450);
+assert.equal(shoppingSummary(route, "vaults-arena").minimum, 0, "The second Needle upgrade needs Pale Oil rather than rosaries.");
+assert.equal(shoppingSummary(route, "gms"), null);
+assert.equal(shoppingSummary(route, "legacy-far-fields-return"), null, "Historical-only checkpoints have no invented spending reminder.");
 
 validateRunData(seed);
 for (const run of seed.runs) {
@@ -63,4 +83,4 @@ await Promise.all([
   "Recovered Garmond Maps/High Halls.jpg"
 ].map((file) => access(new URL(file, root))));
 
-console.log(`Verified ${stops.length} route checkpoints, local assets, run data, and split timing.`);
+console.log(`Verified ${stops.length} route checkpoints, local assets, run data, split timing, and purchase reminders.`);

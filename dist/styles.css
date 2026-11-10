@@ -236,3 +236,15 @@ dialog .form-actions { justify-content: end; margin-top: 1.5rem; }
 .prep-card .panel-heading { gap: .5rem; }
 .phase-context { color: var(--soft); font-size: .72rem; line-height: 1.7; padding: 0 .65rem .7rem; }
 #maps, #prep { scroll-margin-top: 1rem; }
+
+.shopping { margin-top: 1.15rem; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+.shopping > summary { display: flex; list-style: none; align-items: center; gap: .75rem; padding-block: .85rem; }
+.shopping > summary > span { flex: 1; min-width: 0; font-size: .75rem; line-height: 1.5; }
+.shopping summary small { display: block; color: var(--accent); font-size: .6rem; letter-spacing: .1em; text-transform: uppercase; margin-bottom: .2rem; }
+.shopping summary strong { color: var(--green); font-size: .78rem; font-weight: 500; white-space: nowrap; font-variant-numeric: tabular-nums; }
+.shopping ul { list-style: none; margin: 0; padding: 0; }
+.shopping li { display: flex; justify-content: space-between; align-items: baseline; gap: 1rem; border-top: 1px solid var(--line); padding-block: .55rem; font-size: .73rem; line-height: 1.6; }
+.shopping li small { display: block; color: var(--soft); font-size: .66rem; }
+.shopping-cost { color: var(--green); text-align: right; flex-shrink: 0; font-variant-numeric: tabular-nums; }
+.shopping > p { color: var(--soft); font-size: .68rem; line-height: 1.7; padding-block: .65rem .9rem; }
+@media (max-width: 380px) { .shopping li { flex-wrap: wrap; gap: .25rem; } }

@@ -31,6 +31,19 @@ export function listStops(route) {
   );
 }
 
+export function shoppingSummary(route, checkpoint) {
+  const stops = listStops(route);
+  const index = stops.findIndex((stop) => stop.id === checkpoint);
+  if (index < 0) return null;
+  const stop = stops.slice(index).find((stop) => stop.purchases?.length);
+  if (!stop) return null;
+  return {
+    stop,
+    minimum: stop.purchases.filter((item) => !item.conditional).reduce((sum, item) => sum + item.rosaries, 0),
+    maximum: stop.purchases.reduce((sum, item) => sum + item.rosaries, 0)
+  };
+}
+
 export function runSummary(route, run) {
   const stops = listStops(route);
   const recorded = new Set(run.splits.map((split) => split.checkpoint));

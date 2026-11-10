@@ -1,4 +1,4 @@
-import { formatTime, listStops, parseTime, runSummary } from "/model.mjs";
+import { formatTime, listStops, parseTime, runSummary, shoppingSummary } from "/model.mjs";
 
 const byId = (id) => document.getElementById(id);
 const state = {
@@ -193,6 +193,7 @@ function renderEditor() {
   byId("split-time").value = saved ? formatTime(saved.seconds, saved.precision) : "";
   byId("split-note").value = saved?.note ?? "";
   byId("save-split").textContent = saved ? "Update split →" : "Save split →";
+  renderShopping();
   const comparison = byId("split-comparison");
   const reference = state.data.runs.find((item) => item.id === "run-2");
   const benchmark = reference?.splits.find((split) => split.checkpoint === state.checkpoint);
@@ -207,6 +208,28 @@ function renderEditor() {
       comparison.append(node("span", delta < 0 ? "ahead" : delta > 0 ? "behind" : "", text));
     }
   }
+}
+
+function renderShopping() {
+  const summary = shoppingSummary(state.route, state.checkpoint);
+  byId("shopping-reminder").hidden = !summary;
+  if (!summary) return;
+  const { stop, minimum, maximum } = summary;
+  byId("shopping-stop").textContent = stop.title;
+  byId("shopping-total").textContent = minimum === maximum
+    ? minimum === 0 ? "No rosaries" : `${minimum} rosaries`
+    : `${minimum}–${maximum} rosaries`;
+  byId("shopping-items").replaceChildren(...stop.purchases.map((purchase) => {
+    const item = node("li");
+    const title = node("span", "", purchase.item);
+    if (purchase.conditional) title.append(node("small", "", purchase.conditional));
+    const costs = [];
+    if (purchase.rosaries) costs.push(`${purchase.rosaries} rosaries`);
+    if (purchase.materials) costs.push(purchase.materials);
+    item.append(title, node("span", "shopping-cost", costs.join(" + ") || "Free"));
+    return item;
+  }));
+  byId("shopping-note").textContent = stop.shoppingNote ?? "Planned spending at this stop; this reminder does not assume your current balance.";
 }
 
 function phaseSummary(section, count) {

@@ -4,9 +4,9 @@ Updated November 9, 2026. This brief is for the Codex agent building Joseph's pe
 
 ## Current scope · November 9
 
-Joseph plans **one more timed run**. The app is now one run screen: checkpoint selection also shows route reminders and map pins; prep, recovered maps, history, and notes expand inline. Keep open research and alternative builds in this handoff. Existing historical timed and scout records remain intact. Commit coherent changes as work proceeds.
+Joseph plans **one more timed run**. The app is now one run screen: checkpoint selection also shows route reminders and map pins; prep, recovered maps, history, and notes expand inline. Keep open research and alternative builds in this handoff. Existing historical timed and scout records remain intact. Commit coherent changes as work proceeds. Discuss unresolved route choices one question or pickup at a time; Joseph asked to avoid bundled planning questions.
 
-Run #2's Grand Mother Silk fight is still unfinished, confirmed by Joseph. No final time has been supplied. **Claw Mirror is settled:** Joseph chose to keep it alongside Injector Band for the final run, retaining Weighted Belt and Magnetite Dice. Alternative blue-tool pickups are off the timed route; the discussion and rejection reasons are archived below. The spool pair and second-kit questions remain open.
+Run #2's Grand Mother Silk fight is still unfinished, confirmed by Joseph. No final time has been supplied. **Claw Mirror is settled:** Joseph chose to keep it alongside Injector Band for the final run, retaining Weighted Belt and Magnetite Dice. Alternative blue-tool pickups are off the timed route; the discussion and rejection reasons are archived below. The second kit is settled on Twelfth Architect for 450 rosaries after Clawline; Joseph reports that earning rosaries in the Citadel is straightforward. Spool pair selection is still being finalized. Checkpoints now show upcoming spending amounts. Hunter slot capacity is not an open concern: Joseph recalls a spare locket on each file and reports an extra Craftmetal on each.
 
 ## Original implementation brief
 
@@ -73,10 +73,10 @@ Build the main view around this itinerary. The route is Hunter, all five bells, 
 
 1. **Bone Bottom and Deep Docks.** Silkspear, Bell Beast, Marrow bell, Straight Pin, Swift Step, and Lace 1. Ring Deep Docks bell. The current planned mask route takes Wormways and Pebb on the Bone Bottom loop. Pebb costs 300. This is a planned route step from the reference, independent of unreported Run #2 purchases.
 2. **First Far Fields and Greymoor pass.** Take the shard above the Seamstress before leaving with Drifter's Cloak. Buy Weighted Belt and the Tool Pouch on the first Pilgrim's Rest visit. Total is 380 rosaries, plus 30 if the door gear is intact. Break the gear from the inside. Open Greymoor Bellway for the later return. Exhaust Garmond's first Greymoor dialogue, then use the Halfway Home / Moorwing route.
-3. **Shellwood, Widow, and post-Widow loop.** Sister Splinter for Cling Grip, Widow shortcut and Needolin, Bellhart bell and first Needle upgrade. Visit Eva for Hunter's evolution and take the Atla mask shard. Take the Atla spool only as part of the planned Atla + Greymoor pair. Return to Loddie after Widow for both target-practice rewards. On the Forge Daughter visit, get the damage kit for 180 and Magma Bell for 110 plus one Craftmetal. The target is six masks before Judge and seven by late Act 2. Verify the planned early mask shopping and the unreported shards before treating the rerun budget as locked.
-4. **Bell #3 and Last Judge.** Climb above and right of Halfway Home, use the top-right transition, and go northeast. Keep this bypass. This trip is also the proposed window for the Greymoor spool and the second damage kit. Ring the fifth bell through Shellwood/Blasted Steps, take the locket, and open Blasted Steps Bellway. Use Needolin at the Grand Gate and fight Last Judge. The route skips Mist and Phantom.
+3. **Shellwood, Widow, and post-Widow loop.** Sister Splinter for Cling Grip, Widow shortcut and Needolin, Bellhart bell and first Needle upgrade. Visit Eva for Hunter's evolution and take the Atla mask shard. Take the Atla spool only as part of the planned Atla + Greymoor pair. Return to Loddie after Widow for both target-practice rewards. On the Forge Daughter visit, get the damage kit for 180 and Magma Bell for 110 plus one Craftmetal. The target is six masks before Judge and seven by late Act 2. Use the checkpoint spending reminders for the upcoming shop and travel costs; Joseph is not sure the early earnings will cover everything.
+4. **Bell #3 and Last Judge.** Climb above and right of Halfway Home, use the top-right transition, and go northeast. Keep this bypass. This trip is the planned window for the Greymoor spool. Skip the Ragpelt farm; the second damage kit is now bought later. Ring the fifth bell through Shellwood/Blasted Steps, take the locket, and open Blasted Steps Bellway. Use Needolin at the Grand Gate and fight Last Judge. The route skips Mist and Phantom.
 5. **Songclave and Vaults.** Open Grand Bellway travel and the First Shrine bell. Take White Key, beat the Cogwork Dancers, clear lower Core, and open the top-right shortcut. Clear the Whispering Vaults arena. Get the planned mask shards and Pale Oil for Needle Upgrade #2. Pair the Bellhart upgrade trip with a Blasted Steps Bellway stop for free Dice after Dancers, before the Forum. This combines two planned travel stops. Exact savings have not been timed.
-6. **Trobbio, Cauldron, and roof.** Defeat Trobbio and open his lift shortcut. Get Injector Band in Whiteward, then Clawline. Use Magma Bell through Cauldron. Collect Vaultkeeper's Melody, run the box and wind puzzle, and open the far-left roof gate 480502. Leave and return through that gate for the duel. The earlier Greymoor conversation qualified on scout. The timed run got G&Z aid without a separately reported Choral Chambers encounter. Exhaust post-duel dialogue and accept their help at the Forum door inside High Halls.
+6. **Trobbio, Cauldron, and roof.** Defeat Trobbio and open his lift shortcut. Get Injector Band in Whiteward, then Clawline. Use Magma Bell through Cauldron and buy Twelfth Architect's 450-rosary Crafting Kit after Clawline. Collect Vaultkeeper's Melody, run the box and wind puzzle, and open the far-left roof gate 480502. Leave and return through that gate for the duel. The earlier Greymoor conversation qualified on scout. The timed run got G&Z aid without a separately reported Choral Chambers encounter. Exhaust post-duel dialogue and accept their help at the Forum door inside High Halls.
 7. **Forum and endgame.** Get Cogfly for one Craftmetal on the High Halls descent. The Forum target is two pouch upgrades, two damage upgrades, Straight Pin + Cogfly, and G&Z. Collect Conductor's Melody and Architect's Melody, ascend to Lace, and keep the patient, heal-first approach. Rest at Terminus, open the final shortcut, and record the actual finish after Grand Mother Silk.
 
 [Original Garmond Route](https://steamcommunity.com/sharedfiles/filedetails/?id=3577460696) · [Recovered maps and credits](</Users/josephdavey/Documents/ChatGPT/Silk Song/Recovered Garmond Maps/README.md>) · [Roof gate](https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=480502) · [Forum aid](https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=481022)
@@ -99,27 +99,51 @@ For Architect's Melody, use the guide's hit counts from the initial state. Left 
 
 ## Decisions to carry forward
 
-### Spools in pairs
+### Spools in pairs · pin requirements checked November 9
 
-Each completed pair adds one strand of Silk capacity. Route both halves before taking either. The app tracks the halves separately and shows the capacity gain when both are checked.
+Each completed pair adds one strand of Silk capacity. Choose complete pairs before the timed run. The new pin comparison adds Grand Gate 478586 as an alternative; the final number of pairs and the companion for the confirmed eastern Underworks pickup remain Joseph's choice.
 
-| Pair | Pickups | What to scout |
+| Pin | Verified access and route cost | Current planning |
 |---|---|---|
-| A · planned | Atla 478230 + Greymoor 478263 | Atla during Eva. Verify the Greymoor balloon approach with the earlier Cling Grip kit and the arena uncleared. Run #2 only confirms the late Greymoor pickup. |
-| B · candidate | Lower Cogwork 478618 + eastern Underworks 478704 | Time the lower Core branch and the eastern Cauldron shaft as one decision. Only add either to the timed itinerary once both are routed. |
-| Spare candidate | Bone Bottom 478080 + Deep Docks 477926 | Only compare if a planned pair is impractical. Both add side rooms. |
+| Deep Docks **477926** | No extra movement requirement listed. Cross the burning-floor room southwest of Forge Daughter, hit the far lever, and return over its platforms. No dedicated arena. | Existing candidate, suitable for pairing with Bone Bottom if adding an early pair. |
+| Greymoor **478263** | The only Greymoor Spool Fragment in the map/list. Cling Grip is the listed requirement. Climb the upper passage and use the balloons; no double-jump or Craw Lake arena clear is listed. | Planned with Atla. Documented early access is now checked; Run #2's personally confirmed pickup remains the late one. |
+| Eastern Underworks **478704** | Descend the shaft east of the Cauldron and break wall **480018 from the east** into the small burning-floor room. It is distinct from the central arena reward. | **Joseph explicitly wants this pickup.** Final paired companion is under discussion. |
+| Grand Gate **478586** | At the top of the platforming puzzle. Strike the underside of the balancing platforms to reposition them. No double-jump requirement listed. | Newly considered as a companion for eastern Underworks, replacing the lower Core detour if selected. |
+| Bone Bottom **478080** | No ability or rosary cost, but it is a trapped side passage after trapdoor 477865 and lift lever 478344. | Optional early pair with Deep Docks; call it free in currency, not an on-path pickup with no detour. |
+| Atla **478230** | Needolin opens Atla; Cling Grip reaches the upper passage above breakable wall 479063. Includes Marrowmaws. No double-jump or Moss Mothers fight is required for this spool. | Planned with Greymoor during the Eva visit. |
 
-Keep the separate Underworks arena 478931 and double-jump High Halls spool 478909 off the current itinerary. Total Silk upgrades on Run #2 are unconfirmed.
+**Arena distinction:** **479347** is the separate central Underworks gauntlet rewarding **478931**, the spool we already skip. Its waves include the Undercrank that smashes through the floor. The normal post-Clawline Cauldron exit arena is **480025**. Do not conflate either with the small room for **478704**.
 
-[All eight pins and route notes](</Users/josephdavey/Documents/ChatGPT/Silk Song/Silksong - Spool Fragment Candidates.md>) · [Spool mechanic](https://hollowknight.wiki/w/Spool_Fragment)
+Lower Core **478618** remains a candidate alternative. Keep the double-jump High Halls spool **478909** skipped. Do not rename existing preparation IDs if the final pair changes: add a distinct ID for any newly tracked pickup and retain old IDs for historical records.
+
+[Local spool comparison](./Silksong%20-%20Spool%20Fragment%20Candidates.md) · [Spool location requirements](https://hollowknight.wiki/w/Spool_Fragment) · [Underworks and Cauldron arenas](https://hollowknight.wiki/w/Underworks) · [MapGenie public map data](https://mapgenie.io/api/v1/maps/812/data)
 
 ### Forum prep
 
 - **Tool Pouch 2/4.** Keep Loddie's Marrow reward and buy Mort's for 220 on the first pass. Both together give 6 Cogflies and 18 Straight Pins. The Run #2 record confirms Loddie's pouch. For the rerun, the documented unlock is after Widow, so the second-round 220-rosary necklace arrives too late to fund the first Mort stop. Budget Mort and early travel before the run.
-- **Crafting Kit 2/4.** Keep Forge Daughter's 180-rosary upgrade. Scout the preferred second kit by taking Crawbug Clearing in Bellhart after Widow, then farming 25 Ragpelts from the two respawning roof Craws at Halfway Home on the Bell #3 trip. Turn them in to Creige. Time the whole loop. If it is slow, plan 450 rosaries for Twelfth Architect after Clawline and time any earning shortfall. Either second upgrade takes Cogflies from 5 to 7 damage per hit.
-- **Slots and resource plan.** Set aside Craftmetal for Magma Bell and Cogfly. The pre-Judge free Craftmetal is insurance if the rest of the route supplies both. Pair lockets with actual tools. Check the required Hunter slots on scout before allocating them. The Halfway Home, Blasted Steps, and wind-route lockets are convenient planned pickups. Run #2's exact locket allocation is unreported.
+- **Crafting Kit 2/4 · settled.** Keep Forge Daughter's 180-rosary upgrade and buy Twelfth Architect's kit for **450 rosaries after Clawline**. Joseph reports that earning rosaries by the Choral Chambers stage is not a problem. Skip Crawbug Clearing and the 25-Ragpelt farm. Retain preparation ID `kit-second`, now pointing at Architect kit 478728. The two upgrades take Cogflies to 7 damage per hit.
+- **Hunter slots and resources · sufficient by player report.** Hunter tool slots means the sockets unlocked with Memory Lockets. Use the existing on-path pickups to fill Hunter; no separate slot-hunting task is needed. Joseph believes both the timed and scout files had one locket left over, and reports both have an extra Craftmetal. Treat the locket count as his recollection, superseding the older zero-locket snapshot in the imported project notes. This is not a new timed split or a newly acquired item. Keep one Craftmetal each for Magma Bell and Cogfly. **Correction:** Halfway Home locket 478039 requires Faydown Cloak, so remove it from the no-double-jump itinerary; Blasted Steps and the wind-route pickups remain. Do not add a replacement detour on the assumption that slots are short.
 
 [Tool Pouch and Crafting Kit](https://hollowknight.wiki/w/Crafting_Kit) · [Loddie](https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=478251) · [Ragpelt farm](https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=478208) · [Twelfth Architect](https://hollowknight.wiki/w/Twelfth_Architect) · [Cogfly damage](https://hollowknight.wiki/w/Cogflies)
+
+### Upcoming spending reminders
+
+Joseph wants the cash needed for upcoming purchases shown at checkpoints, rather than an assumed starting wallet or locked early earning plan. `data/route.json` now stores purchase lists per spending stop; the tracker shows the next such stop at or after the selected checkpoint. Conditional fees are itemized separately. These are route plans, not assertions about historical purchases or the player's current balance. Bench tolls outside these listed purchases are not included.
+
+| Spending stop | Rosaries | Items / additional materials |
+|---|---:|---|
+| Lace 1 / Bone Bottom loop | 340 | Pebb shard 300 + Deep Docks Bellway 40 |
+| First Halfway Home / Greymoor pass | **440–470** | Belt 160 + pouch 220 + Greymoor Bellway 60; +30 if the Pilgrim's Rest door gear is intact |
+| Widow / Bellhart | 60 | Bellhart Bellway 60; Needle Upgrade #1 is free |
+| Forge Daughter | **290** | Kit 180 + Magma Bell 110; also 1 Craftmetal |
+| Blasted Steps | 60 | Bellway |
+| Grand Bellway | **160** | Bell Beast 80 + Ventrica 80 |
+| Songclave | 80 | Ventrica; take the White Key from the corpse |
+| Vaults / Bellhart upgrade return | 0 | Needle Upgrade #2 requires 1 Pale Oil, no rosaries |
+| Clawline / Twelfth Architect | **450** | Second Crafting Kit |
+| High Halls | 80 | Ventrica; Cogfly additionally needs 1 Craftmetal |
+
+Prices were checked against the public MapGenie pin descriptions and the existing guide. Keep the distinction between free Needle Upgrade #2 and the later paid upgrades; this route only plans the first two. [MapGenie weapon upgrades](https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=480827) · [Architect kit](https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=478728) · [Garmond Route travel costs](https://steamcommunity.com/sharedfiles/filedetails/?id=3577460696)
 
 ## Scout questions and settled decisions
 
@@ -153,7 +177,7 @@ The final timed route keeps Claw Mirror + Injector Band. This decision does not 
 
 - Scout Lace 2 as a dedicated fight. Time actual attempts and runbacks separately from optional detours. Practice waiting for committed attacks and healing in recovery. Try safe Straight Pin windows while preserving Silk.
 - Rehearse Grand Mother Silk and record the Run #2 finish, even if the five-hour goal is missed. Use the observed fight time to plan a realistic Lace split.
-- Check early rosaries for Pebb, Mort, and the first Bellways. Greymoor and Blasted Steps Bellway openings are useful for later returns. Keep the G&Z aid route and protected Needle/Forge Daughter budget. Scout the free kit against the paid kit before committing to either source.
+- Check early rosaries for Pebb, Mort, and the first Bellways. Greymoor and Blasted Steps Bellway openings are useful for later returns. Keep the G&Z aid route and protected Needle/Forge Daughter budget. The paid second kit is settled; keep its 450-rosary target visible before Clawline.
 - Recover missing screenshots only if they help a route step. The three saved maps are present and linked. The original combined Songclave/lower Core/Vaults arena image and the separate Vaults shard/Pale Oil image remain missing. Use the exact pins in the interim.
 
 ## Assets available in the old workspace
