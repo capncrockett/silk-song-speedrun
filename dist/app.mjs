@@ -254,6 +254,12 @@ function renderEditor() {
   byId("split-time").value = saved ? formatTime(saved.seconds, saved.precision) : "";
   byId("split-note").value = saved?.note ?? "";
   byId("save-split").textContent = saved ? "Update split →" : "Save split →";
+  const detour = stop?.optionalDetour;
+  byId("optional-detour").hidden = !detour;
+  byId("detour-title").textContent = detour?.title ?? "";
+  byId("detour-detail").textContent = detour?.detail ?? "";
+  byId("detour-steps").replaceChildren(...(detour?.steps ?? []).map((text) => node("li", "", text)));
+  byId("detour-links").replaceChildren(...links(detour?.links));
   renderShopping();
   const comparison = byId("split-comparison");
   const reference = state.data.runs.find((item) => item.id === "run-2");

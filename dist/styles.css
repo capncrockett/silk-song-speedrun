@@ -98,6 +98,15 @@ details[open] > summary::after { transform: rotate(180deg); }
 .links a { display: inline-flex; align-items: center; gap: .4rem; min-height: 33px; padding: .3rem .65rem; border: 1px solid #eca38c29; border-radius: 4px; color: var(--accent); font-size: .7rem; text-decoration: none; line-height: 1.5; }
 .links a::after { content: "↗"; opacity: .7; }
 .links a:hover { background: #eca38c0c; }
+.optional-detour { margin-block: 1.5rem; padding: 0 1rem 1rem; border: 1px solid #eca38c40; border-radius: 7px; background: #eca38c05; }
+.optional-detour:not([open]) { padding-bottom: 0; }
+.optional-detour > summary { display: flex; list-style: none; align-items: center; gap: .75rem; padding-block: 1rem; }
+.optional-detour summary small { display: block; color: var(--accent); font-size: .6rem; letter-spacing: .1em; text-transform: uppercase; margin-bottom: .3rem; }
+.optional-detour summary strong { font-weight: 500; font-size: .9rem; }
+.optional-detour > p, .optional-detour li { color: var(--muted); font-size: .82rem; line-height: 1.85; }
+.optional-detour ol { padding-left: 1.3rem; margin: 1rem 0 0; }
+.optional-detour li { padding-left: .3rem; margin-top: .7rem; }
+.optional-detour li::marker { color: var(--accent); }
 .shopping { margin-top: 1.5rem; padding: 0 1rem; border: 1px solid #b6c9a130; border-radius: 7px; background: #b6c9a105; }
 .shopping > summary { display: flex; list-style: none; align-items: center; gap: .75rem; padding-block: .9rem; }
 .shopping > summary > span { flex: 1; min-width: 0; font-size: .78rem; line-height: 1.6; }

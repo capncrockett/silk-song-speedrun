@@ -30,6 +30,12 @@ for (const stop of stops) {
   assert.ok(Array.isArray(stop.guide) && stop.guide.length >= 2, `Missing walkthrough directions: ${stop.id}`);
   assert.ok(stop.guide.every((text) => typeof text === "string" && text.trim()), "Guide directions must be readable text.");
   if (stop.guideTitle !== undefined) assert.ok(typeof stop.guideTitle === "string" && stop.guideTitle.trim());
+  if (stop.optionalDetour) {
+    assert.ok(stop.optionalDetour.title && stop.optionalDetour.detail);
+    assert.ok(Array.isArray(stop.optionalDetour.steps) && stop.optionalDetour.steps.length > 0);
+    assert.ok(stop.optionalDetour.steps.every((text) => typeof text === "string" && text.trim()));
+    assert.ok(stop.optionalDetour.links.every((link) => Number.isSafeInteger(link.pin) || link.url));
+  }
   if (!stop.purchases) continue;
   assert.ok(Array.isArray(stop.purchases) && stop.purchases.length > 0);
   for (const item of stop.purchases) {
