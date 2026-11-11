@@ -387,6 +387,26 @@
       "custom": true,
       "note": "Joseph’s supplied screenshot from Shellwood Bellway through Blasted Steps and Last Judge to the Grand Gate shortcut. Use the written directions and pins for the Choral Chambers bench and Grand Gate spool climb.",
       "keyIntro": "This supplied screenshot has map pins but no route line or Garmond checkpoint numbers. The numbered key below belongs to the written guide."
+    },
+    {
+      "id": "grand-gate-songclave",
+      "title": "Grand Gate → Grand Bellway → Songclave · supplied route",
+      "section": "Combined Route to Songclave, Lower Cogwork, and WV Arena",
+      "file": "assets/maps/Grand Gate to Grand Bellway and Songclave.png",
+      "src": "/maps/grand-gate-songclave.png",
+      "mime": "image/png",
+      "width": 2394,
+      "height": 1234,
+      "sourceUrl": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom",
+      "creator": "User-supplied annotated MapGenie screenshot",
+      "sha256": "7b0f8f3b21fcdda079f5f148e40eb6a478c8bdd3dd02ee5a9d8155225675a352",
+      "recovered": "2026-11-11",
+      "bytes": 1781256,
+      "kind": "map",
+      "timedRoute": true,
+      "custom": true,
+      "note": "Supplied red route from Grand Gate through Choral Chambers to Grand Bellway, then up toward Songclave. The Dancers, lower Core and Vaults arena are outside this crop; those steps retain their existing references.",
+      "keyIntro": "The red line traces the approach through Choral Chambers and Grand Bellway toward Songclave. The guide’s checkpoint numbers are not drawn on this screenshot; later Dancers, lower Core and Vaults arena checkpoints are outside its crop."
     }
   ],
   "missing": [
@@ -406,7 +426,7 @@
     },
     {
       "title": "Songclave, lower Cogwork and Vaults arena",
-      "reason": "The guide image link is empty."
+      "reason": "The guide image link is empty. The supplied Grand Gate/Songclave route covers the approach only; the Dancers, lower Core and Vaults arena remain outside that crop."
     }
   ]
 }

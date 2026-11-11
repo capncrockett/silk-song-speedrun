@@ -210,6 +210,7 @@
       "id": "garmond-songclave",
       "title": "Combined Route to Songclave, Lower Cogwork, and WV Arena",
       "maps": [
+        "grand-gate-songclave",
         "overview"
       ],
       "steps": [
@@ -228,7 +229,7 @@
         "6 · Vaults arena"
       ],
       "detours": [],
-      "note": "The detailed map is missing. Our path uses the Greymoor conversation, roof duel and Forum offer. No separate Choral Chambers encounter was reported on the successful scout or timed file, so do not add a search loop here.",
+      "note": "The supplied red route covers Grand Gate through Choral Chambers, Grand Bellway and the Songclave approach. The Dancers, lower Core and Vaults arena still use their existing references. Our path uses the Greymoor conversation, roof duel and Forum offer. No separate Choral Chambers encounter was reported on the successful scout or timed file, so do not add a search loop here.",
       "guideNumber": 9
     },
     {
@@ -564,17 +565,18 @@
       "title": "Combined Route to Songclave, Lower Cogwork, and WV Arena",
       "summary": "Open the travel links, take White Key, defeat Dancers, and traverse lower Core toward the Vaults arena.",
       "maps": [
+        "grand-gate-songclave",
         "overview"
       ],
       "missingMaps": [
         "Songclave, lower Cogwork and Vaults arena"
       ],
-      "mapNote": "Original Songclave, lower Cogwork and Vaults arena map missing. The route overview is a fallback; use the written directions and pins. The later Vaults shard and Pale Oil map is available in the next section.",
+      "mapNote": "The supplied red route covers the Grand Gate → Grand Bellway → Songclave approach. Dancers, lower Core and the Vaults arena are outside its crop; use their existing references and written directions.",
       "stops": [
-        {"id": "grand-bellway", "guideTitle": "Open Grand Bellway", "guide": ["Reach Grand Bellway and open the Bell Beast for 80 rosaries.", "Open its Ventrica for another 80 rosaries.", "To reach Songclave, climb the rotating-wheel room and take its first right exit. The two Grand Bellway travel unlocks cost 160 in total."], "title": "Grand Bellway bench", "tip": "Open the Grand Bellway Bell Beast and Ventrica for 80 each. Keep the map purchase out of the travel budget.", "purchases": [{"item": "Grand Bellway Bell Beast", "rosaries": 80}, {"item": "Grand Bellway Ventrica", "rosaries": 80}]},
-        {"id": "songclave-bell", "guideTitle": "Songclave & the White Key", "guide": ["Ring the First Shrine bell in Songclave.", "Open the Songclave Ventrica for 80 rosaries. If short, the nearby Grand Reeds on the Dancers approach drop 32 rosaries each.", "On the first visit, take the White Key from the corpse at the far right of the First Shrine, before it moves into Jubilana’s stock. Keep it for Whiteward."], "title": "Songclave bell", "tip": "Ring the First Shrine bell, open the Songclave Ventrica, and take the White Key for Whiteward.", "links": [{"title": "White Key", "pin": 478599}], "purchases": [{"item": "Songclave Ventrica", "rosaries": 80}]},
-        {"id": "dancers", "guide": ["Defeat the Cogwork Dancers. The guide recommends focusing one dancer because their health is separate.", "Continue into lower Cogwork Core.", "The free Magnetite Dice pickup becomes available after this fight; collect it on the planned Bellhart upgrade trip."], "title": "Cogwork Dancers defeated", "tip": "Beat the Dancers, then head into lower Cogwork. The free Dice pickup is available after the Dancers.", "links": [{"title": "Cogwork Dancers", "pin": 478606}]},
-        {"id": "lower-core", "guideTitle": "Lower Cogwork Core", "guide": ["From the bench below Dancers, descend and go left to the lower Core arena. Clear it and collect the mask shard.", "Open the middle shortcut, then take the final room’s top-right exit to unlock upper Cogwork Core.", "Exit right through the spinning-wheel room toward Whispering Vaults. Leave the optional lower Core spool branch."], "title": "Lower Cogwork Core / bench", "tip": "Below Dancers, descend left for the arena and mask shard. Open the middle shortcut and final top-right exit to upper Core, then go right through the spinning-wheel room to Vaults. Skip the lower Core spool; the locked six use Grand Gate instead.", "links": [{"title": "Lower Core mask shard", "pin": 478615}]}
+        {"id": "grand-bellway", "guideTitle": "Open Grand Bellway", "guide": ["Reach Grand Bellway and open the Bell Beast for 80 rosaries.", "Open its Ventrica for another 80 rosaries.", "To reach Songclave, climb the rotating-wheel room and take its first right exit. The two Grand Bellway travel unlocks cost 160 in total."], "title": "Grand Bellway bench", "tip": "Open the Grand Bellway Bell Beast and Ventrica for 80 each. Keep the map purchase out of the travel budget.", "purchases": [{"item": "Grand Bellway Bell Beast", "rosaries": 80}, {"item": "Grand Bellway Ventrica", "rosaries": 80}], "maps": ["grand-gate-songclave"], "mapNote": "Red route: Grand Gate → Choral Chambers → Grand Bellway → Songclave. Use the written steps for travel unlocks and the White Key."},
+        {"id": "songclave-bell", "guideTitle": "Songclave & the White Key", "guide": ["Ring the First Shrine bell in Songclave.", "Open the Songclave Ventrica for 80 rosaries. If short, the nearby Grand Reeds on the Dancers approach drop 32 rosaries each.", "On the first visit, take the White Key from the corpse at the far right of the First Shrine, before it moves into Jubilana’s stock. Keep it for Whiteward."], "title": "Songclave bell", "tip": "Ring the First Shrine bell, open the Songclave Ventrica, and take the White Key for Whiteward.", "links": [{"title": "White Key", "pin": 478599}], "purchases": [{"item": "Songclave Ventrica", "rosaries": 80}], "maps": ["grand-gate-songclave"], "mapNote": "Red route: Grand Gate → Choral Chambers → Grand Bellway → Songclave. Use the written steps for travel unlocks and the White Key."},
+        {"id": "dancers", "guide": ["Defeat the Cogwork Dancers. The guide recommends focusing one dancer because their health is separate.", "Continue into lower Cogwork Core.", "The free Magnetite Dice pickup becomes available after this fight; collect it on the planned Bellhart upgrade trip."], "title": "Cogwork Dancers defeated", "tip": "Beat the Dancers, then head into lower Cogwork. The free Dice pickup is available after the Dancers.", "links": [{"title": "Cogwork Dancers", "pin": 478606}], "maps": ["overview"], "mapNote": "Dancers and lower Core are outside the supplied approach screenshot. Use the route overview, written directions and map pins here."},
+        {"id": "lower-core", "guideTitle": "Lower Cogwork Core", "guide": ["From the bench below Dancers, descend and go left to the lower Core arena. Clear it and collect the mask shard.", "Open the middle shortcut, then take the final room’s top-right exit to unlock upper Cogwork Core.", "Exit right through the spinning-wheel room toward Whispering Vaults. Leave the optional lower Core spool branch."], "title": "Lower Cogwork Core / bench", "tip": "Below Dancers, descend left for the arena and mask shard. Open the middle shortcut and final top-right exit to upper Core, then go right through the spinning-wheel room to Vaults. Skip the lower Core spool; the locked six use Grand Gate instead.", "links": [{"title": "Lower Core mask shard", "pin": 478615}], "maps": ["overview"], "mapNote": "Dancers and lower Core are outside the supplied approach screenshot. Use the route overview, written directions and map pins here."}
       ]
     },
     {

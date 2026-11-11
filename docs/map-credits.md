@@ -4,7 +4,7 @@ Source: [Speedrunner Achievement Guide: The Garmond Route!](https://steamcommuni
 
 The three previously saved maps are preserved. On 2026-11-09, 16 additional original images were recovered directly from the guide’s Steam image links. All files retain their original bytes. [catalog.json](../assets/maps/catalog.json) records source URLs, dimensions, byte counts, SHA-256 hashes, and route relevance.
 
-The app shows 12 original reference maps, 2 relevant original screenshots, and Joseph’s supplied Shellwood/Bellhart and Shellwood/Last Judge/Grand Gate screenshots. Guide-only Mist and Sister Splinter skip alternatives are preserved in `assets/maps/` but excluded from the timed route and gallery. The timed route fights Sister Splinter. The original guide text is condensed into route directions and numbered map keys, with the decisions in `HANDOFF.md` applied. Original map numbers stay intact; planned, optional, skipped and resource-backup entries describe our path. The original 13 travel-section titles organize the runbook, with a labeled Greymoor return. Four original maps remain unavailable; two now have supplied screenshot replacements.
+The app shows 12 original reference maps, 2 relevant original screenshots, and Joseph’s supplied Shellwood/Bellhart and Shellwood/Last Judge/Grand Gate screenshots, plus his annotated Grand Gate/Songclave route. Guide-only Mist and Sister Splinter skip alternatives are preserved in `assets/maps/` but excluded from the timed route and gallery. The timed route fights Sister Splinter. The original guide text is condensed into route directions and numbered map keys, with the decisions in `HANDOFF.md` applied. Original map numbers stay intact; planned, optional, skipped and resource-backup entries describe our path. The original 13 travel-section titles organize the runbook, with a labeled Greymoor return. Four original maps remain unavailable; two have supplied screenshot replacements and the combined Songclave chapter has a supplied approach map.
 
 | Reference | Saved original | Steam source | Use |
 |---|---|---|---|
@@ -42,6 +42,12 @@ Joseph supplied the [Shellwood to Last Judge and Grand Gate screenshot](../asset
 
 The map contains pins without a drawn route or Garmond checkpoint numbers. Keep the written directions and key, including the Choral Chambers bench and selected Grand Gate spool climb. This is a supplied replacement, not the recovered original Steam image.
 
+## Supplied Grand Gate and Songclave route
+
+Joseph added the [Grand Gate to Grand Bellway and Songclave map](../assets/maps/Grand%20Gate%20to%20Grand%20Bellway%20and%20Songclave.png) on November 11, 2026. It was renamed from Screenshot 2026-11-11 at 12.35.53 AM.png without altering the original 2394 × 1234 PNG bytes. Base map: MapGenie; game: Team Cherry.
+
+The red line follows the approach from Grand Gate through Choral Chambers to Grand Bellway, then up toward Songclave. Use it for the Grand Bellway and Songclave/White Key steps. The Dancers, lower Core and Vaults arena are outside its crop, so this is a partial replacement for the original combined section map. Their existing references and written directions remain.
+
 ## Missing guide maps
 
 The current guide HTML has empty image URLs for these four maps:
@@ -49,7 +55,7 @@ The current guide HTML has empty image URLs for these four maps:
 - Shellwood and Widow — Joseph’s supplied unmarked screenshot is used instead
 - Deep Docks return: mask shard and Forge Daughter
 - Last Judge and Choral Chambers — Joseph’s supplied Shellwood/Last Judge/Grand Gate screenshot is used instead
-- Songclave, lower Cogwork and Vaults arena
+- Songclave, lower Cogwork and Vaults arena — supplied red route covers the approach only; Dancers, lower Core and Vaults arena still use existing references
 
 The separate Vaults shard/Pale Oil map has been recovered. The guide does not mark spool fragments on its maps; the six selected fragments retain their MapGenie pins in the runbook. Custom screenshots can fill these gaps.
 
