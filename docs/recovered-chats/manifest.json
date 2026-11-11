@@ -1,0 +1,146 @@
+{
+  "version": 1,
+  "reportedChatCount": 6,
+  "identityNote": "Seven extracts are preserved. No byte-identical duplicates. The user reports six original chats; without chat IDs, overlapping extracts cannot establish a unique six-chat mapping. Repetition is not independent confirmation.",
+  "sources": [
+    {
+      "id": "shellwood-widow",
+      "file": "docs/recovered-chats/shellwood-widow.md",
+      "title": "Silksong 5-Hour Run: Shellwood → Widow",
+      "origin": {
+        "kind": "attachment",
+        "attachmentId": "d94ad0bd-2095-4a1c-b042-be9e94abe53f",
+        "originalFilename": "Pasted text.txt"
+      },
+      "received": "2026-11-10",
+      "originalChatDate": null,
+      "claimedTimeframe": null,
+      "endpoint": "Run #2: Widow / Needolin, 1:36; focused Shellwood account.",
+      "bytes": 10479,
+      "sha256": "d701518b7bd4f5cc7ed8fa3b83682132ee08da369815385f04a724b9c83bef68"
+    },
+    {
+      "id": "opening-widow",
+      "file": "docs/recovered-chats/opening-widow.md",
+      "title": "Silksong: Customized Garmond Route — Conversation Knowledge Extract",
+      "origin": {
+        "kind": "attachment",
+        "attachmentId": "e8fe2479-e550-4c88-a5d8-047a26887588",
+        "originalFilename": "Pasted text.txt"
+      },
+      "received": "2026-11-10",
+      "originalChatDate": null,
+      "claimedTimeframe": "2026-10-31 (coverage claimed by extract; original chat date unverified)",
+      "endpoint": "Run #2: opening through Widow / Needolin, 1:36; claims historical coverage through October 31, 2026.",
+      "bytes": 39935,
+      "sha256": "6e2758d0b2f07e3b8ddbe41b0941723f2cabc252edf76e2fb999f7a30ee5cf7f"
+    },
+    {
+      "id": "grand-bellway-beast-variant",
+      "file": "docs/recovered-chats/grand-bellway-beast-variant.md",
+      "title": "Silksong sub-five-hour route extraction",
+      "origin": {
+        "kind": "attachment",
+        "attachmentId": "72681d36-d608-446c-9ab1-bb430642e5d5",
+        "originalFilename": "Pasted text.txt"
+      },
+      "received": "2026-11-10",
+      "originalChatDate": null,
+      "claimedTimeframe": null,
+      "endpoint": "Run #2: Grand Bellway, 2:33; optional Beast discussion explicitly not a guide rewrite.",
+      "bytes": 11656,
+      "sha256": "b12bb5df65886cc01bccede79c77901a2eb98625734deb730002816bf8219e31"
+    },
+    {
+      "id": "locate-garmond-zaza",
+      "file": "docs/recovered-chats/locate-garmond-zaza.md",
+      "title": "Silksong - Garmond Route Knowledge from Locate Garmond and Zaza",
+      "origin": {
+        "kind": "workspace",
+        "originalFilename": "Silksong - Garmond Route Knowledge from Locate Garmond and Zaza.md"
+      },
+      "received": "2026-11-10",
+      "originalChatDate": null,
+      "claimedTimeframe": null,
+      "endpoint": "Run #2: Vaultkeeper's Melody, 3:34, then return to Songclave without a newer time.",
+      "bytes": 31381,
+      "sha256": "12dbbeff60f4996c1c1eee72b1e0bfc383912f6db5dd8403993ff6ef3be1f535"
+    },
+    {
+      "id": "lace-2-route-extract",
+      "file": "docs/recovered-chats/lace-2-route-extract.md",
+      "title": "Silksong - This Chat Route Extract",
+      "origin": {
+        "kind": "workspace",
+        "originalFilename": "Silksong - This Chat Route Extract.md"
+      },
+      "received": "2026-11-10",
+      "originalChatDate": null,
+      "claimedTimeframe": null,
+      "endpoint": "Run #2: Lace 2, 4:57; GMS practice still pending.",
+      "bytes": 30405,
+      "sha256": "0a0a065ecc53e04c1c50b27d77fb6654e2ac7907e9154992323b73716db6fd96"
+    },
+    {
+      "id": "lace-2-route-extraction",
+      "file": "docs/recovered-chats/lace-2-route-extraction.md",
+      "title": "Silksong - This Chat Route Extraction",
+      "origin": {
+        "kind": "workspace",
+        "originalFilename": "Silksong - This Chat Route Extraction.md"
+      },
+      "received": "2026-11-10",
+      "originalChatDate": null,
+      "claimedTimeframe": null,
+      "endpoint": "Run #2: Lace 2, 4:57; overlapping detailed account, GMS practice still pending.",
+      "bytes": 32361,
+      "sha256": "e65dc45e202238dbc379d97681df8456f2da7e820b9e190f550e842f42ed29e0"
+    },
+    {
+      "id": "guide-restoration-5ff3207",
+      "file": "docs/recovered-chats/guide-restoration-5ff3207.md",
+      "title": "The customized route uses Hunter, all five Bellshrines, Last Judge through Blasted Steps",
+      "origin": {
+        "kind": "attachment",
+        "attachmentId": "0be00108-3e3a-432d-9b13-33807c94cfd9",
+        "originalFilename": "Pasted text.txt"
+      },
+      "received": "2026-11-10",
+      "originalChatDate": null,
+      "claimedTimeframe": null,
+      "endpoint": "Codex guide restoration through commit 5ff3207; inherits gameplay through Lace 2 and references the repository's later finish.",
+      "bytes": 13233,
+      "sha256": "ef587b0fbf8727720f63811d1f0ddabbe1cc36631306cba156bf86d7552b64db"
+    }
+  ],
+  "overlapGroups": [
+    {
+      "id": "widow-accounts",
+      "sources": [
+        "shellwood-widow",
+        "opening-widow"
+      ],
+      "status": "possible same-chat extracts; not proven",
+      "reason": "Focused and full accounts share the Widow endpoint and Shellwood experiments."
+    },
+    {
+      "id": "lace-2-accounts",
+      "sources": [
+        "lace-2-route-extract",
+        "lace-2-route-extraction"
+      ],
+      "status": "possible duplicate chat summaries; not proven",
+      "reason": "Both end at Lace 2, 4:57, with strongly overlapping late-run observations."
+    },
+    {
+      "id": "restoration-handoff",
+      "sources": [
+        "guide-restoration-5ff3207",
+        "lace-2-route-extract",
+        "lace-2-route-extraction"
+      ],
+      "status": "derivative overlap; not independent confirmation",
+      "reason": "The restoration extract carries older gameplay forward and references repository results rather than a new player finish report."
+    }
+  ]
+}

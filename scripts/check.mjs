@@ -5,7 +5,7 @@ import { changePickups, formatTime, listStops, parseTime, pickupCategories, runS
 
 const root = new URL("../", import.meta.url);
 const readJson = async (path) => JSON.parse(await readFile(new URL(path, root), "utf8"));
-const [route, seed, catalog] = await Promise.all([readJson("data/route.json"), readJson("data/seed-runs.json"), readJson("assets/maps/catalog.json")]);
+const [route, seed, catalog, chatArchive] = await Promise.all([readJson("data/route.json"), readJson("data/seed-runs.json"), readJson("assets/maps/catalog.json"), readJson("docs/recovered-chats/manifest.json")]);
 
 assert.equal(route.version, 1);
 assert.ok(Number.isSafeInteger(route.targetSeconds) && route.targetSeconds > 0, "Route needs a time target.");
@@ -76,6 +76,8 @@ assert.equal(mortShopping.stop.id, "halfway-home");
 assert.equal(mortShopping.minimum, 440, "Mort's purchases plus Greymoor Bellway need 440.");
 assert.equal(mortShopping.maximum, 470, "The intact door adds 30.");
 assert.equal(shoppingSummary(route, "forge-daughter").minimum, 340, "Include two 25-rosary Loddie entries before the Forge Daughter purchases.");
+assert.equal(shoppingSummary(route, "lace-1").minimum, 340, "Protect the mask shard and Bellway budget.");
+assert.equal(shoppingSummary(route, "lace-1").maximum, 400, "The conditional Pebb Craftmetal adds 60, not a required purchase.");
 assert.equal(shoppingSummary(route, "clawline").minimum, 450);
 assert.equal(shoppingSummary(route, "vaults-arena").minimum, 0, "The second Needle upgrade needs Pale Oil rather than rosaries.");
 assert.equal(shoppingSummary(route, "gms"), null);
@@ -193,7 +195,31 @@ await Promise.all([
   "public/index.html", "public/styles.css", "assets/artwork/hornet-mask-icon.png", "assets/artwork/hornet.png", "assets/artwork/hornet.webp", "HANDOFF.md"
 ].map((file) => access(new URL(file, root))));
 
-const documents = ["README.md", "AGENTS.md", "HANDOFF.md", "docs/history.md", "docs/map-credits.md", "docs/chat-recovery.md", "docs/recovered-chats/shellwood-widow.md"];
+// Imported chats preserve legacy links and old mistakes verbatim. Validate their
+// provenance/integrity here; only maintained project docs use active link checks.
+assert.equal(chatArchive.version, 1);
+assert.ok(Number.isSafeInteger(chatArchive.reportedChatCount) && chatArchive.reportedChatCount > 0);
+assert.ok(chatArchive.identityNote && chatArchive.sources.length > 0);
+const sourceIds = new Set(chatArchive.sources.map((source) => source.id));
+assert.equal(sourceIds.size, chatArchive.sources.length, "Recovered source IDs must be unique.");
+assert.equal(new Set(chatArchive.sources.map((source) => source.file)).size, chatArchive.sources.length, "Each extract needs its own preserved file.");
+for (const source of chatArchive.sources) {
+  assert.match(source.file, /^docs\/recovered-chats\/[a-z0-9-]+\.md$/, "Keep raw extracts in the source archive.");
+  assert.ok(source.title && source.endpoint && source.received && source.origin?.originalFilename, "Keep source provenance and progression context.");
+  assert.ok(["attachment", "workspace"].includes(source.origin.kind));
+  if (source.origin.kind === "attachment") assert.ok(source.origin.attachmentId);
+  assert.match(source.sha256, /^[a-f0-9]{64}$/);
+  const bytes = await readFile(new URL(source.file, root));
+  assert.equal(bytes.length, source.bytes, source.file + ": source byte count changed.");
+  assert.equal(createHash("sha256").update(bytes).digest("hex"), source.sha256, source.file + ": supplied extract changed.");
+}
+for (const group of chatArchive.overlapGroups) {
+  assert.ok(group.status && group.reason && group.sources.length >= 2, "Explain overlaps without inventing chat identities.");
+  assert.equal(new Set(group.sources).size, group.sources.length);
+  assert.ok(group.sources.every((id) => sourceIds.has(id)), "Overlap groups need known sources.");
+}
+
+const documents = ["README.md", "AGENTS.md", "HANDOFF.md", "docs/history.md", "docs/map-credits.md", "docs/chat-recovery.md"];
 for (const file of documents) {
   const source = new URL(file, root);
   const markdown = await readFile(source, "utf8");
@@ -205,4 +231,4 @@ for (const file of documents) {
   }
 }
 
-console.log(`Verified ${stops.length} route checkpoints, ${catalog.images.filter((image) => !image.custom).length} original guide images, ${catalog.images.filter((image) => image.custom).length} custom assets, map references and guide keys, documentation links, run data, split timing, and purchase reminders.`);
+console.log(`Verified ${stops.length} route checkpoints, ${catalog.images.filter((image) => !image.custom).length} original guide images, ${catalog.images.filter((image) => image.custom).length} custom assets, map references and guide keys, documentation links, ${chatArchive.sources.length} recovered source hashes, run data, split timing, and purchase reminders.`);
