@@ -124,9 +124,7 @@
       "id": "garmond-shellwood",
       "title": "Shellwood, 6th Mask, Cling Grip, & Widow",
       "maps": [
-        "shellwood-widow-route",
-        "cling-grip-exit",
-        "overview"
+        "shellwood-bellhart-base"
       ],
       "steps": [
         "cling-grip",
@@ -144,7 +142,7 @@
         "1 · Open the lower lift shortcut back to Bellhart.",
         "2 · Open the Widow bench shortcut — planned."
       ],
-      "note": "The custom draft draws our Sister Splinter fight and five checkpoint locations. The original detailed Steam map is still missing. Review exact upper-loop and shortcut connections in game. The extra Cling Grip screenshot illustrates the guide’s optional skip.",
+      "note": "Follow the condensed Garmond directions with Joseph’s unmarked screenshot. Our route fights Sister Splinter for Cling Grip and continues through the Widow shortcut, Needolin, Bellhart bell, and first Needle upgrade.",
       "guideNumber": 6
     },
     {
@@ -418,13 +416,12 @@
       "title": "Shellwood, 6th Mask, Cling Grip, & Widow",
       "summary": "Take the mask shard, fight Sister Splinter, get Cling Grip, and clear Widow.",
       "maps": [
-        "shellwood-widow-route",
-        "overview"
+        "shellwood-bellhart-base"
       ],
       "missingMaps": [
         "Shellwood and Widow"
       ],
-      "mapNote": "Custom room-level route draft based on Joseph’s supplied screenshot. The original Steam map is still missing. Review the upper Shellwood/Gahlia loop and bench-shortcut connection in game; use the written directions for the chosen route.",
+      "mapNote": "Joseph’s original, unmarked Shellwood and Bellhart screenshot. Follow the condensed directions and take the normal Sister Splinter fight. The original Steam section map is still missing.",
       "stops": [
         {
           "id": "cling-grip",
@@ -434,9 +431,7 @@
             "Open the Shellwood shortcut toward Blasted Steps, then continue toward upper Bellhart and Widow."
           ],
           "maps": [
-            "shellwood-widow-route",
-            "overview",
-            "cling-grip-exit"
+            "shellwood-bellhart-base"
           ],
           "title": "Cling Grip",
           "tip": "Take the Shellwood mask-shard branch and fight Sister Splinter on the way to Cling Grip. Open the Shellwood shortcut toward Blasted Steps.",

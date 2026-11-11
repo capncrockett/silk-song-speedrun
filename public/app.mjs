@@ -194,7 +194,7 @@ function renderMaps() {
     card.append(preview, caption);
     return card;
   }));
-  byId("map-gaps").textContent = `Missing original guide maps: ${state.maps.missing.map((image) => image.title + (image.replacement ? " (custom draft available)" : "")).join("; ")}. Checkpoint notes and map pins cover these stops. The guide does not mark spool fragments.`;
+  byId("map-gaps").textContent = `Missing original guide maps: ${state.maps.missing.map((image) => image.title + (image.replacement ? " (replacement available)" : "")).join("; ")}. Checkpoint notes and map pins cover these stops. The guide does not mark spool fragments.`;
 }
 
 function stepTitle(stop) {

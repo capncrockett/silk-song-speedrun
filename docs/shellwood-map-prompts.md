@@ -1,5 +1,7 @@
 # Shellwood route map drawing prompts
 
+Archived experiment: Joseph chose to use the unmarked source screenshot and condensed written directions after reviewing the overlay. This annotated draft is excluded from the timed guide and gallery.
+
 Created November 10, 2026 with the built-in `image_gen` tool. Final selected output: `assets/maps/Shellwood and Widow route draft.png`. Source screenshot: `assets/maps/Shellwood and Bellhart base.png` (renamed, original bytes preserved).
 
 This is a room-level custom draft, not the lost Steam guide map or an in-game-tested route trace. The path uses the selected Sister Splinter fight and the existing five checkpoint map-key numbers. Review the precise upper Shellwood/Gahlia and bench-shortcut connections in game before treating the trace as verified.

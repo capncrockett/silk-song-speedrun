@@ -4,7 +4,7 @@ Source: [Speedrunner Achievement Guide: The Garmond Route!](https://steamcommuni
 
 The three previously saved maps are preserved. On 2026-11-09, 16 additional original images were recovered directly from the guide’s Steam image links. All files retain their original bytes. [catalog.json](../assets/maps/catalog.json) records source URLs, dimensions, byte counts, SHA-256 hashes, and route relevance.
 
-The app shows 12 original reference maps, 3 relevant original screenshots, and a custom Shellwood route draft. Guide-only Mist and Sister Splinter skip alternatives are preserved in `assets/maps/` but excluded from the timed route and gallery. The timed route fights Sister Splinter. The original guide text is condensed into route directions and numbered map keys, with the decisions in `HANDOFF.md` applied. Original map numbers stay intact; planned, optional, skipped and resource-backup entries describe our path. The original 13 travel-section titles organize the runbook, with a labeled Greymoor return and explicit notices for the four missing maps.
+The app shows 12 original reference maps, 2 relevant original screenshots, and Joseph’s supplied Shellwood/Bellhart screenshot. Guide-only Mist and Sister Splinter skip alternatives are preserved in `assets/maps/` but excluded from the timed route and gallery. The timed route fights Sister Splinter. The original guide text is condensed into route directions and numbered map keys, with the decisions in `HANDOFF.md` applied. Original map numbers stay intact; planned, optional, skipped and resource-backup entries describe our path. The original 13 travel-section titles organize the runbook, with a labeled Greymoor return and explicit notices for the four missing maps.
 
 | Reference | Saved original | Steam source | Use |
 |---|---|---|---|
@@ -15,7 +15,7 @@ The app shows 12 original reference maps, 3 relevant original screenshots, and a
 | Far Fields and Drifters Cloak | [Open](../assets/maps/Far%20Fields%20and%20Drifters%20Cloak.jpg) | [Original](https://images.steamusercontent.com/ugc/12003294675829108340/88CE372981045C5517D52906DF5335EA0392273F/) | Route reference |
 | Greymoor and Moorwing | [Open](../assets/maps/Greymoor%20and%20Moorwing.jpg) | [Original](https://images.steamusercontent.com/ugc/17159776932854036116/17FC8ACD4292518CD44EAD06091E403D7BD54020/) | Route reference |
 | Moorwing aid offer | [Open](../assets/maps/Moorwing%20Aid%20Offer.png) | [Original](https://images.steamusercontent.com/ugc/17076046715620602420/CF67423833F9C2606217EFE3E378421AAC34A98A/) | Route reference |
-| Cling Grip room exit | [Open](../assets/maps/Cling%20Grip%20Room%20Exit.jpg) | [Original](https://images.steamusercontent.com/ugc/12262548630487526181/BFA8C103F559E3B543AEF57AB3D94FD82DFFF183/) | Route reference |
+| Cling Grip room exit | [Open](../assets/maps/Cling%20Grip%20Room%20Exit.jpg) | [Original](https://images.steamusercontent.com/ugc/12262548630487526181/BFA8C103F559E3B543AEF57AB3D94FD82DFFF183/) | Archived skip reference |
 | Weavenest Atla and Eva | [Open](../assets/maps/Weavenest%20Atla%20and%20Eva.jpg) | [Original](https://images.steamusercontent.com/ugc/13624836401603299263/693F181BDEF4B64CD385757C3CAFFB36B94E670F/) | Route reference |
 | Whispering Vaults Shard and Pale Oil | [Open](../assets/maps/Whispering%20Vaults%20Shard%20and%20Pale%20Oil.jpg) | [Original](https://images.steamusercontent.com/ugc/16426385777123146179/24943DBB0431D1F0763FA0BFA6E8A7E9D28DA893/) | Route reference |
 | Cauldron, Clawline and Roof | [Open](../assets/maps/Cauldron%20and%20Whispering%20Vaults.jpg) | [Original](https://images.steamusercontent.com/ugc/17979432511149326854/B12DB3D0FC1794742D83E69E0E05A48F78AE2ED8/) | Route reference |
@@ -28,17 +28,19 @@ The app shows 12 original reference maps, 3 relevant original screenshots, and a
 | Mist route (unused alternative) | [Open](../assets/maps/Mist%20Route.jpg) | [Original](https://images.steamusercontent.com/ugc/10116870605762589313/281D1089529974A18D9CC32BB50B01FB0ED501B1/) | Archived alternative |
 | Mist route: Chalamet pogo (unused) | [Open](../assets/maps/Mist%20Chalamet%20Pogo.jpg) | [Original](https://images.steamusercontent.com/ugc/10668799969708050997/8BF98BEE0A509D1DE9A682949A263B2E01F1CC77/) | Archived alternative |
 
-## Custom Shellwood route draft
+## Supplied Shellwood screenshot
 
-Joseph supplied the [Shellwood and Bellhart base screenshot](../assets/maps/Shellwood%20and%20Bellhart%20base.png) on November 10, 2026. Its original bytes are preserved under the descriptive filename. The [annotated route draft](../assets/maps/Shellwood%20and%20Widow%20route%20draft.png) was drawn using the built-in image_gen tool and follows the selected Sister Splinter fight, sixth-mask shard, Cling Grip, Widow and Bellhart upgrade path. Base map: MapGenie; game: Team Cherry. This is a custom replacement, not Tay Bravo’s missing original image.
+Joseph supplied the [Shellwood and Bellhart screenshot](../assets/maps/Shellwood%20and%20Bellhart%20base.png) on November 10, 2026 and chose to use it unmarked with the condensed Garmond directions. Its original bytes are preserved under the descriptive filename. Base map: MapGenie; game: Team Cherry.
 
-The overlay is a room-level draft. Precise upper-loop and bench-shortcut connections still need in-game review. The catalog records the original base and generated derivative separately, with dimensions, hashes, provenance and draft status. [Prompts and route references](./shellwood-map-prompts.md).
+The screenshot is the active reference for the Shellwood section. Its checkpoint numbers appear in the written key, not on the image. The chosen route fights Sister Splinter before Cling Grip.
+
+The [annotated experiment](../assets/maps/Shellwood%20and%20Widow%20route%20draft.png) and [drawing prompts](./shellwood-map-prompts.md) remain archived. Both it and the original Cling Grip skip screenshot are excluded from the timed guide and gallery.
 
 ## Missing guide maps
 
 The current guide HTML has empty image URLs for these four maps:
 
-- Shellwood and Widow — a custom route draft is now available
+- Shellwood and Widow — Joseph’s supplied unmarked screenshot is used instead
 - Deep Docks return: mask shard and Forge Daughter
 - Last Judge and Choral Chambers
 - Songclave, lower Cogwork and Vaults arena

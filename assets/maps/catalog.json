@@ -136,8 +136,8 @@
       "recovered": "2026-11-09",
       "bytes": 167350,
       "kind": "screenshot",
-      "timedRoute": true,
-      "note": "Room exit toward Cling Grip. This screenshot follows the guide’s optional skip."
+      "timedRoute": false,
+      "note": "Archived guide skip reference. The selected route uses the supplied Shellwood screenshot and fights Sister Splinter."
     },
     {
       "id": "atla",
@@ -328,7 +328,7 @@
     },
     {
       "id": "shellwood-bellhart-base",
-      "title": "Shellwood and Bellhart · supplied base",
+      "title": "Shellwood and Bellhart · supplied screenshot",
       "section": "Shellwood, 6th Mask, Cling Grip, & Widow",
       "file": "assets/maps/Shellwood and Bellhart base.png",
       "src": "/maps/shellwood-bellhart-base.png",
@@ -341,9 +341,10 @@
       "recovered": "2026-11-10",
       "bytes": 1343437,
       "kind": "screenshot",
-      "timedRoute": false,
+      "timedRoute": true,
       "custom": true,
-      "note": "Untouched source screenshot supplied by Joseph; preserved for future route-overlay edits."
+      "note": "Joseph’s unmarked MapGenie screenshot. Follow the condensed directions for the Shellwood mask shard, Sister Splinter fight, Cling Grip, Widow shortcut, Widow, and Bellhart’s first Needle upgrade.",
+      "keyIntro": "This screenshot is unmarked: the checkpoint and branch numbers below are a text key, not labels drawn on the image. Follow the numbered directions for the selected Sister Splinter route."
     },
     {
       "id": "shellwood-widow-route",
@@ -360,9 +361,9 @@
       "recovered": "2026-11-10",
       "bytes": 1619240,
       "kind": "map",
-      "timedRoute": true,
+      "timedRoute": false,
       "custom": true,
-      "note": "Custom room-level draft drawn over Joseph’s screenshot. Cyan: mask shard; orange: Sister Splinter and Cling Grip; magenta: Widow and Bellhart; dashed yellow: shortcuts. Precise passage connections remain for in-game review.",
+      "note": "Archived annotation experiment. Joseph chose the unmarked supplied screenshot and condensed written directions.",
       "sourceFile": "assets/maps/Shellwood and Bellhart base.png",
       "draft": true,
       "keyIntro": "Custom route draft. Cyan goes to the sixth-mask shard; orange takes the Sister Splinter fight and Cling Grip; magenta continues through Widow to Bellhart. Yellow dashed lines open shortcuts. Numbers label our selected checkpoints; this is a room-level trace for review."
@@ -372,7 +373,7 @@
     {
       "title": "Shellwood and Widow",
       "reason": "The guide image link is empty.",
-      "replacement": "shellwood-widow-route"
+      "replacement": "shellwood-bellhart-base"
     },
     {
       "title": "Deep Docks return: mask shard and Forge Daughter",

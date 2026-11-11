@@ -44,13 +44,13 @@ Use the original guide’s 13 travel-section titles in Route contents, the main 
 
 Every group has its corresponding original map, a labeled custom replacement, or an explicit missing-map notice with a named fallback. The Atla/Deep Docks chapter has its available Atla map and the missing return-map notice. Keep Upper Cogwork and Cradle as maps within the final original chapter. Long chapter titles wrap; the current checkpoint stays visible as a subtitle. Preserve the exact order and IDs of all 31 route checkpoints, all pickup IDs, the independent remembered guide step, and the recorded run files.
 
-### Shellwood custom map draft · November 10
+### Shellwood map · supplied screenshot selected November 10
 
-Joseph supplied a Shellwood/Bellhart map screenshot and asked Codex to draw the selected path. The original screenshot was renamed to [Shellwood and Bellhart base.png](./assets/maps/Shellwood%20and%20Bellhart%20base.png), preserving its bytes. The built-in image_gen tool produced [Shellwood and Widow route draft.png](./assets/maps/Shellwood%20and%20Widow%20route%20draft.png), now the primary Shellwood map for Cling Grip, the Widow shortcut, and Widow.
+Joseph chose to use his [unmarked Shellwood/Bellhart screenshot](./assets/maps/Shellwood%20and%20Bellhart%20base.png) with the condensed Garmond directions. Use this screenshot as the only map for the Shellwood/Cling Grip, Widow shortcut, and Widow checkpoints. Its original bytes remain intact.
 
-The overlay shows cyan to the sixth-mask shard, orange through the normal Sister Splinter fight and Cling Grip, magenta through Widow to Bellhart, and yellow dashed shortcut branches. It is a **custom room-level draft**, not the recovered Steam map or an in-game-tested traversal. Review precise upper Shellwood/Gahlia and bench-shortcut connections before calling it verified. Keep the written selected route and the existing checkpoint/pickup IDs. The original lost map remains in the catalog’s missing list with this draft recorded as its replacement.
+Keep the normal **Sister Splinter fight** before Cling Grip. The current written directions are the chosen condensed route; retain them. Explain that the screenshot has no route line or checkpoint numbers drawn on it. The original Steam section map remains missing, with this supplied screenshot recorded as its replacement.
 
-[Drawing prompts and references](./docs/shellwood-map-prompts.md)
+The [annotation experiment](./assets/maps/Shellwood%20and%20Widow%20route%20draft.png), its [prompts](./docs/shellwood-map-prompts.md), and the original Cling Grip skip screenshot are archived and excluded from the timed guide/gallery. Do not retry the overlay unless Joseph asks.
 
 ### Guide consolidation · November 10
 
