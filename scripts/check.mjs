@@ -75,7 +75,7 @@ const mortShopping = shoppingSummary(route, "drifters-cloak");
 assert.equal(mortShopping.stop.id, "halfway-home");
 assert.equal(mortShopping.minimum, 440, "Mort's purchases plus Greymoor Bellway need 440.");
 assert.equal(mortShopping.maximum, 470, "The intact door adds 30.");
-assert.equal(shoppingSummary(route, "forge-daughter").minimum, 290);
+assert.equal(shoppingSummary(route, "forge-daughter").minimum, 340, "Include two 25-rosary Loddie entries before the Forge Daughter purchases.");
 assert.equal(shoppingSummary(route, "clawline").minimum, 450);
 assert.equal(shoppingSummary(route, "vaults-arena").minimum, 0, "The second Needle upgrade needs Pale Oil rather than rosaries.");
 assert.equal(shoppingSummary(route, "gms"), null);
