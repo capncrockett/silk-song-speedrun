@@ -124,6 +124,7 @@
       "id": "garmond-shellwood",
       "title": "Shellwood, 6th Mask, Cling Grip, & Widow",
       "maps": [
+        "shellwood-widow-route",
         "cling-grip-exit",
         "overview"
       ],
@@ -134,16 +135,16 @@
       ],
       "checkpoints": [
         "1 · Shellwood mask shard",
-        "2 · Sister Splinter skip — not selected",
+        "2 · Sister Splinter — fight on our chosen route",
         "3 · Cling Grip",
         "4 · Widow",
         "5 · Needle upgrade #1"
       ],
       "detours": [
-        "1 · Shellwood shortcut toward Blasted Steps — planned.",
+        "1 · Open the lower lift shortcut back to Bellhart.",
         "2 · Open the Widow bench shortcut — planned."
       ],
-      "note": "The original detailed area map is missing. The Cling Grip image illustrates the guide’s skip; your route fights Sister Splinter.",
+      "note": "The custom draft draws our Sister Splinter fight and five checkpoint locations. The original detailed Steam map is still missing. Review exact upper-loop and shortcut connections in game. The extra Cling Grip screenshot illustrates the guide’s optional skip.",
       "guideNumber": 6
     },
     {
@@ -417,16 +418,85 @@
       "title": "Shellwood, 6th Mask, Cling Grip, & Widow",
       "summary": "Take the mask shard, fight Sister Splinter, get Cling Grip, and clear Widow.",
       "maps": [
+        "shellwood-widow-route",
         "overview"
       ],
       "missingMaps": [
         "Shellwood and Widow"
       ],
-      "mapNote": "Original Shellwood and Widow map missing. The route overview is a fallback; follow the written directions and pins. The Cling Grip room screenshot illustrates the guide’s optional skip; our route fights Sister Splinter.",
+      "mapNote": "Custom room-level route draft based on Joseph’s supplied screenshot. The original Steam map is still missing. Review the upper Shellwood/Gahlia loop and bench-shortcut connection in game; use the written directions for the chosen route.",
       "stops": [
-        {"id": "cling-grip", "guide": ["Take the Shellwood mask-shard branch before continuing upward.", "Fight Sister Splinter and collect Cling Grip.", "Open the Shellwood shortcut toward Blasted Steps, then continue toward upper Bellhart and Widow."], "maps": ["overview", "cling-grip-exit"], "title": "Cling Grip", "tip": "Take the Shellwood mask-shard branch and fight Sister Splinter on the way to Cling Grip. Open the Shellwood shortcut toward Blasted Steps.", "links": [{"title": "Shellwood shard", "pin": 478177}, {"title": "Cling Grip", "pin": 478189}]},
-        {"id": "widow-bench", "guideTitle": "Open the Widow shortcut", "guide": ["Enter upper Bellhart and drop down-left.", "Break the wall to open the shorter Widow runback.", "Rest at the bench before the fight."], "title": "Widow bench", "tip": "Enter upper Bellhart, drop down-left, and break the wall for the shorter Widow runback. Rest at the bench."},
-        {"id": "widow", "guide": ["Defeat Widow, collect Needolin, and ring the Bellhart bell.", "Return to Bellhart for the free first Needle upgrade.", "Sell the Mosshome Choral Commandment and any other carried relics to Scrounge in Bellhart before leaving for the return loop. The Commandment sells for 180 rosaries.", "Open Bellhart Bellway for 60 rosaries. The next loop takes you to Eva, Atla, Loddie, and Forge Daughter."], "title": "Widow / Needolin", "tip": "Defeat Widow, obtain Needolin, ring the Bellhart bell, and get the free first Needle upgrade. Open Bellhart Bellway for the later shopping and upgrade returns. Skip Crawbug Clearing; buy the second Crafting Kit from Twelfth Architect after Clawline.", "links": [{"title": "Widow", "pin": 478138}, {"title": "Pinmaster Plinney", "pin": 478210}, {"title": "Bellhart Bellway", "pin": 478029}], "purchases": [{"item": "Needle Upgrade #1", "rosaries": 0}, {"item": "Bellhart Bellway", "rosaries": 60}]}
+        {
+          "id": "cling-grip",
+          "guide": [
+            "Take the Shellwood mask-shard branch before continuing upward.",
+            "Fight Sister Splinter and collect Cling Grip.",
+            "Open the Shellwood shortcut toward Blasted Steps, then continue toward upper Bellhart and Widow."
+          ],
+          "maps": [
+            "shellwood-widow-route",
+            "overview",
+            "cling-grip-exit"
+          ],
+          "title": "Cling Grip",
+          "tip": "Take the Shellwood mask-shard branch and fight Sister Splinter on the way to Cling Grip. Open the Shellwood shortcut toward Blasted Steps.",
+          "links": [
+            {
+              "title": "Shellwood shard",
+              "pin": 478177
+            },
+            {
+              "title": "Cling Grip",
+              "pin": 478189
+            }
+          ]
+        },
+        {
+          "id": "widow-bench",
+          "guideTitle": "Open the Widow shortcut",
+          "guide": [
+            "Enter upper Bellhart and drop down-left.",
+            "Break the wall to open the shorter Widow runback.",
+            "Rest at the bench before the fight."
+          ],
+          "title": "Widow bench",
+          "tip": "Enter upper Bellhart, drop down-left, and break the wall for the shorter Widow runback. Rest at the bench."
+        },
+        {
+          "id": "widow",
+          "guide": [
+            "Defeat Widow, collect Needolin, and ring the Bellhart bell.",
+            "Return to Bellhart for the free first Needle upgrade.",
+            "Sell the Mosshome Choral Commandment and any other carried relics to Scrounge in Bellhart before leaving for the return loop. The Commandment sells for 180 rosaries.",
+            "Open Bellhart Bellway for 60 rosaries. The next loop takes you to Eva, Atla, Loddie, and Forge Daughter."
+          ],
+          "title": "Widow / Needolin",
+          "tip": "Defeat Widow, obtain Needolin, ring the Bellhart bell, and get the free first Needle upgrade. Open Bellhart Bellway for the later shopping and upgrade returns. Skip Crawbug Clearing; buy the second Crafting Kit from Twelfth Architect after Clawline.",
+          "links": [
+            {
+              "title": "Widow",
+              "pin": 478138
+            },
+            {
+              "title": "Pinmaster Plinney",
+              "pin": 478210
+            },
+            {
+              "title": "Bellhart Bellway",
+              "pin": 478029
+            }
+          ],
+          "purchases": [
+            {
+              "item": "Needle Upgrade #1",
+              "rosaries": 0
+            },
+            {
+              "item": "Bellhart Bellway",
+              "rosaries": 60
+            }
+          ]
+        }
       ]
     },
     {

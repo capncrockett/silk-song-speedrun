@@ -4,7 +4,7 @@ Source: [Speedrunner Achievement Guide: The Garmond Route!](https://steamcommuni
 
 The three previously saved maps are preserved. On 2026-11-09, 16 additional original images were recovered directly from the guide’s Steam image links. All files retain their original bytes. [catalog.json](../assets/maps/catalog.json) records source URLs, dimensions, byte counts, SHA-256 hashes, and route relevance.
 
-The app shows 12 reference maps and 3 relevant screenshots. Guide-only Mist and Sister Splinter skip alternatives are preserved in `assets/maps/` but excluded from the timed route and gallery. The timed route fights Sister Splinter. The original guide text is condensed into route directions and numbered map keys, with the decisions in `HANDOFF.md` applied. Original map numbers stay intact; planned, optional, skipped and resource-backup entries describe our path. The original 13 travel-section titles organize the runbook, with a labeled Greymoor return and explicit notices for the four missing maps.
+The app shows 12 original reference maps, 3 relevant original screenshots, and a custom Shellwood route draft. Guide-only Mist and Sister Splinter skip alternatives are preserved in `assets/maps/` but excluded from the timed route and gallery. The timed route fights Sister Splinter. The original guide text is condensed into route directions and numbered map keys, with the decisions in `HANDOFF.md` applied. Original map numbers stay intact; planned, optional, skipped and resource-backup entries describe our path. The original 13 travel-section titles organize the runbook, with a labeled Greymoor return and explicit notices for the four missing maps.
 
 | Reference | Saved original | Steam source | Use |
 |---|---|---|---|
@@ -28,11 +28,17 @@ The app shows 12 reference maps and 3 relevant screenshots. Guide-only Mist and 
 | Mist route (unused alternative) | [Open](../assets/maps/Mist%20Route.jpg) | [Original](https://images.steamusercontent.com/ugc/10116870605762589313/281D1089529974A18D9CC32BB50B01FB0ED501B1/) | Archived alternative |
 | Mist route: Chalamet pogo (unused) | [Open](../assets/maps/Mist%20Chalamet%20Pogo.jpg) | [Original](https://images.steamusercontent.com/ugc/10668799969708050997/8BF98BEE0A509D1DE9A682949A263B2E01F1CC77/) | Archived alternative |
 
+## Custom Shellwood route draft
+
+Joseph supplied the [Shellwood and Bellhart base screenshot](../assets/maps/Shellwood%20and%20Bellhart%20base.png) on November 10, 2026. Its original bytes are preserved under the descriptive filename. The [annotated route draft](../assets/maps/Shellwood%20and%20Widow%20route%20draft.png) was drawn using the built-in image_gen tool and follows the selected Sister Splinter fight, sixth-mask shard, Cling Grip, Widow and Bellhart upgrade path. Base map: MapGenie; game: Team Cherry. This is a custom replacement, not Tay Bravo’s missing original image.
+
+The overlay is a room-level draft. Precise upper-loop and bench-shortcut connections still need in-game review. The catalog records the original base and generated derivative separately, with dimensions, hashes, provenance and draft status. [Prompts and route references](./shellwood-map-prompts.md).
+
 ## Missing guide maps
 
 The current guide HTML has empty image URLs for these four maps:
 
-- Shellwood and Widow
+- Shellwood and Widow — a custom route draft is now available
 - Deep Docks return: mask shard and Forge Daughter
 - Last Judge and Choral Chambers
 - Songclave, lower Cogwork and Vaults arena

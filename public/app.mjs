@@ -185,7 +185,7 @@ function renderMaps() {
     preview.width = image.width;
     preview.height = image.height;
     const caption = node("span");
-    caption.append(node("small", "", image.kind === "map" ? "GUIDE REFERENCE MAP" : "GUIDE SCREENSHOT"));
+    caption.append(node("small", "", image.custom ? image.draft ? "CUSTOM ROUTE DRAFT" : "SUPPLIED SCREENSHOT" : image.kind === "map" ? "GUIDE REFERENCE MAP" : "GUIDE SCREENSHOT"));
     const title = node("strong", "", image.title);
     const arrow = node("b", "", "↗");
     arrow.setAttribute("aria-hidden", "true");
@@ -194,7 +194,7 @@ function renderMaps() {
     card.append(preview, caption);
     return card;
   }));
-  byId("map-gaps").textContent = `Missing guide maps: ${state.maps.missing.map((image) => image.title).join("; ")}. Checkpoint notes and map pins cover these stops. The guide does not mark spool fragments.`;
+  byId("map-gaps").textContent = `Missing original guide maps: ${state.maps.missing.map((image) => image.title + (image.replacement ? " (custom draft available)" : "")).join("; ")}. Checkpoint notes and map pins cover these stops. The guide does not mark spool fragments.`;
 }
 
 function stepTitle(stop) {
@@ -211,7 +211,7 @@ function renderGuideMapKeys(image) {
     const block = node("section", "guide-map-key");
     const currentSection = state.route.sections.find((item) => item.id === stopById(state.checkpoint)?.sectionId);
     block.append(node("p", "eyebrow", "Garmond guide · map key"), node("h3", "", section.title === currentSection?.title ? "Map key" : section.title));
-    block.append(node("p", "map-key-intro", "Numbers match the original map. Yellow lines mark map branches: take planned stops, use optional stops as needed, and skip branches labeled Skip. Follow the numbered walkthrough below."));
+    block.append(node("p", "map-key-intro", image?.keyIntro ?? "Numbers match the original map. Yellow lines mark map branches: take planned stops, use optional stops as needed, and skip branches labeled Skip. Follow the numbered walkthrough below."));
     if (section.note) block.append(node("p", "map-key-note", section.note));
     const columns = node("div", "map-key-columns");
     for (const [title, items] of [["Guide checkpoints", section.checkpoints], [section.detoursTitle ?? "Map branches", section.detours]]) {

@@ -205,4 +205,4 @@ for (const file of documents) {
   }
 }
 
-console.log(`Verified ${stops.length} route checkpoints, ${catalog.images.length} original guide images, map references and guide keys, documentation links, run data, split timing, and purchase reminders.`);
+console.log(`Verified ${stops.length} route checkpoints, ${catalog.images.filter((image) => !image.custom).length} original guide images, ${catalog.images.filter((image) => image.custom).length} custom assets, map references and guide keys, documentation links, run data, split timing, and purchase reminders.`);
