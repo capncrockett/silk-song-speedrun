@@ -8,6 +8,7 @@ const state = {
   runId: null,
   checkpoint: null,
   activeMap: null,
+  activeSection: null,
   stops: [],
   saving: false
 };
@@ -150,7 +151,7 @@ function renderCheckpointOptions() {
   select.replaceChildren();
   for (const section of state.route.sections) {
     const group = node("optgroup");
-    group.label = section.title;
+    group.label = section.visit ? `${section.title} · ${section.visit}` : section.title;
     for (const stop of section.stops) {
       const option = node("option", "", stop.title);
       option.value = stop.id;
@@ -208,7 +209,8 @@ function renderGuideMapKeys(image) {
   container.hidden = sections.length === 0;
   container.replaceChildren(...sections.map((section) => {
     const block = node("section", "guide-map-key");
-    block.append(node("p", "eyebrow", "Garmond guide · map key"), node("h3", "", section.title));
+    const currentSection = state.route.sections.find((item) => item.id === stopById(state.checkpoint)?.sectionId);
+    block.append(node("p", "eyebrow", "Garmond guide · map key"), node("h3", "", section.title === currentSection?.title ? "Map key" : section.title));
     block.append(node("p", "map-key-intro", "Numbers match the original map. Yellow lines mark map branches: take planned stops, use optional stops as needed, and skip branches labeled Skip. Follow the numbered walkthrough below."));
     if (section.note) block.append(node("p", "map-key-note", section.note));
     const columns = node("div", "map-key-columns");
@@ -228,7 +230,9 @@ function renderGuideMapKeys(image) {
 function renderGuideMap() {
   const image = state.maps.images.find((image) => image.id === state.activeMap);
   byId("guide-map-panel").hidden = !image;
-  const gap = stopById(state.checkpoint)?.mapNote ?? (image?.id === "overview" ? "The detailed area map is still missing. Use the written directions and map pins here; the overview shows the broader route." : "");
+  const stop = stopById(state.checkpoint);
+  const section = state.route.sections.find((item) => item.id === stop?.sectionId);
+  const gap = stop?.mapNote ?? section?.mapNote ?? (image?.id === "overview" ? "The detailed area map is still missing. Use the written directions and map pins here; the overview shows the broader route." : "");
   byId("guide-map-gap").hidden = !gap;
   byId("guide-map-gap").textContent = gap;
   renderGuideMapKeys(image);
@@ -255,8 +259,9 @@ function renderEditor() {
   const section = state.route.sections.find((section) => section.id === stop?.sectionId);
   const index = state.stops.findIndex((stop) => stop.id === state.checkpoint);
   byId("checkpoint-select").value = state.checkpoint;
-  byId("entry-kicker").textContent = section ? `Section ${section.number} · ${section.title}` : "Historical step";
-  byId("entry-title").textContent = stop ? stepTitle(stop) : saved ? splitLabel(saved) : "Choose a route step";
+  byId("entry-kicker").textContent = section ? `Garmond guide · section ${section.guideNumber}${section.visit ? " · " + section.visit : ""}` : "Historical step";
+  byId("entry-title").textContent = section?.title ?? (saved ? splitLabel(saved) : "Choose a route step");
+  byId("entry-step-title").textContent = stop ? stepTitle(stop) : "";
   byId("guide-position").textContent = stop ? `Step ${index + 1} of ${state.stops.length}` : "Earlier route";
   byId("previous-step").disabled = index <= 0;
   byId("next-step").disabled = index < 0 || index === state.stops.length - 1;
@@ -265,7 +270,8 @@ function renderEditor() {
   byId("guide-directions").replaceChildren(...(stop?.guide ?? ["This historical split is preserved in the run log."]).map((text) => node("li", "", text)));
   byId("entry-links").replaceChildren(...links(stop?.links));
   const maps = (stop?.maps ?? section?.maps ?? []).map((id) => state.maps.images.find((image) => image.id === id));
-  if (!maps.some((image) => image.id === state.activeMap)) state.activeMap = maps[0]?.id ?? null;
+  if (state.activeSection !== section?.id || !maps.some((image) => image.id === state.activeMap)) state.activeMap = maps[0]?.id ?? null;
+  state.activeSection = section?.id ?? null;
   byId("guide-map-tabs").replaceChildren(...maps.map((image) => {
     const tab = node("button", "map-tab", image.title);
     tab.type = "button";
@@ -327,12 +333,16 @@ function renderShopping() {
 
 function phaseSummary(section) {
   const summary = node("summary");
-  summary.append(node("span", "phase-number", section.number), node("span", "phase-title", section.title));
+  const title = node("span", "phase-title");
+  title.append(node("span", "", section.title));
+  if (section.visit) title.append(node("small", "phase-visit", section.visit));
+  summary.append(node("span", "phase-number", section.number), title);
   return summary;
 }
 
 function renderCheckpointList(reset = false) {
   const container = byId("checkpoint-list");
+  byId("route-section-count").textContent = `${new Set(state.route.sections.map((section) => section.guideNumber)).size} guide sections`;
   const expanded = reset ? [] : [...container.querySelectorAll("details[open]")].map((item) => item.dataset.phase);
   container.replaceChildren();
   for (const section of state.route.sections) {

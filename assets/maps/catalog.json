@@ -86,7 +86,7 @@
       "bytes": 136710,
       "kind": "map",
       "timedRoute": true,
-      "note": "Cloak and mask-shard path. Skip both the Warding Bell branch and its adjoining Deep Docks Craftmetal chest."
+      "note": "Cloak and mask-shard path. Warding Bell stays skipped; its adjoining Craftmetal chest is a backup if the planned Marrow pickup was missed."
     },
     {
       "id": "greymoor",

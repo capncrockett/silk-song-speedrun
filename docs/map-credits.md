@@ -4,7 +4,7 @@ Source: [Speedrunner Achievement Guide: The Garmond Route!](https://steamcommuni
 
 The three previously saved maps are preserved. On 2026-11-09, 16 additional original images were recovered directly from the guide’s Steam image links. All files retain their original bytes. [catalog.json](../assets/maps/catalog.json) records source URLs, dimensions, byte counts, SHA-256 hashes, and route relevance.
 
-The app shows 12 reference maps and 3 relevant screenshots. Guide-only Mist and Sister Splinter skip alternatives are preserved in `assets/maps/` but excluded from the timed route and gallery. The timed route fights Sister Splinter. The original guide text is condensed into route directions and numbered map keys, with the decisions in `HANDOFF.md` applied. Original map numbers stay intact; planned, optional, skipped and reference-only entries describe our path rather than reproducing every option as a route instruction.
+The app shows 12 reference maps and 3 relevant screenshots. Guide-only Mist and Sister Splinter skip alternatives are preserved in `assets/maps/` but excluded from the timed route and gallery. The timed route fights Sister Splinter. The original guide text is condensed into route directions and numbered map keys, with the decisions in `HANDOFF.md` applied. Original map numbers stay intact; planned, optional, skipped and resource-backup entries describe our path. The original 13 travel-section titles organize the runbook, with a labeled Greymoor return and explicit notices for the four missing maps.
 
 | Reference | Saved original | Steam source | Use |
 |---|---|---|---|

@@ -57,7 +57,8 @@ details[open] > summary::after { transform: rotate(180deg); }
 .phase > summary { list-style: none; display: flex; align-items: baseline; gap: .6rem; padding: .8rem .45rem; min-height: 45px; }
 .phase > summary:hover, .collapsible > summary:hover { background: #ffffff04; }
 .phase-number { color: var(--soft); font: .62rem "SFMono-Regular", Consolas, monospace; }
-.phase-title { flex: 1; font-size: .77rem; line-height: 1.6; }
+.phase-title { flex: 1; min-width: 0; font-size: .77rem; line-height: 1.6; }
+.phase-visit { display: block; margin-top: .35rem; color: var(--accent); font-size: .65rem; }
 .phase[data-current="true"] .phase-number { color: var(--accent); }
 .phase-context { padding: 0 .45rem .65rem; color: var(--soft); font-size: .68rem; line-height: 1.7; }
 .checkpoint-list { margin: 0; padding: 0 0 .5rem; list-style: none; }
@@ -74,6 +75,8 @@ details[open] > summary::after { transform: rotate(180deg); }
 .step-navigation .button { min-height: 36px; padding: .45rem .85rem; font-size: .74rem; }
 .step-heading { margin-block: 1.35rem 1.2rem; }
 .step-heading .eyebrow { margin-bottom: .55rem; }
+.step-heading h2 { max-width: 34ch; font-size: clamp(1.7rem, 3vw, 2.65rem); line-height: 1.25; }
+.step-subtitle { margin-top: .8rem; color: var(--muted); font-size: 1rem; line-height: 1.6; }
 #entry-title:focus { outline: none; }
 .map-tabs { display: flex; flex-wrap: wrap; gap: .45rem; margin-bottom: .7rem; }
 .map-tabs:empty { display: none; }

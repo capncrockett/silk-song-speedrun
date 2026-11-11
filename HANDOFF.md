@@ -7,7 +7,7 @@ Updated November 10, 2026. The local app is implemented. Joseph reports starting
 - Keep one timed route in [data/route.json](./data/route.json), with stable checkpoint and preparation IDs. Historical labels and reported precision survive route edits.
 - Treat `.runbook/runs.json` as the active save. [data/seed-runs.json](./data/seed-runs.json) remains the original 26-split import ending at **4:57**, with three recorded pickups and no finish. Never replace an existing save with the seed or infer pickups from route progress.
 - Keep timed and scout results separate. Use the manual in-game clock, retain idle time and detours, and finish only when a `gms` split is reported. Sub-five is strictly below `5:00:00`.
-- Keep the app local and dependency-free. The 31 checkpoints are guide steps: inline maps, numbered directions, and Previous/Next are the main experience. Guide position starts at Silkspear and persists independently of run selection and split entry.
+- Keep the app local and dependency-free. The 31 checkpoints are guide steps, grouped under the original Garmond guide’s 13 full section titles, with a labeled return to Greymoor after Widow. The original section title is the main page heading; the selected checkpoint is a subtitle. Inline maps, numbered directions, and Previous/Next are the main experience. Guide position starts at Silkspear and persists independently of run selection and split entry.
 - Keep the Run log closed by default. The persistent Pickups drawer shares the selected run's checks across all steps; category checkboxes support partial/all states, the last check closes its accordion, and optional items do not block the main total. Retain the three spool pairs, eight-shard mask category, historical checked items, Escape/backdrop closing, reduced-motion support, and inline reference gallery.
 - Keep the Garmond guide’s section names, numbered checkpoints, and detours visible with the relevant map screenshot. These guide references do not add timed splits. Clearly label missing original maps and distinguish guide options from the selected path.
 - Discuss unresolved route choices **one question or pickup at a time**. Keep alternatives here; update the route only when a choice changes. Run `npm run check` after changes and commit coherent work.
@@ -37,6 +37,12 @@ Build the main view around this itinerary. The route is Hunter, all five bells, 
 [Original Garmond Route](https://steamcommunity.com/sharedfiles/filedetails/?id=3577460696) · [Recovered maps and credits](./docs/map-credits.md) · [Roof gate](https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=480502) · [Forum aid](https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=481022)
 
 ## Decisions and research
+
+### Original section navigation · Run #3, November 10
+
+Use the original guide’s 13 travel-section titles in Route contents, the main page heading, the split picker groups and the map keys. Greymoor appears a second time as **Return after Widow**, using its original section number and map, because the selected itinerary delays Bell #3. This produces 14 navigation groups while retaining 13 source sections.
+
+Every group has its corresponding original map or an explicit missing-map notice with a named fallback. The Atla/Deep Docks chapter has its available Atla map and the missing return-map notice. Keep Upper Cogwork and Cradle as maps within the final original chapter. Long chapter titles wrap; the current checkpoint stays visible as a subtitle. Preserve the exact order and IDs of all 31 route checkpoints, all pickup IDs, the independent remembered guide step, and the recorded run files.
 
 ### Guide consolidation · November 10
 

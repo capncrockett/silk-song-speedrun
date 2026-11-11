@@ -156,6 +156,28 @@ for (const section of guideSections) {
   for (const id of section.maps) assert.ok(mapIds.has(id), "Guide sections need known reference images.");
   for (const id of section.steps) assert.ok(stops.some((stop) => stop.id === id), "Guide sections need known route checkpoints.");
 }
+const guideNumbers = [...new Set(guideSections.map((section) => section.guideNumber))].sort((a, b) => a - b);
+assert.deepEqual(guideNumbers, Array.from({ length: 13 }, (_, index) => index + 1),
+  "Keep the original guide's 13 travel sections represented.");
+assert.equal(new Set(route.sections.map((section) => section.id)).size, route.sections.length,
+  "Navigation groups need unique IDs, including return visits.");
+for (const section of route.sections) {
+  const reference = guideSections.find((item) => item.id === section.guideSection);
+  assert.ok(reference, "Every navigation group needs its original guide section.");
+  assert.equal(section.title, reference.title, "Use the full original guide title in navigation.");
+  assert.equal(section.guideNumber, reference.guideNumber, "Return visits retain the original guide section number.");
+  assert.ok(section.stops.length > 0 && section.maps.length > 0, "Every navigation group needs steps and a map reference.");
+  if (section.missingMaps?.length) {
+    assert.ok(section.mapNote, "Missing section maps need an explicit fallback notice.");
+    for (const title of section.missingMaps) {
+      assert.ok(catalog.missing.some((image) => image.title === title), "Missing-map labels must match the image catalog.");
+    }
+  }
+}
+for (const image of catalog.missing) {
+  assert.ok(route.sections.some((section) => section.missingMaps?.includes(image.title)),
+    "Keep every lost original map visible in its corresponding section.");
+}
 for (const section of route.sections) {
   for (const stop of section.stops) {
     const images = stop.maps ?? section.maps ?? [];

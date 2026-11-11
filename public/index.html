@@ -36,7 +36,7 @@
       <div class="guide-layout">
         <nav class="route-sidebar" aria-label="Route contents">
           <details class="panel route-navigation" id="route-navigation" open>
-            <summary><span>Route contents</span><span class="count">7 sections</span></summary>
+            <summary><span>Route contents</span><span class="count" id="route-section-count"></span></summary>
             <div class="checkpoint-panel">
               <div class="phase-actions" role="group" aria-label="Route sections">
                 <button type="button" class="subtle-link" id="expand-phases" aria-controls="checkpoint-list">Expand all</button>
@@ -57,6 +57,7 @@
             <header class="step-heading">
               <p class="eyebrow" id="entry-kicker"></p>
               <h2 id="entry-title" tabindex="-1"></h2>
+              <p class="step-subtitle" id="entry-step-title"></p>
             </header>
             <section class="guide-maps" aria-label="Maps for this route step">
               <div class="map-tabs" id="guide-map-tabs" role="tablist" aria-label="Choose a reference image"></div>
