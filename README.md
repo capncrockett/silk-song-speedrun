@@ -33,6 +33,7 @@ Splits, notes, and checked pickups save to `.runbook/runs.json`. The **Export ru
 Open this folder as a project and ask Codex to read [HANDOFF.md](./HANDOFF.md). The running route lives in [data/route.json](./data/route.json). Each step’s `guide` array supplies the numbered directions; `guideTitle` optionally supplies its reading title while historical split labels stay intact. The `guideSections` entries hold the original guide’s checkpoint and detour keys and associate them with steps and map IDs. Changes to its directions, maps, and checklist items appear after a refresh. Keep existing checkpoint IDs when rewriting a label or moving a checkpoint.
 
 - [Starting Run #2 data](./data/seed-runs.json) is used until the first local save.
+- [Recovered chat index and extraction prompt](./docs/chat-recovery.md) preserve earlier conversation summaries and explain how to reconcile them with later route decisions.
 - [Historical source notes](./docs/history.md) consolidate the original tracker, project handoff, spool comparison, and initial brief. Older pending states and instructions are archival; use the current handoff and active save for new work.
 - [Map references and credits](./docs/map-credits.md) preserve 19 original guide images and their credits. Checkpoints link to the relevant maps; guide-only alternatives stay archived. See the catalog instructions there to add your own screenshots.
 

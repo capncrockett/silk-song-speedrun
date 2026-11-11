@@ -38,6 +38,18 @@ Build the main view around this itinerary. The route is Hunter, all five bells, 
 
 ## Decisions and research
 
+### Recovered chat details · Shellwood to Widow
+
+Joseph supplied an earlier ChatGPT breakdown after noting that this route was developed across roughly five or six conversations. Preserve [the supplied Shellwood source](./docs/recovered-chats/shellwood-widow.md) verbatim. [Recovery prompt, source index and reconciliation](./docs/chat-recovery.md) guide future imports.
+
+The live Shellwood directions now include the Z-shaped arena approach, recommended 40-rosary bench, lift-bottom **right-hand shortcut before going left**, **lower right exit for the mask shard**, **upper right exit for the Cling Grip room**, the normal Sister Splinter fight, and the **Gahlia room’s top-right exit** for Cling Grip. Keep the supplied unmarked screenshot.
+
+Recovered experiment: the first Phacia lure/pogo worked; the second glide/pogo was unreliable. This does not establish a Switch 2 patch. Keep the timed route on Sister Splinter; no exact successful attack strategy or separate scout-file result was reported.
+
+Preserve Run #2’s 1:21, 1:25 and 1:36 splits at **minute precision**, despite the recovered summary appending :00. Its five-mask/3-of-4 Shellwood result belongs to the old Far Fields miss. Run #3 still plans Far Fields on the first pass and six masks at Shellwood; if it is missed, the planned Atla pickup after Widow supplies the recovery.
+
+The summary’s pending Needle Upgrade #1 and unverified Bell #3 bypass are an **earlier snapshot**. Later archived notes confirm the first upgrade and the successful Cling Grip route above/right of Halfway Home, through the top-right transition and northeast, with Craw Lake skipped. Do not reopen those decisions or change historical pickup checks from this import.
+
 ### Original section navigation · Run #3, November 10
 
 Use the original guide’s 13 travel-section titles in Route contents, the main page heading, the split picker groups and the map keys. Greymoor appears a second time as **Return after Widow**, using its original section number and map, because the selected itinerary delays Bell #3. This produces 14 navigation groups while retaining 13 source sections.

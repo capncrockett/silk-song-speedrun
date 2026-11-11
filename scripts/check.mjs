@@ -193,7 +193,7 @@ await Promise.all([
   "public/index.html", "public/styles.css", "assets/artwork/hornet-mask-icon.png", "assets/artwork/hornet.png", "assets/artwork/hornet.webp", "HANDOFF.md"
 ].map((file) => access(new URL(file, root))));
 
-const documents = ["README.md", "AGENTS.md", "HANDOFF.md", "docs/history.md", "docs/map-credits.md"];
+const documents = ["README.md", "AGENTS.md", "HANDOFF.md", "docs/history.md", "docs/map-credits.md", "docs/chat-recovery.md", "docs/recovered-chats/shellwood-widow.md"];
 for (const file of documents) {
   const source = new URL(file, root);
   const markdown = await readFile(source, "utf8");

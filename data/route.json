@@ -132,17 +132,17 @@
         "widow"
       ],
       "checkpoints": [
-        "1 · Shellwood mask shard",
+        "1 · Shellwood mask shard — completes six masks if all four early shards were collected",
         "2 · Sister Splinter — fight on our chosen route",
         "3 · Cling Grip",
         "4 · Widow",
         "5 · Needle upgrade #1"
       ],
       "detours": [
-        "1 · Open the lower lift shortcut back to Bellhart.",
+        "1 · At the lift bottom, open the right-hand shortcut before continuing left.",
         "2 · Open the Widow bench shortcut — planned."
       ],
-      "note": "Follow the condensed Garmond directions with Joseph’s unmarked screenshot. Our route fights Sister Splinter for Cling Grip and continues through the Widow shortcut, Needolin, Bellhart bell, and first Needle upgrade.",
+      "note": "Use Joseph’s unmarked screenshot with the recovered navigation details below: lower right exit for the mask shard, upper right exit for the Cling Grip room, normal Sister Splinter fight, then the Gahlia room’s top-right exit. Open the upper Bellhart wall shortcut before Widow.",
       "guideNumber": 6
     },
     {
@@ -426,15 +426,21 @@
         {
           "id": "cling-grip",
           "guide": [
-            "Take the Shellwood mask-shard branch before continuing upward.",
-            "Fight Sister Splinter and collect Cling Grip.",
-            "Open the Shellwood shortcut toward Blasted Steps, then continue toward upper Bellhart and Widow."
+            "Enter Shellwood from Bellhart. Start along the lower-left wall and climb the platforms in a Z shape to the first arena. Clear it.",
+            "The bench immediately after the arena is recommended for 40 rosaries. Continue left and take the elevator down.",
+            "At the elevator’s bottom, go right first and open the shortcut door back toward Bellhart. Then continue left toward the room with the bench sign and white roses.",
+            "Climb the white roses. At the top, take the LOWER of the two right-side exits and finish the platforming challenge for the Shellwood mask shard.",
+            "Check the mask total: with Wormways, Pebb and Far Fields already collected, this shard completes six masks. If Far Fields was missed and you have only 3/4 shards, continue through Widow; the planned Atla shard afterward completes that mask.",
+            "Return left out of the shard room, then take the UPPER right-side exit into the Cling Grip room.",
+            "Take the normal upper Shellwood route and fight Sister Splinter. Keep Hunter and Straight Pin; leave the Phacia pogo skip for separate practice.",
+            "After the fight, reach the upper-left part of the Cling Grip room. Go left into the Gahlia room with the long-necked flower enemies, then leave through its TOP-RIGHT exit to obtain Cling Grip.",
+            "Continue right through upper Bellhart toward the Widow shortcut."
           ],
           "maps": [
             "shellwood-bellhart-base"
           ],
           "title": "Cling Grip",
-          "tip": "Take the Shellwood mask-shard branch and fight Sister Splinter on the way to Cling Grip. Open the Shellwood shortcut toward Blasted Steps.",
+          "tip": "Clear the arena, use the recommended 40-rosary bench, ride the lift down, and open the right-hand shortcut before going left. White roses: lower right exit for the mask shard, upper right exit for the Cling Grip room. Fight Sister Splinter, then use the Gahlia room’s top-right exit for Cling Grip.",
           "links": [
             {
               "title": "Shellwood shard",
@@ -444,22 +450,23 @@
               "title": "Cling Grip",
               "pin": 478189
             }
-          ]
+          ],
+          "guideTitle": "Shellwood mask shard & Cling Grip"
         },
         {
           "id": "widow-bench",
           "guideTitle": "Open the Widow shortcut",
           "guide": [
-            "Enter upper Bellhart and drop down-left.",
-            "Break the wall to open the shorter Widow runback.",
-            "Rest at the bench before the fight."
+            "After Cling Grip, continue right through upper Bellhart. Before descending to Widow, drop down-left and break the wall on the left to reconnect to the convenient bench.",
+            "Follow the opened shortcut back to the bench and rest before the fight. Use this shorter runback for retries."
           ],
           "title": "Widow bench",
-          "tip": "Enter upper Bellhart, drop down-left, and break the wall for the shorter Widow runback. Rest at the bench."
+          "tip": "Before dropping into Widow, open the left breakable-wall shortcut from upper Bellhart and rest at the connected bench. This is the runback that worked on Run #2."
         },
         {
           "id": "widow",
           "guide": [
+            "Guide advice for Widow: favor dodging over aggressive attacking. Watch the diagonally bouncing bells, use the gap between their paths, and avoid hugging the opposite wall where they rebound.",
             "Defeat Widow, collect Needolin, and ring the Bellhart bell.",
             "Return to Bellhart for the free first Needle upgrade.",
             "Sell the Mosshome Choral Commandment and any other carried relics to Scrounge in Bellhart before leaving for the return loop. The Commandment sells for 180 rosaries.",
