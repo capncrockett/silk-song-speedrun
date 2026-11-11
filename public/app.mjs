@@ -209,10 +209,10 @@ function renderGuideMapKeys(image) {
   container.replaceChildren(...sections.map((section) => {
     const block = node("section", "guide-map-key");
     block.append(node("p", "eyebrow", "Garmond guide · map key"), node("h3", "", section.title));
-    block.append(node("p", "map-key-intro", "Original map numbers, with our route choices applied. Yellow paths mark the guide’s detours; use the planned stops here and the directions below. Reference-only branches are outside our timed path."));
+    block.append(node("p", "map-key-intro", "Numbers match the original map. Yellow lines mark map branches: take planned stops, use optional stops as needed, and skip branches labeled Skip. Follow the numbered walkthrough below."));
     if (section.note) block.append(node("p", "map-key-note", section.note));
     const columns = node("div", "map-key-columns");
-    for (const [title, items] of [["Guide checkpoints", section.checkpoints], ["Guide detours", section.detours]]) {
+    for (const [title, items] of [["Guide checkpoints", section.checkpoints], [section.detoursTitle ?? "Map branches", section.detours]]) {
       if (!items.length) continue;
       const group = node("div", "map-key-group");
       const list = node("ul", "map-key-list");

@@ -1,6 +1,6 @@
 # Pharloom Runbook — current handoff
 
-Updated November 10, 2026. The local app is implemented. Joseph plans **one more timed run**. This file holds current route decisions, research alternatives, and open scout questions; [README.md](./README.md) covers use and maintenance. The [source archive](./docs/history.md) preserves older notes without serving as a second live handoff.
+Updated November 10, 2026. The local app is implemented. Joseph reports starting **Run #3**. This file holds current route decisions, research alternatives, and open scout questions; [README.md](./README.md) covers use and maintenance. The [source archive](./docs/history.md) preserves older notes without serving as a second live handoff.
 
 ## Working contract
 
@@ -40,7 +40,7 @@ Build the main view around this itinerary. The route is Hunter, all five bells, 
 
 ### Guide consolidation · November 10
 
-The Garmond guide’s section names, maps and checkpoint/detour numbers are retained as navigation references. Its text is condensed into the chosen route’s directions and map keys; the itinerary above takes precedence over the author’s alternate route and loadouts. Unselected branches are labeled reference only or skipped, while the late Mask trip stays optional.
+The Garmond guide’s section names, maps and checkpoint/detour numbers are retained as navigation references. Its text is condensed into the chosen route’s directions and map keys; the itinerary above takes precedence over the author’s alternate route and loadouts. Unselected branches use direct Skip instructions, while the late Mask trip stays optional. The opening key is titled Skipped map branches: skip the Beastfly arena shortcut, Shard Pendant, and the Mosshome rosary/commandment/lift detour. The selected Bone Bottom spool remains on the loop after Lace 1, using its trapdoor and lift passage. Avoid the ambiguous phrase reference only in the live guide.
 
 Planned resources include the Marrow Craftmetal and Greymoor Bellway locket **478035**; the distinct Faydown ledge locket **478039 stays skipped**. Needle Upgrade #2 and free Dice remain on the combined return before Trobbio. After collecting the Vaultkeeper’s melody cylinder, return to the Vaultkeeper to learn the melody before the roof duel; collecting the cylinder alone is not the completed melody. Keep the six locked spool fragments, Architect’s second kit, Hunter loadout and established skips. Checkpoint and preparation IDs and recorded results remain unchanged.
 

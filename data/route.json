@@ -19,11 +19,13 @@
         "1 · Silkspear",
         "2 · Bell Beast"
       ],
+      "detoursTitle": "Skipped map branches",
       "detours": [
-        "1 · Beastfly arena skip — reference only; follow the normal route.",
-        "2 · Shard Pendant — reference only; not in our chosen loadout.",
-        "3 · Mosshome rosaries, commandment and lift — reference only; not a planned detour."
-      ]
+        "1 · Skip the Beastfly arena shortcut; follow the numbered walkthrough.",
+        "2 · Skip Shard Pendant.",
+        "3 · Skip the Mosshome rosary, commandment and lift detour."
+      ],
+      "note": "The Bone Bottom spool stays planned after Lace 1. Take its trapdoor and lift passage on that later loop."
     },
     {
       "id": "garmond-deep-docks",
@@ -263,8 +265,8 @@
       ],
       "detours": [
         "Whiteward · Injector Band — planned with the White Key.",
-        "1 · Extra Craftmetal puzzle — reference only; not a planned detour.",
-        "2 · Extra locket below Trobbio’s lift — reference only; our selected lockets fill Hunter.",
+        "1 · Skip the extra Craftmetal puzzle.",
+        "2 · Skip the extra locket below Trobbio’s lift; the planned lockets fill Hunter.",
         "3 · Wind-route locket — planned.",
         "4 · Vaultkeeper return — required to learn the melody from its cylinder."
       ],
