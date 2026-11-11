@@ -187,7 +187,7 @@
       "id": "garmond-judge",
       "title": "Split Routes: Last Judge or the Mist",
       "maps": [
-        "overview"
+        "shellwood-judge-grand-gate"
       ],
       "steps": [
         "blasted-steps",
@@ -203,7 +203,7 @@
         "2 · Free Craftmetal before Judge — planned.",
         "3 · Underworks / Delver’s Drill — not selected."
       ],
-      "note": "The detailed Judge map is missing. The overview is a broad reference; use the written steps and pins.",
+      "note": "Joseph’s supplied screenshot covers Shellwood Bellway, Blasted Steps, Last Judge and the Grand Gate shortcut. Its map pins do not use the guide’s checkpoint numbering; follow the written steps and pins for the Choral Chambers bench and Grand Gate spool.",
       "guideNumber": 8
     },
     {
@@ -545,12 +545,12 @@
       "title": "Split Routes: Last Judge or the Mist",
       "summary": "Take the Last Judge route through Blasted Steps, then collect the Grand Gate spool.",
       "maps": [
-        "overview"
+        "shellwood-judge-grand-gate"
       ],
       "missingMaps": [
         "Last Judge and Choral Chambers"
       ],
-      "mapNote": "Original Last Judge and Choral Chambers map missing. The complete route overview is a fallback; follow the Last Judge directions and map pins.",
+      "mapNote": "Joseph’s supplied Shellwood → Last Judge → Grand Gate screenshot. Follow the written directions for the Choral Chambers bench and Grand Gate spool; the guide’s checkpoint numbers are not drawn on this map.",
       "stops": [
         {"id": "blasted-steps", "guideTitle": "Blasted Steps & the fifth bell", "guide": ["Go through Shellwood and Blasted Steps to ring the fifth bell.", "Open Blasted Steps Bellway for 60 rosaries; you will use it for the later Dice pickup.", "Take the nearby Memory Locket and free Craftmetal before Last Judge.", "Before the fight, equip Magma Bell and check that you have six masks and Needle Upgrade #1."], "title": "Blasted Steps bench", "tip": "Ring the fifth bell through Shellwood and Blasted Steps. Open Blasted Steps Bellway for 60 to make the later Dice pickup practical. Grab the nearby Memory Locket and free Craftmetal before Judge. Equip Magma Bell and check six masks plus Needle Upgrade #1.", "links": [{"title": "Blasted Steps Bellway", "pin": 478308}, {"title": "Nearby locket", "pin": 478502}], "purchases": [{"item": "Blasted Steps Bellway", "rosaries": 60}]},
         {"id": "act-2", "guideTitle": "Last Judge & the Grand Gate spool", "guide": ["With all five bells rung, play Needolin at the Grand Gate and defeat Last Judge.", "Reach the Choral Chambers bench.", "Use the return shortcut for the Grand Gate spool. Climb the balancing platforms, hitting their undersides to tip them into position.", "Collect the fragment to start pair C, then continue toward Grand Bellway."], "title": "Last Judge / Choral Chambers bench", "tip": "Play Needolin at the Grand Gate after all five bells, beat Last Judge, and rest in Choral Chambers. From the Choral Chambers return shortcut, climb the Grand Gate balancing platforms for spool 478586 before continuing toward Grand Bellway. Hit the scales from underneath to tip them; no extra arena or double-jump is required.", "links": [{"title": "Last Judge", "pin": 478545}, {"title": "Grand Gate spool", "pin": 478586}]}

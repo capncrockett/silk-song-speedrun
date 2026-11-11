@@ -4,7 +4,7 @@ Source: [Speedrunner Achievement Guide: The Garmond Route!](https://steamcommuni
 
 The three previously saved maps are preserved. On 2026-11-09, 16 additional original images were recovered directly from the guide’s Steam image links. All files retain their original bytes. [catalog.json](../assets/maps/catalog.json) records source URLs, dimensions, byte counts, SHA-256 hashes, and route relevance.
 
-The app shows 12 original reference maps, 2 relevant original screenshots, and Joseph’s supplied Shellwood/Bellhart screenshot. Guide-only Mist and Sister Splinter skip alternatives are preserved in `assets/maps/` but excluded from the timed route and gallery. The timed route fights Sister Splinter. The original guide text is condensed into route directions and numbered map keys, with the decisions in `HANDOFF.md` applied. Original map numbers stay intact; planned, optional, skipped and resource-backup entries describe our path. The original 13 travel-section titles organize the runbook, with a labeled Greymoor return and explicit notices for the four missing maps.
+The app shows 12 original reference maps, 2 relevant original screenshots, and Joseph’s supplied Shellwood/Bellhart and Shellwood/Last Judge/Grand Gate screenshots. Guide-only Mist and Sister Splinter skip alternatives are preserved in `assets/maps/` but excluded from the timed route and gallery. The timed route fights Sister Splinter. The original guide text is condensed into route directions and numbered map keys, with the decisions in `HANDOFF.md` applied. Original map numbers stay intact; planned, optional, skipped and resource-backup entries describe our path. The original 13 travel-section titles organize the runbook, with a labeled Greymoor return. Four original maps remain unavailable; two now have supplied screenshot replacements.
 
 | Reference | Saved original | Steam source | Use |
 |---|---|---|---|
@@ -36,13 +36,19 @@ The screenshot is the active reference for the Shellwood section. Its checkpoint
 
 The [annotated experiment](../assets/maps/Shellwood%20and%20Widow%20route%20draft.png) and [drawing prompts](./shellwood-map-prompts.md) remain archived. Both it and the original Cling Grip skip screenshot are excluded from the timed guide and gallery.
 
+## Supplied Last Judge and Grand Gate screenshot
+
+Joseph supplied the [Shellwood to Last Judge and Grand Gate screenshot](../assets/maps/Shellwood%20to%20Last%20Judge%20and%20Grand%20Gate.png) on November 11, 2026. It replaces the overview fallback for the Last Judge section, including both the Blasted Steps and Last Judge / Grand Gate steps. Base map: MapGenie; game: Team Cherry. The original 2346 × 1582 PNG bytes are preserved under this descriptive filename.
+
+The map contains pins without a drawn route or Garmond checkpoint numbers. Keep the written directions and key, including the Choral Chambers bench and selected Grand Gate spool climb. This is a supplied replacement, not the recovered original Steam image.
+
 ## Missing guide maps
 
 The current guide HTML has empty image URLs for these four maps:
 
 - Shellwood and Widow — Joseph’s supplied unmarked screenshot is used instead
 - Deep Docks return: mask shard and Forge Daughter
-- Last Judge and Choral Chambers
+- Last Judge and Choral Chambers — Joseph’s supplied Shellwood/Last Judge/Grand Gate screenshot is used instead
 - Songclave, lower Cogwork and Vaults arena
 
 The separate Vaults shard/Pale Oil map has been recovered. The guide does not mark spool fragments on its maps; the six selected fragments retain their MapGenie pins in the runbook. Custom screenshots can fill these gaps.

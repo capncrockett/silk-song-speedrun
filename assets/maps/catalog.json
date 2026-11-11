@@ -367,6 +367,26 @@
       "sourceFile": "assets/maps/Shellwood and Bellhart base.png",
       "draft": true,
       "keyIntro": "Custom route draft. Cyan goes to the sixth-mask shard; orange takes the Sister Splinter fight and Cling Grip; magenta continues through Widow to Bellhart. Yellow dashed lines open shortcuts. Numbers label our selected checkpoints; this is a room-level trace for review."
+    },
+    {
+      "id": "shellwood-judge-grand-gate",
+      "title": "Shellwood → Last Judge → Grand Gate · supplied screenshot",
+      "section": "Split Routes: Last Judge or the Mist",
+      "file": "assets/maps/Shellwood to Last Judge and Grand Gate.png",
+      "src": "/maps/shellwood-judge-grand-gate.png",
+      "mime": "image/png",
+      "width": 2346,
+      "height": 1582,
+      "sourceUrl": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom",
+      "creator": "User-supplied MapGenie screenshot",
+      "sha256": "432a23f159d31a53cb7c7cbb79b78a58f26b74857f473fc17c15218299bc551c",
+      "recovered": "2026-11-11",
+      "bytes": 1546677,
+      "kind": "screenshot",
+      "timedRoute": true,
+      "custom": true,
+      "note": "Joseph’s supplied screenshot from Shellwood Bellway through Blasted Steps and Last Judge to the Grand Gate shortcut. Use the written directions and pins for the Choral Chambers bench and Grand Gate spool climb.",
+      "keyIntro": "This supplied screenshot has map pins but no route line or Garmond checkpoint numbers. The numbered key below belongs to the written guide."
     }
   ],
   "missing": [
@@ -381,7 +401,8 @@
     },
     {
       "title": "Last Judge and Choral Chambers",
-      "reason": "The guide image link is empty."
+      "reason": "The guide image link is empty.",
+      "replacement": "shellwood-judge-grand-gate"
     },
     {
       "title": "Songclave, lower Cogwork and Vaults arena",

@@ -1,6 +1,6 @@
 # Pharloom Runbook — current handoff
 
-Updated November 10, 2026. The local app is implemented. Joseph reports starting **Run #3**. This file holds current route decisions, research alternatives, and open scout questions; [README.md](./README.md) covers use and maintenance. The [source archive](./docs/history.md) preserves older notes without serving as a second live handoff.
+Updated November 11, 2026. The local app is implemented. Joseph reports starting **Run #3**. This file holds current route decisions, research alternatives, and open scout questions; [README.md](./README.md) covers use and maintenance. The [source archive](./docs/history.md) preserves older notes without serving as a second live handoff.
 
 ## Working contract
 
@@ -67,6 +67,12 @@ Joseph chose to use his [unmarked Shellwood/Bellhart screenshot](./assets/maps/S
 Keep the normal **Sister Splinter fight** before Cling Grip. The current written directions are the chosen condensed route; retain them. Explain that the screenshot has no route line or checkpoint numbers drawn on it. The original Steam section map remains missing, with this supplied screenshot recorded as its replacement.
 
 The [annotation experiment](./assets/maps/Shellwood%20and%20Widow%20route%20draft.png), its [prompts](./docs/shellwood-map-prompts.md), and the original Cling Grip skip screenshot are archived and excluded from the timed guide/gallery. Do not retry the overlay unless Joseph asks.
+
+### Last Judge map · supplied screenshot selected November 11
+
+Joseph supplied the [Shellwood → Last Judge → Grand Gate screenshot](./assets/maps/Shellwood%20to%20Last%20Judge%20and%20Grand%20Gate.png) to fill this missing-map section. Preserve its original 2346 × 1582 PNG bytes. Use it for both Blasted Steps and Last Judge / Grand Gate checkpoints, replacing the overview fallback.
+
+The screenshot shows map pins with no drawn route or Garmond checkpoint numbers. Retain the written checkpoint/detour key, Choral Chambers bench directions and selected Grand Gate spool climb. The original Steam image remains unavailable in the catalog, now with this replacement linked. No route, checkpoint IDs, pickup IDs or recorded results change.
 
 ### Guide consolidation · November 10
 
@@ -210,7 +216,7 @@ Joseph then used the **speedrun file (Run #2)** for the trip: Forge Daughter →
 - Scout Lace 2 as a dedicated fight. Time actual attempts and runbacks separately from optional detours. Practice waiting for committed attacks and healing in recovery. Try safe Straight Pin windows while preserving Silk.
 - Grand Mother Silk is now cleared on attempt six at 5:26:16. Use the learned patience and one-side positioning for the rerun; no individual attempt duration has been isolated.
 - Check early rosaries for Pebb, Mort, and the first Bellways. Greymoor and Blasted Steps Bellway openings are useful for later returns. Keep the G&Z aid route and protected Needle/Forge Daughter budget. The paid second kit is settled; keep its 450-rosary target visible before Clawline.
-- Map recovery on 2026-11-09 preserved the three existing maps and added 16 original guide images. The gallery shows 12 maps and 3 relevant screenshots; Mist and Sister Splinter skip alternatives remain archived. The separate Vaults shard/Pale Oil map is recovered. Shellwood/Widow, the Deep Docks return (shard/Forge Daughter), Last Judge/Choral Chambers, and combined Songclave/lower Core/Vaults arena maps have empty image URLs in the current guide. Use checkpoint pins until Joseph supplies replacements. The guide does not mark spool fragments; custom screenshots can supplement the six locked pins.
+- Map recovery on 2026-11-09 preserved the three existing maps and added 16 original guide images. The gallery shows 12 maps and 4 relevant screenshots; Mist and Sister Splinter skip alternatives remain archived. The separate Vaults shard/Pale Oil map is recovered. Shellwood/Widow, the Deep Docks return (shard/Forge Daughter), Last Judge/Choral Chambers, and combined Songclave/lower Core/Vaults arena maps have empty image URLs in the original guide. Joseph’s supplied screenshots now replace Shellwood/Widow and the Last Judge/Grand Gate overview fallback. The Deep Docks return and combined Songclave/lower Core/Vaults arena still use nearby references and checkpoint pins. The guide does not mark spool fragments; custom screenshots can supplement the six locked pins.
 
 ## Local references
 
