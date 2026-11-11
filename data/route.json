@@ -85,8 +85,8 @@
         "4 · Fourth Chorus"
       ],
       "detours": [
-        "1 · Warding Bell bronze-pipe branch — skipped.",
-        "2 · Flying-bomber Craftmetal room beyond Warding Bell — skipped as Joseph requested; use the Marrow pickup or conditional Pebb shop backup."
+        "1 · Warding Bell bronze-pipe branch — decided to skip.",
+        "2 · Flying-bomber Craftmetal room beyond Warding Bell — decided to skip; use the Marrow pickup or conditional Pebb shop backup."
       ],
       "note": "Take the lowest right exit toward the Seamstress. Skip Warding Bell and the rejected flying-bomber Craftmetal room. Take the hidden 60-rosary string near the Seamstress if short for the early shops.",
       "guideNumber": 4
@@ -107,15 +107,15 @@
       "checkpoints": [
         "1 · Halfway Home",
         "2 · Moorwing",
-        "3 · Craw Lake arena — skipped",
-        "4 · Thread Storm and Three-fold Pin — skipped",
+        "3 · Craw Lake arena — decided to skip",
+        "4 · Thread Storm and Three-fold Pin — decided to skip",
         "5 · Bell #3 — return after Widow with Cling Grip via upper Halfway Home"
       ],
       "detours": [
         "1 · Greymoor Bellway locket 478035 — planned; distinct from the skipped Faydown ledge locket.",
         "2 · First G&Z conversation — exhaust dialogue.",
-        "3 · Reaper Crest — skipped.",
-        "4 · Craw Lake branch — skipped."
+        "3 · Reaper Crest — decided to skip.",
+        "4 · Craw Lake branch — decided to skip."
       ],
       "note": "Take the Bellway locket on the first pass. Skip the separate Halfway Home ledge locket 478039. Return for Bell #3 and the Greymoor spool after Cling Grip; keep Craw Lake arena, Thread Storm and Three-fold Pin skipped. Accept Moorwing aid if offered, but do not stall the route if the duo remains absent.",
       "guideNumber": 5
@@ -155,7 +155,7 @@
         "atla"
       ],
       "checkpoints": [
-        "1 · Wanderer Crest — skipped",
+        "1 · Wanderer Crest — decided to skip",
         "2 · Atla mask shard"
       ],
       "detours": [
@@ -199,9 +199,9 @@
         "3 · Choral Chambers bench"
       ],
       "detours": [
-        "1 · Early Dice minigame — skip; collect Dice free later.",
+        "1 · Early Dice minigame — decided to skip; collect Dice free later.",
         "2 · Free Craftmetal before Judge — planned.",
-        "3 · Underworks / Delver’s Drill — not selected."
+        "3 · Underworks / Delver’s Drill — decided to skip."
       ],
       "note": "Joseph’s supplied screenshot covers Shellwood Bellway, Blasted Steps, Last Judge and the Grand Gate shortcut. Its map pins do not use the guide’s checkpoint numbering; follow the written steps and pins for the Choral Chambers bench and Grand Gate spool.",
       "guideNumber": 8
@@ -1073,7 +1073,7 @@
     {"id": "silk", "status": "Locked", "title": "Six fragments, three complete spools", "detail": "Locked by Joseph: Bone Bottom + Atla, Deep Docks + Greymoor, and Grand Gate + eastern Underworks for +3 Silk capacity. No added spool arenas. Skip the central Underworks and lower Core alternatives; the spool decision is closed.", "links": [{"title": "Bone Bottom spool", "pin": 478080}, {"title": "Atla spool", "pin": 478230}, {"title": "Deep Docks spool", "pin": 477926}, {"title": "Greymoor spool", "pin": 478263}, {"title": "Grand Gate spool", "pin": 478586}, {"title": "Eastern Underworks spool", "pin": 478704}]},
     {"id": "kit", "status": "Settled", "title": "Buy the second Crafting Kit", "detail": "Joseph reports that earning rosaries in the Citadel is straightforward. Buy Twelfth Architect's kit for 450 after Clawline and skip Crawbug Clearing and the 25-Ragpelt farm.", "links": [{"title": "Twelfth Architect kit", "pin": 478728}]},
     {"id": "mirror", "status": "Optional at Lace 2", "title": "Fractured Mask late-game option", "detail": "Optional at Lace 2 when time allows. Scout GMS clear used Fractured Mask with Mirror off. On Run #2, the Forge Daughter restock (10 shard bundles) and Mask trip ended at Marrow bench at 5:06 and was reported as about 10 minutes; Cogfly, Straight Pin, and Mirror were used. For the planned Core return, rest at 478428 before leaving and nowhere else, then quit-return to equip Mask. Keep Mirror if skipping.", "links": [{"title": "Cogwork Core return bench", "pin": 478428}, {"title": "Fractured Mask", "pin": 478607}]},
-    {"id": "thread", "status": "Deferred", "title": "Thread Storm and Craw Lake", "detail": "A documented route takes Thread Storm after Clawline and Faydown Cloak without clearing the arena. The earlier Halfway Home route is verified for Bell #3, and the late spool pickup is separate evidence. Keep Thread Storm skipped for this route.", "links": [{"title": "Late bypass", "url": "https://speedpastes.org/kXQvcbMl"}, {"title": "Thread Storm pin", "pin": 478061}]},
+    {"id": "thread", "status": "Decided to skip", "title": "Thread Storm and Craw Lake", "detail": "A documented route takes Thread Storm after Clawline and Faydown Cloak without clearing the arena. The earlier Halfway Home route is verified for Bell #3, and the late spool pickup is separate evidence. Keep Thread Storm skipped for this route.", "links": [{"title": "Late bypass", "url": "https://speedpastes.org/kXQvcbMl"}, {"title": "Thread Storm pin", "pin": 478061}]},
     {"id": "budget", "status": "Route reminders", "title": "Show upcoming purchase costs", "detail": "Checkpoint shopping reminders show the next planned spending stop, item costs, conditional tolls, and materials. Joseph is unsure the early budget will cover everything; the reminders do not assume a wallet balance. Lockets only need to fill Hunter, and both files reportedly have one spare Craftmetal.", "links": [{"title": "Mort", "pin": 477946}, {"title": "Loddie", "pin": 478251}]}
   ]
 }
