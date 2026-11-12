@@ -67,6 +67,12 @@ Use the original guide’s 13 travel-section titles in Route contents, the main 
 
 Every group has its corresponding original map, a labeled custom replacement, or an explicit missing-map notice with a named fallback. The Atla/Deep Docks chapter has its available Atla map and the missing return-map notice. Keep Upper Cogwork and Cradle as maps within the final original chapter. Long chapter titles wrap; the current checkpoint stays visible as a subtitle. Preserve the exact order and IDs of all 31 route checkpoints, all pickup IDs, the independent remembered guide step, and the recorded run files.
 
+### Opening section boundaries · clarified November 11
+
+The first three chapters each use their own map. Chapter 1 covers Silkspear, Bell Beast and the Marrow bell. Chapter 2 uses only the Deep Docks map for Straight Pin, Marrow Craftmetal, Swift Step, Lace 1 and the Deep Docks bell. Chapter 3 uses only the Bone Bottom/Wormways map for the loop after Lace 1.
+
+Remove the old cross-chapter map tabs and source-key associations from these steps. Guide subtitles follow those chapter boundaries. Preserve all 31 checkpoint IDs and historical split labels; the opening IDs still refer to their original split events. The Bone Bottom spending reminder remains 340 for Pebb's mask shard and Deep Docks Bellway.
+
 ### Shellwood map · supplied screenshot selected November 10
 
 Joseph chose to use his [unmarked Shellwood/Bellhart screenshot](./assets/maps/Shellwood%20and%20Bellhart%20base.png) with the condensed Garmond directions. Use this screenshot as the only map for the Shellwood/Cling Grip, Widow shortcut, and Widow checkpoints. Its original bytes remain intact.

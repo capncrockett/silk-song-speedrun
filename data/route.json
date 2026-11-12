@@ -12,8 +12,7 @@
         "marrow"
       ],
       "steps": [
-        "silk-spear",
-        "swift-step"
+        "silk-spear"
       ],
       "checkpoints": [
         "1 · Silkspear",
@@ -34,8 +33,7 @@
         "deep-docks"
       ],
       "steps": [
-        "swift-step",
-        "lace-1"
+        "swift-step"
       ],
       "checkpoints": [
         "1 · Ant arena",
@@ -344,12 +342,12 @@
       "guideNumber": 1,
       "guideSection": "garmond-marrow",
       "title": "Moss Grotto, The Marrow, Silk Spear, & Bell Beast",
-      "summary": "Collect Shard Pendant, the Mosshome resources and Silkspear, then continue toward Bell Beast.",
+      "summary": "Collect Shard Pendant, the Mosshome resources and Silkspear, then defeat Bell Beast and ring the Marrow bell.",
       "maps": [
         "marrow"
       ],
       "stops": [
-        {"id": "silk-spear", "guide": ["Follow the Moss Grotto route into the Marrow and clear the Marrow arena.", "On the climb after the arena and toll bench, take the free Shard Pendant from the side room. Equip it at a bench for extra Shell Shards from enemy kills.", "Continue through Mosshome and collect Silkspear.", "Take the Frayed Rosary String beneath the left Silk Wall. Break the wall by Mosshome’s top-left room transition and collect the Choral Commandment for a later Bellhart sale.", "Activate the lift for the return to Mosshome, then continue toward Bell Beast. Keep the starting Hunter Crest.", "Save rosaries for the planned shops and Bellways: skip maps, Quill, and Compass unless you need a map to find the route."], "title": "Silkspear", "tip": "Collect and equip Shard Pendant for early Shell Shard supplies. Take the Mosshome rosary string and Choral Commandment, activate the return lift, and keep Hunter.", "links": [{"title": "Silkspear", "pin": 477871}, {"title": "Shard Pendant", "pin": 477848}, {"title": "Mosshome rosary string", "pin": 477868}, {"title": "Choral Commandment", "pin": 477867}]}
+        {"id": "silk-spear", "guide": ["Follow the Moss Grotto route into the Marrow and clear the Marrow arena.", "On the climb after the arena and toll bench, take the free Shard Pendant from the side room. Equip it at a bench for extra Shell Shards from enemy kills.", "Continue through Mosshome and collect Silkspear.", "Take the Frayed Rosary String beneath the left Silk Wall. Break the wall by Mosshome’s top-left room transition and collect the Choral Commandment for a later Bellhart sale.", "Activate the lift for the return to Mosshome, then continue toward Bell Beast. Keep the starting Hunter Crest.", "Defeat Bell Beast and ring the Marrow bell.", "Save rosaries for the planned shops and Bellways: skip maps, Quill, and Compass unless you need a map to find the route."], "title": "Silkspear", "tip": "Collect and equip Shard Pendant, take the Mosshome rosary string and Choral Commandment, and activate the return lift. Keep Hunter, defeat Bell Beast and ring the Marrow bell.", "links": [{"title": "Silkspear", "pin": 477871}, {"title": "Shard Pendant", "pin": 477848}, {"title": "Mosshome rosary string", "pin": 477868}, {"title": "Choral Commandment", "pin": 477867}], "guideTitle": "Silkspear & Bell Beast"}
       ]
     },
     {
@@ -358,12 +356,12 @@
       "guideNumber": 2,
       "guideSection": "garmond-deep-docks",
       "title": "Deep Docks, Swift Step, & Lace 1",
-      "summary": "Bell Beast and Marrow bell lead into Straight Pin, the Marrow Craftmetal, Swift Step and Lace 1.",
+      "summary": "Collect Straight Pin and the Marrow Craftmetal, get Swift Step, defeat Lace 1 and ring the Deep Docks bell.",
       "maps": [
         "deep-docks"
       ],
       "stops": [
-        {"id": "swift-step", "guideTitle": "Bell Beast & Swift Step", "guide": ["Defeat Bell Beast and ring the Marrow bell.", "Pick up Straight Pin above Grindle’s cell on the way into Deep Docks.", "Collect the Marrow Craftmetal from the trapped secret tunnel near the jail; reserve it for Magma Bell.", "Clear the Deep Docks ant arena and collect Swift Step. Loddie’s target practice comes on the return after Widow."], "maps": ["deep-docks", "marrow"], "title": "Swift Step", "tip": "Defeat Bell Beast, ring the Marrow bell, then collect Straight Pin and the trapped-tunnel Craftmetal before Swift Step. Save that Craftmetal for Magma Bell; return for Loddie after Widow.", "links": [{"title": "Straight Pin", "pin": 477899}, {"title": "Marrow Craftmetal", "pin": 477894}]}
+        {"id": "swift-step", "guideTitle": "Swift Step & Lace 1", "guide": ["Pick up Straight Pin above Grindle’s cell on the way into Deep Docks.", "Collect the Marrow Craftmetal from the trapped secret tunnel near the jail; reserve it for Magma Bell.", "Clear the Deep Docks ant arena and collect Swift Step. Loddie’s target practice comes on the return after Widow.", "Defeat Lace 1 and ring the Deep Docks bell. The Bone Bottom loop comes next."], "maps": ["deep-docks"], "title": "Swift Step", "tip": "Collect Straight Pin and the trapped-tunnel Craftmetal for Magma Bell, clear the ant arena for Swift Step, then defeat Lace 1 and ring the Deep Docks bell. Return for Loddie after Widow.", "links": [{"title": "Straight Pin", "pin": 477899}, {"title": "Marrow Craftmetal", "pin": 477894}, {"title": "Lace 1", "pin": 476915}]}
       ]
     },
     {
@@ -372,12 +370,12 @@
       "guideNumber": 3,
       "guideSection": "garmond-bone-bottom",
       "title": "Backtrack to Bone Bottom for Mask Shards",
-      "summary": "After Lace 1, ring the bell and take the Wormways, Pebb and Bone Bottom spool loop.",
+      "summary": "After Lace 1, open Deep Docks Bellway and take the Wormways, Pebb and Bone Bottom spool loop.",
       "maps": [
         "bone-bottom"
       ],
       "stops": [
-        {"id": "lace-1", "guideTitle": "Lace 1 & the Bone Bottom loop", "guide": ["Defeat Lace 1, ring the Deep Docks bell, and open its Bellway for 40 rosaries.", "Take the Bone Bottom loop. Collect the free Wormways mask shard below the Simple Key door and buy Pebb’s mask shard for 300 rosaries.", "Collect the Bone Bottom spool: go through the trapdoor, use the lift lever, and cross the trapped passage above town. This is the first half of pair A.", "Return to Deep Docks and continue into Far Fields. If you need an early rosary farm, use the two pilgrims near Shakra’s bench and rest to reset them."], "maps": ["bone-bottom", "deep-docks"], "title": "Lace 1 defeated", "tip": "Open Deep Docks Bellway (40), take the Wormways shard and Pebb’s mask shard (300), and collect Bone Bottom spool 478080 through the trapdoor and lift passage. Return to Deep Docks for Far Fields.", "links": [{"title": "Lace 1", "pin": 476915}, {"title": "Wormways shard", "pin": 478091}, {"title": "Pebb's shard", "pin": 477840}, {"title": "Bone Bottom spool", "pin": 478080}], "purchases": [{"item": "Pebb's mask shard", "rosaries": 300}, {"item": "Deep Docks Bellway", "rosaries": 40}], "shoppingNote": "340 rosaries for Pebb’s mask shard (300) and Deep Docks Bellway (40). Mort’s purchases are still ahead."}
+        {"id": "lace-1", "guideTitle": "Bone Bottom loop after Lace 1", "guide": ["Open Deep Docks Bellway for 40 rosaries before taking the Bone Bottom loop.", "Take the Bone Bottom loop. Collect the free Wormways mask shard below the Simple Key door and buy Pebb’s mask shard for 300 rosaries.", "Collect the Bone Bottom spool: go through the trapdoor, use the lift lever, and cross the trapped passage above town. This is the first half of pair A.", "Return to Deep Docks and continue into Far Fields. If you need an early rosary farm, use the two pilgrims near Shakra’s bench and rest to reset them."], "maps": ["bone-bottom"], "title": "Lace 1 defeated", "tip": "Open Deep Docks Bellway (40), take the Wormways shard and Pebb’s mask shard (300), and collect Bone Bottom spool 478080 through the trapdoor and lift passage. Return to Deep Docks for Far Fields.", "links": [{"title": "Wormways shard", "pin": 478091}, {"title": "Pebb's shard", "pin": 477840}, {"title": "Bone Bottom spool", "pin": 478080}], "purchases": [{"item": "Pebb's mask shard", "rosaries": 300}, {"item": "Deep Docks Bellway", "rosaries": 40}], "shoppingNote": "340 rosaries for Pebb’s mask shard (300) and Deep Docks Bellway (40). Mort’s purchases are still ahead."}
       ]
     },
     {
