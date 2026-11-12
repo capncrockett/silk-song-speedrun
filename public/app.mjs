@@ -242,7 +242,14 @@ function renderGuideMap() {
     tab.setAttribute("aria-selected", String(selected));
     tab.tabIndex = selected ? 0 : -1;
   }
-  byId("guide-map-panel").setAttribute("aria-labelledby", `map-tab-${image.id}`);
+  const panel = byId("guide-map-panel");
+  if (byId("guide-map-tabs").children.length > 1) {
+    panel.setAttribute("role", "tabpanel");
+    panel.setAttribute("aria-labelledby", `map-tab-${image.id}`);
+  } else {
+    panel.removeAttribute("role");
+    panel.setAttribute("aria-labelledby", "guide-map-title");
+  }
   byId("guide-map-image").src = image.src;
   byId("guide-map-image").alt = image.title;
   byId("guide-map-image").width = image.width;
@@ -272,7 +279,7 @@ function renderEditor() {
   const maps = (stop?.maps ?? section?.maps ?? []).map((id) => state.maps.images.find((image) => image.id === id));
   if (state.activeSection !== section?.id || !maps.some((image) => image.id === state.activeMap)) state.activeMap = maps[0]?.id ?? null;
   state.activeSection = section?.id ?? null;
-  byId("guide-map-tabs").replaceChildren(...maps.map((image) => {
+  byId("guide-map-tabs").replaceChildren(...(maps.length > 1 ? maps : []).map((image) => {
     const tab = node("button", "map-tab", image.title);
     tab.type = "button";
     tab.id = `map-tab-${image.id}`;

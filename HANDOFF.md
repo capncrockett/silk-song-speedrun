@@ -71,7 +71,7 @@ Every group has its corresponding original map, a labeled custom replacement, or
 
 The first three chapters each use their own map. Chapter 1 covers Silkspear, Bell Beast and the Marrow bell. Chapter 2 uses only the Deep Docks map for Straight Pin, Marrow Craftmetal, Swift Step, Lace 1 and the Deep Docks bell. Chapter 3 uses only the Bone Bottom/Wormways map for the loop after Lace 1.
 
-Remove the old cross-chapter map tabs and source-key associations from these steps. Guide subtitles follow those chapter boundaries. Preserve all 31 checkpoint IDs and historical split labels; the opening IDs still refer to their original split events. The Bone Bottom spending reminder remains 340 for Pebb's mask shard and Deep Docks Bellway.
+Remove the old cross-chapter map tabs and source-key associations from these steps. Guide subtitles follow those chapter boundaries. Show a single map directly, with no map-selector button row; selectors appear only when a step has multiple reference images. Preserve all 31 checkpoint IDs and historical split labels; the opening IDs still refer to their original split events. The Bone Bottom spending reminder remains 340 for Pebb's mask shard and Deep Docks Bellway.
 
 ### Shellwood map · supplied screenshot selected November 10
 
