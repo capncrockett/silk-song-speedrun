@@ -159,6 +159,15 @@ Keep checkpoint and existing pickup IDs stable. New Pendant/string/Commandment c
 
 [Source guide](https://steamcommunity.com/sharedfiles/filedetails/?id=3577460696) · [Pendant effect](https://hollowknight.wiki/w/Shard_Pendant) · [Commandment sale](https://hollowknight.wiki/w/Choral_Commandment) · [Public map data](https://mapgenie.io/api/v1/maps/812/data)
 
+## Later reminder · map screenshots
+
+Joseph asked to return to these after focusing on the run:
+
+- Deep Docks return: post-Widow Marrow/Loddie, the mask-shard arena and Forge Daughter.
+- Songclave onward: Cogwork Dancers, lower Core mask/shortcuts, Whispering Vaults arena and the shortcut back to Songclave. The supplied red map already covers the approach.
+
+Bring this up when map work resumes; no scheduled notification was requested.
+
 ## Scout questions and settled decisions
 
 ### Thread Storm without Craw Lake Arena
