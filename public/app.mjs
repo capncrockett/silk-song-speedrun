@@ -338,51 +338,51 @@ function renderShopping() {
   byId("shopping-note").textContent = stop.shoppingNote ?? "Planned spending at this stop; this reminder does not assume your current balance.";
 }
 
-function phaseSummary(section) {
-  const summary = node("summary");
-  const title = node("span", "phase-title");
-  title.append(node("span", "", section.title));
-  if (section.visit) title.append(node("small", "phase-visit", section.visit));
-  summary.append(node("span", "phase-number", section.number), title);
-  return summary;
-}
-
-function renderCheckpointList(reset = false) {
-  const container = byId("checkpoint-list");
-  byId("route-section-count").textContent = `${new Set(state.route.sections.map((section) => section.guideNumber)).size} guide sections`;
-  const expanded = reset ? [] : [...container.querySelectorAll("details[open]")].map((item) => item.dataset.phase);
-  container.replaceChildren();
+function renderSectionNavigation() {
+  const container = byId("section-list");
+  const current = state.route.sections.find((section) => section.id === stopById(state.checkpoint)?.sectionId);
+  const groups = new Map();
   for (const section of state.route.sections) {
-    const phase = node("details", "phase");
-    phase.dataset.phase = section.id;
-    phase.open = expanded.includes(section.id) || section.stops.some((stop) => stop.id === state.checkpoint);
-    phase.dataset.current = String(section.stops.some((stop) => stop.id === state.checkpoint));
-    phase.addEventListener("toggle", updatePhaseControls);
-    phase.append(phaseSummary(section));
-    phase.append(node("p", "phase-context", section.summary));
-    const list = node("ol", "checkpoint-list");
-    for (const stop of section.stops) {
-      const row = node("button", "checkpoint-row");
-      row.type = "button";
-      row.setAttribute("aria-pressed", String(stop.id === state.checkpoint));
-      const dot = node("span", "checkpoint-dot");
-      dot.setAttribute("aria-hidden", "true");
-      row.append(dot, node("span", "", stepTitle(stop)));
-      row.addEventListener("click", () => chooseCheckpoint(stop.id, true));
-      const item = node("li");
-      item.append(row);
-      list.append(item);
-    }
-    phase.append(list);
-    container.append(phase);
+    if (!groups.has(section.guideNumber)) groups.set(section.guideNumber, { title: section.title, steps: [] });
+    groups.get(section.guideNumber).steps.push(...section.stops.map((stop) => ({ stop, visit: section.visit })));
   }
-  updatePhaseControls();
-}
-
-function updatePhaseControls() {
-  const phases = [...byId("checkpoint-list").querySelectorAll("details")];
-  byId("expand-phases").disabled = phases.length === 0 || phases.every((phase) => phase.open);
-  byId("collapse-phases").disabled = !phases.some((phase) => phase.open);
+  const rows = [];
+  for (const [number, group] of groups) {
+    const item = node("li");
+    item.dataset.sectionNumber = number;
+    if (group.steps.length === 1) {
+      const anchor = node("a", "section-link", group.title);
+      anchor.href = "#guide-step";
+      if (current?.guideNumber === number) anchor.setAttribute("aria-current", "location");
+      anchor.addEventListener("click", (event) => {
+        event.preventDefault();
+        chooseCheckpoint(group.steps[0].stop.id, true);
+      });
+      item.append(anchor);
+    } else {
+      const details = node("details", "section-group");
+      details.open = current?.guideNumber === number;
+      const summary = node("summary", "section-link");
+      summary.append(node("span", "section-label", group.title));
+      if (details.open) summary.setAttribute("aria-current", "location");
+      const steps = node("ol", "section-steps");
+      for (const { stop, visit } of group.steps) {
+        const button = node("button", "section-step", visit ? visit + " · " + stepTitle(stop) : stepTitle(stop));
+        button.type = "button";
+        button.dataset.checkpoint = stop.id;
+        if (stop.id === state.checkpoint) button.setAttribute("aria-current", "step");
+        button.addEventListener("click", () => chooseCheckpoint(stop.id, true));
+        const row = node("li");
+        row.append(button);
+        steps.append(row);
+      }
+      details.append(summary, steps);
+      item.append(details);
+    }
+    rows.push(item);
+  }
+  container.replaceChildren(...rows);
+  byId("route-section-count").textContent = String(rows.length);
 }
 
 function chooseCheckpoint(id, focus = false) {
@@ -393,7 +393,7 @@ function chooseCheckpoint(id, focus = false) {
   }
   status("split-status", "");
   renderEditor();
-  renderCheckpointList();
+  renderSectionNavigation();
   if (focus) {
     byId("entry-title").focus({ preventScroll: true });
     byId("guide-step").scrollIntoView({ block: "start" });
@@ -552,7 +552,7 @@ function selectRun(id) {
   renderMetrics();
   renderCheckpointOptions();
   renderEditor();
-  renderCheckpointList(true);
+  renderSectionNavigation();
   renderHistory();
   renderPrep(true);
 }
@@ -596,7 +596,7 @@ function bindEvents() {
     if (await save(data, "split-status", `Saved ${formatTime(time.seconds, time.precision)} · ${label}`)) {
       renderMetrics();
       renderEditor();
-      renderCheckpointList();
+      renderSectionNavigation();
       renderHistory();
     }
   });
@@ -693,12 +693,6 @@ function bindEvents() {
   });
   byId("close-map").addEventListener("click", () => byId("map-viewer").close());
   dialog.addEventListener("cancel", (event) => { if (state.saving) event.preventDefault(); });
-  for (const [id, open] of [["expand-phases", true], ["collapse-phases", false]]) {
-    byId(id).addEventListener("click", () => {
-      for (const phase of byId("checkpoint-list").querySelectorAll("details")) phase.open = open;
-      updatePhaseControls();
-    });
-  }
   byId("split-form").addEventListener("keydown", (event) => {
     if (event.key === "Enter" && (event.metaKey || event.ctrlKey)) {
       event.preventDefault();

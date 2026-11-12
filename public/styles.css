@@ -45,29 +45,23 @@ details[open] > summary::after { transform: rotate(180deg); }
 .route-navigation > summary > span:first-child, .collapsible > summary > span:first-child { flex: 1; }
 .route-navigation > summary { border-bottom: 1px solid transparent; }
 .route-navigation[open] > summary { border-bottom-color: var(--line); }
-.checkpoint-panel { padding: .5rem .55rem 1rem; }
-.phase-actions { display: flex; justify-content: flex-end; gap: .8rem; padding: .3rem .45rem .6rem; }
-.phase-actions button { font-size: .65rem; }
 .subtle-link { background: none; padding: .12rem 0; border: 0; color: var(--accent); font-size: .72rem; text-decoration: none; text-underline-offset: .2em; }
 .subtle-link:hover { text-decoration: underline; }
 .subtle-link:disabled { text-decoration: none; }
-.phases { display: grid; gap: .2rem; }
-.phase { border-bottom: 1px solid var(--line); }
-.phase:last-child { border-bottom: 0; }
-.phase > summary { list-style: none; display: flex; align-items: baseline; gap: .6rem; padding: .8rem .45rem; min-height: 45px; }
-.phase > summary:hover, .collapsible > summary:hover { background: #ffffff04; }
-.phase-number { color: var(--soft); font: .62rem "SFMono-Regular", Consolas, monospace; }
-.phase-title { flex: 1; min-width: 0; font-size: .77rem; line-height: 1.6; }
-.phase-visit { display: block; margin-top: .35rem; color: var(--accent); font-size: .65rem; }
-.phase[data-current="true"] .phase-number { color: var(--accent); }
-.phase-context { padding: 0 .45rem .65rem; color: var(--soft); font-size: .68rem; line-height: 1.7; }
-.checkpoint-list { margin: 0; padding: 0 0 .5rem; list-style: none; }
-.checkpoint-row { width: 100%; display: grid; grid-template-columns: 5px minmax(0, 1fr); align-items: center; gap: .65rem; min-height: 40px; padding: .45rem .65rem; text-align: left; font-size: .74rem; line-height: 1.6; color: var(--muted); background: transparent; border: 1px solid transparent; border-radius: 5px; }
-.checkpoint-row:hover { background: #303536; color: var(--ink); }
-.checkpoint-row[aria-pressed="true"] { background: #eca38c0c; border-color: #eca38c38; color: var(--ink); }
-.checkpoint-dot { width: 4px; height: 4px; background: #4a514b; border-radius: 50%; }
-.checkpoint-row[aria-pressed="true"] .checkpoint-dot { background: var(--accent); }
-.all-maps-link { display: block; margin: .75rem .5rem 0; font-size: .68rem; }
+.collapsible > summary:hover { background: #ffffff04; }
+.section-list { margin: 0; padding: .35rem 0; list-style: none; }
+.section-link { display: block; padding: .65rem .95rem; border-left: 3px solid transparent; color: var(--muted); font-size: .75rem; line-height: 1.65; text-decoration: none; overflow-wrap: anywhere; }
+.section-link:hover { color: var(--ink); background: #ffffff04; }
+.section-link[aria-current="location"] { border-left-color: var(--accent); background: #eca38c0c; color: var(--ink); }
+.section-link:focus-visible { outline-offset: -3px; }
+.section-group > summary { display: flex; align-items: center; gap: .6rem; list-style: none; }
+.section-label { flex: 1; min-width: 0; }
+.section-steps { display: grid; gap: .15rem; margin: 0; padding: .15rem .7rem .65rem 1.25rem; list-style: none; }
+.section-step { display: block; width: 100%; min-height: 40px; padding: .45rem .65rem; border: 1px solid transparent; border-radius: 4px; background: transparent; color: var(--muted); text-align: left; font-size: .7rem; line-height: 1.65; }
+.section-step:hover { color: var(--ink); background: #ffffff04; }
+.section-step[aria-current="step"] { color: var(--ink); border-color: #eca38c38; background: #eca38c0c; }
+
+.all-maps-link { display: block; margin: .5rem 1rem 1rem; font-size: .68rem; }
 .count { color: var(--soft); font-size: .66rem; font-variant-numeric: tabular-nums; }
 .guide-column { display: grid; min-width: 0; gap: .8rem; }
 .guide-step { min-width: 0; scroll-margin-top: 1rem; padding-bottom: 1rem; }
@@ -261,7 +255,7 @@ html.prep-open { overflow: hidden; }
   .guide-layout { grid-template-columns: 1fr; gap: 1rem; }
   .route-sidebar { position: static; max-height: none; overflow: visible; }
   .route-navigation > summary { min-height: 48px; }
-  .route-navigation .phases { max-height: 55vh; overflow-y: auto; }
+  .route-navigation .section-list { max-height: 55vh; overflow-y: auto; }
   .page-head { margin-block: 1.5rem; }
   .hero-hornet { width: 115px; }
 }

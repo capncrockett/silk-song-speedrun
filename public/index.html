@@ -34,17 +34,11 @@
         <img class="hero-hornet" src="/assets/hornet.png" alt="" width="1200" height="924" decoding="async">
       </div>
       <div class="guide-layout">
-        <nav class="route-sidebar" aria-label="Route contents">
+        <nav class="route-sidebar" aria-label="Guide sections">
           <details class="panel route-navigation" id="route-navigation" open>
-            <summary><span>Route contents</span><span class="count" id="route-section-count"></span></summary>
-            <div class="checkpoint-panel">
-              <div class="phase-actions" role="group" aria-label="Route sections">
-                <button type="button" class="subtle-link" id="expand-phases" aria-controls="checkpoint-list">Expand all</button>
-                <button type="button" class="subtle-link" id="collapse-phases" aria-controls="checkpoint-list">Collapse all</button>
-              </div>
-              <div id="checkpoint-list" class="phases"></div>
-              <a class="subtle-link all-maps-link" href="#maps" id="open-maps">Browse all reference maps ↗</a>
-            </div>
+            <summary><span>Guide sections</span><span class="count" id="route-section-count"></span></summary>
+            <ol id="section-list" class="section-list"></ol>
+            <a class="subtle-link all-maps-link" href="#maps" id="open-maps">Browse all reference maps ↗</a>
           </details>
         </nav>
         <div class="guide-column">

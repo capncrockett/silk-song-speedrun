@@ -1,6 +1,6 @@
 # Pharloom Runbook — current handoff
 
-Updated November 11, 2026. The local app is implemented. Joseph reports starting **Run #3**. This file holds current route decisions, research alternatives, and open scout questions; [README.md](./README.md) covers use and maintenance. The [source archive](./docs/history.md) preserves older notes without serving as a second live handoff.
+Updated November 12, 2026. The local app is implemented. Joseph reports starting **Run #3**. This file holds current route decisions, research alternatives, and open scout questions; [README.md](./README.md) covers use and maintenance. The [source archive](./docs/history.md) preserves older notes without serving as a second live handoff.
 
 ## Working contract
 
@@ -61,9 +61,11 @@ Early pending Needle #1, Bell #3, roof duel, Forum and finish states are superse
 
 **Menu preference:** normal Save and Quit is accepted; force-close manipulation was explicitly rejected. Use the ordinary menu for the selected optional Core-anchor Mask return.
 
-### Original section navigation · Run #3, November 10
+### Original section navigation · updated November 12
 
-Use the original guide’s 13 travel-section titles in Route contents, the main page heading, the split picker groups and the map keys. Greymoor appears a second time as **Return after Widow**, using its original section number and map, because the selected itinerary delays Bell #3. This produces 14 navigation groups while retaining 13 source sections.
+The Guide sections sidebar has one entry for each of the original guide’s 13 travel-section titles. A section with one walkthrough chunk opens directly. A section with multiple chunks expands to its useful step buttons, such as Shellwood mask/Cling Grip, the Widow shortcut and Widow. Highlight the current section and step; open the current multi-part section. Keep descriptive paragraphs and global Expand all / Collapse all controls out of the sidebar. The overall section list can close on narrow screens. Joseph approved this distinction on November 12 after clarifying that only redundant single-chunk nesting felt odd.
+
+Greymoor’s **Return after Widow** remains in the walkthrough because Bell #3 is delayed. Include it as a labeled step under the same Greymoor sidebar entry; Previous/Next and the run-log picker still reach all 31 steps. The route retains 14 internal visit groups and 13 original sections. Use the original titles in the main heading, split picker groups and map keys.
 
 Every group has its corresponding original map, a labeled custom replacement, or an explicit missing-map notice with a named fallback. The Atla/Deep Docks chapter has its available Atla map and the missing return-map notice. Keep Upper Cogwork and Cradle as maps within the final original chapter. Long chapter titles wrap; the current checkpoint stays visible as a subtitle. Preserve the exact order and IDs of all 31 route checkpoints, all pickup IDs, the independent remembered guide step, and the recorded run files.
 
