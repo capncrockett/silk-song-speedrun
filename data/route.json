@@ -42,7 +42,7 @@
       ],
       "detours": [
         "1 · Marrow Craftmetal near the jail — planned for our tool budget.",
-        "2 · Toll bench — optional runback rest; its fee is separate from purchases.",
+        "2 · Toll bench — decided to skip after Swift Step; its Weaver spire is your respawn point. Go straight to Lace.",
         "3 · Deep Docks Bellway — planned, 40 rosaries."
       ],
       "guideNumber": 2
@@ -361,7 +361,7 @@
         "deep-docks"
       ],
       "stops": [
-        {"id": "swift-step", "guideTitle": "Swift Step & Lace 1", "guide": ["Pick up Straight Pin above Grindle’s cell on the way into Deep Docks.", "Collect the Marrow Craftmetal from the trapped secret tunnel near the jail; reserve it for Magma Bell.", "Clear the Deep Docks ant arena and collect Swift Step. Loddie’s target practice comes on the return after Widow.", "Defeat Lace 1 and ring the Deep Docks bell. The Bone Bottom loop comes next."], "maps": ["deep-docks"], "title": "Swift Step", "tip": "Collect Straight Pin and the trapped-tunnel Craftmetal for Magma Bell, clear the ant arena for Swift Step, then defeat Lace 1 and ring the Deep Docks bell. Return for Loddie after Widow.", "links": [{"title": "Straight Pin", "pin": 477899}, {"title": "Marrow Craftmetal", "pin": 477894}, {"title": "Lace 1", "pin": 476915}]}
+        {"id": "swift-step", "guideTitle": "Swift Step & Lace 1", "guide": ["Pick up Straight Pin above Grindle’s cell on the way into Deep Docks.", "Collect the Marrow Craftmetal from the trapped secret tunnel near the jail; reserve it for Magma Bell.", "Clear the Deep Docks ant arena and collect Swift Step. Loddie’s target practice comes on the return after Widow.", "Swift Step sets your respawn point at the Weaver spire. Skip the toll bench and go straight to Lace; a death returns you to the spire as long as you have not rested at another bench.", "Defeat Lace 1 and ring the Deep Docks bell. The Bone Bottom loop comes next."], "maps": ["deep-docks"], "title": "Swift Step", "tip": "Collect Straight Pin and the Marrow Craftmetal for Magma Bell, then clear the ant arena for Swift Step. Skip the toll bench and head straight to Lace; Swift Step’s spire is your respawn point until a later bench rest. Defeat Lace, ring the Deep Docks bell, and continue to the Bone Bottom loop.", "links": [{"title": "Straight Pin", "pin": 477899}, {"title": "Marrow Craftmetal", "pin": 477894}, {"title": "Lace 1", "pin": 476915}]}
       ]
     },
     {

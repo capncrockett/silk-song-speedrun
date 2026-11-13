@@ -69,6 +69,12 @@ Greymoor’s **Return after Widow** remains in the walkthrough because Bell #3 i
 
 Every group has its corresponding original map, a labeled custom replacement, or an explicit missing-map notice with a named fallback. The Atla/Deep Docks chapter has its available Atla map and the missing return-map notice. Keep Upper Cogwork and Cradle as maps within the final original chapter. Long chapter titles wrap; the current checkpoint stays visible as a subtitle. Preserve the exact order and IDs of all 31 route checkpoints, all pickup IDs, the independent remembered guide step, and the recorded run files.
 
+### Swift Step → Lace runback · November 12
+
+Learning Swift Step sets the save/respawn point at the Weaver spire at the top of Deep Docks. After that pickup, skip the toll bench and go directly to Lace 1. A death or normal Save and Quit returns to that spire until another bench rest changes the respawn point. Keep the Deep Docks Bellway purchase on the subsequent Bone Bottom loop.
+
+[Silksong save points · Deep Docks](https://hollowknight.wiki/w/Save_Data_%28Silksong%29/Save_Points#Deep_Docks)
+
 ### Opening section boundaries · clarified November 11
 
 The first three chapters each use their own map. Chapter 1 covers Silkspear, Bell Beast and the Marrow bell. Chapter 2 uses only the Deep Docks map for Straight Pin, Marrow Craftmetal, Swift Step, Lace 1 and the Deep Docks bell. Chapter 3 uses only the Bone Bottom/Wormways map for the loop after Lace 1.
