@@ -385,6 +385,25 @@ function renderSectionNavigation() {
   byId("route-section-count").textContent = String(rows.length);
 }
 
+let sectionCloseTimer;
+let afterSectionClose;
+
+function closeSectionDrawer(afterClose) {
+  const drawer = byId("section-drawer");
+  if (!drawer.open) {
+    afterClose?.();
+    return;
+  }
+  if (afterClose) afterSectionClose = afterClose;
+  if (drawer.dataset.closing) return;
+  if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    drawer.close();
+    return;
+  }
+  drawer.dataset.closing = "true";
+  sectionCloseTimer = window.setTimeout(() => drawer.close(), 220);
+}
+
 function chooseCheckpoint(id, focus = false) {
   if (state.saving) return;
   state.checkpoint = id;
@@ -394,11 +413,10 @@ function chooseCheckpoint(id, focus = false) {
   status("split-status", "");
   renderEditor();
   renderSectionNavigation();
-  if (focus) {
+  if (focus) closeSectionDrawer(() => {
     byId("entry-title").focus({ preventScroll: true });
     byId("guide-step").scrollIntoView({ block: "start" });
-    if (window.matchMedia("(max-width: 900px)").matches) byId("route-navigation").open = false;
-  }
+  });
 }
 
 function renderHistory() {
@@ -618,6 +636,35 @@ function bindEvents() {
     nameField.select();
   }
   byId("new-run").addEventListener("click", openSession);
+  const sectionDrawer = byId("section-drawer");
+  byId("open-sections").addEventListener("click", () => {
+    renderSectionNavigation();
+    sectionDrawer.showModal();
+    byId("open-sections").setAttribute("aria-expanded", "true");
+    document.documentElement.classList.add("sections-open");
+    const currentStep = sectionDrawer.querySelector('.section-step[aria-current="step"]')
+      ?? sectionDrawer.querySelector('.section-link[aria-current="location"]');
+    currentStep?.scrollIntoView({ block: "nearest" });
+  });
+  byId("close-sections").addEventListener("click", () => closeSectionDrawer());
+  sectionDrawer.addEventListener("cancel", (event) => { event.preventDefault(); closeSectionDrawer(); });
+  sectionDrawer.addEventListener("click", (event) => {
+    if (event.target !== sectionDrawer) return;
+    const bounds = sectionDrawer.getBoundingClientRect();
+    if (event.clientX < bounds.left || event.clientX > bounds.right || event.clientY < bounds.top || event.clientY > bounds.bottom) closeSectionDrawer();
+  });
+  sectionDrawer.addEventListener("animationend", (event) => {
+    if (event.target === sectionDrawer && sectionDrawer.dataset.closing) sectionDrawer.close();
+  });
+  sectionDrawer.addEventListener("close", () => {
+    window.clearTimeout(sectionCloseTimer);
+    delete sectionDrawer.dataset.closing;
+    byId("open-sections").setAttribute("aria-expanded", "false");
+    document.documentElement.classList.remove("sections-open");
+    const afterClose = afterSectionClose;
+    afterSectionClose = null;
+    afterClose?.();
+  });
   const prepDrawer = byId("prep-drawer");
   let prepCloseTimer;
   function closePrep() {
@@ -651,7 +698,14 @@ function bindEvents() {
     byId("open-prep").setAttribute("aria-expanded", "false");
     document.documentElement.classList.remove("prep-open");
   });
-  byId("open-maps").addEventListener("click", () => { byId("maps").open = true; });
+  byId("open-maps").addEventListener("click", (event) => {
+    event.preventDefault();
+    byId("maps").open = true;
+    closeSectionDrawer(() => {
+      byId("maps").querySelector("summary").focus({ preventScroll: true });
+      byId("maps").scrollIntoView({ block: "start" });
+    });
+  });
   for (const [id, delta] of [["previous-step", -1], ["next-step", 1]]) {
     byId(id).addEventListener("click", () => {
       const index = state.stops.findIndex((stop) => stop.id === state.checkpoint);
@@ -748,7 +802,7 @@ async function start() {
     byId("startup").hidden = true;
     byId("footer").hidden = false;
     byId("open-prep").hidden = false;
-    byId("route-navigation").open = !window.matchMedia("(max-width: 900px)").matches;
+    byId("open-sections").hidden = false;
   } catch (error) {
     byId("startup").textContent = `Could not load the runbook. Open it from the local server address in the README. ${error.message}`;
   }
