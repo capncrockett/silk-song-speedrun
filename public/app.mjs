@@ -56,7 +56,7 @@ function status(id, message, isError = false) {
 async function getJson(path, options) {
   const response = await fetch(path, options);
   const data = await response.json();
-  if (!response.ok) throw new Error(data.error ?? "The local server did not respond successfully.");
+  if (!response.ok) throw Object.assign(new Error(data.error ?? "The local server did not respond successfully."), { status: response.status });
   return data;
 }
 
@@ -70,16 +70,27 @@ function setSaving(value) {
   }
 }
 
-async function save(next, statusId, success) {
+async function save(next, statusId, success, rebase) {
   if (state.saving) return false;
   setSaving(true);
   status(statusId, "Saving…");
+  let saved = false;
   try {
-    state.data = await getJson("/api/runs", {
-      method: "PUT",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(next)
-    });
+    let pending = next;
+    for (let attempt = 0; ; attempt++) {
+      try {
+        state.data = await getJson("/api/runs", {
+          method: "PUT",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(pending)
+        });
+        break;
+      } catch (error) {
+        if (error.status !== 409 || !rebase || attempt >= 2) throw error;
+        pending = rebase(await getJson("/api/runs"));
+      }
+    }
+    saved = true;
     status(statusId, success);
     return true;
   } catch (error) {
@@ -87,6 +98,7 @@ async function save(next, statusId, success) {
     return false;
   } finally {
     setSaving(false);
+    if (!saved) byId("save-indicator").textContent = "Not saved";
   }
 }
 
@@ -443,9 +455,15 @@ function renderHistory() {
 
 async function savePickups(ids, checked, categoryId, itemId) {
   if (state.saving) return;
-  const data = structuredClone(state.data);
-  selectedRun(data).prep = changePickups(selectedRun(data).prep, ids, checked);
-  await save(data, "prep-status", "Pickup checklist saved.");
+  const runId = state.runId;
+  const applyPickups = (data) => {
+    const run = data.runs.find((item) => item.id === runId);
+    if (!run) throw new Error("This run is no longer in the saved runbook.");
+    run.prep = changePickups(run.prep, ids, checked);
+    return data;
+  };
+  const data = applyPickups(structuredClone(state.data));
+  await save(data, "prep-status", "Pickup checklist saved.", applyPickups);
   renderPrep();
   if (!byId("prep-drawer").open || byId("prep-drawer").dataset.closing) return;
   const grid = byId("prep-grid");

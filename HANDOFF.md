@@ -39,6 +39,10 @@ Build the main view around this itinerary. The route is Hunter, all five bells, 
 
 ## Decisions and research
 
+### Pickup saves from stale tabs · November 13
+
+Joseph reported pickup checks not sticking. An isolated Playwright test reproduced a stale-tab failure: another tab’s save advances the revision, the pickup PUT receives 409, and the checkbox reverts. Ordinary save/reload persisted correctly. Pickup changes now reload the latest save on conflict and reapply only the clicked pickup IDs for the captured run, with at most two retries. Preserve other runs, splits, notes, and unrelated checks; leave the existing conflict protection for other edits. Failed saves show **Not saved** in the header as well as the drawer error. Verified with isolated Playwright: ordinary reload, stale-tab check and uncheck, preservation of other runs and splits, and a simulated failed write. Test only with a temporary copy of the save; never infer missing pickups from route progress or copy them between runs without a player report.
+
 ### Skip instructions and G&Z map references · November 13
 
 Joseph wants skips tied directly to the original G&Z map labels. Far Fields uses **Detour 1 (Warding Bell)** and **Detour 2 (flying-bomber Craftmetal)**. Apply the same short inline references to other numbered skips: Deep Docks Detour 2, Greymoor Detour 3 and Detour 4 / Checkpoints 3–4, Shellwood Checkpoint 2, Atla Checkpoint 1, Judge Detours 1 and 3, Cauldron Detours 1 and 2, and High Halls Detour 1. The Vaults side arena is a note before Checkpoint 2 (Pale Oil), not a numbered detour. Spool branches are unmarked on the original maps; retain their existing pins and directions. Source numbering was checked against the original guide, with Far Fields and Greymoor labels also checked on the recovered map images. Supplied replacement screenshots still have no original guide numbers drawn on them.
