@@ -4,7 +4,7 @@ Source: [Speedrunner Achievement Guide: The Garmond Route!](https://steamcommuni
 
 The three previously saved maps are preserved. On 2026-11-09, 16 additional original images were recovered directly from the guide’s Steam image links. All files retain their original bytes. [catalog.json](../assets/maps/catalog.json) records source URLs, dimensions, byte counts, SHA-256 hashes, and route relevance.
 
-The app shows 12 original reference maps, 2 relevant original screenshots, and Joseph’s supplied Shellwood/Bellhart and Shellwood/Last Judge/Grand Gate screenshots, plus his annotated Grand Gate/Songclave route. Guide-only Mist and Sister Splinter skip alternatives are preserved in `assets/maps/` but excluded from the timed route and gallery. The timed route fights Sister Splinter. The original guide text is condensed into route directions and numbered map keys, with the decisions in `HANDOFF.md` applied. Original map numbers stay intact; planned, optional, skipped and resource-backup entries describe our path. The original 13 travel-section titles organize the runbook, with a labeled Greymoor return. Four original maps remain unavailable; two have supplied screenshot replacements and the combined Songclave chapter has a supplied approach map.
+The app shows 12 original reference maps, 2 relevant original screenshots, and Joseph’s supplied Shellwood/Bellhart and Shellwood/Last Judge/Grand Gate screenshots, plus his annotated Grand Gate/Songclave and Bellhart/Deep Docks return routes. Guide-only Mist and Sister Splinter skip alternatives are preserved in `assets/maps/` but excluded from the timed route and gallery. The timed route fights Sister Splinter. The original guide text is condensed into route directions and numbered map keys, with the decisions in `HANDOFF.md` applied. Original map numbers stay intact; planned, optional, skipped and resource-backup entries describe our path. The original 13 travel-section titles organize the runbook, with a labeled Greymoor return. Four original maps remain unavailable; three have supplied replacements and the combined Songclave chapter has a supplied approach map.
 
 | Reference | Saved original | Steam source | Use |
 |---|---|---|---|
@@ -48,12 +48,18 @@ Joseph added the [Grand Gate to Grand Bellway and Songclave map](../assets/maps/
 
 The red line follows the approach from Grand Gate through Choral Chambers to Grand Bellway, then up toward Songclave. Use it for the Grand Bellway and Songclave/White Key steps. The Dancers, lower Core and Vaults arena are outside its crop, so this is a partial replacement for the original combined section map. Their existing references and written directions remain.
 
+## Supplied Bellhart and Deep Docks return route
+
+Joseph supplied the [Bellhart to Loddie and Deep Docks return map](../assets/maps/Bellhart%20to%20Loddie%20and%20Deep%20Docks%20return.png) on November 14, 2026. It was renamed from Screenshot 2026-11-14 at 11.09.42 AM.png without altering the original PNG bytes. Base map: MapGenie; game: Team Cherry. Dimensions, size and hash are recorded in the catalog.
+
+Use it on the Loddie / Forge Daughter return page. The red line runs from Bellhart through the Marrow to the mask shard (white 1) and Forge Daughter bench (white 2); green returns to Deep Docks Bellway. Joseph’s yellow detours are 1 Loddie, 2 Spool Fragment, and 3 easy rosaries. These labels belong to his screenshot rather than the original G&Z return map. The original return image remains unavailable, with this supplied replacement recorded in the catalog.
+
 ## Missing guide maps
 
 The current guide HTML has empty image URLs for these four maps:
 
 - Shellwood and Widow — Joseph’s supplied unmarked screenshot is used instead
-- Deep Docks return: mask shard and Forge Daughter
+- Deep Docks return: mask shard and Forge Daughter — Joseph’s annotated Bellhart/Deep Docks map is used instead
 - Last Judge and Choral Chambers — Joseph’s supplied Shellwood/Last Judge/Grand Gate screenshot is used instead
 - Songclave, lower Cogwork and Vaults arena — supplied red route covers the approach only; Dancers, lower Core and Vaults arena still use existing references
 
@@ -61,4 +67,4 @@ The separate Vaults shard/Pale Oil map has been recovered. The guide does not ma
 
 ## Adding a local screenshot
 
-Save the original image in `assets/maps/`. Add an entry to `assets/maps/catalog.json` with a unique `id`, a `/maps/` URL in `src`, repository-relative `file` under `assets/maps/`, `mime`, `width`, `height`, `bytes`, `sha256`, `kind` (`map` or `screenshot`), `timedRoute`, `title`, `note`, `sourceUrl`, and recovery date. For your own image, leave `sourceUrl` empty and set `creator`. Use a checkpoint’s `maps` array in [data/route.json](../data/route.json) to link it there; otherwise the section’s `maps` array applies. Restart the local server after adding a new file. Run `npm run check` before committing.
+Save the original image in `assets/maps/`. Add an entry to `assets/maps/catalog.json` with a unique `id`, a `/maps/` URL in `src`, repository-relative `file` under `assets/maps/`, `mime`, `width`, `height`, `bytes`, `sha256`, `kind` (`map` or `screenshot`), `timedRoute`, `title`, `note`, `sourceUrl`, and recovery date. For your own image, leave `sourceUrl` empty and set `creator`. Use a checkpoint’s `maps` array in [data/route.json](../data/route.json) to link it there; otherwise the section’s `maps` array applies. For an annotated supplied map, `keyIntro` explains its lines and numbers, and optional `keyLabel` identifies the map-key author; other maps retain the Garmond guide label. Restart the local server after adding a new file. Run `npm run check` before committing.

@@ -41,6 +41,14 @@ Build the main view around this itinerary. The route is Hunter, all five bells, 
 
 ## Decisions and research
 
+### Supplied Bellhart → Deep Docks return map · November 14
+
+Joseph added Screenshot 2026-11-14 at 11.09.42 AM.png for Bellhart → Loddie → mask shard → Forge Daughter → Deep Docks Bellway. Preserve its original bytes as [Bellhart to Loddie and Deep Docks return.png](./assets/maps/Bellhart%20to%20Loddie%20and%20Deep%20Docks%20return.png), catalog ID `bellhart-deep-docks-return`. Use it on `forge-daughter` in place of the first-pass Deep Docks fallback.
+
+The red approach goes through the Marrow to white **1: mask shard** and **2: Forge Daughter bench**. Joseph’s yellow detours are **1: Loddie**, **2: Spool Fragment**, **3: easy rosaries**; green returns to the already-open Deep Docks Bellway for Bellhart. Keep the rosary stop conditional on shop funding. These are Joseph’s map labels, separate from the original G&Z detour numbering. The map key identifies their source. Preserve existing pickup/checkpoint IDs, spending, run data and the later Harp sale reminder. The missing original image remains cataloged with this replacement.
+
+Verified with `npm run check` and isolated Playwright on desktop/mobile: exact original image bytes, custom key label and all three detours, six inline pickup controls, viewer zoom/Escape, adjacent-page navigation and gallery inclusion. Active save and seed unchanged. Restarted the local server on port 4173 to register the new image.
+
 ### Atla Rune Harp income · November 14
 
 Joseph selected [Atla Rune Harp 478231](https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=478231) as an easy money pickup during the existing post-Widow visit. From the right side of the lift shaft, enter the right-hand room and climb to its upper-left ledge for the Harp. Then drop to that room’s lower-right breakable-wall passage for the planned mask shard. Keep the separate upper Marrowmaw spool branch.
@@ -133,7 +141,7 @@ A fixed Sections button opens a left-side modal drawer, closed by default, with 
 
 Greymoor’s **Return after Widow** remains in the walkthrough because Bell #3 is delayed. Include it as a labeled step under the same Greymoor sidebar entry; Previous/Next reach 29 guide pages; the run-log picker lists 30 current timing checkpoints and keeps recorded older points editable. The route retains 14 internal visit groups and 13 original sections. Use the original titles in the main heading, split picker groups and map keys.
 
-Every group has its corresponding original map, a labeled custom replacement, or an explicit missing-map notice with a named fallback. The Atla/Deep Docks chapter has its available Atla map and the missing return-map notice. Keep Upper Cogwork and Cradle as maps within the final original chapter. Long chapter titles wrap; the current checkpoint stays visible as a subtitle. Preserve the exact order and IDs of all 31 route checkpoints, all pickup IDs, the independent remembered guide step, and the recorded run files.
+Every group has its corresponding original map, a labeled custom replacement, or an explicit missing-map notice with a named fallback. The Atla/Deep Docks chapter has its original Atla map and Joseph’s supplied Bellhart/Deep Docks return map; the unavailable original return image remains cataloged. Keep Upper Cogwork and Cradle as maps within the final original chapter. Long chapter titles wrap; the current checkpoint stays visible as a subtitle. Preserve the exact order and IDs of all 31 route checkpoints, all pickup IDs, the independent remembered guide step, and the recorded run files.
 
 ### Swift Step → Lace runback · November 12
 
@@ -254,7 +262,7 @@ Keep checkpoint and existing pickup IDs stable. New Pendant/string/Commandment c
 
 Joseph asked to return to these after focusing on the run:
 
-- Deep Docks return: post-Widow Marrow/Loddie, the mask-shard arena and Forge Daughter.
+- Deep Docks return is covered by the November 14 supplied map; the earlier screenshot reminder is resolved.
 - Songclave onward: Cogwork Dancers, lower Core mask/shortcuts, Whispering Vaults arena and the shortcut back to Songclave. The supplied red map already covers the approach.
 
 Bring this up when map work resumes; no scheduled notification was requested.
@@ -322,7 +330,7 @@ Joseph then used the **speedrun file (Run #2)** for the trip: Forge Daughter →
 - Scout Lace 2 as a dedicated fight. Time actual attempts and runbacks separately from optional detours. Practice waiting for committed attacks and healing in recovery. Try safe Straight Pin windows while preserving Silk.
 - Grand Mother Silk is now cleared on attempt six at 5:26:16. Use the learned patience and one-side positioning for the rerun; no individual attempt duration has been isolated.
 - Check early rosaries for Pebb, Mort, and the first Bellways. Greymoor and Blasted Steps Bellway openings are useful for later returns. Keep the G&Z aid route and protected Needle/Forge Daughter budget. The paid second kit is settled; keep its 450-rosary target visible before Clawline.
-- Map recovery on 2026-11-09 preserved the three existing maps and added 16 original guide images. The gallery shows 13 maps and 4 relevant screenshots; Mist and Sister Splinter skip alternatives remain archived. The separate Vaults shard/Pale Oil map is recovered. Shellwood/Widow, the Deep Docks return (shard/Forge Daughter), Last Judge/Choral Chambers, and combined Songclave/lower Core/Vaults arena maps have empty image URLs in the original guide. Joseph’s supplied screenshots now replace Shellwood/Widow and the Last Judge/Grand Gate overview fallback. The supplied red route now covers the Grand Gate/Grand Bellway/Songclave approach. The Deep Docks return, Dancers, lower Core and Vaults arena still use existing references and checkpoint pins. The guide does not mark spool fragments; custom screenshots can supplement the six locked pins.
+- Map recovery on 2026-11-09 preserved the three existing maps and added 16 original guide images. The gallery shows the selected maps and screenshots; Mist and Sister Splinter skip alternatives remain archived. The separate Vaults shard/Pale Oil map is recovered. Shellwood/Widow, the Deep Docks return (shard/Forge Daughter), Last Judge/Choral Chambers, and combined Songclave/lower Core/Vaults arena maps have empty image URLs in the original guide. Joseph’s supplied screenshots now replace Shellwood/Widow and the Last Judge/Grand Gate overview fallback. The supplied red route now covers the Grand Gate/Grand Bellway/Songclave approach. Joseph’s November 14 annotated map now covers the Deep Docks return. Dancers, lower Core and Vaults arena still use existing references and checkpoint pins. The guide does not mark spool fragments; custom screenshots can supplement the six locked pins.
 
 ## Local references
 

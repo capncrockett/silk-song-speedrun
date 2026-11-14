@@ -36,7 +36,7 @@ function renderGuideMapKeys(image) {
   container.replaceChildren(...sections.map((section) => {
     const block = node("section", "guide-map-key");
     const currentSection = state.route.sections.find((item) => item.id === stopById(state.checkpoint)?.sectionId);
-    block.append(node("p", "eyebrow", "Garmond guide · map key"), node("h3", "", section.title === currentSection?.title ? "Map key" : section.title));
+    block.append(node("p", "eyebrow", image?.keyLabel ?? "Garmond guide · map key"), node("h3", "", section.title === currentSection?.title ? "Map key" : section.title));
     block.append(node("p", "map-key-intro", image?.keyIntro ?? "Numbers match the original map. Yellow lines mark map branches: take planned stops, use optional stops as needed, and skip branches labeled Skip. Follow the numbered walkthrough below."));
     if (section.note) block.append(node("p", "map-key-note", section.note));
     const columns = node("div", "map-key-columns");

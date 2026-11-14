@@ -407,6 +407,27 @@
       "custom": true,
       "note": "Supplied red route from Grand Gate through Choral Chambers to Grand Bellway, then up toward Songclave. The Dancers, lower Core and Vaults arena are outside this crop; those steps retain their existing references.",
       "keyIntro": "The red line traces the approach through Choral Chambers and Grand Bellway toward Songclave. The guide’s checkpoint numbers are not drawn on this screenshot; later Dancers, lower Core and Vaults arena checkpoints are outside its crop."
+    },
+    {
+      "id": "bellhart-deep-docks-return",
+      "title": "Bellhart → Loddie → Deep Docks · supplied route",
+      "section": "Weavenest Atla, Wanderer Crest, and Deep Docks Mask Shard",
+      "file": "assets/maps/Bellhart to Loddie and Deep Docks return.png",
+      "src": "/maps/bellhart-deep-docks-return.png",
+      "mime": "image/png",
+      "width": 1616,
+      "height": 1580,
+      "sourceUrl": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom",
+      "creator": "User-supplied annotated MapGenie screenshot",
+      "sha256": "312a7b838ae92a36ee43444b635e884102d0ad0538a3e2d32391c44c5db5c0a0",
+      "recovered": "2026-11-14",
+      "bytes": 1048018,
+      "kind": "map",
+      "timedRoute": true,
+      "custom": true,
+      "note": "Joseph’s red route from Bellhart through the Marrow to the Deep Docks mask shard (white 1) and Forge Daughter bench (white 2). Yellow detours: 1 Loddie, 2 Spool Fragment, 3 easy rosaries. Green returns to Deep Docks Bellway.",
+      "keyLabel": "Joseph’s map · route key",
+      "keyIntro": "Numbers are Joseph’s annotations on this supplied screenshot. White numbers mark the main route; yellow numbers mark the three detours. The red line approaches from Bellhart and the green line returns to Deep Docks Bellway."
     }
   ],
   "missing": [
@@ -417,7 +438,8 @@
     },
     {
       "title": "Deep Docks return: mask shard and Forge Daughter",
-      "reason": "The guide image link is empty; the Atla image covers only the first half of that section."
+      "reason": "The original guide image link is empty. Joseph’s annotated Bellhart/Deep Docks return map covers this route.",
+      "replacement": "bellhart-deep-docks-return"
     },
     {
       "title": "Last Judge and Choral Chambers",
