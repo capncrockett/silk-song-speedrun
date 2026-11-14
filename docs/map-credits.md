@@ -52,7 +52,7 @@ The red line follows the approach from Grand Gate through Choral Chambers to Gra
 
 Joseph supplied the [Bellhart to Loddie and Deep Docks return map](../assets/maps/Bellhart%20to%20Loddie%20and%20Deep%20Docks%20return.png) on November 14, 2026. It was renamed from Screenshot 2026-11-14 at 11.09.42 AM.png without altering the original PNG bytes. Base map: MapGenie; game: Team Cherry. Dimensions, size and hash are recorded in the catalog.
 
-Use it on the Loddie / Forge Daughter return page. The red line runs from Bellhart through the Marrow to the mask shard (white 1) and Forge Daughter bench (white 2); green returns to Deep Docks Bellway. Joseph’s yellow detours are 1 Loddie, 2 Spool Fragment, and 3 easy rosaries. These labels belong to his screenshot rather than the original G&Z return map. The original return image remains unavailable, with this supplied replacement recorded in the catalog.
+Use it on the Loddie / Forge Daughter return page. The red line runs from Bellhart through Lower Bellhart to the mask shard (white 1) and Forge Daughter bench (white 2); green returns to Deep Docks Bellway. Joseph’s yellow detours are 1 Loddie, 2 Spool Fragment, and 3 easy rosaries. These labels belong to his screenshot rather than the original G&Z return map. The original return image remains unavailable, with this supplied replacement recorded in the catalog.
 
 ## Missing guide maps
 
