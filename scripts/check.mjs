@@ -277,7 +277,7 @@ for (const group of chatArchive.overlapGroups) {
   assert.ok(group.sources.every((id) => sourceIds.has(id)), "Overlap groups need known sources.");
 }
 
-const documents = ["README.md", "AGENTS.md", "HANDOFF.md", "docs/history.md", "docs/map-credits.md", "docs/chat-recovery.md"];
+const documents = ["README.md", "AGENTS.md", "HANDOFF.md", "docs/architecture.md", "docs/history.md", "docs/map-credits.md", "docs/chat-recovery.md"];
 for (const file of documents) {
   const source = new URL(file, root);
   const markdown = await readFile(source, "utf8");

@@ -41,6 +41,22 @@ Build the main view around this itinerary. The route is Hunter, all five bells, 
 
 ## Decisions and research
 
+### Frontend module ownership · November 14
+
+Joseph wants the code organized so an AI agent can find behavior, make decisions,
+and verify changes quickly. Keep vanilla JavaScript and Node with no dependencies
+or build step. `public/app.mjs` now coordinates startup, run selection, navigation,
+and explicit feature callbacks. `public/ui/` separates guide, maps, pickups, run
+log, shared state, API saves, DOM helpers and drawer behavior. The pure model
+stays in `public/model.mjs`. Use the [code map](./docs/architecture.md) for task
+ownership, state/save rules and validation. Preserve the current route, IDs,
+historical records, and active save while changing code structure.
+
+Verified with `npm run check` (including module syntax/import/HTTP checks) and an
+isolated browser run through all 29 pages, pickup conflict retries and failed
+writes, drawer focus/category states, historical splits, map tabs/zoom, notes,
+export/reload and mobile reduced motion. The active save was unchanged.
+
 ### Widow picture link and inline pickup checks · November 14
 
 Joseph finds Widow the first substantial boss challenge on this run and wants the G&Z guide’s helpful fight picture close to the tips. Add a quick guide link beside the Widow fight-advice instruction, with a text fragment for Checkpoint 4: Widow. Keep the selected unmarked Shellwood map.

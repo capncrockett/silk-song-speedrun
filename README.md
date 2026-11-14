@@ -30,6 +30,8 @@ Splits, notes, and checked pickups save to `.runbook/runs.json`. The **Export ru
 
 ## Update with Codex
 
+For code changes, start with the [code map](./docs/architecture.md). The browser entry point only coordinates startup and feature updates; focused native JavaScript modules in `public/ui/` own the guide, maps, pickups, run log and shared helpers. There is still no build step or dependency installation.
+
 Open this folder as a project and ask Codex to read [HANDOFF.md](./HANDOFF.md). The running route lives in [data/route.json](./data/route.json). `guidePickups` attaches existing pickup IDs to item text in a numbered instruction; `guideLinks` places contextual links beside that instruction. Update their instruction numbers if directions move. Each step’s `guide` array supplies the numbered directions; `guideTitle` optionally supplies its reading title while historical split labels stay intact. The `guideSections` entries hold the original guide’s checkpoint and detour keys and associate them with steps and map IDs. Changes to its directions, maps, and checklist items appear after a refresh. Keep existing checkpoint IDs when rewriting a label or moving a checkpoint. A checkpoint’s optional `guideStep` points to the final checkpoint of a combined reading page; the original IDs are retained. Set `recordSplit: false` for an obsolete timing point; its recorded entries remain editable under Historical splits.
 
 - [Starting Run #2 data](./data/seed-runs.json) is used until the first local save.
@@ -39,7 +41,7 @@ Open this folder as a project and ask Codex to read [HANDOFF.md](./HANDOFF.md). 
 
 The server listens only on your Mac. To use another port, run `RUNBOOK_PORT=4174 npm start`. For an isolated test save, set `RUNBOOK_DATA_DIR` to a different directory before starting. Neither setting requires installing anything.
 
-Run `npm run check` to check the route data, historical splits, five-hour boundary, saved-time format, original image hashes, local documentation links, and app syntax.
+Run `npm run check` to check the route data, historical splits, five-hour boundary, saved-time format, original image hashes, local documentation links, all browser module syntax, and module imports served by an isolated local server. The checks do not save runs.
 
 ## Artwork
 
@@ -50,12 +52,14 @@ The header icon and browser icon use the supplied [Hornet mask](./assets/artwork
 | Path | Purpose |
 |---|---|
 | [public/](./public/) | Editable browser HTML, CSS, and JavaScript; served directly with no build |
+| [public/ui/](./public/ui/) | Feature modules and shared browser helpers; see the [code map](./docs/architecture.md) |
 | [server.mjs](./server.mjs) | Local HTTP server and JSON save handling |
 | [data/](./data/) | The single timed route and original seed import |
 | [assets/artwork/](./assets/artwork/) | Supplied Hornet originals, including the alternate WebP |
 | [assets/maps/](./assets/maps/) | Original guide images and their source/hash catalog |
 | [docs/](./docs/) | Map credits and the consolidated historical archive |
 | [scripts/check.mjs](./scripts/check.mjs) | Route, model, save, asset, and documentation checks |
+| [scripts/check-modules.mjs](./scripts/check-modules.mjs) | Browser module syntax, imports, and HTTP serving checks |
 | `.runbook/` | Ignored active save directory |
 
 [HANDOFF.md](./HANDOFF.md) holds current route decisions and research; [AGENTS.md](./AGENTS.md) holds the short repository rules. Edit `data/route.json` for route changes and `assets/maps/catalog.json` for image metadata. Restart the server after adding catalog entries. Browser URLs remain independent of the on-disk folders.
