@@ -9,7 +9,7 @@ Updated November 13, 2026. The local app is implemented. Joseph reports starting
 - Keep timed and scout results separate. Use the manual in-game clock, retain idle time and detours, and finish only when a `gms` split is reported. Sub-five is strictly below `5:00:00`.
 - Keep the app local and dependency-free. The 31 checkpoints are guide steps, grouped under the original Garmond guide’s 13 full section titles, with a labeled return to Greymoor after Widow. The original section title is the main page heading; the selected checkpoint is a subtitle. Inline maps, numbered directions, and Previous/Next are the main experience. Guide position starts at Silkspear and persists independently of run selection and split entry.
 - Keep the Run log closed by default. The persistent Pickups drawer shares the selected run's checks across all steps; category checkboxes support partial/all states, the last check closes its accordion, and optional items do not block the main total. Retain the three spool pairs, eight-shard mask category, historical checked items, Escape/backdrop closing, reduced-motion support, and inline reference gallery.
-- Keep the Garmond guide’s section names, numbered checkpoints, and detours visible with the relevant map screenshot. These guide references do not add timed splits. Clearly label missing original maps and distinguish guide options from the selected path.
+- Keep the Garmond guide’s section names, numbered checkpoints, and detours visible with the relevant map screenshot. These guide references do not add timed splits. Clearly label missing original maps and distinguish guide options from the selected path. In skip instructions, cite the original G&Z Detour or Checkpoint number inline with a short item name. Keep the wording concise and never invent numbers for unmarked pickups.
 - Write the timed walkthrough and purchases for collecting every planned pickup in order. Keep old recovery options for missed items in research. Conditional shop entry fees, retries, actual supply needs and the chosen optional Mask trip still apply.
 - Discuss unresolved route choices **one question or pickup at a time**. Keep alternatives here; update the route only when a choice changes. Run `npm run check` after changes and commit coherent work.
 
@@ -38,6 +38,10 @@ Build the main view around this itinerary. The route is Hunter, all five bells, 
 [Original Garmond Route](https://steamcommunity.com/sharedfiles/filedetails/?id=3577460696) · [Recovered maps and credits](./docs/map-credits.md) · [Roof gate](https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=480502) · [Forum aid](https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=481022)
 
 ## Decisions and research
+
+### Skip instructions and G&Z map references · November 13
+
+Joseph wants skips tied directly to the original G&Z map labels. Far Fields uses **Detour 1 (Warding Bell)** and **Detour 2 (flying-bomber Craftmetal)**. Apply the same short inline references to other numbered skips: Deep Docks Detour 2, Greymoor Detour 3 and Detour 4 / Checkpoints 3–4, Shellwood Checkpoint 2, Atla Checkpoint 1, Judge Detours 1 and 3, Cauldron Detours 1 and 2, and High Halls Detour 1. The Vaults side arena is a note before Checkpoint 2 (Pale Oil), not a numbered detour. Spool branches are unmarked on the original maps; retain their existing pins and directions. Source numbering was checked against the original guide, with Far Fields and Greymoor labels also checked on the recovered map images. Supplied replacement screenshots still have no original guide numbers drawn on them.
 
 ### Early rosary farm and Mort timing · November 13
 
