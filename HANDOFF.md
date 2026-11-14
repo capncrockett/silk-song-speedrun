@@ -1,6 +1,6 @@
 # Pharloom Runbook — current handoff
 
-Updated November 12, 2026. The local app is implemented. Joseph reports starting **Run #3**. This file holds current route decisions, research alternatives, and open scout questions; [README.md](./README.md) covers use and maintenance. The [source archive](./docs/history.md) preserves older notes without serving as a second live handoff.
+Updated November 13, 2026. The local app is implemented. Joseph reports starting **Run #3**. This file holds current route decisions, research alternatives, and open scout questions; [README.md](./README.md) covers use and maintenance. The [source archive](./docs/history.md) preserves older notes without serving as a second live handoff.
 
 ## Working contract
 
@@ -38,6 +38,12 @@ Build the main view around this itinerary. The route is Hunter, all five bells, 
 [Original Garmond Route](https://steamcommunity.com/sharedfiles/filedetails/?id=3577460696) · [Recovered maps and credits](./docs/map-credits.md) · [Roof gate](https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=480502) · [Forum aid](https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=481022)
 
 ## Decisions and research
+
+### Early rosary farm and Mort timing · November 13
+
+Joseph reports **8 rosaries per reset** from the two pilgrims immediately left of Shakra’s Marrow bench. Kill both, collect the rosaries, then return to the bench and rest to respawn them. Use this observed yield rather than the original guide’s 10-rosary estimate; no loop time has been measured on this run.
+
+Joseph chose to farm here and retain **Weighted Belt (160) and the Tool Pouch (220) on the first Mort visit**, with the conditional 30-rosary entry and 60-rosary Greymoor Bellway unchanged. The proposed later Mort trip through Far Fields Bellway was not adopted; keep Far Fields Bellway skipped. The next spending stop still totals 440–470 after the Bone Bottom purchases. This is a route decision, not a report of purchases or current rosary holdings.
 
 ### Fixed pickup plan · November 11
 

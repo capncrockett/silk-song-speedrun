@@ -61,7 +61,7 @@
         "2 · Pebb’s mask shard"
       ],
       "detours": [
-        "1 · Farm rosaries near Shakra if needed."
+        "1 · If short on rosaries, farm the two pilgrims immediately left of Shakra’s Marrow bench and rest to reset them. Reported yield: 8 rosaries per loop."
       ],
       "note": "Collect the Bone Bottom spool; the original map does not mark spools.",
       "guideNumber": 3
@@ -375,7 +375,7 @@
         "bone-bottom"
       ],
       "stops": [
-        {"id": "lace-1", "guideTitle": "Bone Bottom loop after Lace 1", "guide": ["Open Deep Docks Bellway for 40 rosaries before taking the Bone Bottom loop.", "Take the Bone Bottom loop. Collect the free Wormways mask shard below the Simple Key door and buy Pebb’s mask shard for 300 rosaries.", "Collect the Bone Bottom spool: go through the trapdoor, use the lift lever, and cross the trapped passage above town. This is the first half of pair A.", "Return to Deep Docks and continue into Far Fields. If you need an early rosary farm, use the two pilgrims near Shakra’s bench and rest to reset them."], "maps": ["bone-bottom"], "title": "Lace 1 defeated", "tip": "Open Deep Docks Bellway (40), take the Wormways shard and Pebb’s mask shard (300), and collect Bone Bottom spool 478080 through the trapdoor and lift passage. Return to Deep Docks for Far Fields.", "links": [{"title": "Wormways shard", "pin": 478091}, {"title": "Pebb's shard", "pin": 477840}, {"title": "Bone Bottom spool", "pin": 478080}], "purchases": [{"item": "Pebb's mask shard", "rosaries": 300}, {"item": "Deep Docks Bellway", "rosaries": 40}], "shoppingNote": "340 rosaries for Pebb’s mask shard (300) and Deep Docks Bellway (40). Mort’s purchases are still ahead."}
+        {"id": "lace-1", "guideTitle": "Bone Bottom loop after Lace 1", "guide": ["Open Deep Docks Bellway for 40 rosaries before taking the Bone Bottom loop.", "Take the Bone Bottom loop. Collect the free Wormways mask shard below the Simple Key door and buy Pebb’s mask shard for 300 rosaries.", "Collect the Bone Bottom spool: go through the trapdoor, use the lift lever, and cross the trapped passage above town. This is the first half of pair A.", "If short for the early shops, farm the two pilgrims immediately left of Shakra’s Marrow bench: kill both, collect the rosaries, then return and rest to reset them. The reported yield is 8 rosaries per loop. Save the farmed rosaries for Belt and the Tool Pouch on the first Mort visit. Return to Deep Docks and continue into Far Fields."], "maps": ["bone-bottom"], "title": "Lace 1 defeated", "tip": "Open Deep Docks Bellway (40), take the Wormways shard and Pebb’s mask shard (300), and collect Bone Bottom spool 478080 through the trapdoor and lift passage. Return to Deep Docks for Far Fields.", "links": [{"title": "Wormways shard", "pin": 478091}, {"title": "Pebb's shard", "pin": 477840}, {"title": "Bone Bottom spool", "pin": 478080}], "purchases": [{"item": "Pebb's mask shard", "rosaries": 300}, {"item": "Deep Docks Bellway", "rosaries": 40}], "shoppingNote": "340 rosaries for Pebb’s mask shard (300) and Deep Docks Bellway (40). Mort’s purchases are still ahead."}
       ]
     },
     {
