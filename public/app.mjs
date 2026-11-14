@@ -169,14 +169,14 @@ function renderCheckpointOptions() {
   for (const section of state.route.sections) {
     const group = node("optgroup");
     group.label = section.visit ? `${section.title} · ${section.visit}` : section.title;
-    for (const stop of section.stops) {
+    for (const stop of section.stops.filter((item) => item.recordSplit !== false)) {
       const option = node("option", "", stop.title);
       option.value = stop.id;
       group.append(option);
     }
     select.append(group);
   }
-  const legacy = selectedRun().splits.filter((split) => !stopById(split.checkpoint));
+  const legacy = selectedRun().splits.filter((split) => !stopById(split.checkpoint) || stopById(split.checkpoint).recordSplit === false);
   if (legacy.length) {
     const group = node("optgroup");
     group.label = "Historical splits";
@@ -579,6 +579,10 @@ function selectRun(id) {
   if (state.saving) return;
   state.runId = id;
   const run = selectedRun();
+  if (stopById(state.checkpoint)?.recordSplit === false &&
+      !run.splits.some((split) => split.checkpoint === state.checkpoint)) {
+    state.checkpoint = guideStopById(state.checkpoint)?.id ?? state.guideStops[0].id;
+  }
   if (!stopById(state.checkpoint) && !run.splits.some((split) => split.checkpoint === state.checkpoint)) {
     let remembered;
     try { remembered = localStorage.getItem("pharloom-guide-step"); } catch { /* Start at the beginning. */ }
@@ -625,6 +629,10 @@ function bindEvents() {
     const data = structuredClone(state.data);
     const run = selectedRun(data);
     const previous = run.splits.find((split) => split.checkpoint === id);
+    if (stopById(id)?.recordSplit === false && !previous) {
+      status("split-status", "This checkpoint is only available for editing an existing historical split.", true);
+      return;
+    }
     const finish = run.splits.find((split) => split.checkpoint === state.route.finishCheckpoint);
     const others = run.splits.filter((split) => split.checkpoint !== id);
     const beforeOtherSplits = id === state.route.finishCheckpoint && others.some((split) => split.seconds > time.seconds);

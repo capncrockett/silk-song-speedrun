@@ -31,6 +31,10 @@ export function listStops(route) {
   );
 }
 
+export function listRecordingStops(route) {
+  return listStops(route).filter((stop) => stop.recordSplit !== false);
+}
+
 export function listGuideStops(route) {
   const stops = listStops(route);
   const groups = new Map();
@@ -102,7 +106,7 @@ export function shoppingSummary(route, checkpoint) {
 }
 
 export function runSummary(route, run) {
-  const stops = listStops(route);
+  const stops = listRecordingStops(route);
   const recorded = new Set(run.splits.map((split) => split.checkpoint));
   const history = [...run.splits].sort((a, b) => a.seconds - b.seconds);
   const finish = run.splits.find((split) => split.checkpoint === route.finishCheckpoint);

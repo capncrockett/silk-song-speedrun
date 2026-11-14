@@ -455,6 +455,8 @@
         },
         {
           "id": "widow-bench",
+          "guideStep": "widow",
+          "recordSplit": false,
           "guideTitle": "Open the Widow shortcut",
           "guide": [
             "After Cling Grip, continue right through upper Bellhart. Before descending to Widow, drop down-left and break the wall on the left to reconnect to the convenient bench.",
@@ -467,7 +469,7 @@
           "id": "widow",
           "guide": [
             "Guide advice for Widow: favor dodging over aggressive attacking. Watch the diagonally bouncing bells, use the gap between their paths, and avoid hugging the opposite wall where they rebound.",
-            "Defeat Widow, collect Needolin, and ring the Bellhart bell.",
+            "Defeat Widow, collect Needolin, and record your split. Then ring the Bellhart bell.",
             "Return to Bellhart for the free first Needle upgrade.",
             "Sell the Mosshome Choral Commandment and any other carried relics to Scrounge in Bellhart before leaving for the return loop. The Commandment sells for 180 rosaries.",
             "Open Bellhart Bellway for 60 rosaries. The next loop takes you to Eva, Atla, Loddie, and Forge Daughter."
