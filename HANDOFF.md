@@ -176,13 +176,14 @@ Lower Core **478618** is now skipped in favour of the selected six. Keep the dou
 
 ### Upcoming spending reminders
 
-Joseph wants the cash needed for upcoming purchases shown at checkpoints, rather than an assumed starting wallet or locked early earning plan. `data/route.json` now stores purchase lists per spending stop; the tracker shows the next such stop at or after the selected checkpoint. Conditional fees are itemized separately. These are route plans, not assertions about historical purchases or the player's current balance. Bench tolls outside these listed purchases are not included.
+Joseph wants the cash needed for upcoming purchases shown at checkpoints, rather than an assumed starting wallet or locked early earning plan. `data/route.json` now stores purchase lists per spending stop; the tracker shows the next such stop at or after the selected checkpoint. Conditional fees are itemized separately. These are route plans, not assertions about historical purchases or the player's current balance. Recommended bench tolls in the walkthrough belong in the purchase reminders; other unlisted bench tolls are not included.
 
 | Spending stop | Rosaries | Items / additional materials |
 |---|---:|---|
 | Lace 1 / Bone Bottom loop | **340** | Deep Docks Bellway 40 first, then Pebb shard 300. After paying the Bellway, farm to 710 before Pebb; this also reserves the later Mort / Greymoor budget. |
 | Far Fields / first Mort visit | **410** | Entry 30 + Belt 160 + pouch 220. Collect the planned Seamstress string (60) before Mort; retain 60 for Greymoor. |
 | Halfway Home / Greymoor | **60** | Greymoor Bellway. Mort’s spending belongs to the preceding Far Fields page. |
+| Shellwood / Cling Grip approach | **40** | Recommended bench immediately after the Shellwood arena, before the elevator. |
 | Widow / Bellhart | 60 | Bellhart Bellway 60; Needle Upgrade #1 is free |
 | Loddie / Forge Daughter | **340 minimum** | Two Loddie entries 50 + kit 180 + Magma Bell 110; +25 per retry and 1 Craftmetal. Loddie’s second reward is a 220-rosary necklace. |
 | Blasted Steps | 60 | Bellway |

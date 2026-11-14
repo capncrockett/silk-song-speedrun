@@ -447,7 +447,11 @@
               "pin": 478189
             }
           ],
-          "guideTitle": "Shellwood mask shard & Cling Grip"
+          "guideTitle": "Shellwood mask shard & Cling Grip",
+          "purchases": [
+            {"item": "Shellwood bench after the arena", "rosaries": 40}
+          ],
+          "shoppingNote": "40 rosaries for the recommended bench immediately after the Shellwood arena."
         },
         {
           "id": "widow-bench",
