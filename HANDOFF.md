@@ -40,6 +40,12 @@ Build the main view around this itinerary. The route is Hunter, all five bells, 
 
 ## Decisions and research
 
+### Later chapter boundary audit · November 13
+
+Joseph requested the same cleanup as the Mort/Far Fields correction throughout the remaining guide. Put the Whispering Vaults arena and ceiling shortcut at the end of Section 9, with G&Z Checkpoint 6; Section 10 starts back at Songclave for the shard, Pale Oil, Needle #2 / Dice trip and Trobbio. Remove the overview selector and Section 9 key association from that Section 10 step; keep the missing combined-map notice on Section 9.
+
+Section 10’s Trobbio step now ends with Claw Mirror and the lift approach. Section 11 starts with the lift shortcut, Whiteward / Injector Band and arrival at Twelfth Architect. Move the matching pins with those instructions and remove the Cauldron tab/key from Trobbio. Keep the relevant Moorwing aid and roof-duel screenshots. The other later purchase lists were already in their proper chapters; their costs stay unchanged. Move Forge Daughter’s supply reminder before buying the kit and Magma Bell. Preserve all 31 checkpoint IDs, historical titles, pickup records and map numbering.
+
 ### Pickup saves from stale tabs · November 13
 
 Joseph reported pickup checks not sticking. An isolated Playwright test reproduced a stale-tab failure: another tab’s save advances the revision, the pickup PUT receives 409, and the checkbox reverts. Ordinary save/reload persisted correctly. Pickup changes now reload the latest save on conflict and reapply only the clicked pickup IDs for the captured run, with at most two retries. Preserve other runs, splits, notes, and unrelated checks; leave the existing conflict protection for other edits. Failed saves show **Not saved** in the header as well as the drawer error. Verified with isolated Playwright: ordinary reload, stale-tab check and uncheck, preservation of other runs and splits, and a simulated failed write. Test only with a temporary copy of the save; never infer missing pickups from route progress or copy them between runs without a player report.
