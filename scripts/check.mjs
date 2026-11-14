@@ -72,9 +72,9 @@ for (const stop of stops) {
   }
 }
 const mortShopping = shoppingSummary(route, "drifters-cloak");
-assert.equal(mortShopping.stop.id, "halfway-home");
-assert.equal(mortShopping.minimum, 470, "Include Mort's first-entry fee, Belt, pouch and Greymoor Bellway.");
-assert.equal(mortShopping.maximum, 470, "The first Mort visit includes its 30-rosary entry.");
+assert.equal(mortShopping.stop.id, "drifters-cloak");
+assert.equal(mortShopping.minimum, 410, "Mort's entry, Belt and pouch belong to the Far Fields step.");
+assert.equal(mortShopping.maximum, 410, "Greymoor Bellway is a separate purchase on the next step.");
 assert.equal(shoppingSummary(route, "forge-daughter").minimum, 340, "Include two 25-rosary Loddie entries before the Forge Daughter purchases.");
 assert.equal(shoppingSummary(route, "lace-1").minimum, 340, "Protect the mask shard and Bellway budget.");
 assert.equal(shoppingSummary(route, "lace-1").maximum, 340, "The planned pickups cover Craftmetal; the Bone Bottom purchases are the mask shard and Bellway.");

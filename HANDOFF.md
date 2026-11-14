@@ -1,6 +1,6 @@
 # Pharloom Runbook — current handoff
 
-Updated November 13, 2026. The local app is implemented. Joseph reports starting **Run #3**. This file holds current route decisions, research alternatives, and open scout questions; [README.md](./README.md) covers use and maintenance. The [source archive](./docs/history.md) preserves older notes without serving as a second live handoff.
+Updated November 13, 2026. The local app is implemented. Joseph is currently on **Run #4**. This file holds current route decisions, research alternatives, and open scout questions; [README.md](./README.md) covers use and maintenance. The [source archive](./docs/history.md) preserves older notes without serving as a second live handoff.
 
 ## Working contract
 
@@ -15,6 +15,7 @@ Updated November 13, 2026. The local app is implemented. Joseph reports starting
 
 ## Current run
 
+- **Run #4, first Mort visit completed.** Joseph confirms Pilgrim’s Rest entry, Weighted Belt and Mort’s Tool Pouch are already done; the Belt and pouch are already checked in the active save. Place these directions and their 410-rosary spending reminder at the end of Section 4, Far Fields. Section 5 starts at Halfway Home with only the 60-rosary Greymoor Bellway reminder. This report does not confirm the Greymoor Bellway purchase.
 - **Run #2 finished at 5:26:16**, with Grand Mother Silk defeated on the **sixth attempt**. Preserve second precision. The official finish is 26:16 beyond the five-hour cutoff and retains all idle time and detours. The earlier 5:06 Marrow restock/Mask endpoint and 4:57 Lace 2 clear are unchanged. This is the completed timed file; the scout’s earlier GMS clear remains a separate result.
 - **Lace 2 was the bigger bottleneck for this player.** The winning blue tools were Injector Band and Claw Mirror. The yellow tools were Weighted Belt and Magnetite Dice. Belt felt useful. The approach was to wait for Lace, punish her recovery, and preserve Silk for Bind. The user found Straight Pin openings but did not rely on the red tools and reported no Cogfly use for the win. Treat the exact attempt count and which attempts used pins as unreported.
 - **The 4:20–4:57 interval includes travel.** The user detoured to eastern Greymoor, picked up spool 478263, and went to Pilgrim's Rest for Weighted Belt. Craw Lake balloons were present on that late file with the arena uncleared. Keep this as one verified spool pickup. It is not evidence for the earlier movement kit or the Thread Storm branch.
@@ -91,7 +92,7 @@ Learning Swift Step sets the save/respawn point at the Weaver spire at the top o
 
 ### Opening section boundaries · clarified November 11
 
-**Greymoor map scope · November 13:** Mort, Halfway Home & G&Z uses only the Greymoor map, with no map-selector row. Keep the Far Fields image and its map key on the preceding Drifter’s Cloak step. The separate Moorwing aid screenshot remains available on the Moorwing step.
+**Greymoor map scope · November 13:** Halfway Home & G&Z uses only the Greymoor map, with no map-selector row. Mort’s directions, link and purchase list belong to the end of the preceding Far Fields step. Keep the Far Fields image and its map key on the preceding Drifter’s Cloak step. The separate Moorwing aid screenshot remains available on the Moorwing step.
 
 The first three chapters each use their own map. Chapter 1 covers Silkspear, Bell Beast and the Marrow bell. Chapter 2 uses only the Deep Docks map for Straight Pin, Marrow Craftmetal, Swift Step, Lace 1 and the Deep Docks bell. Chapter 3 uses only the Bone Bottom/Wormways map for the loop after Lace 1.
 
@@ -167,7 +168,8 @@ Joseph wants the cash needed for upcoming purchases shown at checkpoints, rather
 | Spending stop | Rosaries | Items / additional materials |
 |---|---:|---|
 | Lace 1 / Bone Bottom loop | **340** | Deep Docks Bellway 40 first, then Pebb shard 300. After paying the Bellway, farm to 710 before Pebb; this also reserves the later Mort / Greymoor budget. |
-| First Halfway Home / Greymoor pass | **470** | First entry 30 + Belt 160 + pouch 220 + Greymoor Bellway 60. The planned Seamstress string supplies 60, completing the 410 reserved after Pebb. |
+| Far Fields / first Mort visit | **410** | Entry 30 + Belt 160 + pouch 220. Collect the planned Seamstress string (60) before Mort; retain 60 for Greymoor. |
+| Halfway Home / Greymoor | **60** | Greymoor Bellway. Mort’s spending belongs to the preceding Far Fields page. |
 | Widow / Bellhart | 60 | Bellhart Bellway 60; Needle Upgrade #1 is free |
 | Loddie / Forge Daughter | **340 minimum** | Two Loddie entries 50 + kit 180 + Magma Bell 110; +25 per retry and 1 Craftmetal. Loddie’s second reward is a 220-rosary necklace. |
 | Blasted Steps | 60 | Bellway |
