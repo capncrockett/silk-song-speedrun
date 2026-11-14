@@ -1,6 +1,6 @@
 # Pharloom Runbook — current handoff
 
-Updated November 13, 2026. The local app is implemented. Joseph is currently on **Run #4**. This file holds current route decisions, research alternatives, and open scout questions; [README.md](./README.md) covers use and maintenance. The [source archive](./docs/history.md) preserves older notes without serving as a second live handoff.
+Updated November 14, 2026. The local app is implemented. Joseph is currently on **Run #4**. This file holds current route decisions, research alternatives, and open scout questions; [README.md](./README.md) covers use and maintenance. The [source archive](./docs/history.md) preserves older notes without serving as a second live handoff.
 
 ## Working contract
 
@@ -40,6 +40,12 @@ Build the main view around this itinerary. The route is Hunter, all five bells, 
 [Original Garmond Route](https://steamcommunity.com/sharedfiles/filedetails/?id=3577460696) · [Recovered maps and credits](./docs/map-credits.md) · [Roof gate](https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=480502) · [Forum aid](https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=481022)
 
 ## Decisions and research
+
+### Widow picture link and inline pickup checks · November 14
+
+Joseph finds Widow the first substantial boss challenge on this run and wants the G&Z guide’s helpful fight picture close to the tips. Add a quick guide link beside the Widow fight-advice instruction, with a text fragment for Checkpoint 4: Widow. Keep the selected unmarked Shellwood map.
+
+Place checkboxes directly beside pickup names at their actual collection instructions, using the existing drawer IDs and selected run’s `prep`. Drawer and inline changes use the same conflict-safe save and update each other; preserve category completion, counts, historical checks and keyboard focus. Include optional Mask/restock checks within the optional detour. A melody checkbox belongs at learning the melody rather than collecting its cylinder. No new pickup IDs or inferred collections. The `guidePickups` and `guideLinks` instruction numbers must follow moved or combined directions.
 
 ### Combined Widow setup, fight and timing · November 13
 

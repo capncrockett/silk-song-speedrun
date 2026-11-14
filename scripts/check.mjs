@@ -55,6 +55,35 @@ assert.deepEqual(activeSpools.flatMap((group) => group.items.map((item) => item.
 assert.ok(route.preparations.some((group) => group.archived && group.items.some((item) => item.id === "spool-core")),
   "Keep the old lower Core pickup ID available to historical records.");
 
+const inlinePickupIds = [];
+const activePickupIds = route.preparations.filter((group) => !group.archived)
+  .flatMap((group) => group.items.map((item) => item.id));
+function checkGuideAnnotations(instructions, pickups = [], references = []) {
+  for (const item of pickups) {
+    assert.ok(Number.isInteger(item.instruction) && item.instruction >= 1 && item.instruction <= instructions.length);
+    assert.ok(activePickupIds.includes(item.id), "Inline checkboxes must use active drawer pickup IDs.");
+    assert.ok(item.text && instructions[item.instruction - 1].split(item.text).length === 2,
+      "Each inline checkbox must match one unambiguous item name.");
+    inlinePickupIds.push(item.id);
+  }
+  for (const reference of references) {
+    assert.ok(Number.isInteger(reference.instruction) && reference.instruction >= 1 && reference.instruction <= instructions.length);
+    assert.ok(reference.title && /^https:\/\//.test(reference.url));
+  }
+}
+for (const stop of stops) {
+  checkGuideAnnotations(stop.guide, stop.guidePickups, stop.guideLinks);
+  if (stop.optionalDetour) checkGuideAnnotations(stop.optionalDetour.steps, stop.optionalDetour.guidePickups, stop.optionalDetour.guideLinks);
+}
+assert.deepEqual([...inlinePickupIds].sort(), [...activePickupIds].sort(),
+  "Every active drawer pickup gets one checkbox at its actual guide collection point.");
+const widowGuide = guideStops.find((stop) => stop.id === "widow");
+assert.equal(widowGuide.guideLinks[0].instruction, 3, "The Widow link stays beside the fight tips after combining the bench setup.");
+assert.equal(widowGuide.guidePickups.find((item) => item.id === "ability-needolin").instruction, 4);
+const melodyGuide = stops.find((stop) => stop.id === "vaultkeeper");
+assert.equal(melodyGuide.guidePickups.find((item) => item.id === "melody-vaultkeeper").instruction, 7,
+  "Check the melody only when it is learned, not when its cylinder is found.");
+
 const categoryIds = new Set((route.pickupCategories ?? []).map((category) => category.id));
 assert.equal(categoryIds.size, (route.pickupCategories ?? []).length, "Pickup category IDs must be unique.");
 for (const group of route.preparations) {

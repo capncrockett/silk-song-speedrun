@@ -70,7 +70,7 @@ function setSaving(value) {
   byId("run-select").disabled = value;
   byId("new-run").disabled = value;
   byId("save-indicator").textContent = value ? "Saving…" : "Local runbook";
-  for (const control of document.querySelectorAll("[data-write], [data-prep], [data-prep-group], #split-form input, #split-form select, #split-form textarea, #run-notes, #new-run-name")) {
+  for (const control of document.querySelectorAll("[data-write], [data-prep], [data-prep-group], [data-guide-pickup], #split-form input, #split-form select, #split-form textarea, #run-notes, #new-run-name")) {
     control.disabled = value;
   }
 }
@@ -277,6 +277,60 @@ function renderGuideMap() {
   byId("open-current-map").setAttribute("aria-label", `Enlarge ${image.title}`);
 }
 
+function renderGuideInstructions(containerId, instructions, pickups = [], references = []) {
+  const picked = new Set(selectedRun().prep);
+  const metadata = new Map(pickupCategories(state.route, selectedRun().prep).flatMap((category) =>
+    category.items.map((item) => [item.id, { ...item, categoryId: category.id }])
+  ));
+  const statusId = containerId === "detour-steps" ? "detour-pickup-status" : "guide-pickup-status";
+  byId(containerId).replaceChildren(...instructions.map((text, index) => {
+    const row = node("li");
+    const annotations = pickups.filter((item) => item.instruction === index + 1)
+      .map((item) => ({ ...item, start: text.indexOf(item.text) }))
+      .filter((item) => item.start >= 0 && metadata.has(item.id))
+      .sort((a, b) => a.start - b.start);
+    let offset = 0;
+    for (const annotation of annotations) {
+      if (annotation.start < offset) continue;
+      row.append(document.createTextNode(text.slice(offset, annotation.start)));
+      const item = metadata.get(annotation.id);
+      const label = node("label", "guide-pickup");
+      label.classList.toggle("is-collected", picked.has(item.id));
+      const input = node("input");
+      input.type = "checkbox";
+      input.checked = picked.has(item.id);
+      input.disabled = state.saving;
+      input.dataset.guidePickup = item.id;
+      input.setAttribute("aria-label", `Mark ${item.title} collected`);
+      input.setAttribute("aria-describedby", "prep-run");
+      input.title = item.detail;
+      input.addEventListener("change", () =>
+        savePickups([item.id], input.checked, item.categoryId, item.id, statusId)
+      );
+      label.append(input, node("span", "", annotation.text));
+      row.append(label);
+      offset = annotation.start + annotation.text.length;
+    }
+    row.append(document.createTextNode(text.slice(offset)));
+    for (const reference of references.filter((item) => item.instruction === index + 1)) {
+      const line = node("p", "guide-reference");
+      line.append(link(reference.title, reference.url, "subtle-link"));
+      row.append(line);
+    }
+    return row;
+  }));
+  status(statusId, "");
+}
+
+function syncGuidePickups() {
+  const picked = new Set(selectedRun().prep);
+  for (const input of document.querySelectorAll("[data-guide-pickup]")) {
+    input.checked = picked.has(input.dataset.guidePickup);
+    input.disabled = state.saving;
+    input.closest("label").classList.toggle("is-collected", input.checked);
+  }
+}
+
 function renderEditor() {
   const run = selectedRun();
   const stop = guideStopById(state.checkpoint) ?? stopById(state.checkpoint);
@@ -292,7 +346,7 @@ function renderEditor() {
   byId("next-step").disabled = index < 0 || index === state.guideStops.length - 1;
   const nextStop = state.guideStops[index + 1];
   byId("guide-next-label").textContent = stop && nextStop ? `Up next · ${stepTitle(nextStop)}` : stop ? "The end of your route." : "This step belongs to an earlier route version.";
-  byId("guide-directions").replaceChildren(...(stop?.guide ?? ["This historical split is preserved in the run log."]).map((text) => node("li", "", text)));
+  renderGuideInstructions("guide-directions", stop?.guide ?? ["This historical split is preserved in the run log."], stop?.guidePickups, stop?.guideLinks);
   byId("entry-links").replaceChildren(...links(stop?.links));
   const maps = (stop?.maps ?? section?.maps ?? []).map((id) => state.maps.images.find((image) => image.id === id));
   if (state.activeSection !== section?.id || !maps.some((image) => image.id === state.activeMap)) state.activeMap = maps[0]?.id ?? null;
@@ -315,7 +369,7 @@ function renderEditor() {
   byId("optional-detour").hidden = !detour;
   byId("detour-title").textContent = detour?.title ?? "";
   byId("detour-detail").textContent = detour?.detail ?? "";
-  byId("detour-steps").replaceChildren(...(detour?.steps ?? []).map((text) => node("li", "", text)));
+  renderGuideInstructions("detour-steps", detour?.steps ?? [], detour?.guidePickups, detour?.guideLinks);
   byId("detour-links").replaceChildren(...links(detour?.links));
   renderShopping();
   const comparison = byId("split-comparison");
@@ -460,7 +514,7 @@ function renderHistory() {
   if (!history.length) list.append(node("li", "", "No splits recorded yet."));
 }
 
-async function savePickups(ids, checked, categoryId, itemId) {
+async function savePickups(ids, checked, categoryId, itemId, statusId = "prep-status") {
   if (state.saving) return;
   const runId = state.runId;
   const applyPickups = (data) => {
@@ -470,8 +524,11 @@ async function savePickups(ids, checked, categoryId, itemId) {
     return data;
   };
   const data = applyPickups(structuredClone(state.data));
-  await save(data, "prep-status", "Pickup checklist saved.", applyPickups);
+  await save(data, statusId, "Pickup checklist saved.", applyPickups);
   renderPrep();
+  if (statusId !== "prep-status" && !byId("prep-drawer").open) {
+    document.querySelector(`[data-guide-pickup="${itemId}"]`)?.focus({ preventScroll: true });
+  }
   if (!byId("prep-drawer").open || byId("prep-drawer").dataset.closing) return;
   const grid = byId("prep-grid");
   const category = grid.querySelector(`[data-prep-category="${categoryId}"]`);
@@ -573,6 +630,7 @@ function renderPrep(reset = false) {
     card.append(checkbox, details);
     grid.append(card);
   }
+  syncGuidePickups();
 }
 
 function selectRun(id) {

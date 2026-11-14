@@ -96,6 +96,12 @@ details[open] > summary::after { transform: rotate(180deg); }
 .directions ol { list-style: none; counter-reset: direction; padding: 0; margin: 0; display: grid; gap: 1rem; }
 .directions li { counter-increment: direction; position: relative; padding-left: 2.5rem; color: #d4d4cb; font-size: .95rem; line-height: 1.85; max-width: 78ch; }
 .directions li::before { content: counter(direction, decimal-leading-zero); position: absolute; left: 0; top: .08rem; color: var(--accent); font: .72rem/2 "SFMono-Regular", Consolas, monospace; }
+.guide-pickup { display: inline-flex; align-items: baseline; gap: .35em; padding-block: .05em; margin: 0; color: inherit; font: inherit; cursor: pointer; vertical-align: baseline; }
+.guide-pickup input { flex: 0 0 auto; align-self: center; width: 18px; height: 18px; min-height: 0; margin: 0; padding: 0; accent-color: var(--green); }
+.guide-pickup.is-collected { color: var(--green); }
+.guide-reference { margin-top: .2rem; font-size: .8rem; line-height: 1.6; }
+.guide-reference a { display: inline-block; min-height: 32px; padding-block: .3rem; }
+.guide-pickup-status:empty { display: none; }
 .links { display: flex; flex-wrap: wrap; gap: .45rem; margin-top: 1.3rem; }
 .links:empty { display: none; }
 .links a { display: inline-flex; align-items: center; gap: .4rem; min-height: 33px; padding: .3rem .65rem; border: 1px solid #eca38c29; border-radius: 4px; color: var(--accent); font-size: .7rem; text-decoration: none; line-height: 1.5; }

@@ -35,6 +35,17 @@ export function listRecordingStops(route) {
   return listStops(route).filter((stop) => stop.recordSplit !== false);
 }
 
+function mergeGuideAnnotations(members, field) {
+  let offset = 0;
+  return members.flatMap((stop) => {
+    const annotations = (stop[field] ?? []).map((item) => ({
+      ...item, instruction: item.instruction + offset
+    }));
+    offset += stop.guide.length;
+    return annotations;
+  });
+}
+
 export function listGuideStops(route) {
   const stops = listStops(route);
   const groups = new Map();
@@ -57,6 +68,8 @@ export function listGuideStops(route) {
       ...primary,
       checkpointIds,
       guide: members.flatMap((stop) => stop.guide),
+      guidePickups: mergeGuideAnnotations(members, "guidePickups"),
+      guideLinks: mergeGuideAnnotations(members, "guideLinks"),
       maps: [...new Set(members.flatMap((stop) => stop.maps ??
         route.sections.find((section) => section.id === stop.sectionId).maps))],
       links: members.flatMap((stop) => stop.links ?? []),
