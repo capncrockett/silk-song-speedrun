@@ -91,6 +91,8 @@ Learning Swift Step sets the save/respawn point at the Weaver spire at the top o
 
 ### Opening section boundaries · clarified November 11
 
+**Greymoor map scope · November 13:** Mort, Halfway Home & G&Z uses only the Greymoor map, with no map-selector row. Keep the Far Fields image and its map key on the preceding Drifter’s Cloak step. The separate Moorwing aid screenshot remains available on the Moorwing step.
+
 The first three chapters each use their own map. Chapter 1 covers Silkspear, Bell Beast and the Marrow bell. Chapter 2 uses only the Deep Docks map for Straight Pin, Marrow Craftmetal, Swift Step, Lace 1 and the Deep Docks bell. Chapter 3 uses only the Bone Bottom/Wormways map for the loop after Lace 1.
 
 Remove the old cross-chapter map tabs and source-key associations from these steps. Guide subtitles follow those chapter boundaries. Show a single map directly, with no map-selector button row; selectors appear only when a step has multiple reference images. Preserve all 31 checkpoint IDs and historical split labels; the opening IDs still refer to their original split events. The Bone Bottom spending reminder remains 340 for Pebb's mask shard and Deep Docks Bellway.
