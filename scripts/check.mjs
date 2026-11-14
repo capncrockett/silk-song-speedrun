@@ -133,7 +133,7 @@ const mortShopping = shoppingSummary(route, "drifters-cloak");
 assert.equal(mortShopping.stop.id, "drifters-cloak");
 assert.equal(mortShopping.minimum, 410, "Mort's entry, Belt and pouch belong to the Far Fields step.");
 assert.equal(mortShopping.maximum, 410, "Greymoor Bellway is a separate purchase on the next step.");
-assert.equal(shoppingSummary(route, "forge-daughter").minimum, 340, "Include two 25-rosary Loddie entries before the Forge Daughter purchases.");
+assert.equal(shoppingSummary(route, "forge-daughter").minimum, 315, "Include only the first 25-rosary Loddie round before the Forge Daughter purchases.");
 assert.equal(shoppingSummary(route, "lace-1").minimum, 340, "Protect the mask shard and Bellway budget.");
 assert.equal(shoppingSummary(route, "lace-1").maximum, 340, "The planned pickups cover Craftmetal; the Bone Bottom purchases are the mask shard and Bellway.");
 assert.equal(shoppingSummary(route, "clawline").minimum, 450);

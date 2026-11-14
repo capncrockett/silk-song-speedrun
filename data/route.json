@@ -175,7 +175,7 @@
         "2 · Forge Daughter bench — buy the kit and Magma Bell."
       ],
       "detours": [
-        "1 · Loddie’s target practice — complete both rounds after Widow.",
+        "1 · Loddie’s target practice — first round only (15 targets) for the pouch; skip the second-round necklace.",
         "2 · Spool Fragment — take the burning-floor room and far-lever return; starts pair B.",
         "3 · Easy rosaries — ceiling pickup in the dark southwest of Forge Daughter; use if short on shop money."
       ],
@@ -556,7 +556,7 @@
       "mapNote": "The original Atla map covers Eva’s visit. Joseph’s annotated Bellhart → Deep Docks return map replaces the unavailable original return image.",
       "stops": [
         {"id": "atla", "guide": ["From Bone Bottom, drop into Moss Grotto, hug the right wall, and take the first right exit to Atla’s Needolin door.", "Use Needolin, power the lift, and visit Eva for Hunter’s first evolution. Skip G&Z Checkpoint 1 (Wanderer Crest).", "Climb the lift shaft’s right wall and take the right-hand passage. Climb the platforms to the upper-left ledge and collect the Rune Harp for the next Bellhart return.", "From the Rune Harp room, drop to the lower-right corner and break through the walls into the lava platforming room. Cross it to collect the mask shard.", "For the separate spool branch, climb the east wall from the lower area and go west to the first Marrowmaw.", "Take the higher passage, pass the second Marrowmaw, and drop to the fragment. No Moss Mothers fight or double-jump is needed.", "Collect the Atla fragment to complete pair A with Bone Bottom: +1 Silk capacity."], "maps": ["atla"], "title": "Weavenest Atla / Eva", "tip": "Enter Atla with Needolin, power the lift, and visit Eva. Take the lift shaft’s right passage for Rune Harp 478231, then the lower-right breakable-wall branch for the mask shard. Use the separate upper Marrowmaw route for spool 478230 to complete pair A. Sell the Harp to Scrounge for 210 rosaries on the Bellhart return.", "links": [{"title": "Eva", "pin": 478228}, {"title": "Atla Rune Harp", "pin": 478231}, {"title": "Atla mask shard", "pin": 478233}, {"title": "Atla spool", "pin": 478230}], "guidePickups": [{"instruction": 2, "id": "hunter-evolution", "text": "Hunter’s first evolution"}, {"instruction": 3, "id": "harp-atla", "text": "Rune Harp"}, {"instruction": 4, "id": "mask-atla", "text": "mask shard"}, {"instruction": 7, "id": "spool-atla", "text": "Atla fragment"}]},
-        {"id": "forge-daughter", "guideTitle": "Loddie, Forge Daughter & Bellway", "guide": ["Follow the supplied red route through the Marrow and take yellow Detour 1 (Loddie). Complete both rounds for the pouch and rosary necklace: 15 targets, then 25. Each attempt costs 25 rosaries; allow at least 50, plus 25 per retry.", "Continue along the red route with Cling Grip to white Checkpoint 1 (Deep Docks shard arena). Clear it and collect the mask shard.", "If short on shop money, consume Loddie’s necklace or take yellow Detour 3 (easy rosaries) southwest of Forge Daughter. Jump to reach the rosary pickup dangling from the ceiling in the dark, then return. Check the spending reminder before buying.", "At white Checkpoint 2 (Forge Daughter bench), buy the first Crafting Kit for 180 rosaries and Magma Bell for 110 plus the Marrow Craftmetal. Reserve the later Blasted Steps Craftmetal for Cogfly.", "Take yellow Detour 2 for the Deep Docks spool: use the shop’s southwest exit, descend the shaft, and take its first east exit. Cross the burning-floor room, hit the far lever, and return across the platforms. This starts pair B.", "Follow the green return line to the already-open Deep Docks Bellway and travel back to Bellhart."], "mapNote": "Joseph’s supplied return map: red approaches from Bellhart, white 1 marks the mask shard, white 2 marks Forge Daughter, and yellow 1–3 mark Loddie, the spool and easy rosaries. Follow green back to Deep Docks Bellway.", "maps": ["bellhart-deep-docks-return"], "title": "Forge Daughter bench", "tip": "Take yellow Detour 1 for both Loddie rewards, then red to the mask-shard arena (white 1) and Forge Daughter (white 2). Use yellow Detour 3 for rosaries if short. Buy the kit and Magma Bell, take Detour 2 for spool 477926, then follow green to Deep Docks Bellway for Bellhart.", "links": [{"title": "Loddie", "pin": 478251}, {"title": "Deep Docks shard", "pin": 477901}, {"title": "Forge Daughter", "pin": 476912}, {"title": "Nearby rosaries", "pin": 477921}, {"title": "Deep Docks spool", "pin": 477926}], "purchases": [{"item": "Loddie: two target-practice entries", "rosaries": 50}, {"item": "Forge Daughter's Crafting Kit", "rosaries": 180}, {"item": "Magma Bell", "rosaries": 110, "materials": "1 Craftmetal"}], "shoppingNote": "The two Loddie entries cost at least 50 rosaries, plus 25 per retry. The second reward is a 220-rosary necklace you can consume after earning it. Kit and Magma Bell purchases total another 290 rosaries and one Craftmetal; reserve the later Blasted Steps Craftmetal for Cogfly.", "guidePickups": [{"instruction": 1, "id": "pouch-loddie", "text": "pouch"}, {"instruction": 1, "id": "necklace-loddie", "text": "rosary necklace"}, {"instruction": 2, "id": "mask-deep-docks", "text": "mask shard"}, {"instruction": 4, "id": "kit-forge", "text": "first Crafting Kit"}, {"instruction": 4, "id": "tool-magma-bell", "text": "Magma Bell"}, {"instruction": 5, "id": "spool-deep-docks", "text": "Deep Docks spool"}]}
+        {"id": "forge-daughter", "guideTitle": "Loddie, Forge Daughter & Bellway", "guide": ["Follow the supplied red route through the Marrow and take yellow Detour 1 (Loddie). Complete the first round, hitting 15 targets, for the pouch. Entry costs 25 rosaries, plus 25 per retry. Skip the second round and its necklace.", "Continue along the red route with Cling Grip to white Checkpoint 1 (Deep Docks shard arena). Clear it and collect the mask shard.", "If short on shop money, take yellow Detour 3 (easy rosaries) southwest of Forge Daughter. Jump to reach the rosary pickup dangling from the ceiling in the dark, then return. Check the spending reminder before buying.", "At white Checkpoint 2 (Forge Daughter bench), buy the first Crafting Kit for 180 rosaries and Magma Bell for 110 plus the Marrow Craftmetal. Reserve the later Blasted Steps Craftmetal for Cogfly.", "Take yellow Detour 2 for the Deep Docks spool: use the shop’s southwest exit, descend the shaft, and take its first east exit. Cross the burning-floor room, hit the far lever, and return across the platforms. This starts pair B.", "Follow the green return line to the already-open Deep Docks Bellway and travel back to Bellhart."], "mapNote": "Joseph’s supplied return map: red approaches from Bellhart, white 1 marks the mask shard, white 2 marks Forge Daughter, and yellow 1–3 mark Loddie, the spool and easy rosaries. Follow green back to Deep Docks Bellway.", "maps": ["bellhart-deep-docks-return"], "title": "Forge Daughter bench", "tip": "Take yellow Detour 1 for Loddie’s first-round pouch only, then red to the mask-shard arena (white 1) and Forge Daughter (white 2). Use yellow Detour 3 for rosaries if short. Buy the kit and Magma Bell, take Detour 2 for spool 477926, then follow green to Deep Docks Bellway for Bellhart.", "links": [{"title": "Loddie", "pin": 478251}, {"title": "Deep Docks shard", "pin": 477901}, {"title": "Forge Daughter", "pin": 476912}, {"title": "Nearby rosaries", "pin": 477921}, {"title": "Deep Docks spool", "pin": 477926}], "purchases": [{"item": "Loddie: first target-practice entry", "rosaries": 25}, {"item": "Forge Daughter's Crafting Kit", "rosaries": 180}, {"item": "Magma Bell", "rosaries": 110, "materials": "1 Craftmetal"}], "shoppingNote": "One Loddie entry costs 25 rosaries, plus 25 per retry. Skip the second round. Kit and Magma Bell cost another 290 rosaries and one Craftmetal; reserve the later Blasted Steps Craftmetal for Cogfly.", "guidePickups": [{"instruction": 1, "id": "pouch-loddie", "text": "pouch"}, {"instruction": 2, "id": "mask-deep-docks", "text": "mask shard"}, {"instruction": 4, "id": "kit-forge", "text": "first Crafting Kit"}, {"instruction": 4, "id": "tool-magma-bell", "text": "Magma Bell"}, {"instruction": 5, "id": "spool-deep-docks", "text": "Deep Docks spool"}]}
       ]
     },
     {
@@ -1045,12 +1045,6 @@
           "pin": 478231
         },
         {
-          "id": "necklace-loddie",
-          "title": "Loddie’s Heavy Rosary Necklace",
-          "detail": "Second target-practice reward after Widow",
-          "pin": 479326
-        },
-        {
           "id": "locket-blasted",
           "title": "Blasted Steps locket",
           "detail": "Narrow platform above the sand before Judge",
@@ -1100,7 +1094,7 @@
     {
       "id": "earlier-pickups",
       "title": "Earlier pickup record",
-      "detail": "Preserves previously checked pickups from earlier route versions. These are outside the current six-fragment plan.",
+      "detail": "Preserves previously checked pickups from earlier route versions. These are outside the current timed plan.",
       "complete": "Recorded",
       "archived": true,
       "items": [
@@ -1109,6 +1103,12 @@
           "title": "Lower Cogwork Core",
           "detail": "Earlier candidate; omitted from the final six-fragment route",
           "pin": 478618
+        },
+        {
+          "id": "necklace-loddie",
+          "title": "Loddie’s Heavy Rosary Necklace",
+          "detail": "Earlier second-round target-practice reward; skipped on the current timed route",
+          "pin": 479326
         }
       ]
     }
@@ -1119,6 +1119,6 @@
     {"id": "kit", "status": "Settled", "title": "Buy the second Crafting Kit", "detail": "Joseph reports that earning rosaries in the Citadel is straightforward. Buy Twelfth Architect's kit for 450 after Clawline and skip Crawbug Clearing and the 25-Ragpelt farm.", "links": [{"title": "Twelfth Architect kit", "pin": 478728}]},
     {"id": "mirror", "status": "Optional at Lace 2", "title": "Fractured Mask late-game option", "detail": "Optional at Lace 2 when time allows. Scout GMS clear used Fractured Mask with Mirror off. On Run #2, the Forge Daughter restock (10 shard bundles) and Mask trip ended at Marrow bench at 5:06 and was reported as about 10 minutes; Cogfly, Straight Pin, and Mirror were used. For the planned Core return, rest at 478428 before leaving and nowhere else, then quit-return to equip Mask. Keep Mirror if skipping.", "links": [{"title": "Cogwork Core return bench", "pin": 478428}, {"title": "Fractured Mask", "pin": 478607}]},
     {"id": "thread", "status": "Decided to skip", "title": "Thread Storm and Craw Lake", "detail": "A documented route takes Thread Storm after Clawline and Faydown Cloak without clearing the arena. The earlier Halfway Home route is verified for Bell #3, and the late spool pickup is separate evidence. Keep Thread Storm skipped for this route.", "links": [{"title": "Late bypass", "url": "https://speedpastes.org/kXQvcbMl"}, {"title": "Thread Storm pin", "pin": 478061}]},
-    {"id": "budget", "status": "Route reminders", "title": "Show upcoming purchase costs", "detail": "Checkpoint shopping reminders show the next planned spending stop, item costs, conditional tolls, and materials. Joseph is unsure the early budget will cover everything; the reminders do not assume a wallet balance. Lockets only need to fill Hunter, and both files reportedly have one spare Craftmetal.", "links": [{"title": "Mort", "pin": 477946}, {"title": "Loddie", "pin": 478251}]}
+    {"id": "budget", "status": "Route reminders", "title": "Show upcoming purchase costs", "detail": "Checkpoint shopping reminders show planned spending, conditional tolls and materials without assuming a wallet balance. Post-Widow Scrounge sales and pickups cover the loop by Joseph’s report; keep Loddie to the first-round pouch only. Lockets only need to fill Hunter, and both files reportedly have one spare Craftmetal.", "links": [{"title": "Mort", "pin": 477946}, {"title": "Loddie", "pin": 478251}]}
   ]
 }
