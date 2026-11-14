@@ -31,6 +31,38 @@ export function listStops(route) {
   );
 }
 
+export function listGuideStops(route) {
+  const stops = listStops(route);
+  const groups = new Map();
+  for (const stop of stops) {
+    const id = stop.guideStep ?? stop.id;
+    if (!groups.has(id)) groups.set(id, []);
+    groups.get(id).push(stop);
+  }
+  return [...groups].map(([id, members]) => {
+    const primary = members.find((stop) => stop.id === id);
+    const first = stops.indexOf(members[0]);
+    if (!primary || members.some((stop, index) =>
+      stop.sectionId !== primary.sectionId || stops[first + index]?.id !== stop.id
+    ) || primary !== members.at(-1)) {
+      throw new Error("A combined guide page must end at its checkpoint and stay within one consecutive section.");
+    }
+    const checkpointIds = members.map((stop) => stop.id);
+    if (members.length === 1) return { ...primary, checkpointIds };
+    return {
+      ...primary,
+      checkpointIds,
+      guide: members.flatMap((stop) => stop.guide),
+      maps: [...new Set(members.flatMap((stop) => stop.maps ??
+        route.sections.find((section) => section.id === stop.sectionId).maps))],
+      links: members.flatMap((stop) => stop.links ?? []),
+      purchases: members.flatMap((stop) => stop.purchases ?? []),
+      shoppingNote: members.find((stop) => stop.purchases?.length)?.shoppingNote,
+      tip: members.map((stop) => stop.tip).filter(Boolean).join(" ")
+    };
+  });
+}
+
 export function pickupCategories(route, picked = []) {
   const collected = new Set(picked);
   const categories = new Map();

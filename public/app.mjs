@@ -1,4 +1,4 @@
-import { changePickups, formatTime, listStops, parseTime, pickupCategories, runSummary, shoppingSummary } from "/model.mjs";
+import { changePickups, formatTime, listGuideStops, listStops, parseTime, pickupCategories, runSummary, shoppingSummary } from "/model.mjs";
 
 const byId = (id) => document.getElementById(id);
 const state = {
@@ -10,6 +10,7 @@ const state = {
   activeMap: null,
   activeSection: null,
   stops: [],
+  guideStops: [],
   saving: false
 };
 function node(tag, className, text) {
@@ -41,6 +42,10 @@ function selectedRun(data = state.data) {
 
 function stopById(id) {
   return state.stops.find((stop) => stop.id === id);
+}
+
+function guideStopById(id) {
+  return state.guideStops.find((stop) => stop.checkpointIds.includes(id));
 }
 
 function splitLabel(split) {
@@ -215,8 +220,9 @@ function stepTitle(stop) {
 
 function renderGuideMapKeys(image) {
   const container = byId("guide-map-keys");
+  const checkpointIds = guideStopById(state.checkpoint)?.checkpointIds ?? [state.checkpoint];
   const sections = (state.route.guideSections ?? []).filter((section) =>
-    section.steps.includes(state.checkpoint) && section.maps.includes(image?.id)
+    section.steps.some((id) => checkpointIds.includes(id)) && section.maps.includes(image?.id)
   );
   container.hidden = sections.length === 0;
   container.replaceChildren(...sections.map((section) => {
@@ -242,7 +248,7 @@ function renderGuideMapKeys(image) {
 function renderGuideMap() {
   const image = state.maps.images.find((image) => image.id === state.activeMap);
   byId("guide-map-panel").hidden = !image;
-  const stop = stopById(state.checkpoint);
+  const stop = guideStopById(state.checkpoint) ?? stopById(state.checkpoint);
   const section = state.route.sections.find((item) => item.id === stop?.sectionId);
   const gap = stop?.mapNote ?? section?.mapNote ?? (image?.id === "overview" ? "The detailed area map is still missing. Use the written directions and map pins here; the overview shows the broader route." : "");
   byId("guide-map-gap").hidden = !gap;
@@ -273,18 +279,18 @@ function renderGuideMap() {
 
 function renderEditor() {
   const run = selectedRun();
-  const stop = stopById(state.checkpoint);
+  const stop = guideStopById(state.checkpoint) ?? stopById(state.checkpoint);
   const saved = run.splits.find((split) => split.checkpoint === state.checkpoint);
   const section = state.route.sections.find((section) => section.id === stop?.sectionId);
-  const index = state.stops.findIndex((stop) => stop.id === state.checkpoint);
+  const index = state.guideStops.findIndex((item) => item.id === stop?.id);
   byId("checkpoint-select").value = state.checkpoint;
   byId("entry-kicker").textContent = section ? `Garmond guide · section ${section.guideNumber}${section.visit ? " · " + section.visit : ""}` : "Historical step";
   byId("entry-title").textContent = section?.title ?? (saved ? splitLabel(saved) : "Choose a route step");
   byId("entry-step-title").textContent = stop ? stepTitle(stop) : "";
-  byId("guide-position").textContent = stop ? `Step ${index + 1} of ${state.stops.length}` : "Earlier route";
+  byId("guide-position").textContent = index >= 0 ? `Step ${index + 1} of ${state.guideStops.length}` : "Earlier route";
   byId("previous-step").disabled = index <= 0;
-  byId("next-step").disabled = index < 0 || index === state.stops.length - 1;
-  const nextStop = state.stops[index + 1];
+  byId("next-step").disabled = index < 0 || index === state.guideStops.length - 1;
+  const nextStop = state.guideStops[index + 1];
   byId("guide-next-label").textContent = stop && nextStop ? `Up next · ${stepTitle(nextStop)}` : stop ? "The end of your route." : "This step belongs to an earlier route version.";
   byId("guide-directions").replaceChildren(...(stop?.guide ?? ["This historical split is preserved in the run log."]).map((text) => node("li", "", text)));
   byId("entry-links").replaceChildren(...links(stop?.links));
@@ -329,7 +335,8 @@ function renderEditor() {
 }
 
 function renderShopping() {
-  const summary = shoppingSummary(state.route, state.checkpoint);
+  const firstCheckpoint = guideStopById(state.checkpoint)?.checkpointIds[0] ?? state.checkpoint;
+  const summary = shoppingSummary(state.route, firstCheckpoint);
   byId("shopping-reminder").hidden = !summary;
   if (!summary) return;
   const { stop, minimum, maximum } = summary;
@@ -356,7 +363,7 @@ function renderSectionNavigation() {
   const groups = new Map();
   for (const section of state.route.sections) {
     if (!groups.has(section.guideNumber)) groups.set(section.guideNumber, { title: section.title, steps: [] });
-    groups.get(section.guideNumber).steps.push(...section.stops.map((stop) => ({ stop, visit: section.visit })));
+    groups.get(section.guideNumber).steps.push(...state.guideStops.filter((stop) => stop.sectionId === section.id).map((stop) => ({ stop, visit: section.visit })));
   }
   const rows = [];
   for (const [number, group] of groups) {
@@ -382,7 +389,7 @@ function renderSectionNavigation() {
         const button = node("button", "section-step", visit ? visit + " · " + stepTitle(stop) : stepTitle(stop));
         button.type = "button";
         button.dataset.checkpoint = stop.id;
-        if (stop.id === state.checkpoint) button.setAttribute("aria-current", "step");
+        if (stop.checkpointIds.includes(state.checkpoint)) button.setAttribute("aria-current", "step");
         button.addEventListener("click", () => chooseCheckpoint(stop.id, true));
         const row = node("li");
         row.append(button);
@@ -575,7 +582,7 @@ function selectRun(id) {
   if (!stopById(state.checkpoint) && !run.splits.some((split) => split.checkpoint === state.checkpoint)) {
     let remembered;
     try { remembered = localStorage.getItem("pharloom-guide-step"); } catch { /* Start at the beginning. */ }
-    state.checkpoint = stopById(remembered)?.id ?? state.stops[0].id;
+    state.checkpoint = guideStopById(remembered)?.id ?? state.guideStops[0].id;
   }
   try { localStorage.setItem("pharloom-run", id); } catch { /* Selection is optional browser state. */ }
   for (const id of ["split-status", "notes-status", "prep-status"]) status(id, "");
@@ -726,8 +733,9 @@ function bindEvents() {
   });
   for (const [id, delta] of [["previous-step", -1], ["next-step", 1]]) {
     byId(id).addEventListener("click", () => {
-      const index = state.stops.findIndex((stop) => stop.id === state.checkpoint);
-      const next = state.stops[index + delta];
+      const current = guideStopById(state.checkpoint);
+      const index = state.guideStops.findIndex((stop) => stop.id === current?.id);
+      const next = state.guideStops[index + delta];
       if (index >= 0 && next) chooseCheckpoint(next.id, true);
     });
   }
@@ -785,7 +793,7 @@ function bindEvents() {
     if (await save(data, "new-run-status", "Run created.")) {
       dialog.close();
       selectRun(run.id);
-      chooseCheckpoint(state.stops[0].id, true);
+      chooseCheckpoint(state.guideStops[0].id, true);
     }
   });
 
@@ -805,6 +813,7 @@ async function start() {
   try {
     [state.route, state.data, state.maps] = await Promise.all([getJson("/api/route"), getJson("/api/runs"), getJson("/api/maps")]);
     state.stops = listStops(state.route);
+    state.guideStops = listGuideStops(state.route);
     // Freeze the recorded label on the next save, before future route edits.
     for (const run of state.data.runs) {
       for (const split of run.splits) split.label ??= stopById(split.checkpoint)?.title ?? split.checkpoint;

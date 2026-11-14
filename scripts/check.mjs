@@ -1,7 +1,7 @@
 import assert from "node:assert/strict";
 import { access, readFile } from "node:fs/promises";
 import { createHash } from "node:crypto";
-import { changePickups, formatTime, listStops, parseTime, pickupCategories, runSummary, shoppingSummary, validateRunData } from "../public/model.mjs";
+import { changePickups, formatTime, listGuideStops, listStops, parseTime, pickupCategories, runSummary, shoppingSummary, validateRunData } from "../public/model.mjs";
 
 const root = new URL("../", import.meta.url);
 const readJson = async (path) => JSON.parse(await readFile(new URL(path, root), "utf8"));
@@ -13,6 +13,19 @@ const stops = listStops(route);
 assert.ok(stops.length > 0, "The route needs checkpoints.");
 assert.equal(new Set(stops.map(({ id }) => id)).size, stops.length, "Checkpoint IDs must be unique.");
 assert.equal(stops.at(-1).id, route.finishCheckpoint, "The finish must be the last route checkpoint.");
+const guideStops = listGuideStops(route);
+assert.equal(stops.length, 31, "Keep all original timing checkpoints.");
+assert.equal(guideStops.length, 30, "Halfway Home and Moorwing share one reading page.");
+const greymoorGuide = guideStops[4];
+assert.equal(greymoorGuide.id, "moorwing", "The combined page records its final checkpoint by default.");
+assert.deepEqual(greymoorGuide.checkpointIds, ["halfway-home", "moorwing"]);
+assert.equal(guideStops[5].id, "cling-grip", "Next skips the combined member rather than showing it twice.");
+assert.deepEqual(greymoorGuide.maps, ["greymoor", "moorwing-aid"]);
+assert.equal(greymoorGuide.purchases.reduce((sum, item) => sum + item.rosaries, 0), 60);
+assert.equal(greymoorGuide.guide.length,
+  stops.find((stop) => stop.id === "halfway-home").guide.length + stops.find((stop) => stop.id === "moorwing").guide.length,
+  "Combining pages must retain both parts of the walkthrough.");
+
 const prep = route.preparations.flatMap((group) => group.items.map(({ id }) => id));
 assert.equal(new Set(prep).size, prep.length, "Preparation IDs must be unique.");
 for (const pair of route.preparations.filter(({ id }) => id.startsWith("silk-"))) {
@@ -231,4 +244,4 @@ for (const file of documents) {
   }
 }
 
-console.log(`Verified ${stops.length} route checkpoints, ${catalog.images.filter((image) => !image.custom).length} original guide images, ${catalog.images.filter((image) => image.custom).length} custom assets, map references and guide keys, documentation links, ${chatArchive.sources.length} recovered source hashes, run data, split timing, and purchase reminders.`);
+console.log(`Verified ${stops.length} route checkpoints, ${guideStops.length} guide pages, ${catalog.images.filter((image) => !image.custom).length} original guide images, ${catalog.images.filter((image) => image.custom).length} custom assets, map references and guide keys, documentation links, ${chatArchive.sources.length} recovered source hashes, run data, split timing, and purchase reminders.`);
