@@ -41,7 +41,7 @@ Build the main view around this itinerary. The route is Hunter, all five bells, 
 
 ### Early rosary farm and Mort timing · November 13
 
-Joseph reports **8 rosaries per reset** from the two pilgrims immediately left of Shakra’s Marrow bench. Kill both, collect the rosaries, then return to the bench and rest to respawn them. Use this observed yield rather than the original guide’s 10-rosary estimate; no loop time has been measured on this run.
+Joseph calls his farming circuit the **little Sharka loop**, near Shakra’s Marrow bench, and reports **25 rosaries per circle in about 25 seconds**. Return to the bench and rest to reset. This works out to about 60 rosaries per minute; 400 additional rosaries takes 16 circles, or about 6:40 at the reported pace. Use the player’s approximate timing for budgeting, not as a new run split. The earlier 8-rosary report covered the two-enemy reset.
 
 Joseph chose to farm here and retain **Weighted Belt (160) and the Tool Pouch (220) on the first Mort visit**, with the conditional 30-rosary entry and 60-rosary Greymoor Bellway unchanged. The proposed later Mort trip through Far Fields Bellway was not adopted; keep Far Fields Bellway skipped. The next spending stop still totals 440–470 after the Bone Bottom purchases. This is a route decision, not a report of purchases or current rosary holdings.
 
