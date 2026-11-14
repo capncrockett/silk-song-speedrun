@@ -15,7 +15,7 @@ assert.equal(new Set(stops.map(({ id }) => id)).size, stops.length, "Checkpoint 
 assert.equal(stops.at(-1).id, route.finishCheckpoint, "The finish must be the last route checkpoint.");
 const guideStops = listGuideStops(route);
 assert.equal(stops.length, 31, "Keep all original timing checkpoints.");
-assert.equal(guideStops.length, 29, "Both the Greymoor and Widow pairs share reading pages.");
+assert.equal(guideStops.length, 28, "The first Greymoor, Widow and Greymoor-return pairs share reading pages.");
 const greymoorGuide = guideStops[4];
 assert.equal(greymoorGuide.id, "moorwing", "The combined page records its final checkpoint by default.");
 assert.deepEqual(greymoorGuide.checkpointIds, ["halfway-home", "moorwing"]);
@@ -27,12 +27,15 @@ assert.equal(greymoorGuide.guide.length,
   "Combining pages must retain both parts of the walkthrough.");
 
 const timingStops = listRecordingStops(route);
-assert.equal(timingStops.length, 30, "Future runs use one Widow victory split instead of a separate bench split.");
+assert.equal(timingStops.length, 29, "Future runs omit the obsolete Widow bench and Bellhart shopping-return splits.");
 assert.equal(timingStops.some((stop) => stop.id === "widow-bench"), false);
 assert.ok(timingStops.some((stop) => stop.id === "widow"));
 assert.deepEqual(guideStops[6].checkpointIds, ["widow-bench", "widow"]);
 assert.equal(guideStops[6].id, "widow");
 assert.equal(guideStops[7].id, "atla");
+assert.equal(timingStops.some((stop) => stop.id === "bellhart-return"), false);
+assert.deepEqual(guideStops[9].checkpointIds, ["bellhart-return", "greymoor-bell"]);
+assert.equal(guideStops[9].id, "greymoor-bell");
 const beforeWidow = runSummary(route, { prep: [], splits: [
   { checkpoint: "cling-grip", seconds: 100, precision: "second", note: "" },
   { checkpoint: "widow-bench", seconds: 120, precision: "second", note: "", label: "Widow bench" }
@@ -40,7 +43,7 @@ const beforeWidow = runSummary(route, { prep: [], splits: [
 assert.equal(beforeWidow.next.id, "widow", "An old bench split must not count as defeating Widow.");
 assert.equal(beforeWidow.count, 1);
 assert.equal(beforeWidow.history.length, 2, "Historical bench times stay in the run history.");
-assert.equal(beforeWidow.total, 30);
+assert.equal(beforeWidow.total, 29);
 
 const prep = route.preparations.flatMap((group) => group.items.map(({ id }) => id));
 assert.equal(new Set(prep).size, prep.length, "Preparation IDs must be unique.");
