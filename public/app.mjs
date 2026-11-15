@@ -8,12 +8,17 @@ import { bindPickupEvents, renderPrep } from "./ui/pickups.mjs";
 import { createRunLog } from "./ui/run-log.mjs";
 import { guideStopById, selectedRun, state, stopById } from "./ui/state.mjs";
 
-const guide = createGuide({ onNavigate: chooseCheckpoint });
+const guide = createGuide({ onNavigate: chooseCheckpoint, onSplitSaved: inlineSplitSaved });
 const runLog = createRunLog({
   onSelectRun: selectRun,
   onNavigate: chooseCheckpoint,
-  onSplitSaved: renderCheckpoint
+  onSplitSaved: (checkpoint) => guide.syncSplits(checkpoint)
 });
+
+function inlineSplitSaved(checkpoint) {
+  runLog.refreshSplits(checkpoint);
+  guide.syncSplits(checkpoint);
+}
 
 function renderCheckpoint() {
   guide.render();

@@ -1,7 +1,7 @@
 import assert from "node:assert/strict";
 import { access, readFile } from "node:fs/promises";
 import { createHash } from "node:crypto";
-import { changePickups, formatTime, listGuideStops, listRecordingStops, listStops, parseTime, pickupCategories, runSummary, shoppingSummary, validateRunData } from "../public/model.mjs";
+import { changePickups, changeSplit, formatTime, listGuideStops, listRecordingStops, listStops, parseTime, pickupCategories, runSummary, shoppingSummary, validateRunData } from "../public/model.mjs";
 
 const root = new URL("../", import.meta.url);
 const readJson = async (path) => JSON.parse(await readFile(new URL(path, root), "utf8"));
@@ -80,6 +80,23 @@ for (const stop of stops) {
 }
 assert.deepEqual([...inlinePickupIds].sort(), [...activePickupIds].sort(),
   "Every active drawer pickup gets one checkbox at its actual guide collection point.");
+const guideSplitIds = [];
+for (const stop of stops) {
+  for (const point of stop.guideSplits ?? []) {
+    assert.ok(Number.isInteger(point.instruction) && point.instruction >= 1 && point.instruction <= stop.guide.length);
+    assert.ok(timingStops.some((item) => item.id === point.checkpoint), "Instruction split forms must target current checkpoints.");
+    assert.ok(typeof point.when === "string" && point.when.trim(), "Every split needs a clear timing cue.");
+    guideSplitIds.push(point.checkpoint);
+  }
+}
+assert.deepEqual([...guideSplitIds].sort(), timingStops.map((stop) => stop.id).sort(),
+  "Every current checkpoint needs exactly one form at its actual event, including events on neighboring pages.");
+assert.deepEqual(guideStops.find((stop) => stop.id === "swift-step").guideSplits.map((point) => point.checkpoint), ["swift-step", "lace-1"]);
+assert.deepEqual(greymoorGuide.guideSplits.map((point) => point.checkpoint), ["halfway-home", "moorwing"]);
+assert.equal(greymoorGuide.guideSplits.find((point) => point.checkpoint === "moorwing").instruction,
+  stops.find((stop) => stop.id === "halfway-home").guide.length + 4);
+assert.deepEqual(guideStops.find((stop) => stop.id === "lower-core").guideSplits.map((point) => point.checkpoint), ["lower-core", "vaults-arena"]);
+
 const widowGuide = guideStops.find((stop) => stop.id === "widow");
 assert.equal(widowGuide.guideLinks[0].instruction, 3, "The Widow link stays beside the fight tips after combining the bench setup.");
 assert.equal(widowGuide.guidePickups.find((item) => item.id === "ability-needolin").instruction, 4);
@@ -156,6 +173,29 @@ try {
 } catch (error) {
   if (error.code !== "ENOENT") throw error;
 }
+
+const splitFixture = { version: 1, revision: 0, runs: [
+  { id: "primary", name: "Primary", mode: "timed", notes: "Keep run notes", prep: ["bell-greymoor"],
+    splits: [{ checkpoint: "blasted-steps", label: "Original bench label", seconds: 8400, precision: "minute", note: "Keep this split note" }] },
+  { id: "other", name: "Other", mode: "scout", notes: "Other notes", prep: ["spool-core"], splits: [] }
+] };
+const originalFixture = structuredClone(splitFixture);
+const editedSplit = changeSplit(route, splitFixture, "primary", { checkpoint: "blasted-steps", time: "2:20:17" });
+assert.deepEqual(splitFixture, originalFixture, "A split edit must not mutate loaded data.");
+assert.deepEqual(editedSplit.runs[1], splitFixture.runs[1], "Split saves must preserve the other runs.");
+assert.deepEqual(editedSplit.runs[0].prep, splitFixture.runs[0].prep);
+assert.equal(editedSplit.runs[0].notes, "Keep run notes");
+assert.deepEqual(editedSplit.runs[0].splits[0], { checkpoint: "blasted-steps", label: "Original bench label", seconds: 8417, precision: "second", note: "Keep this split note" });
+assert.throws(() => changeSplit(route, splitFixture, "primary", { checkpoint: "blasted-steps", time: "2:60" }), /Enter a time/);
+assert.throws(() => changeSplit(route, splitFixture, "primary", { checkpoint: "widow-bench", time: "1:00" }), /historical split/);
+assert.throws(() => changeSplit(route, splitFixture, "primary", { checkpoint: "gms", time: "2:00" }), /finish time/);
+const finishedFixture = changeSplit(route, editedSplit, "primary", { checkpoint: "gms", time: "5:00:01" });
+assert.throws(() => changeSplit(route, finishedFixture, "primary", { checkpoint: "blasted-steps", time: "5:01" }), /finish time/);
+const historicalFixture = structuredClone(splitFixture);
+historicalFixture.runs[0].splits.push({ checkpoint: "widow-bench", label: "Original historical bench", seconds: 5000, precision: "second", note: "Keep historical note" });
+const editedHistorical = changeSplit(route, historicalFixture, "primary", { checkpoint: "widow-bench", time: "1:24:00" });
+assert.equal(editedHistorical.runs[0].splits.at(-1).label, "Original historical bench");
+assert.equal(editedHistorical.runs[0].splits.at(-1).note, "Keep historical note");
 
 assert.deepEqual(parseTime("4:57"), { seconds: 17820, precision: "minute" });
 assert.deepEqual(parseTime("4h 57m"), parseTime("4:57"));

@@ -13,6 +13,7 @@ Read [HANDOFF.md](../HANDOFF.md) for route decisions and current run context.
 | Guide headings, instructions, inline pickup placement, sections, shopping | [guide.mjs](../public/ui/guide.mjs) |
 | Map gallery, keys, tabs, enlarged viewer and zoom | [maps.mjs](../public/ui/maps.mjs) |
 | Pickup saving, drawer, counts, category completion, inline synchronization | [pickups.mjs](../public/ui/pickups.mjs) |
+| Inline timing forms and shared revision-protected split saving | [splits.mjs](../public/ui/splits.mjs) |
 | Run picker, metrics, split editor/history, notes, creation, export | [run-log.mjs](../public/ui/run-log.mjs) |
 | Shared browser state and selectors | [state.mjs](../public/ui/state.mjs) |
 | Fetching, save requests, saving lock and failure indicators | [api.mjs](../public/ui/api.mjs) |
@@ -63,6 +64,21 @@ Pickup conflict retries reapply only the clicked pickup IDs to the latest data
 for the run captured when the edit began. Other edits retain revision conflict
 protection. Do not retry a whole stale run snapshot automatically.
 
+Instruction timing points live in `data/route.json` as `guideSplits` with an
+instruction number, target checkpoint ID and timing cue. `model.mjs` merges
+these annotations across combined pages. A point can target a checkpoint whose
+reading page is elsewhere when chapter boundaries moved the actual event.
+Every current checkpoint has one point; historical-only IDs get no new forms.
+
+`ui/splits.mjs` builds inline time forms and shares `saveSplit` with the Run log.
+Pure `changeSplit` in `model.mjs` validates time, finish ordering and historical
+edits while preserving prior labels and omitted notes. Both editors use the
+existing API revision check without stale-snapshot retries. `app.mjs` connects
+successful inline saves to Run log metrics/history and the matching visible
+form. Updates target that checkpoint only, preserving other inline drafts and
+reading position. Pickup saves do not rebuild the forms. Run selection and
+navigation rebuild them for the selected run and guide page.
+
 The server owns disk persistence and revision checks. `.runbook/runs.json` is
 the active save; `data/seed-runs.json` is only the initial import. Keep stable
 checkpoint and pickup IDs, historical labels, and reported time precision.
@@ -76,6 +92,8 @@ the browser's module URLs and JavaScript content types. It does not save runs.
 For UI changes, also exercise the affected interaction in a browser. For tests
 that save, start a separate server with `RUNBOOK_DATA_DIR` pointing to a temporary
 directory and `RUNBOOK_PORT=0` for an available port. Never use the active save.
+
+For split-form changes, verify inline and Run log edits, second precision, retained notes/labels, cross-page targets, finish validation, stale-tab conflicts, failed writes and draft/focus retention.
 
 For changes crossing modules, check navigation, run switching, inline/drawer
 pickup synchronization and the affected save path. Preserve keyboard focus,

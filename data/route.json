@@ -147,21 +147,23 @@
     },
     {
       "id": "garmond-judge",
-      "title": "Split Routes: Last Judge or the Mist",
-      "maps": ["shellwood-judge-grand-gate"],
+      "title": "Shellwood, Blasted Steps, Last Judge",
+      "maps": [
+        "shellwood-blasted-steps-last-judge"
+      ],
       "steps": ["blasted-steps", "act-2"],
       "checkpoints": [
-        "1 · Blasted Steps bench",
-        "2 · Last Judge",
-        "3 · Choral Chambers bench"
+        "Shellwood bell · Bell #5",
+        "Blasted Steps bench and Bellway",
+        "Last Judge and the Choral Chambers shortcut"
       ],
       "detours": [
-        "1 · Early Dice minigame — decided to skip; collect Dice free later.",
-        "2 · Free Craftmetal before Judge — planned.",
-        "3 · Underworks / Delver’s Drill — decided to skip."
+        "1 · Blasted Steps Memory Locket — take the yellow branch near the Bellway.",
+        "2 · Grand Gate Spool Fragment — use the Choral Chambers return shortcut and balancing platforms."
       ],
-      "note": "Joseph’s supplied screenshot covers Shellwood Bellway, Blasted Steps, Last Judge and the Grand Gate shortcut. Its map pins do not use the guide’s checkpoint numbering; follow the written steps and pins for the Choral Chambers bench and Grand Gate spool.",
-      "guideNumber": 8
+      "note": "Follow green from Shellwood to Blasted Steps, then cyan toward Last Judge and Choral Chambers. Record the Blasted Steps bench time before the locket and Craftmetal; record the Choral Chambers bench time before the Grand Gate spool.",
+      "guideNumber": 8,
+      "detoursTitle": "Yellow branches"
     },
     {
       "id": "garmond-songclave",
@@ -309,6 +311,13 @@
               "text": "Choral Commandment"
             },
             { "instruction": 6, "id": "bell-marrow", "text": "Marrow bell" }
+          ],
+          "guideSplits": [
+            {
+              "instruction": 3,
+              "checkpoint": "silk-spear",
+              "when": "After acquiring Silkspear, before the remaining Mosshome pickups."
+            }
           ]
         }
       ]
@@ -330,7 +339,8 @@
             "Collect the Marrow Craftmetal from the trapped secret tunnel near the jail; reserve it for Magma Bell.",
             "Clear the Deep Docks ant arena and collect Swift Step. Loddie’s target practice comes on the return after Widow.",
             "Swift Step sets your respawn point at the Weaver spire. Skip G&Z Detour 2 (toll bench) and go straight to Lace; a death returns you to the spire as long as you have not rested at another bench.",
-            "Defeat Lace 1 and ring the Deep Docks bell (Bell #2). The Bone Bottom loop comes next."
+            "Defeat Lace 1.",
+            "Ring the Deep Docks bell (Bell #2). The Bone Bottom loop comes next."
           ],
           "maps": ["deep-docks"],
           "title": "Swift Step",
@@ -357,9 +367,21 @@
               "text": "Swift Step"
             },
             {
-              "instruction": 5,
+              "instruction": 6,
               "id": "bell-deep-docks",
               "text": "Deep Docks bell"
+            }
+          ],
+          "guideSplits": [
+            {
+              "instruction": 3,
+              "checkpoint": "swift-step",
+              "when": "After acquiring Swift Step, before continuing to Lace 1."
+            },
+            {
+              "instruction": 5,
+              "checkpoint": "lace-1",
+              "when": "Immediately after defeating Lace 1, before ringing the Deep Docks bell."
             }
           ]
         }
@@ -465,6 +487,13 @@
               "text": "Weighted Belt"
             },
             { "instruction": 7, "id": "pouch-mort", "text": "Tool Pouch" }
+          ],
+          "guideSplits": [
+            {
+              "instruction": 2,
+              "checkpoint": "drifters-cloak",
+              "when": "After receiving Drifter’s Cloak from the Seamstress."
+            }
           ]
         }
       ]
@@ -503,6 +532,13 @@
               "id": "locket-greymoor",
               "text": "Memory Locket 478035"
             }
+          ],
+          "guideSplits": [
+            {
+              "instruction": 1,
+              "checkpoint": "halfway-home",
+              "when": "On reaching Halfway Home and opening Greymoor Bellway, before the Moorwing route."
+            }
           ]
         },
         {
@@ -518,7 +554,14 @@
           "maps": ["greymoor", "moorwing-aid"],
           "title": "Moorwing defeated",
           "tip": "Open the Halfway Home shortcut and defeat Moorwing. Accept G&Z aid if offered, but continue solo if they remain absent after a reload check. Keep the exhausted first Greymoor conversation for the later roof-duel plan.",
-          "links": [{ "title": "Moorwing", "pin": 478453 }]
+          "links": [{ "title": "Moorwing", "pin": 478453 }],
+          "guideSplits": [
+            {
+              "instruction": 4,
+              "checkpoint": "moorwing",
+              "when": "After defeating Moorwing, before continuing toward Bellhart."
+            }
+          ]
         }
       ]
     },
@@ -578,6 +621,13 @@
               "id": "ability-cling-grip",
               "text": "obtain Cling Grip"
             }
+          ],
+          "guideSplits": [
+            {
+              "instruction": 8,
+              "checkpoint": "cling-grip",
+              "when": "After acquiring Cling Grip, before the Widow approach."
+            }
           ]
         },
         {
@@ -596,7 +646,8 @@
           "id": "widow",
           "guide": [
             "Guide advice for Widow: favor dodging over aggressive attacking. Watch the diagonally bouncing bells, use the gap between their paths, and avoid hugging the opposite wall where they rebound.",
-            "Defeat Widow, collect Needolin, and record your split. Then ring the Bellhart bell (Bell #3).",
+            "Defeat Widow and collect Needolin.",
+            "Ring the Bellhart bell (Bell #3).",
             "Return to Bellhart for the free first Needle upgrade.",
             "Sell the Mosshome Choral Commandment and any other carried relics to Scrounge in Bellhart before leaving for the return loop. The Commandment sells for 180 rosaries.",
             "Open Bellhart Bellway for 60 rosaries. The next loop takes you to Eva, Atla, Loddie, and Forge Daughter."
@@ -634,12 +685,12 @@
               "text": "Needolin"
             },
             {
-              "instruction": 3,
+              "instruction": 4,
               "id": "needle-first",
               "text": "first Needle upgrade"
             },
             {
-              "instruction": 2,
+              "instruction": 3,
               "id": "bell-bellhart",
               "text": "Bellhart bell"
             }
@@ -649,6 +700,13 @@
               "instruction": 1,
               "title": "G&Z guide · Widow fight picture",
               "url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3577460696#:~:text=Checkpoint%204%3A%20Widow"
+            }
+          ],
+          "guideSplits": [
+            {
+              "instruction": 2,
+              "checkpoint": "widow",
+              "when": "After defeating Widow and acquiring Needolin, before ringing Bellhart’s bell."
             }
           ]
         }
@@ -695,6 +753,13 @@
             { "instruction": 3, "id": "harp-atla", "text": "Rune Harp" },
             { "instruction": 4, "id": "mask-atla", "text": "mask shard" },
             { "instruction": 7, "id": "spool-atla", "text": "Atla fragment" }
+          ],
+          "guideSplits": [
+            {
+              "instruction": 7,
+              "checkpoint": "atla",
+              "when": "After Eva and the Atla mask/spool pickups, before leaving for Bone Bottom."
+            }
           ]
         },
         {
@@ -742,6 +807,13 @@
               "instruction": 5,
               "id": "spool-deep-docks",
               "text": "Deep Docks spool"
+            }
+          ],
+          "guideSplits": [
+            {
+              "instruction": 4,
+              "checkpoint": "forge-daughter",
+              "when": "At Forge Daughter’s bench after buying the kit and Magma Bell, before the spool trip."
             }
           ]
         }
@@ -798,7 +870,14 @@
               "text": "upper Greymoor spool"
             }
           ],
-          "mapNote": "Rest at Halfway Home before following red to the bell and yellow Detour 1 to the spool. Do not sit at the bell’s bench. Quit to Menu and Continue back at Halfway Home, then use Greymoor Bellway for Shellwood."
+          "mapNote": "Rest at Halfway Home before following red to the bell and yellow Detour 1 to the spool. Do not sit at the bell’s bench. Quit to Menu and Continue back at Halfway Home, then use Greymoor Bellway for Shellwood.",
+          "guideSplits": [
+            {
+              "instruction": 1,
+              "checkpoint": "greymoor-bell",
+              "when": "After ringing Bell #4. Do not sit at the bell’s bench; Halfway Home stays your quit-return point."
+            }
+          ]
         }
       ]
     },
@@ -807,19 +886,21 @@
       "number": "08",
       "guideNumber": 8,
       "guideSection": "garmond-judge",
-      "title": "Split Routes: Last Judge or the Mist",
-      "summary": "Take the Last Judge route through Blasted Steps, then collect the Grand Gate spool.",
-      "maps": ["shellwood-judge-grand-gate"],
+      "title": "Shellwood, Blasted Steps, Last Judge",
+      "summary": "Ring Shellwood’s bell, cross Blasted Steps, defeat Last Judge and collect the Grand Gate spool.",
+      "maps": [
+        "shellwood-blasted-steps-last-judge"
+      ],
       "missingMaps": ["Last Judge and Choral Chambers"],
-      "mapNote": "Joseph’s supplied Shellwood → Last Judge → Grand Gate screenshot. Follow the written directions for the Choral Chambers bench and Grand Gate spool; the guide’s checkpoint numbers are not drawn on this map.",
+      "mapNote": "Joseph’s annotated route: green climbs from Shellwood through Blasted Steps; cyan continues through Last Judge and the Grand Gate shortcut. Yellow 1 marks the locket and yellow 2 the Grand Gate spool. The original guide map remains unavailable.",
       "stops": [
         {
           "id": "blasted-steps",
           "guideTitle": "Shellwood bell & Blasted Steps",
           "guide": [
             "From the already-open Shellwood Bellway, go to Shellwood’s bell (Bell #5) and ring it, then continue to Blasted Steps.",
-            "Open Blasted Steps Bellway for 60 rosaries. Skip G&Z Judge Detour 1 (Dice gambling); collect Dice free after Dancers.",
-            "Take the nearby Memory Locket and free Craftmetal before Last Judge.",
+            "Open Blasted Steps Bellway for 60 rosaries and rest at its bench. Collect Dice free on the later trip after Dancers.",
+            "Take yellow Detour 1 for the nearby Memory Locket, and collect the free Craftmetal before Last Judge.",
             "Before the fight, equip Magma Bell and check that you have six masks and Needle Upgrade #1."
           ],
           "title": "Blasted Steps bench",
@@ -845,6 +926,13 @@
               "id": "bell-shellwood",
               "text": "Shellwood’s bell"
             }
+          ],
+          "guideSplits": [
+            {
+              "instruction": 2,
+              "checkpoint": "blasted-steps",
+              "when": "At the Blasted Steps bench after opening its Bellway, before the locket and Craftmetal."
+            }
           ]
         },
         {
@@ -852,8 +940,8 @@
           "guideTitle": "Last Judge & the Grand Gate spool",
           "guide": [
             "Use the Bells checklist to confirm all five bells are rung, then play Needolin at the Grand Gate and defeat Last Judge.",
-            "Take the Grand Gate’s upper-right breakable-wall shortcut to Choral Chambers; skip G&Z Judge Detour 3 (Underworks / Delver’s Drill).",
-            "Use the return shortcut for the Grand Gate spool. Climb the balancing platforms, hitting their undersides to tip them into position.",
+            "Take the Grand Gate’s upper-right breakable-wall shortcut to Choral Chambers and rest at the bench.",
+            "Take yellow Detour 2 for the Grand Gate spool using the return shortcut. Climb the balancing platforms, hitting their undersides to tip them into position.",
             "Collect the fragment to start pair C, then continue toward Grand Bellway."
           ],
           "title": "Last Judge / Choral Chambers bench",
@@ -864,6 +952,13 @@
           ],
           "guidePickups": [
             { "instruction": 4, "id": "spool-grand-gate", "text": "fragment" }
+          ],
+          "guideSplits": [
+            {
+              "instruction": 2,
+              "checkpoint": "act-2",
+              "when": "At the Choral Chambers bench after Last Judge, before the Grand Gate spool trip."
+            }
           ]
         }
       ]
@@ -884,7 +979,7 @@
           "guideTitle": "Open Grand Bellway",
           "guide": [
             "Reach Grand Bellway and open the Bell Beast for 80 rosaries.",
-            "Open its Ventrica for another 80 rosaries.",
+            "Open its Ventrica for another 80 rosaries, then rest at the Grand Bellway bench.",
             "To reach Songclave, climb the rotating-wheel room and take its first right exit. The two Grand Bellway travel unlocks cost 160 in total."
           ],
           "title": "Grand Bellway bench",
@@ -894,7 +989,14 @@
             { "item": "Grand Bellway Ventrica", "rosaries": 80 }
           ],
           "maps": ["grand-gate-songclave"],
-          "mapNote": "Red route: Grand Gate → Choral Chambers → Grand Bellway → Songclave. Use the written steps for travel unlocks and the White Key."
+          "mapNote": "Red route: Grand Gate → Choral Chambers → Grand Bellway → Songclave. Use the written steps for travel unlocks and the White Key.",
+          "guideSplits": [
+            {
+              "instruction": 2,
+              "checkpoint": "grand-bellway",
+              "when": "At Grand Bellway after opening both travel links and resting."
+            }
+          ]
         },
         {
           "id": "songclave-bell",
@@ -912,6 +1014,13 @@
           "mapNote": "Red route: Grand Gate → Choral Chambers → Grand Bellway → Songclave. Use the written steps for travel unlocks and the White Key.",
           "guidePickups": [
             { "instruction": 3, "id": "key-white", "text": "White Key" }
+          ],
+          "guideSplits": [
+            {
+              "instruction": 1,
+              "checkpoint": "songclave-bell",
+              "when": "After ringing the First Shrine bell in Songclave."
+            }
           ]
         },
         {
@@ -925,14 +1034,21 @@
           "tip": "Beat the Dancers, then head into lower Cogwork. The free Dice pickup is available after the Dancers.",
           "links": [{ "title": "Cogwork Dancers", "pin": 478606 }],
           "maps": ["overview"],
-          "mapNote": "Dancers and lower Core are outside the supplied approach screenshot. Use the route overview, written directions and map pins here."
+          "mapNote": "Dancers and lower Core are outside the supplied approach screenshot. Use the route overview, written directions and map pins here.",
+          "guideSplits": [
+            {
+              "instruction": 1,
+              "checkpoint": "dancers",
+              "when": "Immediately after defeating the Cogwork Dancers."
+            }
+          ]
         },
         {
           "id": "lower-core",
           "guideTitle": "Lower Core & Vaults arena",
           "guide": [
             "From the bench below Dancers, descend and go left to the lower Core arena. Clear it and collect the mask shard.",
-            "Open the middle shortcut, then take the final room’s top-right exit to unlock upper Cogwork Core.",
+            "Open the middle shortcut, then take the final room’s top-right exit to unlock upper Cogwork Core. Return to the bench below Dancers.",
             "Exit right through the spinning-wheel room toward Whispering Vaults. Skip the lower Core spool branch, unmarked on G&Z maps.",
             "Clear the Whispering Vaults arena (G&Z Checkpoint 6). Exit right, go up and over the large Scrollreader, and strike the ceiling passage to open the shortcut to Songclave. Rest at its bench."
           ],
@@ -943,6 +1059,18 @@
           "mapNote": "The detailed Dancers, lower Core and Vaults arena map is missing. Use the overview, written directions and existing map pins.",
           "guidePickups": [
             { "instruction": 1, "id": "mask-lower-core", "text": "mask shard" }
+          ],
+          "guideSplits": [
+            {
+              "instruction": 2,
+              "checkpoint": "lower-core",
+              "when": "Back at the bench below Dancers after the lower Core arena and upper shortcut."
+            },
+            {
+              "instruction": 4,
+              "checkpoint": "vaults-arena",
+              "when": "At Songclave’s bench after clearing the Whispering Vaults arena and opening its ceiling shortcut."
+            }
           ]
         }
       ]
@@ -1032,7 +1160,7 @@
           "id": "clawline",
           "guideTitle": "Whiteward, Clawline & the final spool",
           "guide": [
-            "Take Trobbio’s lift down and open the left shortcut door. For the selected Whiteward branch, ride back up before returning to Grand Bellway.",
+            "Take Trobbio’s lift down and open the left shortcut door. Ride back up, return to Grand Bellway and rest before the Whiteward branch.",
             "Go west through Choral Chambers and use the White Key lift into Whiteward. Climb in the fireplace room and go all the way left for Injector Band.",
             "Continue through Underworks to Twelfth Architect’s bench. Keep Claw Mirror + Magma Bell through the Cauldron’s heat section; switch from Magma Bell to Injector Band afterward.",
             "Reserve Blasted Steps Craftmetal for Cogfly. Skip G&Z Detour 1 (lower-left Craftmetal puzzle).",
@@ -1068,6 +1196,18 @@
               "text": "second Crafting Kit"
             },
             { "instruction": 9, "id": "spool-cauldron", "text": "fragment" }
+          ],
+          "guideSplits": [
+            {
+              "instruction": 1,
+              "checkpoint": "trobbio",
+              "when": "Back at the Grand Bellway bench after Trobbio and his lift shortcut, before Whiteward."
+            },
+            {
+              "instruction": 7,
+              "checkpoint": "clawline",
+              "when": "At the Architect’s bench after Clawline, the arena and the Crafting Kit purchase; before the spool."
+            }
           ]
         },
         {
@@ -1095,6 +1235,13 @@
               "id": "melody-vaultkeeper",
               "text": "Vaultkeeper’s Melody"
             }
+          ],
+          "guideSplits": [
+            {
+              "instruction": 7,
+              "checkpoint": "vaultkeeper",
+              "when": "After learning Vaultkeeper’s Melody, before returning for the roof duel."
+            }
           ]
         },
         {
@@ -1103,6 +1250,7 @@
           "guide": [
             "Use the open far-left roof shortcut to return to Garmond and Zaza. If the roof is empty, check that gate 480502 was opened from outside, leave, and re-enter.",
             "Win the duel and exhaust Garmond’s dialogue afterward.",
+            "Return to Cogwork Core bench 478428 and rest after the duel.",
             "Head toward High Halls; skip that map’s Detour 1 (extra G&Z search / late Dice return). Their help is at the Forum door."
           ],
           "maps": ["cauldron", "roof-duel"],
@@ -1111,6 +1259,13 @@
           "links": [
             { "title": "Roof duel", "pin": 479361 },
             { "title": "Cogwork Core bench", "pin": 478428 }
+          ],
+          "guideSplits": [
+            {
+              "instruction": 3,
+              "checkpoint": "roof-duel",
+              "when": "At Cogwork Core bench 478428 after winning the Garmond and Zaza duel."
+            }
           ]
         }
       ]
@@ -1146,6 +1301,13 @@
           ],
           "guidePickups": [
             { "instruction": 1, "id": "tool-cogfly", "text": "Cogfly" }
+          ],
+          "guideSplits": [
+            {
+              "instruction": 4,
+              "checkpoint": "high-halls-bench",
+              "when": "At High Halls bench with Cogfly equipped and the Forum loadout set."
+            }
           ]
         },
         {
@@ -1155,13 +1317,20 @@
             "Accept Garmond and Zaza’s help at the Forum door inside High Halls.",
             "If they are absent after the roof duel and post-duel dialogue, use the guide’s Quit to Menu / Continue fallback and check the Forum door again. Fight the first three enemies solo; the duo joins during a later wave.",
             "Use Cogflies and pins on the dangerous waves while the duo shares the pressure.",
-            "Clear the Forum and continue to Conductor’s Melody."
+            "Clear the Forum."
           ],
           "title": "High Halls Forum cleared",
           "tip": "Accept G&Z's help at the Forum door inside High Halls. Use Cogflies and pins on the dangerous waves and let the duo share the pressure. Run #2 needed three attempts with their help, compared with about eight on scout.",
           "links": [
             { "title": "G&Z aid offer", "pin": 481022 },
             { "title": "Forum", "pin": 479420 }
+          ],
+          "guideSplits": [
+            {
+              "instruction": 4,
+              "checkpoint": "forum",
+              "when": "Immediately after clearing the High Halls Forum."
+            }
           ]
         },
         {
@@ -1179,6 +1348,13 @@
               "instruction": 1,
               "id": "melody-conductor",
               "text": "Conductor’s Melody"
+            }
+          ],
+          "guideSplits": [
+            {
+              "instruction": 1,
+              "checkpoint": "conductor",
+              "when": "After acquiring Conductor’s Melody, before the return to upper Core."
             }
           ]
         }
@@ -1200,7 +1376,8 @@
             "From the initial state, hit the levers left to right in the first row: 1–3–3–3.",
             "Second row: 2–0–0–3. Third row: 0–1–1–1. Fourth row: 1–1–0–2.",
             "If a lever has already moved, check the white-line alignment rather than repeating the initial counts.",
-            "Collect Architect’s Melody and return toward the final elevator."
+            "Collect Architect’s Melody.",
+            "Return toward the final elevator."
           ],
           "maps": ["upper-core"],
           "title": "Architect's Melody",
@@ -1211,6 +1388,13 @@
               "instruction": 5,
               "id": "melody-architect",
               "text": "Architect’s Melody"
+            }
+          ],
+          "guideSplits": [
+            {
+              "instruction": 5,
+              "checkpoint": "architect",
+              "when": "After acquiring Architect’s Melody, before returning to the final elevator."
             }
           ]
         },
@@ -1256,7 +1440,14 @@
                 "text": "Fractured Mask"
               }
             ]
-          }
+          },
+          "guideSplits": [
+            {
+              "instruction": 1,
+              "checkpoint": "checkpoint-1",
+              "when": "On reaching the Lace 2 checkpoint, before the optional Fractured Mask trip or final elevator."
+            }
+          ]
         },
         {
           "id": "lace-2",
@@ -1265,12 +1456,19 @@
             "Let Lace approach and punish her recovery. Patient one- or two-hit openings are enough.",
             "Keep Silk available for Bind and heal in safe openings.",
             "Use Straight Pin only when the opening is safe. Keep Injector Band and Belt + Dice; use Fractured Mask if you took the optional trip, otherwise Claw Mirror.",
-            "After winning, continue to Terminus for the final rest."
+            "After winning, record the time before leaving for Terminus."
           ],
           "title": "Lace 2 defeated",
           "tip": "Let Lace approach and punish her recovery. Keep Silk for healing and use pins in safe openings. Use Fractured Mask if collected on the optional late trip, otherwise Mirror; retain Injector Band, Weighted Belt, and Magnetite Dice.",
           "links": [{ "title": "Lace 2", "pin": 479088 }],
-          "maps": ["cradle"]
+          "maps": ["cradle"],
+          "guideSplits": [
+            {
+              "instruction": 4,
+              "checkpoint": "lace-2",
+              "when": "Immediately after defeating Lace 2, before travelling to Terminus."
+            }
+          ]
         },
         {
           "id": "gms",
@@ -1282,12 +1480,19 @@
             "During phases 2 and 3, stick to one side. Wait, watch the knives, and prioritize avoiding them.",
             "Save Silk for healing. If Fractured Mask saves you, use a safe opening to Bind and rebuild health; rest between attempts to repair it.",
             "Use Cogflies to maintain pressure when GMS is out of Needle range and the opening is safe.",
-            "After winning, record the actual final in-game time in the run log."
+            "After winning, record the actual final in-game time here."
           ],
           "title": "Grand Mother Silk / finish",
           "tip": "Patience is the winning plan. Watch and avoid the knives, stick to one side in phases 2 and 3, and save Silk for Bind. Repair Fractured Mask at Terminus if using it. Run #2 cleared on attempt six at 5:26:16.",
           "links": [{ "title": "Grand Mother Silk", "pin": 479099 }],
-          "maps": ["cradle"]
+          "maps": ["cradle"],
+          "guideSplits": [
+            {
+              "instruction": 7,
+              "checkpoint": "gms",
+              "when": "After defeating Grand Mother Silk: enter the actual final in-game time."
+            }
+          ]
         }
       ]
     }

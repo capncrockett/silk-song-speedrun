@@ -383,9 +383,9 @@
       "recovered": "2026-11-11",
       "bytes": 1546677,
       "kind": "screenshot",
-      "timedRoute": true,
+      "timedRoute": false,
       "custom": true,
-      "note": "Joseph’s supplied screenshot from Shellwood Bellway through Blasted Steps and Last Judge to the Grand Gate shortcut. Use the written directions and pins for the Choral Chambers bench and Grand Gate spool climb.",
+      "note": "Archived earlier supplied map. Replaced by Joseph’s annotated Shellwood/Blasted Steps/Last Judge route on November 14.",
       "keyIntro": "This supplied screenshot has map pins but no route line or Garmond checkpoint numbers. The numbered key below belongs to the written guide."
     },
     {
@@ -449,6 +449,27 @@
       "note": "Rest at Halfway Home first. Red leads to the Greymoor bell; yellow Detour 1 climbs to the spool. Do not sit at another bench. After both pickups, Quit to Menu and Continue back at Halfway Home, then travel from Greymoor Bellway to Shellwood.",
       "keyLabel": "Joseph’s map · route key",
       "keyIntro": "The red line follows the upper Halfway Home approach to Bell #4 at the right-hand bench. Yellow Detour 1 leads up to the Spool Fragment. Bell numbers follow the selected route’s pickup order; yellow 1 is Joseph’s spool-branch label."
+    },
+    {
+      "id": "shellwood-blasted-steps-last-judge",
+      "title": "Shellwood → Blasted Steps → Last Judge · supplied route",
+      "section": "Shellwood, Blasted Steps, Last Judge",
+      "file": "assets/maps/Shellwood Blasted Steps and Last Judge route.png",
+      "src": "/maps/shellwood-blasted-steps-last-judge.png",
+      "mime": "image/png",
+      "width": 2338,
+      "height": 1534,
+      "sourceUrl": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom",
+      "creator": "User-supplied annotated MapGenie screenshot",
+      "sha256": "d840df9a69b0dc2ea1b0c64f8fa84d7b3086c04da72aa8968692e0c173bfef52",
+      "recovered": "2026-11-14",
+      "bytes": 1355751,
+      "kind": "map",
+      "timedRoute": true,
+      "custom": true,
+      "note": "Green climbs from Shellwood through Blasted Steps; cyan continues toward Last Judge and the Grand Gate shortcut. Yellow 1 marks the Memory Locket and yellow 2 the Grand Gate spool.",
+      "keyLabel": "Joseph’s map · route key",
+      "keyIntro": "The green and cyan lines trace the selected Last Judge route. Joseph’s yellow branches are 1 Memory Locket and 2 Grand Gate Spool Fragment. These labels are separate from the original guide’s detours."
     }
   ],
   "missing": [
@@ -465,7 +486,7 @@
     {
       "title": "Last Judge and Choral Chambers",
       "reason": "The guide image link is empty.",
-      "replacement": "shellwood-judge-grand-gate"
+      "replacement": "shellwood-blasted-steps-last-judge"
     },
     {
       "title": "Songclave, lower Cogwork and Vaults arena",

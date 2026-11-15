@@ -25,6 +25,33 @@ export function formatTime(total, precision = "minute") {
   return precision === "second" ? `${hours}:${minutes}:${seconds}` : `${hours}:${minutes}`;
 }
 
+// Shared by the instruction forms and the Run log. Omitted notes retain their saved value.
+export function changeSplit(route, data, runId, { checkpoint, time: value, note }) {
+  const time = parseTime(value);
+  if (!time) throw new Error("Enter a time like 4:57 or 4:57:32.");
+  const next = structuredClone(data);
+  const run = next.runs.find((item) => item.id === runId);
+  if (!run) throw new Error("This run is no longer in the saved runbook.");
+  const stop = listStops(route).find((item) => item.id === checkpoint);
+  const previous = run.splits.find((split) => split.checkpoint === checkpoint);
+  if ((!stop || stop.recordSplit === false) && !previous) {
+    throw new Error("This checkpoint is only available for editing an existing historical split.");
+  }
+  const finish = run.splits.find((split) => split.checkpoint === route.finishCheckpoint);
+  const others = run.splits.filter((split) => split.checkpoint !== checkpoint);
+  if ((checkpoint === route.finishCheckpoint && others.some((split) => split.seconds > time.seconds)) ||
+      (checkpoint !== route.finishCheckpoint && finish && time.seconds > finish.seconds)) {
+    throw new Error("The finish time must be at or after the other recorded splits.");
+  }
+  run.splits = [...others, {
+    checkpoint,
+    label: previous?.label ?? stop?.title ?? checkpoint,
+    ...time,
+    note: note === undefined ? previous?.note ?? "" : note.trim()
+  }];
+  return next;
+}
+
 export function listStops(route) {
   return route.sections.flatMap((section) =>
     section.stops.map((stop) => ({ ...stop, sectionId: section.id }))
@@ -70,6 +97,7 @@ export function listGuideStops(route) {
       guide: members.flatMap((stop) => stop.guide),
       guidePickups: mergeGuideAnnotations(members, "guidePickups"),
       guideLinks: mergeGuideAnnotations(members, "guideLinks"),
+      guideSplits: mergeGuideAnnotations(members, "guideSplits"),
       maps: [...new Set(members.flatMap((stop) => stop.maps ??
         route.sections.find((section) => section.id === stop.sectionId).maps))],
       links: members.flatMap((stop) => stop.links ?? []),

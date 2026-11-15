@@ -4,7 +4,7 @@ Source: [Speedrunner Achievement Guide: The Garmond Route!](https://steamcommuni
 
 The three previously saved maps are preserved. On 2026-11-09, 16 additional original images were recovered directly from the guide’s Steam image links. All files retain their original bytes. [catalog.json](../assets/maps/catalog.json) records source URLs, dimensions, byte counts, SHA-256 hashes, and route relevance.
 
-The app shows 12 original reference maps, 2 relevant original screenshots, and Joseph’s supplied Shellwood/Bellhart and Shellwood/Last Judge/Grand Gate screenshots, plus his annotated Grand Gate/Songclave, Bellhart/Deep Docks and Greymoor bell/spool return routes. Guide-only Mist and Sister Splinter skip alternatives are preserved in `assets/maps/` but excluded from the timed route and gallery. The timed route fights Sister Splinter. The original guide text is condensed into route directions and numbered map keys, with the decisions in `HANDOFF.md` applied. Original checkpoint and detour numbers stay intact; bell numbers follow our selected pickup order; planned, optional, skipped and resource-backup entries describe our path. The original 13 travel-section groups organize the runbook, with **Return to Greymoor, Bell #4** as the custom return-visit heading. Four original maps remain unavailable; three have supplied replacements and the combined Songclave chapter has a supplied approach map.
+The app shows 12 original reference maps, 2 relevant original screenshots, and Joseph’s supplied Shellwood/Bellhart screenshot, plus his annotated Shellwood/Blasted Steps/Last Judge, Grand Gate/Songclave, Bellhart/Deep Docks and Greymoor return routes. Guide-only Mist and Sister Splinter skip alternatives are preserved in `assets/maps/` but excluded from the timed route and gallery. The timed route fights Sister Splinter. The original guide text is condensed into route directions and numbered map keys, with the decisions in `HANDOFF.md` applied. Original checkpoint and detour numbers stay intact; bell numbers follow our selected pickup order; planned, optional, skipped and resource-backup entries describe our path. The original 13 travel-section groups organize the runbook, with the requested **Return to Greymoor, Bell #4** and **Shellwood, Blasted Steps, Last Judge** headings. Four original maps remain unavailable; three have supplied replacements and the combined Songclave chapter has a supplied approach map.
 
 | Reference | Saved original | Steam source | Use |
 |---|---|---|---|
@@ -38,7 +38,7 @@ The [annotated experiment](../assets/maps/Shellwood%20and%20Widow%20route%20draf
 
 ## Supplied Last Judge and Grand Gate screenshot
 
-Joseph supplied the [Shellwood to Last Judge and Grand Gate screenshot](../assets/maps/Shellwood%20to%20Last%20Judge%20and%20Grand%20Gate.png) on November 11, 2026. It replaces the overview fallback for the Last Judge section, including both the Blasted Steps and Last Judge / Grand Gate steps. Base map: MapGenie; game: Team Cherry. The original 2346 × 1582 PNG bytes are preserved under this descriptive filename.
+Joseph supplied the [Shellwood to Last Judge and Grand Gate screenshot](../assets/maps/Shellwood%20to%20Last%20Judge%20and%20Grand%20Gate.png) on November 11, 2026. It first replaced the overview fallback for the Last Judge section. It is now archived in favor of the annotated November 14 route below. Base map: MapGenie; game: Team Cherry. The original 2346 × 1582 PNG bytes are preserved under this descriptive filename.
 
 The map contains pins without a drawn route or Garmond checkpoint numbers. Keep the written directions and key, including the Choral Chambers bench and selected Grand Gate spool climb. This is a supplied replacement, not the recovered original Steam image.
 
@@ -60,13 +60,19 @@ Joseph supplied the [Greymoor bell and spool return map](../assets/maps/Greymoor
 
 Use it on reading step 10, the combined post-Widow Greymoor return. Its section is titled **Return to Greymoor, Bell #4**; Bell #4 means fourth in our collection order. Red goes from Greymoor Bellway past Halfway Home to the Greymoor bell. Yellow Detour 1 climbs to the Spool Fragment. The return key uses Joseph’s numbering; the original guide’s locket Detour 1 belongs to the first-pass map. Keep the original Greymoor map and Moorwing screenshot for that earlier pass. For the selected return, rest at Halfway Home before heading out, ring the bell and collect the spool without sitting at another bench, then Quit to Menu and Continue back at Halfway Home. The supplied-map key includes only the actual bell route and yellow spool branch.
 
+## Supplied Shellwood, Blasted Steps and Last Judge route
+
+Joseph supplied the [annotated Shellwood / Blasted Steps / Last Judge map](../assets/maps/Shellwood%20Blasted%20Steps%20and%20Last%20Judge%20route.png) on November 14, 2026, from Screenshot 2026-11-14 at 10.49.29 PM.png. Preserve the original PNG bytes; the catalog records dimensions, size and hash. Base map: MapGenie; game: Team Cherry.
+
+This is the current reference for reading steps 11–12 under **Shellwood, Blasted Steps, Last Judge**. Green climbs from Shellwood into Blasted Steps; cyan continues through Last Judge and the Grand Gate shortcut. Yellow 1 is the Memory Locket, yellow 2 the Grand Gate spool. The original guide’s unselected Mist/Dice/Underworks detour numbers do not label this supplied image. The earlier unmarked screenshot remains archived, and the unavailable original map’s catalog entry points to this replacement.
+
 ## Missing guide maps
 
 The current guide HTML has empty image URLs for these four maps:
 
 - Shellwood and Widow — Joseph’s supplied unmarked screenshot is used instead
 - Deep Docks return: mask shard and Forge Daughter — Joseph’s annotated Bellhart/Deep Docks map is used instead
-- Last Judge and Choral Chambers — Joseph’s supplied Shellwood/Last Judge/Grand Gate screenshot is used instead
+- Last Judge and Choral Chambers — Joseph’s annotated Shellwood/Blasted Steps/Last Judge route is used instead
 - Songclave, lower Cogwork and Vaults arena — supplied red route covers the approach only; Dancers, lower Core and Vaults arena still use existing references
 
 The separate Vaults shard/Pale Oil map has been recovered. The guide does not mark spool fragments on its maps; the six selected fragments retain their MapGenie pins in the runbook. Custom screenshots can fill these gaps.

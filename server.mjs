@@ -31,6 +31,7 @@ const files = new Map([
   ["/ui/maps.mjs", ["public/ui/maps.mjs", "text/javascript; charset=utf-8"]],
   ["/ui/pickups.mjs", ["public/ui/pickups.mjs", "text/javascript; charset=utf-8"]],
   ["/ui/run-log.mjs", ["public/ui/run-log.mjs", "text/javascript; charset=utf-8"]],
+  ["/ui/splits.mjs", ["public/ui/splits.mjs", "text/javascript; charset=utf-8"]],
   ["/ui/state.mjs", ["public/ui/state.mjs", "text/javascript; charset=utf-8"]],
   ["/assets/hornet-mask.png", ["assets/artwork/hornet-mask-icon.png", "image/png"]],
   ["/assets/hornet.png", ["assets/artwork/hornet.png", "image/png"]],

@@ -1,5 +1,6 @@
-import { formatTime, parseTime, runSummary } from "../model.mjs";
+import { formatTime, runSummary } from "../model.mjs";
 import { save } from "./api.mjs";
+import { saveSplit } from "./splits.mjs";
 import { byId, node, status } from "./dom.mjs";
 import { selectedRun, splitLabel, state, stopById } from "./state.mjs";
 
@@ -151,42 +152,22 @@ export function createRunLog({ onSelectRun, onNavigate, onSplitSaved }) {
     renderHistory();
   }
 
+  function refreshSplits(checkpoint) {
+    renderMetrics();
+    renderHistory();
+    if (checkpoint === state.checkpoint) renderEditor();
+  }
+
   function bindEvents() {
     byId("run-select").addEventListener("change", (event) => onSelectRun(event.target.value));
     byId("checkpoint-select").addEventListener("change", (event) => onNavigate(event.target.value));
     byId("split-form").addEventListener("submit", async (event) => {
       event.preventDefault();
-      const time = parseTime(byId("split-time").value);
-      if (!time) {
-        status("split-status", "Enter a time like 4:57 or 4:57:32.", true);
-        byId("split-time").focus();
-        return;
-      }
-
       const id = state.checkpoint;
-      const data = structuredClone(state.data);
-      const run = selectedRun(data);
-      const previous = run.splits.find((split) => split.checkpoint === id);
-      if (stopById(id)?.recordSplit === false && !previous) {
-        status("split-status", "This checkpoint is only available for editing an existing historical split.", true);
-        return;
-      }
-      const finish = run.splits.find((split) => split.checkpoint === state.route.finishCheckpoint);
-      const others = run.splits.filter((split) => split.checkpoint !== id);
-      const beforeOtherSplits = id === state.route.finishCheckpoint && others.some((split) => split.seconds > time.seconds);
-      const afterFinish = id !== state.route.finishCheckpoint && finish && time.seconds > finish.seconds;
-      if (beforeOtherSplits || afterFinish) {
-        status("split-status", "The finish time must be at or after the other recorded splits.", true);
-        return;
-      }
-
-      const label = previous?.label ?? stopById(id)?.title ?? id;
-      run.splits = [...others, { checkpoint: id, label, ...time, note: byId("split-note").value.trim() }];
-      if (await save(data, "split-status", `Saved ${formatTime(time.seconds, time.precision)} · ${label}`)) {
-        renderMetrics();
-        onSplitSaved();
-        renderHistory();
-      }
+      if (await saveSplit({ checkpoint: id, time: byId("split-time").value, note: byId("split-note").value, statusId: "split-status" })) {
+        refreshSplits(id);
+        onSplitSaved(id);
+      } else if (!state.saving) byId("split-time").focus();
     });
 
     byId("notes-form").addEventListener("submit", async (event) => {
@@ -247,5 +228,5 @@ export function createRunLog({ onSelectRun, onNavigate, onSplitSaved }) {
     });
   }
 
-  return { render, renderEditor, bindEvents };
+  return { render, renderEditor, refreshSplits, bindEvents };
 }

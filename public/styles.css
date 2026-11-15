@@ -102,6 +102,19 @@ details[open] > summary::after { transform: rotate(180deg); }
 .guide-reference { margin-top: .2rem; font-size: .8rem; line-height: 1.6; }
 .guide-reference a { display: inline-block; min-height: 32px; padding-block: .3rem; }
 .guide-pickup-status:empty { display: none; }
+.inline-split { margin-top: .7rem; padding: .9rem 1rem; max-width: 34rem; border: 1px solid #b6c9a145; border-left: 3px solid var(--green); border-radius: 6px; background: #b6c9a108; }
+.inline-split .eyebrow { font-size: .6rem; color: var(--green); }
+.inline-split h4 { margin: .3rem 0; font-size: .88rem; font-weight: 500; }
+.inline-split-point { color: var(--muted); font-size: .78rem; line-height: 1.6; }
+.inline-split-record { margin-top: .35rem; color: var(--green); font-size: .73rem; line-height: 1.6; }
+.inline-split-controls { display: flex; flex-wrap: wrap; align-items: end; gap: .6rem; margin-top: .7rem; }
+.inline-split-field { flex: 1 1 10rem; min-width: 0; }
+.inline-split label { display: block; margin: 0 0 .25rem; font-size: .75rem; }
+.inline-split input { width: 100%; min-width: 0; font: 1rem "SFMono-Regular", Consolas, monospace; }
+.inline-split-controls button { flex: 0 0 auto; min-height: 44px; }
+.inline-split .field-help { margin: .4rem 0 0; font-size: .68rem; line-height: 1.6; }
+.inline-split .form-status { margin-top: .35rem; font-size: .73rem; line-height: 1.6; }
+
 .links { display: flex; flex-wrap: wrap; gap: .45rem; margin-top: 1.3rem; }
 .links:empty { display: none; }
 .links a { display: inline-flex; align-items: center; gap: .4rem; min-height: 33px; padding: .3rem .65rem; border: 1px solid #eca38c29; border-radius: 4px; color: var(--accent); font-size: .7rem; text-decoration: none; line-height: 1.5; }

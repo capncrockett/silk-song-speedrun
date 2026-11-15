@@ -3,13 +3,15 @@ import { byId, link, links, node, status } from "./dom.mjs";
 import { createDrawer } from "./drawers.mjs";
 import { renderStepMaps } from "./maps.mjs";
 import { savePickups } from "./pickups.mjs";
+import { createInlineSplits } from "./splits.mjs";
 import { guideStopById, selectedRun, splitLabel, state, stepTitle, stopById } from "./state.mjs";
 
 // Navigation is coordinated by app.mjs so the guide never imports the run log.
-export function createGuide({ onNavigate }) {
+export function createGuide({ onNavigate, onSplitSaved }) {
+  const inlineSplits = createInlineSplits({ onSaved: onSplitSaved });
   let sectionDrawer;
 
-  function renderGuideInstructions(containerId, instructions, pickups = [], references = []) {
+  function renderGuideInstructions(containerId, instructions, pickups = [], references = [], splitPoints = []) {
     const picked = new Set(selectedRun().prep);
     const metadata = new Map(pickupCategories(state.route, selectedRun().prep).flatMap((category) =>
       category.items.map((item) => [item.id, { ...item, categoryId: category.id }])
@@ -49,12 +51,17 @@ export function createGuide({ onNavigate }) {
         line.append(link(reference.title, reference.url, "subtle-link"));
         row.append(line);
       }
+      for (const point of splitPoints.filter((item) => item.instruction === index + 1)) {
+        const control = inlineSplits.render(point);
+        if (control) row.append(control);
+      }
       return row;
     }));
     status(statusId, "");
   }
 
   function renderGuide() {
+    inlineSplits.reset();
     const run = selectedRun();
     const stop = guideStopById(state.checkpoint) ?? stopById(state.checkpoint);
     const saved = run.splits.find((split) => split.checkpoint === state.checkpoint);
@@ -68,7 +75,7 @@ export function createGuide({ onNavigate }) {
     byId("next-step").disabled = index < 0 || index === state.guideStops.length - 1;
     const nextStop = state.guideStops[index + 1];
     byId("guide-next-label").textContent = stop && nextStop ? `Up next · ${stepTitle(nextStop)}` : stop ? "The end of your route." : "This step belongs to an earlier route version.";
-    renderGuideInstructions("guide-directions", stop?.guide ?? ["This historical split is preserved in the run log."], stop?.guidePickups, stop?.guideLinks);
+    renderGuideInstructions("guide-directions", stop?.guide ?? ["This historical split is preserved in the run log."], stop?.guidePickups, stop?.guideLinks, stop?.guideSplits);
     byId("entry-links").replaceChildren(...links(stop?.links));
     renderStepMaps(stop, section);
     const detour = stop?.optionalDetour;
@@ -203,5 +210,5 @@ export function createGuide({ onNavigate }) {
     });
   }
 
-  return { render, bindEvents, focusCurrentStep };
+  return { render, bindEvents, focusCurrentStep, syncSplits: inlineSplits.sync };
 }
