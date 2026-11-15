@@ -58,7 +58,7 @@ Use it on the Loddie / Forge Daughter return page. The red line runs from Bellha
 
 Joseph supplied the [Greymoor bell and spool return map](../assets/maps/Greymoor%20bell%20and%20spool%20return.png) on November 14, 2026. It was renamed from Screenshot 2026-11-14 at 12.01.20 PM.png without changing the original PNG bytes. Base map: MapGenie; game: Team Cherry. The catalog records dimensions, size and hash.
 
-Use it on reading step 10, the combined post-Widow Greymoor return. Red goes from Greymoor Bellway past Halfway Home to the Greymoor bell. Yellow Detour 1 climbs to the Spool Fragment. The return key uses Joseph’s numbering; the original guide’s locket Detour 1 belongs to the first-pass map. Keep the original Greymoor map and Moorwing screenshot for that earlier pass.
+Use it on reading step 10, the combined post-Widow Greymoor return. Red goes from Greymoor Bellway past Halfway Home to the Greymoor bell. Yellow Detour 1 climbs to the Spool Fragment. The return key uses Joseph’s numbering; the original guide’s locket Detour 1 belongs to the first-pass map. Keep the original Greymoor map and Moorwing screenshot for that earlier pass. For the selected return, rest at Halfway Home before heading out, ring the bell and collect the spool without sitting at another bench, then Quit to Menu and Continue back at Halfway Home. The supplied-map key includes only the actual bell route and yellow spool branch.
 
 ## Missing guide maps
 
