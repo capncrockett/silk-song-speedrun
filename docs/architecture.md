@@ -34,6 +34,11 @@ coordination in `app.mjs`. Use the existing modules before creating another laye
 reading position, active map and saving flag. Switching runs preserves reading
 position and never implies collected pickups.
 
+The Sections drawer groups by `guideNumber`. When a return visit has a different
+section title, its step button uses that custom title; the parent group retains
+the first-pass title. Guide headings and split-picker groups use each visit’s
+section title.
+
 `app.mjs` creates the guide and run log with explicit callbacks. Navigation
 updates the selected checkpoint, renders the guide and split editor, then moves
 focus when requested. Run selection renders the run log, guide and pickups.

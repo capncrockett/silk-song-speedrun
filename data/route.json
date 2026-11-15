@@ -72,7 +72,7 @@
         "2 · Moorwing",
         "3 · Craw Lake arena — decided to skip",
         "4 · Thread Storm and Three-fold Pin — decided to skip",
-        "5 · Bell #3 — return after Widow with Cling Grip via upper Halfway Home"
+        "5 · Bell #4 — return after Widow with Cling Grip via upper Halfway Home"
       ],
       "detours": [
         "1 · Greymoor Bellway locket 478035 — planned; distinct from the skipped Faydown ledge locket.",
@@ -80,15 +80,15 @@
         "3 · Reaper Crest — decided to skip.",
         "4 · Craw Lake branch — decided to skip."
       ],
-      "note": "Take the Bellway locket on the first pass. Skip the separate Halfway Home ledge locket 478039. Return for Bell #3 and the Greymoor spool after Cling Grip; keep Craw Lake arena, Thread Storm and Three-fold Pin skipped. Accept Moorwing aid if offered, but do not stall the route if the duo remains absent.",
+      "note": "Take the Bellway locket on the first pass. Skip the separate Halfway Home ledge locket 478039. Return for Bell #4 and the Greymoor spool after Cling Grip; keep Craw Lake arena, Thread Storm and Three-fold Pin skipped. Accept Moorwing aid if offered, but do not stall the route if the duo remains absent.",
       "guideNumber": 5
     },
     {
       "id": "garmond-greymoor-return",
-      "title": "Greymoor, Garmond and Zaza, & Moorwing",
+      "title": "Return to Greymoor, Bell #4",
       "maps": ["greymoor-bell-spool-return"],
       "steps": ["bellhart-return", "greymoor-bell"],
-      "checkpoints": ["Greymoor bell · Bell #3, at the end of the red route"],
+      "checkpoints": ["Greymoor bell · Bell #4, at the end of the red route"],
       "detours": [
         "1 · Greymoor Spool Fragment — climb the yellow branch; completes pair B with Deep Docks."
       ],
@@ -275,7 +275,7 @@
             "Continue through Mosshome and collect Silkspear.",
             "Take the Frayed Rosary String beneath the left Silk Wall. Break the wall by Mosshome’s top-left room transition and collect the Choral Commandment for a later Bellhart sale.",
             "Activate the lift for the return to Mosshome, then continue toward Bell Beast. Keep the starting Hunter Crest.",
-            "Defeat Bell Beast and ring the Marrow bell.",
+            "Defeat Bell Beast and ring the Marrow bell (Bell #1).",
             "Save rosaries for the planned shops and Bellways: skip maps, Quill, and Compass unless you need a map to find the route."
           ],
           "title": "Silkspear",
@@ -330,7 +330,7 @@
             "Collect the Marrow Craftmetal from the trapped secret tunnel near the jail; reserve it for Magma Bell.",
             "Clear the Deep Docks ant arena and collect Swift Step. Loddie’s target practice comes on the return after Widow.",
             "Swift Step sets your respawn point at the Weaver spire. Skip G&Z Detour 2 (toll bench) and go straight to Lace; a death returns you to the spire as long as you have not rested at another bench.",
-            "Defeat Lace 1 and ring the Deep Docks bell. The Bone Bottom loop comes next."
+            "Defeat Lace 1 and ring the Deep Docks bell (Bell #2). The Bone Bottom loop comes next."
           ],
           "maps": ["deep-docks"],
           "title": "Swift Step",
@@ -596,7 +596,7 @@
           "id": "widow",
           "guide": [
             "Guide advice for Widow: favor dodging over aggressive attacking. Watch the diagonally bouncing bells, use the gap between their paths, and avoid hugging the opposite wall where they rebound.",
-            "Defeat Widow, collect Needolin, and record your split. Then ring the Bellhart bell.",
+            "Defeat Widow, collect Needolin, and record your split. Then ring the Bellhart bell (Bell #3).",
             "Return to Bellhart for the free first Needle upgrade.",
             "Sell the Mosshome Choral Commandment and any other carried relics to Scrounge in Bellhart before leaving for the return loop. The Commandment sells for 180 rosaries.",
             "Open Bellhart Bellway for 60 rosaries. The next loop takes you to Eva, Atla, Loddie, and Forge Daughter."
@@ -752,8 +752,8 @@
       "number": "05",
       "guideNumber": 5,
       "guideSection": "garmond-greymoor-return",
-      "title": "Greymoor, Garmond and Zaza, & Moorwing",
-      "summary": "Return with Cling Grip for Bell #3 and the selected Greymoor spool.",
+      "title": "Return to Greymoor, Bell #4",
+      "summary": "Return with Cling Grip for Bell #4 and the selected Greymoor spool.",
       "maps": ["greymoor-bell-spool-return"],
       "visit": "Return after Widow",
       "stops": [
@@ -772,15 +772,15 @@
         },
         {
           "id": "greymoor-bell",
-          "guideTitle": "Bell #3 & the Greymoor spool",
+          "guideTitle": "Bell #4 & the Greymoor spool",
           "guide": [
-            "Follow the red route above and right of Halfway Home, take the top-right transition, and go northeast to ring the Greymoor bell (Bell #3). Do NOT sit at the bell’s bench.",
+            "Follow the red route above and right of Halfway Home, take the top-right transition, and go northeast to ring the Greymoor bell (Bell #4). Do NOT sit at the bell’s bench.",
             "Take yellow Detour 1 and use Cling Grip and the balloon climb to collect the upper Greymoor spool.",
             "This completes pair B with Deep Docks: +2 total Silk capacity.",
             "After collecting the spool, use Quit to Menu / Save and Quit, then Continue to return to the Halfway Home bench. From there, go to Greymoor Bellway and travel to Shellwood Bellway."
           ],
           "maps": ["greymoor-bell-spool-return"],
-          "title": "Greymoor Bell #3",
+          "title": "Greymoor Bell #4",
           "tip": "Rest at Halfway Home before heading out. Ring the Greymoor bell and collect yellow Detour 1’s spool without sitting at another bench. Quit to Menu and Continue back at Halfway Home, then take Greymoor Bellway to Shellwood Bellway.",
           "links": [
             { "title": "Greymoor bell", "pin": 478063 },
@@ -817,7 +817,7 @@
           "id": "blasted-steps",
           "guideTitle": "Shellwood bell & Blasted Steps",
           "guide": [
-            "From the already-open Shellwood Bellway, go to Shellwood’s bell and ring it, then continue to Blasted Steps.",
+            "From the already-open Shellwood Bellway, go to Shellwood’s bell (Bell #5) and ring it, then continue to Blasted Steps.",
             "Open Blasted Steps Bellway for 60 rosaries. Skip G&Z Judge Detour 1 (Dice gambling); collect Dice free after Dancers.",
             "Take the nearby Memory Locket and free Craftmetal before Last Judge.",
             "Before the fight, equip Magma Bell and check that you have six masks and Needle Upgrade #1."
@@ -1304,36 +1304,36 @@
     {
       "id": "bells",
       "title": "Bells · Grand Gate",
-      "detail": "Ring these five bell shrines to open the Grand Gate. Opening a Bellway station is separate from ringing its bell.",
+      "detail": "Numbered in pickup order. Ring all five bell shrines to open the Grand Gate. Opening a Bellway station is separate from ringing its bell.",
       "complete": "All five bells rung",
       "items": [
         {
           "id": "bell-marrow",
-          "title": "Marrow bell",
+          "title": "Bell #1 · Marrow",
           "detail": "Ring after defeating Bell Beast",
           "pin": 477887
         },
         {
           "id": "bell-deep-docks",
-          "title": "Deep Docks bell",
+          "title": "Bell #2 · Deep Docks",
           "detail": "Ring after defeating Lace 1",
           "pin": 476887
         },
         {
           "id": "bell-bellhart",
-          "title": "Bellhart bell",
+          "title": "Bell #3 · Bellhart",
           "detail": "Ring after defeating Widow and collecting Needolin",
           "pin": 478201
         },
         {
           "id": "bell-greymoor",
-          "title": "Greymoor bell",
+          "title": "Bell #4 · Greymoor",
           "detail": "Rest at Halfway Home before heading out; ring the bell without sitting at its bench so you can quit-return after the spool",
           "pin": 478063
         },
         {
           "id": "bell-shellwood",
-          "title": "Shellwood bell",
+          "title": "Bell #5 · Shellwood",
           "detail": "Ring after returning through Shellwood Bellway, before Blasted Steps",
           "pin": 478302
         }
@@ -1363,7 +1363,7 @@
     {
       "id": "silk-b",
       "title": "Silk pair B · Deep Docks + Greymoor",
-      "detail": "Second completed spool: Deep Docks during the Forge Daughter visit, then the Greymoor balloon climb on the Cling Grip return for Bell #3. No Craw Lake arena clear.",
+      "detail": "Second completed spool: Deep Docks during the Forge Daughter visit, then the Greymoor balloon climb on the Cling Grip return for Bell #4. No Craw Lake arena clear.",
       "complete": "+1 Silk capacity",
       "items": [
         {
@@ -1375,7 +1375,7 @@
         {
           "id": "spool-greymoor",
           "title": "Upper Greymoor",
-          "detail": "Bell #3 return with Cling Grip",
+          "detail": "Bell #4 return with Cling Grip",
           "pin": 478263
         }
       ],
@@ -1804,7 +1804,7 @@
       "id": "thread",
       "status": "Decided to skip",
       "title": "Thread Storm and Craw Lake",
-      "detail": "A documented route takes Thread Storm after Clawline and Faydown Cloak without clearing the arena. The earlier Halfway Home route is verified for Bell #3, and the late spool pickup is separate evidence. Keep Thread Storm skipped for this route.",
+      "detail": "A documented route takes Thread Storm after Clawline and Faydown Cloak without clearing the arena. The earlier Halfway Home route is verified for Bell #4, and the late spool pickup is separate evidence. Keep Thread Storm skipped for this route.",
       "links": [
         { "title": "Late bypass", "url": "https://speedpastes.org/kXQvcbMl" },
         { "title": "Thread Storm pin", "pin": 478061 }

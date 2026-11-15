@@ -431,8 +431,8 @@
     },
     {
       "id": "greymoor-bell-spool-return",
-      "title": "Greymoor bell & spool · supplied route",
-      "section": "Greymoor, Garmond and Zaza, & Moorwing",
+      "title": "Return to Greymoor · Bell #4 & spool",
+      "section": "Return to Greymoor, Bell #4",
       "file": "assets/maps/Greymoor bell and spool return.png",
       "src": "/maps/greymoor-bell-spool-return.png",
       "mime": "image/png",
@@ -448,7 +448,7 @@
       "custom": true,
       "note": "Rest at Halfway Home first. Red leads to the Greymoor bell; yellow Detour 1 climbs to the spool. Do not sit at another bench. After both pickups, Quit to Menu and Continue back at Halfway Home, then travel from Greymoor Bellway to Shellwood.",
       "keyLabel": "Joseph’s map · route key",
-      "keyIntro": "The red line follows the upper Halfway Home approach to the bell at the right-hand bench. Yellow Detour 1 leads up to the Spool Fragment. The yellow number is Joseph’s label; Bell #3 is the original guide’s name for this bell."
+      "keyIntro": "The red line follows the upper Halfway Home approach to Bell #4 at the right-hand bench. Yellow Detour 1 leads up to the Spool Fragment. Bell numbers follow the selected route’s pickup order; yellow 1 is Joseph’s spool-branch label."
     }
   ],
   "missing": [

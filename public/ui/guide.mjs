@@ -109,7 +109,12 @@ export function createGuide({ onNavigate }) {
     const groups = new Map();
     for (const section of state.route.sections) {
       if (!groups.has(section.guideNumber)) groups.set(section.guideNumber, { title: section.title, steps: [] });
-      groups.get(section.guideNumber).steps.push(...state.guideStops.filter((stop) => stop.sectionId === section.id).map((stop) => ({ stop, visit: section.visit })));
+      const group = groups.get(section.guideNumber);
+      group.steps.push(...state.guideStops.filter((stop) => stop.sectionId === section.id).map((stop) => ({
+        stop,
+        visit: section.visit,
+        title: section.title === group.title ? null : section.title
+      })));
     }
     const rows = [];
     for (const [number, group] of groups) {
@@ -131,8 +136,8 @@ export function createGuide({ onNavigate }) {
         summary.append(node("span", "section-label", group.title));
         if (details.open) summary.setAttribute("aria-current", "location");
         const steps = node("ol", "section-steps");
-        for (const { stop, visit } of group.steps) {
-          const button = node("button", "section-step", visit ? visit + " · " + stepTitle(stop) : stepTitle(stop));
+        for (const { stop, visit, title } of group.steps) {
+          const button = node("button", "section-step", title ?? (visit ? visit + " · " + stepTitle(stop) : stepTitle(stop)));
           button.type = "button";
           button.dataset.checkpoint = stop.id;
           if (stop.checkpointIds.includes(state.checkpoint)) button.setAttribute("aria-current", "step");

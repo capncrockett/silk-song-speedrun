@@ -227,7 +227,7 @@ assert.equal(new Set(route.sections.map((section) => section.id)).size, route.se
 for (const section of route.sections) {
   const reference = guideSections.find((item) => item.id === section.guideSection);
   assert.ok(reference, "Every navigation group needs its original guide section.");
-  assert.equal(section.title, reference.title, "Use the full original guide title in navigation.");
+  assert.equal(section.title, reference.title, "Navigation titles must match their route map key, including custom return headings.");
   assert.equal(section.guideNumber, reference.guideNumber, "Return visits retain the original guide section number.");
   assert.ok(section.stops.length > 0 && section.maps.length > 0, "Every navigation group needs steps and a map reference.");
   if (section.missingMaps?.length) {
