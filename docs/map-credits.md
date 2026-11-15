@@ -4,7 +4,7 @@ Source: [Speedrunner Achievement Guide: The Garmond Route!](https://steamcommuni
 
 The three previously saved maps are preserved. On 2026-11-09, 16 additional original images were recovered directly from the guide’s Steam image links. All files retain their original bytes. [catalog.json](../assets/maps/catalog.json) records source URLs, dimensions, byte counts, SHA-256 hashes, and route relevance.
 
-The app shows 12 original reference maps, 2 relevant original screenshots, and Joseph’s supplied Shellwood/Bellhart and Shellwood/Last Judge/Grand Gate screenshots, plus his annotated Grand Gate/Songclave and Bellhart/Deep Docks return routes. Guide-only Mist and Sister Splinter skip alternatives are preserved in `assets/maps/` but excluded from the timed route and gallery. The timed route fights Sister Splinter. The original guide text is condensed into route directions and numbered map keys, with the decisions in `HANDOFF.md` applied. Original map numbers stay intact; planned, optional, skipped and resource-backup entries describe our path. The original 13 travel-section titles organize the runbook, with a labeled Greymoor return. Four original maps remain unavailable; three have supplied replacements and the combined Songclave chapter has a supplied approach map.
+The app shows 12 original reference maps, 2 relevant original screenshots, and Joseph’s supplied Shellwood/Bellhart and Shellwood/Last Judge/Grand Gate screenshots, plus his annotated Grand Gate/Songclave, Bellhart/Deep Docks and Greymoor bell/spool return routes. Guide-only Mist and Sister Splinter skip alternatives are preserved in `assets/maps/` but excluded from the timed route and gallery. The timed route fights Sister Splinter. The original guide text is condensed into route directions and numbered map keys, with the decisions in `HANDOFF.md` applied. Original map numbers stay intact; planned, optional, skipped and resource-backup entries describe our path. The original 13 travel-section titles organize the runbook, with a labeled Greymoor return. Four original maps remain unavailable; three have supplied replacements and the combined Songclave chapter has a supplied approach map.
 
 | Reference | Saved original | Steam source | Use |
 |---|---|---|---|
@@ -53,6 +53,12 @@ The red line follows the approach from Grand Gate through Choral Chambers to Gra
 Joseph supplied the [Bellhart to Loddie and Deep Docks return map](../assets/maps/Bellhart%20to%20Loddie%20and%20Deep%20Docks%20return.png) on November 14, 2026. It was renamed from Screenshot 2026-11-14 at 11.09.42 AM.png without altering the original PNG bytes. Base map: MapGenie; game: Team Cherry. Dimensions, size and hash are recorded in the catalog.
 
 Use it on the Loddie / Forge Daughter return page. The red line runs from Bellhart through Lower Bellhart to the mask shard (white 1) and Forge Daughter bench (white 2); green returns to Deep Docks Bellway. Joseph’s yellow detours are 1 Loddie, 2 Spool Fragment, and 3 easy rosaries. These labels belong to his screenshot rather than the original G&Z return map. The original return image remains unavailable, with this supplied replacement recorded in the catalog.
+
+## Supplied Greymoor bell and spool return route
+
+Joseph supplied the [Greymoor bell and spool return map](../assets/maps/Greymoor%20bell%20and%20spool%20return.png) on November 14, 2026. It was renamed from Screenshot 2026-11-14 at 12.01.20 PM.png without changing the original PNG bytes. Base map: MapGenie; game: Team Cherry. The catalog records dimensions, size and hash.
+
+Use it on reading step 10, the combined post-Widow Greymoor return. Red goes from Greymoor Bellway past Halfway Home to the Greymoor bell. Yellow Detour 1 climbs to the Spool Fragment. The return key uses Joseph’s numbering; the original guide’s locket Detour 1 belongs to the first-pass map. Keep the original Greymoor map and Moorwing screenshot for that earlier pass.
 
 ## Missing guide maps
 

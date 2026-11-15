@@ -97,9 +97,7 @@
       ],
       "steps": [
         "halfway-home",
-        "moorwing",
-        "bellhart-return",
-        "greymoor-bell"
+        "moorwing"
       ],
       "checkpoints": [
         "1 · Halfway Home",
@@ -115,6 +113,26 @@
         "4 · Craw Lake branch — decided to skip."
       ],
       "note": "Take the Bellway locket on the first pass. Skip the separate Halfway Home ledge locket 478039. Return for Bell #3 and the Greymoor spool after Cling Grip; keep Craw Lake arena, Thread Storm and Three-fold Pin skipped. Accept Moorwing aid if offered, but do not stall the route if the duo remains absent.",
+      "guideNumber": 5
+    },
+    {
+      "id": "garmond-greymoor-return",
+      "title": "Greymoor, Garmond and Zaza, & Moorwing",
+      "maps": [
+        "greymoor-bell-spool-return"
+      ],
+      "steps": [
+        "bellhart-return",
+        "greymoor-bell"
+      ],
+      "checkpoints": [
+        "Greymoor bell · Bell #3, at the end of the red route"
+      ],
+      "detours": [
+        "1 · Greymoor Spool Fragment — climb the yellow branch; completes pair B with Deep Docks."
+      ],
+      "detoursTitle": "Yellow detour",
+      "note": "Follow red above Halfway Home to ring the Greymoor bell, then yellow Detour 1 for the spool. Return to Greymoor Bellway and travel to Shellwood Bellway. Keep Craw Lake arena, Thread Storm and Three-fold Pin skipped.",
       "guideNumber": 5
     },
     {
@@ -346,7 +364,7 @@
         "marrow"
       ],
       "stops": [
-        {"id": "silk-spear", "guide": ["Follow Moss Grotto into the Marrow and clear the arena; skip G&Z Detour 1 (Beastfly pogo shortcut).", "On the climb after the arena and toll bench, take the free Shard Pendant from the side room. Equip it at a bench for extra Shell Shards from enemy kills.", "Continue through Mosshome and collect Silkspear.", "Take the Frayed Rosary String beneath the left Silk Wall. Break the wall by Mosshome’s top-left room transition and collect the Choral Commandment for a later Bellhart sale.", "Activate the lift for the return to Mosshome, then continue toward Bell Beast. Keep the starting Hunter Crest.", "Defeat Bell Beast and ring the Marrow bell.", "Save rosaries for the planned shops and Bellways: skip maps, Quill, and Compass unless you need a map to find the route."], "title": "Silkspear", "tip": "Collect and equip Shard Pendant, take the Mosshome rosary string and Choral Commandment, and activate the return lift. Keep Hunter, defeat Bell Beast and ring the Marrow bell.", "links": [{"title": "Silkspear", "pin": 477871}, {"title": "Shard Pendant", "pin": 477848}, {"title": "Mosshome rosary string", "pin": 477868}, {"title": "Choral Commandment", "pin": 477867}], "guideTitle": "Silkspear & Bell Beast", "guidePickups": [{"instruction": 2, "id": "tool-shard-pendant", "text": "Shard Pendant"}, {"instruction": 3, "id": "ability-silkspear", "text": "Silkspear"}, {"instruction": 4, "id": "string-mosshome", "text": "Frayed Rosary String"}, {"instruction": 4, "id": "commandment-mosshome", "text": "Choral Commandment"}]}
+        {"id": "silk-spear", "guide": ["Follow Moss Grotto into the Marrow and clear the arena; skip G&Z Detour 1 (Beastfly pogo shortcut).", "On the climb after the arena and toll bench, take the free Shard Pendant from the side room. Equip it at a bench for extra Shell Shards from enemy kills.", "Continue through Mosshome and collect Silkspear.", "Take the Frayed Rosary String beneath the left Silk Wall. Break the wall by Mosshome’s top-left room transition and collect the Choral Commandment for a later Bellhart sale.", "Activate the lift for the return to Mosshome, then continue toward Bell Beast. Keep the starting Hunter Crest.", "Defeat Bell Beast and ring the Marrow bell.", "Save rosaries for the planned shops and Bellways: skip maps, Quill, and Compass unless you need a map to find the route."], "title": "Silkspear", "tip": "Collect and equip Shard Pendant, take the Mosshome rosary string and Choral Commandment, and activate the return lift. Keep Hunter, defeat Bell Beast and ring the Marrow bell.", "links": [{"title": "Silkspear", "pin": 477871}, {"title": "Shard Pendant", "pin": 477848}, {"title": "Mosshome rosary string", "pin": 477868}, {"title": "Choral Commandment", "pin": 477867}], "guideTitle": "Silkspear & Bell Beast", "guidePickups": [{"instruction": 2, "id": "tool-shard-pendant", "text": "Shard Pendant"}, {"instruction": 3, "id": "ability-silkspear", "text": "Silkspear"}, {"instruction": 4, "id": "string-mosshome", "text": "Frayed Rosary String"}, {"instruction": 4, "id": "commandment-mosshome", "text": "Choral Commandment"}, {"instruction": 6, "id": "bell-marrow", "text": "Marrow bell"}]}
       ]
     },
     {
@@ -360,7 +378,7 @@
         "deep-docks"
       ],
       "stops": [
-        {"id": "swift-step", "guideTitle": "Swift Step & Lace 1", "guide": ["Pick up Straight Pin above Grindle’s cell on the way into Deep Docks.", "Collect the Marrow Craftmetal from the trapped secret tunnel near the jail; reserve it for Magma Bell.", "Clear the Deep Docks ant arena and collect Swift Step. Loddie’s target practice comes on the return after Widow.", "Swift Step sets your respawn point at the Weaver spire. Skip G&Z Detour 2 (toll bench) and go straight to Lace; a death returns you to the spire as long as you have not rested at another bench.", "Defeat Lace 1 and ring the Deep Docks bell. The Bone Bottom loop comes next."], "maps": ["deep-docks"], "title": "Swift Step", "tip": "Collect Straight Pin and the Marrow Craftmetal for Magma Bell, then clear the ant arena for Swift Step. Skip G&Z Detour 2 (toll bench) and head straight to Lace; Swift Step’s spire is your respawn point until a later bench rest. Defeat Lace, ring the Deep Docks bell, and continue to the Bone Bottom loop.", "links": [{"title": "Straight Pin", "pin": 477899}, {"title": "Marrow Craftmetal", "pin": 477894}, {"title": "Lace 1", "pin": 476915}], "guidePickups": [{"instruction": 1, "id": "tool-straight-pin", "text": "Straight Pin"}, {"instruction": 2, "id": "metal-marrow", "text": "Marrow Craftmetal"}, {"instruction": 3, "id": "ability-swift-step", "text": "Swift Step"}]}
+        {"id": "swift-step", "guideTitle": "Swift Step & Lace 1", "guide": ["Pick up Straight Pin above Grindle’s cell on the way into Deep Docks.", "Collect the Marrow Craftmetal from the trapped secret tunnel near the jail; reserve it for Magma Bell.", "Clear the Deep Docks ant arena and collect Swift Step. Loddie’s target practice comes on the return after Widow.", "Swift Step sets your respawn point at the Weaver spire. Skip G&Z Detour 2 (toll bench) and go straight to Lace; a death returns you to the spire as long as you have not rested at another bench.", "Defeat Lace 1 and ring the Deep Docks bell. The Bone Bottom loop comes next."], "maps": ["deep-docks"], "title": "Swift Step", "tip": "Collect Straight Pin and the Marrow Craftmetal for Magma Bell, then clear the ant arena for Swift Step. Skip G&Z Detour 2 (toll bench) and head straight to Lace; Swift Step’s spire is your respawn point until a later bench rest. Defeat Lace, ring the Deep Docks bell, and continue to the Bone Bottom loop.", "links": [{"title": "Straight Pin", "pin": 477899}, {"title": "Marrow Craftmetal", "pin": 477894}, {"title": "Lace 1", "pin": 476915}], "guidePickups": [{"instruction": 1, "id": "tool-straight-pin", "text": "Straight Pin"}, {"instruction": 2, "id": "metal-marrow", "text": "Marrow Craftmetal"}, {"instruction": 3, "id": "ability-swift-step", "text": "Swift Step"}, {"instruction": 5, "id": "bell-deep-docks", "text": "Deep Docks bell"}]}
       ]
     },
     {
@@ -527,6 +545,11 @@
               "instruction": 3,
               "id": "needle-first",
               "text": "first Needle upgrade"
+            },
+            {
+              "instruction": 2,
+              "id": "bell-bellhart",
+              "text": "Bellhart bell"
             }
           ],
           "guideLinks": [
@@ -563,16 +586,16 @@
       "id": "greymoor-return",
       "number": "05",
       "guideNumber": 5,
-      "guideSection": "garmond-greymoor",
+      "guideSection": "garmond-greymoor-return",
       "title": "Greymoor, Garmond and Zaza, & Moorwing",
       "summary": "Return with Cling Grip for Bell #3 and the selected Greymoor spool.",
       "maps": [
-        "greymoor"
+        "greymoor-bell-spool-return"
       ],
       "visit": "Return after Widow",
       "stops": [
-        {"id": "bellhart-return", "guideTitle": "Return to Greymoor", "guide": ["From Greymoor Bellway, head toward Halfway Home with Cling Grip.", "Take the upper Halfway Home route for Bell #3 and the Greymoor spool."], "maps": ["greymoor"], "title": "Bellhart bench after shopping", "tip": "Travel directly from Deep Docks Bellway to Greymoor, then head toward upper Halfway Home for Bell #3 and the spool.", "guideStep": "greymoor-bell", "recordSplit": false},
-        {"id": "greymoor-bell", "guideTitle": "Bell #3 & the Greymoor spool", "guide": ["Climb above and right of Halfway Home, take the top-right transition, and go northeast to ring Bell #3.", "Use Cling Grip and the balloon climb to collect the upper Greymoor spool.", "This completes pair B with Deep Docks: +2 total Silk capacity. The Craw Lake arena is not required for this pickup.", "Return to Greymoor Bellway and travel to Shellwood Bellway, then continue toward Blasted Steps. Skip G&Z Detour 4’s Checkpoints 3–4 (Craw Lake arena, Thread Storm, Three-fold Pin) and the Ragpelt farm."], "maps": ["greymoor"], "title": "Greymoor Bell #3", "tip": "Take the upper Halfway Home route northeast to ring Bell #3, then collect the Greymoor spool to complete pair B with Deep Docks. Return to Greymoor Bellway and travel to Shellwood Bellway for the Blasted Steps approach. No double-jump or Craw Lake arena is needed; skip the Ragpelt farm.", "links": [{"title": "Greymoor spool", "pin": 478263}], "guidePickups": [{"instruction": 2, "id": "spool-greymoor", "text": "upper Greymoor spool"}]}
+        {"id": "bellhart-return", "guideTitle": "Return to Greymoor", "guide": ["From Greymoor Bellway, head toward Halfway Home with Cling Grip.", "Take the upper Halfway Home route for Bell #3 and the Greymoor spool."], "maps": ["greymoor-bell-spool-return"], "title": "Bellhart bench after shopping", "tip": "Travel directly from Deep Docks Bellway to Greymoor, then head toward upper Halfway Home for Bell #3 and the spool.", "guideStep": "greymoor-bell", "recordSplit": false},
+        {"id": "greymoor-bell", "guideTitle": "Bell #3 & the Greymoor spool", "guide": ["Follow the red route above and right of Halfway Home, take the top-right transition, and go northeast to ring the Greymoor bell (Bell #3).", "Take yellow Detour 1 and use Cling Grip and the balloon climb to collect the upper Greymoor spool.", "This completes pair B with Deep Docks: +2 total Silk capacity. The Craw Lake arena is not required for this pickup.", "Return to Greymoor Bellway and travel to Shellwood Bellway, then continue toward Blasted Steps. Skip G&Z Detour 4’s Checkpoints 3–4 (Craw Lake arena, Thread Storm, Three-fold Pin) and the Ragpelt farm."], "maps": ["greymoor-bell-spool-return"], "title": "Greymoor Bell #3", "tip": "Take the upper Halfway Home route northeast to ring Bell #3, then collect the Greymoor spool to complete pair B with Deep Docks. Return to Greymoor Bellway and travel to Shellwood Bellway for the Blasted Steps approach. No double-jump or Craw Lake arena is needed; skip the Ragpelt farm.", "links": [{"title": "Greymoor bell", "pin": 478063}, {"title": "Greymoor spool", "pin": 478263}], "guidePickups": [{"instruction": 1, "id": "bell-greymoor", "text": "Greymoor bell"}, {"instruction": 2, "id": "spool-greymoor", "text": "upper Greymoor spool"}], "mapNote": "Joseph’s supplied Greymoor return map: follow red past Halfway Home to the bell, then yellow Detour 1 for the spool. Return to Greymoor Bellway for Shellwood."}
       ]
     },
     {
@@ -590,8 +613,8 @@
       ],
       "mapNote": "Joseph’s supplied Shellwood → Last Judge → Grand Gate screenshot. Follow the written directions for the Choral Chambers bench and Grand Gate spool; the guide’s checkpoint numbers are not drawn on this map.",
       "stops": [
-        {"id": "blasted-steps", "guideTitle": "Shellwood bell & Blasted Steps", "guide": ["From the already-open Shellwood Bellway, go to Shellwood’s bell and ring it, then continue to Blasted Steps.", "Open Blasted Steps Bellway for 60 rosaries. Skip G&Z Judge Detour 1 (Dice gambling); collect Dice free after Dancers.", "Take the nearby Memory Locket and free Craftmetal before Last Judge.", "Before the fight, equip Magma Bell and check that you have six masks and Needle Upgrade #1."], "title": "Blasted Steps bench", "tip": "Arrive at the already-open Shellwood Bellway, ring Shellwood’s bell, then continue to Blasted Steps. Open Blasted Steps Bellway for 60 to make the later Dice pickup practical. Grab the nearby Memory Locket and free Craftmetal before Judge. Equip Magma Bell and check six masks plus Needle Upgrade #1.", "links": [{"title": "Blasted Steps Bellway", "pin": 478308}, {"title": "Nearby locket", "pin": 478502}], "purchases": [{"item": "Blasted Steps Bellway", "rosaries": 60}], "guidePickups": [{"instruction": 3, "id": "locket-blasted", "text": "Memory Locket"}, {"instruction": 3, "id": "metal-blasted", "text": "free Craftmetal"}]},
-        {"id": "act-2", "guideTitle": "Last Judge & the Grand Gate spool", "guide": ["With all five bells rung, play Needolin at the Grand Gate and defeat Last Judge.", "Take the Grand Gate’s upper-right breakable-wall shortcut to Choral Chambers; skip G&Z Judge Detour 3 (Underworks / Delver’s Drill).", "Use the return shortcut for the Grand Gate spool. Climb the balancing platforms, hitting their undersides to tip them into position.", "Collect the fragment to start pair C, then continue toward Grand Bellway."], "title": "Last Judge / Choral Chambers bench", "tip": "Play Needolin at the Grand Gate after all five bells, beat Last Judge, and rest in Choral Chambers. From the Choral Chambers return shortcut, climb the Grand Gate balancing platforms for spool 478586 before continuing toward Grand Bellway. Hit the scales from underneath to tip them; no extra arena or double-jump is required.", "links": [{"title": "Last Judge", "pin": 478545}, {"title": "Grand Gate spool", "pin": 478586}], "guidePickups": [{"instruction": 4, "id": "spool-grand-gate", "text": "fragment"}]}
+        {"id": "blasted-steps", "guideTitle": "Shellwood bell & Blasted Steps", "guide": ["From the already-open Shellwood Bellway, go to Shellwood’s bell and ring it, then continue to Blasted Steps.", "Open Blasted Steps Bellway for 60 rosaries. Skip G&Z Judge Detour 1 (Dice gambling); collect Dice free after Dancers.", "Take the nearby Memory Locket and free Craftmetal before Last Judge.", "Before the fight, equip Magma Bell and check that you have six masks and Needle Upgrade #1."], "title": "Blasted Steps bench", "tip": "Arrive at the already-open Shellwood Bellway, ring Shellwood’s bell, then continue to Blasted Steps. Open Blasted Steps Bellway for 60 to make the later Dice pickup practical. Grab the nearby Memory Locket and free Craftmetal before Judge. Equip Magma Bell and check six masks plus Needle Upgrade #1.", "links": [{"title": "Blasted Steps Bellway", "pin": 478308}, {"title": "Nearby locket", "pin": 478502}], "purchases": [{"item": "Blasted Steps Bellway", "rosaries": 60}], "guidePickups": [{"instruction": 3, "id": "locket-blasted", "text": "Memory Locket"}, {"instruction": 3, "id": "metal-blasted", "text": "free Craftmetal"}, {"instruction": 1, "id": "bell-shellwood", "text": "Shellwood’s bell"}]},
+        {"id": "act-2", "guideTitle": "Last Judge & the Grand Gate spool", "guide": ["Use the Bells checklist to confirm all five bells are rung, then play Needolin at the Grand Gate and defeat Last Judge.", "Take the Grand Gate’s upper-right breakable-wall shortcut to Choral Chambers; skip G&Z Judge Detour 3 (Underworks / Delver’s Drill).", "Use the return shortcut for the Grand Gate spool. Climb the balancing platforms, hitting their undersides to tip them into position.", "Collect the fragment to start pair C, then continue toward Grand Bellway."], "title": "Last Judge / Choral Chambers bench", "tip": "Play Needolin at the Grand Gate after all five bells, beat Last Judge, and rest in Choral Chambers. From the Choral Chambers return shortcut, climb the Grand Gate balancing platforms for spool 478586 before continuing toward Grand Bellway. Hit the scales from underneath to tip them; no extra arena or double-jump is required.", "links": [{"title": "Last Judge", "pin": 478545}, {"title": "Grand Gate spool", "pin": 478586}], "guidePickups": [{"instruction": 4, "id": "spool-grand-gate", "text": "fragment"}]}
       ]
     },
     {
@@ -691,6 +714,44 @@
     }
   ],
   "preparations": [
+    {
+      "id": "bells",
+      "title": "Bells · Grand Gate",
+      "detail": "Ring these five bell shrines to open the Grand Gate. Opening a Bellway station is separate from ringing its bell.",
+      "complete": "All five bells rung",
+      "items": [
+        {
+          "id": "bell-marrow",
+          "title": "Marrow bell",
+          "detail": "Ring after defeating Bell Beast",
+          "pin": 477887
+        },
+        {
+          "id": "bell-deep-docks",
+          "title": "Deep Docks bell",
+          "detail": "Ring after defeating Lace 1",
+          "pin": 476887
+        },
+        {
+          "id": "bell-bellhart",
+          "title": "Bellhart bell",
+          "detail": "Ring after defeating Widow and collecting Needolin",
+          "pin": 478201
+        },
+        {
+          "id": "bell-greymoor",
+          "title": "Greymoor bell · Bell #3",
+          "detail": "Follow the red upper Halfway Home route on the post-Widow Greymoor return",
+          "pin": 478063
+        },
+        {
+          "id": "bell-shellwood",
+          "title": "Shellwood bell",
+          "detail": "Ring after returning through Shellwood Bellway, before Blasted Steps",
+          "pin": 478302
+        }
+      ]
+    },
     {
       "id": "silk-a",
       "title": "Silk pair A · Bone Bottom + Atla",

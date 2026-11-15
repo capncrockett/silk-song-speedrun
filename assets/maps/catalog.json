@@ -428,6 +428,27 @@
       "note": "Joseph’s red route from Bellhart through Lower Bellhart to the Deep Docks mask shard (white 1) and Forge Daughter bench (white 2). Yellow detours: 1 Loddie, 2 Spool Fragment, 3 easy rosaries. Green returns to Deep Docks Bellway.",
       "keyLabel": "Joseph’s map · route key",
       "keyIntro": "Numbers are Joseph’s annotations on this supplied screenshot. White numbers mark the main route; yellow numbers mark the three detours. The red line approaches from Bellhart and the green line returns to Deep Docks Bellway."
+    },
+    {
+      "id": "greymoor-bell-spool-return",
+      "title": "Greymoor bell & spool · supplied route",
+      "section": "Greymoor, Garmond and Zaza, & Moorwing",
+      "file": "assets/maps/Greymoor bell and spool return.png",
+      "src": "/maps/greymoor-bell-spool-return.png",
+      "mime": "image/png",
+      "width": 2414,
+      "height": 954,
+      "sourceUrl": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom",
+      "creator": "User-supplied annotated MapGenie screenshot",
+      "sha256": "1e66221c50fe8e5691fdff5bfe53b356d7e02c89335f4449a5dea341de0c5999",
+      "recovered": "2026-11-14",
+      "bytes": 1038445,
+      "kind": "map",
+      "timedRoute": true,
+      "custom": true,
+      "note": "Joseph’s red route from Greymoor Bellway past Halfway Home to the Greymoor bell. Yellow Detour 1 climbs to the Greymoor Spool Fragment. Return to Greymoor Bellway afterward for Shellwood.",
+      "keyLabel": "Joseph’s map · route key",
+      "keyIntro": "The red line follows the upper Halfway Home approach to the bell at the right-hand bench. Yellow Detour 1 leads up to the Spool Fragment. The yellow number is Joseph’s label; Bell #3 is the original guide’s name for this bell."
     }
   ],
   "missing": [
