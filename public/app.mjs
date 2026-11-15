@@ -3,12 +3,14 @@ import { listGuideStops, listStops } from "./model.mjs";
 import { getJson } from "./ui/api.mjs";
 import { byId, status } from "./ui/dom.mjs";
 import { createGuide } from "./ui/guide.mjs";
+import { createBudget } from "./ui/budget.mjs";
 import { bindMapEvents, renderMaps } from "./ui/maps.mjs";
 import { bindPickupEvents, renderPrep } from "./ui/pickups.mjs";
 import { createRunLog } from "./ui/run-log.mjs";
 import { guideStopById, selectedRun, state, stopById } from "./ui/state.mjs";
 
 const guide = createGuide({ onNavigate: chooseCheckpoint, onSplitSaved: inlineSplitSaved });
+const budget = createBudget({ onPurchaseSaved: () => renderPrep() });
 const runLog = createRunLog({
   onSelectRun: selectRun,
   onNavigate: chooseCheckpoint,
@@ -22,6 +24,7 @@ function inlineSplitSaved(checkpoint) {
 
 function renderCheckpoint() {
   guide.render();
+  budget.render();
   runLog.renderEditor();
 }
 
@@ -53,6 +56,7 @@ function selectRun(id) {
   for (const id of ["split-status", "notes-status", "prep-status"]) status(id, "");
   runLog.render();
   guide.render();
+  budget.render({ resetWallet: true });
   renderPrep(true);
 }
 
@@ -73,7 +77,8 @@ async function start() {
     renderMaps();
     guide.bindEvents();
     runLog.bindEvents();
-    bindPickupEvents();
+    bindPickupEvents({ onSaved: () => budget.render() });
+    budget.bindEvents();
     bindMapEvents();
     byId("tracker").hidden = false;
     byId("startup").hidden = true;

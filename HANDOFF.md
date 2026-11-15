@@ -43,6 +43,16 @@ Build the main view around this itinerary. The route is Hunter, all five bells, 
 
 ## Decisions and research
 
+### Running rosary budget · November 14
+
+Joseph wants a running pool of remaining rosary purchases and chose **remaining purchases plus wallet shortfall**. Show unpaid planned costs and purchase count from the current reading page through the finish. The current route totals **2,055 rosaries / 17 rosary purchases** before any checks; Shellwood/Blasted Steps onward totals **830 rosaries / 6 purchases** before any checks. These are spending forecasts, not reports about his current inventory or location. Navigating never marks costs paid. Earlier steps are explicitly excluded from the forecast; retries and restocks are extra, and material-only/free upgrades stay in the next-stop reminder.
+
+Give each route purchase a stable ID. Shop items with `pickupId` share the existing pickup check in both directions; fees, benches and travel unlocks have independent paid checks. Do not equate a bell shrine check with buying a Bellway. Loddie’s entry is separate from earning his pouch. Save optional `rosaryBudget: { wallet, paid }` on each run through the existing revision-safe path, preserving legacy saves without this field. The wallet starts unknown, not zero; the older 638-rosary report is not imported as a current balance. It is a manually updated current-wallet snapshot: paid checks may record older purchases, so they do not debit or credit it. Make that behavior explicit beside the field and compute shortfall/surplus from the saved amount.
+
+Budget and pickup updates synchronize through explicit callbacks without rebuilding the guide or replacing split/wallet drafts. Run changes reset the displayed wallet to that run. Preserve all existing checkpoint/pickup IDs, times, labels, notes, historical checks and seed data.
+
+Verified with `npm run check` and isolated Playwright: route totals, unknown/zero/blank wallets, shortfall/surplus, per-run saves and reloads, paid/undone purchases, both directions of pickup synchronization, forecast navigation without writes, combined-page scope, zero remaining costs and material-only reminders. Failures and stale tabs retain drafts and confirmed checks; save locks and server validation pass. Existing split interactions, labels, precision, notes, historical checks and desktop/mobile layouts pass. Active save and seed unchanged. Restarted the local server on port 4173 to register the budget module.
+
 ### Shellwood / Last Judge map and instruction split logging · November 14
 
 Joseph supplied Screenshot 2026-11-14 at 10.49.29 PM.png for step 11. Preserve its original bytes as [Shellwood Blasted Steps and Last Judge route.png](./assets/maps/Shellwood%20Blasted%20Steps%20and%20Last%20Judge%20route.png), catalog ID `shellwood-blasted-steps-last-judge`. Use it for the Shellwood/Blasted Steps and Last Judge/Grand Gate pages. Rename their section and key **Shellwood, Blasted Steps, Last Judge**. Green climbs from Shellwood through Blasted Steps; cyan continues toward Last Judge and the Grand Gate shortcut. Yellow **1** is the Memory Locket and **2** the Grand Gate spool. Keep the earlier unmarked supplied map archived; retain the missing original map record with the new replacement.

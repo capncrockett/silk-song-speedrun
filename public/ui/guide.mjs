@@ -1,4 +1,4 @@
-import { pickupCategories, shoppingSummary } from "../model.mjs";
+import { pickupCategories } from "../model.mjs";
 import { byId, link, links, node, status } from "./dom.mjs";
 import { createDrawer } from "./drawers.mjs";
 import { renderStepMaps } from "./maps.mjs";
@@ -84,30 +84,6 @@ export function createGuide({ onNavigate, onSplitSaved }) {
     byId("detour-detail").textContent = detour?.detail ?? "";
     renderGuideInstructions("detour-steps", detour?.steps ?? [], detour?.guidePickups, detour?.guideLinks);
     byId("detour-links").replaceChildren(...links(detour?.links));
-    renderShopping();
-  }
-
-  function renderShopping() {
-    const firstCheckpoint = guideStopById(state.checkpoint)?.checkpointIds[0] ?? state.checkpoint;
-    const summary = shoppingSummary(state.route, firstCheckpoint);
-    byId("shopping-reminder").hidden = !summary;
-    if (!summary) return;
-    const { stop, minimum, maximum } = summary;
-    byId("shopping-stop").textContent = stop.title;
-    byId("shopping-total").textContent = minimum === maximum
-      ? minimum === 0 ? "No rosaries" : `${minimum} rosaries`
-      : `${minimum}–${maximum} rosaries`;
-    byId("shopping-items").replaceChildren(...stop.purchases.map((purchase) => {
-      const item = node("li");
-      const title = node("span", "", purchase.item);
-      if (purchase.conditional) title.append(node("small", "", purchase.conditional));
-      const costs = [];
-      if (purchase.rosaries) costs.push(`${purchase.rosaries} rosaries`);
-      if (purchase.materials) costs.push(purchase.materials);
-      item.append(title, node("span", "shopping-cost", costs.join(" + ") || "Free"));
-      return item;
-    }));
-    byId("shopping-note").textContent = stop.shoppingNote ?? "Planned spending at this stop; this reminder does not assume your current balance.";
   }
 
   function renderSectionNavigation() {

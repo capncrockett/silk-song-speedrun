@@ -28,6 +28,7 @@ const files = new Map([
   ["/ui/dom.mjs", ["public/ui/dom.mjs", "text/javascript; charset=utf-8"]],
   ["/ui/drawers.mjs", ["public/ui/drawers.mjs", "text/javascript; charset=utf-8"]],
   ["/ui/guide.mjs", ["public/ui/guide.mjs", "text/javascript; charset=utf-8"]],
+  ["/ui/budget.mjs", ["public/ui/budget.mjs", "text/javascript; charset=utf-8"]],
   ["/ui/maps.mjs", ["public/ui/maps.mjs", "text/javascript; charset=utf-8"]],
   ["/ui/pickups.mjs", ["public/ui/pickups.mjs", "text/javascript; charset=utf-8"]],
   ["/ui/run-log.mjs", ["public/ui/run-log.mjs", "text/javascript; charset=utf-8"]],

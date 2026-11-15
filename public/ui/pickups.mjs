@@ -4,6 +4,8 @@ import { byId, link, mapPin, node, status } from "./dom.mjs";
 import { createDrawer } from "./drawers.mjs";
 import { selectedRun, state } from "./state.mjs";
 
+let onSaved = () => {};
+
 function syncGuidePickups() {
   const picked = new Set(selectedRun().prep);
   for (const input of document.querySelectorAll("[data-guide-pickup]")) {
@@ -24,8 +26,9 @@ export async function savePickups(ids, checked, categoryId, itemId, statusId = "
     return data;
   };
   const data = applyPickups(structuredClone(state.data));
-  await save(data, statusId, "Pickup checklist saved.", applyPickups);
+  const saved = await save(data, statusId, "Pickup checklist saved.", applyPickups);
   renderPrep();
+  if (saved) onSaved();
   if (statusId !== "prep-status" && !byId("prep-drawer").open) {
     document.querySelector(`[data-guide-pickup="${itemId}"]`)?.focus({ preventScroll: true });
   }
@@ -133,7 +136,8 @@ export function renderPrep(reset = false) {
   syncGuidePickups();
 }
 
-export function bindPickupEvents() {
+export function bindPickupEvents({ onSaved: afterSave } = {}) {
+  onSaved = afterSave ?? (() => {});
   createDrawer({
     id: "prep-drawer",
     openId: "open-prep",

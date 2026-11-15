@@ -46,6 +46,26 @@
               <h2 id="entry-title" tabindex="-1"></h2>
               <p class="step-subtitle" id="entry-step-title"></p>
             </header>
+            <details class="rosary-budget" id="rosary-budget" open hidden>
+              <summary><span>Rosary budget</span><strong id="rosary-total"></strong></summary>
+              <div class="rosary-budget-body">
+                <p class="field-help" id="rosary-scope"></p>
+                <p class="rosary-coverage" id="rosary-coverage" aria-live="polite"></p>
+                <form id="rosary-wallet-form" class="rosary-wallet-form">
+                  <div><label for="rosary-wallet">Current wallet</label><input id="rosary-wallet" type="text" inputmode="numeric" autocomplete="off" maxlength="16" placeholder="Rosaries" aria-describedby="rosary-wallet-help rosary-wallet-saved"></div>
+                  <button class="button secondary" type="submit" data-write>Save wallet</button>
+                </form>
+                <p class="field-help" id="rosary-wallet-saved"></p>
+                <p class="field-help" id="rosary-wallet-help">Update your wallet after spending, collecting or selling. Paid checks change the plan; they don’t change this balance.</p>
+                <p class="form-status" id="rosary-wallet-status" role="status"></p>
+                <details class="rosary-plan" id="rosary-plan">
+                  <summary><span>Purchase checklist</span><span id="rosary-plan-count"></span></summary>
+                  <ul id="rosary-purchases"></ul>
+                </details>
+                <p class="field-help">Earlier steps are excluded from this forecast. Allow extra for retries and restocks; material costs are listed with the purchases.</p>
+                <p class="form-status" id="rosary-purchase-status" role="status"></p>
+              </div>
+            </details>
             <section class="guide-maps" aria-label="Maps for this route step">
               <div class="map-tabs" id="guide-map-tabs" role="tablist" aria-label="Choose a reference image"></div>
               <p class="map-gap" id="guide-map-gap" hidden>The detailed area map is still missing. Use the written directions and map pins here; the overview shows the broader route.</p>
@@ -75,6 +95,7 @@
               <summary><span><small>Upcoming purchases</small><span id="shopping-stop"></span></span><strong id="shopping-total"></strong></summary>
               <ul id="shopping-items"></ul>
               <p id="shopping-note"></p>
+              <p class="form-status" id="shopping-status" role="status"></p>
             </details>
             <div class="step-footer"><span id="guide-next-label"></span><button type="button" class="subtle-link" id="log-this-step">Open split log ↓</button></div>
           </article>

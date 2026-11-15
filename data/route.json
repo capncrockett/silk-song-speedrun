@@ -415,8 +415,8 @@
             { "title": "Bone Bottom spool", "pin": 478080 }
           ],
           "purchases": [
-            { "item": "Deep Docks Bellway", "rosaries": 40 },
-            { "item": "Pebb's mask shard", "rosaries": 300 }
+            { "id": "bellway-deep-docks", "item": "Deep Docks Bellway", "rosaries": 40 },
+            { "id": "mask-pebb", "pickupId": "mask-pebb", "item": "Pebb's mask shard", "rosaries": 300 }
           ],
           "shoppingNote": "Pay 40 for Deep Docks Bellway, then farm to 710: 300 for Pebb and 410 reserved for Mort and Greymoor. Collect the Seamstress’s 60-rosary string on the way.",
           "guidePickups": [
@@ -469,9 +469,9 @@
             { "title": "Mort", "pin": 477946 }
           ],
           "purchases": [
-            { "item": "Pilgrim's Rest entry", "rosaries": 30 },
-            { "item": "Weighted Belt", "rosaries": 160 },
-            { "item": "Mort's Tool Pouch", "rosaries": 220 }
+            { "id": "entry-pilgrims-rest", "item": "Pilgrim's Rest entry", "rosaries": 30 },
+            { "id": "tool-weighted-belt", "pickupId": "tool-weighted-belt", "item": "Weighted Belt", "rosaries": 160 },
+            { "id": "pouch-mort", "pickupId": "pouch-mort", "item": "Mort's Tool Pouch", "rosaries": 220 }
           ],
           "shoppingNote": "410 rosaries for entry (30), Belt (160) and pouch (220). Consume the Seamstress’s 60-rosary string before Mort; reserve another 60 for Greymoor Bellway.",
           "guidePickups": [
@@ -524,7 +524,7 @@
             { "title": "Greymoor Bellway locket", "pin": 478035 },
             { "title": "First G&Z encounter", "pin": 478152 }
           ],
-          "purchases": [{ "item": "Greymoor Bellway", "rosaries": 60 }],
+          "purchases": [{ "id": "bellway-greymoor", "item": "Greymoor Bellway", "rosaries": 60 }],
           "shoppingNote": "60 rosaries to open Greymoor Bellway for the later return.",
           "guidePickups": [
             {
@@ -605,7 +605,7 @@
           "guideTitle": "Shellwood mask shard & Cling Grip",
           "purchases": [
             {
-              "item": "Shellwood bench after the arena",
+              "id": "bench-shellwood-arena", "item": "Shellwood bench after the arena",
               "rosaries": 40
             }
           ],
@@ -670,11 +670,11 @@
           ],
           "purchases": [
             {
-              "item": "Needle Upgrade #1",
+              "id": "needle-first", "pickupId": "needle-first", "item": "Needle Upgrade #1",
               "rosaries": 0
             },
             {
-              "item": "Bellhart Bellway",
+              "id": "bellway-bellhart", "item": "Bellhart Bellway",
               "rosaries": 60
             }
           ],
@@ -785,10 +785,10 @@
             { "title": "Deep Docks spool", "pin": 477926 }
           ],
           "purchases": [
-            { "item": "Loddie: first target-practice entry", "rosaries": 25 },
-            { "item": "Forge Daughter's Crafting Kit", "rosaries": 180 },
+            { "id": "entry-loddie-first", "item": "Loddie: first target-practice entry", "rosaries": 25 },
+            { "id": "kit-forge", "pickupId": "kit-forge", "item": "Forge Daughter's Crafting Kit", "rosaries": 180 },
             {
-              "item": "Magma Bell",
+              "id": "tool-magma-bell", "pickupId": "tool-magma-bell", "item": "Magma Bell",
               "rosaries": 110,
               "materials": "1 Craftmetal"
             }
@@ -909,7 +909,7 @@
             { "title": "Blasted Steps Bellway", "pin": 478308 },
             { "title": "Nearby locket", "pin": 478502 }
           ],
-          "purchases": [{ "item": "Blasted Steps Bellway", "rosaries": 60 }],
+          "purchases": [{ "id": "bellway-blasted-steps", "item": "Blasted Steps Bellway", "rosaries": 60 }],
           "guidePickups": [
             {
               "instruction": 3,
@@ -985,8 +985,8 @@
           "title": "Grand Bellway bench",
           "tip": "Open the Grand Bellway Bell Beast and Ventrica for 80 each. Keep the map purchase out of the travel budget.",
           "purchases": [
-            { "item": "Grand Bellway Bell Beast", "rosaries": 80 },
-            { "item": "Grand Bellway Ventrica", "rosaries": 80 }
+            { "id": "bell-beast-grand-bellway", "item": "Grand Bellway Bell Beast", "rosaries": 80 },
+            { "id": "ventrica-grand-bellway", "item": "Grand Bellway Ventrica", "rosaries": 80 }
           ],
           "maps": ["grand-gate-songclave"],
           "mapNote": "Red route: Grand Gate → Choral Chambers → Grand Bellway → Songclave. Use the written steps for travel unlocks and the White Key.",
@@ -1009,7 +1009,7 @@
           "title": "Songclave bell",
           "tip": "Ring the First Shrine bell, open the Songclave Ventrica, and take the White Key for Whiteward.",
           "links": [{ "title": "White Key", "pin": 478599 }],
-          "purchases": [{ "item": "Songclave Ventrica", "rosaries": 80 }],
+          "purchases": [{ "id": "ventrica-songclave", "item": "Songclave Ventrica", "rosaries": 80 }],
           "maps": ["grand-gate-songclave"],
           "mapNote": "Red route: Grand Gate → Choral Chambers → Grand Bellway → Songclave. Use the written steps for travel unlocks and the White Key.",
           "guidePickups": [
@@ -1106,7 +1106,7 @@
           ],
           "purchases": [
             {
-              "item": "Needle Upgrade #2 in Bellhart",
+              "id": "needle-second", "pickupId": "needle-second", "item": "Needle Upgrade #2 in Bellhart",
               "rosaries": 0,
               "materials": "1 Pale Oil"
             }
@@ -1180,7 +1180,7 @@
             { "title": "Twelfth Architect kit", "pin": 478728 }
           ],
           "purchases": [
-            { "item": "Twelfth Architect's Crafting Kit", "rosaries": 450 }
+            { "id": "kit-second", "pickupId": "kit-second", "item": "Twelfth Architect's Crafting Kit", "rosaries": 450 }
           ],
           "shoppingNote": "Earn any shortfall in the Citadel before the Cauldron visit. This replaces the 25-Ragpelt farming detour.",
           "guidePickups": [
@@ -1296,8 +1296,8 @@
             { "title": "High Halls bench", "pin": 478415 }
           ],
           "purchases": [
-            { "item": "Cogfly", "rosaries": 0, "materials": "1 Craftmetal" },
-            { "item": "High Halls Ventrica", "rosaries": 80 }
+            { "id": "tool-cogfly", "pickupId": "tool-cogfly", "item": "Cogfly", "rosaries": 0, "materials": "1 Craftmetal" },
+            { "id": "ventrica-high-halls", "item": "High Halls Ventrica", "rosaries": 80 }
           ],
           "guidePickups": [
             { "instruction": 1, "id": "tool-cogfly", "text": "Cogfly" }
@@ -2018,8 +2018,8 @@
     {
       "id": "budget",
       "status": "Route reminders",
-      "title": "Show upcoming purchase costs",
-      "detail": "Checkpoint shopping reminders show planned spending, conditional tolls and materials without assuming a wallet balance. Post-Widow Scrounge sales and pickups cover the loop by Joseph’s report; keep Loddie to the first-round pouch only. Lockets only need to fill Hunter, and both files reportedly have one spare Craftmetal.",
+      "title": "Track remaining rosary spending",
+      "detail": "The rosary budget totals unpaid purchases from the current reading step to the finish. Enter a current wallet to see the shortfall, and mark purchases paid per run. Matching shop pickups share the existing checklist. Update the wallet manually after spending or collecting; retries and restocks are extra. Checkpoint shopping reminders retain material costs. Post-Widow Scrounge sales and pickups cover the loop by Joseph’s report; keep Loddie to the first-round pouch only. Lockets only need to fill Hunter, and both files reportedly have one spare Craftmetal.",
       "links": [
         { "title": "Mort", "pin": 477946 },
         { "title": "Loddie", "pin": 478251 }

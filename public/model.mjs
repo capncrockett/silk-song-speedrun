@@ -133,11 +133,61 @@ export function changePickups(picked, ids, checked) {
   return checked ? [...new Set([...picked, ...ids])] : picked.filter((id) => !changed.has(id));
 }
 
-export function shoppingSummary(route, checkpoint) {
+export function isPurchasePaid(purchase, run) {
+  return purchase.pickupId
+    ? run.prep.includes(purchase.pickupId)
+    : (run.rosaryBudget?.paid ?? []).includes(purchase.id);
+}
+
+// Reading position scopes a spending forecast; it never marks a purchase paid.
+export function rosaryBudget(route, run, checkpoint) {
   const stops = listStops(route);
   const index = stops.findIndex((stop) => stop.id === checkpoint);
   if (index < 0) return null;
-  const stop = stops.slice(index).find((stop) => stop.purchases?.length);
+  const purchases = stops.slice(index).flatMap((stop) => (stop.purchases ?? [])
+    .filter((purchase) => purchase.rosaries > 0)
+    .map((purchase) => ({ ...purchase, checkpoint: stop.id, stopTitle: stop.guideTitle ?? stop.title,
+      paid: isPurchasePaid(purchase, run) })));
+  const remaining = purchases.filter((purchase) => !purchase.paid);
+  const minimum = remaining.filter((purchase) => !purchase.conditional).reduce((sum, purchase) => sum + purchase.rosaries, 0);
+  const maximum = remaining.reduce((sum, purchase) => sum + purchase.rosaries, 0);
+  const wallet = run.rosaryBudget?.wallet ?? null;
+  return { purchases, remaining, minimum, maximum, wallet,
+    shortfall: wallet === null ? null : Math.max(0, maximum - wallet),
+    surplus: wallet === null ? null : Math.max(0, wallet - maximum) };
+}
+
+export function changeRosaryBudget(route, data, runId, change) {
+  const next = structuredClone(data);
+  const run = next.runs.find((item) => item.id === runId);
+  if (!run) throw new Error("This run is no longer in the saved runbook.");
+  if (Object.hasOwn(change, "wallet")) {
+    const value = change.wallet.trim();
+    const wallet = value === "" ? null : Number(value);
+    if (wallet !== null && (!/^\d+$/.test(value) || !Number.isSafeInteger(wallet))) {
+      throw new Error("Enter a whole rosary amount of zero or more, or clear the field.");
+    }
+    run.rosaryBudget = { ...run.rosaryBudget, wallet, paid: run.rosaryBudget?.paid ?? [] };
+  } else {
+    const purchase = listStops(route).flatMap((stop) => stop.purchases ?? [])
+      .find((item) => item.id === change.purchaseId);
+    if (!purchase || purchase.rosaries <= 0 || typeof change.paid !== "boolean") {
+      throw new Error("Choose a planned rosary purchase.");
+    }
+    if (purchase.pickupId) run.prep = changePickups(run.prep, [purchase.pickupId], change.paid);
+    else run.rosaryBudget = { ...run.rosaryBudget, wallet: run.rosaryBudget?.wallet ?? null,
+      paid: changePickups(run.rosaryBudget?.paid ?? [], [purchase.id], change.paid) };
+  }
+  return next;
+}
+
+export function shoppingSummary(route, checkpoint, run) {
+  const stops = listStops(route);
+  const index = stops.findIndex((stop) => stop.id === checkpoint);
+  if (index < 0) return null;
+  const stop = stops.slice(index).map((stop) => ({ ...stop,
+    purchases: (stop.purchases ?? []).filter((purchase) => !run || !isPurchasePaid(purchase, run))
+  })).find((stop) => stop.purchases.length);
   if (!stop) return null;
   return {
     stop,
@@ -181,6 +231,14 @@ export function validateRunData(data) {
     if (run.prep.some((id) => typeof id !== "string" || !ID.test(id)) ||
         new Set(run.prep).size !== run.prep.length) {
       throw new Error("A run has invalid preparation items.");
+    }
+    if (run.rosaryBudget !== undefined) {
+      const budget = run.rosaryBudget;
+      if (!budget || (budget.wallet !== null && (!Number.isSafeInteger(budget.wallet) || budget.wallet < 0)) ||
+          !Array.isArray(budget.paid) || budget.paid.some((id) => typeof id !== "string" || !ID.test(id)) ||
+          new Set(budget.paid).size !== budget.paid.length) {
+        throw new Error("A run has an invalid rosary budget.");
+      }
     }
 
     const splitIds = new Set();

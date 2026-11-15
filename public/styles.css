@@ -139,6 +139,30 @@ details[open] > summary::after { transform: rotate(180deg); }
 .shopping li small { display: block; color: var(--soft); font-size: .68rem; }
 .shopping-cost { color: var(--green); text-align: right; flex-shrink: 0; font-variant-numeric: tabular-nums; }
 .shopping > p { color: var(--soft); font-size: .71rem; line-height: 1.7; padding-block: .65rem .9rem; }
+.purchase-label { display: flex; align-items: baseline; gap: .55rem; min-width: 0; }
+.purchase-label input { flex-shrink: 0; align-self: start; margin: .25rem 0 0; padding: 0; min-height: 0; width: 17px; height: 17px; accent-color: var(--green); }
+.purchase-label small { display: block; color: var(--soft); font-size: .68rem; line-height: 1.6; }
+.is-paid .purchase-label > span { color: var(--soft); text-decoration: line-through; }
+.rosary-budget { margin-block: 1.2rem; border: 1px solid #b6c9a145; border-radius: 7px; background: #b6c9a108; }
+.rosary-budget > summary { display: flex; flex-wrap: wrap; gap: .5rem 1rem; justify-content: space-between; padding: .85rem 1rem; font-size: .85rem; list-style: none; }
+.rosary-budget > summary strong { color: var(--green); font-weight: 500; font-variant-numeric: tabular-nums; }
+.rosary-budget > summary > span { flex: 1; }
+.rosary-budget-body { border-top: 1px solid var(--line); padding: .8rem 1rem; }
+.rosary-budget .field-help { font-size: .7rem; line-height: 1.65; color: var(--soft); }
+.rosary-coverage { margin-top: .4rem; color: var(--green); font-size: .88rem; line-height: 1.6; }
+.rosary-coverage[data-tone="short"] { color: var(--accent); }
+.rosary-wallet-form { display: flex; flex-wrap: wrap; align-items: end; gap: .65rem; margin-block: .8rem .35rem; max-width: 27rem; }
+.rosary-wallet-form > div { flex: 1 1 9rem; min-width: 0; }
+.rosary-wallet-form label { display: block; font-size: .75rem; margin: 0 0 .3rem; }
+.rosary-wallet-form input { width: 100%; min-width: 0; }
+.rosary-wallet-form button { min-height: 44px; }
+.rosary-plan { margin-block: .8rem; }
+.rosary-plan > summary { display: flex; justify-content: space-between; gap: .6rem; font-size: .76rem; padding-block: .4rem; }
+.rosary-plan > summary > span:last-child { color: var(--green); }
+.rosary-plan ul { list-style: none; margin: .4rem 0 0; padding: 0; }
+.rosary-plan li { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: .25rem 1rem; padding-block: .6rem; border-top: 1px solid var(--line); font-size: .75rem; }
+.rosary-budget .form-status { font-size: .73rem; }
+.shopping > .form-status { padding-block: 0 .6rem; }
 .step-footer { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: .75rem; margin-top: 1.7rem; padding-top: 1rem; border-top: 1px solid var(--line); color: var(--soft); font-size: .72rem; line-height: 1.7; }
 .step-footer .subtle-link { color: var(--soft); font-size: .68rem; }
 .inline-maps, .run-tools-content { padding: 0 1.1rem 1.1rem; }
