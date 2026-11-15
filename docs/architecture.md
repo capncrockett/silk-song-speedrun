@@ -13,7 +13,7 @@ Read [HANDOFF.md](../HANDOFF.md) for route decisions and current run context.
 | Guide headings, instructions, inline pickup placement, sections | [guide.mjs](../public/ui/guide.mjs) |
 | Map gallery, keys, tabs, enlarged viewer and zoom | [maps.mjs](../public/ui/maps.mjs) |
 | Pickup saving, drawer, counts, category completion, inline synchronization | [pickups.mjs](../public/ui/pickups.mjs) |
-| Rosary forecasts, wallet entry, paid purchases and next-stop shopping | [budget.mjs](../public/ui/budget.mjs) |
+| Pinned Pickups rosary total, paid purchases and next-stop shopping | [budget.mjs](../public/ui/budget.mjs) |
 | Inline timing forms and shared revision-protected split saving | [splits.mjs](../public/ui/splits.mjs) |
 | Run picker, metrics, split editor/history, notes, creation, export | [run-log.mjs](../public/ui/run-log.mjs) |
 | Shared browser state and selectors | [state.mjs](../public/ui/state.mjs) |
@@ -85,19 +85,24 @@ the active save; `data/seed-runs.json` is only the initial import. Keep stable
 checkpoint and pickup IDs, historical labels, and reported time precision.
 
 Purchase metadata in `data/route.json` has stable IDs and optional `pickupId` links
-to existing shop pickups. Pure `rosaryBudget` forecasts unpaid rosary costs from
-the current guide page onward; `shoppingSummary` retains free/material-only
-reminders. `changeRosaryBudget` updates a copied run, and `validateRunData` accepts
-legacy saves plus optional per-run `rosaryBudget: { wallet, paid }`. A missing
-wallet stays unknown. The wallet is a manual current-balance snapshot; paid
-checks do not adjust it. Reading position changes the forecast without confirming
-a purchase. Retries/restocks are excluded.
+to existing shop pickups. Pure `rosaryBudget(route, run)` totals every unpaid
+required rosary purchase for the whole run, independently of reading position.
+Purchases with `optional: true` stay in the checklist but contribute only to
+`optionalTotal`, shown separately; the Shellwood arena bench is optional.
+`shoppingSummary` still scopes the next-stop reminder to the current page and
+retains free/material-only items. `changeRosaryBudget` changes paid checks on a
+copied run; `validateRunData` accepts optional per-run `rosaryBudget: { paid }`.
+Legacy wallet fields are retained and accepted but unused. The UI has no wallet
+entry, balance or shortfall. Retries/restocks are excluded from planned costs.
 
-`ui/budget.mjs` owns wallet and paid-purchase controls plus next-stop shopping.
-It uses the same revision-protected save path, with no stale-snapshot retries.
-The app connects purchased pickup changes to `renderPrep`; pickup saves call back
-to refresh the budget. These updates preserve instruction forms, reading position
-and wallet drafts. Run selection resets the wallet display.
+`ui/budget.mjs` owns the fixed rosary summary in the Pickups drawer, its purchase
+checklist in the scrollable body, and next-stop shopping in the guide. Keeping
+the summary outside `.prep-drawer-body` pins it while categories scroll. It uses
+the existing revision-protected save path without stale-snapshot retries. The
+app connects purchased pickup changes to `renderPrep`; pickup saves call back
+to refresh the total and purchase list. Updates preserve instruction drafts,
+reading position and the drawer’s expanded categories. Run selection displays
+that run’s paid checks and total.
 
 ## Verify a change
 
@@ -109,9 +114,9 @@ For UI changes, also exercise the affected interaction in a browser. For tests
 that save, start a separate server with `RUNBOOK_DATA_DIR` pointing to a temporary
 directory and `RUNBOOK_PORT=0` for an available port. Never use the active save.
 
-For budget changes, verify arithmetic, wallet zero/blank/shortfall/surplus, paid
-checks and pickup synchronization in both directions, navigation scope, run
-isolation, draft retention, failures/conflicts and save/reload. Use isolated data.
+For budget changes, verify whole-run arithmetic, pinned placement while scrolling,
+paid checks and pickup synchronization in both directions, navigation independence,
+run isolation, draft retention, failures/conflicts and save/reload. Use isolated data.
 
 For split-form changes, verify inline and Run log edits, second precision, retained notes/labels, cross-page targets, finish validation, stale-tab conflicts, failed writes and draft/focus retention.
 

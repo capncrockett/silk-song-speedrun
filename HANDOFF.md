@@ -1,6 +1,6 @@
 # Pharloom Runbook — current handoff
 
-Updated November 14, 2026. The local app is implemented. Joseph is currently on **Run #4**. This file holds current route decisions, research alternatives, and open scout questions; [README.md](./README.md) covers use and maintenance. The [source archive](./docs/history.md) preserves older notes without serving as a second live handoff.
+Updated November 15, 2026. The local app is implemented. Joseph is currently on **Run #4**. This file holds current route decisions, research alternatives, and open scout questions; [README.md](./README.md) covers use and maintenance. The [source archive](./docs/history.md) preserves older notes without serving as a second live handoff.
 
 ## Working contract
 
@@ -43,7 +43,23 @@ Build the main view around this itinerary. The route is Hunter, all five bells, 
 
 ## Decisions and research
 
+### Rosary total pinned in Pickups · November 15
+
+Joseph rejects entering his wallet balance. Put **Rosaries still needed** at the top of the Pickups slide-out, outside its scrollable body, and keep the purchase list in that body. Remove the guide-page budget card and all wallet/shortfall controls. The total covers **every unpaid purchase for the selected run**, independent of reading position. Buying/checking a matching shop pickup or an independent purchase lowers it; undoing the check restores its cost. Show the remaining purchase count too. Do not infer earlier tolls or unlocks from navigation, split times or bell shrine checks.
+
+The purchase list retains 17 entries costing 2,055 rosaries before checks, but the required pool is now **2,015 rosaries / 16 purchases**, plus the optional 40-rosary Shellwood bench. Keep stable purchase/pickup IDs, shared shop checks, per-run paid records and next-stop shopping reminders. New paid saves use `rosaryBudget: { paid }`; retain any existing legacy wallet field unchanged but ignore it in the UI and total. Preserve all saved times, labels, precision, notes, historical checks and seed data. Retries/restocks remain extra. This supersedes the November 14 wallet and per-page forecast design below.
+
+Verified with `npm run check` and isolated Playwright: whole-run totals independent of navigation, no wallet controls, existing paid checks, shop/inline/category synchronization, optional bench exclusion and undo, next-stop payments, reloads and timed/scout isolation. Save failures and stale tabs retain confirmed checks; narrow pickup retries preserve newer fee records. Save locks, zero remaining costs, split-draft/data preservation, pinned desktop/mobile scrolling at 390 px and 320 px, Escape/backdrop closing and overflow checks pass. Active save and seed unchanged. Restarted the local server on port 4173 with the updated purchase-data validation.
+
+### Benches optional except quit-return anchors · November 15
+
+Joseph says **all benches are optional unless strategically used for quit-to-menu stunts**. Exclude the 40-rosary Shellwood arena bench from the required pool; label it optional in the route, purchase checklist and next-stop reminder. Other bench stops/rests are optional for healing, tool changes or repairs. Bench split locations remain timing landmarks without requiring a rest; retain every historical timing ID and label.
+
+Keep explicit rests at Halfway Home before the Greymoor bell/spool quit-return and Cogwork Core 478428 before the optional Mask quit-return. If using the Forum Quit to Menu / Continue fallback, first rest at High Halls bench to anchor that return. Preserve all no-intervening-bench instructions on these trips. Bellway/Ventrica purchases remain required travel unlocks, distinct from optional bench spending.
+
 ### Running rosary budget · November 14
+
+Superseded by the November 15 Pickups drawer decision above.
 
 Joseph wants a running pool of remaining rosary purchases and chose **remaining purchases plus wallet shortfall**. Show unpaid planned costs and purchase count from the current reading page through the finish. The current route totals **2,055 rosaries / 17 rosary purchases** before any checks; Shellwood/Blasted Steps onward totals **830 rosaries / 6 purchases** before any checks. These are spending forecasts, not reports about his current inventory or location. Navigating never marks costs paid. Earlier steps are explicitly excluded from the forecast; retries and restocks are extra, and material-only/free upgrades stay in the next-stop reminder.
 

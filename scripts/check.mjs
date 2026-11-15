@@ -151,6 +151,7 @@ for (const stop of stops) {
     assert.ok(Number.isSafeInteger(item.rosaries) && item.rosaries >= 0, "Shopping costs must be explicit nonnegative rosary amounts.");
     if (item.conditional !== undefined) assert.ok(typeof item.conditional === "string" && item.conditional.trim());
     if (item.materials !== undefined) assert.ok(typeof item.materials === "string" && item.materials.trim());
+    if (item.optional !== undefined) assert.equal(typeof item.optional, "boolean");
   }
 }
 const mortShopping = shoppingSummary(route, "drifters-cloak");
@@ -171,39 +172,46 @@ const budgetFixture = { version: 1, revision: 0, runs: [
   { id: "budget-other", name: "Other run", mode: "scout", notes: "", prep: [], splits: [] }
 ] };
 const budgetOriginal = structuredClone(budgetFixture);
-assert.equal(rosaryBudget(route, budgetFixture.runs[0], "silk-spear").maximum, 2055);
-assert.equal(rosaryBudget(route, budgetFixture.runs[0], "silk-spear").remaining.length, 17, "Free/material-only items are excluded from the rosary pool.");
-assert.equal(rosaryBudget(route, budgetFixture.runs[0], "blasted-steps").maximum, 830);
-assert.equal(rosaryBudget(route, budgetFixture.runs[0], "blasted-steps").shortfall, null, "A missing wallet is unknown, not zero.");
-const withWallet = changeRosaryBudget(route, budgetFixture, "budget-run", { wallet: "638" });
-assert.equal(rosaryBudget(route, withWallet.runs[0], "blasted-steps").shortfall, 192);
+assert.equal(rosaryBudget(route, budgetFixture.runs[0]).maximum, 2015);
+assert.equal(rosaryBudget(route, budgetFixture.runs[0]).optionalTotal, 40);
+const paidOptional = changeRosaryBudget(route, budgetFixture, "budget-run", { purchaseId: "bench-shellwood-arena", paid: true });
+assert.equal(rosaryBudget(route, paidOptional.runs[0]).maximum, 2015, "Optional benches do not inflate the required budget.");
+assert.equal(rosaryBudget(route, paidOptional.runs[0]).optionalTotal, 0);
+assert.equal(shoppingSummary(route, "cling-grip").maximum, 0, "Shellwood bench spending is optional.");
+assert.equal(rosaryBudget(route, budgetFixture.runs[0]).remaining.length, 16, "Free/material-only items are excluded from the rosary pool.");
+const paidBellway = changeRosaryBudget(route, budgetFixture, "budget-run", { purchaseId: "bellway-blasted-steps", paid: true });
+assert.equal(rosaryBudget(route, paidBellway.runs[0]).maximum, 1955);
 assert.deepEqual(budgetFixture, budgetOriginal, "Budget edits must not mutate loaded data.");
-assert.deepEqual(withWallet.runs[1], budgetFixture.runs[1]);
-assert.deepEqual(withWallet.runs[0].splits, budgetFixture.runs[0].splits);
-assert.deepEqual(withWallet.runs[0].prep, budgetFixture.runs[0].prep);
-assert.equal(withWallet.runs[0].notes, budgetFixture.runs[0].notes);
-const paidBellway = changeRosaryBudget(route, withWallet, "budget-run", { purchaseId: "bellway-blasted-steps", paid: true });
-assert.equal(rosaryBudget(route, paidBellway.runs[0], "blasted-steps").maximum, 770);
-assert.equal(paidBellway.runs[0].rosaryBudget.wallet, 638, "Paid checks can record past purchases; they do not alter a manually entered current wallet.");
-assert.deepEqual(paidBellway.runs[0].prep, budgetFixture.runs[0].prep, "Paying for travel must not mark any pickup collected.");
+assert.deepEqual(paidBellway.runs[1], budgetFixture.runs[1]);
+assert.deepEqual(paidBellway.runs[0].splits, budgetFixture.runs[0].splits);
+assert.deepEqual(paidBellway.runs[0].prep, budgetFixture.runs[0].prep, "Travel purchases must not mark pickups collected.");
+assert.equal(paidBellway.runs[0].notes, budgetFixture.runs[0].notes);
+assert.deepEqual(paidBellway.runs[0].rosaryBudget, { paid: ["bellway-blasted-steps"] }, "A purchase save needs no wallet field.");
 const paidKit = changeRosaryBudget(route, paidBellway, "budget-run", { purchaseId: "kit-second", paid: true });
 assert.ok(paidKit.runs[0].prep.includes("kit-second"));
-assert.equal(rosaryBudget(route, paidKit.runs[0], "blasted-steps").maximum, 320);
+assert.equal(rosaryBudget(route, paidKit.runs[0]).maximum, 1505);
 const undoneKit = changeRosaryBudget(route, paidKit, "budget-run", { purchaseId: "kit-second", paid: false });
-assert.equal(rosaryBudget(route, undoneKit.runs[0], "blasted-steps").maximum, 770);
+assert.equal(rosaryBudget(route, undoneKit.runs[0]).maximum, 1955);
 assert.ok(undoneKit.runs[0].prep.includes("spool-core"), "Changing a purchase preserves historical pickup records.");
 assert.equal(shoppingSummary(route, "blasted-steps", paidBellway.runs[0]).stop.id, "grand-bellway", "Paid stops drop out of the next spending reminder.");
-assert.equal(rosaryBudget(route, withWallet.runs[0], "act-2").maximum, 770, "A forecast excludes earlier steps without confirming their purchases.");
-assert.deepEqual(withWallet.runs[0].rosaryBudget.paid, []);
-assert.equal(rosaryBudget(route, withWallet.runs[0], "gms").maximum, 0);
-assert.equal(rosaryBudget(route, withWallet.runs[0], "missing-checkpoint"), null);
-assert.equal(rosaryBudget(route, changeRosaryBudget(route, withWallet, "budget-run", { wallet: "1000" }).runs[0], "blasted-steps").surplus, 170);
-assert.equal(rosaryBudget(route, changeRosaryBudget(route, withWallet, "budget-run", { wallet: "0" }).runs[0], "blasted-steps").shortfall, 830);
-assert.equal(rosaryBudget(route, changeRosaryBudget(route, withWallet, "budget-run", { wallet: "" }).runs[0], "blasted-steps").wallet, null);
-for (const wallet of ["-1", "1.5", "1e3", "wat", "9007199254740992"]) assert.throws(() => changeRosaryBudget(route, withWallet, "budget-run", { wallet }), /whole rosary amount/);
-assert.throws(() => changeRosaryBudget(route, withWallet, "budget-run", { purchaseId: "not-planned", paid: true }), /planned rosary purchase/);
+const checkedItems = { ...budgetFixture.runs[0], prep: ["mask-pebb", "tool-weighted-belt", "kit-second"] };
+assert.equal(rosaryBudget(route, checkedItems).maximum, 1105, "Existing pickup checks reduce the whole-run cost without new paid records.");
+const legacyBudget = structuredClone(paidBellway);
+legacyBudget.runs[0].rosaryBudget.wallet = 638;
+const legacyChanged = changeRosaryBudget(route, legacyBudget, "budget-run", { purchaseId: "ventrica-high-halls", paid: true });
+assert.equal(legacyChanged.runs[0].rosaryBudget.wallet, 638, "Retain stored legacy fields without using or editing them.");
+assert.equal(Object.hasOwn(rosaryBudget(route, legacyChanged.runs[0]), "wallet"), false);
+assert.equal(rosaryBudget(route, legacyChanged.runs[0]).maximum, 1875);
+let allPaid = budgetFixture;
+for (const purchase of rosaryBudget(route, budgetFixture.runs[0]).purchases) {
+  allPaid = changeRosaryBudget(route, allPaid, "budget-run", { purchaseId: purchase.id, paid: true });
+}
+assert.equal(rosaryBudget(route, allPaid.runs[0]).maximum, 0);
+assert.equal(rosaryBudget(route, allPaid.runs[0]).remaining.length, 0);
+assert.throws(() => changeRosaryBudget(route, budgetFixture, "budget-run", { purchaseId: "not-planned", paid: true }), /planned rosary purchase/);
 validateRunData(paidKit);
-for (const rosaryBudget of [{ wallet: -1, paid: [] }, { wallet: 1.5, paid: [] }, { wallet: null, paid: ["duplicate", "duplicate"] }, { wallet: 0, paid: "invalid" }]) {
+validateRunData(legacyChanged);
+for (const rosaryBudget of [{ wallet: -1, paid: [] }, { wallet: 1.5, paid: [] }, { paid: ["duplicate", "duplicate"] }, { paid: "invalid" }]) {
   const invalid = structuredClone(budgetFixture);
   invalid.runs[0].rosaryBudget = rosaryBudget;
   assert.throws(() => validateRunData(invalid), /invalid rosary budget/);

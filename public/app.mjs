@@ -53,10 +53,10 @@ function selectRun(id) {
     state.checkpoint = guideStopById(remembered)?.id ?? state.guideStops[0].id;
   }
   try { localStorage.setItem("pharloom-run", id); } catch { /* Selection is optional browser state. */ }
-  for (const id of ["split-status", "notes-status", "prep-status"]) status(id, "");
+  for (const id of ["split-status", "notes-status", "prep-status", "rosary-purchase-status", "shopping-status"]) status(id, "");
   runLog.render();
   guide.render();
-  budget.render({ resetWallet: true });
+  budget.render();
   renderPrep(true);
 }
 
@@ -78,7 +78,6 @@ async function start() {
     guide.bindEvents();
     runLog.bindEvents();
     bindPickupEvents({ onSaved: () => budget.render() });
-    budget.bindEvents();
     bindMapEvents();
     byId("tracker").hidden = false;
     byId("startup").hidden = true;

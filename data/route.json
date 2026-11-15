@@ -278,7 +278,7 @@
             "Take the Frayed Rosary String beneath the left Silk Wall. Break the wall by Mosshome’s top-left room transition and collect the Choral Commandment for a later Bellhart sale.",
             "Activate the lift for the return to Mosshome, then continue toward Bell Beast. Keep the starting Hunter Crest.",
             "Defeat Bell Beast and ring the Marrow bell (Bell #1).",
-            "Save rosaries for the planned shops and Bellways: skip maps, Quill, and Compass unless you need a map to find the route."
+            "Save rosaries for the planned shops and Bellways: skip maps, Quill, and Compass unless you need a map to find the route. Benches are optional unless setting a quit-to-menu return point; use them for healing, loadout changes or repairs as needed."
           ],
           "title": "Silkspear",
           "tip": "Collect and equip Shard Pendant, take the Mosshome rosary string and Choral Commandment, and activate the return lift. Keep Hunter, defeat Bell Beast and ring the Marrow bell.",
@@ -580,7 +580,7 @@
           "id": "cling-grip",
           "guide": [
             "Enter Shellwood from Bellhart. Start along the lower-left wall and climb the platforms in a Z shape to the first arena. Clear it.",
-            "The bench immediately after the arena is recommended for 40 rosaries. Continue left and take the elevator down.",
+            "The bench immediately after the arena is optional and costs 40 rosaries. Continue left and take the elevator down.",
             "At the elevator’s bottom, go right first and open the shortcut door back toward Bellhart. Then continue left toward the room with the bench sign and white roses.",
             "Climb the white roses. At the top, take the LOWER of the two right-side exits and finish the platforming challenge for the Shellwood mask shard.",
             "With Wormways, Pebb and Far Fields already collected, the Shellwood shard completes six masks.",
@@ -591,7 +591,7 @@
           ],
           "maps": ["shellwood-bellhart-base"],
           "title": "Cling Grip",
-          "tip": "Clear the arena, use the recommended 40-rosary bench, ride the lift down, and open the right-hand shortcut before going left. White roses: lower right exit for the mask shard, upper right exit for the Cling Grip room. Fight Sister Splinter, then use the Gahlia room’s top-right exit for Cling Grip.",
+          "tip": "Clear the arena, optionally use the 40-rosary bench, ride the lift down, and open the right-hand shortcut before going left. White roses: lower right exit for the mask shard, upper right exit for the Cling Grip room. Fight Sister Splinter, then use the Gahlia room’s top-right exit for Cling Grip.",
           "links": [
             {
               "title": "Shellwood shard",
@@ -605,11 +605,11 @@
           "guideTitle": "Shellwood mask shard & Cling Grip",
           "purchases": [
             {
-              "id": "bench-shellwood-arena", "item": "Shellwood bench after the arena",
+              "id": "bench-shellwood-arena", "optional": true, "item": "Shellwood bench after the arena",
               "rosaries": 40
             }
           ],
-          "shoppingNote": "40 rosaries for the recommended bench immediately after the Shellwood arena.",
+          "shoppingNote": "Optional: 40 rosaries for the bench immediately after the Shellwood arena. This is not a quit-return anchor.",
           "guidePickups": [
             {
               "instruction": 4,
@@ -637,10 +637,10 @@
           "guideTitle": "Open the Widow shortcut",
           "guide": [
             "After Cling Grip, continue right through upper Bellhart. Before descending to Widow, drop down-left and break the wall on the left to reconnect to the convenient bench.",
-            "Follow the opened shortcut back to the bench and rest before the fight. Use this shorter runback for retries."
+            "The opened shortcut gives you a shorter runback for retries. Rest at its bench only if needed."
           ],
           "title": "Widow bench",
-          "tip": "Before dropping into Widow, open the left breakable-wall shortcut from upper Bellhart and rest at the connected bench. This is the runback that worked on Run #2."
+          "tip": "Before dropping into Widow, open the left breakable-wall shortcut from upper Bellhart. Rest at the connected bench if needed. This is the runback that worked on Run #2."
         },
         {
           "id": "widow",
@@ -899,7 +899,7 @@
           "guideTitle": "Shellwood bell & Blasted Steps",
           "guide": [
             "From the already-open Shellwood Bellway, go to Shellwood’s bell (Bell #5) and ring it, then continue to Blasted Steps.",
-            "Open Blasted Steps Bellway for 60 rosaries and rest at its bench. Collect Dice free on the later trip after Dancers.",
+            "Open Blasted Steps Bellway for 60 rosaries. Rest at its bench if needed. Collect Dice free on the later trip after Dancers.",
             "Take yellow Detour 1 for the nearby Memory Locket, and collect the free Craftmetal before Last Judge.",
             "Before the fight, equip Magma Bell and check that you have six masks and Needle Upgrade #1."
           ],
@@ -940,12 +940,12 @@
           "guideTitle": "Last Judge & the Grand Gate spool",
           "guide": [
             "Use the Bells checklist to confirm all five bells are rung, then play Needolin at the Grand Gate and defeat Last Judge.",
-            "Take the Grand Gate’s upper-right breakable-wall shortcut to Choral Chambers and rest at the bench.",
+            "Take the Grand Gate’s upper-right breakable-wall shortcut to Choral Chambers. The bench rest is optional.",
             "Take yellow Detour 2 for the Grand Gate spool using the return shortcut. Climb the balancing platforms, hitting their undersides to tip them into position.",
             "Collect the fragment to start pair C, then continue toward Grand Bellway."
           ],
           "title": "Last Judge / Choral Chambers bench",
-          "tip": "Play Needolin at the Grand Gate after all five bells, beat Last Judge, and rest in Choral Chambers. From the Choral Chambers return shortcut, climb the Grand Gate balancing platforms for spool 478586 before continuing toward Grand Bellway. Hit the scales from underneath to tip them; no extra arena or double-jump is required.",
+          "tip": "Play Needolin at the Grand Gate after all five bells, beat Last Judge, and reach the Choral Chambers bench. Rest if needed. From the Choral Chambers return shortcut, climb the Grand Gate balancing platforms for spool 478586 before continuing toward Grand Bellway. Hit the scales from underneath to tip them; no extra arena or double-jump is required.",
           "links": [
             { "title": "Last Judge", "pin": 478545 },
             { "title": "Grand Gate spool", "pin": 478586 }
@@ -969,7 +969,7 @@
       "guideNumber": 9,
       "guideSection": "garmond-songclave",
       "title": "Combined Route to Songclave, Lower Cogwork, and WV Arena",
-      "summary": "Open the travel links, take White Key, defeat Dancers, clear lower Core and the Vaults arena, then rest at Songclave.",
+      "summary": "Open the travel links, take White Key, defeat Dancers, clear lower Core and the Vaults arena, then reach Songclave. Bench rests are optional.",
       "maps": ["grand-gate-songclave", "overview"],
       "missingMaps": ["Songclave, lower Cogwork and Vaults arena"],
       "mapNote": "The supplied red route covers the Grand Gate → Grand Bellway → Songclave approach. Dancers, lower Core and the Vaults arena are outside its crop; use their existing references and written directions.",
@@ -979,7 +979,7 @@
           "guideTitle": "Open Grand Bellway",
           "guide": [
             "Reach Grand Bellway and open the Bell Beast for 80 rosaries.",
-            "Open its Ventrica for another 80 rosaries, then rest at the Grand Bellway bench.",
+            "Open its Ventrica for another 80 rosaries, then reach the Grand Bellway bench. Rest if needed.",
             "To reach Songclave, climb the rotating-wheel room and take its first right exit. The two Grand Bellway travel unlocks cost 160 in total."
           ],
           "title": "Grand Bellway bench",
@@ -994,7 +994,7 @@
             {
               "instruction": 2,
               "checkpoint": "grand-bellway",
-              "when": "At Grand Bellway after opening both travel links and resting."
+              "when": "At the Grand Bellway bench after opening both travel links; resting is optional."
             }
           ]
         },
@@ -1050,7 +1050,7 @@
             "From the bench below Dancers, descend and go left to the lower Core arena. Clear it and collect the mask shard.",
             "Open the middle shortcut, then take the final room’s top-right exit to unlock upper Cogwork Core. Return to the bench below Dancers.",
             "Exit right through the spinning-wheel room toward Whispering Vaults. Skip the lower Core spool branch, unmarked on G&Z maps.",
-            "Clear the Whispering Vaults arena (G&Z Checkpoint 6). Exit right, go up and over the large Scrollreader, and strike the ceiling passage to open the shortcut to Songclave. Rest at its bench."
+            "Clear the Whispering Vaults arena (G&Z Checkpoint 6). Exit right, go up and over the large Scrollreader, and strike the ceiling passage to open the shortcut to Songclave. Rest at its bench if needed."
           ],
           "title": "Lower Cogwork Core / bench",
           "tip": "Collect the lower Core mask shard and open the middle and upper-right shortcuts. Continue through the spinning-wheel room, clear the Vaults arena (G&Z Checkpoint 6), and open the ceiling shortcut to Songclave’s bench. Skip the unmarked lower Core spool.",
@@ -1160,13 +1160,13 @@
           "id": "clawline",
           "guideTitle": "Whiteward, Clawline & the final spool",
           "guide": [
-            "Take Trobbio’s lift down and open the left shortcut door. Ride back up, return to Grand Bellway and rest before the Whiteward branch.",
+            "Take Trobbio’s lift down and open the left shortcut door. Ride back up and return to Grand Bellway before the Whiteward branch. Rest if needed.",
             "Go west through Choral Chambers and use the White Key lift into Whiteward. Climb in the fireplace room and go all the way left for Injector Band.",
             "Continue through Underworks to Twelfth Architect’s bench. Keep Claw Mirror + Magma Bell through the Cauldron’s heat section; switch from Magma Bell to Injector Band afterward.",
             "Reserve Blasted Steps Craftmetal for Cogfly. Skip G&Z Detour 1 (lower-left Craftmetal puzzle).",
             "From Twelfth Architect’s bench, go left and ride the wind current up and left. Take that room’s bottom-right exit and cross the falling-lava room.",
             "In the next vertical shaft, take the higher left exit with the lever and collect Clawline.",
-            "Clear the arena at the top of the Clawline room to return to the Architect. Use the bench and buy the second Crafting Kit for 450 rosaries; switch to Mirror + Injector Band after the heat segment.",
+            "Clear the arena at the top of the Clawline room to return to the Architect. Buy the second Crafting Kit for 450 rosaries; the bench rest is optional. Then switch to Mirror + Injector Band after the heat segment.",
             "For the eastern Underworks spool, descend the eastern shaft and break into the small lava room from the east.",
             "Collect the fragment to complete pair C with Grand Gate: +3 total Silk capacity."
           ],
@@ -1219,10 +1219,10 @@
             "Follow the wind-current route toward outer Songclave without dropping into Bilewater. Take the Memory Locket in the hidden upper-left room above the wind-puzzle entrance.",
             "If short on rosaries, collect the Heavy Rosary Necklace above outer Songclave’s left exit by alternating Clawline and Glide. It is worth 220; skip this supply stop if funded.",
             "Continue to the far-left roof gate 480502 and open it from the outdoor/eastern side. Leave through it; this roof gate is distinct from the arena’s ceiling shortcut to Songclave.",
-            "Return to the Vaultkeeper and have the cylinder played to learn Vaultkeeper’s Melody. Turn in spare cylinders for rosaries while here. Rest before returning through the roof gate for the duel."
+            "Return to the Vaultkeeper and have the cylinder played to learn Vaultkeeper’s Melody. Turn in spare cylinders for rosaries while here. Rest if needed before returning through the roof gate for the duel."
           ],
           "title": "Vaultkeeper's Melody",
-          "tip": "Collect the melody cylinder below Trobbio’s lift. Take the wind-route locket, open the far-left roof gate, then return to the Vaultkeeper to learn the melody. Rest before returning for the G&Z duel.",
+          "tip": "Collect the melody cylinder below Trobbio’s lift. Take the wind-route locket, open the far-left roof gate, then return to the Vaultkeeper to learn the melody. Rest if needed before returning for the G&Z duel.",
           "links": [
             { "title": "Vaultkeeper's Melody", "pin": 478611 },
             { "title": "Wind-route locket", "pin": 478676 },
@@ -1250,7 +1250,7 @@
           "guide": [
             "Use the open far-left roof shortcut to return to Garmond and Zaza. If the roof is empty, check that gate 480502 was opened from outside, leave, and re-enter.",
             "Win the duel and exhaust Garmond’s dialogue afterward.",
-            "Return to Cogwork Core bench 478428 and rest after the duel.",
+            "Return to Cogwork Core bench 478428 after the duel. Rest if needed; it becomes a required quit-return anchor only if taking the later Mask trip.",
             "Head toward High Halls; skip that map’s Detour 1 (extra G&Z search / late Dice return). Their help is at the Forum door."
           ],
           "maps": ["cauldron", "roof-duel"],
@@ -1284,7 +1284,7 @@
           "guideTitle": "Cogfly & High Halls",
           "guide": [
             "On the Clawline descent, take the left side room and spend one Craftmetal on Cogfly.",
-            "Open the High Halls Ventrica for 80 rosaries and rest at the bench.",
+            "Open the High Halls Ventrica for 80 rosaries. Rest at the bench if needed, or to set the return point before using the Forum quit-reload fallback.",
             "At the bench, spend the planned Memory Lockets on any remaining Hunter slots needed for the loadout. Check the actual unlocked sockets.",
             "For the Forum, equip Straight Pin + Cogfly, Claw Mirror + Injector Band, and Weighted Belt + Magnetite Dice. Shard Pendant was for early supplies; the yellow combat pair is Belt + Dice.",
             "Before the Forum, check both pouch upgrades and both Crafting Kits: 6 Cogflies, 18 Straight Pins, and 7 Cogfly damage per hit."
@@ -1315,7 +1315,7 @@
           "guideTitle": "The High Halls Forum",
           "guide": [
             "Accept Garmond and Zaza’s help at the Forum door inside High Halls.",
-            "If they are absent after the roof duel and post-duel dialogue, use the guide’s Quit to Menu / Continue fallback and check the Forum door again. Fight the first three enemies solo; the duo joins during a later wave.",
+            "If they are absent after the roof duel and post-duel dialogue, first rest at High Halls bench to set the return point, then use Quit to Menu / Continue and check the Forum door again. Fight the first three enemies solo; the duo joins during a later wave.",
             "Use Cogflies and pins on the dangerous waves while the duo shares the pressure.",
             "Clear the Forum."
           ],
@@ -1404,7 +1404,7 @@
           "guide": [
             "At the Lace 2 checkpoint, decide whether to take the optional Fractured Mask trip below. Leave it if you prefer to continue with Mirror.",
             "Check Injector Band, Weighted Belt + Magnetite Dice, your available Silk, and either Fractured Mask or Claw Mirror.",
-            "Confirm all three melodies are learned. When ready, rest for the final approach, play the Threefold Melody at the elevator, and ascend to Lace 2."
+            "Confirm all three melodies are learned. When ready, rest if needed for the final approach, play the Threefold Melody at the elevator, and ascend to Lace 2."
           ],
           "maps": ["cradle"],
           "title": "Checkpoint 1 before Lace 2",
@@ -1474,7 +1474,7 @@
           "id": "gms",
           "guideTitle": "Grand Mother Silk",
           "guide": [
-            "After Lace, head right and up to rest at Terminus. In the final approach room, take the bottom-right exit and drop to open the runback shortcut. Repair Fractured Mask at the bench if using it.",
+            "After Lace, head right and up to Terminus. Rest if needed. In the final approach room, take the bottom-right exit and drop to open the runback shortcut. Repair Fractured Mask at the bench if using it.",
             "If low on tool-refill supplies, break into the hidden room on the right wall of the climb to GMS for the large Shell Shard rock before more attempts.",
             "Phase 1 is straightforward: be patient, watch the knives, and take clear openings rather than rushing damage.",
             "During phases 2 and 3, stick to one side. Wait, watch the knives, and prioritize avoiding them.",
@@ -2019,7 +2019,7 @@
       "id": "budget",
       "status": "Route reminders",
       "title": "Track remaining rosary spending",
-      "detail": "The rosary budget totals unpaid purchases from the current reading step to the finish. Enter a current wallet to see the shortfall, and mark purchases paid per run. Matching shop pickups share the existing checklist. Update the wallet manually after spending or collecting; retries and restocks are extra. Checkpoint shopping reminders retain material costs. Post-Widow Scrounge sales and pickups cover the loop by Joseph’s report; keep Loddie to the first-round pouch only. Lockets only need to fill Hunter, and both files reportedly have one spare Craftmetal.",
+      "detail": "The Pickups drawer pins the total rosaries still needed for all unpaid purchases in the selected run. Checking a purchased item lowers the total; reading position does not change it. Matching shop pickups share the existing checklist, and other purchases have paid checks. No wallet entry is needed. Benches are optional unless used as quit-return anchors; optional bench costs are excluded from the required total. Retries and restocks are extra. Checkpoint shopping reminders retain material costs. Post-Widow Scrounge sales and pickups cover the loop by Joseph’s report; keep Loddie to the first-round pouch only. Lockets only need to fill Hunter, and both files reportedly have one spare Craftmetal.",
       "links": [
         { "title": "Mort", "pin": 477946 },
         { "title": "Loddie", "pin": 478251 }

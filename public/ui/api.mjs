@@ -13,7 +13,7 @@ function setSaving(value) {
   byId("run-select").disabled = value;
   byId("new-run").disabled = value;
   byId("save-indicator").textContent = value ? "Saving…" : "Local runbook";
-  for (const control of document.querySelectorAll("[data-write], [data-prep], [data-prep-group], [data-guide-pickup], [data-split-input], #rosary-wallet, #split-form input, #split-form select, #split-form textarea, #run-notes, #new-run-name")) {
+  for (const control of document.querySelectorAll("[data-write], [data-prep], [data-prep-group], [data-guide-pickup], [data-split-input], #split-form input, #split-form select, #split-form textarea, #run-notes, #new-run-name")) {
     control.disabled = value;
   }
 }
