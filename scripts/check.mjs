@@ -14,8 +14,12 @@ assert.ok(stops.length > 0, "The route needs checkpoints.");
 assert.equal(new Set(stops.map(({ id }) => id)).size, stops.length, "Checkpoint IDs must be unique.");
 assert.equal(stops.at(-1).id, route.finishCheckpoint, "The finish must be the last route checkpoint.");
 const guideStops = listGuideStops(route);
-assert.equal(stops.length, 31, "Keep all original timing checkpoints.");
-assert.equal(guideStops.length, 28, "The first Greymoor, Widow and Greymoor-return pairs share reading pages.");
+assert.equal(stops.length, 32, "Keep the original timing IDs and the guide-only Last Judge page.");
+assert.equal(guideStops.length, 29, "The first Greymoor, Widow and Greymoor-return pairs share reading pages.");
+assert.deepEqual(guideStops.slice(10, 14).map((stop) => stop.id),
+  ["blasted-steps", "last-judge-fight", "act-2", "grand-bellway"], "The Choral Chambers bench belongs on step 13 after the fight.");
+assert.equal(guideStops[11].recordSplit, false, "Defeating Last Judge does not add a separate split.");
+assert.equal(guideStops[12].guideSplits[0].checkpoint, "act-2", "The bench keeps its original split ID.");
 const greymoorGuide = guideStops[4];
 assert.equal(greymoorGuide.id, "moorwing", "The combined page records its final checkpoint by default.");
 assert.deepEqual(greymoorGuide.checkpointIds, ["halfway-home", "moorwing"]);

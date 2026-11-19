@@ -151,7 +151,7 @@
       "maps": [
         "shellwood-blasted-steps-last-judge"
       ],
-      "steps": ["blasted-steps", "act-2"],
+      "steps": ["blasted-steps", "last-judge-fight", "act-2"],
       "checkpoints": [
         "Shellwood bell · Bell #5",
         "Blasted Steps bench and Bellway",
@@ -161,7 +161,7 @@
         "1 · Blasted Steps Memory Locket — take the yellow branch near the Bellway.",
         "2 · Grand Gate Spool Fragment — use the Choral Chambers return shortcut and balancing platforms."
       ],
-      "note": "Follow green from Shellwood to Blasted Steps, then cyan toward Last Judge and Choral Chambers. Record the Blasted Steps bench time before the locket and Craftmetal; record the Choral Chambers bench time before the Grand Gate spool.",
+      "note": "Follow green from Shellwood to Blasted Steps, then cyan toward Last Judge and Choral Chambers. Record the Blasted Steps bench time before the locket and Craftmetal. After Last Judge, keep going to the Choral Chambers bench on step 13 to log the split before the Grand Gate spool.",
       "guideNumber": 8,
       "detoursTitle": "Yellow branches"
     },
@@ -936,26 +936,34 @@
           ]
         },
         {
-          "id": "act-2",
-          "guideTitle": "Last Judge & the Grand Gate spool",
+          "id": "last-judge-fight",
+          "title": "Defeat Last Judge",
+          "recordSplit": false,
           "guide": [
-            "Use the Bells checklist to confirm all five bells are rung, then play Needolin at the Grand Gate and defeat Last Judge.",
-            "Take the Grand Gate’s upper-right breakable-wall shortcut to Choral Chambers. The bench rest is optional.",
+            "Use the Bells checklist to confirm all five bells are rung, then play Needolin at the Grand Gate.",
+            "Defeat Last Judge, then continue to the Choral Chambers bench on step 13 to record your split. If you quit to menu right after the fight, Continue sends you back to the Blasted Steps bench."
+          ],
+          "links": [{ "title": "Last Judge", "pin": 478545 }]
+        },
+        {
+          "id": "act-2",
+          "guideTitle": "Choral Chambers bench & Grand Gate spool",
+          "guide": [
+            "After defeating Last Judge, take the Grand Gate’s upper-right breakable-wall shortcut to the Choral Chambers bench. Rest if needed.",
             "Take yellow Detour 2 for the Grand Gate spool using the return shortcut. Climb the balancing platforms, hitting their undersides to tip them into position.",
             "Collect the fragment to start pair C, then continue toward Grand Bellway."
           ],
           "title": "Last Judge / Choral Chambers bench",
           "tip": "Play Needolin at the Grand Gate after all five bells, beat Last Judge, and reach the Choral Chambers bench. Rest if needed. From the Choral Chambers return shortcut, climb the Grand Gate balancing platforms for spool 478586 before continuing toward Grand Bellway. Hit the scales from underneath to tip them; no extra arena or double-jump is required.",
           "links": [
-            { "title": "Last Judge", "pin": 478545 },
             { "title": "Grand Gate spool", "pin": 478586 }
           ],
           "guidePickups": [
-            { "instruction": 4, "id": "spool-grand-gate", "text": "fragment" }
+            { "instruction": 3, "id": "spool-grand-gate", "text": "fragment" }
           ],
           "guideSplits": [
             {
-              "instruction": 2,
+              "instruction": 1,
               "checkpoint": "act-2",
               "when": "At the Choral Chambers bench after Last Judge, before the Grand Gate spool trip."
             }

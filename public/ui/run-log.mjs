@@ -91,7 +91,17 @@ export function createRunLog({ onSelectRun, onNavigate, onSplitSaved }) {
   function renderEditor() {
     const run = selectedRun();
     const saved = run.splits.find((split) => split.checkpoint === state.checkpoint);
-    byId("checkpoint-select").value = state.checkpoint;
+    const select = byId("checkpoint-select");
+    select.querySelector('option[value=""]')?.remove();
+    select.value = state.checkpoint;
+    if (!select.value) {
+      const placeholder = node("option", "", "Choose a checkpoint");
+      placeholder.value = "";
+      placeholder.disabled = true;
+      select.prepend(placeholder);
+      select.value = "";
+    }
+    byId("split-fields").hidden = !select.value;
     byId("split-time").value = saved ? formatTime(saved.seconds, saved.precision) : "";
     byId("split-note").value = saved?.note ?? "";
     byId("save-split").textContent = saved ? "Update split →" : "Save split →";
@@ -163,6 +173,7 @@ export function createRunLog({ onSelectRun, onNavigate, onSplitSaved }) {
     byId("checkpoint-select").addEventListener("change", (event) => onNavigate(event.target.value));
     byId("split-form").addEventListener("submit", async (event) => {
       event.preventDefault();
+      if (!byId("checkpoint-select").value) return;
       const id = state.checkpoint;
       if (await saveSplit({ checkpoint: id, time: byId("split-time").value, note: byId("split-note").value, statusId: "split-status" })) {
         refreshSplits(id);
@@ -189,13 +200,14 @@ export function createRunLog({ onSelectRun, onNavigate, onSplitSaved }) {
     byId("new-run").addEventListener("click", openSession);
     byId("log-this-step").addEventListener("click", () => {
       byId("run-tools").open = true;
-      byId("split-time").focus();
+      const control = byId("checkpoint-select").value ? byId("split-time") : byId("checkpoint-select");
+      control.focus();
     });
     dialog.addEventListener("cancel", (event) => { if (state.saving) event.preventDefault(); });
     byId("split-form").addEventListener("keydown", (event) => {
       if (event.key === "Enter" && (event.metaKey || event.ctrlKey)) {
         event.preventDefault();
-        if (!state.saving) byId("split-form").requestSubmit();
+        if (!state.saving && byId("checkpoint-select").value) byId("split-form").requestSubmit();
       }
     });
     byId("cancel-run").addEventListener("click", () => dialog.close());
