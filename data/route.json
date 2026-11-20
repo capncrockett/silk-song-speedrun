@@ -1034,6 +1034,7 @@
         {
           "id": "songclave-bell",
           "guideStep": "lower-core",
+          "recordSplit": false,
           "guide": [
             "Ring the First Shrine bell in Songclave.",
             "Open the Songclave Ventrica for 80 rosaries. If short, the nearby Grand Reeds on the Dancers approach drop 32 rosaries each.",
@@ -1045,18 +1046,12 @@
           "purchases": [{ "id": "ventrica-songclave", "item": "Songclave Ventrica", "rosaries": 80 }],
           "guidePickups": [
             { "instruction": 3, "id": "key-white", "text": "White Key" }
-          ],
-          "guideSplits": [
-            {
-              "instruction": 1,
-              "checkpoint": "songclave-bell",
-              "when": "After ringing the First Shrine bell in Songclave."
-            }
           ]
         },
         {
           "id": "dancers",
           "guideStep": "lower-core",
+          "recordSplit": false,
           "guide": [
             "From Songclave, follow the red line west to the Cogwork Dancers.",
             "Defeat the Cogwork Dancers. The guide recommends focusing one dancer because their health is separate.",
@@ -1064,14 +1059,7 @@
           ],
           "title": "Cogwork Dancers defeated",
           "tip": "Beat the Dancers, then head into lower Cogwork. The free Dice pickup is available after the Dancers.",
-          "links": [{ "title": "Cogwork Dancers", "pin": 478606 }],
-          "guideSplits": [
-            {
-              "instruction": 2,
-              "checkpoint": "dancers",
-              "when": "Immediately after defeating the Cogwork Dancers."
-            }
-          ]
+          "links": [{ "title": "Cogwork Dancers", "pin": 478606 }]
         },
         {
           "id": "lower-core",
@@ -1082,7 +1070,7 @@
             "Follow orange right through the spinning-wheel room toward Whispering Vaults. Skip the silk spool branch marked yellow 3.",
             "Clear the Whispering Vaults arena (G&Z Checkpoint 6). Exit right, go up and over the large Scrollreader, and strike the ceiling passage to open the shortcut to Songclave. Rest at its bench if needed."
           ],
-          "title": "Lower Cogwork Core / bench",
+          "title": "Lower Cogwork Core bench",
           "tip": "Collect the lower Core mask shard and open the middle and upper-right shortcuts. Continue through the spinning-wheel room, clear the Vaults arena (G&Z Checkpoint 6), and open the ceiling shortcut to Songclave’s bench. Yellow 3 is the skipped spool branch and yellow 4 is the Upper Cogwork shortcut.",
           "links": [{ "title": "Lower Core mask shard", "pin": 478615 }],
           "guidePickups": [
@@ -1092,7 +1080,7 @@
             {
               "instruction": 2,
               "checkpoint": "lower-core",
-              "when": "Back at the bench below Dancers after the lower Core arena and upper shortcut."
+              "when": "After defeating the Dancers, clearing the lower Core arena and opening the Upper Cogwork shortcut, record the time back at the bench below the Dancers."
             },
             {
               "instruction": 4,

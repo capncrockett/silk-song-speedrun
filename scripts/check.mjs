@@ -31,7 +31,7 @@ assert.equal(greymoorGuide.guide.length,
   "Combining pages must retain both parts of the walkthrough.");
 
 const timingStops = listRecordingStops(route);
-assert.equal(timingStops.length, 29, "Future runs omit the obsolete Widow bench and Bellhart shopping-return splits.");
+assert.equal(timingStops.length, 27, "Exclude all retired splits from the current timing list.");
 assert.equal(timingStops.some((stop) => stop.id === "widow-bench"), false);
 assert.ok(timingStops.some((stop) => stop.id === "widow"));
 assert.deepEqual(guideStops[6].checkpointIds, ["widow-bench", "widow"]);
@@ -47,7 +47,7 @@ const beforeWidow = runSummary(route, { prep: [], splits: [
 assert.equal(beforeWidow.next.id, "widow", "An old bench split must not count as defeating Widow.");
 assert.equal(beforeWidow.count, 1);
 assert.equal(beforeWidow.history.length, 2, "Historical bench times stay in the run history.");
-assert.equal(beforeWidow.total, 29);
+assert.equal(beforeWidow.total, 27);
 
 const prep = route.preparations.flatMap((group) => group.items.map(({ id }) => id));
 assert.equal(new Set(prep).size, prep.length, "Preparation IDs must be unique.");
@@ -101,7 +101,14 @@ assert.equal(greymoorGuide.guideSplits.find((point) => point.checkpoint === "moo
   stops.find((stop) => stop.id === "halfway-home").guide.length + 4);
 const songclaveGuide = guideStops[14];
 assert.deepEqual(songclaveGuide.checkpointIds, ["songclave-bell", "dancers", "lower-core"], "The whole Songclave loop is on step 15.");
-assert.deepEqual(songclaveGuide.guideSplits.map((point) => point.checkpoint), ["songclave-bell", "dancers", "lower-core", "vaults-arena"]);
+assert.deepEqual(songclaveGuide.guideSplits.map((point) => point.checkpoint), ["lower-core", "vaults-arena"]);
+assert.equal(timingStops[timingStops.findIndex((stop) => stop.id === "grand-bellway") + 1].id, "lower-core");
+const songclaveHistory = seed.runs[0].splits.filter((split) =>
+  ["grand-bellway", "songclave-bell", "dancers"].includes(split.checkpoint));
+const beforeLowerCore = runSummary(route, { ...seed.runs[0], splits: songclaveHistory });
+assert.equal(beforeLowerCore.next.id, "lower-core", "Saved Songclave and Dancers times do not affect the next split.");
+assert.equal(beforeLowerCore.count, 1);
+assert.equal(beforeLowerCore.history.length, 3);
 assert.equal(guideStops[15].id, "vaults-arena", "The later Pale Oil trip follows the Songclave loop.");
 
 const widowGuide = guideStops.find((stop) => stop.id === "widow");
