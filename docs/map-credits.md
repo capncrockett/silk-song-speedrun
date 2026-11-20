@@ -46,13 +46,13 @@ The map contains pins without a drawn route or Garmond checkpoint numbers. Keep 
 
 Joseph added the [Grand Gate to Grand Bellway and Songclave map](../assets/maps/Grand%20Gate%20to%20Grand%20Bellway%20and%20Songclave.png) on November 11, 2026. It was renamed from Screenshot 2026-11-11 at 12.35.53 AM.png without altering the original 2394 × 1234 PNG bytes. Base map: MapGenie; game: Team Cherry.
 
-The red line follows the approach from Grand Gate through Choral Chambers to Grand Bellway, then up toward Songclave. Use it for step 14, Grand Bellway to Songclave.
+The red line follows the approach from Grand Gate through Choral Chambers to Grand Bellway, then up toward Songclave. Use it for step 14, **Combined Route to Songclave**.
 
 ## Supplied Songclave, Cogwork and Vaults loop
 
 Joseph supplied the [Songclave to Cogwork and Vaults return map](../assets/maps/Songclave%20to%20Cogwork%20and%20Vaults%20return.png) on November 19, 2026. The catalog records the original 2390 × 1102 PNG and its hash. Base map by MapGenie. Game by Team Cherry.
 
-Red runs west from Songclave to the Cogwork Dancers. Orange continues through lower Cogwork and Whispering Vaults and returns to Songclave. The guide shows this screenshot with the key for the current leg. Yellow map marks use Joseph’s numbering.
+Step 15 uses this screenshot for the whole loop. Red runs west from Songclave to the Cogwork Dancers. Orange continues through lower Cogwork and Whispering Vaults and returns to Songclave. Yellow 3 marks the silk spool branch. Yellow 4 marks the Upper Cogwork shortcut described by Tay Bravo.
 
 ## Supplied Bellhart and Deep Docks return route
 

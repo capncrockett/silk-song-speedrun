@@ -391,7 +391,7 @@
     {
       "id": "grand-gate-songclave",
       "title": "Grand Gate → Grand Bellway → Songclave · supplied route",
-      "section": "Grand Bellway to Songclave",
+      "section": "Combined Route to Songclave",
       "file": "assets/maps/Grand Gate to Grand Bellway and Songclave.png",
       "src": "/maps/grand-gate-songclave.png",
       "mime": "image/png",
@@ -411,7 +411,7 @@
     {
       "id": "songclave-cogwork-vaults-loop",
       "title": "Songclave → Cogwork Dancers → Whispering Vaults → Songclave",
-      "section": "Songclave, Cogwork Core and Whispering Vaults",
+      "section": "Songclave, Lower Cogwork & Vaults Return",
       "file": "assets/maps/Songclave to Cogwork and Vaults return.png",
       "src": "/maps/songclave-cogwork-vaults-loop.png",
       "mime": "image/png",

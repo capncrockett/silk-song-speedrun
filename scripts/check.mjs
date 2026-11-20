@@ -15,7 +15,7 @@ assert.equal(new Set(stops.map(({ id }) => id)).size, stops.length, "Checkpoint 
 assert.equal(stops.at(-1).id, route.finishCheckpoint, "The finish must be the last route checkpoint.");
 const guideStops = listGuideStops(route);
 assert.equal(stops.length, 32, "Keep the original timing IDs and the guide-only Last Judge page.");
-assert.equal(guideStops.length, 29, "The first Greymoor, Widow and Greymoor-return pairs share reading pages.");
+assert.equal(guideStops.length, 27, "The Songclave loop and the three earlier combined stops share reading pages.");
 assert.deepEqual(guideStops.slice(10, 14).map((stop) => stop.id),
   ["blasted-steps", "last-judge-fight", "act-2", "grand-bellway"], "The Choral Chambers bench belongs on step 13 after the fight.");
 assert.equal(guideStops[11].recordSplit, false, "Defeating Last Judge does not add a separate split.");
@@ -99,7 +99,10 @@ assert.deepEqual(guideStops.find((stop) => stop.id === "swift-step").guideSplits
 assert.deepEqual(greymoorGuide.guideSplits.map((point) => point.checkpoint), ["halfway-home", "moorwing"]);
 assert.equal(greymoorGuide.guideSplits.find((point) => point.checkpoint === "moorwing").instruction,
   stops.find((stop) => stop.id === "halfway-home").guide.length + 4);
-assert.deepEqual(guideStops.find((stop) => stop.id === "lower-core").guideSplits.map((point) => point.checkpoint), ["lower-core", "vaults-arena"]);
+const songclaveGuide = guideStops[14];
+assert.deepEqual(songclaveGuide.checkpointIds, ["songclave-bell", "dancers", "lower-core"], "The whole Songclave loop is on step 15.");
+assert.deepEqual(songclaveGuide.guideSplits.map((point) => point.checkpoint), ["songclave-bell", "dancers", "lower-core", "vaults-arena"]);
+assert.equal(guideStops[15].id, "vaults-arena", "The later Pale Oil trip follows the Songclave loop.");
 
 const widowGuide = guideStops.find((stop) => stop.id === "widow");
 assert.equal(widowGuide.guideLinks[0].instruction, 3, "The Widow link stays beside the fight tips after combining the bench setup.");
