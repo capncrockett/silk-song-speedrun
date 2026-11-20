@@ -209,9 +209,9 @@
         "4 · Needle upgrade #2 — collect before Trobbio on our path"
       ],
       "detours": [
-        "Bellhart upgrade and Blasted Steps Dice return — planned together after Pale Oil, before Trobbio."
+        "Bellhart Needle upgrade — after Pale Oil, before Trobbio."
       ],
-      "note": "Follow the shard and Pale Oil branches here, then get the Needle upgrade and free Dice before Trobbio. The previous step’s screenshot covers the earlier arena and return to Songclave.",
+      "note": "Follow the shard and Pale Oil branches here, then get the Needle upgrade before Trobbio. The previous step covers the arena, the return to Songclave, and the Dice trip.",
       "guideNumber": 10
     },
     {
@@ -249,7 +249,7 @@
         "5 · Conductor’s Melody"
       ],
       "detours": [
-        "1 · Extra G&Z search / late Dice return — decided to skip; follow the roof-duel route and collect Dice on the earlier upgrade trip.",
+        "1 · Extra G&Z search / late Dice return — decided to skip. Follow the roof-duel route and collect Dice at the end of step 15.",
         "2 · G&Z roof duel and post-duel dialogue — planned."
       ],
       "note": "Our path completes the roof duel before entering High Halls. Exhaust post-duel dialogue, then accept help at the Forum door. Keep Straight Pin + Cogfly, Mirror + Injector Band, and Belt + Dice; Thread Storm remains skipped.",
@@ -914,7 +914,7 @@
           "guideTitle": "Shellwood bell & Blasted Steps",
           "guide": [
             "From the already-open Shellwood Bellway, go to Shellwood’s bell (Bell #5) and ring it, then continue to Blasted Steps.",
-            "Open Blasted Steps Bellway for 60 rosaries. Rest at its bench if needed. Collect Dice free on the later trip after Dancers.",
+            "Open Blasted Steps Bellway for 60 rosaries for the Dice trip at the end of step 15. Rest at its bench if needed.",
             "Take yellow Detour 1 for the nearby Memory Locket, and collect the free Craftmetal before Last Judge.",
             "Before the fight, equip Magma Bell and check that you have six masks and Needle Upgrade #1."
           ],
@@ -1026,7 +1026,7 @@
       "guideNumber": 9,
       "guideSection": "garmond-lower-cogwork-return",
       "title": "Songclave, Lower Cogwork & Vaults Return",
-      "summary": "Start at Songclave, defeat the Dancers, collect the lower Core mask shard, clear the Vaults arena and return to Songclave.",
+      "summary": "Start at Songclave, defeat the Dancers, collect the lower Core mask shard, clear the Vaults arena and return to Songclave for the Dice trip.",
       "maps": ["songclave-cogwork-vaults-loop"],
       "missingMaps": ["Songclave, lower Cogwork and Vaults arena"],
       "mapNote": "Joseph’s annotated screenshot replaces the missing original map for this leg.",
@@ -1055,11 +1055,10 @@
           "guide": [
             "From Songclave, follow the red line west to the Cogwork Dancers.",
             "Defeat the Cogwork Dancers. The guide recommends focusing one dancer because their health is separate.",
-            "Head straight to the bench below the Dancers once the fight opens the way into Lower Cogwork Core.",
-            "The free Magnetite Dice pickup becomes available after this fight; collect it on the planned Bellhart upgrade trip."
+            "Head straight to the bench below the Dancers once the fight opens the way into Lower Cogwork Core."
           ],
           "title": "Cogwork Dancers defeated",
-          "tip": "Beat the Dancers, then head into lower Cogwork. The free Dice pickup is available after the Dancers.",
+          "tip": "After beating the Dancers, take the next split at the bench below them before heading into lower Cogwork.",
           "links": [{ "title": "Cogwork Dancers", "pin": 478606 }],
           "guideSplits": [
             {
@@ -1076,13 +1075,20 @@
             "Follow orange down from the bench below the Dancers, then go left to the lower Core arena. Clear it and collect the mask shard.",
             "Open the middle shortcut and take the final room’s top-right exit at yellow 4 to unlock Upper Cogwork. Return to the bench below the Dancers.",
             "Follow orange right through the spinning-wheel room toward Whispering Vaults. Skip the silk spool branch marked yellow 3.",
-            "Clear the Whispering Vaults arena (G&Z Checkpoint 6). Exit right, go up and over the large Scrollreader, and strike the ceiling passage to open the shortcut to Songclave. Rest at its bench if needed."
+            "Clear the Whispering Vaults arena (G&Z Checkpoint 6). Exit right, go up and over the large Scrollreader, and strike the ceiling passage to open the shortcut to Songclave. Rest at its bench if needed.",
+            "After the Songclave bench split, take the Ventrica to Grand Bellway and switch to the Bell Beast for Blasted Steps.",
+            "Speak to Lumble for the free Magnetite Dice, available after defeating the Dancers.",
+            "Take the Bell Beast back to Grand Bellway, then the Ventrica back to Songclave for step 16."
           ],
           "title": "Lower Cogwork Core bench",
-          "tip": "Collect the lower Core mask shard and open the middle and upper-right shortcuts. Continue through the spinning-wheel room, clear the Vaults arena (G&Z Checkpoint 6), and open the ceiling shortcut to Songclave’s bench. Yellow 3 is the skipped spool branch and yellow 4 is the Upper Cogwork shortcut.",
-          "links": [{ "title": "Lower Core mask shard", "pin": 478615 }],
+          "tip": "Collect the lower Core mask shard and open the middle and upper-right shortcuts. Clear the Vaults arena and open the ceiling shortcut to Songclave’s bench. After the split, go via Grand Bellway for free Dice and return to Songclave. Yellow 3 is the skipped spool branch and yellow 4 is the Upper Cogwork shortcut.",
+          "links": [
+            { "title": "Lower Core mask shard", "pin": 478615 },
+            { "title": "Lumble's location", "pin": 478519 }
+          ],
           "guidePickups": [
-            { "instruction": 1, "id": "mask-lower-core", "text": "mask shard" }
+            { "instruction": 1, "id": "mask-lower-core", "text": "mask shard" },
+            { "instruction": 6, "id": "tool-dice", "text": "Magnetite Dice" }
           ],
           "guideSplits": [
             {
@@ -1100,7 +1106,7 @@
       "guideNumber": 10,
       "guideSection": "garmond-vaults",
       "title": "Whispering Vaults, 7th Mask, Needle Upgrade, & Trobbio",
-      "summary": "From Songclave, collect the seventh-mask shard and Pale Oil, upgrade the Needle, pick up Dice, then fight Trobbio.",
+      "summary": "From Songclave, collect the seventh-mask shard and Pale Oil, upgrade the Needle, then fight Trobbio.",
       "maps": ["vaults"],
       "stops": [
         {
@@ -1112,16 +1118,15 @@
             "Return below that hidden ceiling and take the lower-left exit for Pale Oil. Hit the lever dividing the large room and exit left above it.",
             "In the Flea box room, go left and up, use the Scrollreader to reach the left platform, and continue left to the Oil box puzzle. Before G&Z Checkpoint 2 (Pale Oil), skip the lower-left breakable-wall arena; it makes Vaultborn spawn permanently. Collect Pale Oil.",
             "Return toward the Stage, cross over it, and hit the lever. Take the left exit down toward Grand Bellway for the upgrade trip before Trobbio.",
-            "Return to Bellhart for Needle Upgrade #2: one Pale Oil, no rosary charge. Combine this with the Blasted Steps Bellway stop for free Magnetite Dice from Lumble.",
+            "Take the Bell Beast to Bellhart for Needle Upgrade #2: one Pale Oil, no rosary charge.",
             "Return to Grand Bellway and continue toward Trobbio."
           ],
           "maps": ["vaults"],
           "title": "Whispering Vaults arena / Songclave bench",
-          "tip": "From Songclave, follow the lower-right then lower-left mask branch and the dividing-lever/Scrollreader route to Pale Oil. Skip the side arena before G&Z Checkpoint 2 (Pale Oil). Combine free Needle #2 with the Blasted Steps Dice stop before Trobbio.",
+          "tip": "From Songclave, follow the lower-right then lower-left mask branch and the dividing-lever/Scrollreader route to Pale Oil. Skip the side arena before G&Z Checkpoint 2 (Pale Oil). Get Needle Upgrade #2 in Bellhart before returning for Trobbio.",
           "links": [
             { "title": "Vaults mask shard", "pin": 478671 },
-            { "title": "Pale Oil", "pin": 478668 },
-            { "title": "Lumble's location", "pin": 478519 }
+            { "title": "Pale Oil", "pin": 478668 }
           ],
           "purchases": [
             {
@@ -1141,8 +1146,7 @@
               "instruction": 6,
               "id": "needle-second",
               "text": "Needle Upgrade #2"
-            },
-            { "instruction": 6, "id": "tool-dice", "text": "Magnetite Dice" }
+            }
           ]
         },
         {
@@ -1825,7 +1829,7 @@
         {
           "id": "tool-dice",
           "title": "Magnetite Dice",
-          "detail": "Free Lumble pickup after Dancers on the upgrade return",
+          "detail": "Free from Lumble in Blasted Steps after Dancers. Go via Grand Bellway at the end of step 15.",
           "pin": 478519
         },
         {

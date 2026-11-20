@@ -106,6 +106,9 @@ const lowerCoreBench = songclaveGuide.guideSplits.find((point) => point.checkpoi
 const lowerCoreArena = songclaveGuide.guidePickups.find((point) => point.id === "mask-lower-core");
 assert.ok(lowerCoreBench.instruction < lowerCoreArena.instruction, "Take the Lower Core split before entering the arena.");
 assert.match(songclaveGuide.guide[lowerCoreBench.instruction - 1], /^Head straight to the bench below the Dancers/);
+const songclaveBench = songclaveGuide.guideSplits.find((point) => point.checkpoint === "vaults-arena");
+const dicePickup = songclaveGuide.guidePickups.find((point) => point.id === "tool-dice");
+assert.ok(dicePickup?.instruction > songclaveBench.instruction, "Get Dice after recording the Songclave bench split on step 15.");
 assert.equal(timingStops[timingStops.findIndex((stop) => stop.id === "grand-bellway") + 1].id, "lower-core");
 const songclaveHistory = seed.runs[0].splits.filter((split) =>
   ["grand-bellway", "songclave-bell", "dancers"].includes(split.checkpoint));
