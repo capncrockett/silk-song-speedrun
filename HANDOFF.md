@@ -47,7 +47,7 @@ Build the main view around this itinerary. The route is Hunter, all five bells, 
 
 Use the earlier approach map on step 14, **Combined Route to Songclave**. Merge the Songclave pickups, Cogwork Dancers and the lower Cogwork/Vaults return into step 15. The later Vaults mask and Pale Oil trip starts on step 16.
 
-Go from **Grand Bellway bench → Lower Cogwork Core bench** for timing. Defeat the Dancers, clear the lower Core arena, open the Upper Cogwork shortcut, then record the split back at the bench below the Dancers. Retire the standalone Songclave bell and Dancers timing points while keeping both events in the walkthrough and their saved times in Historical splits. The later Vaults arena split is still recorded at the Songclave bench.
+Go from **Grand Bellway bench → Lower Cogwork Core bench** for timing. After defeating the Dancers, take the split on first reaching the bench below them, before the lower Core arena and Upper Cogwork shortcut. Run #2’s saved Lower Core time was taken on returning to that bench after the arena and shortcut. Retire the standalone Songclave bell and Dancers timing points while keeping both events in the walkthrough and their saved times in Historical splits. Record the later Vaults arena split at the Songclave bench.
 
 Joseph’s screenshot shows red west from Songclave to the Dancers, then orange through lower Cogwork and the Whispering Vaults arena and back to Songclave. Yellow 3 is the silk spool branch, which this route skips. Yellow 4 is Tay Bravo’s Upper Cogwork shortcut, which this route opens. [Songclave loop map](./assets/maps/Songclave%20to%20Cogwork%20and%20Vaults%20return.png)
 

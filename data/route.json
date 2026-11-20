@@ -1055,11 +1055,19 @@
           "guide": [
             "From Songclave, follow the red line west to the Cogwork Dancers.",
             "Defeat the Cogwork Dancers. The guide recommends focusing one dancer because their health is separate.",
+            "Head straight to the bench below the Dancers once the fight opens the way into Lower Cogwork Core.",
             "The free Magnetite Dice pickup becomes available after this fight; collect it on the planned Bellhart upgrade trip."
           ],
           "title": "Cogwork Dancers defeated",
           "tip": "Beat the Dancers, then head into lower Cogwork. The free Dice pickup is available after the Dancers.",
-          "links": [{ "title": "Cogwork Dancers", "pin": 478606 }]
+          "links": [{ "title": "Cogwork Dancers", "pin": 478606 }],
+          "guideSplits": [
+            {
+              "instruction": 3,
+              "checkpoint": "lower-core",
+              "when": "Record the time when you first reach the bench below the Dancers after the fight, before going into the lower Core arena."
+            }
+          ]
         },
         {
           "id": "lower-core",
@@ -1077,11 +1085,6 @@
             { "instruction": 1, "id": "mask-lower-core", "text": "mask shard" }
           ],
           "guideSplits": [
-            {
-              "instruction": 2,
-              "checkpoint": "lower-core",
-              "when": "After defeating the Dancers, clearing the lower Core arena and opening the Upper Cogwork shortcut, record the time back at the bench below the Dancers."
-            },
             {
               "instruction": 4,
               "checkpoint": "vaults-arena",

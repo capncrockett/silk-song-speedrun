@@ -102,6 +102,10 @@ assert.equal(greymoorGuide.guideSplits.find((point) => point.checkpoint === "moo
 const songclaveGuide = guideStops[14];
 assert.deepEqual(songclaveGuide.checkpointIds, ["songclave-bell", "dancers", "lower-core"], "The whole Songclave loop is on step 15.");
 assert.deepEqual(songclaveGuide.guideSplits.map((point) => point.checkpoint), ["lower-core", "vaults-arena"]);
+const lowerCoreBench = songclaveGuide.guideSplits.find((point) => point.checkpoint === "lower-core");
+const lowerCoreArena = songclaveGuide.guidePickups.find((point) => point.id === "mask-lower-core");
+assert.ok(lowerCoreBench.instruction < lowerCoreArena.instruction, "Take the Lower Core split before entering the arena.");
+assert.match(songclaveGuide.guide[lowerCoreBench.instruction - 1], /^Head straight to the bench below the Dancers/);
 assert.equal(timingStops[timingStops.findIndex((stop) => stop.id === "grand-bellway") + 1].id, "lower-core");
 const songclaveHistory = seed.runs[0].splits.filter((split) =>
   ["grand-bellway", "songclave-bell", "dancers"].includes(split.checkpoint));
