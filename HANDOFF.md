@@ -1,6 +1,6 @@
 # Pharloom Runbook — current handoff
 
-Updated November 18, 2026. The local app is implemented. Joseph is currently on **Run #4**. This file holds current route decisions, research alternatives, and open scout questions; [README.md](./README.md) covers use and maintenance. The [source archive](./docs/history.md) preserves older notes without serving as a second live handoff.
+Updated November 19, 2026. The local app is implemented. Joseph is currently on **Run #4**. This file holds current route decisions, research alternatives, and open scout questions; [README.md](./README.md) covers use and maintenance. The [source archive](./docs/history.md) preserves older notes without serving as a second live handoff.
 
 ## Working contract
 
@@ -9,13 +9,13 @@ Updated November 18, 2026. The local app is implemented. Joseph is currently on 
 - Keep timed and scout results separate. Use the manual in-game clock, retain idle time and detours, and finish only when a `gms` split is reported. Sub-five is strictly below `5:00:00`.
 - Keep the app local and dependency-free. The route keeps 31 original checkpoint IDs and a guide-only Last Judge stop. The 29 current timing points appear across 29 guide pages grouped under the Garmond guide’s 13 sections. Use the requested **Return to Greymoor, Bell #4** and **Shellwood, Blasted Steps, Last Judge** headings; retain original titles elsewhere. The section title is the main heading; the checkpoint is a subtitle. Inline maps, numbered directions, and Previous/Next are the main experience. Guide position starts at Silkspear and persists independently of run selection and split entry.
 - Keep the Run log closed by default. The persistent Pickups drawer shares the selected run's checks across all steps; category checkboxes support partial/all states, the last check closes its accordion, and optional items do not block the main total. Retain the five-bell Grand Gate category, three spool pairs, eight-shard mask category, historical checked items, Escape/backdrop closing, reduced-motion support, and inline reference gallery.
-- Keep the Garmond guide’s section names, numbered checkpoints, and detours visible with the relevant map screenshot, except the requested custom Greymoor return and Shellwood/Last Judge headings. Bell numbers follow our pickup order; map checkpoint and detour numbers retain their source numbering. These guide references do not add timed splits. Clearly label missing original maps and distinguish guide options from the selected path. In skip instructions, cite the original G&Z Detour or Checkpoint number inline with a short item name. Keep the wording concise and never invent numbers for unmarked pickups.
+- Keep the Garmond guide’s section names, numbered checkpoints, and detours visible with the relevant map screenshot, with custom headings for the Greymoor return, Shellwood/Last Judge, and the individual Songclave legs. Bell numbers follow our pickup order; map checkpoint and detour numbers retain their source numbering. These guide references do not add timed splits. Clearly label missing original maps and distinguish guide options from the selected path. In skip instructions, cite the original G&Z Detour or Checkpoint number inline with a short item name. Keep the wording concise and never invent numbers for unmarked pickups.
 - Write the timed walkthrough and purchases for collecting every planned pickup in order. Keep old recovery options for missed items in research. Conditional shop entry fees, retries, actual supply needs and the chosen optional Mask trip still apply.
 - Discuss unresolved route choices **one question or pickup at a time**. Keep alternatives here; update the route only when a choice changes. Run `npm run check` after changes and commit coherent work.
 
 ## Current run
 
-- **Run #4, Choral Chambers bench at 1:57.** The active save has the step 13 split and the Grand Gate spool checked. Continue to Grand Bellway on step 14. The Blasted Steps Craftmetal check is still open, so confirm whether you have it before spending it on Cogfly.
+- **Run #4, Grand Bellway bench at 2:02.** The prior Choral Chambers split is 1:57 and the Grand Gate spool is checked. Continue to Songclave on step 15. The Blasted Steps Craftmetal check is still open, so confirm whether you have it before spending it on Cogfly.
 - **Run #4, post-Widow rosaries sufficient.** Joseph reports **638 rosaries** from Scrounge sales and pickups along the route, especially lower Bellhart. He rejects Loddie’s second round as unnecessary. Keep the first-round pouch only; this report does not confirm a new pickup, purchase, split, exact location, or the individual relics sold.
 - **Run #4, Straight Pin missed.** Joseph did not collect Straight Pin on the first Deep Docks trip, then found the existing first-pass instruction. Keep that instruction unchanged and leave pickup ID `tool-straight-pin` unchecked until he reports collecting it. Recover pin **477899**, above Grindle’s old cell in the Marrow prison, during the already planned post-Widow Loddie visit. This is a Run #4 recovery, not a change to the selected first-pass route. [Straight Pin location](https://hollowknight.wiki/w/Straight_Pin) · [Loddie’s prison location](https://hollowknight.wiki/w/Loddie)
 - **Run #4, first Mort visit completed.** Joseph confirms Pilgrim’s Rest entry, Weighted Belt and Mort’s Tool Pouch are already done; the Belt and pouch are already checked in the active save. Place these directions and their 410-rosary spending reminder at the end of Section 4, Far Fields. Section 5 starts at Halfway Home with only the 60-rosary Greymoor Bellway reminder. This report does not confirm the Greymoor Bellway purchase.
@@ -42,6 +42,10 @@ Build the main view around this itinerary. The route is Hunter, all five bells, 
 [Original Garmond Route](https://steamcommunity.com/sharedfiles/filedetails/?id=3577460696) · [Recovered maps and credits](./docs/map-credits.md) · [Roof gate](https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=480502) · [Forum aid](https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=481022)
 
 ## Decisions and research
+
+### Separate Songclave legs and return map · November 19
+
+Joseph supplied the [Songclave loop map](./assets/maps/Songclave%20to%20Cogwork%20and%20Vaults%20return.png). Red runs west from Songclave to the Dancers. Orange continues through lower Cogwork and the Whispering Vaults arena, then returns to Songclave. Use the earlier approach map on step 14, then the new screenshot with a local map key on each of the next three pages. Step 15 covers Songclave and the White Key, step 16 covers the Dancers, and step 17 covers lower Cogwork through the arena and back to Songclave. Keep both step 17 timing points where they occur. The later Vaults mask and Pale Oil trip starts on step 18. The yellow numbers belong to the supplied screenshot.
 
 ### Choral Chambers bench on step 13 · November 18
 
@@ -261,7 +265,7 @@ The screenshot shows map pins with no drawn route or Garmond checkpoint numbers.
 
 Joseph added the [Grand Gate → Grand Bellway → Songclave route](./assets/maps/Grand%20Gate%20to%20Grand%20Bellway%20and%20Songclave.png), renamed from Screenshot 2026-11-11 at 12.35.53 AM.png with the original 2394 × 1234 PNG bytes preserved. Its red line shows the path from Grand Gate through Choral Chambers to Grand Bellway and up toward Songclave.
 
-Use it for the Grand Bellway and Songclave/White Key steps. The Dancers, lower Core and Vaults arena are outside the crop; retain their existing references and missing-detail notices. This is a partial replacement for the combined original chapter map. The red line does not add a G&Z search loop or alter the selected route.
+Use it for the Grand Bellway approach on step 14. The November 19 loop screenshot covers Songclave, the Dancers, lower Core and the Vaults arena return. The selected route uses the Greymoor conversation, roof duel and Forum offer for G&Z. No separate Choral Chambers encounter was reported on the successful scout or timed file.
 
 ### Guide consolidation · November 10
 
@@ -349,7 +353,7 @@ Keep checkpoint and existing pickup IDs stable. New Pendant/string/Commandment c
 Joseph asked to return to these after focusing on the run:
 
 - Deep Docks return is covered by the November 14 supplied map; the earlier screenshot reminder is resolved.
-- Songclave onward: Cogwork Dancers, lower Core mask/shortcuts, Whispering Vaults arena and the shortcut back to Songclave. The supplied red map already covers the approach.
+- Songclave to Dancers, lower Core, Whispering Vaults arena and back to Songclave is covered by the November 19 loop screenshot.
 
 Bring this up when map work resumes; no scheduled notification was requested.
 
@@ -416,7 +420,7 @@ Joseph then used the **speedrun file (Run #2)** for the trip: Forge Daughter →
 - Scout Lace 2 as a dedicated fight. Time actual attempts and runbacks separately from optional detours. Practice waiting for committed attacks and healing in recovery. Try safe Straight Pin windows while preserving Silk.
 - Grand Mother Silk is now cleared on attempt six at 5:26:16. Use the learned patience and one-side positioning for the rerun; no individual attempt duration has been isolated.
 - Check early rosaries for Pebb, Mort, and the first Bellways. Greymoor and Blasted Steps Bellway openings are useful for later returns. Keep the G&Z aid route and protected Needle/Forge Daughter budget. The paid second kit is settled; keep its 450-rosary target visible before Clawline.
-- Map recovery on 2026-11-09 preserved the three existing maps and added 16 original guide images. The gallery shows the selected maps and screenshots; Mist and Sister Splinter skip alternatives remain archived. The separate Vaults shard/Pale Oil map is recovered. Shellwood/Widow, the Deep Docks return (shard/Forge Daughter), Last Judge/Choral Chambers, and combined Songclave/lower Core/Vaults arena maps have empty image URLs in the original guide. Joseph’s supplied screenshots now replace Shellwood/Widow and the Last Judge/Grand Gate overview fallback. The supplied red route now covers the Grand Gate/Grand Bellway/Songclave approach. Joseph’s November 14 annotated map now covers the Deep Docks return. Dancers, lower Core and Vaults arena still use existing references and checkpoint pins. The guide does not mark spool fragments; custom screenshots can supplement the six locked pins.
+- Map recovery on 2026-11-09 preserved the three existing maps and added 16 original guide images. The gallery shows the selected maps and screenshots; Mist and Sister Splinter skip alternatives remain archived. The separate Vaults shard/Pale Oil map is recovered. Shellwood/Widow, the Deep Docks return (shard/Forge Daughter), Last Judge/Choral Chambers, and combined Songclave/lower Core/Vaults arena maps have empty image URLs in the original guide. Joseph’s supplied screenshots now replace Shellwood/Widow and the Last Judge/Grand Gate overview fallback. The supplied red route now covers the Grand Gate/Grand Bellway/Songclave approach. Joseph’s November 14 annotated map now covers the Deep Docks return. Joseph’s November 19 loop screenshot covers the Dancers, lower Core and Vaults arena return. The guide does not mark spool fragments; custom screenshots can supplement the six locked pins.
 
 ## Local references
 

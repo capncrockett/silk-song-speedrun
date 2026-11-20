@@ -391,7 +391,7 @@
     {
       "id": "grand-gate-songclave",
       "title": "Grand Gate → Grand Bellway → Songclave · supplied route",
-      "section": "Combined Route to Songclave, Lower Cogwork, and WV Arena",
+      "section": "Grand Bellway to Songclave",
       "file": "assets/maps/Grand Gate to Grand Bellway and Songclave.png",
       "src": "/maps/grand-gate-songclave.png",
       "mime": "image/png",
@@ -405,8 +405,29 @@
       "kind": "map",
       "timedRoute": true,
       "custom": true,
-      "note": "Supplied red route from Grand Gate through Choral Chambers to Grand Bellway, then up toward Songclave. The Dancers, lower Core and Vaults arena are outside this crop; those steps retain their existing references.",
-      "keyIntro": "The red line traces the approach through Choral Chambers and Grand Bellway toward Songclave. The guide’s checkpoint numbers are not drawn on this screenshot; later Dancers, lower Core and Vaults arena checkpoints are outside its crop."
+      "note": "The red route runs from Grand Gate through Choral Chambers and Grand Bellway, then climbs to Songclave.",
+      "keyIntro": "Follow the red approach line. Checkpoint numbers below refer to the original guide."
+    },
+    {
+      "id": "songclave-cogwork-vaults-loop",
+      "title": "Songclave → Cogwork Dancers → Whispering Vaults → Songclave",
+      "section": "Songclave, Cogwork Core and Whispering Vaults",
+      "file": "assets/maps/Songclave to Cogwork and Vaults return.png",
+      "src": "/maps/songclave-cogwork-vaults-loop.png",
+      "mime": "image/png",
+      "width": 2390,
+      "height": 1102,
+      "sourceUrl": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom",
+      "creator": "User-supplied annotated MapGenie screenshot",
+      "sha256": "b08ce931617c92c86a8245c4b66560495e61223c2e8a18e6c39576c9994c8b6a",
+      "recovered": "2026-11-19",
+      "bytes": 1485490,
+      "kind": "map",
+      "timedRoute": true,
+      "custom": true,
+      "note": "Red heads west from Songclave to the Dancers. Orange continues through lower Cogwork and Whispering Vaults and returns to Songclave.",
+      "keyLabel": "Joseph’s map · route key",
+      "keyIntro": "The yellow numbers are Joseph’s map marks. The guide checkpoints below refer to the original route."
     },
     {
       "id": "bellhart-deep-docks-return",
@@ -490,7 +511,8 @@
     },
     {
       "title": "Songclave, lower Cogwork and Vaults arena",
-      "reason": "The guide image link is empty. The supplied Grand Gate/Songclave route covers the approach only; the Dancers, lower Core and Vaults arena remain outside that crop."
+      "reason": "The original guide image link is empty. Joseph supplied a map for the Dancers, lower Core and Vaults return loop.",
+      "replacement": "songclave-cogwork-vaults-loop"
     }
   ]
 }

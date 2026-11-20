@@ -167,19 +167,45 @@
     },
     {
       "id": "garmond-songclave",
-      "title": "Combined Route to Songclave, Lower Cogwork, and WV Arena",
-      "maps": ["grand-gate-songclave", "overview"],
-      "steps": ["grand-bellway", "songclave-bell", "dancers", "lower-core"],
+      "title": "Grand Bellway to Songclave",
+      "maps": ["grand-gate-songclave"],
+      "steps": ["grand-bellway"],
       "checkpoints": [
         "1 · Possible G&Z sighting — no separate encounter search on our path",
-        "2 · Grand Bellway",
-        "3 · Songclave and White Key",
-        "4 · Cogwork Dancers",
-        "5 · Lower Core mask shard",
-        "6 · Vaults arena"
+        "2 · Grand Bellway"
       ],
       "detours": [],
-      "note": "The supplied red route covers Grand Gate through Choral Chambers, Grand Bellway and the Songclave approach. The Dancers, lower Core and Vaults arena still use their existing references. Our path uses the Greymoor conversation, roof duel and Forum offer. No separate Choral Chambers encounter was reported on the successful scout or timed file, so do not add a search loop here.",
+      "note": "Open both Grand Bellway travel links before taking the rotating-wheel room toward Songclave.",
+      "guideNumber": 9
+    },
+    {
+      "id": "garmond-songclave-first-shrine",
+      "title": "Songclave & the White Key",
+      "maps": ["songclave-cogwork-vaults-loop"],
+      "steps": ["songclave-bell"],
+      "checkpoints": ["3 · Songclave and White Key"],
+      "detours": [],
+      "note": "Start at the right side of the map. Ring the First Shrine bell, open the Ventrica and collect the White Key before leaving for the Dancers.",
+      "guideNumber": 9
+    },
+    {
+      "id": "garmond-cogwork-dancers",
+      "title": "Songclave to Cogwork Dancers",
+      "maps": ["songclave-cogwork-vaults-loop"],
+      "steps": ["dancers"],
+      "checkpoints": ["4 · Cogwork Dancers"],
+      "detours": [],
+      "note": "Follow red west from Songclave to the Dancers. Record the split after the fight.",
+      "guideNumber": 9
+    },
+    {
+      "id": "garmond-lower-cogwork-return",
+      "title": "Lower Cogwork & Vaults Arena Return",
+      "maps": ["songclave-cogwork-vaults-loop"],
+      "steps": ["lower-core"],
+      "checkpoints": ["5 · Lower Core mask shard", "6 · Vaults arena"],
+      "detours": [],
+      "note": "Use orange from below the Dancers through lower Cogwork and east to the Whispering Vaults arena. Take the ceiling shortcut back to Songclave for the second split on this leg.",
       "guideNumber": 9
     },
     {
@@ -196,7 +222,7 @@
       "detours": [
         "Bellhart upgrade and Blasted Steps Dice return — planned together after Pale Oil, before Trobbio."
       ],
-      "note": "Keep the original map numbers; our directions take the Needle upgrade and free Dice before Trobbio. The screenshot covers the shard and Pale Oil; the preceding arena map is unavailable.",
+      "note": "Follow the shard and Pale Oil branches here, then get the Needle upgrade and free Dice before Trobbio. The previous step’s screenshot covers the earlier arena and return to Songclave.",
       "guideNumber": 10
     },
     {
@@ -976,11 +1002,9 @@
       "number": "09",
       "guideNumber": 9,
       "guideSection": "garmond-songclave",
-      "title": "Combined Route to Songclave, Lower Cogwork, and WV Arena",
-      "summary": "Open the travel links, take White Key, defeat Dancers, clear lower Core and the Vaults arena, then reach Songclave. Bench rests are optional.",
-      "maps": ["grand-gate-songclave", "overview"],
-      "missingMaps": ["Songclave, lower Cogwork and Vaults arena"],
-      "mapNote": "The supplied red route covers the Grand Gate → Grand Bellway → Songclave approach. Dancers, lower Core and the Vaults arena are outside its crop; use their existing references and written directions.",
+      "title": "Grand Bellway to Songclave",
+      "summary": "Open both Grand Bellway travel links and climb toward Songclave.",
+      "maps": ["grand-gate-songclave"],
       "stops": [
         {
           "id": "grand-bellway",
@@ -997,7 +1021,6 @@
             { "id": "ventrica-grand-bellway", "item": "Grand Bellway Ventrica", "rosaries": 80 }
           ],
           "maps": ["grand-gate-songclave"],
-          "mapNote": "Red route: Grand Gate → Choral Chambers → Grand Bellway → Songclave. Use the written steps for travel unlocks and the White Key.",
           "guideSplits": [
             {
               "instruction": 2,
@@ -1005,10 +1028,20 @@
               "when": "At the Grand Bellway bench after opening both travel links; resting is optional."
             }
           ]
-        },
+        }
+      ]
+    },
+    {
+      "id": "songclave-first-shrine",
+      "number": "09",
+      "guideNumber": 9,
+      "guideSection": "garmond-songclave-first-shrine",
+      "title": "Songclave & the White Key",
+      "summary": "Ring the First Shrine bell, open the Ventrica and take the White Key.",
+      "maps": ["songclave-cogwork-vaults-loop"],
+      "stops": [
         {
           "id": "songclave-bell",
-          "guideTitle": "Songclave & the White Key",
           "guide": [
             "Ring the First Shrine bell in Songclave.",
             "Open the Songclave Ventrica for 80 rosaries. If short, the nearby Grand Reeds on the Dancers approach drop 32 rosaries each.",
@@ -1018,8 +1051,6 @@
           "tip": "Ring the First Shrine bell, open the Songclave Ventrica, and take the White Key for Whiteward.",
           "links": [{ "title": "White Key", "pin": 478599 }],
           "purchases": [{ "id": "ventrica-songclave", "item": "Songclave Ventrica", "rosaries": 80 }],
-          "maps": ["grand-gate-songclave"],
-          "mapNote": "Red route: Grand Gate → Choral Chambers → Grand Bellway → Songclave. Use the written steps for travel unlocks and the White Key.",
           "guidePickups": [
             { "instruction": 3, "id": "key-white", "text": "White Key" }
           ],
@@ -1030,10 +1061,22 @@
               "when": "After ringing the First Shrine bell in Songclave."
             }
           ]
-        },
+        }
+      ]
+    },
+    {
+      "id": "songclave-dancers",
+      "number": "09",
+      "guideNumber": 9,
+      "guideSection": "garmond-cogwork-dancers",
+      "title": "Songclave to Cogwork Dancers",
+      "summary": "Follow the west passage from Songclave and defeat the Cogwork Dancers.",
+      "maps": ["songclave-cogwork-vaults-loop"],
+      "stops": [
         {
           "id": "dancers",
           "guide": [
+            "From Songclave, follow the red line west to the Cogwork Dancers.",
             "Defeat the Cogwork Dancers. The guide recommends focusing one dancer because their health is separate.",
             "Continue into lower Cogwork Core.",
             "The free Magnetite Dice pickup becomes available after this fight; collect it on the planned Bellhart upgrade trip."
@@ -1041,19 +1084,29 @@
           "title": "Cogwork Dancers defeated",
           "tip": "Beat the Dancers, then head into lower Cogwork. The free Dice pickup is available after the Dancers.",
           "links": [{ "title": "Cogwork Dancers", "pin": 478606 }],
-          "maps": ["overview"],
-          "mapNote": "Dancers and lower Core are outside the supplied approach screenshot. Use the route overview, written directions and map pins here.",
           "guideSplits": [
             {
-              "instruction": 1,
+              "instruction": 2,
               "checkpoint": "dancers",
               "when": "Immediately after defeating the Cogwork Dancers."
             }
           ]
-        },
+        }
+      ]
+    },
+    {
+      "id": "songclave-lower-core-return",
+      "number": "09",
+      "guideNumber": 9,
+      "guideSection": "garmond-lower-cogwork-return",
+      "title": "Lower Cogwork & Vaults Arena Return",
+      "summary": "Collect the lower Core mask shard, clear the Vaults arena and return to Songclave.",
+      "maps": ["songclave-cogwork-vaults-loop"],
+      "missingMaps": ["Songclave, lower Cogwork and Vaults arena"],
+      "mapNote": "Joseph’s annotated screenshot replaces the missing original map for this leg.",
+      "stops": [
         {
           "id": "lower-core",
-          "guideTitle": "Lower Core & Vaults arena",
           "guide": [
             "From the bench below Dancers, descend and go left to the lower Core arena. Clear it and collect the mask shard.",
             "Open the middle shortcut, then take the final room’s top-right exit to unlock upper Cogwork Core. Return to the bench below Dancers.",
@@ -1063,8 +1116,6 @@
           "title": "Lower Cogwork Core / bench",
           "tip": "Collect the lower Core mask shard and open the middle and upper-right shortcuts. Continue through the spinning-wheel room, clear the Vaults arena (G&Z Checkpoint 6), and open the ceiling shortcut to Songclave’s bench. Skip the unmarked lower Core spool.",
           "links": [{ "title": "Lower Core mask shard", "pin": 478615 }],
-          "maps": ["overview"],
-          "mapNote": "The detailed Dancers, lower Core and Vaults arena map is missing. Use the overview, written directions and existing map pins.",
           "guidePickups": [
             { "instruction": 1, "id": "mask-lower-core", "text": "mask shard" }
           ],
