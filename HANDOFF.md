@@ -1,6 +1,6 @@
 # Pharloom Runbook — current handoff
 
-Updated November 19, 2026. The local app is implemented. Joseph is currently on **Run #4**. This file holds current route decisions, research alternatives, and open scout questions; [README.md](./README.md) covers use and maintenance. The [source archive](./docs/history.md) preserves older notes without serving as a second live handoff.
+Updated November 20, 2026. The local app is implemented. Joseph is currently on **Run #4**. This file holds current route decisions, research alternatives, and open scout questions; [README.md](./README.md) covers use and maintenance. The [source archive](./docs/history.md) preserves older notes without serving as a second live handoff.
 
 ## Working contract
 
@@ -35,13 +35,19 @@ Build the main view around this itinerary. The route is Hunter, all five bells, 
 2. **First Far Fields and Greymoor pass.** Skip both the Warding Bell bronze-pipe detour and the adjoining flying-bomber Craftmetal room that Joseph explicitly rejected. The normal two-pickup budget remains Marrow for Magma Bell and Blasted Steps for Cogfly. From the tall room, take the lowest right exit past Fourth Chorus to the Seamstress. Collect the hidden 60-rosary string near the Seamstress, get Drifter's Cloak and the shard above her, then defeat Fourth Chorus on the return. Buy Weighted Belt and the Tool Pouch on the first Pilgrim's Rest visit. The two items cost 380 rosaries, plus the planned 30-rosary first-entry fee. Break the gear from the inside. Open Greymoor Bellway for the later return. Exhaust Garmond's first Greymoor dialogue, then use the Halfway Home / Moorwing route. Accept Moorwing aid if offered; after one guide encounter/reload check, continue solo if absent.
 3. **Shellwood, Widow, and post-Widow loop.** Sister Splinter for Cling Grip, Widow shortcut and Needolin, Bellhart bell and first Needle upgrade. Visit Eva for Hunter's evolution, collect the Atla Rune Harp on the mask branch, and take the mask shard. Take the Atla spool to complete the first pair with the earlier Bone Bottom pickup. Return to Bone Bottom and take its Bellway to Bellhart; sell the Rune Harp to Scrounge for 210 rosaries and the Choral Commandment for 180 if still carried. Return to Loddie after Widow for the first-round pouch only; skip the second-round necklace. On the Forge Daughter visit, get the damage kit for 180 and Magma Bell for 110 plus one Craftmetal, and collect the selected Deep Docks spool 477926 via the burning-floor room and far lever. The target is six masks before Judge and seven by late Act 2. Use the checkpoint spending reminders; the post-Widow loop no longer depends on Loddie’s second reward.
 4. **Bell #4 and Last Judge.** Travel from Deep Docks Bellway directly to Greymoor and rest at Halfway Home to set the quit-return point. Climb above and right of Halfway Home, use the top-right transition, and go northeast. Keep this bypass. This trip is the planned window for the Greymoor spool, completing the second pair with Deep Docks. Do not sit at the bell’s bench or any other bench during the trip. After the bell and spool, Quit to Menu and Continue back at Halfway Home, then take Greymoor Bellway to Shellwood Bellway. Arrive at the already-open Shellwood Bellway, ring Shellwood’s bell, then continue to Blasted Steps for the locket and Bellway. Use Needolin at the Grand Gate and fight Last Judge. After reaching Choral Chambers, use the return shortcut to climb the Grand Gate balancing-platform puzzle for spool 478586. The route skips Mist and Phantom.
-5. **Songclave and Vaults.** Open Grand Bellway travel and the First Shrine bell. Take White Key, beat the Cogwork Dancers, clear lower Core, and open the top-right shortcut. Clear the Whispering Vaults arena and return to Songclave for the split. Take the Ventrica to Grand Bellway and the Bell Beast to Blasted Steps for free Dice. Return the same way to Songclave. Then get the planned mask shard and Pale Oil for Needle Upgrade #2 in Bellhart before Trobbio.
-6. **Trobbio, Cauldron, and roof.** Defeat Trobbio and open his lift shortcut. Get Injector Band in Whiteward, then Clawline. Use Magma Bell through Cauldron and buy Twelfth Architect's 450-rosary Crafting Kit after Clawline. Collect eastern Underworks spool 478704 behind the small lava room's wall to complete the third pair with Grand Gate. Collect Vaultkeeper's Melody, run the box and wind puzzle, and open the far-left roof gate 480502. Leave and return through that gate for the duel. The earlier Greymoor conversation qualified on scout. The timed run got G&Z aid without a separately reported Choral Chambers encounter. Exhaust post-duel dialogue and accept their help at the Forum door inside High Halls.
+5. **Songclave and Vaults.** Open Grand Bellway travel and the First Shrine bell. Take White Key, beat the Cogwork Dancers, clear lower Core, and open the top-right shortcut. After opening the lower Core shortcuts, rest at the bench below the Dancers, collect lower Cogwork Core spool 478618 at yellow 3, and quit-return without resting elsewhere. This completes the third pair with Grand Gate before the Whispering Vaults arena. Clear the arena and return to Songclave for the split. Take the Ventrica to Grand Bellway and the Bell Beast to Blasted Steps for free Dice. Return the same way to Songclave. Then get the planned mask shard and Pale Oil for Needle Upgrade #2 in Bellhart before Trobbio.
+6. **Trobbio, Cauldron, and roof.** Defeat Trobbio and open his lift shortcut. Get Injector Band in Whiteward, then Clawline. Use Magma Bell through Cauldron and buy Twelfth Architect's 450-rosary Crafting Kit after Clawline. Skip eastern Underworks spool 478704; all six fragments are already collected after lower Cogwork Core. Collect Vaultkeeper's Melody, run the box and wind puzzle, and open the far-left roof gate 480502. Leave and return through that gate for the duel. The earlier Greymoor conversation qualified on scout. The timed run got G&Z aid without a separately reported Choral Chambers encounter. Exhaust post-duel dialogue and accept their help at the Forum door inside High Halls.
 7. **Forum and endgame.** Get Cogfly for one Craftmetal on the High Halls descent. The Forum target is two pouch upgrades, two damage upgrades, Straight Pin + Cogfly, and G&Z. Collect Conductor's Melody and Architect's Melody. At Lace 2, optionally rush Hunter’s March for Fractured Mask using Cogwork Core bench 478428 as the quit-return anchor, with no rests en route; equip it instead of Mirror on returning. Otherwise continue with Mirror. Ascend to Lace and keep the patient, heal-first approach. Rest at Terminus, open the final shortcut, and record the actual finish after Grand Mother Silk.
 
 [Original Garmond Route](https://steamcommunity.com/sharedfiles/filedetails/?id=3577460696) · [Recovered maps and credits](./docs/map-credits.md) · [Roof gate](https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=480502) · [Forum aid](https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=481022)
 
 ## Decisions and research
+
+### Final spool in lower Cogwork Core · November 20
+
+Joseph replaces eastern Underworks **478704** with lower Cogwork Core **478618** as fragment #6. Take yellow **3** on step 15 after the lower Core arena and Upper Cogwork shortcut. Rest at the bench below the Dancers before the branch, collect the fragment without resting elsewhere, then **Quit to Menu / Save and Quit → Continue** back at that bench. Follow orange toward Whispering Vaults afterward. Grand Gate + lower Core completes pair C early, before the Vaults arena, Needle #2 and Trobbio.
+
+Keep six fragments for +3 Silk capacity. Cauldron would be a seventh fragment with no further capacity until an eighth, so skip it on the timed route. Reuse the existing `spool-core` ID for the selected pickup and archive `spool-cauldron` under its own unchanged ID. Preserve all saved checks and times. This is a route decision, not a reported pickup, split or timed detour measurement. The November 9 selection and November 19 skip wording are superseded.
 
 ### Songclave approach and return loop · November 19
 
@@ -51,7 +57,7 @@ Go from **Grand Bellway bench → Lower Cogwork Core bench** for timing. After d
 
 After the Songclave bench split at the end of step 15, take the Ventrica to Grand Bellway, switch to the Bell Beast for Blasted Steps and get the free Magnetite Dice from Lumble. Take the same connections back to Songclave for step 16. Joseph wants Dice as soon as the route reaches a Ventrica after the Dancers. This supersedes the earlier combined Needle #2 and Dice trip. Step 16 takes Pale Oil to Bellhart for the Needle upgrade.
 
-Joseph’s screenshot shows red west from Songclave to the Dancers, then orange through lower Cogwork and the Whispering Vaults arena and back to Songclave. Yellow 3 is the silk spool branch, which this route skips. Yellow 4 is Tay Bravo’s Upper Cogwork shortcut, which this route opens. [Songclave loop map](./assets/maps/Songclave%20to%20Cogwork%20and%20Vaults%20return.png)
+Joseph’s screenshot shows red west from Songclave to the Dancers, then orange through lower Cogwork and the Whispering Vaults arena and back to Songclave. Yellow 3 is the lower Core spool branch, selected as the final fragment in the November 20 update. Yellow 4 is Tay Bravo’s Upper Cogwork shortcut, which this route opens. [Songclave loop map](./assets/maps/Songclave%20to%20Cogwork%20and%20Vaults%20return.png)
 
 ### Choral Chambers bench on step 13 · November 18
 
@@ -69,7 +75,7 @@ Verified with `npm run check` and isolated Playwright: whole-run totals independ
 
 Joseph says **all benches are optional unless strategically used for quit-to-menu stunts**. Exclude the 40-rosary Shellwood arena bench from the required pool; label it optional in the route, purchase checklist and next-stop reminder. Other bench stops/rests are optional for healing, tool changes or repairs. Bench split locations remain timing landmarks without requiring a rest; retain every historical timing ID and label.
 
-Keep explicit rests at Halfway Home before the Greymoor bell/spool quit-return and Cogwork Core 478428 before the optional Mask quit-return. If using the Forum Quit to Menu / Continue fallback, first rest at High Halls bench to anchor that return. Preserve all no-intervening-bench instructions on these trips. Bellway/Ventrica purchases remain required travel unlocks, distinct from optional bench spending.
+Keep explicit rests at Halfway Home before the Greymoor bell/spool quit-return, at the bench below the Dancers before the lower Core spool quit-return, and at Cogwork Core 478428 before the optional Mask quit-return. If using the Forum Quit to Menu / Continue fallback, first rest at High Halls bench to anchor that return. Preserve all no-intervening-bench instructions on these trips. Bellway/Ventrica purchases remain required travel unlocks, distinct from optional bench spending.
 
 ### Running rosary budget · November 14
 
@@ -281,7 +287,7 @@ Planned resources include the Marrow Craftmetal and Greymoor Bellway locket **47
 
 [Original guide text](https://steamcommunity.com/sharedfiles/filedetails/?id=3577460696) · [In-game melody dialogue](https://hollowknight.wiki/w/Module:TabbedDialogue/Silksong/en.json)
 
-### Spools in pairs · locked November 9
+### Spools in pairs · updated November 20
 
 **Locked: six selected fragments, three completed spools, +3 Silk capacity.** None of these pickups adds an arena. Joseph explicitly closed this choice and wants to move on; do not reopen the alternatives unless he asks.
 
@@ -289,22 +295,23 @@ Pairs are displayed in the planned collection order:
 
 1. Bone Bottom **478080** + Atla **478230**.
 2. Deep Docks **477926** + Greymoor **478263**.
-3. Grand Gate **478586** + eastern Underworks **478704**.
+3. Grand Gate **478586** + lower Cogwork Core **478618**.
 
-These are planning/checklist pairs, not unique item matches. Existing pickup IDs and historical checked state remain intact. Lower Core `spool-core` is retained as an archived item, shown only on runs where it was already checked; it is excluded from the final six-fragment itinerary.
+These are planning/checklist pairs, not unique item matches. Existing pickup IDs and historical checked state remain intact. Lower Core `spool-core` is active again. Eastern Underworks `spool-cauldron` is archived, shown only on runs where it was already checked; it is excluded from the current six-fragment itinerary.
 
 | Pin | Verified access and route cost | Current planning |
 |---|---|---|
 | Deep Docks **477926** | No extra movement requirement listed. Cross the burning-floor room southwest of Forge Daughter, hit the far lever, and return over its platforms. No dedicated arena. | **Selected** on the Forge Daughter visit; pair with Greymoor. |
 | Greymoor **478263** | The only Greymoor Spool Fragment in the map/list. Cling Grip is the listed requirement. Climb the upper passage and use the balloons; no double-jump or Craw Lake arena clear is listed. | **Selected**, completing the second pair with Deep Docks. Run #2's personally confirmed pickup remains the late one. |
-| Eastern Underworks **478704** | Descend the shaft east of the Cauldron and break wall **480018 from the east** into the small burning-floor room. It is distinct from the central arena reward. | **Selected**, completing the third pair with Grand Gate. |
-| Grand Gate **478586** | At the top of the platforming puzzle. Strike the underside of the balancing platforms to reposition them. No double-jump requirement listed. | **Selected** in early Act 2; pair with eastern Underworks. |
+| Lower Cogwork Core **478618** | Yellow 3 on Joseph’s loop map. Rest at the bench below the Dancers first; collect the fragment without another bench rest and quit-return there. | **Selected** as #6, completing the third pair with Grand Gate before the Vaults arena. Joseph considers the branch easy; no detour timing was reported. |
+| Eastern Underworks **478704** | Descend the shaft east of the Cauldron and break wall **480018 from the east** into the small burning-floor room. It is distinct from the central arena reward. | **Skipped** after the November 20 lower Core replacement. It would be an unpaired seventh fragment. |
+| Grand Gate **478586** | At the top of the platforming puzzle. Strike the underside of the balancing platforms to reposition them. No double-jump requirement listed. | **Selected** in early Act 2; pair with lower Cogwork Core. |
 | Bone Bottom **478080** | No ability or rosary cost, but it is a trapped side passage after trapdoor 477865 and lift lever 478344. | **Selected** on the early Bone Bottom loop; pair with Atla. No rosary cost. |
 | Atla **478230** | Needolin opens Atla; Cling Grip reaches the upper passage above breakable wall 479063. Includes Marrowmaws. No double-jump or Moss Mothers fight is required for this spool. | **Selected** during the Eva visit; completes the first pair with Bone Bottom. |
 
 **Arena distinction:** **479347** is the separate central Underworks gauntlet rewarding **478931**, the spool we already skip. Its waves include the Undercrank that smashes through the floor. Do not conflate that central arena with the small room for **478704**.
 
-Lower Core **478618** is now skipped in favour of the selected six. Keep the double-jump High Halls spool **478909** skipped. Do not rename existing preparation IDs if the final pair changes: add a distinct ID for any newly tracked pickup and retain old IDs for historical records.
+Eastern Underworks **478704**, central Underworks **478931**, and double-jump High Halls **478909** stay skipped. Do not rename preparation IDs when the pair changes: reuse `spool-core` for lower Core and retain `spool-cauldron` for historical Underworks records.
 
 [Archived spool comparison](./docs/history.md#spool-candidate-comparison) · [Spool location requirements](https://hollowknight.wiki/w/Spool_Fragment) · [Underworks and Cauldron arenas](https://hollowknight.wiki/w/Underworks) · [MapGenie public map data](https://mapgenie.io/api/v1/maps/812/data)
 
