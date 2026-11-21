@@ -193,7 +193,7 @@
         "3 · Lower Cogwork Core spool — final fragment; quit-return to the bench below the Dancers.",
         "4 · Upper Cogwork shortcut — open it for the later return."
       ],
-      "note": "Start at Songclave on the right. Follow red west to the Dancers, then orange through lower Cogwork. Take yellow 3 for the final spool fragment and quit-return to the bench below the Dancers before continuing to the Whispering Vaults arena and Songclave ceiling shortcut.",
+      "note": "Start at Songclave on the right. Follow red west to the Dancers and rest at the bench below them. Follow orange through lower Cogwork for the mask shard, then take yellow 3 for the final spool fragment and quit-return to that bench. Open the Upper Cogwork shortcut at yellow 4 afterward, then continue through the spinning-wheel room to the Whispering Vaults arena and Songclave ceiling shortcut.",
       "guideNumber": 9,
       "detoursTitle": "Yellow map marks"
     },
@@ -1055,10 +1055,10 @@
           "guide": [
             "From Songclave, follow the red line west to the Cogwork Dancers.",
             "Defeat the Cogwork Dancers. The guide recommends focusing one dancer because their health is separate.",
-            "Head straight to the bench below the Dancers once the fight opens the way into Lower Cogwork Core."
+            "Head straight to the bench below the Dancers once the fight opens the way into Lower Cogwork Core. Rest here to set the quit-return point for the spool trip."
           ],
           "title": "Cogwork Dancers defeated",
-          "tip": "After beating the Dancers, take the next split at the bench below them before heading into lower Cogwork.",
+          "tip": "After beating the Dancers, take the next split at the bench below them. Rest there to anchor the spool quit-return before heading into lower Cogwork.",
           "links": [{ "title": "Cogwork Dancers", "pin": 478606 }],
           "guideSplits": [
             {
@@ -1073,16 +1073,17 @@
           "guideTitle": "Dancers, lower Core, and back to Songclave",
           "guide": [
             "Follow orange down from the bench below the Dancers, then go left to the lower Core arena. Clear it and collect the mask shard.",
-            "Open the middle shortcut and take the final room’s top-right exit at yellow 4 to unlock Upper Cogwork. Return to the bench below the Dancers and rest to set the quit-return point.",
-            "Follow orange right through the spinning-wheel room and take yellow 3 for the lower Cogwork Core spool fragment. This is the sixth and final fragment, completing pair C with Grand Gate: +3 total Silk capacity. Do not rest at another bench.",
-            "After collecting it, Quit to Menu / Save and Quit, then Continue back at the bench below the Dancers. Follow orange right again through the spinning-wheel room and continue toward Whispering Vaults.",
+            "Follow orange through the bottom of the shaft and take yellow 3 for the lower Cogwork Core spool fragment. This is the sixth and final fragment, completing pair C with Grand Gate: +3 total Silk capacity. Do not rest at another bench.",
+            "After collecting it, Quit to Menu / Save and Quit, then Continue back at the bench below the Dancers.",
+            "Follow orange down through lower Cogwork again. Open the middle shortcut and take the final room’s top-right exit at yellow 4 to unlock Upper Cogwork. Return to the bench below the Dancers.",
+            "Follow orange through lower Cogwork and right through the spinning-wheel room toward Whispering Vaults.",
             "Clear the Whispering Vaults arena (G&Z Checkpoint 6). Exit right, go up and over the large Scrollreader, and strike the ceiling passage to open the shortcut to Songclave. Rest at its bench if needed.",
             "After the Songclave bench split, take the Ventrica to Grand Bellway and switch to the Bell Beast for Blasted Steps.",
             "Speak to Lumble for the free Magnetite Dice, available after defeating the Dancers.",
             "Take the Bell Beast back to Grand Bellway, then the Ventrica back to Songclave for step 16."
           ],
           "title": "Lower Cogwork Core bench",
-          "tip": "Collect the lower Core mask shard and open the shortcuts at yellow 4. Rest at the bench below the Dancers, take yellow 3 for the final spool fragment, then quit-return without resting elsewhere. Continue to the Vaults arena and Songclave’s ceiling shortcut. After the split, go via Grand Bellway for free Dice and return to Songclave.",
+          "tip": "Rest at the bench below the Dancers first. Collect the lower Core mask shard, take yellow 3 for the final spool fragment, then quit-return without resting elsewhere. Open the middle shortcut and yellow 4 Upper Cogwork shortcut afterward. Continue through the spinning-wheel room to the Vaults arena and Songclave’s ceiling shortcut. After the split, go via Grand Bellway for free Dice and return to Songclave.",
           "links": [
             { "title": "Lower Core mask shard", "pin": 478615 },
             { "title": "Lower Cogwork Core spool", "pin": 478618 },
@@ -1090,12 +1091,12 @@
           ],
           "guidePickups": [
             { "instruction": 1, "id": "mask-lower-core", "text": "mask shard" },
-            { "instruction": 3, "id": "spool-core", "text": "lower Cogwork Core spool fragment" },
-            { "instruction": 7, "id": "tool-dice", "text": "Magnetite Dice" }
+            { "instruction": 2, "id": "spool-core", "text": "lower Cogwork Core spool fragment" },
+            { "instruction": 8, "id": "tool-dice", "text": "Magnetite Dice" }
           ],
           "guideSplits": [
             {
-              "instruction": 5,
+              "instruction": 6,
               "checkpoint": "vaults-arena",
               "when": "At Songclave’s bench after clearing the Whispering Vaults arena and opening its ceiling shortcut."
             }
