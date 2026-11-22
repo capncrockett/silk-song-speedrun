@@ -15,7 +15,7 @@ assert.equal(new Set(stops.map(({ id }) => id)).size, stops.length, "Checkpoint 
 assert.equal(stops.at(-1).id, route.finishCheckpoint, "The finish must be the last route checkpoint.");
 const guideStops = listGuideStops(route);
 assert.equal(stops.length, 32, "Keep the original timing IDs and the guide-only Last Judge page.");
-assert.equal(guideStops.length, 26, "The Vaults/Trobbio trip, Songclave loop and three earlier combined stops share reading pages.");
+assert.equal(guideStops.length, 25, "The melody/roof duel, Vaults/Trobbio trip, Songclave loop and earlier combined stops share reading pages.");
 assert.deepEqual(guideStops.slice(10, 14).map((stop) => stop.id),
   ["blasted-steps", "last-judge-fight", "act-2", "grand-bellway"], "The Choral Chambers bench belongs on step 13 after the fight.");
 assert.equal(guideStops[11].recordSplit, false, "Defeating Last Judge does not add a separate split.");
@@ -31,7 +31,7 @@ assert.equal(greymoorGuide.guide.length,
   "Combining pages must retain both parts of the walkthrough.");
 
 const timingStops = listRecordingStops(route);
-assert.equal(timingStops.length, 27, "Exclude all retired splits from the current timing list.");
+assert.equal(timingStops.length, 26, "Exclude all retired splits from the current timing list.");
 assert.equal(timingStops.some((stop) => stop.id === "widow-bench"), false);
 assert.ok(timingStops.some((stop) => stop.id === "widow"));
 assert.deepEqual(guideStops[6].checkpointIds, ["widow-bench", "widow"]);
@@ -47,7 +47,7 @@ const beforeWidow = runSummary(route, { prep: [], splits: [
 assert.equal(beforeWidow.next.id, "widow", "An old bench split must not count as defeating Widow.");
 assert.equal(beforeWidow.count, 1);
 assert.equal(beforeWidow.history.length, 2, "Historical bench times stay in the run history.");
-assert.equal(beforeWidow.total, 27);
+assert.equal(beforeWidow.total, 26);
 
 const prep = route.preparations.flatMap((group) => group.items.map(({ id }) => id));
 assert.equal(new Set(prep).size, prep.length, "Preparation IDs must be unique.");
@@ -123,6 +123,11 @@ assert.equal(guideStops[16].id, "clawline", "Next goes from the combined Vaults/
 const widowGuide = guideStops.find((stop) => stop.id === "widow");
 assert.equal(widowGuide.guideLinks[0].instruction, 3, "The Widow link stays beside the fight tips after combining the bench setup.");
 assert.equal(widowGuide.guidePickups.find((item) => item.id === "ability-needolin").instruction, 4);
+assert.equal(timingStops.some((stop) => stop.id === "vaultkeeper"), false, "The melody split is historical only.");
+assert.equal(guideStops[17].id, "roof-duel");
+assert.deepEqual(guideStops[17].checkpointIds, ["vaultkeeper", "roof-duel"]);
+assert.deepEqual(guideStops[17].guideSplits.map((point) => point.checkpoint), ["roof-duel"]);
+assert.equal(guideStops[18].id, "high-halls-bench", "The High Halls page follows the combined melody/duel approach.");
 const melodyGuide = stops.find((stop) => stop.id === "vaultkeeper");
 assert.equal(melodyGuide.guidePickups.find((item) => item.id === "melody-vaultkeeper").instruction, 7,
   "Check the melody only when it is learned, not when its cylinder is found.");

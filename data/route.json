@@ -1247,6 +1247,8 @@
         },
         {
           "id": "vaultkeeper",
+          "guideStep": "roof-duel",
+          "recordSplit": false,
           "guide": [
             "Return beneath Trobbio’s lift; skip G&Z Detour 2 (up-left Memory Locket).",
             "Continue right and up to collect the cylinder containing Vaultkeeper’s Melody. Hit the lever outside to open the main room.",
@@ -1277,37 +1279,37 @@
               "title": "Roof shortcut door on MapGenie",
               "url": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=480502"
             }
-          ],
-          "guideSplits": [
-            {
-              "instruction": 7,
-              "checkpoint": "vaultkeeper",
-              "when": "After learning Vaultkeeper’s Melody, before returning for the roof duel."
-            }
           ]
         },
         {
           "id": "roof-duel",
-          "guideTitle": "Garmond & Zaza’s roof duel",
+          "guideTitle": "Vaultkeeper’s Melody, roof duel & High Halls approach",
           "guide": [
             "Return to the rooftop above Whispering Vaults through the shortcut door you opened at its far-left end. If Garmond and Zaza are absent, leave the rooftop and re-enter through that door.",
             "Win the duel and exhaust Garmond’s dialogue afterward.",
-            "Return to the Cogwork Core bench after the duel. Rest if needed; it becomes a required quit-return anchor only if taking the later Mask trip.",
-            "Head toward High Halls; skip that map’s Detour 1 (extra G&Z search / late Dice return). Their help is at the Forum door."
+            "After the duel, head toward High Halls and clock the time at the Choral Chambers bench just before the entrance. Rest if needed.",
+            "Continue into High Halls; skip that map’s Detour 1 (extra G&Z search / late Dice return). Their help is at the Forum door."
           ],
           "maps": ["cauldron", "roof-duel"],
-          "title": "G&Z duel / Cogwork Core bench",
-          "tip": "Use the shortcut door at the far-left end of the roof above Whispering Vaults to return for the duel. Exhaust Garmond's dialogue after winning. Head toward High Halls. The Run #2 split was the Cogwork Core bench after the win.",
+          "title": "Choral Chambers bench before High Halls",
+          "tip": "Learn Vaultkeeper’s Melody, return through the roof shortcut door and win the G&Z duel. Exhaust Garmond’s dialogue, then clock the time at the Choral Chambers bench just before entering High Halls.",
           "links": [
             { "title": "Roof duel", "pin": 479361 },
             { "title": "Roof shortcut door", "pin": 480502 },
-            { "title": "Cogwork Core bench", "pin": 478428 }
+            { "title": "Bench before High Halls", "pin": 478397 }
+          ],
+          "guideLinks": [
+            {
+              "instruction": 3,
+              "title": "Bench before High Halls on MapGenie",
+              "url": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=478397"
+            }
           ],
           "guideSplits": [
             {
               "instruction": 3,
               "checkpoint": "roof-duel",
-              "when": "At the Cogwork Core bench after winning the Garmond and Zaza duel."
+              "when": "At the Choral Chambers bench just before entering High Halls, after winning the Garmond and Zaza duel."
             }
           ]
         }
