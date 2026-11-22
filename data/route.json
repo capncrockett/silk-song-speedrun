@@ -1159,17 +1159,26 @@
           "guideTitle": "Vaults, Pale Oil, Needle #2 & Trobbio",
           "guide": [
             "Defeat Trobbio.",
-            "Collect Claw Mirror, then continue right to his lift for the Cauldron route."
+            "Collect Claw Mirror.",
+            "To clock the time, Quit to Menu / Save and Quit and read the in-game time, then Continue. You can also press on without quitting.",
+            "After a menu quit, run back up and over Trobbio’s stage to reach his lift. Otherwise continue right to the lift."
           ],
           "maps": ["vaults"],
-          "title": "Grand Bellway bench after Trobbio",
-          "tip": "Defeat Trobbio, collect Claw Mirror, and continue to his lift for the next chapter’s Cauldron route.",
+          "title": "Trobbio defeated",
+          "tip": "Defeat Trobbio and collect Claw Mirror. Optionally quit to menu to clock the time, then Continue and run back up and over the stage to his lift. Or press on directly to the lift.",
           "links": [{ "title": "Trobbio", "pin": 478690 }],
           "guidePickups": [
             {
               "instruction": 2,
               "id": "tool-claw-mirror",
               "text": "Claw Mirror"
+            }
+          ],
+          "guideSplits": [
+            {
+              "instruction": 3,
+              "checkpoint": "trobbio",
+              "when": "After Trobbio: use the menu clock if you quit, then Continue. Or press on without quitting."
             }
           ]
         }
@@ -1223,11 +1232,6 @@
             }
           ],
           "guideSplits": [
-            {
-              "instruction": 1,
-              "checkpoint": "trobbio",
-              "when": "Back at the Grand Bellway bench after Trobbio and his lift shortcut, before Whiteward."
-            },
             {
               "instruction": 7,
               "checkpoint": "clawline",
