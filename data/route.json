@@ -1415,15 +1415,15 @@
           "id": "architect",
           "guide": [
             "Climb upper Cogwork Core to the Architect’s Melody puzzle.",
-            "From the initial state, hit the levers left to right in the first row: 1–3–3–3.",
-            "Second row: 2–0–0–3. Third row: 0–1–1–1. Fourth row: 1–1–0–2.",
+            "Read the rows from top to bottom, hitting the levers in each row from left to right. From the initial state, top row: 1–3–3–3.",
+            "Second row from the top: 2–0–0–3. Third row from the top: 0–1–1–1. Bottom row: 1–1–0–2.",
             "If a lever has already moved, check the white-line alignment rather than repeating the initial counts.",
             "Collect Architect’s Melody.",
             "Return toward the final elevator."
           ],
           "maps": ["upper-core"],
           "title": "Architect's Melody",
-          "tip": "Use the upper Core shortcut and solve the four lever rows. From the initial state, hit left-to-right in each row: 1–3–3–3, 2–0–0–3, 0–1–1–1, then 1–1–0–2. Check the white-line alignment if any lever has moved.",
+          "tip": "Use the upper Core shortcut and solve the four lever rows. Read rows from top to bottom and levers within each row from left to right. From the initial state: top row 1–3–3–3; second row 2–0–0–3; third row 0–1–1–1; bottom row 1–1–0–2. Check the white-line alignment if any lever has moved.",
           "links": [{ "title": "Architect's Melody", "pin": 478610 }],
           "guidePickups": [
             {

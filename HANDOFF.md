@@ -46,6 +46,12 @@ Build the main view around this itinerary. The route is Hunter, all five bells, 
 
 ## Decisions and research
 
+### Architect puzzle row orientation · November 22
+
+Joseph asks for explicit row orientation; “first row” alone is ambiguous. For the initial-state lever counts, read rows **top to bottom**, with the four levers in each row **left to right**: top 1–3–3–3; second from top 2–0–0–3; third from top 0–1–1–1; bottom 1–1–0–2. Label the top and bottom rows directly in the walkthrough and tip. Keep the existing hit counts, moved-lever alignment reminder, instruction count and melody pickup/split placement unchanged.
+
+Verified against [Tay Bravo’s puzzle directions](https://steamcommunity.com/sharedfiles/filedetails/?id=3577460696), which explicitly identify the top and bottom rows. This clarifies the instructions, without recording a new puzzle result or pickup.
+
 ### One High Halls page through Conductor’s Melody · November 22
 
 Joseph first combines the Forum clear and Conductor’s Melody timing, then asks to merge former reading steps **19, 20 and 21** into **step 19: High Halls, Forum & Conductor’s Melody**. Point both `high-halls-bench` and `forum` at `guideStep: "conductor"`. Keep every direction, map, purchase and pickup check in its existing order. The next page is Architect’s Melody, now step 20.
