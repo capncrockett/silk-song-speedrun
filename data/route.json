@@ -1326,6 +1326,7 @@
       "stops": [
         {
           "id": "high-halls-bench",
+          "guideStep": "conductor",
           "guideTitle": "Cogfly & High Halls",
           "guide": [
             "On the Clawline descent, take the left side room and spend one Craftmetal on Cogfly.",
@@ -1357,6 +1358,8 @@
         },
         {
           "id": "forum",
+          "guideStep": "conductor",
+          "recordSplit": false,
           "guideTitle": "The High Halls Forum",
           "guide": [
             "Accept Garmond and Zaza’s help at the Forum door inside High Halls.",
@@ -1369,23 +1372,17 @@
           "links": [
             { "title": "G&Z aid offer", "pin": 481022 },
             { "title": "Forum", "pin": 479420 }
-          ],
-          "guideSplits": [
-            {
-              "instruction": 4,
-              "checkpoint": "forum",
-              "when": "Immediately after clearing the High Halls Forum."
-            }
           ]
         },
         {
           "id": "conductor",
+          "guideTitle": "High Halls, Forum & Conductor’s Melody",
           "guide": [
             "Collect Conductor’s Melody after the Forum.",
             "Return through the Citadel toward upper Cogwork Core.",
             "Use the upper Core shortcut opened on the earlier lower Core visit."
           ],
-          "title": "Conductor's Melody",
+          "title": "Forum cleared / Conductor’s Melody",
           "tip": "Collect the melody after the Forum. Return through the Citadel to upper Cogwork.",
           "links": [{ "title": "Conductor's Melody", "pin": 478609 }],
           "guidePickups": [
@@ -1399,7 +1396,7 @@
             {
               "instruction": 1,
               "checkpoint": "conductor",
-              "when": "After acquiring Conductor’s Melody, before the return to upper Core."
+              "when": "After clearing the High Halls Forum and acquiring Conductor’s Melody, before the return to upper Core."
             }
           ]
         }
