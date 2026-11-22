@@ -10,6 +10,7 @@ Updated November 22, 2026. The local app is implemented. Joseph is currently on 
 - Keep the app local and dependency-free. The route keeps 31 original checkpoint IDs and a guide-only Last Judge stop. The 27 current timing points appear across 26 guide pages grouped under the Garmond guide’s 13 sections. The section title is the main heading and the checkpoint is a subtitle. Inline maps, numbered directions, and Previous/Next are the main experience. Guide position starts at Silkspear and persists independently of run selection and split entry.
 - Keep the Run log closed by default. The persistent Pickups drawer shares the selected run's checks across all steps; category checkboxes support partial/all states, the last check closes its accordion, and optional items do not block the main total. Retain the five-bell Grand Gate category, four spool pairs, eight-shard mask category, historical checked items, Escape/backdrop closing, reduced-motion support, and inline reference gallery.
 - Keep the Garmond guide’s section names, numbered checkpoints, and detours visible with the relevant map screenshot, with custom headings for the Greymoor return, Shellwood/Last Judge, and the Songclave approach and return. Bell numbers follow our pickup order; map checkpoint and detour numbers retain their source numbering. These guide references do not add timed splits. Clearly label missing original maps and distinguish guide options from the selected path. In skip instructions, cite the original G&Z Detour or Checkpoint number inline with a short item name. Keep the wording concise and never invent numbers for unmarked pickups.
+- Never show bare MapGenie location IDs in live guide copy, tips, timing cues, map keys or checklist text. Use descriptive landmark names; provide actual MapGenie pin links where useful, including contextual `guideLinks` beside directions. Keep numeric `pin` metadata and existing checkpoint/pickup IDs stable. The source map’s checkpoint and detour numbers remain useful navigation labels.
 - Write the timed walkthrough and purchases for collecting every planned pickup in order. Keep old recovery options for missed items in research. Conditional shop entry fees, retries, actual supply needs and the chosen optional Mask trip still apply.
 - Discuss unresolved route choices **one question or pickup at a time**. Keep alternatives here; update the route only when a choice changes. Run `npm run check` after changes and commit coherent work.
 
@@ -44,6 +45,10 @@ Build the main view around this itinerary. The route is Hunter, all five bells, 
 [Original Garmond Route](https://steamcommunity.com/sharedfiles/filedetails/?id=3577460696) · [Recovered maps and credits](./docs/map-credits.md) · [Roof gate](https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=480502) · [Forum aid](https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=481022)
 
 ## Decisions and research
+
+### Descriptive MapGenie links, no bare pin IDs · November 22
+
+Joseph says MapGenie references must be real clickable links or omitted; the raw number is not helpful. Removed bare pin numbers throughout the live route’s directions, tips, keys, timing cues, pickup text and research cards. Keep landmark names and the existing pin links. Put a descriptive MapGenie link directly beneath the roof-door instruction and retain the door link on the following duel page. Preserve numeric pin metadata, route/checkpoint/preparation IDs, saved results, source map numbering and historical notes. This is a presentation correction, not a route change or reported pickup.
 
 ### Identify the outdoor roof shortcut · November 22
 

@@ -75,12 +75,12 @@
         "5 · Bell #4 — return after Widow with Cling Grip via upper Halfway Home"
       ],
       "detours": [
-        "1 · Greymoor Bellway locket 478035 — planned; distinct from the skipped Faydown ledge locket.",
+        "1 · Greymoor Bellway locket — planned; distinct from the skipped Faydown ledge locket.",
         "2 · First G&Z conversation — exhaust dialogue.",
         "3 · Reaper Crest — decided to skip.",
         "4 · Craw Lake branch — decided to skip."
       ],
-      "note": "Take the Bellway locket on the first pass. Skip the separate Halfway Home ledge locket 478039. Return for Bell #4 and the Greymoor spool after Cling Grip; keep Craw Lake arena, Thread Storm and Three-fold Pin skipped. Accept Moorwing aid if offered, but do not stall the route if the duo remains absent.",
+      "note": "Take the Bellway locket on the first pass. Skip the separate Halfway Home ledge locket. Return for Bell #4 and the Greymoor spool after Cling Grip; keep Craw Lake arena, Thread Storm and Three-fold Pin skipped. Accept Moorwing aid if offered, but do not stall the route if the duo remains absent.",
       "guideNumber": 5
     },
     {
@@ -528,12 +528,12 @@
           "guideTitle": "Halfway Home & G&Z",
           "guide": [
             "Reach Halfway Home and open Greymoor Bellway for 60 rosaries.",
-            "Collect the Bellway-branch Memory Locket 478035 above the Mitemother. Leave the separate Halfway Home ledge locket 478039, which needs Faydown Cloak.",
+            "Collect the Bellway-branch Memory Locket above the Mitemother. Leave the separate Halfway Home ledge locket, which needs Faydown Cloak.",
             "Exhaust Garmond and Zaza’s first conversation before going to Moorwing."
           ],
           "maps": ["greymoor"],
           "title": "Halfway Home",
-          "tip": "Open Greymoor Bellway (60), collect locket 478035, and exhaust the first G&Z conversation before Moorwing. Skip the Faydown ledge locket 478039.",
+          "tip": "Open Greymoor Bellway (60), collect the Bellway locket, and exhaust the first G&Z conversation before Moorwing. Skip the Faydown ledge locket.",
           "links": [
             { "title": "Greymoor Bellway", "pin": 478037 },
             { "title": "Greymoor Bellway locket", "pin": 478035 },
@@ -545,7 +545,7 @@
             {
               "instruction": 2,
               "id": "locket-greymoor",
-              "text": "Memory Locket 478035"
+              "text": "Memory Locket"
             }
           ],
           "guideSplits": [
@@ -752,7 +752,7 @@
           ],
           "maps": ["atla"],
           "title": "Weavenest Atla / Eva",
-          "tip": "Enter Atla with Needolin, power the lift, and visit Eva. Take the lift shaft’s right passage for Rune Harp 478231, then the lower-right mask branch. Use the separate upper Marrowmaw route for spool 478230 to complete pair A. Return via Bone Bottom Bellway to Bellhart and sell the Harp for 210 rosaries, plus the Commandment for 180 if still carried.",
+          "tip": "Enter Atla with Needolin, power the lift, and visit Eva. Take the lift shaft’s right passage for the Rune Harp, then the lower-right mask branch. Use the separate upper Marrowmaw route for the Atla spool to complete pair A. Return via Bone Bottom Bellway to Bellhart and sell the Harp for 210 rosaries, plus the Commandment for 180 if still carried.",
           "links": [
             { "title": "Eva", "pin": 478228 },
             { "title": "Atla Rune Harp", "pin": 478231 },
@@ -791,7 +791,7 @@
           "mapNote": "Joseph’s supplied return map: red approaches from Bellhart, white 1 marks the mask shard, white 2 marks Forge Daughter, and yellow 1–3 mark Loddie, the spool and easy rosaries. Follow green back to Deep Docks Bellway.",
           "maps": ["bellhart-deep-docks-return"],
           "title": "Forge Daughter bench",
-          "tip": "Take yellow Detour 1 for Loddie’s first-round pouch only, then red to the mask-shard arena (white 1) and Forge Daughter (white 2). Use yellow Detour 3 for rosaries if short. Buy the kit and Magma Bell, take Detour 2 for spool 477926, then follow green to Deep Docks Bellway for Greymoor.",
+          "tip": "Take yellow Detour 1 for Loddie’s first-round pouch only, then red to the mask-shard arena (white 1) and Forge Daughter (white 2). Use yellow Detour 3 for rosaries if short. Buy the kit and Magma Bell, take Detour 2 for the Deep Docks spool, then follow green to Deep Docks Bellway for Greymoor.",
           "links": [
             { "title": "Loddie", "pin": 478251 },
             { "title": "Deep Docks shard", "pin": 477901 },
@@ -969,7 +969,7 @@
             "Collect the fragment to start pair C, then continue toward Grand Bellway."
           ],
           "title": "Last Judge / Choral Chambers bench",
-          "tip": "Play Needolin at the Grand Gate after all five bells, beat Last Judge, and reach the Choral Chambers bench. Rest if needed. From the Choral Chambers return shortcut, climb the Grand Gate balancing platforms for spool 478586 before continuing toward Grand Bellway. Hit the scales from underneath to tip them; no extra arena or double-jump is required.",
+          "tip": "Play Needolin at the Grand Gate after all five bells, beat Last Judge, and reach the Choral Chambers bench. Rest if needed. From the Choral Chambers return shortcut, climb the Grand Gate balancing platforms for the Grand Gate spool before continuing toward Grand Bellway. Hit the scales from underneath to tip them; no extra arena or double-jump is required.",
           "links": [
             { "title": "Grand Gate spool", "pin": 478586 }
           ],
@@ -1209,7 +1209,7 @@
             "Descend the shaft east of the Cauldron and enter the small lava room from the east. Break its left wall and collect the eastern Underworks spool fragment to complete pair D with Whiteward: +4 total Silk capacity."
           ],
           "title": "Clawline / Cauldron clear",
-          "tip": "Take the White Key lift into Whiteward and collect the spool beneath it before the fireplace climb for Injector Band. Keep Mirror + Magma Bell through the Cauldron. Get Clawline and buy Architect’s kit (450), then take eastern Underworks spool 478704 behind the small lava room’s left wall to complete pair D: +4 total Silk capacity.",
+          "tip": "Take the White Key lift into Whiteward and collect the spool beneath it before the fireplace climb for Injector Band. Keep Mirror + Magma Bell through the Cauldron. Get Clawline and buy Architect’s kit (450), then take the eastern Underworks spool behind the small lava room’s left wall to complete pair D: +4 total Silk capacity.",
           "links": [
             { "title": "Whiteward elevator", "pin": 478590 },
             { "title": "Whiteward spool", "pin": 479317 },
@@ -1271,6 +1271,13 @@
               "text": "Vaultkeeper’s Melody"
             }
           ],
+          "guideLinks": [
+            {
+              "instruction": 6,
+              "title": "Roof shortcut door on MapGenie",
+              "url": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=480502"
+            }
+          ],
           "guideSplits": [
             {
               "instruction": 7,
@@ -1285,7 +1292,7 @@
           "guide": [
             "Return to the rooftop above Whispering Vaults through the shortcut door you opened at its far-left end. If Garmond and Zaza are absent, leave the rooftop and re-enter through that door.",
             "Win the duel and exhaust Garmond’s dialogue afterward.",
-            "Return to Cogwork Core bench 478428 after the duel. Rest if needed; it becomes a required quit-return anchor only if taking the later Mask trip.",
+            "Return to the Cogwork Core bench after the duel. Rest if needed; it becomes a required quit-return anchor only if taking the later Mask trip.",
             "Head toward High Halls; skip that map’s Detour 1 (extra G&Z search / late Dice return). Their help is at the Forum door."
           ],
           "maps": ["cauldron", "roof-duel"],
@@ -1293,13 +1300,14 @@
           "tip": "Use the shortcut door at the far-left end of the roof above Whispering Vaults to return for the duel. Exhaust Garmond's dialogue after winning. Head toward High Halls. The Run #2 split was the Cogwork Core bench after the win.",
           "links": [
             { "title": "Roof duel", "pin": 479361 },
+            { "title": "Roof shortcut door", "pin": 480502 },
             { "title": "Cogwork Core bench", "pin": 478428 }
           ],
           "guideSplits": [
             {
               "instruction": 3,
               "checkpoint": "roof-duel",
-              "when": "At Cogwork Core bench 478428 after winning the Garmond and Zaza duel."
+              "when": "At the Cogwork Core bench after winning the Garmond and Zaza duel."
             }
           ]
         }
@@ -1443,12 +1451,12 @@
           ],
           "maps": ["cradle"],
           "title": "Checkpoint 1 before Lace 2",
-          "tip": "At Lace 2, Fractured Mask is an optional late backtrack. If taking it, set Cogwork Core bench 478428 as the return point and rest nowhere else before quitting back. Otherwise keep Mirror + Injector Band. Continue through the final elevator when ready.",
+          "tip": "At Lace 2, Fractured Mask is an optional late backtrack. If taking it, set the Cogwork Core bench as the return point and rest nowhere else before quitting back. Otherwise keep Mirror + Injector Band. Continue through the final elevator when ready.",
           "optionalDetour": {
             "title": "Fractured Mask before Lace 2",
             "detail": "Optional when there is enough time left for the pickup and final fights. The timed-file trial included 10 shard bundles from Forge Daughter and the Mask, ended at Marrow bench at 5:06, and was reported as about 10 minutes. That trial rested at Marrow; the Core quit-return below is the planned variant. Scout cleared GMS with Mask and no Mirror.",
             "steps": [
-              "Before leaving the Citadel, rest at Cogwork Core bench 478428 to set the quit-return point.",
+              "Before leaving the Citadel, rest at the Cogwork Core bench to set the quit-return point.",
               "If tools need supplies, stop at Forge Daughter for shard bundles on the way. The timed-file trial bought 10 bundles. Do not rest at the Forge Daughter bench if keeping Core as the return point.",
               "Travel back toward the Marrow and Hunter’s March using the unlocked travel routes. Do not rest at any intervening bench, including the Marrow bench.",
               "Rush the scouted Hunter’s March approach, using Cogfly, Straight Pin, and Mirror as needed, past the entrance Skarrgard and central arena to collect the free Fractured Mask. Skip the rosary side trips.",
@@ -2051,7 +2059,7 @@
       "id": "mirror",
       "status": "Optional at Lace 2",
       "title": "Fractured Mask late-game option",
-      "detail": "Optional at Lace 2 when time allows. Scout GMS clear used Fractured Mask with Mirror off. On Run #2, the Forge Daughter restock (10 shard bundles) and Mask trip ended at Marrow bench at 5:06 and was reported as about 10 minutes; Cogfly, Straight Pin, and Mirror were used. For the planned Core return, rest at 478428 before leaving and nowhere else, then quit-return to equip Mask. Keep Mirror if skipping.",
+      "detail": "Optional at Lace 2 when time allows. Scout GMS clear used Fractured Mask with Mirror off. On Run #2, the Forge Daughter restock (10 shard bundles) and Mask trip ended at Marrow bench at 5:06 and was reported as about 10 minutes; Cogfly, Straight Pin, and Mirror were used. For the planned Core return, rest at the Cogwork Core bench before leaving and nowhere else, then quit-return to equip Mask. Keep Mirror if skipping.",
       "links": [
         { "title": "Cogwork Core return bench", "pin": 478428 },
         { "title": "Fractured Mask", "pin": 478607 }
