@@ -15,7 +15,7 @@ assert.equal(new Set(stops.map(({ id }) => id)).size, stops.length, "Checkpoint 
 assert.equal(stops.at(-1).id, route.finishCheckpoint, "The finish must be the last route checkpoint.");
 const guideStops = listGuideStops(route);
 assert.equal(stops.length, 32, "Keep the original timing IDs and the guide-only Last Judge page.");
-assert.equal(guideStops.length, 27, "The Songclave loop and the three earlier combined stops share reading pages.");
+assert.equal(guideStops.length, 26, "The Vaults/Trobbio trip, Songclave loop and three earlier combined stops share reading pages.");
 assert.deepEqual(guideStops.slice(10, 14).map((stop) => stop.id),
   ["blasted-steps", "last-judge-fight", "act-2", "grand-bellway"], "The Choral Chambers bench belongs on step 13 after the fight.");
 assert.equal(guideStops[11].recordSplit, false, "Defeating Last Judge does not add a separate split.");
@@ -116,7 +116,9 @@ const beforeLowerCore = runSummary(route, { ...seed.runs[0], splits: songclaveHi
 assert.equal(beforeLowerCore.next.id, "lower-core", "Saved Songclave and Dancers times do not affect the next split.");
 assert.equal(beforeLowerCore.count, 1);
 assert.equal(beforeLowerCore.history.length, 3);
-assert.equal(guideStops[15].id, "vaults-arena", "The later Pale Oil trip follows the Songclave loop.");
+assert.equal(guideStops[15].id, "trobbio", "The combined Vaults, Pale Oil and Trobbio trip follows the Songclave loop.");
+assert.deepEqual(guideStops[15].checkpointIds, ["vaults-arena", "trobbio"]);
+assert.equal(guideStops[16].id, "clawline", "Next goes from the combined Vaults/Trobbio trip to Whiteward and Clawline.");
 
 const widowGuide = guideStops.find((stop) => stop.id === "widow");
 assert.equal(widowGuide.guideLinks[0].instruction, 3, "The Widow link stays beside the fight tips after combining the bench setup.");

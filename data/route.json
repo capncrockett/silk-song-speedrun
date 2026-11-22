@@ -1115,6 +1115,7 @@
       "stops": [
         {
           "id": "vaults-arena",
+          "guideStep": "trobbio",
           "guideTitle": "Vaults, Pale Oil & Needle #2",
           "guide": [
             "From Songclave, drop back into Vaults and take the lowest accessible right exit below the Vaultkeeper. Cross the hallway, go right and down through the large room, and take its lower-left exit.",
@@ -1155,7 +1156,7 @@
         },
         {
           "id": "trobbio",
-          "guideTitle": "Trobbio & Claw Mirror",
+          "guideTitle": "Vaults, Pale Oil, Needle #2 & Trobbio",
           "guide": [
             "Defeat Trobbio.",
             "Collect Claw Mirror, then continue right to his lift for the Cauldron route."

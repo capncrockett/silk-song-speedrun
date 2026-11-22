@@ -1,13 +1,13 @@
 # Pharloom Runbook — current handoff
 
-Updated November 20, 2026. The local app is implemented. Joseph is currently on **Run #4**. This file holds current route decisions, research alternatives, and open scout questions; [README.md](./README.md) covers use and maintenance. The [source archive](./docs/history.md) preserves older notes without serving as a second live handoff.
+Updated November 22, 2026. The local app is implemented. Joseph is currently on **Run #4**. This file holds current route decisions, research alternatives, and open scout questions; [README.md](./README.md) covers use and maintenance. The [source archive](./docs/history.md) preserves older notes without serving as a second live handoff.
 
 ## Working contract
 
 - Keep one timed route in [data/route.json](./data/route.json), with stable checkpoint and preparation IDs. Historical labels and reported precision survive route edits.
 - Treat `.runbook/runs.json` as the active save. [data/seed-runs.json](./data/seed-runs.json) remains the original 26-split import ending at **4:57**, with three recorded pickups and no finish. Never replace an existing save with the seed or infer pickups from route progress.
 - Keep timed and scout results separate. Use the manual in-game clock, retain idle time and detours, and finish only when a `gms` split is reported. Sub-five is strictly below `5:00:00`.
-- Keep the app local and dependency-free. The route keeps 31 original checkpoint IDs and a guide-only Last Judge stop. The 27 current timing points appear across 27 guide pages grouped under the Garmond guide’s 13 sections. The section title is the main heading and the checkpoint is a subtitle. Inline maps, numbered directions, and Previous/Next are the main experience. Guide position starts at Silkspear and persists independently of run selection and split entry.
+- Keep the app local and dependency-free. The route keeps 31 original checkpoint IDs and a guide-only Last Judge stop. The 27 current timing points appear across 26 guide pages grouped under the Garmond guide’s 13 sections. The section title is the main heading and the checkpoint is a subtitle. Inline maps, numbered directions, and Previous/Next are the main experience. Guide position starts at Silkspear and persists independently of run selection and split entry.
 - Keep the Run log closed by default. The persistent Pickups drawer shares the selected run's checks across all steps; category checkboxes support partial/all states, the last check closes its accordion, and optional items do not block the main total. Retain the five-bell Grand Gate category, three spool pairs, eight-shard mask category, historical checked items, Escape/backdrop closing, reduced-motion support, and inline reference gallery.
 - Keep the Garmond guide’s section names, numbered checkpoints, and detours visible with the relevant map screenshot, with custom headings for the Greymoor return, Shellwood/Last Judge, and the Songclave approach and return. Bell numbers follow our pickup order; map checkpoint and detour numbers retain their source numbering. These guide references do not add timed splits. Clearly label missing original maps and distinguish guide options from the selected path. In skip instructions, cite the original G&Z Detour or Checkpoint number inline with a short item name. Keep the wording concise and never invent numbers for unmarked pickups.
 - Write the timed walkthrough and purchases for collecting every planned pickup in order. Keep old recovery options for missed items in research. Conditional shop entry fees, retries, actual supply needs and the chosen optional Mask trip still apply.
@@ -42,6 +42,10 @@ Build the main view around this itinerary. The route is Hunter, all five bells, 
 [Original Garmond Route](https://steamcommunity.com/sharedfiles/filedetails/?id=3577460696) · [Recovered maps and credits](./docs/map-credits.md) · [Roof gate](https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=480502) · [Forum aid](https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=481022)
 
 ## Decisions and research
+
+### Combine Vaults and Trobbio · November 22
+
+Joseph combines former reading steps 16 and 17 into **step 16: Vaults, Pale Oil, Needle #2 & Trobbio**. Keep the directions in their existing order through Claw Mirror and Trobbio’s lift. Reuse the combined-page mechanism: `vaults-arena` points to `guideStep: "trobbio"`. Both checkpoint IDs, pickup/purchase IDs, map references and saved results remain intact. The Vaults arena timing form stays at the Songclave bench on step 15; the post-Trobbio Grand Bellway form stays at its actual return on the following Whiteward/Clawline page, now step 17. There are 26 guide pages and 27 timing points. Do not add a duplicate page or move those timing events to fit the combined reading page.
 
 ### Final spool in lower Cogwork Core · November 20
 
