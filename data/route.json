@@ -190,10 +190,10 @@
         "6 · Vaults arena"
       ],
       "detours": [
-        "3 · Lower Cogwork Core spool — final fragment; quit-return to the bench below the Dancers.",
+        "3 · Lower Cogwork Core spool — sixth fragment; quit-return to the bench below the Dancers.",
         "4 · Upper Cogwork shortcut — open it for the later return."
       ],
-      "note": "Start at Songclave on the right. Follow red west to the Dancers and rest at the bench below them. Follow orange through lower Cogwork for the mask shard, then take yellow 3 for the final spool fragment and quit-return to that bench. Open the Upper Cogwork shortcut at yellow 4 afterward, then continue through the spinning-wheel room to the Whispering Vaults arena and Songclave ceiling shortcut.",
+      "note": "Start at Songclave on the right. Follow red west to the Dancers and rest at the bench below them. Follow orange through lower Cogwork for the mask shard, then take yellow 3 to complete the third spool pair and quit-return to that bench. Open the Upper Cogwork shortcut at yellow 4 afterward, then continue through the spinning-wheel room to the Whispering Vaults arena and Songclave ceiling shortcut.",
       "guideNumber": 9,
       "detoursTitle": "Yellow map marks"
     },
@@ -233,7 +233,7 @@
         "3 · Wind-route locket — planned.",
         "4 · Return to the Vaultkeeper to learn the melody; turn in spare cylinders for rosaries."
       ],
-      "note": "Buy the 450-rosary kit after Clawline. Skip the eastern Underworks spool; the third pair is complete in lower Cogwork Core. Reserve the Blasted Steps Craftmetal for Cogfly and take the wind-route locket. Open the roof gate and learn the melody before the roof duel. If cash is short, the roof has a 220-rosary necklace above the left exit.",
+      "note": "Buy the 450-rosary kit after Clawline, then collect the eastern Underworks spool to complete the fourth pair with Whiteward. Reserve the Blasted Steps Craftmetal for Cogfly and take the wind-route locket. Open the roof gate and learn the melody before the roof duel. If cash is short, the roof has a 220-rosary necklace above the left exit.",
       "guideNumber": 11
     },
     {
@@ -1026,7 +1026,7 @@
       "guideNumber": 9,
       "guideSection": "garmond-lower-cogwork-return",
       "title": "Songclave, Lower Cogwork & Vaults Return",
-      "summary": "Start at Songclave, defeat the Dancers, collect the lower Core mask shard and final spool fragment, clear the Vaults arena and return to Songclave for the Dice trip.",
+      "summary": "Start at Songclave, defeat the Dancers, collect the lower Core mask shard and complete the third spool pair, clear the Vaults arena and return to Songclave for the Dice trip.",
       "maps": ["songclave-cogwork-vaults-loop"],
       "missingMaps": ["Songclave, lower Cogwork and Vaults arena"],
       "mapNote": "Joseph’s annotated screenshot replaces the missing original map for this leg.",
@@ -1073,7 +1073,7 @@
           "guideTitle": "Dancers, lower Core, and back to Songclave",
           "guide": [
             "Follow orange down from the bench below the Dancers, then go left to the lower Core arena. Clear it and collect the mask shard.",
-            "Follow orange through the bottom of the shaft and take yellow 3 for the lower Cogwork Core spool fragment. This is the sixth and final fragment, completing pair C with Grand Gate: +3 total Silk capacity. Do not rest at another bench.",
+            "Follow orange through the bottom of the shaft and take yellow 3 for the lower Cogwork Core spool fragment. This is the sixth fragment, completing pair C with Grand Gate: +3 total Silk capacity. Do not rest at another bench.",
             "After collecting it, Quit to Menu / Save and Quit, then Continue back at the bench below the Dancers.",
             "Follow orange down through lower Cogwork again. Open the middle shortcut and take the final room’s top-right exit at yellow 4 to unlock Upper Cogwork. Return to the bench below the Dancers.",
             "Follow orange through lower Cogwork and right through the spinning-wheel room toward Whispering Vaults.",
@@ -1083,7 +1083,7 @@
             "Take the Bell Beast back to Grand Bellway, then the Ventrica back to Songclave for step 16."
           ],
           "title": "Lower Cogwork Core bench",
-          "tip": "Rest at the bench below the Dancers first. Collect the lower Core mask shard, take yellow 3 for the final spool fragment, then quit-return without resting elsewhere. Open the middle shortcut and yellow 4 Upper Cogwork shortcut afterward. Continue through the spinning-wheel room to the Vaults arena and Songclave’s ceiling shortcut. After the split, go via Grand Bellway for free Dice and return to Songclave.",
+          "tip": "Rest at the bench below the Dancers first. Collect the lower Core mask shard, take yellow 3 for the sixth fragment, then quit-return without resting elsewhere. Open the middle shortcut and yellow 4 Upper Cogwork shortcut afterward. Continue through the spinning-wheel room to the Vaults arena and Songclave’s ceiling shortcut. After the split, go via Grand Bellway for free Dice and return to Songclave.",
           "links": [
             { "title": "Lower Core mask shard", "pin": 478615 },
             { "title": "Lower Cogwork Core spool", "pin": 478618 },
@@ -1191,51 +1191,57 @@
       "guideNumber": 11,
       "guideSection": "garmond-cauldron",
       "title": "The Cauldron, Clawline, Melody #1, & Outer Songclave",
-      "summary": "Head west through Choral Chambers for Injector Band in Whiteward, then take Clawline and Architect’s kit. Learn the melody and complete the roof duel.",
+      "summary": "Head west through Choral Chambers for the Whiteward spool and Injector Band, then take Clawline, Architect’s kit and the eastern Underworks spool to complete pair D. Learn the melody and complete the roof duel.",
       "maps": ["cauldron"],
       "stops": [
         {
           "id": "clawline",
           "guideTitle": "Whiteward, Clawline & Architect’s kit",
           "guide": [
-            "Go west through Choral Chambers and use the White Key lift into Whiteward. Climb in the fireplace room and go all the way left for Injector Band.",
+            "Go west through Choral Chambers and use the White Key lift into Whiteward.",
+            "Before the fireplace climb, collect the Whiteward spool fragment beneath the lift. After reaching the shaft lever, climb to the top landing and call the lift, then quickly drop back into the shaft. Wait in the side recess by the lever until the lift passes, then drop below its normal stop for the fragment. This starts pair D.",
+            "Return from the shaft, climb in the fireplace room and go all the way left for Injector Band.",
             "Continue through Underworks to Twelfth Architect’s bench. Keep Claw Mirror + Magma Bell through the Cauldron’s heat section; switch from Magma Bell to Injector Band afterward.",
             "Reserve Blasted Steps Craftmetal for Cogfly. Skip G&Z Detour 1 (lower-left Craftmetal puzzle).",
             "From Twelfth Architect’s bench, go left and ride the wind current up and left. Take that room’s bottom-right exit and cross the falling-lava room.",
             "In the next vertical shaft, take the higher left exit with the lever and collect Clawline.",
             "Clear the arena at the top of the Clawline room to return to the Architect. Buy the second Crafting Kit for 450 rosaries; the bench rest is optional. Then switch to Mirror + Injector Band after the heat segment.",
-            "Skip the eastern Underworks spool; the sixth fragment was collected in lower Cogwork Core."
+            "Descend the shaft east of the Cauldron and enter the small lava room from the east. Break its left wall and collect the eastern Underworks spool fragment to complete pair D with Whiteward: +4 total Silk capacity."
           ],
           "title": "Clawline / Cauldron clear",
-          "tip": "Go west through Choral Chambers and take Whiteward for Injector Band. Keep Mirror + Magma Bell through the Cauldron. Get Clawline and buy Architect’s kit (450). Skip the eastern Underworks spool; pair C is complete in lower Core.",
+          "tip": "Take the White Key lift into Whiteward and collect the spool beneath it before the fireplace climb for Injector Band. Keep Mirror + Magma Bell through the Cauldron. Get Clawline and buy Architect’s kit (450), then take eastern Underworks spool 478704 behind the small lava room’s left wall to complete pair D: +4 total Silk capacity.",
           "links": [
             { "title": "Whiteward elevator", "pin": 478590 },
+            { "title": "Whiteward spool", "pin": 479317 },
             { "title": "Injector Band", "pin": 479182 },
             { "title": "Clawline", "pin": 478714 },
-            { "title": "Twelfth Architect kit", "pin": 478728 }
+            { "title": "Twelfth Architect kit", "pin": 478728 },
+            { "title": "Eastern Underworks spool", "pin": 478704 }
           ],
           "purchases": [
             { "id": "kit-second", "pickupId": "kit-second", "item": "Twelfth Architect's Crafting Kit", "rosaries": 450 }
           ],
           "shoppingNote": "Earn any shortfall in the Citadel before the Cauldron visit. This replaces the 25-Ragpelt farming detour.",
           "guidePickups": [
+            { "instruction": 2, "id": "spool-whiteward", "text": "Whiteward spool fragment" },
             {
-              "instruction": 1,
+              "instruction": 3,
               "id": "tool-injector-band",
               "text": "Injector Band"
             },
-            { "instruction": 5, "id": "ability-clawline", "text": "Clawline" },
+            { "instruction": 7, "id": "ability-clawline", "text": "Clawline" },
             {
-              "instruction": 6,
+              "instruction": 8,
               "id": "kit-second",
               "text": "second Crafting Kit"
-            }
+            },
+            { "instruction": 9, "id": "spool-cauldron", "text": "eastern Underworks spool fragment" }
           ],
           "guideSplits": [
             {
-              "instruction": 6,
+              "instruction": 8,
               "checkpoint": "clawline",
-              "when": "At the Architect’s bench after Clawline, the arena and the Crafting Kit purchase."
+              "when": "At the Architect’s bench after Clawline, the arena and the Crafting Kit purchase, before the eastern Underworks spool."
             }
           ]
         },
@@ -1530,8 +1536,8 @@
     {
       "id": "spools",
       "title": "Spool fragments",
-      "detail": "The six selected fragments form three pairs. Each completed pair adds one Silk capacity.",
-      "complete": "+3 Silk capacity"
+      "detail": "The eight selected fragments form four pairs. Each completed pair adds one Silk capacity.",
+      "complete": "+4 Silk capacity"
     }
   ],
   "preparations": [
@@ -1630,8 +1636,29 @@
         {
           "id": "spool-core",
           "title": "Lower Cogwork Core",
-          "detail": "Yellow 3; final fragment, then quit-return to the bench below the Dancers",
+          "detail": "Yellow 3; sixth fragment, then quit-return to the bench below the Dancers",
           "pin": 478618
+        }
+      ],
+      "category": "spools"
+    },
+    {
+      "id": "silk-d",
+      "title": "Silk pair D · Whiteward + Underworks",
+      "detail": "Fourth completed spool: Whiteward beneath the White Key lift before the fireplace climb, then the eastern Underworks breakable-wall room on the Cauldron pass.",
+      "complete": "+1 Silk capacity",
+      "items": [
+        {
+          "id": "spool-whiteward",
+          "title": "Whiteward",
+          "detail": "Below the White Key lift; call it from the top and shelter in the side recess as it passes",
+          "pin": 479317
+        },
+        {
+          "id": "spool-cauldron",
+          "title": "Eastern Underworks",
+          "detail": "After Clawline; break the small lava room’s left wall from the east",
+          "pin": 478704
         }
       ],
       "category": "spools"
@@ -1981,12 +2008,6 @@
       "archived": true,
       "items": [
         {
-          "id": "spool-cauldron",
-          "title": "Eastern Underworks",
-          "detail": "Earlier sixth fragment; replaced by lower Core for earlier Silk capacity",
-          "pin": 478704
-        },
-        {
           "id": "necklace-loddie",
           "title": "Loddie’s Heavy Rosary Necklace",
           "detail": "Earlier second-round target-practice reward; skipped on the current timed route",
@@ -2006,15 +2027,17 @@
     {
       "id": "silk",
       "status": "Locked",
-      "title": "Six fragments, three complete spools",
-      "detail": "Locked by Joseph: Bone Bottom + Atla, Deep Docks + Greymoor, and Grand Gate + lower Cogwork Core for +3 Silk capacity. Take yellow 3 and quit-return to the bench below the Dancers for the sixth fragment. Skip the eastern and central Underworks alternatives; all three pairs are complete before the Vaults arena.",
+      "title": "Eight fragments, four complete spools",
+      "detail": "Selected by Joseph: Bone Bottom + Atla, Deep Docks + Greymoor, Grand Gate + lower Cogwork Core, and Whiteward + eastern Underworks for +4 Silk capacity. The first three pairs finish before the Vaults arena. Take Whiteward below its lift before the fireplace climb, then eastern Underworks on the Cauldron pass for pair D. Keep the central Underworks arena skipped.",
       "links": [
         { "title": "Bone Bottom spool", "pin": 478080 },
         { "title": "Atla spool", "pin": 478230 },
         { "title": "Deep Docks spool", "pin": 477926 },
         { "title": "Greymoor spool", "pin": 478263 },
         { "title": "Grand Gate spool", "pin": 478586 },
-        { "title": "Lower Cogwork Core spool", "pin": 478618 }
+        { "title": "Lower Cogwork Core spool", "pin": 478618 },
+        { "title": "Whiteward spool", "pin": 479317 },
+        { "title": "Eastern Underworks spool", "pin": 478704 }
       ]
     },
     {

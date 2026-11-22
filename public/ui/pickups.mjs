@@ -46,7 +46,7 @@ function pickupProgress(category, picked) {
   const count = `${category.count}/${category.items.length}`;
   if (category.id === "spools") {
     const pairs = category.groups.filter((group) => group.items.every((item) => picked.has(item.id))).length;
-    return `${count} fragments · ${pairs}/3 spools · +${pairs} Silk`;
+    return `${count} fragments · ${pairs}/${category.groups.length} spools · +${pairs} Silk`;
   }
   if (category.id === "masks") {
     const masks = Math.floor(category.count / 4);

@@ -81,7 +81,7 @@ The current guide HTML has empty image URLs for these four maps:
 - Last Judge and Choral Chambers — Joseph’s annotated Shellwood/Blasted Steps/Last Judge route is used instead
 - Songclave, lower Cogwork and Vaults arena — Joseph’s annotated Songclave return loop is used alongside his earlier approach map
 
-The separate Vaults shard/Pale Oil map has been recovered. The guide does not mark spool fragments on its maps; the six selected fragments retain their MapGenie pins in the runbook. Custom screenshots can fill these gaps.
+The separate Vaults shard/Pale Oil map has been recovered. The guide does not mark spool fragments on its maps; the eight selected fragments retain their MapGenie pins in the runbook. Custom screenshots can fill these gaps.
 
 ## Adding a local screenshot
 

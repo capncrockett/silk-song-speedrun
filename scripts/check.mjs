@@ -56,11 +56,11 @@ for (const pair of route.preparations.filter(({ id }) => id.startsWith("silk-"))
 }
 
 const activeSpools = route.preparations.filter((group) => group.id.startsWith("silk-"));
-assert.equal(activeSpools.length, 3, "The selected route completes three spools.");
+assert.equal(activeSpools.length, 4, "The selected route completes four spools.");
 assert.deepEqual(activeSpools.flatMap((group) => group.items.map((item) => item.pin)),
-  [478080, 478230, 477926, 478263, 478586, 478618], "Keep the selected six fragments in route order.");
-assert.ok(route.preparations.some((group) => group.archived && group.items.some((item) => item.id === "spool-cauldron")),
-  "Keep the former Underworks pickup ID available to historical records.");
+  [478080, 478230, 477926, 478263, 478586, 478618, 479317, 478704], "Keep the selected eight fragments in route order.");
+assert.ok(activeSpools.find((group) => group.id === "silk-d").items.some((item) => item.id === "spool-cauldron"),
+  "Reuse the existing Underworks pickup ID in the fourth pair.");
 
 const inlinePickupIds = [];
 const activePickupIds = route.preparations.filter((group) => !group.archived)
@@ -138,16 +138,16 @@ for (const group of route.preparations) {
 assert.equal(route.preparations.find((group) => group.id === "masks").items.length, 8, "The route collects eight mask shards.");
 const emptyCategories = pickupCategories(route);
 const spoolCategory = emptyCategories.find((category) => category.id === "spools");
-assert.equal(spoolCategory.items.length, 6, "All selected fragments share one category.");
-assert.equal(spoolCategory.groups.length, 3, "Keep the three Silk pairs inside the category.");
+assert.equal(spoolCategory.items.length, 8, "All selected fragments share one category.");
+assert.equal(spoolCategory.groups.length, 4, "Keep the four Silk pairs inside the category.");
 assert.equal(emptyCategories.some((category) => category.archived), false);
-const priorPickups = ["spool-greymoor", "spool-cauldron", "unrelated-historical"];
+const priorPickups = ["spool-greymoor", "necklace-loddie", "unrelated-historical"];
 const allSpools = changePickups(priorPickups, spoolCategory.items.map((item) => item.id), true);
-assert.deepEqual(priorPickups, ["spool-greymoor", "spool-cauldron", "unrelated-historical"], "Bulk checks must not mutate existing data.");
+assert.deepEqual(priorPickups, ["spool-greymoor", "necklace-loddie", "unrelated-historical"], "Bulk checks must not mutate existing data.");
 assert.equal(new Set(allSpools).size, allSpools.length);
 assert.ok(pickupCategories(route, allSpools).find((category) => category.id === "spools").isComplete);
 assert.ok(pickupCategories(route, allSpools).some((category) => category.archived), "Keep checked historical pickups visible.");
-assert.deepEqual(changePickups(allSpools, spoolCategory.items.map((item) => item.id), false), ["spool-cauldron", "unrelated-historical"], "Unchecking a category must preserve other categories and old records.");
+assert.deepEqual(changePickups(allSpools, spoolCategory.items.map((item) => item.id), false), ["necklace-loddie", "unrelated-historical"], "Unchecking a category must preserve other categories and old records.");
 const requiredPickups = emptyCategories.filter((category) => !category.optional && !category.archived).flatMap((category) => category.items.map((item) => item.id));
 const completed = pickupCategories(route, requiredPickups);
 assert.ok(completed.filter((category) => !category.optional && !category.archived).every((category) => category.isComplete));
