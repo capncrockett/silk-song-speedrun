@@ -15,7 +15,9 @@ Updated November 22, 2026. The local app is implemented. Joseph is currently on 
 
 ## Current run
 
-- **Run #4, Trobbio defeated at 2:29.** The active save records this at minute precision under checkpoint `trobbio`; Joseph confirms he quit to menu to read the clock. His reported next leg was back up and over Trobbio’s stage to take his lift down. The corrected plan below clocks only after opening the left shortcut door; do not reinterpret the already-saved 2:29 as that later event. Keep its time and historical label unchanged. Earlier splits include Lower Core 2:09, Songclave/Vaults return 2:20, Grand Bellway 2:02 and Choral Chambers 1:57. The Blasted Steps Craftmetal check was previously open; confirm its current saved state before spending it on Cogfly.
+- **Run #4, Clawline / Cauldron clear at 2:43; second kit checked.** Joseph returned to Grand Bellway and farmed after being short of rosaries at the Architect. The active save records the 2:43 split at minute precision and has `kit-second` checked. The farming duration, amount earned and remaining balance were not supplied. Preserve the save; no new melody pickup, roof gate opening or duel result was reported.
+
+- **Run #4, Trobbio defeated at 2:29.** The active save records this at minute precision under checkpoint `trobbio`; Joseph confirms he quit to menu to read the clock. At that earlier report, his next leg was back up and over Trobbio’s stage to take his lift down. The corrected plan below clocks only after opening the left shortcut door; do not reinterpret the already-saved 2:29 as that later event. Keep its time and historical label unchanged. Earlier splits include Lower Core 2:09, Songclave/Vaults return 2:20, Grand Bellway 2:02 and Choral Chambers 1:57. The Blasted Steps Craftmetal check was previously open; confirm its current saved state before spending it on Cogfly.
 - **Run #4, post-Widow rosaries sufficient.** Joseph reports **638 rosaries** from Scrounge sales and pickups along the route, especially lower Bellhart. He rejects Loddie’s second round as unnecessary. Keep the first-round pouch only; this report does not confirm a new pickup, purchase, split, exact location, or the individual relics sold.
 - **Run #4, Straight Pin missed.** Joseph did not collect Straight Pin on the first Deep Docks trip, then found the existing first-pass instruction. Keep that instruction unchanged and leave pickup ID `tool-straight-pin` unchecked until he reports collecting it. Recover pin **477899**, above Grindle’s old cell in the Marrow prison, during the already planned post-Widow Loddie visit. This is a Run #4 recovery, not a change to the selected first-pass route. [Straight Pin location](https://hollowknight.wiki/w/Straight_Pin) · [Loddie’s prison location](https://hollowknight.wiki/w/Loddie)
 - **Run #4, first Mort visit completed.** Joseph confirms Pilgrim’s Rest entry, Weighted Belt and Mort’s Tool Pouch are already done; the Belt and pouch are already checked in the active save. Place these directions and their 410-rosary spending reminder at the end of Section 4, Far Fields. Section 5 starts at Halfway Home with only the 60-rosary Greymoor Bellway reminder. This report does not confirm the Greymoor Bellway purchase.
@@ -42,6 +44,14 @@ Build the main view around this itinerary. The route is Hunter, all five bells, 
 [Original Garmond Route](https://steamcommunity.com/sharedfiles/filedetails/?id=3577460696) · [Recovered maps and credits](./docs/map-credits.md) · [Roof gate](https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=480502) · [Forum aid](https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=481022)
 
 ## Decisions and research
+
+### Identify the outdoor roof shortcut · November 22
+
+Joseph found the raw gate ID and directional shorthand unclear. Pin **480502** is the locked shortcut door at the far-left end of the outdoor rooftop above Whispering Vaults, near the Garmond and Zaza duel area. After the Clawline/wind route brings Hornet back under open sky, head left along the roof and open the door from its right/eastern side, then go through it. MapGenie states the locked door is invisible from the west. Keep that map ID in its link, not in the numbered directions. Describe the visible landmark and approach in plain language.
+
+This opens the return entrance for the roof duel. Keep the selected sequence: open the door and leave, return to the Vaultkeeper to learn the melody, then re-enter the roof through the door for G&Z. The arena ceiling shortcut back to Songclave is a separate opening; do not make that distinction the main navigation instruction.
+
+[Roof shortcut door](https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=480502) · [Garmond and Zaza encounter conditions](https://hollowknight.wiki/w/Garmond_and_Zaza). Door access was rechecked against the public map data on November 22.
 
 ### Fourth spool pair: Whiteward and eastern Underworks · November 22
 
@@ -251,7 +261,7 @@ Joseph reports **six original chats**. We have preserved **seven extracts**: the
 
 **Timing qualifications:** 0:14 is arrival at Shakra's bench after Silkspear; 1:03 is back at Halfway Home after Moorwing; 1:21 Cling Grip was an estimate. Preserve the original labels, all reported clocks and minute precision. The old five-mask/3-of-4 Shellwood state belongs to the missed Far Fields shard; Run #3 plans the first-pass pickup and six masks at Shellwood. The first Phacia lure/pogo worked and the second was unreliable; no Switch 2 patch was established. Preserve the two deaths on the leg without inventing a boss-attempt count.
 
-Early pending Needle #1, Bell #4, roof duel, Forum and finish states are superseded by later results. Keep the locked six spool fragments, Architect's 450-rosary second kit, first-pass Mort purchases and optional late Fractured Mask. The November 19 decision moves Dice ahead of the Needle #2 trip. No run save, seed, historical pickup check or screenshot changed.
+Early pending Needle #1, Bell #4, roof duel, Forum and finish states are superseded by later results. Keep the selected eight spool fragments, Architect's 450-rosary second kit, first-pass Mort purchases and optional late Fractured Mask. The November 19 decision moves Dice ahead of the Needle #2 trip. No run save, seed, historical pickup check or screenshot changed.
 
 **Research only:** the Beast Crest discussion explicitly said “i'm not saying rewrite the guide.” Flintslate + Belt and an early Hunter's March/Savage Beastfly detour were explored, not adopted. The successful aggressive Trobbio rematch recollection was on the separate 100% file. Hunter remains selected. Old hallway checks around Citadel Spa/High Halls stay a fallback if roof gate/re-entry checks fail, not a mandatory blind search.
 

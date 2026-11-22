@@ -1253,15 +1253,15 @@
             "Go up and take the first right past the mask puzzle. Solve the next box puzzle and use its hidden upper-right exit.",
             "Follow the wind-current route toward outer Songclave without dropping into Bilewater. Take the Memory Locket in the hidden upper-left room above the wind-puzzle entrance.",
             "If short on rosaries, collect the Heavy Rosary Necklace above outer Songclave’s left exit by alternating Clawline and Glide. It is worth 220; skip this supply stop if funded.",
-            "Continue to the far-left roof gate 480502 and open it from the outdoor/eastern side. Leave through it; this roof gate is distinct from the arena’s ceiling shortcut to Songclave.",
+            "When the wind route brings you outdoors with the sky visible, head left across the rooftop above Whispering Vaults. Open the shortcut door at the far-left end from this right-hand side, then go through it. This opens the return entrance for Garmond and Zaza’s rooftop duel.",
             "Return to the Vaultkeeper and have the cylinder played to learn Vaultkeeper’s Melody. Turn in spare cylinders for rosaries while here. Rest if needed before returning through the roof gate for the duel."
           ],
           "title": "Vaultkeeper's Melody",
-          "tip": "Collect the melody cylinder below Trobbio’s lift. Take the wind-route locket, open the far-left roof gate, then return to the Vaultkeeper to learn the melody. Rest if needed before returning for the G&Z duel.",
+          "tip": "Collect the melody cylinder below Trobbio’s lift and take the wind-route locket. Once outdoors above Whispering Vaults, head left to open the roof’s shortcut door and go through it. Return to the Vaultkeeper to learn the melody, then use that door to return for the G&Z duel. Rest if needed.",
           "links": [
             { "title": "Vaultkeeper's Melody", "pin": 478611 },
             { "title": "Wind-route locket", "pin": 478676 },
-            { "title": "Roof gate", "pin": 480502 }
+            { "title": "Roof shortcut door", "pin": 480502 }
           ],
           "guidePickups": [
             { "instruction": 4, "id": "locket-wind", "text": "Memory Locket" },
@@ -1283,14 +1283,14 @@
           "id": "roof-duel",
           "guideTitle": "Garmond & Zaza’s roof duel",
           "guide": [
-            "Use the open far-left roof shortcut to return to Garmond and Zaza. If the roof is empty, check that gate 480502 was opened from outside, leave, and re-enter.",
+            "Return to the rooftop above Whispering Vaults through the shortcut door you opened at its far-left end. If Garmond and Zaza are absent, leave the rooftop and re-enter through that door.",
             "Win the duel and exhaust Garmond’s dialogue afterward.",
             "Return to Cogwork Core bench 478428 after the duel. Rest if needed; it becomes a required quit-return anchor only if taking the later Mask trip.",
             "Head toward High Halls; skip that map’s Detour 1 (extra G&Z search / late Dice return). Their help is at the Forum door."
           ],
           "maps": ["cauldron", "roof-duel"],
           "title": "G&Z duel / Cogwork Core bench",
-          "tip": "Use the open roof shortcut to return for the duel. Exhaust Garmond's dialogue after winning. Head toward High Halls. The Run #2 split was the Cogwork Core bench after the win.",
+          "tip": "Use the shortcut door at the far-left end of the roof above Whispering Vaults to return for the duel. Exhaust Garmond's dialogue after winning. Head toward High Halls. The Run #2 split was the Cogwork Core bench after the win.",
           "links": [
             { "title": "Roof duel", "pin": 479361 },
             { "title": "Cogwork Core bench", "pin": 478428 }
