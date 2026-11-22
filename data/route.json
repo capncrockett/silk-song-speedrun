@@ -1160,12 +1160,13 @@
           "guide": [
             "Defeat Trobbio.",
             "Collect Claw Mirror.",
-            "To clock the time, Quit to Menu / Save and Quit and read the in-game time, then Continue. You can also press on without quitting.",
-            "After a menu quit, run back up and over Trobbio’s stage to reach his lift. Otherwise continue right to the lift."
+            "Run back up and over Trobbio’s stage to reach his lift.",
+            "Take Trobbio’s lift down and open the left shortcut door.",
+            "Quit to Menu / Save and Quit, clock the time, then Continue. Or press on without quitting."
           ],
           "maps": ["vaults"],
-          "title": "Trobbio defeated",
-          "tip": "Defeat Trobbio and collect Claw Mirror. Optionally quit to menu to clock the time, then Continue and run back up and over the stage to his lift. Or press on directly to the lift.",
+          "title": "Trobbio lift shortcut",
+          "tip": "Defeat Trobbio, collect Claw Mirror, cross back over his stage, take the lift down and open the left shortcut door. Then quit to menu to clock the time and Continue, or press on. Head west through Choral Chambers next.",
           "links": [{ "title": "Trobbio", "pin": 478690 }],
           "guidePickups": [
             {
@@ -1176,9 +1177,9 @@
           ],
           "guideSplits": [
             {
-              "instruction": 3,
+              "instruction": 5,
               "checkpoint": "trobbio",
-              "when": "After Trobbio: use the menu clock if you quit, then Continue. Or press on without quitting."
+              "when": "After taking Trobbio’s lift down and opening the left shortcut door: clock the time on a menu quit, then Continue. Or press on west through Choral Chambers."
             }
           ]
         }
@@ -1190,14 +1191,13 @@
       "guideNumber": 11,
       "guideSection": "garmond-cauldron",
       "title": "The Cauldron, Clawline, Melody #1, & Outer Songclave",
-      "summary": "Open the lift shortcut, get Injector Band in Whiteward, then take Clawline and Architect’s kit. Learn the melody and complete the roof duel.",
+      "summary": "Head west through Choral Chambers for Injector Band in Whiteward, then take Clawline and Architect’s kit. Learn the melody and complete the roof duel.",
       "maps": ["cauldron"],
       "stops": [
         {
           "id": "clawline",
           "guideTitle": "Whiteward, Clawline & Architect’s kit",
           "guide": [
-            "Take Trobbio’s lift down and open the left shortcut door. Ride back up and return to Grand Bellway before the Whiteward branch. Rest if needed.",
             "Go west through Choral Chambers and use the White Key lift into Whiteward. Climb in the fireplace room and go all the way left for Injector Band.",
             "Continue through Underworks to Twelfth Architect’s bench. Keep Claw Mirror + Magma Bell through the Cauldron’s heat section; switch from Magma Bell to Injector Band afterward.",
             "Reserve Blasted Steps Craftmetal for Cogfly. Skip G&Z Detour 1 (lower-left Craftmetal puzzle).",
@@ -1207,7 +1207,7 @@
             "Skip the eastern Underworks spool; the sixth fragment was collected in lower Cogwork Core."
           ],
           "title": "Clawline / Cauldron clear",
-          "tip": "Open Trobbio’s lift shortcut and take Whiteward for Injector Band. Keep Mirror + Magma Bell through the Cauldron. Get Clawline and buy Architect’s kit (450). Skip the eastern Underworks spool; pair C is complete in lower Core.",
+          "tip": "Go west through Choral Chambers and take Whiteward for Injector Band. Keep Mirror + Magma Bell through the Cauldron. Get Clawline and buy Architect’s kit (450). Skip the eastern Underworks spool; pair C is complete in lower Core.",
           "links": [
             { "title": "Whiteward elevator", "pin": 478590 },
             { "title": "Injector Band", "pin": 479182 },
@@ -1220,20 +1220,20 @@
           "shoppingNote": "Earn any shortfall in the Citadel before the Cauldron visit. This replaces the 25-Ragpelt farming detour.",
           "guidePickups": [
             {
-              "instruction": 2,
+              "instruction": 1,
               "id": "tool-injector-band",
               "text": "Injector Band"
             },
-            { "instruction": 6, "id": "ability-clawline", "text": "Clawline" },
+            { "instruction": 5, "id": "ability-clawline", "text": "Clawline" },
             {
-              "instruction": 7,
+              "instruction": 6,
               "id": "kit-second",
               "text": "second Crafting Kit"
             }
           ],
           "guideSplits": [
             {
-              "instruction": 7,
+              "instruction": 6,
               "checkpoint": "clawline",
               "when": "At the Architect’s bench after Clawline, the arena and the Crafting Kit purchase."
             }
