@@ -1517,6 +1517,7 @@
         },
         {
           "id": "checkpoint-1",
+          "guideStep": "lace-2",
           "guideTitle": "Prepare for Lace 2",
           "guide": [
             "At the Lace 2 checkpoint, check Fractured Mask from the post-Forum trip, Injector Band, Weighted Belt + Magnetite Dice, and your available Silk.",
@@ -1535,7 +1536,7 @@
         },
         {
           "id": "lace-2",
-          "guideTitle": "Lace 2",
+          "guideTitle": "Lace 2 preparation & fight",
           "guide": [
             "Let Lace approach and punish her recovery. Patient one- or two-hit openings are enough.",
             "Keep Silk available for Bind and heal in safe openings.",

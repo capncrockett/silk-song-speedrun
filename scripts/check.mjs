@@ -15,7 +15,7 @@ assert.equal(new Set(stops.map(({ id }) => id)).size, stops.length, "Checkpoint 
 assert.equal(stops.at(-1).id, route.finishCheckpoint, "The finish must be the last route checkpoint.");
 const guideStops = listGuideStops(route);
 assert.equal(stops.length, 32, "Keep the original timing IDs and the guide-only Last Judge page.");
-assert.equal(guideStops.length, 23, "High Halls preparation, Forum and Conductor share one page alongside the earlier combined stops.");
+assert.equal(guideStops.length, 22, "Lace 2 preparation and fight share one page alongside the earlier combined stops.");
 assert.deepEqual(guideStops.slice(10, 14).map((stop) => stop.id),
   ["blasted-steps", "last-judge-fight", "act-2", "grand-bellway"], "The Choral Chambers bench belongs on step 13 after the fight.");
 assert.equal(guideStops[11].recordSplit, false, "Defeating Last Judge does not add a separate split.");
