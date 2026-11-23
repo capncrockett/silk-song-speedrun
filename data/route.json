@@ -252,7 +252,19 @@
         "1 · Extra G&Z search / late Dice return — decided to skip. Follow the roof-duel route and collect Dice at the end of step 15.",
         "2 · G&Z roof duel and post-duel dialogue — planned."
       ],
-      "note": "Our path completes the roof duel before entering High Halls. Exhaust post-duel dialogue, then accept help at the Forum door. Keep Straight Pin + Cogfly, Mirror + Injector Band, and Belt + Dice; Thread Storm remains skipped.",
+      "note": "Our path completes the roof duel before entering High Halls. Exhaust post-duel dialogue, then accept help at the Forum door. Keep Straight Pin + Cogfly, Mirror + Injector Band, and Belt + Dice; Thread Storm remains skipped. After Conductor’s Melody, rest at High Halls bench for the Forge Daughter and Fractured Mask quit-return trip, then continue to upper Core.",
+      "guideNumber": 12
+    },
+    {
+      "id": "forge-restock-return",
+      "title": "Forge Daughter restock after Conductor’s Melody",
+      "maps": ["bellhart-deep-docks-return"],
+      "steps": ["conductor"],
+      "checkpoints": [
+        "2 · Forge Daughter bench — buy shard bundles as needed without resting."
+      ],
+      "detours": [],
+      "note": "Arrive from Deep Docks Bellway along the green line. White 2 marks Forge Daughter. The red Bellhart approach, white 1 mask shard and yellow Detours 1–3 belong to the earlier pickup loop. This screenshot does not cover Hunter’s March. Keep High Halls as the quit-return bench.",
       "guideNumber": 12
     },
     {
@@ -270,7 +282,7 @@
         "Cradle 1 · Open the final bench shortcut — planned.",
         "Cradle 2 · Shell Shard rock — optional supply stop only if needed."
       ],
-      "note": "Your optional Fractured Mask trip is described below the directions at Prepare for Lace 2.",
+      "note": "Collect Fractured Mask and restock at Forge Daughter after Conductor’s Melody, before this upper Core and ending section.",
       "guideNumber": 13
     }
   ],
@@ -1379,26 +1391,89 @@
           "guideTitle": "High Halls, Forum & Conductor’s Melody",
           "guide": [
             "Collect Conductor’s Melody after the Forum.",
-            "Return through the Citadel toward upper Cogwork Core.",
-            "Use the upper Core shortcut opened on the earlier lower Core visit."
+            "Return to the High Halls bench and rest to set the quit-return point for the Forge Daughter and Fractured Mask trip.",
+            "Take the High Halls Ventrica to Grand Bellway, then the Bell Beast to Deep Docks. Visit Forge Daughter for shard bundles as needed; the earlier trial bought 10 bundles. Do not rest at her bench.",
+            "Take the Bell Beast from Deep Docks to the Marrow and head into Hunter’s March. Do not rest at the Marrow bench or any other bench on the way.",
+            "Rush past the entrance Skarrgard and central arena to collect the free Fractured Mask at Mottled Skarr’s corpse. Use Cogfly, Straight Pin, and Mirror as needed; skip the rosary side trips and the bench trap-disabling detour.",
+            "Without resting at the Hunter’s March bench, use Quit to Menu / Save and Quit, then Continue back at High Halls bench.",
+            "Equip Fractured Mask instead of Claw Mirror. Keep Injector Band and Weighted Belt + Magnetite Dice.",
+            "Return through the Citadel toward upper Cogwork Core and use the upper Core shortcut opened on the earlier lower Core visit."
           ],
           "title": "Forum cleared / Conductor’s Melody",
-          "tip": "Collect the melody after the Forum. Return through the Citadel to upper Cogwork.",
-          "links": [{ "title": "Conductor's Melody", "pin": 478609 }],
+          "tip": "After Conductor’s Melody, rest at High Halls bench, restock at Forge Daughter and collect Fractured Mask in Hunter’s March without resting elsewhere. Quit-return to High Halls, replace Mirror with Mask, then continue to upper Core.",
+          "links": [
+            {
+              "title": "Conductor's Melody",
+              "pin": 478609
+            },
+            {
+              "title": "High Halls return bench",
+              "pin": 478415
+            },
+            {
+              "title": "Forge Daughter restock",
+              "pin": 476912
+            },
+            {
+              "title": "Hunter’s March entrance",
+              "pin": 477962
+            },
+            {
+              "title": "Central arena",
+              "pin": 479337
+            },
+            {
+              "title": "Mottled Skarr",
+              "pin": 478602
+            },
+            {
+              "title": "Fractured Mask",
+              "pin": 478607
+            }
+          ],
           "guidePickups": [
             {
               "instruction": 1,
               "id": "melody-conductor",
               "text": "Conductor’s Melody"
+            },
+            {
+              "instruction": 3,
+              "id": "stock-shard-bundles",
+              "text": "shard bundles"
+            },
+            {
+              "instruction": 5,
+              "id": "tool-fractured-mask",
+              "text": "Fractured Mask"
             }
           ],
           "guideSplits": [
             {
               "instruction": 1,
               "checkpoint": "conductor",
-              "when": "After clearing the High Halls Forum and acquiring Conductor’s Melody, before the return to upper Core."
+              "when": "After clearing the High Halls Forum and acquiring Conductor’s Melody, before the Forge Daughter and Fractured Mask trip."
             }
-          ]
+          ],
+          "guideLinks": [
+            {
+              "instruction": 2,
+              "title": "High Halls return bench on MapGenie",
+              "url": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=478415"
+            },
+            {
+              "instruction": 3,
+              "title": "Forge Daughter restock on MapGenie",
+              "url": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=476912"
+            },
+            {
+              "instruction": 5,
+              "title": "Fractured Mask on MapGenie",
+              "url": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=478607"
+            }
+          ],
+          "maps": ["high-halls", "bellhart-deep-docks-return"],
+          "mapNote": "The Bellhart / Deep Docks return map is your earlier annotated screenshot. White 2 marks Forge Daughter; this restock trip arrives from Deep Docks Bellway along the green route. The red Bellhart approach and earlier pickup detours are already covered. No saved Hunter’s March route map is available; use the linked entrance, arena and Mask pins."
         }
       ]
     },
@@ -1444,50 +1519,17 @@
           "id": "checkpoint-1",
           "guideTitle": "Prepare for Lace 2",
           "guide": [
-            "At the Lace 2 checkpoint, decide whether to take the optional Fractured Mask trip below. Leave it if you prefer to continue with Mirror.",
-            "Check Injector Band, Weighted Belt + Magnetite Dice, your available Silk, and either Fractured Mask or Claw Mirror.",
+            "At the Lace 2 checkpoint, check Fractured Mask from the post-Forum trip, Injector Band, Weighted Belt + Magnetite Dice, and your available Silk.",
             "Confirm all three melodies are learned. When ready, rest if needed for the final approach, play the Threefold Melody at the elevator, and ascend to Lace 2."
           ],
           "maps": ["cradle"],
           "title": "Checkpoint 1 before Lace 2",
-          "tip": "At Lace 2, Fractured Mask is an optional late backtrack. If taking it, set the Cogwork Core bench as the return point and rest nowhere else before quitting back. Otherwise keep Mirror + Injector Band. Continue through the final elevator when ready.",
-          "optionalDetour": {
-            "title": "Fractured Mask before Lace 2",
-            "detail": "Optional when there is enough time left for the pickup and final fights. The timed-file trial included 10 shard bundles from Forge Daughter and the Mask, ended at Marrow bench at 5:06, and was reported as about 10 minutes. That trial rested at Marrow; the Core quit-return below is the planned variant. Scout cleared GMS with Mask and no Mirror.",
-            "steps": [
-              "Before leaving the Citadel, rest at the Cogwork Core bench to set the quit-return point.",
-              "If tools need supplies, stop at Forge Daughter for shard bundles on the way. The timed-file trial bought 10 bundles. Do not rest at the Forge Daughter bench if keeping Core as the return point.",
-              "Travel back toward the Marrow and Hunter’s March using the unlocked travel routes. Do not rest at any intervening bench, including the Marrow bench.",
-              "Rush the scouted Hunter’s March approach, using Cogfly, Straight Pin, and Mirror as needed, past the entrance Skarrgard and central arena to collect the free Fractured Mask. Skip the rosary side trips.",
-              "Do not rest at the Hunter’s March bench or take its trap-disabling detour. Use Quit to Menu / Save and Quit, then Continue back at the Cogwork Core bench.",
-              "Equip Fractured Mask in Mirror’s blue slot at Cogwork Core. Keep Injector Band and Belt + Dice, then return to the Lace 2 approach."
-            ],
-            "links": [
-              { "title": "Cogwork Core return bench", "pin": 478428 },
-              { "title": "Forge Daughter restock", "pin": 476912 },
-              { "title": "Hunter’s March entrance", "pin": 477962 },
-              { "title": "Central arena", "pin": 479337 },
-              { "title": "Mottled Skarr", "pin": 478602 },
-              { "title": "Fractured Mask", "pin": 478607 }
-            ],
-            "guidePickups": [
-              {
-                "instruction": 2,
-                "id": "stock-shard-bundles",
-                "text": "shard bundles"
-              },
-              {
-                "instruction": 4,
-                "id": "tool-fractured-mask",
-                "text": "Fractured Mask"
-              }
-            ]
-          },
+          "tip": "Check Fractured Mask, Injector Band, Weighted Belt + Magnetite Dice, Silk and all three melodies. The Forge Daughter and Mask trip is already covered after Conductor’s Melody. Continue through the final elevator when ready.",
           "guideSplits": [
             {
               "instruction": 1,
               "checkpoint": "checkpoint-1",
-              "when": "On reaching the Lace 2 checkpoint, before the optional Fractured Mask trip or final elevator."
+              "when": "On reaching the Lace 2 checkpoint, before the final elevator."
             }
           ]
         },
@@ -1497,12 +1539,17 @@
           "guide": [
             "Let Lace approach and punish her recovery. Patient one- or two-hit openings are enough.",
             "Keep Silk available for Bind and heal in safe openings.",
-            "Use Straight Pin only when the opening is safe. Keep Injector Band and Belt + Dice; use Fractured Mask if you took the optional trip, otherwise Claw Mirror.",
+            "Use Straight Pin only when the opening is safe. Keep Fractured Mask + Injector Band and Weighted Belt + Magnetite Dice equipped.",
             "After winning, record the time before leaving for Terminus."
           ],
           "title": "Lace 2 defeated",
-          "tip": "Let Lace approach and punish her recovery. Keep Silk for healing and use pins in safe openings. Use Fractured Mask if collected on the optional late trip, otherwise Mirror; retain Injector Band, Weighted Belt, and Magnetite Dice.",
-          "links": [{ "title": "Lace 2", "pin": 479088 }],
+          "tip": "Let Lace approach and punish her recovery. Keep Silk for healing and use pins in safe openings. Use Fractured Mask + Injector Band and Weighted Belt + Magnetite Dice.",
+          "links": [
+            {
+              "title": "Lace 2",
+              "pin": 479088
+            }
+          ],
           "maps": ["cradle"],
           "guideSplits": [
             {
@@ -1839,7 +1886,7 @@
     {
       "id": "tools",
       "title": "Tools",
-      "detail": "Early supply tools and the later combat loadout. Fractured Mask is in the optional category below.",
+      "detail": "Early supply tools and the later combat loadout. Collect Fractured Mask after Conductor’s Melody for the ending.",
       "complete": "Route tools collected",
       "items": [
         {
@@ -1889,6 +1936,12 @@
           "title": "Cogfly",
           "detail": "High Halls descent; spend 1 Craftmetal",
           "pin": 478903
+        },
+        {
+          "id": "tool-fractured-mask",
+          "title": "Fractured Mask",
+          "detail": "Hunter’s March after Conductor’s Melody; quit-return to High Halls bench without resting elsewhere",
+          "pin": 478607
         }
       ]
     },
@@ -1993,12 +2046,6 @@
       "complete": "Optional pickups collected",
       "items": [
         {
-          "id": "tool-fractured-mask",
-          "title": "Fractured Mask",
-          "detail": "Optional late Hunter’s March trip with Core quit-return",
-          "pin": 478607
-        },
-        {
           "id": "stock-shard-bundles",
           "title": "Shard-bundle restock",
           "detail": "Forge Daughter if supplies are needed; trial bought 10 bundles",
@@ -2056,11 +2103,11 @@
     },
     {
       "id": "mirror",
-      "status": "Optional at Lace 2",
-      "title": "Fractured Mask late-game option",
-      "detail": "Optional at Lace 2 when time allows. Scout GMS clear used Fractured Mask with Mirror off. On Run #2, the Forge Daughter restock (10 shard bundles) and Mask trip ended at Marrow bench at 5:06 and was reported as about 10 minutes; Cogfly, Straight Pin, and Mirror were used. For the planned Core return, rest at the Cogwork Core bench before leaving and nowhere else, then quit-return to equip Mask. Keep Mirror if skipping.",
+      "status": "Selected after Conductor’s Melody",
+      "title": "Fractured Mask and Forge Daughter return",
+      "detail": "After Conductor’s Melody, rest at High Halls bench, visit Forge Daughter for supplies and collect Mask in Hunter’s March without resting elsewhere. Quit-return to High Halls and replace Mirror with Mask before upper Core. Scout GMS clear used Mask with Mirror off. Run #2’s earlier restock (10 shard bundles) and Mask trial ended at Marrow bench at 5:06 and was reported as about 10 minutes; that Marrow-rest trial does not time the new High Halls return.",
       "links": [
-        { "title": "Cogwork Core return bench", "pin": 478428 },
+        { "title": "High Halls return bench", "pin": 478415 },
         { "title": "Fractured Mask", "pin": 478607 }
       ]
     },

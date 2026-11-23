@@ -60,6 +60,8 @@ Joseph supplied the [Bellhart to Loddie and Deep Docks return map](../assets/map
 
 Use it on the Loddie / Forge Daughter return page. The red line runs from Bellhart through Lower Bellhart to the mask shard (white 1) and Forge Daughter bench (white 2); green returns to Deep Docks Bellway. Joseph’s yellow detours are 1 Loddie, 2 Spool Fragment, and 3 easy rosaries. These labels belong to his screenshot rather than the original G&Z return map. The original return image remains unavailable, with this supplied replacement recorded in the catalog.
 
+The November 22 route change also reuses this screenshot on the High Halls / Conductor page for the later Forge Daughter restock. Arrive from Deep Docks Bellway along the green line to white 2; the red Bellhart approach and earlier pickup detours are already covered. The screenshot does not show the Hunter’s March / Fractured Mask leg. The quit-return anchor for that later trip is High Halls bench.
+
 ## Supplied Greymoor bell and spool return route
 
 Joseph supplied the [Greymoor bell and spool return map](../assets/maps/Greymoor%20bell%20and%20spool%20return.png) on November 14, 2026. It was renamed from Screenshot 2026-11-14 at 12.01.20 PM.png without changing the original PNG bytes. Base map: MapGenie; game: Team Cherry. The catalog records dimensions, size and hash.
