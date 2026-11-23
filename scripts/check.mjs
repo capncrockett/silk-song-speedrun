@@ -31,7 +31,7 @@ assert.equal(greymoorGuide.guide.length,
   "Combining pages must retain both parts of the walkthrough.");
 
 const timingStops = listRecordingStops(route);
-assert.equal(timingStops.length, 25, "Exclude all retired splits from the current timing list.");
+assert.equal(timingStops.length, 24, "Exclude all retired splits from the current timing list.");
 assert.equal(timingStops.some((stop) => stop.id === "widow-bench"), false);
 assert.ok(timingStops.some((stop) => stop.id === "widow"));
 assert.deepEqual(guideStops[6].checkpointIds, ["widow-bench", "widow"]);
@@ -47,7 +47,7 @@ const beforeWidow = runSummary(route, { prep: [], splits: [
 assert.equal(beforeWidow.next.id, "widow", "An old bench split must not count as defeating Widow.");
 assert.equal(beforeWidow.count, 1);
 assert.equal(beforeWidow.history.length, 2, "Historical bench times stay in the run history.");
-assert.equal(beforeWidow.total, 25);
+assert.equal(beforeWidow.total, 24);
 
 const prep = route.preparations.flatMap((group) => group.items.map(({ id }) => id));
 assert.equal(new Set(prep).size, prep.length, "Preparation IDs must be unique.");

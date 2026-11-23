@@ -1518,6 +1518,7 @@
         {
           "id": "checkpoint-1",
           "guideStep": "lace-2",
+          "recordSplit": false,
           "guideTitle": "Prepare for Lace 2",
           "guide": [
             "At the Lace 2 checkpoint, check Fractured Mask from the post-Forum trip, Injector Band, Weighted Belt + Magnetite Dice, and your available Silk.",
@@ -1525,14 +1526,7 @@
           ],
           "maps": ["cradle"],
           "title": "Checkpoint 1 before Lace 2",
-          "tip": "Check Fractured Mask, Injector Band, Weighted Belt + Magnetite Dice, Silk and all three melodies. The Forge Daughter and Mask trip is already covered after Conductor’s Melody. Continue through the final elevator when ready.",
-          "guideSplits": [
-            {
-              "instruction": 1,
-              "checkpoint": "checkpoint-1",
-              "when": "On reaching the Lace 2 checkpoint, before the final elevator."
-            }
-          ]
+          "tip": "Check Fractured Mask, Injector Band, Weighted Belt + Magnetite Dice, Silk and all three melodies. The Forge Daughter and Mask trip is already covered after Conductor’s Melody. Continue through the final elevator when ready."
         },
         {
           "id": "lace-2",
