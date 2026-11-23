@@ -60,6 +60,40 @@ export function createGuide({ onNavigate, onSplitSaved }) {
     status(statusId, "");
   }
 
+  function renderCursedPreparation() {
+    const plan = state.route.cursedGuide;
+    byId("cursed-preparation").hidden = !plan;
+    if (!plan) return;
+    byId("cursed-preparation-title").firstElementChild.textContent = plan.title;
+    byId("cursed-intro").textContent = plan.intro;
+    byId("cursed-goal").textContent = plan.goal;
+    byId("cursed-limits").textContent = plan.limits;
+    const focusRun = state.data.runs.find((run) => run.id === plan.runId);
+    if (focusRun) {
+      const picked = new Set(focusRun.prep);
+      const shards = state.route.preparations.find((group) => group.id === "masks").items
+        .filter((item) => picked.has(item.id)).length;
+      const needle = picked.has("needle-second") ? "Needle Upgrade #2 recorded" : picked.has("needle-first") ? "Needle Upgrade #1 recorded" : "check Needle upgrades";
+      byId("cursed-baseline").textContent = `${focusRun.name} starting record: ${shards} mask shards (${5 + Math.floor(shards / 4)} masks) and ${needle}. Check the inventory for any later upgrades before repeating a pickup.`;
+    } else {
+      byId("cursed-baseline").textContent = "Check the preparation file’s actual masks, Needle and abilities before repeating pickups.";
+    }
+    const stages = byId("cursed-stages");
+    const opened = new Map([...stages.children].map((stage) => [stage.dataset.cursedStage, stage.open]));
+    stages.replaceChildren(...plan.stages.map((stage, index) => {
+      const details = node("details", "cursed-stage");
+      details.dataset.cursedStage = stage.id;
+      details.open = opened.get(stage.id) ?? index === 0;
+      details.append(node("summary", "", stage.title));
+      const list = node("ol");
+      list.append(...stage.steps.map((text) => node("li", "", text)));
+      const references = node("div", "links");
+      references.append(...links(stage.links));
+      details.append(list, references);
+      return details;
+    }));
+  }
+
   function renderGuide() {
     inlineSplits.reset();
     const run = selectedRun();
@@ -74,7 +108,10 @@ export function createGuide({ onNavigate, onSplitSaved }) {
     byId("previous-step").disabled = index <= 0;
     byId("next-step").disabled = index < 0 || index === state.guideStops.length - 1;
     const nextStop = state.guideStops[index + 1];
-    byId("guide-next-label").textContent = stop && nextStop ? `Up next · ${stepTitle(nextStop)}` : stop ? "The end of your route." : "This step belongs to an earlier route version.";
+    const hasContinuation = stop?.id === state.route.finishCheckpoint && Boolean(state.route.cursedGuide);
+    byId("continue-cursed").hidden = !hasContinuation;
+    byId("guide-next-label").textContent = stop && nextStop ? `Up next · ${stepTitle(nextStop)}` : hasContinuation ? "Timed route complete · untimed preparation below" : stop ? "The end of your route." : "This step belongs to an earlier route version.";
+    renderCursedPreparation();
     renderGuideInstructions("guide-directions", stop?.guide ?? ["This historical split is preserved in the run log."], stop?.guidePickups, stop?.guideLinks, stop?.guideSplits);
     byId("entry-links").replaceChildren(...links(stop?.links));
     renderStepMaps(stop, section);
@@ -163,6 +200,12 @@ export function createGuide({ onNavigate, onSplitSaved }) {
         byId("maps").querySelector("summary").focus({ preventScroll: true });
         byId("maps").scrollIntoView({ block: "start" });
       });
+    });
+    byId("continue-cursed").addEventListener("click", (event) => {
+      event.preventDefault();
+      byId("cursed-preparation").open = true;
+      byId("cursed-preparation-title").focus({ preventScroll: true });
+      byId("cursed-preparation").scrollIntoView({ block: "start" });
     });
     for (const [id, delta] of [["previous-step", -1], ["next-step", 1]]) {
       byId(id).addEventListener("click", () => {

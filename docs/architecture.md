@@ -8,9 +8,9 @@ Read [HANDOFF.md](../HANDOFF.md) for route decisions and current run context.
 
 | Change | File |
 |---|---|
-| Walkthrough copy, map selection, pickups, purchases | [data/route.json](../data/route.json) |
+| Walkthrough copy, map selection, pickups, purchases, untimed cursed preparation | [data/route.json](../data/route.json) |
 | Startup, run selection, reading position, cross-feature refreshes | [public/app.mjs](../public/app.mjs) |
-| Guide headings, instructions, inline pickup placement, sections | [guide.mjs](../public/ui/guide.mjs) |
+| Guide headings, instructions, inline pickup placement, sections, untimed continuation | [guide.mjs](../public/ui/guide.mjs) |
 | Map gallery, keys, tabs, enlarged viewer and zoom | [maps.mjs](../public/ui/maps.mjs) |
 | Pickup saving, drawer, counts, category completion, inline synchronization | [pickups.mjs](../public/ui/pickups.mjs) |
 | Pinned Pickups rosary total, paid purchases and next-stop shopping | [budget.mjs](../public/ui/budget.mjs) |
@@ -54,6 +54,15 @@ shared helpers and the model; use app callbacks for coordination between feature
 Avoid circular imports, global event buses and a second state store. Feature and
 shared modules should be safe to import without a DOM; access the page inside
 functions. The app entry point starts the browser UI.
+
+The untimed Run #3 continuation lives in `route.cursedGuide`, outside the timed
+`sections`, checkpoints and preparations. `ui/guide.mjs` renders its sourced
+stages into `#cursed-preparation` and opens it from the GMS page’s continuation
+link. Its starting record comes from the configured run ID in the same shared
+state; it never clones a run, adds timing points, checks pickups or saves data.
+Existing timed navigation and totals remain independent. Stage accordions retain
+their open state during guide renders. Update this data for new preparation
+choices rather than inserting cursed stages into the timed route.
 
 ## Saving
 

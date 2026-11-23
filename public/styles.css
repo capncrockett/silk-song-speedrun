@@ -325,3 +325,15 @@ html.prep-open, html.sections-open { overflow: hidden; }
   .map-viewer-bar { flex-wrap: wrap; padding: .65rem; }
   .map-viewer-bar h2 { flex-basis: 100%; }
 }
+
+/* Untimed continuation after the completed speedrun guide. */
+.cursed-content { padding: 0 1.1rem 1.1rem; }
+.cursed-content > p { margin-bottom: 1rem; line-height: 1.8; }
+.cursed-goal { color: var(--green); font-size: .9rem; }
+.cursed-limits { padding: .8rem 1rem; border-left: 2px solid var(--accent); background: #eca38c05; color: var(--muted); font-size: .8rem; }
+.cursed-stage { border-top: 1px solid var(--line); padding-block: 1rem; }
+.cursed-stage > summary { display: flex; align-items: baseline; gap: .6rem; color: var(--ink); font-size: .9rem; font-weight: 500; line-height: 1.6; }
+.cursed-stage ol { margin: 1rem 0; padding-left: 1.3rem; }
+.cursed-stage li { color: var(--muted); font-size: .85rem; line-height: 1.85; padding-left: .3rem; margin-top: .7rem; }
+.cursed-stage li::marker { color: var(--accent); }
+.cursed-stage .links { margin-bottom: 0; }
