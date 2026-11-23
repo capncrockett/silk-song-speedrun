@@ -1536,15 +1536,15 @@
         },
         {
           "id": "lace-2",
-          "guideTitle": "Lace 2 preparation & fight",
+          "guideTitle": "Lace 2 & Terminus",
           "guide": [
             "Let Lace approach and punish her recovery. Patient one- or two-hit openings are enough.",
             "Keep Silk available for Bind and heal in safe openings.",
             "Use Straight Pin only when the opening is safe. Keep Fractured Mask + Injector Band and Weighted Belt + Magnetite Dice equipped.",
-            "After winning, record the time before leaving for Terminus."
+            "After Lace, head right and up to Terminus. Rest if needed. In the final approach room, take the bottom-right exit and drop to open the runback shortcut. Repair Fractured Mask at the bench if using it."
           ],
-          "title": "Lace 2 defeated",
-          "tip": "Let Lace approach and punish her recovery. Keep Silk for healing and use pins in safe openings. Use Fractured Mask + Injector Band and Weighted Belt + Magnetite Dice.",
+          "title": "Terminus bench / runback shortcut",
+          "tip": "Let Lace approach and punish her recovery. Keep Silk for healing and use pins in safe openings. Use Fractured Mask + Injector Band and Weighted Belt + Magnetite Dice. After winning, reach Terminus, open the runback shortcut and record the time there.",
           "links": [
             {
               "title": "Lace 2",
@@ -1556,7 +1556,7 @@
             {
               "instruction": 4,
               "checkpoint": "lace-2",
-              "when": "Immediately after defeating Lace 2, before travelling to Terminus."
+              "when": "At Terminus after opening the runback shortcut and any bench rest or Fractured Mask repair, before the Grand Mother Silk approach."
             }
           ]
         },
@@ -1564,7 +1564,6 @@
           "id": "gms",
           "guideTitle": "Grand Mother Silk",
           "guide": [
-            "After Lace, head right and up to Terminus. Rest if needed. In the final approach room, take the bottom-right exit and drop to open the runback shortcut. Repair Fractured Mask at the bench if using it.",
             "If low on tool-refill supplies, break into the hidden room on the right wall of the climb to GMS for the large Shell Shard rock before more attempts.",
             "Phase 1 is straightforward: be patient, watch the knives, and take clear openings rather than rushing damage.",
             "During phases 2 and 3, stick to one side. Wait, watch the knives, and prioritize avoiding them.",
@@ -1573,12 +1572,12 @@
             "After winning, record the actual final in-game time here."
           ],
           "title": "Grand Mother Silk / finish",
-          "tip": "Patience is the winning plan. Watch and avoid the knives, stick to one side in phases 2 and 3, and save Silk for Bind. Repair Fractured Mask at Terminus if using it. Run #2 cleared on attempt six at 5:26:16.",
+          "tip": "Patience is the winning plan. Watch and avoid the knives, stick to one side in phases 2 and 3, and save Silk for Bind. Run #2 cleared on attempt six at 5:26:16.",
           "links": [{ "title": "Grand Mother Silk", "pin": 479099 }],
           "maps": ["cradle"],
           "guideSplits": [
             {
-              "instruction": 7,
+              "instruction": 6,
               "checkpoint": "gms",
               "when": "After defeating Grand Mother Silk: enter the actual final in-game time."
             }
