@@ -2127,20 +2127,39 @@
     }
   ],
   "cursedGuide": {
-    "title": "Cursed preparation · Run #3",
-    "runId": "8b149d0d-b52c-46c6-b5b9-85370bbb766d",
-    "intro": "Stay in Act 2 and finish the useful permanent upgrades before giving Greyroot the Twisted Bud. There is no time target for this preparation or the cursed fight.",
-    "goal": "Aim for nine masks, Hivesteel Needle (third upgrade), Faydown Cloak and Needle Strike. Keep your normal tools and healing throughout the collection trips; become cursed only when ready for GMS.",
-    "limits": "The curse locks you into the Cursed Crest: no tools, no healing through Bind, no Silk Skills and a three-strand Silk cap. Extra pouches, Crafting Kits, Memory Lockets, Silk Hearts and spools do not strengthen that fight. Fractured Mask is also disabled. They can still help exploration before the curse.",
+    "defaultRunId": "8b149d0d-b52c-46c6-b5b9-85370bbb766d",
+    "intro": "Prepare an existing save for Twisted Child. Collect your upgrades before giving Greyroot the Twisted Bud.",
+    "goal": "Aim for nine masks, Hivesteel Needle, Faydown Cloak and Needle Strike.",
     "stages": [
       {
         "id": "cursed-start",
-        "title": "1 · Check the file and prepare the return",
+        "title": "Check the file and prepare the return",
+        "note": "Check the game inventory before revisiting a pickup. Set aside 1,680 rosaries if you still need the Nectar (480), Hivesteel Needle (450) and Jubilana’s shard (750). Allow extra for travel and retries.",
         "steps": [
-          "Use Run #3 for this continuation. Check the actual inventory before collecting anything again; the saved checklist is a record, not a live inventory reading.",
-          "Keep GMS available in Act 2. Do not take the Snared Silk ending or finish Infestation Operation; either would close this cursed-ending attempt on the file.",
-          "Check the Terminus bench and clear the rubble/runback shortcut before leaving the Cradle. Test travel between Terminus and Grand Bellway, and check Shellwood Bellway so the trip back after Greyroot is ready.",
-          "Promise Great Taste of Pharloom from Loyal Mergwin in the Choral Chambers dining hall. Rescue Jubilana through The Wandering Merchant at Songclave if she is not already available."
+          {
+            "id": "cursed-act-two",
+            "title": "Confirm the file is in Act 2 with GMS available"
+          },
+          {
+            "id": "cursed-terminus-shortcut",
+            "title": "Open or verify the Terminus runback shortcut",
+            "detail": "Check the Terminus bench and clear the rubble before leaving the Cradle."
+          },
+          {
+            "id": "cursed-return-travel",
+            "title": "Verify the return travel links",
+            "detail": "Check Shellwood Bellway and the Grand Bellway Ventrica to Terminus."
+          },
+          {
+            "id": "cursed-great-taste",
+            "title": "Start Great Taste of Pharloom",
+            "detail": "Promise the wish from Loyal Mergwin in the Choral Chambers dining hall."
+          },
+          {
+            "id": "cursed-jubilana-rescue",
+            "title": "Rescue Jubilana or confirm her shop is open",
+            "detail": "Complete The Wandering Merchant at Songclave if needed."
+          }
         ],
         "links": [
           {
@@ -2159,12 +2178,19 @@
       },
       {
         "id": "cursed-faydown",
-        "title": "2 · Mount Fay for double jump",
+        "title": "Mount Fay for double jump",
+        "note": "Approach through the Slab from Choral Chambers with Clawline. Use the mountain benches and heal as needed. Ascendant’s Grip, Weavelight and Plasmium Phial can help on the climb.",
         "steps": [
-          "Take the normal Act 2 approach from Choral Chambers through the Slab into Mount Fay. Use the Clawline you already have. There is no need for a sequence break.",
-          "Use the mountain’s benches and normal healing while climbing. Ascendant’s Grip, Weavelight or Plasmium Phial can make the climb easier if you want a preparation aid; none is a requirement for the cloak.",
-          "At the summit, play Needolin to call the Fayforn and receive Faydown Cloak. Double jump stays useful for later exploration and the cursed GMS fight.",
-          "Before leaving, collect the southwest Mount Fay mask shard west of the bench, now reachable with Faydown Cloak. This is one of the eight additional shards in the cleanup below."
+          {
+            "id": "cursed-faydown-cloak",
+            "title": "Collect Faydown Cloak",
+            "detail": "Play Needolin at the summit to call the Fayforn."
+          },
+          {
+            "id": "cursed-shard-mount-fay",
+            "title": "Collect the Mount Fay mask shard",
+            "detail": "Use double jump to reach the southwest shard west of the bench. This counts toward the eight additional shards."
+          }
         ],
         "links": [
           {
@@ -2179,15 +2205,47 @@
       },
       {
         "id": "cursed-needle",
-        "title": "3 · Great Taste of Pharloom → Needle Upgrade #3",
+        "title": "Great Taste and Hivesteel Needle",
         "steps": [
-          "Mossberry Stew: visit the Moss Druid in Mosshome. Complete Berry Picking first if it is still unfinished.",
-          "Vintage Nectar: bring 480 rosaries to Creige at Halfway Home, then clear the cellar encounter and collect the Nectar.",
-          "Crustnut: take the Blasted Steps route past Great Conchflies and Pinstress into Sands of Karak. Learn Needle Strike from Pinstress while here if it is missing, then finish the Crustnut platforming route.",
-          "Pickled Muckmaggot: with double jump, reach Disgraced Chef Lugoli in Sinner’s Road and defeat him for the ingredient.",
-          "Courier’s Rasher: complete My Missing Courier and My Missing Brother, then collect the delivery from Tipp and Pill in Bellhart. Rehearse Bellhart → Shellwood → Blasted Steps → Grand Gate → Choral Chambers first. Clear enemies before the attempt and return without resting.",
-          "Deliver the Rasher to Mergwin on foot before it spoils; avoid fast travel, hits and sprinting into walls. Damage shortens the freshness timer rather than making every single hit an automatic failure. This delivery has its own timer even though the overall preparation is untimed.",
-          "Turn in all five ingredients to Mergwin for Pale Oil. Take it and 450 rosaries to Plinney in Bellhart for Hivesteel Needle, the third upgrade. The fourth, Pale Steel upgrade needs Act 3 and is outside this attempt."
+          {
+            "id": "cursed-needle-strike",
+            "title": "Learn or confirm Needle Strike",
+            "detail": "Train with Pinstress in Blasted Steps on the way to Sands of Karak."
+          },
+          {
+            "id": "cursed-mossberry-stew",
+            "title": "Collect Mossberry Stew",
+            "detail": "Visit the Moss Druid in Mosshome. Finish Berry Picking if needed."
+          },
+          {
+            "id": "cursed-vintage-nectar",
+            "title": "Collect Vintage Nectar",
+            "detail": "Pay Creige 480 rosaries at Halfway Home, then clear the cellar encounter."
+          },
+          {
+            "id": "cursed-crustnut",
+            "title": "Collect Crustnut",
+            "detail": "Pass Great Conchflies and Pinstress into Sands of Karak and finish the platforming route."
+          },
+          {
+            "id": "cursed-pickled-muckmaggot",
+            "title": "Collect Pickled Muckmaggot",
+            "detail": "Use double jump to reach and defeat Disgraced Chef Lugoli in Sinner’s Road."
+          },
+          {
+            "id": "cursed-couriers-rasher",
+            "title": "Deliver Courier’s Rasher to Mergwin",
+            "detail": "Finish My Missing Courier and My Missing Brother. Rehearse Bellhart → Shellwood → Blasted Steps → Grand Gate → Choral Chambers and clear enemies without resting before accepting from Tipp and Pill. Deliver on foot before it spoils. Hits shorten the freshness timer. Avoid fast travel and sprinting into walls."
+          },
+          {
+            "id": "cursed-great-taste-oil",
+            "title": "Turn in all five ingredients for Pale Oil"
+          },
+          {
+            "id": "cursed-hivesteel-needle",
+            "title": "Obtain Hivesteel Needle (upgrade #3)",
+            "detail": "Bring the Pale Oil and 450 rosaries to Plinney in Bellhart. The fourth upgrade is available in Act 3."
+          }
         ],
         "links": [
           {
@@ -2210,17 +2268,44 @@
       },
       {
         "id": "cursed-masks",
-        "title": "4 · Finish the eight extra shards for nine masks",
+        "title": "Finish the eight additional mask shards",
+        "note": "Check the Mount Fay shard in the double-jump stage. Sixteen shards are available in Act 2 for nine permanent masks. The tenth mask requires Act 3.",
         "steps": [
-          "Songclave: buy Jubilana’s mask shard for 750 rosaries after The Wandering Merchant.",
-          "Mount Fay: count the southwest shard from the cloak trip once; do not make a second trip for the same pickup.",
-          "Far Fields: clear the Skull Cave lava gauntlet for its shard. Clawline and Drifter’s Cloak are available already; use Magma Bell as a preparation aid if helpful.",
-          "Hunter’s March / Far Fields: defeat the first Savage Beastfly in the Chapel of the Beast if still alive. Take the Savage Beastfly wish at Bellhart, defeat the second one in Fourth Chorus’s old Far Fields arena, then return the Horn Fragment to Bellhart’s Wishwall for the shard.",
-          "Bilewater: collect the eastern Slubberlug-hallway shard. On the same regional trip, collect the Twisted Bud via the hidden eastern Whispering Vaults entry. Carrying the Bud does not curse you; keep it until all preparation is complete.",
-          "The Slab: get the Key of Apostate from Putrified Ducts west of Huntress’s home, then use it and double jump for the northeast Slab shard challenge.",
-          "Wisp Thicket: take the eastern mask-shard challenge with double jump.",
-          "Blasted Steps: use Clawline and double jump for the western shard challenge. Visit while handling Pinstress and the Sands of Karak route if convenient.",
-          "Confirm nine permanent masks in the inventory. Sixteen shards are available before Act 3; the remaining four shards and tenth permanent mask require Act 3. Regional grouping here is a preparation plan, not a measured fastest route."
+          {
+            "id": "cursed-shard-jubilana",
+            "title": "Buy Jubilana’s mask shard",
+            "detail": "Pay 750 rosaries at her Songclave shop after The Wandering Merchant."
+          },
+          {
+            "id": "cursed-shard-skull-cave",
+            "title": "Collect the Far Fields Skull Cave shard",
+            "detail": "Clear the lava gauntlet with Clawline and Drifter’s Cloak. Magma Bell can help."
+          },
+          {
+            "id": "cursed-shard-beastfly",
+            "title": "Claim the Savage Beastfly wish shard",
+            "detail": "Defeat the first Beastfly in the Chapel of the Beast if needed. Take the Bellhart wish, beat the second Beastfly in Fourth Chorus’s old arena and turn in the Horn Fragment at Bellhart’s Wishwall."
+          },
+          {
+            "id": "cursed-shard-bilewater",
+            "title": "Collect the east Bilewater shard",
+            "detail": "Look in the Slubberlug hallway. The hidden eastern Whispering Vaults entry for the Twisted Bud is nearby. You can pick up the Bud on this trip and mark it in the curse stage."
+          },
+          {
+            "id": "cursed-shard-slab",
+            "title": "Collect the northeast Slab shard",
+            "detail": "Find the Key of Apostate in Putrified Ducts west of Huntress’s home. Use the key and double jump for the shard challenge."
+          },
+          {
+            "id": "cursed-shard-wisp-thicket",
+            "title": "Collect the east Wisp Thicket shard",
+            "detail": "Use double jump for the eastern challenge."
+          },
+          {
+            "id": "cursed-shard-blasted-steps",
+            "title": "Collect the west Blasted Steps shard",
+            "detail": "Use Clawline and double jump. You can combine this with the Pinstress and Sands of Karak trip."
+          }
         ],
         "links": [
           {
@@ -2243,12 +2328,23 @@
       },
       {
         "id": "cursed-ready",
-        "title": "5 · Finish the useful preparation before Greyroot",
+        "title": "Confirm readiness before Greyroot",
+        "note": "Use tools and healing while collecting upgrades. The Cursed Crest caps Silk at three and disables Bind healing, Silk Skills and all tools, including Fractured Mask and Plasmium Phial. Extra spools, Silk Hearts, pouches, lockets and kits only help during preparation.",
         "steps": [
-          "Check nine permanent masks, Hivesteel Needle, Faydown Cloak and Needle Strike in the actual inventory. Practice double jump before committing to the new fight setup.",
-          "Use your normal loadout to finish any missing collection challenges. More pouches or Crafting Kits are optional help for those trips, not part of the cursed GMS target. Keep the existing two of each unless a preparation encounter gives you a reason to add more.",
-          "Do not spend the cleanup on maxing Silk capacity or Silk Hearts for the cursed fight; the curse’s three-strand cap overrides the extra capacity and Bind cannot heal. Plasmium Phial can help the Mount Fay trip, but cannot be used as a healing tool while cursed.",
-          "Budget at least 1,680 rosaries for the Nectar, third Needle upgrade and shop shard if all three are still unbought. Allow extra for maps, benches, travel stations, optional aids and retries. No wallet balance is assumed."
+          {
+            "id": "cursed-nine-masks",
+            "title": "Confirm nine permanent masks in the inventory"
+          },
+          {
+            "id": "cursed-ready-upgrades",
+            "title": "Confirm Hivesteel Needle, Faydown Cloak and Needle Strike",
+            "detail": "Practice double jump before applying the curse."
+          },
+          {
+            "id": "cursed-ready-return",
+            "title": "Confirm the return route to Terminus",
+            "detail": "Check Shellwood Bellway → Grand Bellway → Ventrica → Terminus and the shortcut to GMS."
+          }
         ],
         "links": [
           {
@@ -2263,12 +2359,24 @@
       },
       {
         "id": "cursed-commit",
-        "title": "6 · Get cursed last, then return straight to GMS",
+        "title": "Apply the curse when ready",
+        "note": "Stay in Act 2 and keep the curse until Twisted Child is earned. Leave Snared Silk and Yarnaby’s Infestation Operation for after the ending.",
         "steps": [
-          "Complete Greyroot’s Rite of the Pollip in Shellwood if needed. Keep the Twisted Bud turn-in until after the final inventory and return-route checks.",
-          "Give Greyroot the Twisted Bud and complete Rite of Rebirth. This starts the curse and moves Hornet to the Chapel of the Witch; the Cursed Crest is now locked on.",
-          "Leave the chapel back into Shellwood, take Shellwood Bellway to Grand Bellway and use its Ventrica to Terminus. Rest at the Terminus bench for full health and the retry point, then use the opened shortcut to GMS.",
-          "Keep the curse through the win. Do not have Yarnaby complete Infestation Operation, and do not choose the Snared Silk route. Save any cure and Act 3 plans until after Twisted Child is earned."
+          {
+            "id": "cursed-twisted-bud",
+            "title": "Collect and hold the Twisted Bud",
+            "detail": "Use the hidden eastern Whispering Vaults entry. Keep the Bud until your upgrades and return route are ready."
+          },
+          {
+            "id": "cursed-rite-pollip",
+            "title": "Complete Greyroot’s Rite of the Pollip",
+            "detail": "Visit Greyroot in Shellwood."
+          },
+          {
+            "id": "cursed-rite-rebirth",
+            "title": "Complete Rite of Rebirth and apply the curse",
+            "detail": "Give Greyroot the Bud once ready. Hornet wakes at the Chapel of the Witch with the Cursed Crest locked on."
+          }
         ],
         "links": [
           {
@@ -2287,12 +2395,19 @@
       },
       {
         "id": "cursed-fight",
-        "title": "7 · Cursed GMS: damage safely and retry without a clock",
+        "title": "Grand Mother Silk and Twisted Child",
+        "note": "Use short Needle openings and double jump to avoid knives and silk traps. Needle Strike still works and extra attack taps extend the spin. Practice its recovery before using the full combo. Rest at Terminus between attempts.",
         "steps": [
-          "Use the long whip-like Needle swings and the double jump you prepared. Keep the patient openings from the successful timed run, but plan around having no Bind healing, Cogflies, pins or Fractured Mask.",
-          "Needle Strike still works with the Cursed Crest. Its spinning attack can be extended with extra ATTACK taps; test its reach and recovery safely before relying on the full combo during GMS.",
-          "Take short openings and prioritize avoiding the knives and silk traps. Rest at Terminus between attempts to refill health. There is no five-hour target for this attempt.",
-          "Report the cursed result as Run #3 continuation/practice. Keep Run #4’s 3:27:17 finish intact; this chapter does not create or overwrite a timed split."
+          {
+            "id": "cursed-return-terminus",
+            "title": "Return to Terminus with the Cursed Crest",
+            "detail": "Exit the chapel into Shellwood, take Shellwood Bellway to Grand Bellway, then use the Ventrica to Terminus. Rest for full health and take the runback shortcut to GMS."
+          },
+          {
+            "id": "cursed-twisted-child",
+            "title": "Twisted Child earned",
+            "detail": "Defeat Grand Mother Silk while cursed and record the result here."
+          }
         ],
         "links": [
           {

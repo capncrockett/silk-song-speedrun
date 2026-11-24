@@ -1,7 +1,7 @@
 import assert from "node:assert/strict";
 import { access, readFile } from "node:fs/promises";
 import { createHash } from "node:crypto";
-import { changePickups, changeRosaryBudget, changeSplit, formatTime, listGuideStops, listRecordingStops, listStops, parseTime, pickupCategories, rosaryBudget, runSummary, shoppingSummary, validateRunData } from "../public/model.mjs";
+import { changeCursedProgress, changePickups, changeRosaryBudget, changeSplit, formatTime, listGuideStops, listRecordingStops, listStops, parseTime, pickupCategories, rosaryBudget, runSummary, shoppingSummary, validateRunData } from "../public/model.mjs";
 
 const root = new URL("../", import.meta.url);
 const readJson = async (path) => JSON.parse(await readFile(new URL(path, root), "utf8"));
@@ -204,6 +204,28 @@ const budgetFixture = { version: 1, revision: 0, runs: [
   { id: "budget-other", name: "Other run", mode: "scout", notes: "", prep: [], splits: [] }
 ] };
 const budgetOriginal = structuredClone(budgetFixture);
+const cursed = route.cursedGuide;
+assert.deepEqual(cursed.stages.map(({ id }) => id), [
+  "cursed-start", "cursed-faydown", "cursed-needle", "cursed-masks", "cursed-ready", "cursed-commit", "cursed-fight"
+]);
+const cursedIds = cursed.stages.flatMap((stage) => stage.steps.map((step) => step.id));
+assert.equal(new Set(cursedIds).size, cursedIds.length, "Give each Cursed pickup or action one stable check.");
+assert.equal(cursedIds.filter((id) => id.startsWith("cursed-shard-")).length, 8, "Count Mount Fay only once.");
+
+const cursedCheck = changeCursedProgress(cursed, budgetFixture, "budget-run", { id: "cursed-shard-mount-fay", checked: true });
+assert.deepEqual(cursedCheck.runs[0], { ...budgetOriginal.runs[0], cursed: { checks: ["cursed-shard-mount-fay"] } });
+assert.deepEqual(cursedCheck.runs[1], budgetOriginal.runs[1], "Cursed checkmarks belong to the selected run.");
+assert.deepEqual(budgetFixture, budgetOriginal, "Cursed edits must not mutate loaded data.");
+cursedCheck.runs[0].cursed.futureField = "Keep an unknown field";
+cursedCheck.runs[0].cursed.checks.push("future-check");
+const cursedNotes = changeCursedProgress(cursed, cursedCheck, "budget-run", { notes: "First attempt" });
+const cursedUndo = changeCursedProgress(cursed, cursedNotes, "budget-run", { id: "cursed-shard-mount-fay", checked: false });
+assert.deepEqual(cursedUndo.runs[0].cursed, {
+  checks: ["future-check"], notes: "First attempt", futureField: "Keep an unknown field"
+});
+assert.doesNotThrow(() => validateRunData(cursedUndo));
+assert.throws(() => changeCursedProgress(cursed, cursedUndo, "budget-run", { id: "mask-pebb", checked: true }), /Cursed checklist item/);
+
 assert.equal(rosaryBudget(route, budgetFixture.runs[0]).maximum, 2015);
 assert.equal(rosaryBudget(route, budgetFixture.runs[0]).optionalTotal, 40);
 const paidOptional = changeRosaryBudget(route, budgetFixture, "budget-run", { purchaseId: "bench-shellwood-arena", paid: true });
@@ -381,7 +403,7 @@ for (const section of route.sections) {
 }
 
 await Promise.all([
-  "public/index.html", "public/styles.css", "assets/artwork/hornet-mask-icon.png", "assets/artwork/hornet.png", "assets/artwork/hornet.webp", "HANDOFF.md"
+  "public/index.html", "public/cursed.html", "public/styles.css", "assets/artwork/hornet-mask-icon.png", "assets/artwork/hornet.png", "assets/artwork/hornet.webp", "HANDOFF.md"
 ].map((file) => access(new URL(file, root))));
 
 // Imported chats preserve legacy links and old mistakes verbatim. Validate their

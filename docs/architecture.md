@@ -10,7 +10,8 @@ Read [HANDOFF.md](../HANDOFF.md) for route decisions and current run context.
 |---|---|
 | Walkthrough copy, map selection, pickups, purchases, untimed cursed preparation | [data/route.json](../data/route.json) |
 | Startup, run selection, reading position, cross-feature refreshes | [public/app.mjs](../public/app.mjs) |
-| Guide headings, instructions, inline pickup placement, sections, untimed continuation | [guide.mjs](../public/ui/guide.mjs) |
+| Guide headings, instructions, inline pickup placement and sections | [guide.mjs](../public/ui/guide.mjs) |
+| Cursed ending file selection, checklist and attempt notes | [cursed.mjs](../public/ui/cursed.mjs) |
 | Map gallery, keys, tabs, enlarged viewer and zoom | [maps.mjs](../public/ui/maps.mjs) |
 | Pickup saving, drawer, counts, category completion, inline synchronization | [pickups.mjs](../public/ui/pickups.mjs) |
 | Pinned Pickups rosary total, paid purchases and next-stop shopping | [budget.mjs](../public/ui/budget.mjs) |
@@ -21,7 +22,7 @@ Read [HANDOFF.md](../HANDOFF.md) for route decisions and current run context.
 | Drawer animation, Escape, backdrop and after-close callbacks | [drawers.mjs](../public/ui/drawers.mjs) |
 | Small DOM helpers | [dom.mjs](../public/ui/dom.mjs) |
 | Pure timing, route, pickup and validation rules | [public/model.mjs](../public/model.mjs) |
-| Page structure and styling | [index.html](../public/index.html), [styles.css](../public/styles.css) |
+| Page structure and styling | [index.html](../public/index.html), [cursed.html](../public/cursed.html), [styles.css](../public/styles.css) |
 | HTTP endpoints, served-file allowlist and disk saves | [server.mjs](../server.mjs) |
 | Data, model, asset and documentation checks | [scripts/check.mjs](../scripts/check.mjs) |
 | Browser module syntax, imports and HTTP serving checks | [scripts/check-modules.mjs](../scripts/check-modules.mjs) |
@@ -55,21 +56,12 @@ Avoid circular imports, global event buses and a second state store. Feature and
 shared modules should be safe to import without a DOM; access the page inside
 functions. The app entry point starts the browser UI.
 
-The untimed Run #3 continuation lives in `route.cursedGuide`, outside the timed
-`sections`, checkpoints and preparations. `ui/guide.mjs` renders its sourced
-stages into `#cursed-preparation` and opens it from the GMS page’s continuation
-link. Its starting record comes from the configured run ID in the same shared
-state; it never clones a run, adds timing points, checks pickups or saves data.
-Existing timed navigation and totals remain independent. Stage accordions retain
-their open state during guide renders. Update this data for new preparation
-choices rather than inserting cursed stages into the timed route.
-
-Planned change, November 23: Joseph wants this approved checklist on a separate
-Cursed ending page/view that continues a chosen existing file (Run #3 by default),
-with independent untimed checklist progress. The embedded renderer above describes
-the current prototype, not the intended final placement. Read the next-task
-handoff in `HANDOFF.md` before implementation. Move the content/UI out of the main
-guide, preserve historical run modes/splits and use the existing save mechanism.
+The `/cursed` page uses the seven sourced stages in `route.cursedGuide`.
+`app.mjs` loads the route and run data, then starts `ui/cursed.mjs` on that page.
+Run #3 is the configured default when available. The file picker updates the
+`run` query parameter so a reload opens the same checklist. The baseline uses
+recorded speedrun pickups as an inventory reference. Cursed checkmarks come from
+the selected run’s own continuation.
 
 ## Saving
 
@@ -80,6 +72,12 @@ visible failure messages.
 Pickup conflict retries reapply only the clicked pickup IDs to the latest data
 for the run captured when the edit began. Other edits retain revision conflict
 protection. Do not retry a whole stale run snapshot automatically.
+
+`changeCursedProgress` applies a single check or an attempt note to a copy of
+the selected run’s optional `cursed` object. Its `checks` array holds stable
+item IDs, including the Twisted Child result. Cursed saves use the same
+revision check as splits and report a conflict when another tab has a newer
+save. The checklist syncs back to the last confirmed state after a failed save.
 
 Instruction timing points live in `data/route.json` as `guideSplits` with an
 instruction number, target checkpoint ID and timing cue. `model.mjs` merges
@@ -135,6 +133,11 @@ paid checks and pickup synchronization in both directions, navigation independen
 run isolation, draft retention, failures/conflicts and save/reload. Use isolated data.
 
 For split-form changes, verify inline and Run log edits, second precision, retained notes/labels, cross-page targets, finish validation, stale-tab conflicts, failed writes and draft/focus retention.
+
+For Cursed checklist changes, open `/cursed` directly in Playwright with an
+isolated save. Verify file selection, check and note persistence, stale-tab
+conflicts, the Mount Fay shard tally and the mobile layout. Check the speedrun
+guide’s 22 pages, 24 timing points and Run #4’s recorded finish.
 
 For changes crossing modules, check navigation, run switching, inline/drawer
 pickup synchronization and the affected save path. Preserve keyboard focus,

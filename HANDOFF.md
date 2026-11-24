@@ -4,7 +4,7 @@ Updated November 23, 2026. The local app is implemented. Joseph finished **Run #
 
 ## Working contract
 
-- Keep one timed route in [data/route.json](./data/route.json), with stable checkpoint and preparation IDs. Historical labels and reported precision survive route edits. The Cursed ending preparation belongs on its own untimed checklist page/view for a chosen existing game file. The current embedded `cursedGuide` is source material for that page, not the intended home inside the main speedrun guide.
+- Keep one timed route in [data/route.json](./data/route.json), with stable checkpoint and preparation IDs. Historical labels and reported precision survive route edits. The standalone Cursed ending page uses the sourced `cursedGuide` checklist for a chosen existing game file.
 - Treat `.runbook/runs.json` as the active save. [data/seed-runs.json](./data/seed-runs.json) remains the original 26-split import ending at **4:57**, with three recorded pickups and no finish. Never replace an existing save with the seed or infer pickups from route progress.
 - Keep timed and scout results separate. Use the manual in-game clock, retain idle time and detours, and finish only when a `gms` split is reported. Sub-five is strictly below `5:00:00`.
 - Keep the app local and dependency-free. The route keeps 31 original checkpoint IDs and a guide-only Last Judge stop. The 24 current timing points appear across 22 guide pages grouped under the Garmond guide’s 13 sections. The section title is the main heading and the checkpoint is a subtitle. Inline maps, numbered directions, and Previous/Next are the main experience. Guide position starts at Silkspear and persists independently of run selection and split entry.
@@ -14,66 +14,24 @@ Updated November 23, 2026. The local app is implemented. Joseph finished **Run #
 - Write the timed walkthrough and purchases for collecting every planned pickup in order. Keep old recovery options for missed items in research. Conditional shop entry fees, retries and actual supply needs still apply. The selected Mask trip follows Conductor’s Melody and returns to High Halls bench.
 - Discuss unresolved route choices **one question or pickup at a time**. Keep alternatives here; update the route only when a choice changes. Run `npm run check` after changes and commit coherent work.
 
-## Next task · separate Cursed ending checklist page
+## Cursed ending checklist
 
-**Latest direction · November 23:** Joseph wants a handoff for a **separate, lightweight Cursed ending page/view**, continuing an existing save file. In his case that is **Run #3**, the file he used as his practical scout: he normally tried sections there first and it was substantially behind Run #4. He likes the researched checklist and wants to reuse it. The new work is to move/reuse that content on its own page, rather than append it to the main speedrun guide. No new map collection, map drawing, detailed route project or speedrun-style walkthrough is needed.
+Open **Cursed ending** from the guide header or go to [the local checklist](http://127.0.0.1:4173/cursed). It defaults to **Run #3** when that record is available. The file picker can open any existing run and keeps the chosen file on reload. Each file has its own checks, attempt notes and Twisted Child result.
 
-**This handoff is documentation only. The page separation is the next implementation task.** The existing prototype is still embedded below the main guide; do not tell Joseph it has already been moved.
+**Run #3 starting point.** Joseph used this game file to scout and says it is sitting at Grand Mother Silk. Its last timed entry is **Lace 2 defeated at 4:21**, minute precision, with note **“2 try”**. The starting pickup record shows eight mask shards and Needle Upgrade #2. Confirm the inventory in-game. The Cursed checks start blank and no curse or clear has been reported.
 
-### Scope and experience
+1. Confirm the save is in Act 2. Verify the Terminus shortcut and return travel, then start Great Taste and check whether Jubilana is available.
+2. Collect Faydown Cloak and the Mount Fay shard. That shard counts toward the eight additional shards.
+3. Learn Needle Strike and turn in the five Great Taste ingredients for Pale Oil. Buy Hivesteel Needle from Plinney.
+4. Collect each remaining shard while tools and healing are available. Check nine permanent masks, the Needle and movement upgrades, and return travel before visiting Greyroot.
+5. Complete Rite of the Pollip, then use the Twisted Bud for Rite of Rebirth once ready. Stay in Act 2 and keep the curse through the GMS win. Record Twisted Child and any notes on the checklist.
 
-- Provide a clearly separate **Cursed ending** page/view in the same local, dependency-free app, with its own address or navigation entry. A simple link between the two views is enough; keep Cursed stages out of the speedrun’s page numbering, maps, split forms and pickup totals.
-- Reuse the existing seven-stage preparation content and source links, reducing it to a practical checklist where useful. Joseph approves the substance and presentation; rebuild only what is needed for its new home and progress controls.
-- The page continues a **chosen existing save**, rather than representing a new timed run. Default to Run #3 for Joseph, but allow another existing file to be chosen. Show which file the checklist belongs to.
-- Support ordinary checkboxes for useful upgrades, ingredients, remaining mask shards, final readiness, applying the curse and the ending result. Keep the layout simple. There is no overall clock, sub-five goal, split schedule or requirement to build all the maps/routes again.
-- Reuse the existing research rather than start over. The preparation goal remains nine masks, Hivesteel Needle/upgrade #3, Faydown Cloak and Needle Strike; become cursed only after finishing preparation, then go to GMS. Detailed research and sources remain under the November 22 entry below.
-
-### Current implementation to move
-
-The last implementation is commit **`7727d1f`**. It added a read-only seven-stage accordion and source links; it does **not** yet persist Cursed checklist checks.
-
-| Existing piece | Location / next action |
-|---|---|
-| All researched content and sources | `data/route.json` → `cursedGuide`; reuse/move as the single source for the new page. Preserve the seven existing stage IDs. |
-| Hardcoded current file | `cursedGuide.runId` = `8b149d0d-b52c-46c6-b5b9-85370bbb766d`; replace the fixed binding with an existing-file selector defaulting to Run #3. |
-| Embedded rendering and binding | `public/ui/guide.mjs` → `renderCursedPreparation()` and the `continue-cursed` click listener; extract responsibility to the separate page’s owning module. Keep shared state/save helpers rather than inventing a second persistence path. |
-| Main-guide markup | `public/index.html` → `#cursed-preparation`, its child IDs, and `#continue-cursed` in the GMS footer; remove the embedded checklist when the new page is ready. A normal navigation link to the separate page may remain. |
-| Styles | The final Cursed preparation block in `public/styles.css`; reuse or move the styles instead of leaving unused rules. |
-| Server / module ownership | `server.mjs` owns the local route/file allowlist and API. Register any new page, module or data endpoint there, and update `docs/architecture.md` and the relevant checks. |
-
-A small local page such as `/cursed` is a suitable implementation; the exact URL and module/file split are routine implementation choices. Extracting the content to something like `data/cursed.json` is reasonable, but retain one maintained copy. “Clone the checklist” means reuse the approved content and layout, **not** copy Run #4’s run data or replace Run #3 with a different save.
-
-### Save identity and progress rules
-
-- **Run #3:** `8b149d0d-b52c-46c6-b5b9-85370bbb766d`. Joseph calls it the scout file because of how he used it. The app currently stores `mode: "timed"`; preserve that historical record rather than reclassify it. Its last saved split is the historical **Lace 2 defeated at 4:21**, minute precision, with note **“2 try”**. Joseph says the game file is sitting at GMS. No Cursed setup or clear is yet reported.
-- **Run #4:** `3d07f68a-a46d-467e-880b-8e6886e39035`. Completed at **3:27:17**, second precision, GMS note **“2nd try!”**; keep the finish and its **24/24** current split display intact.
-- Store new Cursed progress separately from the chosen run’s historical `splits`, speedrun `prep` and paid purchases. A per-run continuation object with stable checklist IDs, notes and its own result is a reasonable shape. Keep it in the existing revision-protected save flow; do not use an uncoordinated second save file or browser-only checklist storage.
-- New Cursed-specific checks start unconfirmed unless the user already reported that exact item. Existing Run #3 pickup checks may provide a labeled starting record. They do not automatically prove new goals such as double jump, Needle Strike, the eight extra shards or curse completion. In particular, the existing eight shard records imply seven masks only if the game inventory agrees.
-- Changing the selected source file must load that file’s own Cursed progress; it must not duplicate checkmarks between files. Existing runs without the optional continuation field must still load/save unchanged.
-- Recording **Twisted Child earned** or attempt notes belongs to the untimed continuation. Do not overwrite Run #3’s old `gms`/Lace history or Run #4’s finish to represent the cursed result. Do not fabricate a new time.
-
-### Checklist content to carry across
-
-Retain the existing dependency order, with one check per actual pickup/action rather than marking whole paragraphs complete:
-
-1. Confirm the source file is still in Act 2; check the Terminus shortcut and return travel, start Great Taste, and rescue Jubilana if needed.
-2. Collect Faydown Cloak and the Mount Fay shard; count that shard once in the eight-extra-shard goal.
-3. Learn/check Needle Strike; collect Mossberry Stew, Vintage Nectar, Crustnut, Pickled Muckmaggot and Courier’s Rasher; turn them in for Pale Oil and obtain Hivesteel Needle.
-4. Track the eight additional shards individually: Jubilana, Mount Fay, Far Fields Skull Cave, Savage Beastfly wish, east Bilewater, northeast Slab, east Wisp Thicket and west Blasted Steps. Keep prerequisite notes/links from the existing content.
-5. Confirm nine masks, Needle #3, double jump, Needle Strike and the return to Terminus. Extra Silk, pouches and Crafting Kits are exploration aids rather than cursed-fight targets.
-6. Hold the Twisted Bud until ready, complete Rite of the Pollip, then apply the curse through Rite of Rebirth. Keep the Act 3 / Infestation Operation restriction visible beside this commitment.
-7. Return to GMS, track any attempt notes and the Cursed-ending result without a time target.
-
-The content currently contains useful reference links; keep them available. No new artwork, annotated maps, full map gallery or room-by-room route is needed for this task.
-
-### Completion checks for the next implementation
-
-Verify with **Playwright**, using an isolated `RUNBOOK_DATA_DIR`: the separate page opens directly and reloads; Run #3 is the default source; selecting another file isolates checks; checks save/reload with stable IDs; old run fields and unknown data survive saves; revision conflicts do not silently replace another file’s progress; desktop/mobile layout works. Confirm that the main guide no longer renders the Cursed accordion, still has 22 pages / 24 timing points, and Run #4 still shows 3:27:17 and 24/24. Run `npm run check` and commit the finished change. Never exercise write tests on the active save.
+The seven sourced stages are in [data/route.json](./data/route.json) under `cursedGuide`. Checklist edits save to the selected run’s `cursed` field through the existing revision check. The detailed [November 22 research](#run-3--untimed-act-2-preparation-for-twisted-child--november-22) holds the locations, ingredient costs and return route.
 
 ## Current run
 
 - **Run #4 finished at 3:27:17 — sub-five achieved.** Joseph confirms the finish on Run #4. The active save already records `gms` at **12,437 seconds**, second precision, with note **“2nd try!”**; keep it unchanged. This is **1:32:43 under five hours**, and **1:58:59 faster than Run #2’s 5:26:16**. Its preceding `lace-2` split is **3:22**, labeled **Terminus bench / runback shortcut**, with note **“1 attempt!”**. Do not infer a full ending loadout, Mask activation count or additional pickup checks.
-- **Run #3 selected for the separate Cursed checklist.** Joseph says he has two game files sitting at GMS and will continue Run #3, his practical scout/first-attempt file, for this ending. Its stored historical mode remains timed. Preserve its old results and keep the new untimed checklist/result separate; see the next-task handoff above. No curse application or cursed clear was reported.
+- **Run #3 selected for the separate Cursed checklist.** Joseph says he has two game files sitting at GMS and will continue Run #3, his practical scout/first-attempt file, for this ending. Its stored historical mode remains timed. Preserve its old results and keep the new untimed checklist/result separate; see the Cursed ending checklist above. No curse application or cursed clear was reported.
 
 - **Run #4, Clawline / Cauldron clear at 2:43; second kit checked.** Joseph returned to Grand Bellway and farmed after being short of rosaries at the Architect. The active save records the 2:43 split at minute precision and has `kit-second` checked. The farming duration, amount earned and remaining balance were not supplied. Preserve the save; no new melody pickup, roof gate opening or duel result was reported.
 
@@ -128,8 +86,6 @@ Joseph shifts the next focus to Run #3’s **cursed GMS attempt**, with no time 
 **Great Taste / Oil details:** promise the wish from Mergwin in the Choral Chambers dining hall. Obtain Mossberry Stew from the Mosshome Druid after Berry Picking; Vintage Nectar from Creige’s Halfway Home cellar for **480 rosaries**, with an arena; Crustnut in Sands of Karak past Great Conchflies and Pinstress; Pickled Muckmaggot from Lugoli in Sinner’s Road with double jump; and Courier’s Rasher after My Missing Courier + My Missing Brother. Rehearse Bellhart → Shellwood → Blasted Steps → Grand Gate → Choral Chambers before accepting the delivery, clear enemies without a later bench rest, and deliver on foot. The Rasher has its own freshness timer: hits shorten it, rather than every hit automatically failing the delivery. No fast travel during delivery. After all five, take the Oil plus 450 to Plinney. Reserve **1,680 rosaries** for Nectar + Needle #3 + Jubilana’s shard, with other costs extra and no assumed wallet balance.
 
 **Cursed finish setup:** collect the Twisted Bud via the hidden eastern Whispering Vaults/Bilewater entry during cleanup, but keep it. Possession alone does not apply the curse. Finish Rite of the Pollip before turning it in to Greyroot for Rite of Rebirth. Open/check Shellwood Bellway and the Terminus return before the hand-in; the demonstrated route exits the Chapel of the Witch up into Shellwood, takes Shellwood Bellway → Grand Bellway → Ventrica → Terminus, then rests for full health and the retry point. No new Terminus station purchase is needed: its Cradle access is opened by removing the rubble. Do not enter Act 3 via Snared Silk or complete Yarnaby’s Infestation Operation before the cursed win. The permanent upgrades and movement remain useful; tools and healing through Bind do not. Plasmium Phial is an optional Mount Fay aid, not a supported cursed-fight healing plan. No force-close manipulation is proposed.
-
-**Existing prototype · placement superseded November 23:** `data/route.json` has a sourced `cursedGuide` for Run #3, currently rendered after the main guide as **Cursed preparation · Run #3**, with a **Continue to cursed preparation** link on the GMS page. Its seven stages include linked maps/walkthroughs, upgrade limits, the eight shards, food dependencies, inventory/return checks and the cursed fight. It reads Run #3’s shared saved state for a starting-record summary; it has no collection checkboxes or timing forms, and never saves or infers new progress. The original 22 guide pages, 24 timing points, preparation IDs, costs, run checks and finish times stay intact. Research alternatives remain here; no new assets or dependencies were added. Joseph’s November 23 direction moves this approved content to a separate checklist page/view; the embedded placement is not the desired final design. See the next-task handoff above.
 
 Sources checked November 22: [Cursed Crest](https://hollowknight.wiki/w/Cursed_Crest), [Act-specific mask shards](https://hollowknight.wiki/w/Mask_Shard_%28Silksong%29), [Pale Oil and current upgrade costs](https://hollowknight.wiki/w/Pale_Oil), [Faydown Cloak](https://hollowknight.wiki/w/Faydown_Cloak), [Needle Strike](https://hollowknight.wiki/w/Needle_Strike), [Savage Beastfly wish](https://hollowknight.wiki/w/Savage_Beastfly_%28Wish%29), [Slab Keys](https://hollowknight.wiki/w/Slab_Keys), [Great Taste walkthrough](https://www.nintendolife.com/guides/hollow-knight-silksong-the-great-taste-of-pharloom-quest-all-ingredients-best-couriers-rasher-route), [IGN ingredient walkthrough](https://www.youtube.com/watch?v=f5qOAK57vL4), [Terminus](https://hollowknight.wiki/w/The_Cradle#Terminus), [demonstrated Twisted% return](https://speedpastes.org/qP3ya9KQ), [cursed setup and fight video](https://www.youtube.com/watch?v=HTSdXeLting). Prefer the current 450-rosary Hivesteel cost over old launch guides saying 500. The wiki’s user-draft food page incorrectly describes damage as an automatic Rasher failure; the demonstrated delivery guides show the timer penalty.
 

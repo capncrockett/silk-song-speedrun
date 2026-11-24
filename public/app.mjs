@@ -2,6 +2,7 @@
 import { listGuideStops, listStops } from "./model.mjs";
 import { getJson } from "./ui/api.mjs";
 import { byId, status } from "./ui/dom.mjs";
+import { initCursed } from "./ui/cursed.mjs";
 import { createGuide } from "./ui/guide.mjs";
 import { createBudget } from "./ui/budget.mjs";
 import { bindMapEvents, renderMaps } from "./ui/maps.mjs";
@@ -62,7 +63,15 @@ function selectRun(id) {
 
 async function start() {
   try {
-    [state.route, state.data, state.maps] = await Promise.all([getJson("/api/route"), getJson("/api/runs"), getJson("/api/maps")]);
+    const cursed = Boolean(byId("cursed-page"));
+    [state.route, state.data, state.maps] = await Promise.all([
+      getJson("/api/route"), getJson("/api/runs"), cursed ? null : getJson("/api/maps")
+    ]);
+    if (cursed) {
+      initCursed();
+      byId("startup").hidden = true;
+      return;
+    }
     state.stops = listStops(state.route);
     state.guideStops = listGuideStops(state.route);
     // Freeze the recorded label on the next save, before future route edits.

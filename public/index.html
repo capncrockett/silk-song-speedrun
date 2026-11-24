@@ -17,7 +17,10 @@
         <img src="/assets/hornet-mask.png" alt="" width="40" height="40">
         <span>Pharloom <strong>Runbook</strong><small>A SILKSONG FIELD GUIDE</small></span>
       </a>
-      <a class="header-reference subtle-link" href="/docs/handoff.md" target="_blank" rel="noopener">Route decisions &amp; research ↗</a>
+      <nav class="header-reference header-links" aria-label="Runbook pages">
+        <a class="subtle-link" href="/cursed">Cursed ending</a>
+        <a class="subtle-link" href="/docs/handoff.md" target="_blank" rel="noopener">Route decisions &amp; research ↗</a>
+      </nav>
       <span class="local-label" role="status"><span></span><span id="save-indicator">Local runbook</span></span>
     </div>
   </header>
@@ -77,18 +80,8 @@
               <p id="shopping-note"></p>
               <p class="form-status" id="shopping-status" role="status"></p>
             </details>
-            <div class="step-footer"><span id="guide-next-label"></span><a class="subtle-link" id="continue-cursed" href="#cursed-preparation" hidden>Continue to cursed preparation ↓</a><button type="button" class="subtle-link" id="log-this-step">Open split log ↓</button></div>
+            <div class="step-footer"><span id="guide-next-label"></span><button type="button" class="subtle-link" id="log-this-step">Open split log ↓</button></div>
           </article>
-          <details class="panel collapsible cursed-preparation" id="cursed-preparation" hidden>
-            <summary id="cursed-preparation-title"><span>Cursed preparation · Run #3</span><span class="count">Untimed · Act 2</span></summary>
-            <div class="cursed-content">
-              <p class="section-description" id="cursed-intro"></p>
-              <p class="cursed-goal" id="cursed-goal"></p>
-              <p class="section-description" id="cursed-baseline"></p>
-              <p class="cursed-limits" id="cursed-limits"></p>
-              <div id="cursed-stages"></div>
-            </div>
-          </details>
           <details class="panel collapsible" id="maps">
             <summary><span>All reference maps</span><span class="count" id="map-count"></span></summary>
             <div class="inline-maps">
@@ -103,7 +96,7 @@
             <div class="run-tools-content">
               <div class="session-bar" id="session-bar">
                 <div class="session-picker"><label for="run-select">Session</label><select id="run-select" aria-label="Active session"></select><span class="session-badge" id="session-badge">In progress</span></div>
-                <button class="button secondary" type="button" id="new-run">＋ Prepare final run</button>
+                <button class="button secondary" type="button" id="new-run" data-write>＋ Prepare final run</button>
               </div>
               <section class="metrics" aria-label="Recorded run summary">
                 <div class="metric"><span class="eyebrow">Latest split</span><span class="metric-value" id="latest-value">—</span><span class="metric-description" id="latest-label"></span></div>

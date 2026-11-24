@@ -21,10 +21,12 @@ if (!Number.isInteger(port) || port < 0 || port > 65535) {
 const files = new Map([
   ["/", ["public/index.html", "text/html; charset=utf-8"]],
   ["/index.html", ["public/index.html", "text/html; charset=utf-8"]],
+  ["/cursed", ["public/cursed.html", "text/html; charset=utf-8"]],
   ["/styles.css", ["public/styles.css", "text/css; charset=utf-8"]],
   ["/app.mjs", ["public/app.mjs", "text/javascript; charset=utf-8"]],
   ["/model.mjs", ["public/model.mjs", "text/javascript; charset=utf-8"]],
   ["/ui/api.mjs", ["public/ui/api.mjs", "text/javascript; charset=utf-8"]],
+  ["/ui/cursed.mjs", ["public/ui/cursed.mjs", "text/javascript; charset=utf-8"]],
   ["/ui/dom.mjs", ["public/ui/dom.mjs", "text/javascript; charset=utf-8"]],
   ["/ui/drawers.mjs", ["public/ui/drawers.mjs", "text/javascript; charset=utf-8"]],
   ["/ui/guide.mjs", ["public/ui/guide.mjs", "text/javascript; charset=utf-8"]],

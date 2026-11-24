@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="An untimed Act 2 checklist for Silksong’s Twisted Child ending.">
+  <title>Cursed ending · Pharloom Runbook</title>
+  <link rel="icon" href="/assets/hornet-mask.png" type="image/png">
+  <link rel="apple-touch-icon" href="/assets/hornet-mask.png">
+  <link rel="stylesheet" href="/styles.css">
+  <script type="module" src="/app.mjs"></script>
+</head>
+<body>
+  <header class="topbar">
+    <div class="shell bar-inner">
+      <a class="brand" href="/">
+        <img src="/assets/hornet-mask.png" alt="" width="40" height="40">
+        <span>Pharloom <strong>Runbook</strong></span>
+      </a>
+      <nav class="header-reference header-links" aria-label="Runbook pages">
+        <a class="subtle-link" href="/">← Speedrun guide</a>
+      </nav>
+      <span class="local-label" role="status"><span></span><span id="save-indicator">Local runbook</span></span>
+    </div>
+  </header>
+  <a class="skip-link" href="#main-content">Skip to checklist</a>
+  <main class="shell cursed-shell" id="main-content" tabindex="-1">
+    <header class="page-head">
+      <div>
+        <p class="eyebrow">Untimed · Act 2</p>
+        <h1>Cursed ending</h1>
+        <p class="subtitle" id="cursed-intro"></p>
+      </div>
+    </header>
+    <p id="startup" class="startup" role="status">Opening the checklist…</p>
+    <div id="cursed-page" hidden>
+      <div class="panel cursed-overview">
+        <div class="cursed-save">
+          <label for="run-select">Continue from</label>
+          <select id="run-select"></select>
+        </div>
+        <div>
+          <p class="cursed-goal" id="cursed-goal"></p>
+          <p class="cursed-baseline" id="cursed-baseline"></p>
+        </div>
+      </div>
+      <div class="cursed-stages" id="cursed-stages"></div>
+      <form class="panel cursed-notes" id="cursed-notes-form">
+        <label for="cursed-notes">Attempt notes</label>
+        <textarea id="cursed-notes" rows="4" maxlength="20000" data-write></textarea>
+        <div class="form-actions">
+          <button type="submit" class="button secondary" data-write>Save notes</button>
+          <p class="form-status" id="cursed-notes-status" role="status"></p>
+        </div>
+      </form>
+    </div>
+  </main>
+</body>
+</html>

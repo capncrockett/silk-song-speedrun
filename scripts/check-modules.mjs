@@ -62,6 +62,10 @@ try {
   }
 
   await checkModule(new URL("/app.mjs", origin));
+  const cursed = await fetch(new URL("/cursed", origin), { signal: AbortSignal.timeout(5000) });
+  assert.equal(cursed.status, 200, "The Cursed checklist must open directly.");
+  assert.match(cursed.headers.get("content-type"), /^text\/html\b/);
+  assert.match(await cursed.text(), /<h1>Cursed ending<\/h1>/);
   console.log(`Verified ${visited.size} browser modules: syntax, linked imports, local HTTP URLs and JavaScript content types.`);
 } finally {
   server.kill();

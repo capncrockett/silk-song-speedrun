@@ -28,6 +28,7 @@ h3 { font-size: .95rem; font-weight: 550; line-height: 1.5; }
 .brand strong { font-weight: 400; }
 .brand small { display: block; margin-top: .4rem; color: var(--soft); font: .53rem -apple-system, sans-serif; letter-spacing: .19em; }
 .header-reference { margin-left: auto; }
+.header-links { display: flex; flex-wrap: wrap; justify-content: end; gap: .2rem 1.25rem; }
 .local-label { display: flex; align-items: center; gap: .5rem; color: var(--muted); font-size: .7rem; white-space: nowrap; }
 .local-label > span:first-child { width: 6px; height: 6px; background: var(--green); border-radius: 50%; }
 .page-head { display: flex; align-items: center; justify-content: space-between; gap: 1.5rem; margin-block: 1.65rem 2rem; }
@@ -307,7 +308,8 @@ html.prep-open, html.sections-open { overflow: hidden; }
   .brand { font-size: 1.1rem; gap: .5rem; }
   .brand img { width: 30px; height: 35px; }
   .brand small { font-size: .46rem; }
-  .header-reference { max-width: 7rem; font-size: .62rem; text-align: right; line-height: 1.7; }
+  .header-reference { max-width: 8rem; text-align: right; line-height: 1.55; }
+  .header-reference .subtle-link { font-size: .67rem; }
   .hero-hornet { display: none; }
   .page-head .eyebrow { font-size: .52rem; }
   .step-heading { margin-block: 1.1rem; }
@@ -326,14 +328,28 @@ html.prep-open, html.sections-open { overflow: hidden; }
   .map-viewer-bar h2 { flex-basis: 100%; }
 }
 
-/* Untimed continuation after the completed speedrun guide. */
-.cursed-content { padding: 0 1.1rem 1.1rem; }
-.cursed-content > p { margin-bottom: 1rem; line-height: 1.8; }
-.cursed-goal { color: var(--green); font-size: .9rem; }
-.cursed-limits { padding: .8rem 1rem; border-left: 2px solid var(--accent); background: #eca38c05; color: var(--muted); font-size: .8rem; }
-.cursed-stage { border-top: 1px solid var(--line); padding-block: 1rem; }
-.cursed-stage > summary { display: flex; align-items: baseline; gap: .6rem; color: var(--ink); font-size: .9rem; font-weight: 500; line-height: 1.6; }
-.cursed-stage ol { margin: 1rem 0; padding-left: 1.3rem; }
-.cursed-stage li { color: var(--muted); font-size: .85rem; line-height: 1.85; padding-left: .3rem; margin-top: .7rem; }
-.cursed-stage li::marker { color: var(--accent); }
-.cursed-stage .links { margin-bottom: 0; }
+/* Cursed ending checklist. */
+.cursed-shell { max-width: 52rem; padding-bottom: 3rem; }
+.cursed-shell .page-head { margin-block: 2rem 1.5rem; }
+.cursed-shell .subtitle { font-size: .9rem; }
+.cursed-overview { display: flex; flex-wrap: wrap; align-items: center; gap: 1rem 1.4rem; padding: 1rem 1.1rem; }
+.cursed-overview > :last-child { flex: 1 1 16rem; min-width: 0; }
+.cursed-save { display: grid; gap: .4rem; min-width: 0; width: min(100%, 12rem); }
+.cursed-save label, .cursed-notes label { color: var(--muted); font-size: .78rem; }
+.cursed-goal { color: var(--green); font-size: .88rem; line-height: 1.6; }
+.cursed-baseline { margin-top: .45rem; color: var(--muted); font-size: .78rem; line-height: 1.6; overflow-wrap: anywhere; }
+.cursed-stages { display: grid; gap: .55rem; margin-block: 1rem; }
+.cursed-stage > summary { min-height: 48px; font-size: .95rem; font-weight: 500; line-height: 1.5; }
+.cursed-stage > summary::after { margin-left: .25rem; }
+.cursed-stage-body { padding: 0 1.1rem 1rem; }
+.cursed-note { margin-bottom: .7rem; padding: .75rem .9rem; border-left: 2px solid var(--accent); background: #eca38c08; }
+.cursed-note, .cursed-detail { color: var(--muted); font-size: .83rem; line-height: 1.65; }
+.cursed-tasks { margin-block: .35rem 0; padding: 0; list-style: none; }
+.cursed-tasks li { padding: .6rem 0; border-bottom: 1px solid var(--line); }
+.cursed-tasks label { display: flex; align-items: start; gap: .65rem; cursor: pointer; font-size: .9rem; line-height: 1.5; }
+.cursed-tasks input { flex: 0 0 1.1rem; width: 1.1rem; height: 1.1rem; min-height: 0; margin: .13rem 0 0; accent-color: var(--green); }
+.cursed-detail { margin: .2rem 0 0 1.75rem; }
+.cursed-tasks .form-status { margin-left: 1.75rem; }
+.cursed-stage-body .links { margin-top: .8rem; }
+.cursed-notes { padding: .9rem 1.1rem 1rem; }
+.cursed-notes label { margin-top: 0; }

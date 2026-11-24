@@ -168,6 +168,25 @@ export function changeRosaryBudget(route, data, runId, change) {
   return next;
 }
 
+export function changeCursedProgress(guide, data, runId, change) {
+  const next = structuredClone(data);
+  const run = next.runs.find((item) => item.id === runId);
+  if (!run) throw new Error("This run is no longer in the saved runbook.");
+  const progress = { checks: [], ...run.cursed };
+  if ("notes" in change) {
+    if (typeof change.notes !== "string" || change.notes.length > 20_000) {
+      throw new Error("Attempt notes must fit within 20,000 characters.");
+    }
+    progress.notes = change.notes;
+  } else {
+    const known = guide.stages.some((stage) => stage.steps.some((step) => step.id === change.id));
+    if (!known || typeof change.checked !== "boolean") throw new Error("Choose a Cursed checklist item.");
+    progress.checks = changePickups(progress.checks, [change.id], change.checked);
+  }
+  run.cursed = progress;
+  return next;
+}
+
 export function shoppingSummary(route, checkpoint, run) {
   const stops = listStops(route);
   const index = stops.findIndex((stop) => stop.id === checkpoint);
@@ -225,6 +244,15 @@ export function validateRunData(data) {
           !Array.isArray(budget.paid) || budget.paid.some((id) => typeof id !== "string" || !ID.test(id)) ||
           new Set(budget.paid).size !== budget.paid.length) {
         throw new Error("A run has an invalid rosary budget.");
+      }
+    }
+    if (run.cursed !== undefined) {
+      const progress = run.cursed;
+      if (!progress || !Array.isArray(progress.checks) ||
+          progress.checks.some((id) => typeof id !== "string" || !ID.test(id)) ||
+          new Set(progress.checks).size !== progress.checks.length ||
+          (progress.notes !== undefined && (typeof progress.notes !== "string" || progress.notes.length > 20_000))) {
+        throw new Error("A run has invalid Cursed ending progress.");
       }
     }
 
