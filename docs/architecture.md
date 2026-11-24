@@ -64,6 +64,13 @@ Existing timed navigation and totals remain independent. Stage accordions retain
 their open state during guide renders. Update this data for new preparation
 choices rather than inserting cursed stages into the timed route.
 
+Planned change, November 23: Joseph wants this approved checklist on a separate
+Cursed ending page/view that continues a chosen existing file (Run #3 by default),
+with independent untimed checklist progress. The embedded renderer above describes
+the current prototype, not the intended final placement. Read the next-task
+handoff in `HANDOFF.md` before implementation. Move the content/UI out of the main
+guide, preserve historical run modes/splits and use the existing save mechanism.
+
 ## Saving
 
 Make edits to a copy of loaded run data and save through `api.mjs`. Replace
