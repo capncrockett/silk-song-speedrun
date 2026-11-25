@@ -1,6 +1,6 @@
 # Pharloom Runbook — current handoff
 
-Updated November 23, 2026. The local app is implemented. Joseph finished **Run #4 at 3:27:17** and is preparing **Run #3** for the cursed attempt. This file holds current route decisions, research alternatives, and open scout questions; [README.md](./README.md) covers use and maintenance. The [source archive](./docs/history.md) preserves older notes without serving as a second live handoff.
+Updated November 24, 2026. The local app is implemented. Joseph finished **Run #4 at 3:27:17** and is preparing **Run #3** for the cursed attempt. This file holds current route decisions, research alternatives, and open scout questions; [README.md](./README.md) covers use and maintenance. The [source archive](./docs/history.md) preserves older notes without serving as a second live handoff.
 
 ## Working contract
 
@@ -27,6 +27,14 @@ Open **Cursed ending** from the guide header or go to [the local checklist](http
 5. Complete Rite of the Pollip, then use the Twisted Bud for Rite of Rebirth once ready. Stay in Act 2 and keep the curse through the GMS win. Record Twisted Child and any notes on the checklist.
 
 The seven sourced stages are in [data/route.json](./data/route.json) under `cursedGuide`. Checklist edits save to the selected run’s `cursed` field through the existing revision check. The detailed [November 22 research](#run-3--untimed-act-2-preparation-for-twisted-child--november-22) holds the locations, ingredient costs and return route.
+
+### Collect nearby pickups during preparation · November 24
+
+Joseph missed the west Blasted Steps shard because the ingredient stage only mentioned Pinstress. Keep the seven stages and show shared checkboxes beside the related trips. Jubilana’s shop shows her shard, Needle Strike and Crustnut show the west Blasted Steps shard, Halfway Home shows Wisp Thicket, the Sinner’s Road trip shows the Bilewater shard and Bud, and the Far Fields Beastfly visit shows Skull Cave. The Mount Fay return flags the Slab shard with its Key of Apostate requirement. The shard stage now also shows Mount Fay.
+
+Each repeated checkbox uses its existing item ID and synchronizes with every other occurrence. Count each distinct shard once. No new pickup or quest completion was reported. The Sinner’s Road ingredient note also prompts the Pill rescue before accepting the Rasher delivery.
+
+Location references checked November 24 support the regional pairings and prerequisites. The Twisted Bud’s enclosed area requires the hidden eastern Whispering Vaults entrance. [Wisp Thicket access](https://hollowknight.wiki/w/Wisp_Thicket) · [Sinner’s Road / Bilewater connection](https://hollowknight.wiki/w/Bilewater) · [Pill rescue](https://hollowknight.wiki/w/My_Missing_Brother) · [Shard requirements](https://hollowknight.wiki/w/Mask_Shard_%28Silksong%29) · [Twisted Bud entrance](https://hollowknight.wiki/w/Twisted_Bud)
 
 ## Current run
 

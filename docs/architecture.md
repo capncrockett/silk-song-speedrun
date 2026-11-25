@@ -63,6 +63,12 @@ Run #3 is the configured default when available. The file picker updates the
 recorded speedrun pickups as an inventory reference. Cursed checkmarks come from
 the selected run’s own continuation.
 
+Each Cursed task has one canonical `id`. A task’s `nearby` array places
+`ref` checkboxes beside another trip, with optional contextual directions.
+A `ref` can also appear in a stage’s `steps`, such as Mount Fay in the shard
+list. The renderer resolves the canonical text and synchronizes every checkbox
+with that ID. Counts use distinct item IDs within each stage and across shards.
+
 ## Saving
 
 Make edits to a copy of loaded run data and save through `api.mjs`. Replace

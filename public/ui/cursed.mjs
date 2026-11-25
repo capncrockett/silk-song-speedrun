@@ -8,10 +8,12 @@ function syncChecks() {
   for (const stage of byId("cursed-stages").children) {
     const inputs = [...stage.querySelectorAll("[data-cursed-check]")];
     for (const input of inputs) input.checked = checked.has(input.dataset.cursedCheck);
-    stage.querySelector(".count").textContent = `${inputs.filter((input) => input.checked).length}/${inputs.length}`;
+    const ids = new Set(inputs.map((input) => input.dataset.cursedCheck));
+    stage.querySelector(".count").textContent = `${[...ids].filter((id) => checked.has(id)).length}/${ids.size}`;
   }
-  const shards = byId("cursed-stages").querySelectorAll('[data-cursed-check^="cursed-shard-"]:checked').length;
-  byId("cursed-shard-count").textContent = `${shards} of 8 additional shards confirmed`;
+  const shards = new Set([...byId("cursed-stages").querySelectorAll('[data-cursed-check^="cursed-shard-"]:checked')]
+    .map((input) => input.dataset.cursedCheck));
+  byId("cursed-shard-count").textContent = `${shards.size} of 8 additional shards confirmed`;
 }
 
 function showRun(id) {
@@ -38,7 +40,7 @@ async function saveProgress(change, statusId, message) {
   }
 }
 
-function renderTask(step, statusId) {
+function renderTask(step, statusId, contextId) {
   const row = node("li");
   const label = node("label");
   const input = node("input");
@@ -56,14 +58,14 @@ function renderTask(step, statusId) {
   row.append(label);
   if (step.detail) {
     const detail = node("p", "cursed-detail", step.detail);
-    detail.id = `${step.id}-detail`;
+    detail.id = `${contextId}-detail`;
     input.setAttribute("aria-describedby", detail.id);
     row.append(detail);
   }
   return row;
 }
 
-function renderStage(stage, index) {
+function renderStage(stage, index, tasksById) {
   const details = node("details", "panel collapsible cursed-stage");
   details.id = stage.id;
   details.open = index === 0;
@@ -80,7 +82,19 @@ function renderStage(stage, index) {
   message.id = `${stage.id}-status`;
   message.setAttribute("role", "status");
   const tasks = node("ul", "cursed-tasks");
-  tasks.append(...stage.steps.map((step) => renderTask(step, message.id)));
+  const resolveTask = (step) => ({ ...tasksById.get(step.ref), ...step });
+  tasks.append(...stage.steps.map((step) => {
+    const contextId = `${stage.id}-${step.id ?? step.ref}`;
+    const row = renderTask(resolveTask(step), message.id, contextId);
+    if (step.nearby?.length) {
+      const nearby = node("ul", "cursed-tasks cursed-nearby");
+      nearby.append(...step.nearby.map((reference) =>
+        renderTask(resolveTask(reference), message.id, `${contextId}-${reference.ref}`)
+      ));
+      row.append(nearby);
+    }
+    return row;
+  }));
   const references = node("div", "links");
   references.append(...links(stage.links));
   body.append(tasks, message, references);
@@ -92,7 +106,9 @@ export function initCursed() {
   const plan = state.route.cursedGuide;
   byId("cursed-intro").textContent = plan.intro;
   byId("cursed-goal").textContent = plan.goal;
-  byId("cursed-stages").replaceChildren(...plan.stages.map(renderStage));
+  const tasksById = new Map(plan.stages.flatMap((stage) => stage.steps)
+    .filter((step) => step.id).map((step) => [step.id, step]));
+  byId("cursed-stages").replaceChildren(...plan.stages.map((stage, index) => renderStage(stage, index, tasksById)));
 
   const picker = byId("run-select");
   picker.replaceChildren(...state.data.runs.map((run) => {

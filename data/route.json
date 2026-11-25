@@ -2158,7 +2158,13 @@
           {
             "id": "cursed-jubilana-rescue",
             "title": "Rescue Jubilana or confirm her shop is open",
-            "detail": "Complete The Wandering Merchant at Songclave if needed."
+            "detail": "Complete The Wandering Merchant at Songclave if needed.",
+            "nearby": [
+              {
+                "ref": "cursed-shard-jubilana",
+                "detail": "Buy the shard while you are at Jubilana’s Songclave shop. It costs 750 rosaries after The Wandering Merchant."
+              }
+            ]
           }
         ],
         "links": [
@@ -2189,7 +2195,13 @@
           {
             "id": "cursed-shard-mount-fay",
             "title": "Collect the Mount Fay mask shard",
-            "detail": "Use double jump to reach the southwest shard west of the bench. This counts toward the eight additional shards."
+            "detail": "Use double jump to reach the southwest shard west of the bench. This counts toward the eight additional shards.",
+            "nearby": [
+              {
+                "ref": "cursed-shard-slab",
+                "detail": "On the return through the Slab, collect the northeast shard if you already have the Key of Apostate. It needs the key and your new double jump. The key is in Putrified Ducts west of Huntress’s home."
+              }
+            ]
           }
         ],
         "links": [
@@ -2210,7 +2222,13 @@
           {
             "id": "cursed-needle-strike",
             "title": "Learn or confirm Needle Strike",
-            "detail": "Train with Pinstress in Blasted Steps on the way to Sands of Karak."
+            "detail": "Train with Pinstress in Blasted Steps on the way to Sands of Karak.",
+            "nearby": [
+              {
+                "ref": "cursed-shard-blasted-steps",
+                "detail": "Before leaving Blasted Steps for Sands of Karak, take the western shard challenge with Clawline and double jump."
+              }
+            ]
           },
           {
             "id": "cursed-mossberry-stew",
@@ -2220,17 +2238,39 @@
           {
             "id": "cursed-vintage-nectar",
             "title": "Collect Vintage Nectar",
-            "detail": "Pay Creige 480 rosaries at Halfway Home, then clear the cellar encounter."
+            "detail": "Pay Creige 480 rosaries at Halfway Home, then clear the cellar encounter.",
+            "nearby": [
+              {
+                "ref": "cursed-shard-wisp-thicket",
+                "detail": "While in Greymoor, climb the tower beside Halfway Home and take the northwest path into Wisp Thicket. Use double jump to enter and collect the eastern shard."
+              }
+            ]
           },
           {
             "id": "cursed-crustnut",
             "title": "Collect Crustnut",
-            "detail": "Pass Great Conchflies and Pinstress into Sands of Karak and finish the platforming route."
+            "detail": "Pass Great Conchflies and Pinstress into Sands of Karak and finish the platforming route.",
+            "nearby": [
+              {
+                "ref": "cursed-shard-blasted-steps",
+                "detail": "Collect this on the same Blasted Steps / Pinstress trip if it is still unchecked. Use Clawline and double jump."
+              }
+            ]
           },
           {
             "id": "cursed-pickled-muckmaggot",
             "title": "Collect Pickled Muckmaggot",
-            "detail": "Use double jump to reach and defeat Disgraced Chef Lugoli in Sinner’s Road."
+            "detail": "Use double jump to reach and defeat Disgraced Chef Lugoli in Sinner’s Road. If My Missing Brother is still open, take the wish in Bellhart before this trip and rescue Pill in central Sinner’s Road for the Rasher.",
+            "nearby": [
+              {
+                "ref": "cursed-shard-bilewater",
+                "detail": "Extend the Sinner’s Road trip into Bilewater through its eastern connection and collect the shard at the end of the eastern Slubberlug hallway."
+              },
+              {
+                "ref": "cursed-twisted-bud",
+                "detail": "For the same regional cleanup, enter the Bud’s enclosed part of Bilewater through the hidden eastern Whispering Vaults passage. Carry the Bud until all preparation is ready."
+              }
+            ]
           },
           {
             "id": "cursed-couriers-rasher",
@@ -2263,18 +2303,25 @@
           {
             "title": "IGN ingredient videos and timestamps",
             "url": "https://www.youtube.com/watch?v=f5qOAK57vL4"
+          },
+          {
+            "title": "Pill rescue in Sinner’s Road",
+            "url": "https://hollowknight.wiki/w/My_Missing_Brother"
           }
         ]
       },
       {
         "id": "cursed-masks",
         "title": "Finish the eight additional mask shards",
-        "note": "Check the Mount Fay shard in the double-jump stage. Sixteen shards are available in Act 2 for nine permanent masks. The tenth mask requires Act 3.",
+        "note": "Pickups shown beside earlier trips share these checkmarks. Sixteen shards are available in Act 2 for nine permanent masks. The tenth mask requires Act 3.",
         "steps": [
           {
             "id": "cursed-shard-jubilana",
             "title": "Buy Jubilana’s mask shard",
             "detail": "Pay 750 rosaries at her Songclave shop after The Wandering Merchant."
+          },
+          {
+            "ref": "cursed-shard-mount-fay"
           },
           {
             "id": "cursed-shard-skull-cave",
@@ -2284,12 +2331,24 @@
           {
             "id": "cursed-shard-beastfly",
             "title": "Claim the Savage Beastfly wish shard",
-            "detail": "Defeat the first Beastfly in the Chapel of the Beast if needed. Take the Bellhart wish, beat the second Beastfly in Fourth Chorus’s old arena and turn in the Horn Fragment at Bellhart’s Wishwall."
+            "detail": "Defeat the first Beastfly in the Chapel of the Beast if needed. Take the Bellhart wish, beat the second Beastfly in Fourth Chorus’s old arena and turn in the Horn Fragment at Bellhart’s Wishwall.",
+            "nearby": [
+              {
+                "ref": "cursed-shard-skull-cave",
+                "detail": "While in Far Fields for the second Beastfly, collect the Skull Cave shard before returning to Bellhart. Clawline and Drifter’s Cloak are required. Magma Bell can help in the lava gauntlet."
+              }
+            ]
           },
           {
             "id": "cursed-shard-bilewater",
             "title": "Collect the east Bilewater shard",
-            "detail": "Look in the Slubberlug hallway. The hidden eastern Whispering Vaults entry for the Twisted Bud is nearby. You can pick up the Bud on this trip and mark it in the curse stage."
+            "detail": "Collect the shard at the end of the eastern Slubberlug hallway. Plan the Bud pickup on the same regional trip using its Whispering Vaults entrance.",
+            "nearby": [
+              {
+                "ref": "cursed-twisted-bud",
+                "detail": "Enter the Bud’s enclosed area through the hidden eastern Whispering Vaults passage. Keep the Bud until your upgrades and return route are ready."
+              }
+            ]
           },
           {
             "id": "cursed-shard-slab",
@@ -2304,7 +2363,7 @@
           {
             "id": "cursed-shard-blasted-steps",
             "title": "Collect the west Blasted Steps shard",
-            "detail": "Use Clawline and double jump. You can combine this with the Pinstress and Sands of Karak trip."
+            "detail": "Use Clawline and double jump for the western challenge. The same checkbox appears beside Needle Strike and Crustnut."
           }
         ],
         "links": [

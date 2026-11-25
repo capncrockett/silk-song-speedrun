@@ -208,9 +208,14 @@ const cursed = route.cursedGuide;
 assert.deepEqual(cursed.stages.map(({ id }) => id), [
   "cursed-start", "cursed-faydown", "cursed-needle", "cursed-masks", "cursed-ready", "cursed-commit", "cursed-fight"
 ]);
-const cursedIds = cursed.stages.flatMap((stage) => stage.steps.map((step) => step.id));
+const cursedSteps = cursed.stages.flatMap((stage) => stage.steps);
+const cursedIds = cursedSteps.filter((step) => step.id).map((step) => step.id);
 assert.equal(new Set(cursedIds).size, cursedIds.length, "Give each Cursed pickup or action one stable check.");
 assert.equal(cursedIds.filter((id) => id.startsWith("cursed-shard-")).length, 8, "Count Mount Fay only once.");
+const cursedReferences = cursedSteps.flatMap((step) => step.ref ? [step] : step.nearby ?? []);
+for (const reference of cursedReferences) {
+  assert.ok(cursedIds.includes(reference.ref), "Shared Cursed checkboxes must reference an existing item.");
+}
 
 const cursedCheck = changeCursedProgress(cursed, budgetFixture, "budget-run", { id: "cursed-shard-mount-fay", checked: true });
 assert.deepEqual(cursedCheck.runs[0], { ...budgetOriginal.runs[0], cursed: { checks: ["cursed-shard-mount-fay"] } });
