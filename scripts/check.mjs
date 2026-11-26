@@ -1,7 +1,7 @@
 import assert from "node:assert/strict";
 import { access, readFile } from "node:fs/promises";
 import { createHash } from "node:crypto";
-import { changeCursedProgress, changePickups, changeRosaryBudget, changeSplit, formatTime, listGuideStops, listRecordingStops, listStops, parseTime, pickupCategories, rosaryBudget, runSummary, shoppingSummary, validateRunData } from "../public/model.mjs";
+import { changeCursedProgress, changePickups, changeRosaryBudget, changeSplit, formatTime, listGuideStops, listRecordingStops, listStops, parseTime, pickupCategories, removeSplit, rosaryBudget, runSummary, shoppingSummary, validateRunData } from "../public/model.mjs";
 
 const root = new URL("../", import.meta.url);
 const readJson = async (path) => JSON.parse(await readFile(new URL(path, root), "utf8"));
@@ -311,6 +311,22 @@ historicalFixture.runs[0].splits.push({ checkpoint: "widow-bench", label: "Origi
 const editedHistorical = changeSplit(route, historicalFixture, "primary", { checkpoint: "widow-bench", time: "1:24:00" });
 assert.equal(editedHistorical.runs[0].splits.at(-1).label, "Original historical bench");
 assert.equal(editedHistorical.runs[0].splits.at(-1).note, "Keep historical note");
+
+const deletionFixture = structuredClone(finishedFixture);
+deletionFixture.runs[0].cursed = { checks: ["cursed-twisted-child"], notes: "Cursed clear" };
+deletionFixture.runs[0].futureField = { keep: true };
+const beforeDeletion = structuredClone(deletionFixture);
+const withoutFinish = removeSplit(deletionFixture, "primary", "gms");
+assert.deepEqual(deletionFixture, beforeDeletion, "Deleting must not mutate loaded data.");
+assert.deepEqual(withoutFinish.runs[0].splits, editedSplit.runs[0].splits, "Only the selected finish is removed.");
+assert.equal(runSummary(route, withoutFinish.runs[0]).finish, null);
+const { splits: remainingSplits, ...remainingDetails } = withoutFinish.runs[0];
+const { splits: previousSplits, ...previousDetails } = beforeDeletion.runs[0];
+assert.deepEqual(remainingDetails, previousDetails, "Keep continuation, notes, pickups and unknown fields.");
+assert.deepEqual(withoutFinish.runs[1], beforeDeletion.runs[1]);
+assert.deepEqual(removeSplit(historicalFixture, "primary", "widow-bench"), originalFixture);
+assert.throws(() => removeSplit(splitFixture, "missing-run", "blasted-steps"), /run is no longer/);
+assert.throws(() => removeSplit(splitFixture, "primary", "gms"), /split is no longer/);
 
 assert.deepEqual(parseTime("4:57"), { seconds: 17820, precision: "minute" });
 assert.deepEqual(parseTime("4h 57m"), parseTime("4:57"));

@@ -52,6 +52,17 @@ export function changeSplit(route, data, runId, { checkpoint, time: value, note 
   return next;
 }
 
+export function removeSplit(data, runId, checkpoint) {
+  const next = structuredClone(data);
+  const run = next.runs.find((item) => item.id === runId);
+  if (!run) throw new Error("This run is no longer in the saved runbook.");
+  if (!run.splits.some((split) => split.checkpoint === checkpoint)) {
+    throw new Error("This split is no longer in the saved runbook.");
+  }
+  run.splits = run.splits.filter((split) => split.checkpoint !== checkpoint);
+  return next;
+}
+
 export function listStops(route) {
   return route.sections.flatMap((section) =>
     section.stops.map((stop) => ({ ...stop, sectionId: section.id }))

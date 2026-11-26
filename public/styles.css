@@ -229,7 +229,7 @@ progress::-moz-progress-bar { background: var(--green); }
 #split-editor { padding-bottom: 1rem; }
 #split-form { max-width: 34rem; }
 #split-time { font: 1.5rem "SFMono-Regular", Consolas, monospace; }
-#save-split { margin-top: 1rem; }
+#split-form .form-actions { margin-top: 1rem; }
 .comparison { margin-top: .75rem; display: flex; flex-wrap: wrap; gap: .5rem; padding: .65rem; border-left: 2px solid #b6c9a15c; color: var(--muted); font-size: .72rem; }
 .comparison .ahead { color: var(--green); }
 .comparison .behind { color: var(--accent); }

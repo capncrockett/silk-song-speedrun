@@ -1,6 +1,6 @@
 # Pharloom Runbook — current handoff
 
-Updated November 25, 2026. The local app is implemented. Joseph finished **Run #4 at 3:27:17** and is preparing **Run #3** for the cursed attempt. This file holds current route decisions, research alternatives, and open scout questions; [README.md](./README.md) covers use and maintenance. The [source archive](./docs/history.md) preserves older notes without serving as a second live handoff.
+Updated November 26, 2026. The local app is implemented. Joseph finished **Run #4 at 3:27:17** and has completed **Twisted Child on Run #3**. This file holds current route decisions, research alternatives, and open scout questions; [README.md](./README.md) covers use and maintenance. The [source archive](./docs/history.md) preserves older notes without serving as a second live handoff.
 
 ## Working contract
 
@@ -18,7 +18,7 @@ Updated November 25, 2026. The local app is implemented. Joseph finished **Run #
 
 Open **Cursed ending** from the guide header or go to [the local checklist](http://127.0.0.1:4173/cursed). It defaults to **Run #3** when that record is available. The file picker can open any existing run and keeps the chosen file on reload. Each file has its own checks, attempt notes and Twisted Child result.
 
-**Run #3 starting point.** Joseph used this game file to scout and says it is sitting at Grand Mother Silk. Its last timed entry is **Lace 2 defeated at 4:21**, minute precision, with note **“2 try”**. The starting pickup record shows eight mask shards and Needle Upgrade #2. Confirm the inventory in-game. The Cursed checks start blank and no curse or clear has been reported.
+**Run #3 starting point.** Joseph used this game file to scout and says it is sitting at Grand Mother Silk. Its last timed entry is **Lace 2 defeated at 4:21**, minute precision, with note **“2 try”**. The starting pickup record shows eight mask shards and Needle Upgrade #2. Confirm the inventory in-game. The Cursed continuation is now complete, with Twisted Child checked and attempt notes saved.
 
 1. Confirm the save is in Act 2. Verify the Terminus shortcut and return travel, then start Great Taste and check whether Jubilana is available.
 2. Collect Faydown Cloak and the Mount Fay shard. That shard counts toward the eight additional shards.
@@ -44,10 +44,14 @@ Add reference links directly below the Savage Beastfly and Skull Cave instructio
 
 Show the Beastfly wish once, followed by one Skull Cave checkbox. The directions follow Chapel of the Beast if needed → accept the Bellhart wish → defeat Far Fields Beastfly and take the Horn Fragment → Skull Cave shard → return to Bellhart for the wish shard. Both entries retain their reference links and saved item IDs.
 
+### Delete a recorded split · November 26
+
+The Run log now offers **Delete split** beside **Update split** for a saved checkpoint. The confirmation identifies the run, checkpoint and recorded time. A successful deletion refreshes history, metrics, the checkpoint picker and the matching inline form. Historical-only entries can also be deleted. The revision-protected save path reports conflicts and write failures.
+
 ## Current run
 
 - **Run #4 finished at 3:27:17 — sub-five achieved.** Joseph confirms the finish on Run #4. The active save already records `gms` at **12,437 seconds**, second precision, with note **“2nd try!”**; keep it unchanged. This is **1:32:43 under five hours**, and **1:58:59 faster than Run #2’s 5:26:16**. Its preceding `lace-2` split is **3:22**, labeled **Terminus bench / runback shortcut**, with note **“1 attempt!”**. Do not infer a full ending loadout, Mask activation count or additional pickup checks.
-- **Run #3 selected for the separate Cursed checklist.** Joseph says he has two game files sitting at GMS and will continue Run #3, his practical scout/first-attempt file, for this ending. Its stored historical mode remains timed. Preserve its old results and keep the new untimed checklist/result separate; see the Cursed ending checklist above. No curse application or cursed clear was reported.
+- **Run #3 completed Twisted Child.** Joseph confirms the cursed GMS win. The continuation records about **8 or 9 attempts**, staying grounded and striking upward while following GMS and watching the knives. Its saved note includes **“11h 09m”**. Joseph requested removal of the separate **11:04:58** GMS split from the timed log because it represented the cursed continuation. That precise split has been deleted through the revision-protected API. The historical timed record ends at Lace 2 at **4:21**, with note **“2 try”**. Keep the completed Cursed checklist and attempt notes with the continuation.
 
 - **Run #4, Clawline / Cauldron clear at 2:43; second kit checked.** Joseph returned to Grand Bellway and farmed after being short of rosaries at the Architect. The active save records the 2:43 split at minute precision and has `kit-second` checked. The farming duration, amount earned and remaining balance were not supplied. Preserve the save; no new melody pickup, roof gate opening or duel result was reported.
 

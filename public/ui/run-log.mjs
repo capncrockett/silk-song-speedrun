@@ -1,8 +1,8 @@
-import { formatTime, runSummary } from "../model.mjs";
+import { formatTime, removeSplit, runSummary } from "../model.mjs";
 import { save } from "./api.mjs";
 import { saveSplit } from "./splits.mjs";
 import { byId, node, status } from "./dom.mjs";
-import { selectedRun, splitLabel, state, stopById } from "./state.mjs";
+import { guideStopById, selectedRun, splitLabel, state, stopById } from "./state.mjs";
 
 // App callbacks connect run selection and split editing to the guide.
 export function createRunLog({ onSelectRun, onNavigate, onSplitSaved }) {
@@ -105,6 +105,7 @@ export function createRunLog({ onSelectRun, onNavigate, onSplitSaved }) {
     byId("split-time").value = saved ? formatTime(saved.seconds, saved.precision) : "";
     byId("split-note").value = saved?.note ?? "";
     byId("save-split").textContent = saved ? "Update split →" : "Save split →";
+    byId("delete-split").hidden = !saved;
     const comparison = byId("split-comparison");
     const reference = state.data.runs.find((item) => item.id === "run-2");
     const benchmark = reference?.splits.find((split) => split.checkpoint === state.checkpoint);
@@ -179,6 +180,26 @@ export function createRunLog({ onSelectRun, onNavigate, onSplitSaved }) {
         refreshSplits(id);
         onSplitSaved(id);
       } else if (!state.saving) byId("split-time").focus();
+    });
+
+    byId("delete-split").addEventListener("click", async () => {
+      if (state.saving) return;
+      const run = selectedRun();
+      const split = run.splits.find((item) => item.checkpoint === state.checkpoint);
+      if (!split) return;
+      const description = `${splitLabel(split)} at ${formatTime(split.seconds, split.precision)}`;
+      if (!window.confirm(`Delete ${description} from ${run.name}?`)) return;
+      const checkpoint = split.checkpoint;
+      const next = removeSplit(state.data, run.id, checkpoint);
+      if (await save(next, "split-status", `Deleted ${description}.`)) {
+        renderCheckpointOptions();
+        refreshSplits(checkpoint);
+        onSplitSaved(checkpoint);
+        if (!stopById(checkpoint) || stopById(checkpoint).recordSplit === false) {
+          onNavigate(guideStopById(checkpoint)?.id ?? state.guideStops[0].id);
+        }
+        byId("split-time").focus();
+      }
     });
 
     byId("notes-form").addEventListener("submit", async (event) => {

@@ -112,7 +112,11 @@
                     <label for="split-time">In-game time</label><input type="text" id="split-time" placeholder="0:00" maxlength="20" autocomplete="off" spellcheck="false" aria-describedby="time-help" required>
                     <p class="field-help" id="time-help">Hours : minutes, or hours : minutes : seconds.</p>
                     <label for="split-note">Split note <span class="optional">optional</span></label><textarea id="split-note" rows="2" maxlength="4000" placeholder="Attempts, pickups, or what worked"></textarea>
-                    <button class="button primary" type="submit" id="save-split" data-write>Save split</button><p class="form-status" id="split-status" role="status"></p>
+                    <div class="form-actions">
+                      <button class="button primary" type="submit" id="save-split" data-write>Save split</button>
+                      <button class="button secondary" type="button" id="delete-split" data-write hidden>Delete split</button>
+                    </div>
+                    <p class="form-status" id="split-status" role="status"></p>
                   </div>
                 </form>
               </section>

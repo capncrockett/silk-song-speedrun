@@ -102,6 +102,13 @@ form. Updates target that checkpoint only, preserving other inline drafts and
 reading position. Pickup saves do not rebuild the forms. Run selection and
 navigation rebuild them for the selected run and guide page.
 
+The Run log shows `Delete split` beside the update button for a recorded
+checkpoint. After confirmation, pure `removeSplit` copies the data and removes
+that checkpoint from the chosen run. `ui/run-log.mjs` saves through `api.mjs`,
+refreshes metrics/history and uses the existing app callback to clear the
+matching inline form. Deleting a historical entry also refreshes the picker
+and navigates to its current guide page. Failed saves retain the editor draft.
+
 The server owns disk persistence and revision checks. `.runbook/runs.json` is
 the active save; `data/seed-runs.json` is only the initial import. Keep stable
 checkpoint and pickup IDs, historical labels, and reported time precision.
