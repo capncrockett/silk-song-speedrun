@@ -40,6 +40,10 @@ Location references checked November 24 support the regional pairings and prereq
 
 Add reference links directly below the Savage Beastfly and Skull Cave instructions. The Beastfly item links to both encounter locations, fight advice and the Bellhart wish/turn-in. Skull Cave links to its entrance and rising-lava gauntlet walkthrough. Canonical task links also appear beside shared nearby checkboxes. [Beastfly guide](https://hollowknight.wiki/w/Savage_Beastfly) · [Beastfly wish](https://hollowknight.wiki/w/Savage_Beastfly_%28Wish%29) · [Skull Cave walkthrough](https://hollowknight.wiki/w/Far_Fields#Skull_Cave)
 
+### Order the Far Fields shard trip · November 25
+
+Show the Beastfly wish once, followed by one Skull Cave checkbox. The directions follow Chapel of the Beast if needed → accept the Bellhart wish → defeat Far Fields Beastfly and take the Horn Fragment → Skull Cave shard → return to Bellhart for the wish shard. Both entries retain their reference links and saved item IDs.
+
 ## Current run
 
 - **Run #4 finished at 3:27:17 — sub-five achieved.** Joseph confirms the finish on Run #4. The active save already records `gms` at **12,437 seconds**, second precision, with note **“2nd try!”**; keep it unchanged. This is **1:32:43 under five hours**, and **1:58:59 faster than Run #2’s 5:26:16**. Its preceding `lace-2` split is **3:22**, labeled **Terminus bench / runback shortcut**, with note **“1 attempt!”**. Do not infer a full ending loadout, Mask activation count or additional pickup checks.

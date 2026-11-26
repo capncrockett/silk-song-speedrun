@@ -2324,26 +2324,9 @@
             "ref": "cursed-shard-mount-fay"
           },
           {
-            "id": "cursed-shard-skull-cave",
-            "title": "Collect the Far Fields Skull Cave shard",
-            "detail": "Clear the lava gauntlet with Clawline and Drifter’s Cloak. Magma Bell can help.",
-            "links": [
-              {
-                "title": "Skull Cave entrance and lava gauntlet",
-                "url": "https://hollowknight.wiki/w/Far_Fields#Skull_Cave"
-              }
-            ]
-          },
-          {
             "id": "cursed-shard-beastfly",
             "title": "Claim the Savage Beastfly wish shard",
-            "detail": "Defeat the first Beastfly in the Chapel of the Beast if needed. Take the Bellhart wish, beat the second Beastfly in Fourth Chorus’s old arena and turn in the Horn Fragment at Bellhart’s Wishwall.",
-            "nearby": [
-              {
-                "ref": "cursed-shard-skull-cave",
-                "detail": "While in Far Fields for the second Beastfly, collect the Skull Cave shard before returning to Bellhart. Clawline and Drifter’s Cloak are required. Magma Bell can help in the lava gauntlet."
-              }
-            ],
+            "detail": "First defeat the Beastfly in the Chapel of the Beast if needed, then accept the Bellhart wish. In Far Fields, defeat the second Beastfly in Fourth Chorus’s old arena and collect the Horn Fragment. Collect the Skull Cave shard below before returning to Bellhart’s Wishwall to claim this wish shard.",
             "links": [
               {
                 "title": "Beastfly locations and fight guide",
@@ -2352,6 +2335,17 @@
               {
                 "title": "Bellhart wish and Horn Fragment turn-in",
                 "url": "https://hollowknight.wiki/w/Savage_Beastfly_%28Wish%29"
+              }
+            ]
+          },
+          {
+            "id": "cursed-shard-skull-cave",
+            "title": "Collect the Far Fields Skull Cave shard",
+            "detail": "After the second Beastfly, collect this shard from Skull Cave’s lava gauntlet with Clawline and Drifter’s Cloak. Magma Bell can help. Then return to Bellhart’s Wishwall with the Horn Fragment to claim the Beastfly shard.",
+            "links": [
+              {
+                "title": "Skull Cave entrance and lava gauntlet",
+                "url": "https://hollowknight.wiki/w/Far_Fields#Skull_Cave"
               }
             ]
           },
