@@ -68,6 +68,8 @@ Each Cursed task has one canonical `id`. A task’s `nearby` array places
 A `ref` can also appear in a stage’s `steps`, such as Mount Fay in the shard
 list. The renderer resolves the canonical text and synchronizes every checkbox
 with that ID. Counts use distinct item IDs within each stage and across shards.
+Task `links` appear below that task’s directions and are inherited by nearby
+references, so each occurrence offers the same location or walkthrough links.
 
 ## Saving
 

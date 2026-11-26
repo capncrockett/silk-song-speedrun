@@ -2326,7 +2326,13 @@
           {
             "id": "cursed-shard-skull-cave",
             "title": "Collect the Far Fields Skull Cave shard",
-            "detail": "Clear the lava gauntlet with Clawline and Drifter’s Cloak. Magma Bell can help."
+            "detail": "Clear the lava gauntlet with Clawline and Drifter’s Cloak. Magma Bell can help.",
+            "links": [
+              {
+                "title": "Skull Cave entrance and lava gauntlet",
+                "url": "https://hollowknight.wiki/w/Far_Fields#Skull_Cave"
+              }
+            ]
           },
           {
             "id": "cursed-shard-beastfly",
@@ -2336,6 +2342,16 @@
               {
                 "ref": "cursed-shard-skull-cave",
                 "detail": "While in Far Fields for the second Beastfly, collect the Skull Cave shard before returning to Bellhart. Clawline and Drifter’s Cloak are required. Magma Bell can help in the lava gauntlet."
+              }
+            ],
+            "links": [
+              {
+                "title": "Beastfly locations and fight guide",
+                "url": "https://hollowknight.wiki/w/Savage_Beastfly"
+              },
+              {
+                "title": "Bellhart wish and Horn Fragment turn-in",
+                "url": "https://hollowknight.wiki/w/Savage_Beastfly_%28Wish%29"
               }
             ]
           },

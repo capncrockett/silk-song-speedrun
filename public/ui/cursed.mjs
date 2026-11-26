@@ -62,6 +62,11 @@ function renderTask(step, statusId, contextId) {
     input.setAttribute("aria-describedby", detail.id);
     row.append(detail);
   }
+  if (step.links?.length) {
+    const references = node("div", "links");
+    references.append(...links(step.links));
+    row.append(references);
+  }
   return row;
 }
 

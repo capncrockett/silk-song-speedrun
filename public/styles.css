@@ -353,5 +353,6 @@ html.prep-open, html.sections-open { overflow: hidden; }
 .cursed-nearby { margin-left: 1.75rem; }
 .cursed-nearby > li { border-bottom: 0; padding-bottom: 0; }
 .cursed-stage-body .links { margin-top: .8rem; }
+.cursed-tasks .links { margin: .5rem 0 0 1.75rem; }
 .cursed-notes { padding: .9rem 1.1rem 1rem; }
 .cursed-notes label { margin-top: 0; }
